@@ -7,10 +7,9 @@ Write LÖVE 2D games in Typescript!
 
 ## Dependencies
 The following dependencies need to be installed:
-- [Windows Linux Subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-- [Moonscript](https://moonscript.org) (on WLS)
-- [Typescript](https://www.typescriptlang.org)
-- [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua)
+- [Windows Linux Subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (`bash` command)
+- [Moonscript](https://moonscript.org) (on WLS) (`moonc` command within `bash`)
+- [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) (`tstl` command)
 
 ## Build Instructions
 ```bash
@@ -26,7 +25,7 @@ You can use this in your typescript projects.
 
 Here is an example file structure of a project using this definition file.
 ```
-/my-project/
+my-project/
 	all.d.ts
 	main.ts
 	tsconfig.json
