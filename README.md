@@ -16,8 +16,8 @@ The following dependencies need to be installed:
 
 ## Instructions
 After cloning this repository, use one of the following commands to get or update this repo's dependencies.
-```
-git submodule update --init               # Get submodules
+```bash
+git submodule update --init               	# Get submodules
 git submodule update --recursive --remote	# Update submodules
 ```
 After getting those submodules run `./build.ps1 -Test` to build `all.d.ts`.
