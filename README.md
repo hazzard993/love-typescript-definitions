@@ -2,6 +2,7 @@
 
 # Setting Up
 ```
+git submodule update --init
 git submodule update --recursive --remote	# Update Submodules
 ```
 

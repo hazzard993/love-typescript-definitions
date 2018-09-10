@@ -5,18 +5,24 @@ export dir = (o) -> for k, v in pairs(o) do print(k,v)
 
 totype = (str) ->
 	switch str
-		when "Object"
-			return "l2dObject"
-		when "Event"
-			return "l2dEvent"
-		when "Body"
-			return "l2dBody"
-		when "GamepadButton"
-			return "l2dGamepadButton"
 		when "function"
-			return "l2dfunction" -- defined in undocumented.d.ts
+			return "LuaFunction" -- defined in undocumented.d.ts
+		when "light userdata"
+			return "LightUserData" -- defined in undocumented.d.ts
+		when "Object"
+			return "L2DObject"
+		when "Event"
+			return "L2DEvent"
+		when "Body"
+			return "L2DBody"
+		when "GamepadButton"
+			return "L2DGamepadButton"
 		when "File"
-			return "l2d_File"
+			return "L2DFile"
+		when ""
+			return "any"
+		else
+			return str
 	return string.gsub str, "%s+", ""
 
 toarg = (a) ->
@@ -85,8 +91,6 @@ for m in *api.modules
 						return "'\"'"
 					when "\\"
 						return "'\\\\'"
-				-- sym = string.gsub(sym, "'", "\\\\'")
-				-- sym = string.gsub(sym, "\\", "\\\\")
 				return "'#{sym}'"
 			constants = [escape(c.name) for c in *e.constants]
 			types = table.concat constants, " | "
