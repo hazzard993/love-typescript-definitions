@@ -1,6 +1,4 @@
 # Typescript Definitions for LÖVE 2D
-
-# About
 Write LÖVE 2D games in Typescript!
 
 ![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)
