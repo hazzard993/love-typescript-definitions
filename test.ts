@@ -4,4 +4,6 @@
  * run `.\build.ps1 -Test` to append the 
  */
 love.graphics.newImage("filename")
-// love.graphics.newQuad(0,1,wd
+
+love.update = (delta: number) =>
+	print("Hello")
