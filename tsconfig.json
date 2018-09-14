@@ -2,4 +2,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 	},
+	"files": [
+		"_G.d.ts",
+		"test.ts",
+	],
 }
