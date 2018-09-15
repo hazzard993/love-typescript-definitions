@@ -18,18 +18,6 @@ declare namespace table {
   function insert<T>(list: T[], pos: number, value: T): void;
 
   /**
-   * Moves elements from table a1 to table a2, performing the equivalent to the following multiple assignment: a2[t],··· = a1[f],···,a1[e]. The default for a2 is a1. The destination range can overlap with the source range. The number of elements to be moved must fit in a Lua integer.
-   *
-   * Returns the destination table a2.
-   */
-  function move<T extends table>(a1: table, f: TableKey, e: TableKey, t: TableKey, a2?: T): T;
-
-  /**
-   * Returns a new table with all parameters stored into keys 1, 2, etc. and with a field "n" with the total number of parameters. Note that the resulting table may not be a sequence.
-   */
-  function pack(...args: any[]): any[];
-
-  /**
    * Removes from list the element at position pos, returning the value of the removed element. When pos is an integer between 1 and #list, it shifts down the elements list[pos+1], list[pos+2], ···, list[#list] and erases element list[#list]; The index pos can also be 0 when #list is 0, or #list + 1; in those cases, the function erases the element list[pos].
    *
    * The default value for pos is #list, so that a call table.remove(l) removes the last element of list l.
@@ -45,12 +33,14 @@ declare namespace table {
    */
   function sort(list: any[], comp?: (a: any, b: any) => boolean): any[];
 
-  /**
-   * Returns the elements from the given list. This function is equivalent to
-   *
-   * `return list[i], list[i+1], ···, list[j]`
-   *
-   * By default, i is 1 and j is #list.
-   */
-  function unpack(list: any[], i?: number, j?: number): any[];
+
 }
+
+/**
+ * Returns the elements from the given list. This function is equivalent to
+ *
+ * `return list[i], list[i+1], ···, list[j]`
+ *
+ * By default, i is 1 and j is #list.
+ */
+declare function unpack(list: any[], i?: number, j?: number): any[];
