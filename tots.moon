@@ -1,4 +1,4 @@
-export api = require 'love-api.love_api'
+export api = require 'l2dsafe'
 
 export dir = (o) -> for k, v in pairs(o) do print(k,v)
 -- debug.debug()
@@ -67,12 +67,12 @@ exportfunctions = (functions,tabs,t,classname="Unknown") ->
 			description = string.gsub f.description, "\n", "\n#{tabs} * "
 			paramlabels = string.gsub table.concat(paramlabels,"\n"), "\n", "\n#{tabs} * "
 			returnlabels = string.gsub table.concat(returnlabels,"\n"), "\n", "\n#{tabs} * "
-			print "#{tabs}/** !TupleReturn" if multireturn
-			print "#{tabs}/**" if not multireturn
+			print "#{tabs}/**"
 			print "#{tabs} * @func #{f.name}"
 			print "#{tabs} * #{description}" if description
 			print "#{tabs} * #{paramlabels}" if paramlabels
 			print "#{tabs} */"
+			print "#{tabs}/** !TupleReturn */" if multireturn
 			if t == "namespace_variable"
 				print "#{tabs}#{pre}#{f.name}: (#{args}) => #{returns}\n"
 			elseif t == "constructors"

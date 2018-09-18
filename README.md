@@ -24,14 +24,11 @@ Now give your project to the LÖVE 2D executable, your project will now run!
 git submodule update --init
 
 # Build
-moonc tots.moon
+moonc *.moon
 lua tots.lua > l2d.d.ts
 cat other-definitions/*.d.ts *.d.ts >> _G.d.ts
 
-# Via Powershell
-.\fix.ps1
-
-# Test
+# Test, if this file compiles, _G.d.ts has been created correctly
 tstl -p .
 
 # Cleaning
