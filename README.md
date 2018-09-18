@@ -20,7 +20,9 @@ Now give your project to the LÖVE 2D executable, your project will now run!
 
 ## Building and Cleaning
 ```bash
-# Get submodules
+# Get all the files you need
+git clone https://github.com/hazzard993/love-typescript-definitions.git
+cd love-typescript-definitions
 git submodule update --init
 
 # Build
@@ -28,9 +30,10 @@ moonc *.moon
 lua tots.lua > l2d.d.ts
 cat other-definitions/*.d.ts *.d.ts >> _G.d.ts
 
-# Test, if this file compiles, _G.d.ts has been created correctly
+# And Test
 tstl -p .
-
-# Cleaning
+```
+```bash
+# Use this to clean
 rm _G.d.ts l2d.d.ts *.lua tots.lua
 ```
