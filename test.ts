@@ -9,3 +9,5 @@ love.update = (delta: number) =>
 	print("Hello")
 
 love.graphics.push() /* This has a default argument */
+
+math.atan2(0, 0) /* This function should be available */

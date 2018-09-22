@@ -26,7 +26,13 @@ declare namespace math {
    */
   function atan(y: number, x?: number): number;
 
-  /**   * Returns the smallest integral value larger than or equal to x.
+  /**
+   * Returns the arc tangent of y/x (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of x being zero.)
+   */
+  function atan2(y: number, x?: number): number;
+
+  /**
+   * Returns the smallest integral value larger than or equal to x.
    */
   function ceil(x: number): number;
 
@@ -34,6 +40,11 @@ declare namespace math {
    * Returns the cosine of x (assumed to be in radians).
    */
   function cos(x: number): number;
+
+  /**
+   * Returns the hyperbolic cosine of x.
+   */
+  function cosh(x: number): number;
 
   /**
    * Converts the angle x from radians to degrees.
@@ -56,9 +67,19 @@ declare namespace math {
   function fmod(x: number, y: number): number;
 
   /**
+   * Returns m and e such that x = m2e, e is an integer and the absolute value of m is in the range [0.5, 1) (or zero when x is zero).
+   */
+  function frexp(x: number): number;
+
+  /**
    * The float value HUGE_VAL, a value larger than any other numeric value.
    */
   const huge: number;
+
+  /**
+   * Returns m2e (e should be an integer).
+   */
+  function ldexp(m: number, e: number): number;
 
   /**
    * Returns the logarithm of x in the given base. The default for base is e (so that the function returns the natural logarithm of x).
@@ -66,24 +87,19 @@ declare namespace math {
   function log(x: number, base?: number): number;
 
   /**
+   * Returns the base-10 logarithm of x.
+   */
+  function log10(x: number): number;
+
+  /**
    * Returns the argument with the maximum value, according to the Lua operator <. (integer/float)
    */
   function max(x: number, ...numbers: number[]): number;
 
   /**
-   * An integer with the maximum value for an integer.
-   */
-  const maxinteger: number;
-
-  /**
    * Returns the argument with the minimum value, according to the Lua operator <. (integer/float)
    */
   function min(x: number, ...numbers: number[]): number;
-
-  /**
-   * An integer with the minimum value for an integer.
-   */
-  const mininteger: number;
 
   /**
    * Returns the integral part of x and the fractional part of x. Its second result is always a float.
@@ -94,6 +110,11 @@ declare namespace math {
    * The value of π.
    */
   const pi: number;
+
+  /**
+   * Returns xy. (You can also use the expression x^y to compute this value.)
+   */
+  function pow(x: number, y: number): number;
 
   /**
    * Converts the angle x from degrees to radians.
@@ -118,6 +139,11 @@ declare namespace math {
   function sin(x: number): number;
 
   /**
+   * Returns the hyperbolic sine of x.
+   */
+  function sinh(x: number): number;
+
+  /**
    * Returns the square root of x. (You can also use the expression x^0.5 to compute this value.)
    */
   function sqrt(x: number): number;
@@ -128,17 +154,7 @@ declare namespace math {
   function tan(x: number): number;
 
   /**
-   * If the value x is convertible to an integer, returns that integer. Otherwise, returns nil.
+   * Returns the hyperbolic tangent of x.
    */
-  function tointeger(x: number): number;
-
-  /**
-   * Returns "integer" if x is an integer, "float" if it is a float, or nil if x is not a number.
-   */
-  function type(x: number): 'integer' | 'float' | null;
-
-  /**
-   * Returns a boolean, true if and only if integer m is below integer n when they are compared as unsigned integers.
-   */
-  function ult(m: number, n: number): boolean;
+  function tanh(x: number): number;
 }
