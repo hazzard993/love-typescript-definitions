@@ -35,6 +35,7 @@ toarg = (a) ->
 			name = "restartstr"
 			a.type = "RestartString"
 	t = totype(a.type)
+	return "#{name}?: #{t}" if a.default
 	return "#{name}: #{t}"
 
 exportfunctions = (functions,tabs,t,classname="Unknown") ->

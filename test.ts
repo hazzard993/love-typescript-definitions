@@ -7,3 +7,5 @@ love.graphics.newImage("filename")
 
 love.update = (delta: number) =>
 	print("Hello")
+
+love.graphics.push() /* This has a default argument */
