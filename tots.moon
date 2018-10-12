@@ -52,13 +52,13 @@ exportfunctions = (functions,tabs,t,classname="Unknown") ->
 			paramlabels = {}
 			returnlabels = {}
 			if v.arguments
-				paramlabels = ["@param #{totype(a.type)} #{a.description}" for a in *v.arguments]
+				paramlabels = ["@param #{totype(a.name)} #{a.description}" for a in *v.arguments]
 				a = [toarg(a) for a in *v.arguments]
 				args = table.concat a, ", "
 			returns = "void"
 			multireturn = false
 			if v.returns
-				paramlabels = ["@return #{totype(r.type)} #{r.description}" for r in *v.returns]
+				paramlabels = ["@return #{totype(r.name)} #{r.description}" for r in *v.returns]
 				if #v.returns == 1
 					returns = "#{totype(v.returns[1].type)}"
 				else
