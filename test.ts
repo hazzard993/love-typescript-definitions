@@ -11,3 +11,5 @@ love.update = (delta: number) =>
 love.graphics.push() /* This has a default argument */
 
 math.atan2(0, 0) /* This function should be available */
+
+const [k, v] = ipairs({x: 0})
