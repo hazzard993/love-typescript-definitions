@@ -101,7 +101,7 @@ declare function getmetatable(object: table): Metatable | null;
  * will iterate over the key–value pairs (1,t[1]), (2,t[2]), ..., up to the first nil value.
  */
 /** !TupleReturn */
-declare function ipairs<T = table>(t: T): [(t: T, index?: number) => [number, any], T, 0];
+declare function ipairs<T = table>(t: T, k?: any): [(t: T, index?: number) => [number, any], T, 0];
 
 /**
  * Loads a chunk.
@@ -154,7 +154,7 @@ declare function next(table: table, index?: TableKey): [TableKey, any] | null;
  * See function next for the caveats of modifying the table during its traversal.
  */
 /** !TupleReturn */
-declare function pairs<T>(t: T): [(t: T, index?: TableKey) => [TableKey, any], T, null];
+declare function pairs<T>(t: T, key?: any): [(t: T, index?: TableKey) => [TableKey, any], T, null];
 
 /**
  * Calls function f with the given arguments in protected mode. This means that any error inside f is not propagated; instead, pcall catches the error and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In such case, pcall also returns all results from the call, after this first result. In case of any error, pcall returns false plus the error message.
