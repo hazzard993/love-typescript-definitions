@@ -1,0 +1,20 @@
+{
+  "name": "love-typescript-definitions",
+  "version": "0.4.0",
+  "description": "![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)",
+  "scripts": {
+    "build": "npm run clean && moonc *.moon && lua tots.lua > l2d.d.ts && cat other-definitions/*.d.ts *.d.ts >> _G.d.ts",
+    "test": "tstl -p .",
+    "clean": "rm _G.d.ts l2d.d.ts *.lua tots.lua -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazzard993/love-typescript-definitions.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
+  },
+  "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme"
+}
