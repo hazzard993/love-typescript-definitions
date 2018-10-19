@@ -1,3 +1,4 @@
 dist/*.ts
 lua/src/*.lua
 lua/src/*.ts
+test/*.lua
