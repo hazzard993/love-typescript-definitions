@@ -3,6 +3,7 @@
   "version": "0.4.0",
   "description": "![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)",
   "scripts": {
+    "init": "git submodule update --init",
     "build": "npm run clean && moonc *.moon && lua tots.lua > l2d.d.ts && cat other-definitions/*.d.ts *.d.ts >> _G.d.ts",
     "test": "tstl -p .",
     "clean": "rm _G.d.ts l2d.d.ts *.lua tots.lua -f"
