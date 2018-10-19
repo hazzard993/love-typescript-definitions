@@ -1,2 +1,3 @@
-*.ts
-*.lua
+dist/*.ts
+lua/src/*.lua
+lua/src/*.ts

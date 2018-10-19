@@ -4,7 +4,7 @@
 		"baseUrl": ".",
 	},
 	"files": [
-		"_G.d.ts",
+		"../dist/_G.d.ts",
 		"test.ts",
 	],
 }

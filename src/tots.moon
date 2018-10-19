@@ -1,4 +1,4 @@
-export api = require 'l2dsafe'
+export api = require 'lua.src.l2dsafe'
 
 export dir = (o) -> for k, v in pairs(o) do print(k,v)
 -- debug.debug()
