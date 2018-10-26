@@ -27,6 +27,11 @@ declare namespace math {
   function atan(y: number, x?: number): number;
 
   /**
+   * Returns the arc tangent of y/x (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of x being zero.)
+   */
+  function atan2(y: number, x: number): number;
+
+  /**
    * Returns the smallest integral value larger than or equal to x.
    */
   function ceil(x: number): number;
