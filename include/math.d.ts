@@ -1,4 +1,4 @@
-// https://www.lua.org/manual/5.3/manual.html#6.7
+// https://www.lua.org/manual/5.1/manual.html#5.6
 
 /**
  * This library provides basic mathematical functions. It provides all its functions and constants inside the table math. Functions with the annotation "integer/float" give integer results for integer arguments and float results for float (or mixed) arguments. Rounding functions (math.ceil, math.floor, and math.modf) return an integer when the result fits in the range of an integer, or a float otherwise.
@@ -25,11 +25,6 @@ declare namespace math {
    * The default value for x is 1, so that the call math.atan(y) returns the arc tangent of y.
    */
   function atan(y: number, x?: number): number;
-
-  /**
-   * Returns the arc tangent of y/x (in radians), but uses the signs of both parameters to find the quadrant of the result. (It also handles correctly the case of x being zero.)
-   */
-  function atan2(y: number, x?: number): number;
 
   /**
    * Returns the smallest integral value larger than or equal to x.
