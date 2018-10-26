@@ -59,7 +59,6 @@ exportfunctions = (functions,tabs,t,classname="Unknown") ->
 			paramlabels = string.gsub table.concat(paramlabels,"\n"), "\n", "\n#{tabs} * "
 			returnlabels = string.gsub table.concat(returnlabels,"\n"), "\n", "\n#{tabs} * "
 			print "#{tabs}/**"
-			print "#{tabs} * @func #{f.name}"
 			print "#{tabs} * #{description}" if description
 			print "#{tabs} * #{paramlabels}" if paramlabels
 			print "#{tabs} */"
@@ -114,7 +113,6 @@ exportfunctions api.callbacks, 1, "namespace_variable"
 for m in *api.modules
 	description = string.gsub m.description, "\n", "\n\t * "
 	print "\t/**"
-	print "\t * @func #{m.name}"
 	print "\t * #{description}"
 	print "\t */"
 	print "\texport namespace #{m.name} {"
