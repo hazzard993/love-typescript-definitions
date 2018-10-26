@@ -9,8 +9,8 @@ type LightUserData = number
 type LuaTable = Object
 type Variant = LuaTable | number | string | boolean
 type TextureType = "2d" | "array" | "cube" | "volume"
-type GamepadButton = L2DGamepadButton
 type ShaderVariableType = any 	// Unknown type :(
 
 // Comment out the below code if not including l2d.lib.d.ts
 type PixelFormat = CanvasFormat
+type GamepadButton = L2DGamepadButton
