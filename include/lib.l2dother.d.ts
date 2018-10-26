@@ -4,7 +4,6 @@
 type RestartString = "restart"
 type VertexWinding = "cw" | "ccw"
 type CullMode = "back" | "front" | "none"
-type LuaFunction = Function
 type LightUserData = number
 type LuaTable = Object
 type Variant = LuaTable | number | string | boolean

@@ -5,8 +5,6 @@ export dir = (o) -> for k, v in pairs(o) do print(k,v)
 
 totype = (str) ->
 	switch str
-		when "function"
-			return "LuaFunction" -- defined in missingdefs.d.ts
 		when "light userdata"
 			return "LightUserData" -- defined in missingdefs.d.ts
 		when "Object"
