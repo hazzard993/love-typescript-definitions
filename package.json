@@ -7,7 +7,7 @@
     "build": "npm run clean && moonc -t lua/ src/*.moon && lua ./lua/src/tots.lua > include/love.d.ts",
     "test": "tstl -p test",
     "clean": "rm test/test.lua dist/_G.d.ts lua/src/* include/love.d.ts -f",
-    "make_G": "cat include/*.d.ts include/love.d.ts >> dist/_G.d.ts"
+    "make_global": "cat include/*.d.ts include/love.d.ts >> dist/_G.d.ts"
   },
   "repository": {
     "type": "git",
