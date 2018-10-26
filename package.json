@@ -4,10 +4,10 @@
   "description": "![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)",
   "scripts": {
     "init": "git submodule update --init",
-    "build": "npm run clean && moonc -t lua/ src/*.moon && lua ./lua/src/tots.lua > lua/src/l2d.d.ts && npm run make_G",
+    "build": "npm run clean && moonc -t lua/ src/*.moon && lua ./lua/src/tots.lua > include/love.d.ts",
     "test": "tstl -p test",
-    "clean": "rm test/test.lua dist/_G.d.ts lua/src/* -f",
-    "make_G": "cat include/*.d.ts lua/src/l2d.d.ts >> dist/_G.d.ts"
+    "clean": "rm test/test.lua dist/_G.d.ts lua/src/* include/love.d.ts -f",
+    "make_G": "cat include/*.d.ts include/love.d.ts >> dist/_G.d.ts"
   },
   "repository": {
     "type": "git",

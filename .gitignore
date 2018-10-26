@@ -2,3 +2,4 @@ dist/*.ts
 lua/src/*.lua
 lua/src/*.ts
 test/*.lua
+include/love.d.ts

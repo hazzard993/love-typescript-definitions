@@ -1,10 +1,13 @@
 {
 	"compilerOptions": {
-		"types": [],
+		// "types": ["../include"],
 		"baseUrl": ".",
+		"noLib": true		// prevents the use of non-lua libraries
 	},
 	"files": [
-		"../dist/_G.d.ts",
 		"test.ts",
 	],
+	"include": [
+		"../include/*.d.ts"
+	]
 }
