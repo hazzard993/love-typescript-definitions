@@ -50,14 +50,15 @@ wrap = (string, max_width) ->
 			wrapline line
 	return [line for line in coroutine.wrap wrapeachline]
 
-jsdoc = (lines, tabs=0) ->
+jsdoc = (tabs, descriptionlines={}, paramlines={}, returnlines={}) ->
 	tabs = string.rep("\t",tabs)
 	print "#{tabs}/**"
 	-- print " * @function #{details.function}" if details.function
 	-- print " * @method #{details.method}" if details.method
 	-- print " * @constructs" if details.constructs
-	print "#{tabs} * #{line}" for line in *lines
-	-- print " * @param {#{p.type}} #{p.name} #{p.desc}" for p in *details.params
+	print "#{tabs} * #{line}" for line in *descriptionlines
+	print "#{tabs} * #{line}" for line in *paramlines
+	print "#{tabs} * #{line}" for line in *returnlines
 	-- print " * @returns {#{r.type}} #{r.desc}" for r in *details.returns
 	print "#{tabs} */"
 
@@ -72,38 +73,31 @@ exportfunctions = (functions,tabamt,t,classname="Unknown") ->
 	for f in *functions
 		for v in *f.variants
 			args = ""
-			paramlabels = {}
-			returnlabels = {}
+			paramlines = {}
+			returnlines = {}
 			if v.arguments
-				paramlabels = ["@param #{totype(a.name)} #{a.description}" for a in *v.arguments]
+				paramlines = ["@param #{totype(a.name)} #{a.description}" for a in *v.arguments]
 				a = [toarg(a) for a in *v.arguments]
 				args = table.concat a, ", "
 			returns = "void"
 			multireturn = false
 			if v.returns
-				paramlabels = ["@return #{totype(r.name)} #{r.description}" for r in *v.returns]
+				returnlines = ["@return {#{totype(r.type)}} #{r.name}, #{r.description}" for r in *v.returns]
 				if #v.returns == 1
 					returns = "#{totype(v.returns[1].type)}"
 				else
 					multireturn = true
 					r = [totype(r.type) for r in *v.returns]
 					returns = "[#{table.concat r, ", "}]"
-			-- description = string.gsub f.description, "\n", "\n#{tabs} * "
-			paramlabels = string.gsub table.concat(paramlabels,"\n"), "\n", "\n#{tabs} * "
-			returnlabels = string.gsub table.concat(returnlabels,"\n"), "\n", "\n#{tabs} * "
-			-- print "#{tabs}/**"
-			-- print "#{tabs} * #{description}" if description
-			-- print "#{tabs} * #{paramlabels}" if paramlabels
-			-- print "#{tabs} */"
 			lines = wrap(f.description, 80) or {}
-			jsdoc(lines, tabamt)
+			jsdoc(tabamt, lines, paramlines, returnlines)
 			print "#{tabs}/** !TupleReturn */" if multireturn
 			if t == "namespace_variable"
-				print "#{tabs}#{pre}#{f.name}: (#{args}) => #{returns}\n"
+				print "#{tabs}#{pre}#{f.name}: (#{args}) => #{returns};\n"
 			elseif t == "constructors"
-				print "#{tabs}#{pre}#{classname}(#{args}): #{returns}\n"
+				print "#{tabs}#{pre}#{classname}(#{args}): #{returns};\n"
 			else
-				print "#{tabs}#{pre}#{f.name}(#{args}): #{returns}\n"
+				print "#{tabs}#{pre}#{f.name}(#{args}): #{returns};\n"
 
 for m in *api.modules
 	if m.enums
@@ -120,11 +114,7 @@ for m in *api.modules
 			constants = [escape(c.name) for c in *e.constants]
 			types = table.concat constants, " | "
 			lines = wrap(e.description, 80) or {}
-			jsdoc(lines)
-			-- description = string.gsub e.description, "\n", "\n * "
-			-- print "/**"
-			-- print " * #{description}"
-			-- print " */"
+			jsdoc(0, lines)
 			print "type #{totype(e.name)} = #{types}\n"
 
 for m in *api.modules
@@ -148,12 +138,8 @@ exportfunctions api.functions, 1, "namespace_function"
 exportfunctions api.callbacks, 1, "namespace_variable"
 
 for m in *api.modules
-	-- description = string.gsub m.description, "\n", "\n\t * "
-	-- print "\t/**"
-	-- print "\t * #{description}"
-	-- print "\t */"
 	lines = wrap(m.description, 80) or {}
-	jsdoc(lines, 1)
+	jsdoc(1, lines)
 	print "\texport namespace #{m.name} {"
 	exportfunctions m.functions, 2, "namespace_function"
 	print "\t}"
