@@ -6,9 +6,9 @@ export dir = (o) -> for k, v in pairs(o) do print(k,v)
 totype = (str) ->
 	switch str
 		when "function"
-			return "Function" -- defined in missingdefs.d.ts
+			return "Function"
 		when "light userdata"
-			return "LightUserData" -- defined in missingdefs.d.ts
+			return "LightUserData" -- defined in lib.l2dother.d.ts
 		when ""
 			return "any"
 		else
