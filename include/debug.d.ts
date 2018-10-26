@@ -1,4 +1,4 @@
-// https://www.lua.org/manual/5.3/manual.html#6.10
+// https://www.lua.org/manual/5.1/manual.html#5.9
 
 /**
  * This library provides the functionality of the debug interface (§4.9) to Lua programs. You should exert care when using this library. Several of its functions violate basic assumptions about Lua code (e.g., that variables local to a function cannot be accessed from outside; that userdata metatables cannot be changed by Lua code; that Lua programs do not crash) and therefore can compromise otherwise secure code. Moreover, some functions in this library may be slow.
@@ -12,6 +12,11 @@ declare namespace debug {
    * Note that commands for debug.debug are not lexically nested within any function and so have no direct access to local variables.
    */
   function debug(): void;
+
+  /**
+   * Returns the current environment in use by the function. f can be a Lua function or a number that specifies the function at that stack level: Level 1 is the function calling getfenv. If the given function is not a Lua function, or if f is 0, getfenv returns the global environment. The default for f is 1.
+   */
+  function getfenv(f?: Function | 0 | 1 | 2): table;
 
   /**
    * Returns the current hook settings of the thread, as three values: the current hook function, the current hook mask, and the current hook count (as set by the debug.sethook function).
@@ -58,9 +63,11 @@ declare namespace debug {
   function getupvalue(f: Function, up: number): [string, any] | null;
 
   /**
-   * Returns the Lua value associated to u. If u is not a full userdata, returns nil.
+   * Sets the environment to be used by the given function. f can be a Lua function * or a number that specifies the function at that stack level: Level 1 is the * function calling setfenv. setfenv returns the given function.
+   * 
+   * As a special case, when f is 0 setfenv changes the environment of the running thread. In this case, setfenv returns no values.
    */
-  function getuservalue(u: userdata): any;
+  function setfenv(f: Function | 0 | 1 | 2, tbl: table);
 
   /**
    * Sets the given function as a hook. The string mask and the number count describe when the hook will be called. The string mask may have any combination of the following characters, with the given meaning:
@@ -105,13 +112,6 @@ declare namespace debug {
    * This function assigns the value value to the upvalue with index up of the function f. The function returns nil if there is no upvalue with the given index. Otherwise, it returns the name of the upvalue.
    */
   function setupvalue(f: Function, up: number, value: any): string | null;
-
-  /**
-   * Sets the given value as the Lua value associated to the given udata. udata must be a full userdata.
-   *
-   * Returns udata.
-   */
-  function setuservalue<T extends userdata>(udata: T, value: any): T;
 
   /**
    * If message is present but is neither a string nor nil, this function returns message without further processing. Otherwise, it returns a string with a traceback of the call stack. The optional message string is appended at the beginning of the traceback. An optional level number tells at which level to start the traceback (default is 1, the function calling traceback).
