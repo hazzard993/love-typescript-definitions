@@ -9,8 +9,6 @@ totype = (str) ->
 			return "Function" -- defined in missingdefs.d.ts
 		when "light userdata"
 			return "LightUserData" -- defined in missingdefs.d.ts
-		when "GamepadButton"
-			return "L2DGamepadButton"
 		when "File"
 			return "L2DFile"
 		when ""
