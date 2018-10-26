@@ -9,8 +9,6 @@ totype = (str) ->
 			return "Function" -- defined in missingdefs.d.ts
 		when "light userdata"
 			return "LightUserData" -- defined in missingdefs.d.ts
-		when "Object"
-			return "L2DObject"
 		when "Event"
 			return "L2DEvent"
 		when "Body"
