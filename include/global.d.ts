@@ -1,6 +1,5 @@
-// https://www.lua.org/manual/5.3/manual.html#6.1
+// https://www.lua.org/manual/5.1/manual.html#5.1
 
-// /// <reference no-default-lib="true"/>
 type unknown = any;
 type table = {
   [key: number]: any;
@@ -9,6 +8,11 @@ type table = {
 type TableKey = number | string;
 type thread = any;
 type userdata = any;
+
+/**
+ * Before starting to run the script, lua collects all arguments in the command  * line in a global table called arg. The script name is stored at index 0, the  * first argument after the script name goes to index 1, and so on. Any arguments  * before the script name (that is, the interpreter name plus the options) go to  * negative indices. For instance, in the call
+ */
+declare let arg: { [index: number]: string };
 
 /**
  * Calls error if the value of its argument v is false (i.e., nil or false); otherwise, returns all its arguments. In case of error, message is the error object; when absent, it defaults to "assertion failed!"
@@ -77,6 +81,13 @@ declare function collectgarbage(opt: 'isrunning'): boolean;
 declare function dofile(filename?: string): any;
 
 /**
+ * Returns a string containing a binary representation (a binary chunk) of the given function, so that a later load on this string returns a copy of the function (but with new upvalues). If strip is a true value, the binary representation may not include all debug information about the function, to save space.
+ *
+ * Functions with upvalues have only their number of upvalues saved. When (re)loaded, those upvalues receive fresh instances containing nil. (You can use the debug library to serialize and reload the upvalues of a function in a way adequate to your needs.)
+ */
+declare function dump(func: Function, strip?: boolean): string;
+
+/**
  * Terminates the last protected function called and returns message as the error object. Function error never returns.
  *
  * Usually, error adds some information about the error position at the beginning of the message, if the message is a string. The level argument specifies how to get the error position. With level 1 (the default), the error position is where the error function was called. Level 2 points the error to where the function that called error was called; and so on. Passing a level 0 avoids the addition of error position information to the message.
@@ -87,6 +98,11 @@ declare function error(message: string, level?: 0 | 1 | 2): never;
  * A global variable (not a function) that holds the global environment (see §2.2). Lua itself does not use this variable; changing its value does not affect any environment, nor vice versa.
  */
 declare const _G: { [key: string]: any };
+
+/**
+ * Returns the current environment in use by the function. f can be a Lua function or a number that specifies the function at that stack level: Level 1 is the function calling getfenv. If the given function is not a Lua function, or if f is 0, getfenv returns the global environment. The default for f is 1.
+ */
+declare function getfenv(f?: Function | 0 | 1 | 2): table;
 
 /**
  * If object does not have a metatable, returns nil. Otherwise, if the object's metatable has a __metatable field, returns the associated value. Otherwise, returns the metatable of the given object.
@@ -100,8 +116,7 @@ declare function getmetatable(object: table): Metatable | null;
  *
  * will iterate over the key–value pairs (1,t[1]), (2,t[2]), ..., up to the first nil value.
  */
-/** !TupleReturn */
-declare function ipairs<T = table>(t: T, k?: any): [(t: T, index?: number) => [number, any], T, 0];
+declare function ipairs<T = table>(t: T): [(t: T, index?: number) => [number, any], T, 0];
 
 /**
  * Loads a chunk.
@@ -135,6 +150,16 @@ declare function loadfile(
 ): () => any | [null, string];
 
 /**
+ * Similar to load, but gets the chunk from the given string.
+ * 
+ * To load and run a given string, use the idiom
+ *      assert(loadstring(s))()
+ *
+ * When absent, chunkname defaults to the given string.
+ */
+declare function loadstring(str: string, chunkname?: string);
+
+/**
  * Allows a program to traverse all fields of a table. Its first argument is a table and its second argument is an index in this table. next returns the next index of the table and its associated value. When called with nil as its second argument, next returns an initial index and its associated value. When called with the last index, or with nil in an empty table, next returns nil. If the second argument is absent, then it is interpreted as nil. In particular, you can use next(t) to check whether a table is empty.
  *
  * The order in which the indices are enumerated is not specified, even for numeric indices. (To traverse a table in numerical order, use a numerical for.)
@@ -153,8 +178,7 @@ declare function next(table: table, index?: TableKey): [TableKey, any] | null;
  *
  * See function next for the caveats of modifying the table during its traversal.
  */
-/** !TupleReturn */
-declare function pairs<T>(t: T, key?: any): [(t: T, index?: TableKey) => [TableKey, any], T, null];
+declare function pairs<T>(t: T): [(t: T, index?: TableKey) => [TableKey, any], T, null];
 
 /**
  * Calls function f with the given arguments in protected mode. This means that any error inside f is not propagated; instead, pcall catches the error and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In such case, pcall also returns all results from the call, after this first result. In case of any error, pcall returns false plus the error message.
@@ -199,6 +223,14 @@ declare function select<T>(index: number, ...args: T[]): T[];
 declare function select<T>(index: '#', ...args: T[]): number;
 
 /**
+ * Sets the environment to be used by the given function. f can be a Lua function  * or a number that specifies the function at that stack level: Level 1 is the  * function calling setfenv. setfenv returns the given function.
+ * 
+ * As a special case, when f is 0 setfenv changes the environment of the running thread. In this case, setfenv returns no values.
+ */
+declare function setfenv(f?: Function | 0 | 1 | 2);
+declare function setfenv(f: Function | 0 | 1 | 2, tbl: table);
+
+/**
  * Sets the metatable for the given table. (To change the metatable of other types from Lua code, you must use the debug library (§6.10).) If metatable is nil, removes the metatable of the given table. If the original metatable has a __metatable field, raises an error.
  *
  * This function returns table.
@@ -231,7 +263,16 @@ declare function type(
 /**
  * A global variable (not a function) that holds a string containing the running Lua version. The current value of this variable is "Lua 5.3".
  */
-declare const _VERSION: 'Lua 5.3';
+declare const _VERSION: 'Lua 5.1';
+
+/**
+ * Returns the elements from the given list. This function is equivalent to
+ *
+ * `return list[i], list[i+1], ···, list[j]`
+ *
+ * By default, i is 1 and j is #list.
+ */
+declare function unpack(list: any[], i?: number, j?: number): any[];
 
 /**
  * This function is similar to pcall, except that it sets a new message handler msgh.
