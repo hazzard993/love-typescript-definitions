@@ -6,7 +6,7 @@ type table = {
   [key: string]: any;
 };
 type TableKey = number | string;
-type thread = any;
+type thread = {};
 type userdata = any;
 
 /**
