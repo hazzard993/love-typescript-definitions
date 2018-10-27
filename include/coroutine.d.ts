@@ -22,6 +22,7 @@ declare namespace coroutine {
    * function (when the coroutine terminates). If there is any error, resume returns
    * false plus the error message.
    */
+  /** !TupleReturn */
   function resume(co: thread, ...val: any[]): any[] | [boolean, string];
 
   /**
@@ -32,6 +33,7 @@ declare namespace coroutine {
    * coroutine); and "dead" if the coroutine has finished its body function, or
    * if it has stopped with an error.
    */
+  /** !TupleReturn */
   function running(): [thread, boolean];
 
   /**

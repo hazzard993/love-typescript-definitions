@@ -50,6 +50,7 @@ declare namespace io {
    *
    * The mode string can also have a 'b' at the end, which is needed in some systems to open the file in binary mode.
    */
+  /** !TupleReturn */
   function open(filename: string, mode?: string): file | [null, string, number];
 
   /**
@@ -82,6 +83,7 @@ declare namespace io {
   /**
    * Equivalent to io.output():write(···).
    */
+  /** !TupleReturn */
   function write(...args: (string | number)[]): file | [null, string];
 }
 
@@ -137,6 +139,7 @@ interface file {
    *
    * The default value for whence is "cur", and for offset is 0. Therefore, the call file:seek() returns the current file position, without changing it; the call file:seek("set") sets the position to the beginning of the file (and returns 0); and the call file:seek("end") sets the position to the end of the file, and returns its size.
    */
+  /** !TupleReturn */
   seek(whence?: 'set' | 'cur' | 'end', offset?: number): number | [null, string];
 
   /**
@@ -154,5 +157,6 @@ interface file {
    *
    * In case of success, this function returns file. Otherwise it returns nil plus a string describing the error.
    */
+  /** !TupleReturn */
   write(...args: (string | number)[]): file | [null, string];
 }
