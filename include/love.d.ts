@@ -1,3 +1,5 @@
+// Love 11.1 typescript definitions
+
 /**
  * The different distance models.
  * 

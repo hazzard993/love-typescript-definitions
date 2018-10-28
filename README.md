@@ -1,18 +1,41 @@
 # LÖVE 2D Typescript Definition Files
 ![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)
 
-This project creates a file named `_G.d.ts`. This contains Typescript definitions to LÖVE 2D's `_G` environment.
+Provides Typescript definitions to use with [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) for LÖVE 2D.
+
+These definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
+
+Typescript supports many features that Lua lacks (such as classes) and has supporting packages that provide very useful editing functionality (as seen in the gif above).
+
+See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information regarding setup and features that you can use.
 
 ## Usage
-Obtain `_G.d.ts`. Either through the Releases page or by building the definition file yourself.
+```bash
+# Install the tstl transpiler
+npm install -g typescript-to-lua
 
-Place `_G.d.ts` within your Typescript project. LÖVE 2D's definitions should now be included in your project (depending on `tsconfig.json`). See the [Wiki]() for details regarding setup.
+# Clone this repo
+git clone https://github.com/hazzard993/love-typescript-definitions.git
+```
+Create `main.ts`.
+Create a `tsconfig.json` in your project folder, consider the options below for it.
+```js
+{
+    "compilerOptions": {
+        "baseUrl": ".",     // For resolving require(...) paths
+        "noLib": true       // Prevents the use and auto-complete suggestions of non-lua libraries
+    },
+    "files": [
+        "main.ts"           // You can swap this out with *.ts later when more files are made
+    ]
+    "include": [
+        "../love-typescript-definitions/include/*.d.ts"		// Definitions for LÖVE 2D
+    ]
+}
+```
+Make sure to at least include the `include` folder from this repo.
 
-Ready to compile and run the project? [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) should work for you.
-
-Once installed, `tstl -p .` should create all `.lua` files.
-
-Now give your project to the LÖVE 2D executable, your project will now run!
+Run `tstl -p tsconfig.json` within your project's directory to compile your project to Lua.
 
 ## Build Dependencies
 - [Moonscript](https://moonscript.org)
@@ -24,5 +47,4 @@ npm run         # See all npm commands
 npm run init    # Prepare for build
 npm run build   # Build dist/_G.d.ts
 npm run clean   # Clean out generated files
-cp dist/_G.d.ts <your project>	# Copy this file to your project to get LÖVE's definitions!
 ```
