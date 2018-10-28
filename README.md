@@ -48,6 +48,6 @@ Run `tstl -p tsconfig.json` within your project's directory to compile your proj
 ```bash
 npm run         # See all npm commands
 npm run init    # Prepare for build
-npm run build   # Build dist/_G.d.ts
+npm run build   # Build include/love.d.ts
 npm run clean   # Clean out generated files
 ```
