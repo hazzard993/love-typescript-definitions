@@ -2,7 +2,7 @@
 ![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)
 [![LOVE](https://img.shields.io/badge/L%C3%96VE-11.1-EA316E.svg)](http://love2d.org/)
 
-Provides Typescript definitions to use with [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) for LÖVE 2D.
+Provides Typescript definitions to use with [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) for LÖVE 2D's environment.
 
 These definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
 
@@ -23,20 +23,22 @@ Create a `tsconfig.json` in your project folder, consider the options below for 
 ```js
 {
     "compilerOptions": {
-        "baseUrl": ".",     // For resolving require(...) paths
-        "noLib": true       // Prevents the use and auto-complete suggestions from non-lua libraries
+        "baseUrl": ".",         // For resolving require(...) paths
+        "noLib": true,          // Prevents the use and auto-complete suggestions from non-lua libraries
+        "outDir": "lua"         // Output lua files to a directory named outDir
     },
     "files": [
-        "main.ts"           // You can swap this out with *.ts later when more files are made
+        "main.ts"               // Array of target files ready to be compiled to .lua
     ],
     "include": [
-        "../love-typescript-definitions/include/*.d.ts"		// Definitions for LÖVE 2D
+        // Definitions for LÖVE 2D, LuaJIT and Lua
+        "../love-typescript-definitions/include/*.d.ts"
     ]
 }
 ```
 Make sure to at least include the `include` folder from this repo.
 
-Run `tstl -p tsconfig.json` within your project's directory to compile your project to Lua. Use `--luaLibImport none` if you don't want `-- Lua Library Imports` at the top of your generated Lua files.
+Run `tstl -p tsconfig.json` within your project's directory to compile your project to Lua.
 
 ## Build Dependencies
 - [Moonscript](https://moonscript.org)
