@@ -14,7 +14,7 @@ See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 # Install the tstl transpiler
 npm install -g typescript-to-lua
 
-# Clone this repo
+# Clone this repo (or download and extract a zip from the releases page)
 git clone https://github.com/hazzard993/love-typescript-definitions.git
 ```
 Create `main.ts`.
@@ -23,7 +23,7 @@ Create a `tsconfig.json` in your project folder, consider the options below for 
 {
     "compilerOptions": {
         "baseUrl": ".",     // For resolving require(...) paths
-        "noLib": true       // Prevents the use and auto-complete suggestions of non-lua libraries
+        "noLib": true       // Prevents the use and auto-complete suggestions from non-lua libraries
     },
     "files": [
         "main.ts"           // You can swap this out with *.ts later when more files are made
