@@ -35,7 +35,7 @@ Create a `tsconfig.json` in your project folder, consider the options below for 
 ```
 Make sure to at least include the `include` folder from this repo.
 
-Run `tstl -p tsconfig.json` within your project's directory to compile your project to Lua.
+Run `tstl -p tsconfig.json` within your project's directory to compile your project to Lua. Use `--luaLibImport none` if you don't want `-- Lua Library Imports` at the top of your generated Lua files.
 
 ## Build Dependencies
 - [Moonscript](https://moonscript.org)
