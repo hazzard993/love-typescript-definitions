@@ -6,9 +6,9 @@ Provides Typescript definitions to use with [Typescript to Lua](https://github.c
 
 These definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
 
-Typescript supports many features that Lua lacks (such as classes) and has supporting packages that provide very useful editing functionality (as seen in the gif above).
+Typescript supports many features that Lua lacks (such as classes) and has very useful packages to use with modern text editors.
 
-See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information regarding setup and features that you can use.
+See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information regarding setup, features and editor information.
 
 ## Usage
 ```bash
