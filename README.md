@@ -27,7 +27,7 @@ Create a `tsconfig.json` in your project folder, consider the options below for 
     },
     "files": [
         "main.ts"           // You can swap this out with *.ts later when more files are made
-    ]
+    ],
     "include": [
         "../love-typescript-definitions/include/*.d.ts"		// Definitions for LÖVE 2D
     ]
