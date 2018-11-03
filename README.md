@@ -4,41 +4,72 @@
 
 Provides Typescript definitions to use with [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) for LÖVE 2D's environment.
 
-These definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
+This includes definitions for Lua and LuaJIT as well, hopefully the rest of the environment in the future.
 
-Typescript supports many features that Lua lacks (such as classes) and has very useful packages to use with modern text editors.
+LÖVE 2D's definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
 
 See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information regarding setup, features and editor information.
 
 ## Usage
-```bash
-# Install the tstl transpiler
-npm install -g typescript-to-lua
+**Install TypescriptToLua**
 
-# Clone this repo (or download and extract a zip from the releases page)
-git clone https://github.com/hazzard993/love-typescript-definitions.git
+`npm install -g typescript-to-lua`
+
+**Download the definitions**
+
+`git clone https://github.com/hazzard993/love-typescript-definitions.git`
+
+**Create your project**
+
+```bash
+mkdir proj ; cd proj
+touch main.ts
+touch tsconfig.json
 ```
-Create `main.ts`.
-Create a `tsconfig.json` in your project folder, consider the options below for it.
+
+**Configure your tsconfig.json file**
+
+Consider the options below
 ```js
 {
     "compilerOptions": {
         "baseUrl": ".",         // For resolving require(...) paths
-        "noLib": true,          // Prevents the use and auto-complete suggestions from non-lua libraries
-        "outDir": "lua"         // Output lua files to a directory named outDir
+        "noLib": true,          // Prevents auto-complete suggestions from non-lua libraries
+        "outDir": "lua"         // Output lua files to a directory named lua
     },
     "files": [
-        "main.ts"               // Array of target files ready to be compiled to .lua
+        "main.ts"               // Can be given more .ts files as your project grows
     ],
     "include": [
-        // Definitions for LÖVE 2D, LuaJIT and Lua
+        // !!! Definitions for LÖVE 2D, LuaJIT and Lua
         "../love-typescript-definitions/include/*.d.ts"
-    ]
+    ],
+    "luaTarget": "JIT"          // LÖVE 2D uses LuaJIT, tstl will be considerate of LuaJIT's environment
 }
 ```
-Make sure to at least include the `include` folder from this repo.
 
-Run `tstl -p tsconfig.json` within your project's directory to compile your project to Lua.
+**Edit your project (currently just main.ts)**
+
+You may want to consider some tooling for Typescript
+- [Typescript plugin for Sublime](https://packagecontrol.io/packages/TypeScript)
+- [VS Code](https://code.visualstudio.com/) also provides a great Typescript editing experience
+
+Your `tsconfig.json` file determines your compilation arguments and can influence what your chosen editor does.
+
+*Edit main.ts*
+```ts
+love.draw = () => {
+    love.graphics.print("Hello World", 400, 300);
+}
+```
+
+**Compile your project**
+
+`tstl -p tsconfig.json`
+
+**Run your project**
+
+`love /path/to/luafiles`
 
 ## Build Dependencies
 - [Moonscript](https://moonscript.org)
