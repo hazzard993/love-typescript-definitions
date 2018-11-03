@@ -1,5 +1,9 @@
 # LÖVE 2D Typescript Definition Files
-![Use](https://i.imgur.com/oa2M28U.png)
+
+<div><img src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png" width="50" height="50" /></div>
+<div><img src="https://bytebucket.org/rude/love/raw/0075bd3f1a52d61f21e995ab536f41f77e3a5655/platform/unix/love.svg" width="50" height="50" /></div>
+
+![Use](https://i.imgur.com/NPfeARe.png)
 [![LOVE](https://img.shields.io/badge/L%C3%96VE-11.1-EA316E.svg)](http://love2d.org/)
 
 Provides Typescript definitions to use with [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) for LÖVE 2D's environment.
