@@ -1,6 +1,6 @@
 // https://www.lua.org/manual/5.3/manual.html#2.4
 
-interface Metatable {
+interface Metatable<T = null> {
   /**
    * the addition (+) operation. If any operand for an addition is not a number
    * (nor a string coercible to a number), Lua will try to call a metamethod. First,
@@ -135,7 +135,7 @@ interface Metatable {
    * of indexing this table with key. (This indexing is regular, not raw, and
    * therefore can trigger another metamethod.)
    */
-  __index?: table | ((self: any, key: any, value: any) => any);
+  __index?: T | ((self: any, key: any, value: any) => any);
 
   /**
    * The indexing assignment table[key] = value. Like the index event, this event

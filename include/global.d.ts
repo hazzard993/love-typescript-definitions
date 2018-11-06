@@ -313,6 +313,7 @@ declare function setfenv(f: Function | 0 | 1 | 2, tbl: table);
  *
  * This function returns table.
  */
+declare function setmetatable<T extends table>(table: table, metatable?: Metatable<T>): T;
 declare function setmetatable<T extends table>(table: T, metatable?: Metatable): T;
 
 /**
