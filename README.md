@@ -19,6 +19,9 @@ You'll be able to see the final Lua code. This can be used in a `main.lua` file 
 - [Near Empty Editor](https://bit.ly/2zCUknC) for playing around
 
 ## Usage
+**Dependancies**
+- [NodeJS](https://www.npmjs.com/get-npm) for the npm command
+
 **Install TypescriptToLua**
 
 `npm install -g typescript-to-lua`
@@ -27,17 +30,11 @@ You'll be able to see the final Lua code. This can be used in a `main.lua` file 
 
 `git clone https://github.com/hazzard993/love-typescript-definitions.git`
 
-**Create your project**
+Or download from the [releases page](https://github.com/hazzard993/love-typescript-definitions/releases)
 
-```bash
-mkdir proj ; cd proj
-touch main.ts
-touch tsconfig.json
-```
+**Create a tsconfig.json file**
 
-**Configure your tsconfig.json file**
-
-Consider the options below
+Consider the options below for the contents of the file
 ```js
 {
     "compilerOptions": {
@@ -45,26 +42,28 @@ Consider the options below
         "noLib": true,          // Prevents auto-complete suggestions from non-lua libraries
         "outDir": "lua"         // Output lua files to a directory named lua
     },
-    "files": [
-        "main.ts"               // Can be given more .ts files as your project grows
-    ],
     "include": [
-        // !!! Definitions for LÖVE 2D, LuaJIT and Lua
-        "../love-typescript-definitions/include/*.d.ts"
+
+        // the definition files from this repo
+        "../love-typescript-definitions/include/*.d.ts",
+        
+        // any file ending in ts within the current directory is targeted for transpilation
+        // except d.ts files
+        "*.ts",
+
     ],
     "luaTarget": "JIT"          // LÖVE 2D uses LuaJIT, tstl will be considerate of LuaJIT's environment
 }
 ```
 
-**Edit your project (currently just main.ts)**
+Your `tsconfig.json` file determines your compilation arguments and can influence what your chosen editor does.
 
-You may want to consider some tooling for Typescript
+**Create main.ts**
+
+This plugin and editor may be useful for you when editing `main.ts`
 - [Typescript plugin for Sublime](https://packagecontrol.io/packages/TypeScript)
 - [VS Code](https://code.visualstudio.com/) also provides a great Typescript editing experience
 
-Your `tsconfig.json` file determines your compilation arguments and can influence what your chosen editor does.
-
-*Edit main.ts*
 ```ts
 love.draw = () => {
     love.graphics.print("Hello World", 400, 300);
@@ -77,7 +76,8 @@ love.draw = () => {
 
 **Run your project**
 
-`love /path/to/luafiles`
+`love.exe lua`
+Or drag the lua/ directory to love.exe
 
 ## Build Dependencies
 - [Moonscript](https://moonscript.org)
