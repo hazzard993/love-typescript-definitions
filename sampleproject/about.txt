@@ -1,0 +1,5 @@
+Sample project to try out.
+
+Compile with `tstl -p tsconfig.json`.
+
+Give the output lua/ directory to Love to run.

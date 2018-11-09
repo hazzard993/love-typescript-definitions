@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",         // Used for module resolution
+        "noLib": true,          // Prevents auto-complete suggestions from non-lua libraries
+        "outDir": "lua",        // Output lua files to a directory named lua
+    },
+    "include": [
+
+        // the definition files from this repo
+        "../include/*.d.ts",
+        
+        // any file ending in ts within the current directory is targeted for transpilation
+        // except d.ts files
+        "*.ts",
+
+    ],
+    "luaTarget": "JIT"          // LÖVE 2D uses LuaJIT, tstl will be considerate of LuaJIT's environment
+}
