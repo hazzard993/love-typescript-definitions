@@ -115,7 +115,7 @@ for m in *api.modules
 			types = table.concat constants, " | "
 			lines = wrap(e.description, 80) or {}
 			jsdoc(0, lines)
-			print "type #{totype(e.name)} = #{types}\n"
+			print "type #{totype(e.name)} = #{types};\n"
 
 for m in *api.modules
 	if m.types

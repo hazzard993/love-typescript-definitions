@@ -6,7 +6,7 @@
  * of the OpenAL 1.1 specification.
  * 
  */
-type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearclamped' | 'exponent' | 'exponentclamped'
+type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearclamped' | 'exponent' | 'exponentclamped';
 
 /**
  * Types of audio sources.
@@ -17,81 +17,81 @@ type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearc
  * once.
  * 
  */
-type SourceType = 'static' | 'stream'
+type SourceType = 'static' | 'stream';
 
 /**
  * Units that represent time.
  * 
  */
-type TimeUnit = 'seconds' | 'samples'
+type TimeUnit = 'seconds' | 'samples';
 
 /**
  * Arguments to love.event.push() and the like.
  * 
  */
-type Event = 'focus' | 'joystickaxis' | 'joystickhat' | 'joystickpressed' | 'joystickreleased' | 'keypressed' | 'keyreleased' | 'mousefocus' | 'mousepressed' | 'mousereleased' | 'resize' | 'threaderror' | 'quit' | 'visible'
+type Event = 'focus' | 'joystickaxis' | 'joystickhat' | 'joystickpressed' | 'joystickreleased' | 'keypressed' | 'keyreleased' | 'mousefocus' | 'mousepressed' | 'mousereleased' | 'resize' | 'threaderror' | 'quit' | 'visible';
 
 /**
  * Buffer modes for File objects.
  * 
  */
-type BufferMode = 'none' | 'line' | 'full'
+type BufferMode = 'none' | 'line' | 'full';
 
 /**
  * How to decode a given FileData.
  * 
  */
-type FileDecoder = 'file' | 'base64'
+type FileDecoder = 'file' | 'base64';
 
 /**
  * The different modes you can open a file in.
  * 
  */
-type FileMode = 'r' | 'w' | 'a' | 'c'
+type FileMode = 'r' | 'w' | 'a' | 'c';
 
 /**
  * The type of a file.
  * 
  */
-type FileType = 'file' | 'directory' | 'symlink' | 'other'
+type FileType = 'file' | 'directory' | 'symlink' | 'other';
 
 /**
  * Text alignment.
  * 
  */
-type AlignMode = 'center' | 'left' | 'right' | 'justify'
+type AlignMode = 'center' | 'left' | 'right' | 'justify';
 
 /**
  * Different types of arcs that can be drawn.
  * 
  */
-type ArcType = 'pie' | 'open' | 'closed'
+type ArcType = 'pie' | 'open' | 'closed';
 
 /**
  * Types of particle area spread distribution.
  * 
  */
-type AreaSpreadDistribution = 'uniform' | 'normal' | 'ellipse' | 'none'
+type AreaSpreadDistribution = 'uniform' | 'normal' | 'ellipse' | 'none';
 
 /**
  * Different ways alpha affects color blending. See BlendMode and the BlendMode
  * Formulas for additional notes.
  * 
  */
-type BlendAlphaMode = 'alphamultiply' | 'premultiplied'
+type BlendAlphaMode = 'alphamultiply' | 'premultiplied';
 
 /**
  * Different ways to do color blending. See BlendAlphaMode and the BlendMode
  * Formulas for additional notes.
  * 
  */
-type BlendMode = 'alpha' | 'replace' | 'screen' | 'add' | 'subtract' | 'multiply' | 'lighten' | 'darken'
+type BlendMode = 'alpha' | 'replace' | 'screen' | 'add' | 'subtract' | 'multiply' | 'lighten' | 'darken';
 
 /**
  * Canvas formats.
  * 
  */
-type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' | 'rgb10a2' | 'rgba16f' | 'rgba32f' | 'rg11b10f' | 'srgb' | 'r8' | 'rg8' | 'r16f' | 'rg16f' | 'r32f' | 'rg32f'
+type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' | 'rgb10a2' | 'rgba16f' | 'rgba32f' | 'rg11b10f' | 'srgb' | 'r8' | 'rg8' | 'r16f' | 'rg16f' | 'r32f' | 'rg32f';
 
 /**
  * Different types of per-pixel stencil test comparisons. The pixels of an object
@@ -99,74 +99,74 @@ type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' |
  * touches.
  * 
  */
-type CompareMode = 'equal' | 'notequal' | 'less' | 'lequal' | 'gequal' | 'greater'
+type CompareMode = 'equal' | 'notequal' | 'less' | 'lequal' | 'gequal' | 'greater';
 
 /**
  * Controls whether shapes are drawn as an outline, or filled.
  * 
  */
-type DrawMode = 'fill' | 'line'
+type DrawMode = 'fill' | 'line';
 
 /**
  * How the image is filtered when scaling.
  * 
  */
-type FilterMode = 'linear' | 'nearest'
+type FilterMode = 'linear' | 'nearest';
 
 /**
  * Graphics features that can be checked for with love.graphics.getSupported.
  * 
  */
-type GraphicsFeature = 'clampzero' | 'lighten' | 'multicanvasformats'
+type GraphicsFeature = 'clampzero' | 'lighten' | 'multicanvasformats';
 
 /**
  * Types of system-dependent graphics limits checked for using
  * love.graphics.getSystemLimits.
  * 
  */
-type GraphicsLimit = 'pointsize' | 'texturesize' | 'multicanvas' | 'canvasmsaa'
+type GraphicsLimit = 'pointsize' | 'texturesize' | 'multicanvas' | 'canvasmsaa';
 
 /**
  * Line join style.
  * 
  */
-type LineJoin = 'miter' | 'bevel' | 'none'
+type LineJoin = 'miter' | 'bevel' | 'none';
 
 /**
  * The styles in which lines are drawn.
  * 
  */
-type LineStyle = 'rough' | 'smooth'
+type LineStyle = 'rough' | 'smooth';
 
 /**
  * How a Mesh's vertices are used when drawing.
  * 
  */
-type MeshDrawMode = 'fan' | 'strip' | 'triangles' | 'points'
+type MeshDrawMode = 'fan' | 'strip' | 'triangles' | 'points';
 
 /**
  * How newly created particles are added to the ParticleSystem.
  * 
  */
-type ParticleInsertMode = 'top' | 'bottom' | 'random'
+type ParticleInsertMode = 'top' | 'bottom' | 'random';
 
 /**
  * Usage hints for SpriteBatches and Meshes to optimize data storage and access.
  * 
  */
-type SpriteBatchUsage = 'dynamic' | 'static' | 'stream'
+type SpriteBatchUsage = 'dynamic' | 'static' | 'stream';
 
 /**
  * Graphics state stack types used with love.graphics.push.
  * 
  */
-type StackType = 'transform' | 'all'
+type StackType = 'transform' | 'all';
 
 /**
  * How a stencil function modifies the stencil values of pixels it touches.
  * 
  */
-type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | 'decrementwrap' | 'invert'
+type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | 'decrementwrap' | 'invert';
 
 /**
  * How the image wraps inside a Quad with a larger quad size than image size. This
@@ -175,7 +175,7 @@ type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | '
  * using it to sample from texture coordinates outside of the range of [0, 1].
  * 
  */
-type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero'
+type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero';
 
 /**
  * Compressed image data formats. Here and here are a couple overviews of many of
@@ -188,44 +188,44 @@ type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero'
  * pixels in its fast-access cache when drawing it.
  * 
  */
-type CompressedImageFormat = 'DXT1' | 'DXT3' | 'DXT5' | 'BC4' | 'BC4s' | 'BC5' | 'BC5s' | 'BC6h' | 'BC6hs' | 'BC7' | 'ETC1' | 'ETC2rgb' | 'ETC2rgba' | 'ETC2rgba1' | 'EACr' | 'EACrs' | 'EACrg' | 'EACrgs' | 'PVR1rgb2' | 'PVR1rgb4' | 'PVR1rgba2' | 'PVR1rgba4' | 'ASTC4x4' | 'ASTC5x4' | 'ASTC5x5' | 'ASTC6x5' | 'ASTC6x6' | 'ASTC8x5' | 'ASTC8x6' | 'ASTC8x8' | 'ASTC10x5' | 'ASTC10x6' | 'ASTC10x8' | 'ASTC10x10' | 'ASTC12x10' | 'ASTC12x12'
+type CompressedImageFormat = 'DXT1' | 'DXT3' | 'DXT5' | 'BC4' | 'BC4s' | 'BC5' | 'BC5s' | 'BC6h' | 'BC6hs' | 'BC7' | 'ETC1' | 'ETC2rgb' | 'ETC2rgba' | 'ETC2rgba1' | 'EACr' | 'EACrs' | 'EACrg' | 'EACrgs' | 'PVR1rgb2' | 'PVR1rgb4' | 'PVR1rgba2' | 'PVR1rgba4' | 'ASTC4x4' | 'ASTC5x4' | 'ASTC5x5' | 'ASTC6x5' | 'ASTC6x6' | 'ASTC8x5' | 'ASTC8x6' | 'ASTC8x8' | 'ASTC10x5' | 'ASTC10x6' | 'ASTC10x8' | 'ASTC10x10' | 'ASTC12x10' | 'ASTC12x12';
 
 /**
  * Encoded image formats.
  * 
  */
-type ImageFormat = 'tga' | 'png'
+type ImageFormat = 'tga' | 'png';
 
 /**
  * Virtual gamepad axes.
  * 
  */
-type GamepadAxis = 'leftx' | 'lefty' | 'rightx' | 'righty' | 'triggerleft' | 'triggerright'
+type GamepadAxis = 'leftx' | 'lefty' | 'rightx' | 'righty' | 'triggerleft' | 'triggerright';
 
 /**
  * Virtual gamepad buttons.
  * 
  */
-type GamepadButton = 'a' | 'b' | 'x' | 'y' | 'back' | 'guide' | 'start' | 'leftstick' | 'rightstick' | 'leftshoulder' | 'rightshoulder' | 'dpup' | 'dpdown' | 'dpleft' | 'dpright'
+type GamepadButton = 'a' | 'b' | 'x' | 'y' | 'back' | 'guide' | 'start' | 'leftstick' | 'rightstick' | 'leftshoulder' | 'rightshoulder' | 'dpup' | 'dpdown' | 'dpleft' | 'dpright';
 
 /**
  * Joystick hat positions.
  * 
  */
-type JoystickHat = 'c' | 'd' | 'l' | 'ld' | 'lu' | 'r' | 'rd' | 'ru' | 'u'
+type JoystickHat = 'c' | 'd' | 'l' | 'ld' | 'lu' | 'r' | 'rd' | 'ru' | 'u';
 
 /**
  * Types of Joystick inputs.
  * 
  */
-type JoystickInputType = 'axis' | 'button' | 'hat'
+type JoystickInputType = 'axis' | 'button' | 'hat';
 
 /**
  * All the keys you can press. Note that some keys may not be available on your
  * keyboard or system.
  * 
  */
-type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'space' | '!' | '"' | '#' | '$' | '&' | "'" | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | 'kp0' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp.' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kpenter' | 'kp=' | 'up' | 'down' | 'right' | 'left' | 'home' | 'end' | 'pageup' | 'pagedown' | 'insert' | 'backspace' | 'tab' | 'clear' | 'return' | 'delete' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'numlock' | 'capslock' | 'scrollock' | 'rshift' | 'lshift' | 'rctrl' | 'lctrl' | 'ralt' | 'lalt' | 'rmeta' | 'lmeta' | 'lsuper' | 'rsuper' | 'mode' | 'compose' | 'pause' | 'escape' | 'help' | 'print' | 'sysreq' | 'break' | 'menu' | 'power' | 'euro' | 'undo' | 'www' | 'mail' | 'calculator' | 'appsearch' | 'apphome' | 'appback' | 'appforward' | 'apprefresh' | 'appbookmarks'
+type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'space' | '!' | '"' | '#' | '$' | '&' | "'" | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | 'kp0' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp.' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kpenter' | 'kp=' | 'up' | 'down' | 'right' | 'left' | 'home' | 'end' | 'pageup' | 'pagedown' | 'insert' | 'backspace' | 'tab' | 'clear' | 'return' | 'delete' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'numlock' | 'capslock' | 'scrollock' | 'rshift' | 'lshift' | 'rctrl' | 'lctrl' | 'ralt' | 'lalt' | 'rmeta' | 'lmeta' | 'lsuper' | 'rsuper' | 'mode' | 'compose' | 'pause' | 'escape' | 'help' | 'print' | 'sysreq' | 'break' | 'menu' | 'power' | 'euro' | 'undo' | 'www' | 'mail' | 'calculator' | 'appsearch' | 'apphome' | 'appback' | 'appforward' | 'apprefresh' | 'appbookmarks';
 
 /**
  * Keyboard scancodes.
@@ -248,49 +248,49 @@ type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | '
  * the final symbols that were generated.
  * 
  */
-type Scancode = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0' | 'return' | 'escape' | 'backspace' | 'tab' | 'space' | '-' | '=' | '[' | ']' | '\\' | 'nonus#' | ';' | "'" | '`' | ',' | '.' | '/' | 'capslock' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'f16' | 'f17' | 'f18' | 'f19' | 'f20' | 'f21' | 'f22' | 'f23' | 'f24' | 'lctrl' | 'lshift' | 'lalt' | 'lgui' | 'rctrl' | 'rshift' | 'ralt' | 'rgui' | 'printscreen' | 'scrolllock' | 'pause' | 'insert' | 'home' | 'numlock' | 'pageup' | 'delete' | 'end' | 'pagedown' | 'right' | 'left' | 'down' | 'up' | 'nonusbackslash' | 'application' | 'execute' | 'help' | 'menu' | 'select' | 'stop' | 'again' | 'undo' | 'cut' | 'copy' | 'paste' | 'find' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kp=' | 'kpenter' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp0' | 'kp.' | 'international1' | 'international2' | 'international3' | 'international4' | 'international5' | 'international6' | 'international7' | 'international8' | 'international9' | 'lang1' | 'lang2' | 'lang3' | 'lang4' | 'lang5' | 'mute' | 'volumeup' | 'volumedown' | 'audionext' | 'audioprev' | 'audiostop' | 'audioplay' | 'audiomute' | 'mediaselect' | 'www' | 'mail' | 'calculator' | 'computer' | 'acsearch' | 'achome' | 'acback' | 'acforward' | 'acstop' | 'acrefresh' | 'acbookmarks' | 'power' | 'brightnessdown' | 'brightnessup' | 'displayswitch' | 'kbdillumtoggle' | 'kbdillumdown' | 'kbdillumup' | 'eject' | 'sleep' | 'alterase' | 'sysreq' | 'cancel' | 'clear' | 'prior' | 'return2' | 'separator' | 'out' | 'oper' | 'clearagain' | 'crsel' | 'exsel' | 'kp00' | 'kp000' | 'thsousandsseparator' | 'decimalseparator' | 'currencyunit' | 'currencysubunit' | 'app1' | 'app2' | 'unknown'
+type Scancode = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0' | 'return' | 'escape' | 'backspace' | 'tab' | 'space' | '-' | '=' | '[' | ']' | '\\' | 'nonus#' | ';' | "'" | '`' | ',' | '.' | '/' | 'capslock' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'f16' | 'f17' | 'f18' | 'f19' | 'f20' | 'f21' | 'f22' | 'f23' | 'f24' | 'lctrl' | 'lshift' | 'lalt' | 'lgui' | 'rctrl' | 'rshift' | 'ralt' | 'rgui' | 'printscreen' | 'scrolllock' | 'pause' | 'insert' | 'home' | 'numlock' | 'pageup' | 'delete' | 'end' | 'pagedown' | 'right' | 'left' | 'down' | 'up' | 'nonusbackslash' | 'application' | 'execute' | 'help' | 'menu' | 'select' | 'stop' | 'again' | 'undo' | 'cut' | 'copy' | 'paste' | 'find' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kp=' | 'kpenter' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp0' | 'kp.' | 'international1' | 'international2' | 'international3' | 'international4' | 'international5' | 'international6' | 'international7' | 'international8' | 'international9' | 'lang1' | 'lang2' | 'lang3' | 'lang4' | 'lang5' | 'mute' | 'volumeup' | 'volumedown' | 'audionext' | 'audioprev' | 'audiostop' | 'audioplay' | 'audiomute' | 'mediaselect' | 'www' | 'mail' | 'calculator' | 'computer' | 'acsearch' | 'achome' | 'acback' | 'acforward' | 'acstop' | 'acrefresh' | 'acbookmarks' | 'power' | 'brightnessdown' | 'brightnessup' | 'displayswitch' | 'kbdillumtoggle' | 'kbdillumdown' | 'kbdillumup' | 'eject' | 'sleep' | 'alterase' | 'sysreq' | 'cancel' | 'clear' | 'prior' | 'return2' | 'separator' | 'out' | 'oper' | 'clearagain' | 'crsel' | 'exsel' | 'kp00' | 'kp000' | 'thsousandsseparator' | 'decimalseparator' | 'currencyunit' | 'currencysubunit' | 'app1' | 'app2' | 'unknown';
 
 /**
  * Compressed data formats.
  * 
  */
-type CompressedDataFormat = 'lz4' | 'zlib' | 'gzip'
+type CompressedDataFormat = 'lz4' | 'zlib' | 'gzip';
 
 /**
  * The layout of matrix elements (row-major or column-major).
  * 
  */
-type MatrixLayout = 'row' | 'column'
+type MatrixLayout = 'row' | 'column';
 
 /**
  * Types of hardware cursors.
  * 
  */
-type CursorType = 'image' | 'arrow' | 'ibeam' | 'wait' | 'waitarrow' | 'crosshair' | 'sizenwse' | 'sizenesw' | 'sizewe' | 'sizens' | 'sizeall' | 'no' | 'hand'
+type CursorType = 'image' | 'arrow' | 'ibeam' | 'wait' | 'waitarrow' | 'crosshair' | 'sizenwse' | 'sizenesw' | 'sizewe' | 'sizens' | 'sizeall' | 'no' | 'hand';
 
 /**
  * The types of a Body.
  * 
  */
-type BodyType = 'static' | 'dynamic' | 'kinematic'
+type BodyType = 'static' | 'dynamic' | 'kinematic';
 
 /**
  * Different types of joints.
  * 
  */
-type JointType = 'distance' | 'gear' | 'mouse' | 'prismatic' | 'pulley' | 'revolute' | 'friction' | 'weld' | 'rope'
+type JointType = 'distance' | 'gear' | 'mouse' | 'prismatic' | 'pulley' | 'revolute' | 'friction' | 'weld' | 'rope';
 
 /**
  * The different types of Shapes, as returned by Shape:getType.
  * 
  */
-type ShapeType = 'circle' | 'polygon' | 'edge' | 'chain'
+type ShapeType = 'circle' | 'polygon' | 'edge' | 'chain';
 
 /**
  * The basic state of the system's power supply.
  * 
  */
-type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged'
+type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged';
 
 /**
  * Types of fullscreen modes.
@@ -307,14 +307,14 @@ type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged'
  * "desktop" fullscreen mode generally avoids these issues.
  * 
  */
-type FullscreenType = 'desktop' | 'exclusive'
+type FullscreenType = 'desktop' | 'exclusive';
 
 /**
  * Types of message box dialogs. Different types may have slightly different
  * looks.
  * 
  */
-type MessageBoxType = 'info' | 'warning' | 'error'
+type MessageBoxType = 'info' | 'warning' | 'error';
 
 declare interface Source extends Object {
 	/**
