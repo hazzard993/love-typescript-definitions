@@ -120,7 +120,7 @@ declare namespace os {
    * When called without a command, os.execute returns a boolean that is true if a
    * shell is available.
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function execute(command: string): [true | null, 'exit' | 'signal', number];
 
   /**
@@ -145,7 +145,7 @@ declare namespace os {
    * If this function fails, it returns nil, plus a string describing the error
    * and the error code. Otherwise, it returns true.
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function remove(filename: string): true | [null, string];
 
   /**
@@ -153,7 +153,7 @@ declare namespace os {
    * it returns nil, plus a string describing the error and the error code.
    * Otherwise, it returns true.
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function rename(oldname: string, newname: string): true | [null, string];
 
   /**

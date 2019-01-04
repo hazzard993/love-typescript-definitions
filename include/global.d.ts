@@ -156,7 +156,7 @@ declare function getmetatable(object: table): Metatable | null;
  *
  * will iterate over the key–value pairs (1,t[1]), (2,t[2]), ..., up to the first nil value.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function ipairs<T = table>(t: T): [(t: T, index?: number) => [number, any], T, 0];
 
 /**
@@ -182,7 +182,7 @@ declare function load(
  * Similar to load, but gets the chunk from file filename or from the standard
  * input, if no file name is given.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function loadfile(
   filename?: string,
   mode?: 'b' | 't' | 'bt',
@@ -216,7 +216,7 @@ declare function loadstring(str: string, chunkname?: string);
  * value to a non-existent field in the table. You may however modify existing
  * fields. In particular, you may clear existing fields.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function next(table: table, index?: TableKey): [TableKey, any] | null;
 
 /**
@@ -229,7 +229,7 @@ declare function next(table: table, index?: TableKey): [TableKey, any] | null;
  *
  * See function next for the caveats of modifying the table during its traversal.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function pairs<T>(t: T): [(t: T, index?: TableKey) => [TableKey, any], T, null];
 
 /**
@@ -240,7 +240,7 @@ declare function pairs<T>(t: T): [(t: T, index?: TableKey) => [TableKey, any], T
  * all results from the call, after this first result. In case of any error, pcall
  * returns false plus the error message.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function pcall(f: () => any, ...args: any[]): true | [false, string];
 
 /**
@@ -370,5 +370,5 @@ declare function unpack(list: any[], i?: number, j?: number): any[];
 /**
  * This function is similar to pcall, except that it sets a new message handler msgh.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function xpcall(f: () => any, msgh: () => any, ...args: any[]): true | [false, string];

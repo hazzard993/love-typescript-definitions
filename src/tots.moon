@@ -91,7 +91,7 @@ exportfunctions = (functions,tabamt,t,classname="Unknown") ->
 					returns = "[#{table.concat r, ", "}]"
 			lines = wrap(f.description, 80) or {}
 			jsdoc(tabamt, lines, paramlines, returnlines)
-			print "#{tabs}/** !TupleReturn */" if multireturn
+			print "#{tabs}/** @TupleReturn */" if multireturn
 			if t == "namespace_variable"
 				print "#{tabs}#{pre}#{f.name}: (#{args}) => #{returns};\n"
 			elseif t == "constructors"

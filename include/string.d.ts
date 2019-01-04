@@ -61,7 +61,7 @@ declare namespace string {
    * If the pattern has captures, then in a successful match the captured values
    * are also returned, after the two indices.
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function find(
     s: string,
     pattern: string,

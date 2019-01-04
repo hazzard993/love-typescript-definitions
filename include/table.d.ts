@@ -64,5 +64,5 @@ declare namespace table {
  *
  * By default, i is 1 and j is #list.
  */
-/** !TupleReturn */
+/** @TupleReturn */
 declare function unpack(list: any[], i?: number, j?: number): any[];

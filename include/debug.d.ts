@@ -39,7 +39,7 @@ declare namespace debug {
    * hook function, the current hook mask, and the current hook count (as set by the
    * debug.sethook function).
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function gethook(thread?: thread): [null, 0] | [Function, number, string | null];
 
   /**
@@ -84,7 +84,7 @@ declare namespace debug {
    * The parameter f may also be a function. In that case, getlocal returns only the
    * name of function parameters.
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function getlocal(f: Function | number, local: number): [string, any];
   function getlocal(thread: thread, f: Function | number, local: number): [string, any];
 
@@ -107,7 +107,7 @@ declare namespace debug {
    * Variable names starting with '(' (open parenthesis) represent variables with no
    * known names (variables from chunks saved without debug information).
    */
-  /** !TupleReturn */
+  /** @TupleReturn */
   function getupvalue(f: Function, up: number): [string, any] | null;
 
   /**

@@ -1,5 +1,3 @@
-// Love 11.1 typescript definitions
-
 /**
  * The different distance models.
  * 
@@ -342,7 +340,7 @@ declare interface Source extends Object {
 	 * @return {number} ref, The reference distance.
 	 * @return {number} max, The maximum distance.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getAttenuationDistances(): [number, number];
 
 	/**
@@ -362,7 +360,7 @@ declare interface Source extends Object {
 	 * @return {number} outerAngle, The outer angle from the Source's direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.
 	 * @return {number} outerVolume, The Source's volume when the listener is outside both the inner and outer cone angles.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getCone(): [number, number, number];
 
 	/**
@@ -372,7 +370,7 @@ declare interface Source extends Object {
 	 * @return {number} y, The Y part of the direction vector.
 	 * @return {number} z, The Z part of the direction vector.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDirection(): [number, number, number];
 
 	/**
@@ -398,7 +396,7 @@ declare interface Source extends Object {
 	 * @return {number} y, The Y position of the Source.
 	 * @return {number} z, The Z position of the Source.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPosition(): [number, number, number];
 
 	/**
@@ -422,7 +420,7 @@ declare interface Source extends Object {
 	 * @return {number} y, The Y part of the velocity vector.
 	 * @return {number} z, The Z part of the velocity vector.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getVelocity(): [number, number, number];
 
 	/**
@@ -438,7 +436,7 @@ declare interface Source extends Object {
 	 * @return {number} min, The minimum volume.
 	 * @return {number} max, The maximum volume.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getVolumeLimits(): [number, number];
 
 	/**
@@ -626,7 +624,7 @@ declare interface File extends Object {
 	 * @return {boolean} success, Whether the file successfully flushed any buffered data to the disk.
 	 * @return {string} err, The error string, if an error occurred and the file could not be flushed.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	flush(): [boolean, string];
 
 	/**
@@ -635,7 +633,7 @@ declare interface File extends Object {
 	 * @return {BufferMode} mode, The current buffer mode of the file.
 	 * @return {number} size, The maximum size in bytes of the file's buffer.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getBuffer(): [BufferMode, number];
 
 	/**
@@ -702,7 +700,7 @@ declare interface File extends Object {
 	 * @return {string} contents, The contents of the read bytes.
 	 * @return {number} size, How many bytes have been read.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	read(bytes?: number): [string, number];
 
 	/**
@@ -723,7 +721,7 @@ declare interface File extends Object {
 	 * @return {boolean} success, Whether the buffer mode was successfully set.
 	 * @return {string} errorstr, The error string, if the buffer mode could not be set and an error occurred.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	setBuffer(mode: BufferMode, size?: number): [boolean, string];
 
 	/**
@@ -766,7 +764,7 @@ declare interface Canvas extends Texture {
 	 * @return {number} width, The width of the Canvas, in pixels.
 	 * @return {number} height, The height of the Canvas, in pixels.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(): [number, number];
 
 	/**
@@ -776,7 +774,7 @@ declare interface Canvas extends Texture {
 	 * @return {FilterMode} mag, Filter mode used when magnifying the canvas.
 	 * @return {number} anisotropy, Maximum amount of anisotropic filtering used.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getFilter(): [FilterMode, FilterMode, number];
 
 	/**
@@ -823,7 +821,7 @@ declare interface Canvas extends Texture {
 	 * @return {WrapMode} horizontal, Horizontal wrapping mode of the Canvas.
 	 * @return {WrapMode} vertical, Vertical wrapping mode of the Canvas.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWrap(): [WrapMode, WrapMode];
 
 	/**
@@ -908,7 +906,7 @@ declare interface Font extends Object {
 	 * @return {FilterMode} mag, Filter mode used when magnifying the font.
 	 * @return {number} anisotropy, Maximum amount of anisotropic filtering used.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getFilter(): [FilterMode, FilterMode, number];
 
 	/**
@@ -947,7 +945,7 @@ declare interface Font extends Object {
 	 * @return {number} width, The maximum width of the wrapped text.
 	 * @return {table} wrappedtext, A sequence containing each line of text that was wrapped.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWrap(text: string, wraplimit: number): [number, table];
 
 	/**
@@ -1031,7 +1029,7 @@ declare interface Mesh extends Drawable {
 	 * @return {number} min, The index of the first vertex used when drawing, or the index of the first value in the vertex map used if one is set for this Mesh.
 	 * @return {number} max, The index of the last vertex used when drawing, or the index of the last value in the vertex map used if one is set for this Mesh.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDrawRange(): [number, number];
 
 	/**
@@ -1048,7 +1046,7 @@ declare interface Mesh extends Drawable {
 	 * @return {number} attributecomponent, The first component of the first vertex attribute in the specified vertex.
 	 * @return {number} ..., Additional components of all vertex attributes in the specified vertex.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getVertex(index: number): [number, number];
 
 	/**
@@ -1064,7 +1062,7 @@ declare interface Mesh extends Drawable {
 	 * @return {number} b, The blue component of the vertex's color.
 	 * @return {number} a, The alpha component of the vertex's color.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getVertex(index: number): [number, number, number, number, number, number, number, number];
 
 	/**
@@ -1081,7 +1079,7 @@ declare interface Mesh extends Drawable {
 	 * @return {number} value2, The value of the second component of the attribute.
 	 * @return {number} ..., Any additional vertex attribute components.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getVertexAttribute(vertexindex: number, attributeindex: number): [number, number, number];
 
 	/**
@@ -1327,7 +1325,7 @@ declare interface Image extends Texture {
 	 * @return {number} width, The width of the Image, in pixels.
 	 * @return {number} height, The height of the Image, in pixels.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(): [number, number];
 
 	/**
@@ -1336,7 +1334,7 @@ declare interface Image extends Texture {
 	 * @return {FilterMode} min, Filter mode used when minifying the image.
 	 * @return {FilterMode} mag, Filter mode used when magnifying the image.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getFilter(): [FilterMode, FilterMode];
 
 	/**
@@ -1359,7 +1357,7 @@ declare interface Image extends Texture {
 	 * @return {FilterMode} mode, The filter mode used in between mipmap levels. nil if mipmap filtering is not enabled.
 	 * @return {number} sharpness, Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getMipmapFilter(): [FilterMode, number];
 
 	/**
@@ -1379,7 +1377,7 @@ declare interface Image extends Texture {
 	 * @return {WrapMode} horizontal, Horizontal wrapping mode of the image.
 	 * @return {WrapMode} vertical, Vertical wrapping mode of the image.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWrap(): [WrapMode, WrapMode];
 
 	/**
@@ -1502,7 +1500,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} dx, The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
 	 * @return {number} dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getAreaSpread(): [AreaSpreadDistribution, number, number];
 
 	/**
@@ -1533,7 +1531,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} a2, Second color, alpha component (0-255).
 	 * @return {number} ..., Etc.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getColors(): [number, number, number, number, number, number, number, number, number];
 
 	/**
@@ -1570,7 +1568,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} xmax, The maximum acceleration along the x axis.
 	 * @return {number} ymax, The maximum acceleration along the y axis.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLinearAcceleration(): [number, number, number, number];
 
 	/**
@@ -1579,7 +1577,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum amount of linear damping applied to particles.
 	 * @return {number} max, The maximum amount of linear damping applied to particles.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLinearDamping(): [number, number];
 
 	/**
@@ -1597,7 +1595,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} x, The x coordinate of the rotation offget.
 	 * @return {number} y, The y coordinate of the rotation offget.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getOffset(): [number, number];
 
 	/**
@@ -1606,7 +1604,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum life of the particles (seconds).
 	 * @return {number} max, The maximum life of the particles (seconds).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getParticleLifetime(): [number, number];
 
 	/**
@@ -1622,7 +1620,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} x, Position along x-axis.
 	 * @return {number} y, Position along y-axis.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPosition(): [number, number];
 
 	/**
@@ -1631,7 +1629,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum acceleration.
 	 * @return {number} max, The maximum acceleration.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getRadialAcceleration(): [number, number];
 
 	/**
@@ -1640,7 +1638,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum initial angle (radians).
 	 * @return {number} max, The maximum initial angle (radians).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getRotation(): [number, number];
 
 	/**
@@ -1655,7 +1653,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} size2, The second size.
 	 * @return {number} ..., Etc.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getSizes(): [number, number, number];
 
 	/**
@@ -1672,7 +1670,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum linear speed of the particles.
 	 * @return {number} max, The maximum linear speed of the particles.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getSpeed(): [number, number];
 
 	/**
@@ -1681,7 +1679,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum spin (radians per second).
 	 * @return {number} max, The maximum spin (radians per second).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getSpin(): [number, number];
 
 	/**
@@ -1713,7 +1711,7 @@ declare interface ParticleSystem extends Drawable {
 	 * @return {number} min, The minimum acceleration.
 	 * @return {number} max, The maximum acceleration.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getTangentialAcceleration(): [number, number];
 
 	/**
@@ -2026,7 +2024,7 @@ declare interface Quad extends Object {
 	 * @return {number} sw, The Texture width used by the Quad.
 	 * @return {number} sh, The Texture height used by the Quad.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getTextureDimensions(): [number, number];
 
 	/**
@@ -2037,7 +2035,7 @@ declare interface Quad extends Object {
 	 * @return {number} w, The width of the viewport.
 	 * @return {number} h, The height of the viewport.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getViewport(): [number, number, number, number];
 
 	/**
@@ -2060,7 +2058,7 @@ declare interface Shader extends Object {
 	 * @return {number} components, The number of components in the variable (e.g. 2 for a vec2 or mat2.)
 	 * @return {number} arrayelements, The number of elements in the array if the variable is an array, or 1 if not.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getExternVariable(name: string): [ShaderVariableType, number, number];
 
 	/**
@@ -2230,7 +2228,7 @@ declare interface SpriteBatch extends Drawable {
 	 * @return {number} b, The blue component (0-255).
 	 * @return {number} a, The alpha component (0-255).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getColor(): [number, number, number, number];
 
 	/**
@@ -2428,7 +2426,7 @@ declare interface Text extends Drawable {
 	 * @return {number} width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
 	 * @return {number} height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(): [number, number];
 
 	/**
@@ -2438,7 +2436,7 @@ declare interface Text extends Drawable {
 	 * @return {number} width, The width of the sub-string (before scaling and other transformations).
 	 * @return {number} height, The height of the sub-string (before scaling and other transformations).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(index: number): [number, number];
 
 	/**
@@ -2592,7 +2590,7 @@ declare interface Video extends Drawable {
 	 * @return {number} width, The width of the Video.
 	 * @return {number} height, The height of the video.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(): [number, number];
 
 	/**
@@ -2602,7 +2600,7 @@ declare interface Video extends Drawable {
 	 * @return {FilterMode} mag, The filter mode used when scaling the Video up.
 	 * @return {number} anisotropy, Maximum amount of anisotropic filtering used.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getFilter(): [FilterMode, FilterMode, number];
 
 	/**
@@ -2699,7 +2697,7 @@ declare interface CompressedImageData extends Data {
 	 * @return {number} width, The width of the CompressedImageData.
 	 * @return {number} height, The height of the CompressedImageData.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(): [number, number];
 
 	/**
@@ -2709,7 +2707,7 @@ declare interface CompressedImageData extends Data {
 	 * @return {number} width, The width of the CompressedImageData.
 	 * @return {number} height, The height of the CompressedImageData.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(level: number): [number, number];
 
 	/**
@@ -2774,7 +2772,7 @@ declare interface ImageData extends Data {
 	 * @return {number} width, The width of the ImageData in pixels.
 	 * @return {number} height, The height of the ImageData in pixels.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getDimensions(): [number, number];
 
 	/**
@@ -2798,7 +2796,7 @@ declare interface ImageData extends Data {
 	 * @return {number} b, The blue component (0-255).
 	 * @return {number} a, The alpha component (0-255).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPixel(x: number, y: number): [number, number, number, number];
 
 	/**
@@ -2863,7 +2861,7 @@ declare interface Joystick extends Object {
 	 * @return {number} axisDir2, Direction of axis2.
 	 * @return {number} axisDirN, Direction of axisN.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getAxes(): [number, number, number];
 
 	/**
@@ -2914,7 +2912,7 @@ declare interface Joystick extends Object {
 	 * @return {number} inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad axis is bound to.
 	 * @return {JoystickHat} hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. nil otherwise.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getGamepadMapping(axis: GamepadAxis): [JoystickInputType, number, JoystickHat];
 
 	/**
@@ -2925,7 +2923,7 @@ declare interface Joystick extends Object {
 	 * @return {number} inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad button is bound to.
 	 * @return {JoystickHat} hatdirection, The direction of the hat, if the virtual gamepad button is bound to a hat. nil otherwise.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getGamepadMapping(button: GamepadAxis): [JoystickInputType, number, JoystickHat];
 
 	/**
@@ -2951,7 +2949,7 @@ declare interface Joystick extends Object {
 	 * @return {number} id, The Joystick's unique identifier. Remains the same as long as the game is running.
 	 * @return {number} instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. nil if the Joystick is not connected.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getID(): [number, number];
 
 	/**
@@ -2967,7 +2965,7 @@ declare interface Joystick extends Object {
 	 * @return {number} left, Current strength of the left vibration motor on the Joystick.
 	 * @return {number} right, Current strength of the right vibration motor on the Joystick.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getVibration(): [number, number];
 
 	/**
@@ -3063,7 +3061,7 @@ declare interface BezierCurve extends Object {
 	 * @return {number} x, x coordinate of the curve at parameter t.
 	 * @return {number} y, y coordinate of the curve at parameter t.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	evaluate(t: number): [number, number];
 
 	/**
@@ -3073,7 +3071,7 @@ declare interface BezierCurve extends Object {
 	 * @return {number} x, Position of the control point along the x axis.
 	 * @return {number} y, Position of the control point along the y axis.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getControlPoint(i: number): [number, number];
 
 	/**
@@ -3222,7 +3220,7 @@ declare interface RandomGenerator extends Object {
 	 * @return {number} low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
 	 * @return {number} high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getSeed(): [number, number];
 
 	/**
@@ -3335,7 +3333,7 @@ declare interface Transform extends Object {
 	 * @return {number} ..., Additional matrix elements.
 	 * @return {number} e4_4, The fourth column of the fourth row of the matrix.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getMatrix(): [number, number, number, number];
 
 	/**
@@ -3363,7 +3361,7 @@ declare interface Transform extends Object {
 	 * @return {number} globalX, The x component of the position in global coordinates.
 	 * @return {number} globalY, The y component of the position in global coordinates.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	inverseTransformPoint(localX: number, localY: number): [number, number];
 
 	/**
@@ -3470,7 +3468,7 @@ declare interface Transform extends Object {
 	 * @return {number} localX, The x component of the position with the transform applied.
 	 * @return {number} localY, The y component of the position with the transform applied.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	transformPoint(globalX: number, globalY: number): [number, number];
 
 	/**
@@ -3762,7 +3760,7 @@ declare interface Body extends Object {
 	 * @return {number} x, The x component of the velocity vector.
 	 * @return {number} y, The y component of the velocity vector.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLinearVelocity(): [number, number];
 
 	/**
@@ -3781,7 +3779,7 @@ declare interface Body extends Object {
 	 * @return {number} vx, The x component of velocity at point (x,y).
 	 * @return {number} vy, The y component of velocity at point (x,y).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLinearVelocityFromLocalPoint(x: number, y: number): [number, number];
 
 	/**
@@ -3800,7 +3798,7 @@ declare interface Body extends Object {
 	 * @return {number} vx, The x component of velocity at point (x,y).
 	 * @return {number} vy, The y component of velocity at point (x,y).
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLinearVelocityFromWorldPoint(x: number, y: number): [number, number];
 
 	/**
@@ -3812,7 +3810,7 @@ declare interface Body extends Object {
 	 * @return {number} x, The x coordinate of the center of mass.
 	 * @return {number} y, The y coordinate of the center of mass.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLocalCenter(): [number, number];
 
 	/**
@@ -3823,7 +3821,7 @@ declare interface Body extends Object {
 	 * @return {number} localX, The x position in local coordinates.
 	 * @return {number} localY, The y position in local coordinates.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLocalPoint(worldX: number, worldY: number): [number, number];
 
 	/**
@@ -3834,7 +3832,7 @@ declare interface Body extends Object {
 	 * @return {number} localX, The vector x component in local coordinates.
 	 * @return {number} localY, The vector y component in local coordinates.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLocalVector(worldX: number, worldY: number): [number, number];
 
 	/**
@@ -3852,7 +3850,7 @@ declare interface Body extends Object {
 	 * @return {number} mass, The mass of the body.
 	 * @return {number} inertia, The rotational inertia.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getMassData(): [number, number, number, number];
 
 	/**
@@ -3864,7 +3862,7 @@ declare interface Body extends Object {
 	 * @return {number} x, The x position.
 	 * @return {number} y, The y position.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPosition(): [number, number];
 
 	/**
@@ -3897,7 +3895,7 @@ declare interface Body extends Object {
 	 * @return {number} x, The x coordinate of the center of mass.
 	 * @return {number} y, The y coordinate of the center of mass.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWorldCenter(): [number, number];
 
 	/**
@@ -3908,7 +3906,7 @@ declare interface Body extends Object {
 	 * @return {number} worldX, The x position in world coordinates.
 	 * @return {number} worldY, The y position in world coordinates.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWorldPoint(localX: number, localY: number): [number, number];
 
 	/**
@@ -3925,7 +3923,7 @@ declare interface Body extends Object {
 	 * @return {number} y2, The transformed y position of the second point.
 	 * @return {number} ..., The transformed x and y positions of additional points.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWorldPoints(x1: number, y1: number, x2: number, y2: number, ...vararg: number[]): [number, number, number, number, number];
 
 	/**
@@ -3936,7 +3934,7 @@ declare interface Body extends Object {
 	 * @return {number} worldX, The vector x component in world coordinates.
 	 * @return {number} worldY, The vector y component in world coordinates.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getWorldVector(localX: number, localY: number): [number, number];
 
 	/**
@@ -4258,7 +4256,7 @@ declare interface ChainShape extends Shape {
 	 * @return {number} x, The x-coordinate of the point.
 	 * @return {number} y, The y-coordinate of the point.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPoint(index: number): [number, number];
 
 	/**
@@ -4270,7 +4268,7 @@ declare interface ChainShape extends Shape {
 	 * @return {number} y2, The y-coordinate of the second point.
 	 * @return {number} ..., Additional x and y values.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPoints(): [number, number, number, number, number];
 
 	/**
@@ -4284,7 +4282,7 @@ declare interface ChainShape extends Shape {
 	 * @return {number} x, The x-component of the vertex, or nil if ChainShape:setNextVertex hasn't been called.
 	 * @return {number} y, The y-component of the vertex, or nil if ChainShape:setNextVertex hasn't been called.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPreviousVertex(): [number, number];
 
 	/**
@@ -4326,7 +4324,7 @@ declare interface CircleShape extends Shape {
 	 * @return {number} x, The x-component of the center point of the circle.
 	 * @return {number} y, The y-component of the center point of the circle.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPoint(): [number, number];
 
 	/**
@@ -4359,7 +4357,7 @@ declare interface Contact extends Object {
 	 * @return {Fixture} fixtureA, The first Fixture.
 	 * @return {Fixture} fixtureB, The second Fixture.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getFixtures(): [Fixture, Fixture];
 
 	/**
@@ -4379,7 +4377,7 @@ declare interface Contact extends Object {
 	 * @return {number} nx, The x component of the normal vector.
 	 * @return {number} ny, The y component of the normal vector.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getNormal(): [number, number];
 
 	/**
@@ -4391,7 +4389,7 @@ declare interface Contact extends Object {
 	 * @return {number} x2, The x coordinate of the second contact point.
 	 * @return {number} y2, The y coordinate of the second contact point.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPositions(): [number, number, number, number];
 
 	/**
@@ -4459,7 +4457,7 @@ declare interface EdgeShape extends Shape {
 	 * @return {number} x2, The x component of the second vertex.
 	 * @return {number} y2, The y component of the second vertex.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPoints(): [number, number, number, number];
 
 	/**
@@ -4473,7 +4471,7 @@ declare interface EdgeShape extends Shape {
 	 * @return {number} x, The x-component of the vertex, or nil if EdgeShape:setNextVertex hasn't been called.
 	 * @return {number} y, The y-component of the vertex, or nil if EdgeShape:setNextVertex hasn't been called.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getNextVertex(): [number, number];
 
 	/**
@@ -4487,7 +4485,7 @@ declare interface EdgeShape extends Shape {
 	 * @return {number} x, The x-component of the vertex, or nil if EdgeShape:setPreviousVertex hasn't been called.
 	 * @return {number} y, The y-component of the vertex, or nil if EdgeShape:setPreviousVertex hasn't been called.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPreviousVertex(): [number, number];
 
 	/**
@@ -4584,7 +4582,7 @@ declare interface Fixture extends Object {
 	 * @return {number} bottomRightX, The x position of the bottom-right point.
 	 * @return {number} bottomRightY, The y position of the bottom-right point.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getBoundingBox(index?: number): [number, number, number, number];
 
 	/**
@@ -4594,7 +4592,7 @@ declare interface Fixture extends Object {
 	 * @return {number} category2, The second category.
 	 * @return {number} ..., Additional categories.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getCategory(): [number, number, number];
 
 	/**
@@ -4612,7 +4610,7 @@ declare interface Fixture extends Object {
 	 * @return {number} mask, The mask as an integer from 0 to 65535.
 	 * @return {number} group, The group as an integer from -32768 to 32767.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getFilterData(): [number, number, number];
 
 	/**
@@ -4641,7 +4639,7 @@ declare interface Fixture extends Object {
 	 * @return {number} mask2, The second category selected by the mask.
 	 * @return {number} ..., Additional categories selected by the mask.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getMask(): [number, number, number];
 
 	/**
@@ -4652,7 +4650,7 @@ declare interface Fixture extends Object {
 	 * @return {number} mass, The mass of the fixture.
 	 * @return {number} inertia, The rotational inertia.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getMassData(): [number, number, number, number];
 
 	/**
@@ -4733,7 +4731,7 @@ declare interface Fixture extends Object {
 	 * @return {number} y, The y position where the ray intersects with the shape.
 	 * @return {number} fraction, The position on the input vector where the intersection happened as a number from 0 to 1.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number];
 
 	/**
@@ -4887,7 +4885,7 @@ declare interface GearJoint extends Joint {
 	 * @return {Joint} joint1, The first connected Joint.
 	 * @return {Joint} joint2, The second connected Joint.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getJoints(): [Joint, Joint];
 
 	/**
@@ -4923,7 +4921,7 @@ declare interface Joint extends Object {
 	 * @return {number} x2, The x component of the anchor on Body 2.
 	 * @return {number} y2, The y component of the anchor on Body 2.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getAnchors(): [number, number, number, number];
 
 	/**
@@ -4932,7 +4930,7 @@ declare interface Joint extends Object {
 	 * @return {Body} bodyA, The first Body.
 	 * @return {Body} bodyB, The second Body.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getBodies(): [Body, Body];
 
 	/**
@@ -4948,7 +4946,7 @@ declare interface Joint extends Object {
 	 * @return {number} x, The x component of the force.
 	 * @return {number} y, The y component of the force.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getReactionForce(): [number, number];
 
 	/**
@@ -5005,7 +5003,7 @@ declare interface MotorJoint extends Joint {
 	 * @return {number} x, The x component of the target linear offset, relative to the first Body.
 	 * @return {number} y, The y component of the target linear offset, relative to the first Body.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLinearOffset(): [number, number];
 
 	/**
@@ -5052,7 +5050,7 @@ declare interface MouseJoint extends Joint {
 	 * @return {number} x, The x component of the target.
 	 * @return {number} y, The x component of the target.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getTarget(): [number, number];
 
 	/**
@@ -5104,7 +5102,7 @@ declare interface PolygonShape extends Shape {
 	 * @return {number} y2, The y component of the second vertex.
 	 * @return {number} ..., Additional x and y values.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getPoints(): [number, number, number, number, number];
 
 }
@@ -5122,7 +5120,7 @@ declare interface PrismaticJoint extends Joint {
 	 * @return {number} x, The x-axis coordinate of the world-space axis vector.
 	 * @return {number} y, The y-axis coordinate of the world-space axis vector.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getAxis(): [number, number];
 
 	/**
@@ -5145,7 +5143,7 @@ declare interface PrismaticJoint extends Joint {
 	 * @return {number} lower, The lower limit, usually in meters.
 	 * @return {number} upper, The upper limit, usually in meters.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLimits(): [number, number];
 
 	/**
@@ -5257,7 +5255,7 @@ declare interface PulleyJoint extends Joint {
 	 * @return {number} a2x, The x coordinate of the second anchor.
 	 * @return {number} a2y, The y coordinate of the second anchor.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getGroundAnchors(): [number, number, number, number];
 
 	/**
@@ -5280,7 +5278,7 @@ declare interface PulleyJoint extends Joint {
 	 * @return {number} len1, The maximum length of the first rope segment.
 	 * @return {number} len2, The maximum length of the second rope segment.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getMaxLengths(): [number, number];
 
 	/**
@@ -5364,7 +5362,7 @@ declare interface RevoluteJoint extends Joint {
 	 * @return {number} lower, The lower limit, in radians.
 	 * @return {number} upper, The upper limit, in radians.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getLimits(): [number, number];
 
 	/**
@@ -5475,7 +5473,7 @@ declare interface Shape extends Object {
 	 * @return {number} bottomRightX, The x position of the bottom-right point.
 	 * @return {number} bottomRightY, The y position of the bottom-right point.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	computeAABB(tx: number, ty: number, tr: number, childIndex?: number): [number, number, number, number];
 
 	/**
@@ -5487,7 +5485,7 @@ declare interface Shape extends Object {
 	 * @return {number} mass, The mass of the shape.
 	 * @return {number} inertia, The rotational inertia.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	computeMass(density: number): [number, number, number, number];
 
 	/**
@@ -5549,7 +5547,7 @@ declare interface Shape extends Object {
 	 * @return {number} yn, The y component of the normal vector of the edge where the ray hit the shape.
 	 * @return {number} fraction, The position on the input line where the intersection happened as a factor of the line length.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number];
 
 	/**
@@ -5602,7 +5600,7 @@ declare interface WheelJoint extends Joint {
 	 * @return {number} x, The x-axis coordinate of the world-space axis vector.
 	 * @return {number} y, The y-axis coordinate of the world-space axis vector.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getAxis(): [number, number];
 
 	/**
@@ -5725,7 +5723,7 @@ declare interface World extends Object {
 	 * @return {Function} preSolve, Gets called before a collision gets resolved.
 	 * @return {Function} postSolve, Gets called after the collision has been resolved.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getCallbacks(): [Function, Function, Function, Function];
 
 	/**
@@ -5755,7 +5753,7 @@ declare interface World extends Object {
 	 * @return {number} x, The x component of gravity.
 	 * @return {number} y, The y component of gravity.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	getGravity(): [number, number];
 
 	/**
@@ -6093,7 +6091,7 @@ declare interface Channel extends Object {
 	 * @return {any} ret1, The first return value of the given function (if any.)
 	 * @return {any} ..., Any other return values.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	performAtomic(func: Function, arg1: any, ...vararg: any[]): [any, any];
 
 	/**
@@ -6194,7 +6192,7 @@ declare namespace love {
 	 * @return {number} revision, The revision version of LÖVE, i.e. 1 for version 0.9.1.
 	 * @return {string} codename, The codename of the current version, i.e. "Baby Inspector" for version 0.9.1.
 	 */
-	/** !TupleReturn */
+	/** @TupleReturn */
 	export function getVersion(): [number, number, number, string];
 
 	/**
@@ -6600,7 +6598,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} uy, The Y component of the up vector of the listener orientation.
 		 * @return {number} uz, The Z component of the up vector of the listener orientation.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getOrientation(): [number, number, number, number, number, number];
 
 		/**
@@ -6610,7 +6608,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} y, The Y position of the listener.
 		 * @return {number} z, The Z position of the listener.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getPosition(): [number, number, number];
 
 		/**
@@ -6620,7 +6618,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} y, The Y velocity of the listener.
 		 * @return {number} z, The Z velocity of the listener.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getVelocity(): [number, number, number];
 
 		/**
@@ -6871,7 +6869,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {Variant} c, Third event argument.
 		 * @return {Variant} d, Fourth event argument.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function wait(): [Event, Variant, Variant, Variant, Variant];
 
 	}
@@ -6889,7 +6887,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} success, True if the operation was successful, or nil if there was an error.
 		 * @return {string} errormsg, The error message on failure.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function append(name: string, data: string, size?: number): [boolean, string];
 
 		/**
@@ -7118,7 +7116,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {File} file, The new File object, or nil if an error occurred.
 		 * @return {string} errorstr, The error string if an error occurred.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function newFile(filename: string, mode?: FileMode): [File, string];
 
 		/**
@@ -7138,7 +7136,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {FileData} data, The new FileData, or nil if an error occurred.
 		 * @return {string} err, The error string, if an error occurred.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function newFileData(filepath: string): [FileData, string];
 
 		/**
@@ -7149,7 +7147,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {string} contents, The file contents.
 		 * @return {number} size, How many bytes have been read.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function read(name: string, bytes?: number): [string, number];
 
 		/**
@@ -7247,7 +7245,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} success, If the operation was successful.
 		 * @return {string} message, Error message if operation was unsuccessful.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function write(name: string, data: string, size?: number): [boolean, string];
 
 		/**
@@ -7264,7 +7262,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} success, If the operation was successful.
 		 * @return {string} message, Error message if operation was unsuccessful.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function write(name: string, data: Data, size?: number): [boolean, string];
 
 	}
@@ -7708,7 +7706,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} b, The blue component (0-255).
 		 * @return {number} a, The alpha component (0-255).
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getBackgroundColor(): [number, number, number, number];
 
 		/**
@@ -7717,7 +7715,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {BlendMode} mode, The current blend mode.
 		 * @return {BlendAlphaMode} alphamode, The current blend alpha mode – it determines how the alpha of drawn objects affects blending.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getBlendMode(): [BlendMode, BlendAlphaMode];
 
 		/**
@@ -7742,7 +7740,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} b, The blue component (0-255).
 		 * @return {number} a, The alpha component (0-255).
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getColor(): [number, number, number, number];
 
 		/**
@@ -7759,7 +7757,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} b, Whether the blue color component is active when rendering.
 		 * @return {boolean} a, Whether the alpha color component is active when rendering.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getColorMask(): [boolean, boolean, boolean, boolean];
 
 		/**
@@ -7776,7 +7774,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {FilterMode} mag, Filter mode used when scaling the image up.
 		 * @return {number} anisotropy, Maximum amount of Anisotropic Filtering used.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getDefaultFilter(): [FilterMode, FilterMode, number];
 
 		/**
@@ -7791,7 +7789,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {CompareMode} comparemode, Depth comparison mode used for depth testing.
 		 * @return {boolean} write, Whether to write update / write values to the depth buffer when rendering.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getDepthMode(): [CompareMode, boolean];
 
 		/**
@@ -7800,7 +7798,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} width, The width of the window.
 		 * @return {number} height, The height of the window.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getDimensions(): [number, number];
 
 		/**
@@ -7899,7 +7897,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} enabled, Whether stencil testing is enabled.
 		 * @return {boolean} inverted, Whether the stencil test is inverted or not.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getStencilTest(): [boolean, boolean];
 
 		/**
@@ -7935,7 +7933,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {string} vendor, The name of the graphics card vendor, e.g. "Intel Inc".
 		 * @return {string} device, The name of the graphics card, e.g. "Intel HD Graphics 3000 OpenGL Engine".
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getRendererInfo(): [string, string, string, string];
 
 		/**
@@ -7946,7 +7944,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} width, The width of the box.
 		 * @return {number} height, The height of the box.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getScissor(): [number, number, number, number];
 
 		/**
@@ -8012,7 +8010,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} globalX, The x component of the position in global coordinates.
 		 * @return {number} globalY, The y component of the position in global coordinates.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function inverseTransformPoint(screenX: number, screenY: number): [number, number];
 
 		/**
@@ -9028,7 +9026,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} screenX, The x component of the position with graphics transformations applied.
 		 * @return {number} sreenY, The y component of the position with graphics transformations applied.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function transformPoint(globalX: number, globalY: number): [number, number];
 
 		/**
@@ -9066,7 +9064,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} status, true if specified shader code doesn't contain any errors. false otherwise.
 		 * @return {string} message, Reason why shader code validation failed (or nil if validation succeded).
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function validateShader(gles: boolean, code: string): [boolean, string];
 
 		/**
@@ -9079,7 +9077,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {boolean} status, true if specified shader code doesn't contain any errors. false otherwise.
 		 * @return {string} message, Reason why shader code validation failed (or nil if validation succeded).
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function validateShader(gles: boolean, pixelcode: string, vertexcode: string): [boolean, string];
 
 	}
@@ -9449,7 +9447,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} lg, The green channel of the converted color in linear RGB space.
 		 * @return {number} lb, The blue channel of the converted color in linear RGB space.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function gammaToLinear(r: number, g: number, b: number): [number, number, number];
 
 		/**
@@ -9462,7 +9460,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} lg, The green channel of the converted color in linear RGB space.
 		 * @return {number} lb, The blue channel of the converted color in linear RGB space.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function gammaToLinear(color: table): [number, number, number];
 
 		/**
@@ -9485,7 +9483,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
 		 * @return {number} high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getRandomSeed(): [number, number];
 
 		/**
@@ -9553,7 +9551,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} cg, The green channel of the converted color in gamma sRGB space.
 		 * @return {number} cb, The blue channel of the converted color in gamma sRGB space.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function linearToGamma(lr: number, lg: number, lb: number): [number, number, number];
 
 		/**
@@ -9572,7 +9570,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} cg, The green channel of the converted color in gamma sRGB space.
 		 * @return {number} cb, The blue channel of the converted color in gamma sRGB space.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function linearToGamma(color: table): [number, number, number];
 
 		/**
@@ -9851,7 +9849,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} x, The position of the mouse along the x-axis.
 		 * @return {number} y, The position of the mouse along the y-axis.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getPosition(): [number, number];
 
 		/**
@@ -10104,7 +10102,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} x2, The x-coordinate of the second point.
 		 * @return {number} y2, The y-coordinate of the second point.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getDistance(fixture1: Fixture, fixture2: Fixture): [number, number, number, number, number];
 
 		/**
@@ -10722,7 +10720,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @return {number} percent, Percentage of battery life left, between 0 and 100. nil if the value can't be determined or there's no battery.
 		 * @return {number} seconds, Seconds of battery life left. nil if the value can't be determined or there's no battery.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getPowerInfo(): [PowerState, number, number];
 
 		/**
@@ -10893,7 +10891,7 @@ To open a file or folder, "file://" must be prepended to the path.
 		 * @return {number} x, The position along the x-axis of the touch-press inside the window, in pixels.
 		 * @return {number} y, The position along the y-axis of the touch-press inside the window, in pixels.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getPosition(id: LightUserData): [number, number];
 
 		/**
@@ -11005,7 +11003,7 @@ To open a file or folder, "file://" must be prepended to the path.
 		 * @return {number} x, The converted x-axis value of the coordinate, in density-independent units.
 		 * @return {number} y, The converted y-axis value of the coordinate, in density-independent units.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function fromPixels(px: number, py: number): [number, number];
 
 		/**
@@ -11045,7 +11043,7 @@ To open a file or folder, "file://" must be prepended to the path.
 		 * @return {boolean} fullscreen, True if the window is fullscreen, false otherwise.
 		 * @return {FullscreenType} fstype, The type of fullscreen mode used.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getFullscreen(): [boolean, FullscreenType];
 
 		/**
@@ -11070,7 +11068,7 @@ To open a file or folder, "file://" must be prepended to the path.
 		 * @return {number} height, Window height.
 		 * @return {table} flags, Table containing the window properties.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getMode(): [number, number, table];
 
 		/**
@@ -11107,7 +11105,7 @@ To open a file or folder, "file://" must be prepended to the path.
 		 * @return {number} y, The y-coordinate of the window's position.
 		 * @return {number} display, The index of the display that the window is in.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function getPosition(): [number, number, number];
 
 		/**
@@ -11384,7 +11382,7 @@ To open a file or folder, "file://" must be prepended to the path.
 		 * @return {number} px, The converted x-axis value of the coordinate, in pixels.
 		 * @return {number} py, The converted y-axis value of the coordinate, in pixels.
 		 */
-		/** !TupleReturn */
+		/** @TupleReturn */
 		export function toPixels(x: number, y: number): [number, number];
 
 		/**
