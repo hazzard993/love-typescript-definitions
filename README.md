@@ -7,23 +7,13 @@
 
 This repository contains definition files to use with the [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler within the `include/` folder.
 
-The TypeScript you write to use these definitions aim to be as similar as possible to the code you write in Lua.
-
-e.g.
-
-```ts
-love.graphics.circle("fill", 0, 0, 12);     // love.graphics.circle("fill", 0, 0, 12)
-```
-
 These definitions are for LÖVE 2D's environment.
 
 These include:
 - Definitions for LuaJIT's Lua implementation (`unpack`, `string.format`, etc)
 - Definitions for LÖVE 2D (`love.graphics.draw`, `love.graphics.newImage`, etc)
 
-See [usage](#Usage) for how you use these
-
-See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information.
+See [usage](#Usage) for how you use these.
 
 ## Try the Transpiler and Definitions Online
 You'll be able to see what the TypescriptToLua transpiler creates as Lua code.
@@ -32,6 +22,31 @@ This can be used in a `main.lua` file for a LÖVE 2D game or [run online](https:
 - [LÖVE 2D Hello World](https://bit.ly/2qB3Ljj)
 - [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2zEDdli)
 - [Near Empty Editor](https://bit.ly/2zCUknC) for playing around
+
+## Goal
+
+The goal of these definitions is to make the TypeScript you write be as similar as possible to the code you write in a LÖVE 2D project.
+
+e.g.
+
+```ts
+love.graphics.circle("fill", 0, 0, 12);     // love.graphics.circle("fill", 0, 0, 12)
+```
+
+The advantage of writing the same code in TypeScript is that:
+- Source code is checked with TypeScript's strong type checking systems
+    - Checks that a valid number of arguments have been supplied to a function
+    - Checks that a function's arguments are of the correct types
+    - Checks if a variable has been defined within the current scope
+    - Checks if a module in a seperate file exists and can be imported
+    - ...
+- Your source code can be linted with [tslint](https://palantir.github.io/tslint/)
+- Editors passively check and underline errors in your source code (depends on editor)
+- JSDoc tooltips appear when hovering over elements of source code (depends on editor)
+
+The transpiler will also allow you to use some of TypeScript's/Javascript's paradigms.
+
+See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information.
 
 ## Usage
 You'll need access to [npm](https://www.npmjs.com/get-npm).
