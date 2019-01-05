@@ -1,26 +1,40 @@
-# LÖVE 2D Typescript Definition Files
+# LÖVE 2D TypeScript Definition Files
 
 ![Use](https://i.imgur.com/NPfeARe.png)
 
 [![LOVE](https://img.shields.io/badge/L%C3%96VE-11.1-EA316E.svg)](http://love2d.org/)
+[![tstl](https://img.shields.io/badge/TypescriptToLua-0.13.1-blue.svg)](https://github.com/Perryvw/TypescriptToLua)
 
-Provides Typescript definitions to use with [Typescript to Lua](https://github.com/Perryvw/TypescriptToLua) for LÖVE 2D's environment.
+This repository contains definition files to use with the [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler within the `include/` folder.
 
-This includes definitions for Lua and LuaJIT as well, hopefully the rest of the environment in the future.
+The TypeScript you write to use these definitions aim to be as similar as possible to the code you write in Lua.
 
-LÖVE 2D's definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
+e.g.
 
-See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information regarding setup, features and editor information.
+```ts
+love.graphics.circle("fill", 0, 0, 12);     // love.graphics.circle("fill", 0, 0, 12)
+```
 
-## Try TypescriptToLua's Online Editor
-You'll be able to see the final Lua code. This can be used in a `main.lua` file for a LÖVE 2D game.
+These definitions are for LÖVE 2D's environment.
+
+These include:
+- Definitions for LuaJIT's Lua implementation (`unpack`, `string.format`, etc)
+- Definitions for LÖVE 2D (`love.graphics.draw`, `love.graphics.newImage`, etc)
+
+See [usage](#Usage) for how you use these
+
+See the [Wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for more information.
+
+## Try the Transpiler and Definitions Online
+You'll be able to see what the TypescriptToLua transpiler creates as Lua code.
+
+This can be used in a `main.lua` file for a LÖVE 2D game or [run online](https://schellingb.github.io/LoveWebBuilder/run-code).
 - [LÖVE 2D Hello World](https://bit.ly/2qB3Ljj)
-- [Classes, Autocomplete and JSDoc Tooltips](https://bit.ly/2zEDdli)
+- [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2zEDdli)
 - [Near Empty Editor](https://bit.ly/2zCUknC) for playing around
 
 ## Usage
-**Dependancies**
-- [NodeJS](https://www.npmjs.com/get-npm) for the npm command
+You'll need access to [npm](https://www.npmjs.com/get-npm).
 
 **Install TypescriptToLua**
 
@@ -60,9 +74,9 @@ Your `tsconfig.json` file determines your compilation arguments and can influenc
 
 **Create main.ts**
 
-This plugin and editor may be useful for you when editing `main.ts`
+Here are some tools / editors that may be useful when editing `main.ts`
 - [Typescript plugin for Sublime](https://packagecontrol.io/packages/TypeScript)
-- [VS Code](https://code.visualstudio.com/) also provides a great Typescript editing experience
+- [VS Code](https://code.visualstudio.com/)
 
 ```ts
 love.draw = () => {
@@ -77,13 +91,16 @@ love.draw = () => {
 **Run your project**
 
 `love.exe lua`
+
 Or drag the lua/ directory to love.exe
 
-## Build Dependencies
-- [Moonscript](https://moonscript.org)
-- [Lua 5.3.4](https://www.lua.org/download.html)
-
 ## Building and Cleaning
+LÖVE 2D's definitions are transpiled from the [love-api](https://github.com/love2d-community/love-api).
+
+**Dependencies**
+- [Moonscript](https://moonscript.org)
+- [Lua](https://www.lua.org/download.html)
+
 ```bash
 npm run         # See all npm commands
 npm run init    # Prepare for build
