@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
   },
-  "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme"
+  "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript-to-lua": "^0.14.0"
+  }
 }
