@@ -3,5 +3,4 @@ lua/src/*.lua
 lua/src/*.ts
 test/*.lua
 sampleproject/lua/*.lua
-include/love.d.ts
 node_modules
