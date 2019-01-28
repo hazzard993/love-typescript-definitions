@@ -4,12 +4,10 @@
   "description": "![Usage GIF](https://media.giphy.com/media/8rEiqcM9BldxRmSMgW/giphy.gif)",
   "scripts": {
     "init": "git submodule update --init",
-    "build": "npm run buildsrc && npm run builddef",
-    "buildsrc": "npm run clean && moonc -t lua/ src/*.moon && lua ./lua/src/tots.lua > include/love.d.ts",
-    "builddef": "lua ./lua/src/tots.lua > include/love.d.ts",
-    "test": "tstl -p test",
-    "clean": "rm test/test.lua dist/_G.d.ts lua/src/* include/love.d.ts -f",
-    "make_global": "cat include/*.d.ts include/love.d.ts >> dist/_G.d.ts"
+    "love-api-definition-generator": "npm run build-love-api-definition-generator && npm run run-love-api-definition-generator",
+    "build-love-api-definition-generator": "moonc love-api-definition-generator/*.moon",
+    "run-love-api-definition-generator": "lua love-api-definition-generator/tots.lua > include/love.d.ts",
+    "test": "tstl -p test"
   },
   "repository": {
     "type": "git",
