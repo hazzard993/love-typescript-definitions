@@ -4,6 +4,7 @@
 
 [![LOVE](https://img.shields.io/badge/L%C3%96VE-11.1-EA316E.svg)](http://love2d.org/)
 [![tstl](https://img.shields.io/badge/TypescriptToLua-0.13.1-blue.svg)](https://github.com/Perryvw/TypescriptToLua)
+[![Build Status](https://travis-ci.org/hazzard993/love-typescript-definitions.svg?branch=master)](https://travis-ci.org/hazzard993/love-typescript-definitions)
 
 This repository contains definition files to use with the [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler within the `include/` folder.
 
