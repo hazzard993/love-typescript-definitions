@@ -53,10 +53,5 @@ interface RegExp {}
 
 /**
  * Transpiles to a literal string in Lua.
- *
- * Take note of the following:
- * - "string".upper      INVALID in Lua
- * - x.upper             x is a string? VALID in Lua
- * - string.upper(x)     equivilent to previous
  */
-type String = typeof string
+interface String {}
