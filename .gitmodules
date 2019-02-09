@@ -1,3 +1,0 @@
-[submodule "love-api"]
-	path = love-api
-	url = https://github.com/love2d-community/love-api

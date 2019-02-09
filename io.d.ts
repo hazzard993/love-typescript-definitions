@@ -20,7 +20,7 @@
  * the computation of the error message and error code in case of errors may be
  * not thread safe, because they rely on the global C variable errno.
  */
-declare namespace io {
+export namespace io {
   /**
    * Equivalent to file:close(). Without a file, closes the default output file.
    */
