@@ -12,3 +12,4 @@ type ShaderVariableType = any 	// any type :(
 
 // Comment out the below code if not including l2d.lib.d.ts
 type PixelFormat = CanvasFormat
+type CanvasMipmapMode = "none" | "auto" | "manual"

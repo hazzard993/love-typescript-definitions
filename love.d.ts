@@ -8071,7 +8071,14 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @param msaa The desired number of antialiasing samples used when drawing to the Canvas.
 		 * @return {Canvas} canvas, A new Canvas object.
 		 */
-		export function newCanvas(width?: number, height?: number, format?: CanvasFormat, msaa?: number): Canvas;
+		export function newCanvas(width?: number, height?: number, settings?: {
+			type?: TextureType,
+			format?: PixelFormat,
+			readable?: boolean,
+			msaa?: number,
+			dpiscale?: number,
+			mipmaps?: CanvasMipmapMode,
+		}): Canvas;
 
 		/**
 		 * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
