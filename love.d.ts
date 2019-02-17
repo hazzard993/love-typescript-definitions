@@ -8067,12 +8067,11 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 *
 		 * @param width The width of the Canvas.
 		 * @param height The height of the Canvas.
-		 * @param format The desired texture mode of the Canvas.
-		 * @param msaa The desired number of antialiasing samples used when drawing to the Canvas.
+		 * @param settings A table of optional settings.
 		 * @return {Canvas} canvas, A new Canvas object.
 		 */
 		export function newCanvas(width?: number, height?: number, settings?: {
-			type?: TextureType,
+			//type?: TextureType,
 			format?: PixelFormat,
 			readable?: boolean,
 			msaa?: number,
