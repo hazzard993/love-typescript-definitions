@@ -1,0 +1,25 @@
+{
+  "name": "love-typescript-definitions",
+  "version": "1.0.0",
+  "description": "TypeScript definitions for working with Love2d",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ehemsley/love-typescript-definitions.git"
+  },
+  "keywords": [
+    "typescript",
+    "tstl",
+    "lua",
+    "love",
+    "love2d"
+  ],
+  "author": "Evan Hemsley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/ehemsley/love-typescript-definitions/issues"
+  },
+  "homepage": "https://gitlab.com/ehemsley/love-typescript-definitions#readme"
+}
