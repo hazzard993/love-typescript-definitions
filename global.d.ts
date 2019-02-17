@@ -1,5 +1,6 @@
 // https://www.lua.org/manual/5.1/manual.html#5.1
 
+type unknown = any;
 type table = {
   [key: number]: any;
   [key: string]: any;
