@@ -8,6 +8,8 @@
 
 Contains definition files to build LÖVE 2D projects with TypeScript!
 
+Check out [love-typescript-boilerplate](https://github.com/hazzard993/love-typescript-boilerplate) to get a sample project to build off.
+
 These definitions are built to be used with the [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler.
 
 These definitions include:
