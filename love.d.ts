@@ -4739,10 +4739,9 @@ declare interface Fixture extends Object {
 	 * represented as a number from 1 to 16.
 	 *
 	 * @param category1 The first category.
-	 * @param category2 The second category.
 	 * @param ... Additional categories.
 	 */
-	setCategory(category1: number, category2: number, ...vararg: number[]): void;
+	setCategory(category1: number, ...vararg: number[]): void;
 
 	/**
 	 * Sets the density of the fixture. Call Body:resetMassData if this needs to take
