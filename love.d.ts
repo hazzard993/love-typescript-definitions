@@ -3691,11 +3691,19 @@ declare interface Body extends Object {
 	getContactList(): table;
 
 	/**
+	 * @deprecated renamed to Body.getFixtures()
 	 * Returns a table with all fixtures.
 	 *
 	 * @return {table} fixtures, A sequence with all fixtures.
 	 */
 	getFixtureList(): table;
+
+	/**
+	 * Returns a table with all fixtures.
+	 *
+	 * @return {table} fixtures, A sequence with all fixtures.
+	 */
+	getFixtures(): table;
 
 	/**
 	 * Returns the gravity scale factor.
