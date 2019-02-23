@@ -21,6 +21,6 @@
   "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
   "devDependencies": {
     "tslint": "^5.12.1",
-    "typescript-to-lua": "^0.14.0"
+    "typescript-to-lua": "^0.15.2"
   }
 }
