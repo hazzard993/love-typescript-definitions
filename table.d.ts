@@ -3,7 +3,7 @@
 /**
  * This library provides generic functions for table manipulation. It provides
  * all its functions inside the table table.
- * 
+ *
  * Remember that, whenever an operation needs the length of a table, all caveats
  * about the length operator apply (see §3.4.7). All functions ignore non-numeric
  * keys in the tables given as arguments.
@@ -31,7 +31,7 @@ declare namespace table {
    * the elements list[pos+1], list[pos+2], ···, list[#list] and erases element
    * list[#list]; The index pos can also be 0 when #list is 0, or #list + 1; in
    * those cases, the function erases the element list[pos].
-   * 
+   *
    * The default value for pos is #list, so that a call table.remove(l) removes the
    * last element of list l.
    */
@@ -44,11 +44,11 @@ declare namespace table {
    * final order (so that, after the sort, i < j implies not comp(list[j],
    * list[i])). If comp is not given, then the standard Lua operator < is used
    * instead.
-   * 
+   *
    * Note that the comp function must define a strict partial order over the
    * elements in the list; that is, it must be asymmetric and transitive.
    * Otherwise, no valid sort may be possible.
-   * 
+   *
    * The sort algorithm is not stable: elements considered equal by the given order
    * may have their relative positions changed by the sort.
    */

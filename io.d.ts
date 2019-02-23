@@ -5,15 +5,15 @@
  * one uses implicit file handles; that is, there are operations to set a default
  * input file and a default output file, and all input/output operations are over
  * these default files. The second style uses explicit file handles.
- * 
+ *
  * When using implicit file handles, all operations are supplied by table io.
  * When using explicit file handles, the operation io.open returns a file handle
  * and then all operations are supplied as methods of the file handle.
- * 
+ *
  * The table io also provides three predefined file handles with their usual
  * meanings from C: io.stdin, io.stdout, and io.stderr. The I/O library never
  * closes these files.
- * 
+ *
  * Unless otherwise stated, all I/O functions return nil on failure (plus an
  * error message as a second result and a system-dependent error code as a third
  * result) and some value different from nil on success. On non-POSIX systems,
@@ -36,7 +36,7 @@ export namespace io {
    * its handle as the default input file. When called with a file handle, it
    * simply sets this file handle as the default input file. When called without
    * parameters, it returns the current default input file.
-   * 
+   *
    * In case of errors this function raises the error, instead of returning an
    * error code.
    */
@@ -47,11 +47,11 @@ export namespace io {
    * works like file:lines(···) over the opened file. When the iterator function
    * detects the end of file, it returns no values (to finish the loop) and
    * automatically closes the file.
-   * 
+   *
    * The call io.lines() (with no file name) is equivalent to
    * io.input():lines("*l"); that is, it iterates over the lines of the default
    * input file. In this case it does not close the file when the loop ends.
-   * 
+   *
    * In case of errors this function raises the error, instead of returning an
    * error code.
    */
@@ -83,7 +83,7 @@ export namespace io {
 
   /**
    * This function is system dependent and is not available on all platforms.
-   * 
+   *
    * Starts program prog in a separated process and returns a file handle that you
    * can use to read data from this program (if mode is "r", the default) or to
    * write data to this program (if mode is "w").
@@ -121,7 +121,7 @@ interface file {
   /**
    * Closes file. Note that files are automatically closed when their handles are
    * garbage collected, but that takes an unpredictable amount of time to happen.
-   * 
+   *
    * When closing a file handle created with io.popen, file:close returns the same
    * values returned by os.execute.
    */
@@ -136,13 +136,13 @@ interface file {
    * Returns an iterator function that, each time it is called, reads the file
    * according to the given formats. When no format is given, uses "l" as a
    * default. As an example, the construction
-   * 
+   *
    * `for c in file:lines(1) do body end`
-   * 
+   *
    * will iterate over all characters of the file, starting at the current
    * position. Unlike io.lines, this function does not close the file when the loop
    * ends.
-   * 
+   *
    * In case of errors this function raises the error, instead of returning an
    * error code.
    */
@@ -154,9 +154,9 @@ interface file {
    * characters read, or nil if it cannot read data with the specified format. (In
    * this latter case, the function does not read subsequent formats.) When called
    * without formats, it uses a default format that reads the next line (see below).
-   * 
+   *
    * The available formats are
-   * 
+   *
    * * "n": reads a numeral and returns it as a float or an integer, following the
    *   lexical conventions of Lua. (The numeral may have leading spaces and a
    *   sign.) This format always reads the longest input sequence that is a valid
@@ -172,7 +172,7 @@ interface file {
    * * number: reads a string with up to this number of bytes, returning nil on end
    *   of file. If number is zero, it reads nothing and returns an empty string,
    *   or nil on end of file.
-   * 
+   *
    * The formats "l" and "L" should be used only for text files.
    */
   read(...formats: FileReadFormat[]): unknown;
@@ -181,15 +181,15 @@ interface file {
    * Sets and geionts the file position, measured from the beginning of the file,
    * to the posit given by offset plus a base specified by the string whence, as
    * follows:
-   * 
+   *
    * * "set": base is position 0 (beginning of the file);
    * * "cur": base is current position;
    * * "end": base is end of file;
-   * 
+   *
    * In case of success, seek returns the final file position, measured in bytes
    * from the beginning of the file. If seek fails, it returns nil, plus a string
    * describing the error.
-   * 
+   *
    * The default value for whence is "cur", and for offset is 0. Therefore, the
    * call file:seek() returns the current file position, without changing it; the
    * call file:seek("set") sets the position to the beginning of the file (and
@@ -201,7 +201,7 @@ interface file {
 
   /**
    * Sets the buffering mode for an output file. There are three available modes:
-   * 
+   *
    * * "no": no buffering; the result of any output operation appears immediately.
    * * "full": full buffering; output operation is performed only when the buffer
    *   is full or when you explicitly flush the file (see io.flush).
@@ -215,7 +215,7 @@ interface file {
   /**
    * Writes the value of each of its arguments to file. The arguments must be
    * strings or numbers.
-   * 
+   *
    * In case of success, this function returns file. Otherwise it returns nil plus
    * a string describing the error.
    */

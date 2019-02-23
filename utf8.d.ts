@@ -5,7 +5,7 @@
  * functions inside the table utf8. This library does not provide any support for
  * Unicode other than the handling of the encoding. Any operation that needs the
  * meaning of a character, such as character classification, is outside its scope.
- * 
+ *
  * Unless stated otherwise, all functions that expect a byte position as a
  * parameter assume that the given position is either the start of a byte
  * sequence or one plus the length of the subject string. As in the string
@@ -28,9 +28,9 @@ declare module utf8 {
 
   /**
    * Returns values so that the construction
-   * 
+   *
    * `for p, c in utf8.codes(s) do body end`
-   * 
+   *
    * will iterate over all characters in string s, with p being the position (in
    * bytes) and c the code point of each character. It raises an error if it meets
    * any invalid byte sequence.
