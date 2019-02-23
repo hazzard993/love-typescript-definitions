@@ -27,6 +27,7 @@ Link these definitions up using this `tsconfig.json`.
 ```json
 {
     "compilerOptions": {
+        "lib": ["es6"],
         "types": ["love-typescript-definitions"]
     }
 }
