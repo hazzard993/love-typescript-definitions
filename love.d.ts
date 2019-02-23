@@ -5832,7 +5832,7 @@ declare interface World extends Object {
 	 * @param preSolve Gets called before a collision gets resolved.
 	 * @param postSolve Gets called after the collision has been resolved.
 	 */
-	setCallbacks(beginContact: Function, endContact: Function, preSolve: Function, postSolve: Function): void;
+	setCallbacks(beginContact: Function, endContact?: Function, preSolve?: Function, postSolve?: Function): void;
 
 	/**
 	 * Sets a function for collision filtering.
