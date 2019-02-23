@@ -127,7 +127,7 @@ declare namespace string {
    * For this function, a caret '^' at the start of a pattern does not work as an
    * anchor, as this would prevent the iteration.
    */
-  function gmatch(s: string, pattern: string): unknown;
+  function gmatch(s: string, pattern: string): any;
 
   /**
    * Returns a copy of s in which all (or the first n, if given) occurrences of the
@@ -177,7 +177,7 @@ declare namespace string {
    * optional numeric argument init specifies where to start the search; its default
    * value is 1 and can be negative.
    */
-  function match(s: string, pattern: string, init?: unknown): string | null;
+  function match(s: string, pattern: string, init?: any): string | null;
 
   /**
    * Returns a binary string containing the values v1, v2, etc. packed (that is,

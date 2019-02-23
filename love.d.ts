@@ -3691,11 +3691,19 @@ declare interface Body extends Object {
 	getContactList(): table;
 
 	/**
+	 * @deprecated renamed to Body.getFixtures()
 	 * Returns a table with all fixtures.
 	 *
 	 * @return {table} fixtures, A sequence with all fixtures.
 	 */
 	getFixtureList(): table;
+
+	/**
+	 * Returns a table with all fixtures.
+	 *
+	 * @return {table} fixtures, A sequence with all fixtures.
+	 */
+	getFixtures(): table;
 
 	/**
 	 * Returns the gravity scale factor.
@@ -4739,10 +4747,9 @@ declare interface Fixture extends Object {
 	 * represented as a number from 1 to 16.
 	 *
 	 * @param category1 The first category.
-	 * @param category2 The second category.
 	 * @param ... Additional categories.
 	 */
-	setCategory(category1: number, category2: number, ...vararg: number[]): void;
+	setCategory(category1: number, ...vararg: number[]): void;
 
 	/**
 	 * Sets the density of the fixture. Call Body:resetMassData if this needs to take
@@ -5833,7 +5840,7 @@ declare interface World extends Object {
 	 * @param preSolve Gets called before a collision gets resolved.
 	 * @param postSolve Gets called after the collision has been resolved.
 	 */
-	setCallbacks(beginContact: Function, endContact: Function, preSolve: Function, postSolve: Function): void;
+	setCallbacks(beginContact?: Function, endContact?: Function, preSolve?: Function, postSolve?: Function): void;
 
 	/**
 	 * Sets a function for collision filtering.
@@ -8067,11 +8074,17 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 *
 		 * @param width The width of the Canvas.
 		 * @param height The height of the Canvas.
-		 * @param format The desired texture mode of the Canvas.
-		 * @param msaa The desired number of antialiasing samples used when drawing to the Canvas.
+		 * @param settings A table of optional settings.
 		 * @return {Canvas} canvas, A new Canvas object.
 		 */
-		export function newCanvas(width?: number, height?: number, format?: CanvasFormat, msaa?: number): Canvas;
+		export function newCanvas(width?: number, height?: number, settings?: {
+			type?: TextureType,
+			format?: PixelFormat,
+			readable?: boolean,
+			msaa?: number,
+			dpiscale?: number,
+			mipmaps?: CanvasMipmapMode,
+		}): Canvas;
 
 		/**
 		 * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not

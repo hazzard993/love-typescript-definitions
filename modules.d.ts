@@ -91,7 +91,7 @@ declare namespace package {
    * some platforms (Windows, Linux, Mac OS X, Solaris, BSD, plus other Unix
    * systems that support the dlfcn standard).
    */
-  function loadlib(libname: string, funcname: string): unknown;
+  function loadlib(libname: string, funcname: string): any;
 
   /**
    * The path used by require to search for a Lua loader.

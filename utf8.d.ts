@@ -11,7 +11,7 @@
  * sequence or one plus the length of the subject string. As in the string
  * library, negative indices count from the end of the string.
  */
-declare module utf8 {
+declare namespace utf8 {
   /**
    * Receives zero or more integers, converts each one to its corresponding UTF-8
    * byte sequence and returns a string with the concatenation of all these
@@ -35,14 +35,14 @@ declare module utf8 {
    * bytes) and c the code point of each character. It raises an error if it meets
    * any invalid byte sequence.
    */
-  function codes(s: string): unknown;
+  function codes(s: string): any;
 
   /**
    * Returns the codepoints (as integers) from all characters in s that start between
    * byte position i and j (both included). The default for i is 1 and for j is i.
    * It raises an error if it meets any invalid byte sequence.
    */
-  function codepoint(s: string, i?: number, j?: number);
+  function codepoint(s: string, i?: number, j?: number): any;
 
   /**
    * Returns the number of UTF-8 characters in string s that start between positions

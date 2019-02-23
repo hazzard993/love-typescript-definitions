@@ -20,7 +20,7 @@
  * the computation of the error message and error code in case of errors may be
  * not thread safe, because they rely on the global C variable errno.
  */
-export namespace io {
+declare namespace io {
   /**
    * Equivalent to file:close(). Without a file, closes the default output file.
    */
@@ -55,7 +55,7 @@ export namespace io {
    * In case of errors this function raises the error, instead of returning an
    * error code.
    */
-  function lines(...filename: string[]): () => unknown;
+  function lines(...filename: string[]): () => any;
 
   /**
    * This function opens a file, in the mode specified in the string mode.
@@ -93,7 +93,7 @@ export namespace io {
   /**
    * Equivalent to io.input():read(···).
    */
-  function read(...formats: FileReadFormat[]): unknown;
+  function read(...formats: FileReadFormat[]): any;
 
   /**
    * In case of success, returns a handle for a temporary file. This file is opened
@@ -146,7 +146,7 @@ interface file {
    * In case of errors this function raises the error, instead of returning an
    * error code.
    */
-  lines(...formats: FileReadFormat[]): () => unknown;
+  lines(...formats: FileReadFormat[]): () => any;
 
   /**
    * Reads the file file, according to the given formats, which specify what to
@@ -175,7 +175,7 @@ interface file {
    *
    * The formats "l" and "L" should be used only for text files.
    */
-  read(...formats: FileReadFormat[]): unknown;
+  read(...formats: FileReadFormat[]): any;
 
   /**
    * Sets and geionts the file position, measured from the beginning of the file,

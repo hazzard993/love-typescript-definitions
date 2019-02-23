@@ -1,6 +1,5 @@
 // https://www.lua.org/manual/5.1/manual.html#5.1
 
-type unknown = any;
 type table = {
   [key: number]: any;
   [key: string]: any;
@@ -175,7 +174,7 @@ declare function load(
   chunk: string | (() => string | null | undefined),
   chunkname?: string,
   mode?: 'b' | 't' | 'bt',
-  env?: unknown,
+  env?: any,
 ): () => () => any | [null, string];
 
 /**
@@ -186,7 +185,7 @@ declare function load(
 declare function loadfile(
   filename?: string,
   mode?: 'b' | 't' | 'bt',
-  env?: unknown,
+  env?: any,
 ): () => any | [null, string];
 
 /**
@@ -197,7 +196,7 @@ declare function loadfile(
  *
  * When absent, chunkname defaults to the given string.
  */
-declare function loadstring(str: string, chunkname?: string);
+declare function loadstring(str: string, chunkname?: string): Function;
 
 /**
  * Allows a program to traverse all fields of a table. Its first argument is a
@@ -302,8 +301,8 @@ declare function select<T>(index: '#', ...args: T[]): number;
  * As a special case, when f is 0 setfenv changes the environment of the running
  * thread. In this case, setfenv returns no values.
  */
-declare function setfenv(f?: Function | 0 | 1 | 2);
-declare function setfenv(f: Function | 0 | 1 | 2, tbl: table);
+declare function setfenv(f?: Function | 0 | 1 | 2) : Function | null;
+declare function setfenv(f: Function | 0 | 1 | 2, tbl: table) : Function | null;
 
 /**
  * Sets the metatable for the given table. (To change the metatable of other
@@ -341,7 +340,7 @@ declare function tonumber(e: any, base?: number): number | null;
  * corresponding value with v as argument, and uses the result of the call as
  * its result.
  */
-declare function tostring(v): string;
+declare function tostring(v: any): string;
 
 /**
  * Returns the type of its only argument, coded as a string. The possible

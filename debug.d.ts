@@ -61,8 +61,8 @@ declare namespace debug {
    * getinfo(print) returns a table with all available information about the
    * print function.
    */
-  function getinfo(f: Function | number, what?: unknown): table;
-  function getinfo(thread: thread, f: Function | number, what?: unknown): table;
+  function getinfo(f: Function | number, what?: any): table;
+  function getinfo(thread: thread, f: Function | number, what?: any): table;
 
   /**
    * This function returns the name and the value of the local variable with index
@@ -97,7 +97,7 @@ declare namespace debug {
   /**
    * Returns the registry table (see §4.5).
    */
-  function getregistry(): unknown;
+  function getregistry(): any;
 
   /**
    * This function returns the name and the value of the upvalue with index up of
@@ -118,7 +118,7 @@ declare namespace debug {
    * As a special case, when f is 0 setfenv changes the environment of the running
    * thread. In this case, setfenv returns no values.
    */
-  function setfenv(f: Function | 0 | 1 | 2, tbl: table);
+  function setfenv(f: Function | 0 | 1 | 2, tbl: table): Function | null;
 
   /**
    * Sets the given function as a hook. The string mask and the number count
@@ -197,11 +197,11 @@ declare namespace debug {
    * share upvalues. Lua closures that share an upvalue (that is, that access a same
    * external local variable) will return identical ids for those upvalue indices.
    */
-  function upvalueid(f: Function, n: number): unknown;
+  function upvalueid(f: Function, n: number): any;
 
   /**
    * Make the n1-th upvalue of the Lua closure f1 refer to the n2-th upvalue of the
    * Lua closure f2.
    */
-  function upvaluejoin(f1: unknown, n1: number, f2: unknown, n2: number): unknown;
+  function upvaluejoin(f1: any, n1: number, f2: any, n2: number): any;
 }
