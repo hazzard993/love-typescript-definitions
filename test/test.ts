@@ -12,4 +12,6 @@ math.atan2(0, 0); /* This function should be available */
 
 const [k, v] = ipairs({x: 0});
 
+const [x, y, z] = [0, 1, 2];
+
 // console.log("Hello");
