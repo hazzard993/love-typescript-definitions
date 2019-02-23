@@ -12,13 +12,9 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.6
 
-/// <reference no-default-lib="true"/>
-
 /// <reference path="./love.d.ts" />
-/// <reference path="./array.ext.d.ts" />
 /// <reference path="./coroutine.d.ts" />
 /// <reference path="./debug.d.ts" />
-/// <reference path="./function.ext.d.ts" />
 /// <reference path="./global.d.ts" />
 /// <reference path="./io.d.ts" />
 /// <reference path="./lib.d.ts" />
@@ -28,5 +24,4 @@
 /// <reference path="./modules.d.ts" />
 /// <reference path="./os.d.ts" />
 /// <reference path="./string.d.ts" />
-/// <reference path="./string.ext.d.ts" />
 /// <reference path="./table.d.ts" />

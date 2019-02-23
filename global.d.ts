@@ -1,6 +1,5 @@
 // https://www.lua.org/manual/5.1/manual.html#5.1
 
-type unknown = any;
 type table = {
   [key: number]: any;
   [key: string]: any;
@@ -28,7 +27,7 @@ declare function assert(v: boolean, message?: string): void;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Performs a full garbage-collection cycle. This is the default option.
  */
 declare function collectgarbage(opt?: 'collect'): void;
@@ -36,7 +35,7 @@ declare function collectgarbage(opt?: 'collect'): void;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Stops automatic execution of the garbage collector. The collector will run only
  * when explicitly invoked, until a call to restart it.
  */
@@ -45,7 +44,7 @@ declare function collectgarbage(opt: 'stop'): void;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Restarts automatic execution of the garbage collector.
  */
 declare function collectgarbage(opt: 'restart'): void;
@@ -53,7 +52,7 @@ declare function collectgarbage(opt: 'restart'): void;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Returns the total memory in use by Lua in Kbytes. The value has a fractional
  * part, so that it multiplied by 1024 gives the exact number of bytes in use by
  * Lua (except for overflows).
@@ -63,9 +62,9 @@ declare function collectgarbage(opt: 'count'): number;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Performs a garbage-collection step. The step "size" is controlled by arg. With
- * a zero value, the collector will perform one basic (indivisible) step. For 
+ * a zero value, the collector will perform one basic (indivisible) step. For
  * non-zero values, the collector will perform as if that amount of memory (in
  * KBytes) had been allocated by Lua. Returns true if the step finished a
  * collection cycle.
@@ -75,7 +74,7 @@ declare function collectgarbage(opt: 'step', arg: number): boolean;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Sets arg as the new value for the pause of the collector (see §2.5). Returns
  * the previous value for pause.
  */
@@ -84,7 +83,7 @@ declare function collectgarbage(opt: 'setpause', arg: number): number;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Sets arg as the new value for the step multiplier of the collector (see §2.5).
  * Returns the previous value for step.
  */
@@ -93,7 +92,7 @@ declare function collectgarbage(opt: 'setstepmul', arg: number): number;
 /**
  * This function is a generic interface to the garbage collector. It performs
  * different functions according to its first argument, opt.
- * 
+ *
  * Returns a boolean that tells whether the collector is running (i.e., not
  * stopped).
  */
@@ -117,7 +116,7 @@ declare function dump(func: Function, strip?: boolean): string;
 /**
  * Terminates the last protected function called and returns message as the error
  * message. Function error never returns.
- * 
+ *
  * Usually, error adds some information about the error position at the beginning
  * of the message. The level argument specifies how to get the error position.
  * With level 1 (the default), the error position is where the error function was
@@ -163,11 +162,11 @@ declare function ipairs<T = table>(t: T): [(t: T, index?: number) => [number, an
  * Loads a chunk using function func to get its pieces. Each call to func must
  * return a string that concatenates with previous results. A return of an empty
  * string, nil, or no value signals the end of the chunk.
- * 
+ *
  * If there are no errors, returns the compiled chunk as a function; otherwise,
  * returns nil plus the error message. The environment of the returned function is
  * the global environment.
- * 
+ *
  * chunkname is used as the chunk name for error messages and debug information.
  * When absent, it defaults to "=(load)".
  */
@@ -175,7 +174,7 @@ declare function load(
   chunk: string | (() => string | null | undefined),
   chunkname?: string,
   mode?: 'b' | 't' | 'bt',
-  env?: unknown,
+  env?: any,
 ): () => () => any | [null, string];
 
 /**
@@ -186,18 +185,18 @@ declare function load(
 declare function loadfile(
   filename?: string,
   mode?: 'b' | 't' | 'bt',
-  env?: unknown,
+  env?: any,
 ): () => any | [null, string];
 
 /**
  * Similar to load, but gets the chunk from the given string.
- * 
+ *
  * To load and run a given string, use the idiom
  *      assert(loadstring(s))()
  *
  * When absent, chunkname defaults to the given string.
  */
-declare function loadstring(str: string, chunkname?: string);
+declare function loadstring(str: string, chunkname?: string): Function;
 
 /**
  * Allows a program to traverse all fields of a table. Its first argument is a
@@ -207,11 +206,11 @@ declare function loadstring(str: string, chunkname?: string);
  * with the last index, or with nil in an empty table, next returns nil. If the
  * second argument is absent, then it is interpreted as nil. In particular, you
  * can use next(t) to check whether a table is empty.
- * 
+ *
  * The order in which the indices are enumerated is not specified, even for
  * numeric indices. (To traverse a table in numeric order, use a numerical for or
  * the ipairs function.)
- * 
+ *
  * The behavior of next is undefined if, during the traversal, you assign any
  * value to a non-existent field in the table. You may however modify existing
  * fields. In particular, you may clear existing fields.
@@ -298,12 +297,12 @@ declare function select<T>(index: '#', ...args: T[]): number;
  * Sets the environment to be used by the given function. f can be a Lua function
  * or a number that specifies the function at that stack level: Level 1 is the
  * function calling setfenv. setfenv returns the given function.
- * 
+ *
  * As a special case, when f is 0 setfenv changes the environment of the running
  * thread. In this case, setfenv returns no values.
  */
-declare function setfenv(f?: Function | 0 | 1 | 2);
-declare function setfenv(f: Function | 0 | 1 | 2, tbl: table);
+declare function setfenv(f?: Function | 0 | 1 | 2) : Function | null;
+declare function setfenv(f: Function | 0 | 1 | 2, tbl: table) : Function | null;
 
 /**
  * Sets the metatable for the given table. (To change the metatable of other
@@ -341,7 +340,7 @@ declare function tonumber(e: any, base?: number): number | null;
  * corresponding value with v as argument, and uses the result of the call as
  * its result.
  */
-declare function tostring(v): string;
+declare function tostring(v: any): string;
 
 /**
  * Returns the type of its only argument, coded as a string. The possible

@@ -16,7 +16,7 @@ declare namespace coroutine {
    * coroutine, it starts running its body. The values val1, ... are passed as the
    * arguments to the body function. If the coroutine has yielded, resume restarts
    * it; the values val1, ... are passed as the results from the yield.
-   * 
+   *
    * If the coroutine runs without any errors, resume returns true plus any values
    * passed to yield (when the coroutine yields) or any values returned by the body
    * function (when the coroutine terminates). If there is any error, resume returns
@@ -40,7 +40,7 @@ declare namespace coroutine {
    * Returns the status of coroutine co, as a string: "running", if the coroutine is
    * running (that is, it called status); "suspended", if the coroutine is suspended
    * in a call to yield, or if it has not started running yet; "normal" if the
-   * coroutine is active but not running (that is, it has resumed another 
+   * coroutine is active but not running (that is, it has resumed another
    * coroutine); and "dead" if the coroutine has finished its body function, or if
    * it has stopped with an error.
    */

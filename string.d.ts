@@ -7,12 +7,12 @@
  * Indices are allowed to be negative and are interpreted as indexing backwards,
  * from the end of the string. Thus, the last character is at position -1, and so
  * on.
- * 
+ *
  * The string library provides all its functions inside the table string. It also
  * sets a metatable for strings where the __index field points to the string
  * table. Therefore, you can use the string functions in object-oriented style.
  * For instance, string.byte(s,i) can be written as s:byte(i).
- * 
+ *
  * The string library assumes one-byte character encodings.
  */
 declare namespace string {
@@ -20,7 +20,7 @@ declare namespace string {
    * Returns the internal numeric codes of the characters s[i], s[i+1], ..., s[j].
    * The default value for i is 1; the default value for j is i. These indices are
    * corrected following the same rules of function string.sub.
-   * 
+   *
    * Numeric codes are not necessarily portable across platforms.
    */
   function byte(s: string, i?: number, j?: number): number;
@@ -40,7 +40,7 @@ declare namespace string {
    * function (but with new upvalues). If strip is a true value, the binary
    * representation may not include all debug information about the function, to
    * save space.
-   * 
+   *
    * Functions with upvalues have only their number of upvalues saved. When (re)
    * loaded, those upvalues receive fresh instances containing nil. (You can use
    * the debug library to serialize and reload the upvalues of a function in a way
@@ -57,7 +57,7 @@ declare namespace string {
    * pattern matching facilities, so the function does a plain "find substring"
    * operation, with no characters in pattern being considered magic. Note that if
    * plain is given, then init must be given as well.
-   * 
+   *
    * If the pattern has captures, then in a successful match the captured values
    * are also returned, after the two indices.
    */
@@ -75,23 +75,23 @@ declare namespace string {
    * string follows the same rules as the ISO C function sprintf. The only
    * differences are that the options/modifiers *, h, L, l, n, and p are not
    * supported and that there is an extra option, q.
-   * 
+   *
    * The q option formats a string between double quotes, using escape sequences
    * when necessary to ensure that it can safely be read back by the Lua
    * interpreter. For instance, the call
-   * 
+   *
    * `string.format('%q', 'a string with "quotes" and \n new line')`
-   * 
+   *
    * may produce the string:
-   * 
+   *
    * `"a string with \"quotes\" and \
    * new line"`
-   * 
+   *
    * Options A, a, E, e, f, G, and g all expect a number as argument. Options c, d,
    * i, o, u, X, and x expect an integer. When Lua is compiled with a C89 compiler,
    * options A and a (hexadecimal floats) do not support any modifier (flags,
    * width, length).
-   * 
+   *
    * Option s expects a string; if its argument is not a string, it is converted to
    * one following the same rules of tostring. If the option has any modifier
    * (flags, width, length), the string argument should not contain embedded zeros.
@@ -102,20 +102,20 @@ declare namespace string {
    * Returns an iterator function that, each time it is called, returns the next
    * captures from pattern (see §6.4.1) over the string s. If pattern specifies no
    * captures, then the whole match is produced in each call.
-   * 
+   *
    * As an example, the following loop will iterate over all the words from string
    * s, printing one per line:
-   * 
+   *
    * ```
    * s = "hello world from Lua"
    * for w in string.gmatch(s, "%a+") do
    *   print(w)
    * end
    * ```
-   * 
+   *
    * The next example collects all pairs key=value from the given string into a
    * table:
-   * 
+   *
    * ```
    * t = {}
    * s = "from=world, to=Lua"
@@ -123,11 +123,11 @@ declare namespace string {
    *   t[k] = v
    * end
    * ```
-   * 
+   *
    * For this function, a caret '^' at the start of a pattern does not work as an
    * anchor, as this would prevent the iteration.
    */
-  function gmatch(s: string, pattern: string): unknown;
+  function gmatch(s: string, pattern: string): any;
 
   /**
    * Returns a copy of s in which all (or the first n, if given) occurrences of the
@@ -135,21 +135,21 @@ declare namespace string {
    * repl, which can be a string, a table, or a function. gsub also returns, as its
    * second value, the total number of matches that occurred. The name gsub comes
    * from Global SUBstitution.
-   * 
+   *
    * If repl is a string, then its value is used for replacement. The character %
    * works as an escape character: any sequence in repl of the form %d, with d
    * between 1 and 9, stands for the value of the d-th captured substring. The
    * sequence %0 stands for the whole match. The sequence %% stands for a single %.
-   * 
+   *
    * If repl is a table, then the table is queried for every match, using the first
    * capture as the key.
-   * 
+   *
    * If repl is a function, then this function is called every time a match occurs,
    * with all captured substrings passed as arguments, in order.
-   * 
+   *
    * In any case, if the pattern specifies no captures, then it behaves as if the
    * whole pattern was inside a capture.
-   * 
+   *
    * If the value returned by the table query or by the function call is a string
    * or a number, then it is used as the replacement string; otherwise, if it is
    * false or nil, then there is no replacement (that is, the original match is
@@ -177,7 +177,7 @@ declare namespace string {
    * optional numeric argument init specifies where to start the search; its default
    * value is 1 and can be negative.
    */
-  function match(s: string, pattern: string, init?: unknown): string | null;
+  function match(s: string, pattern: string, init?: any): string | null;
 
   /**
    * Returns a binary string containing the values v1, v2, etc. packed (that is,
