@@ -1,6 +1,6 @@
 {
   "name": "love-typescript-definitions",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
     "test": "tstl -p test"
@@ -9,6 +9,12 @@
     "type": "git",
     "url": "git+https://github.com/hazzard993/love-typescript-definitions.git"
   },
+  "keywords": [
+    "love2d",
+    "love",
+    "lua",
+    "typescript"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
