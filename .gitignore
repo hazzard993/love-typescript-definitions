@@ -1,6 +1,2 @@
-dist/*.ts
-lua/src/*.lua
-lua/src/*.ts
+node_modules/
 test/*.lua
-sampleproject/lua/*.lua
-node_modules
