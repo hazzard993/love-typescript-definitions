@@ -8060,6 +8060,18 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		export function line(points: table): void;
 
 		/**
+		 * Interface for passing settings table to love.graphics.newCanvas
+		 */
+		export interface CanvasSettings {
+			type?: TextureType,
+			format?: PixelFormat,
+			readable?: boolean,
+			msaa?: number,
+			dpiscale?: number,
+			mipmaps?: CanvasMipmapMode,
+		}
+
+		/**
 		 * Creates a new Canvas object for offscreen rendering.
 		 *
 		 *
@@ -8077,14 +8089,7 @@ Note that you can't disable love.filesystem; it's mandatory. The same goes for t
 		 * @param settings A table of optional settings.
 		 * @return {Canvas} canvas, A new Canvas object.
 		 */
-		export function newCanvas(width?: number, height?: number, settings?: {
-			type?: TextureType,
-			format?: PixelFormat,
-			readable?: boolean,
-			msaa?: number,
-			dpiscale?: number,
-			mipmaps?: CanvasMipmapMode,
-		}): Canvas;
+		export function newCanvas(width?: number, height?: number, settings?: CanvasSettings): Canvas;
 
 		/**
 		 * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
