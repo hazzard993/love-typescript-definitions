@@ -28,7 +28,7 @@ declare namespace math {
    * Returns the arc tangent of y/x (in radians), but uses the signs of both
    * parameters to find the quadrant of the result. (It also handles correctly the
    * case of x being zero.)
-   * 
+   *
    * The default value for x is 1, so that the call math.atan(y) returns the arc
    * tangent of y.
    */
@@ -143,7 +143,7 @@ declare namespace math {
    * math.random returns a pseudo-random integer with uniform distribution in the
    * range [m, n]. (The value n-m cannot be negative and must fit in a Lua
    * integer.) The call math.random(n) is equivalent to math.random(1,n).
-   * 
+   *
    * This function is an interface to the underling pseudo-random generator
    * function provided by C.
    */
@@ -166,7 +166,7 @@ declare namespace math {
   function sinh(x: number): number;
 
   /**
-   * Returns the square root of x. 
+   * Returns the square root of x.
    * (You can also use the expression x^0.5 to compute this value.)
    */
   function sqrt(x: number): number;

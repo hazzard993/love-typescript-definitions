@@ -60,7 +60,7 @@ interface Metatable<T = null> {
   __bor?(self: any, operand: any): any;
 
   /**
-   * the bitwise exclusive OR (binary ~) operation. Behavior similar to the 
+   * the bitwise exclusive OR (binary ~) operation. Behavior similar to the
    * bitwise AND operation.
    */
   __bxor?(self: any, operand: any): any;
@@ -141,13 +141,13 @@ interface Metatable<T = null> {
    * The indexing assignment table[key] = value. Like the index event, this event
    * happens when table is not a table or when key is not present in table. The
    * metamethod is looked up in table.
-   * 
+   *
    * Like with indexing, the metamethod for this event can be either a function or
    * a table. If it is a function, it is called with table, key, and value as
    * arguments. If it is a table, Lua does an indexing assignment to this table
    * with the same key and value. (This assignment is regular, not raw, and
    * therefore can trigger another metamethod.)
-   * 
+   *
    * Whenever there is a __newindex metamethod, Lua does not perform the primitive
    * assignment. (If necessary, the metamethod itself can call rawset to do the
    * assignment.)
