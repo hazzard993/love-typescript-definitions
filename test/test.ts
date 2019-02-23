@@ -1,6 +1,8 @@
 // This file should be able to be compiled.
 // No Errors should be shown.
 
+import * as utf8 from "utf8";
+
 love.graphics.newImage("filename");	// Will cause an error if l2d.lib.d.ts doesn't exist
 
 love.update = (delta: number) =>
