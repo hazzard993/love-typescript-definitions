@@ -3,7 +3,7 @@
   "version": "0.5.1",
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
-    "test": "tstl -p test"
+    "test": "tstl -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
   "devDependencies": {
     "typescript-to-lua": "^0.15.2"
+  },
+  "dependencies": {
+    "types-lua": "github:ark120202/types-lua"
   }
 }
