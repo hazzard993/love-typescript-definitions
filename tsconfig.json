@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"lib": ["es6"],
+		"types": ["types-lua/jit"]
+	},
+	"include": [
+		"test/*.ts",
+		"*.d.ts"
+	]
+}
