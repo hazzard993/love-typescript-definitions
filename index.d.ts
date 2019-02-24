@@ -1,3 +1,4 @@
+import "./Conf";
 import "./debug";
 import "./global";
 import "./love";
