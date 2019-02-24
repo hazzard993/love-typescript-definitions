@@ -18,13 +18,6 @@ type userdata = any;
 declare let arg: { [index: number]: string };
 
 /**
- * Returns a string containing a binary representation of the given function, so
- * that a later loadstring on this string returns a copy of the function. function
- * must be a Lua function without upvalues.
- */
-declare function dump(func: Function, strip?: boolean): string;
-
-/**
  * Returns the current environment in use by the function. f can be a Lua function
  * or a number that specifies the function at that stack level: Level 1 is the
  * function calling getfenv. If the given function is not a Lua function, or if f

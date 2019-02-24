@@ -6,15 +6,9 @@
 [![tstl](https://img.shields.io/badge/TypescriptToLua-0.15.2-blue.svg)](https://github.com/Perryvw/TypescriptToLua)
 [![Build Status](https://travis-ci.org/hazzard993/love-typescript-definitions.svg?branch=master)](https://travis-ci.org/hazzard993/love-typescript-definitions)
 
-Contains definition files to build LÖVE 2D projects with TypeScript!
+Contains definition files to build LÖVE 2D projects with TypeScript via the use of [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler!
 
 Check out [love-typescript-boilerplate](https://github.com/hazzard993/love-typescript-boilerplate) to get a sample project to build off.
-
-These definitions are built to be used with the [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler.
-
-These definitions include:
-- Definitions for LuaJIT's Lua environment (`unpack`, `string.format`, etc)
-- Definitions for LÖVE 2D (`love.graphics.draw`, `love.graphics.newImage`, etc)
 
 You can install these definitions to your project via NPM!
 
@@ -28,7 +22,10 @@ Link these definitions up using this `tsconfig.json`.
 {
     "compilerOptions": {
         "lib": ["es6"],
-        "types": ["love-typescript-definitions"]
+        "types": [
+            "types-lua/luajit",
+            "love-typescript-definitions"
+        ]
     }
 }
 ```
