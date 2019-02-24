@@ -6190,6 +6190,11 @@ interface Object {
 	typeOf(name: string): boolean;
 
 }
+
+/**
+ * Contains all LÖVE 2D modules and functions.
+ * @link https://love2d.org/wiki/love
+ */
 declare namespace love {
 	/**
 	 * Gets the current running version of LÖVE.
@@ -6229,31 +6234,9 @@ declare namespace love {
 	export function hasDeprecationOutput(): boolean;
 
 	/**
-	 * If a file called conf.lua is present in your game folder (or .love file), it is
-	 * run before the LÖVE modules are loaded. You can use this file to overwrite the
-	 * love.conf function, which is later called by the LÖVE 'boot' script. Using the
-	 * love.conf function, you can set some configuration options, and change things
-	 * like the default size of the window, which modules are loaded, and other stuff.
-	 *
-	 * @param t The love.conf function takes one argument: a table filled with all the default values which you can overwrite to your liking. If you want to change the default window size, for instance, do:
-
-function love.conf(t)
-    t.window.width = 1024
-    t.window.height = 768
-end
-
-If you don't need the physics module or joystick module, do the following.
-
-function love.conf(t)
-    t.modules.joystick = false
-    t.modules.physics = false
-end
-
-Setting unused modules to false is encouraged when you release your game. It reduces startup time slightly (especially if the joystick module is disabled) and reduces memory usage (slightly).
-
-Note that you can't disable love.filesystem; it's mandatory. The same goes for the love module itself. love.graphics needs love.window to be enabled.
+	 * Should be overwritten inside a conf.lua file.
 	 */
-	export let conf: (t: table) => void;
+	export let conf: (t: Conf) => void;
 
 	/**
 	 * Callback function triggered when a directory is dragged and dropped onto the
