@@ -16,4 +16,8 @@ const [k, v] = ipairs({x: 0});
 
 const [x, y, z] = [0, 1, 2];
 
+// In love, not LuaJIT
+debug.setfenv(1, {});
+debug.getfenv(1);
+
 // console.log("Hello");
