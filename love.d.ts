@@ -6313,11 +6313,7 @@ declare namespace love {
 	 * @link [love.focus](https://love2d.org/wiki/love.focus)
 	 * @example
 	 * love.focus = (focus: boolean) => {
-	 *   if (focus) {
-	 *     print("Focused");
-	 *   } else {
-	 *     print("Not focused");
-	 *   }
+	 *   print(focus);
 	 * }
 	 */
 	export let focus: (focus: boolean) => void;
@@ -6328,6 +6324,7 @@ declare namespace love {
 	 * @param joystick The joystick object.
 	 * @param axis The virtual gamepad axis.
 	 * @param value The new axis value.
+	 * @link [love.gamepadaxis](https://love2d.org/wiki/love.gamepadaxis)
 	 */
 	export let gamepadaxis: (joystick: Joystick, axis: GamepadAxis, value: number) => void;
 
@@ -6336,6 +6333,7 @@ declare namespace love {
 	 *
 	 * @param joystick The joystick object.
 	 * @param button The virtual gamepad button.
+	 * @link [love.gamepadpressed](https://love2d.org/wiki/love.gamepadpressed)
 	 */
 	export let gamepadpressed: (joystick: Joystick, button: GamepadButton) => void;
 
@@ -6344,6 +6342,7 @@ declare namespace love {
 	 *
 	 * @param joystick The joystick object.
 	 * @param button The virtual gamepad button.
+	 * @link [love.gamepadreleased](https://love2d.org/wiki/love.gamepadreleased)
 	 */
 	export let gamepadreleased: (joystick: Joystick, button: GamepadButton) => void;
 
@@ -6355,6 +6354,7 @@ declare namespace love {
 	 * already connected when the game started up.
 	 *
 	 * @param joystick The newly connected Joystick object.
+	 * @link [love.joystickadded](https://love2d.org/wiki/love.joystickadded)
 	 */
 	export let joystickadded: (joystick: Joystick) => void;
 
@@ -6364,6 +6364,7 @@ declare namespace love {
 	 * @param joystick The joystick object.
 	 * @param axis The axis number.
 	 * @param value The new axis value.
+	 * @link [love.joystickaxis](https://love2d.org/wiki/love.joystickaxis)
 	 */
 	export let joystickaxis: (joystick: Joystick, axis: number, value: number) => void;
 
@@ -6373,6 +6374,7 @@ declare namespace love {
 	 * @param joystick The joystick object.
 	 * @param hat The hat number.
 	 * @param direction The new hat direction.
+	 * @link [love.joystickhat](https://love2d.org/wiki/love.joystickhat)
 	 */
 	export let joystickhat: (joystick: Joystick, hat: number, direction: JoystickHat) => void;
 
@@ -6381,6 +6383,7 @@ declare namespace love {
 	 *
 	 * @param joystick The joystick number.
 	 * @param button The button number.
+	 * @link [love.joystickpressed](https://love2d.org/wiki/love.joystickpressed)
 	 */
 	export let joystickpressed: (joystick: number, button: number) => void;
 
@@ -6389,6 +6392,7 @@ declare namespace love {
 	 *
 	 * @param joystick The joystick number.
 	 * @param button The button number.
+	 * @link [love.joystickreleased](https://love2d.org/wiki/love.joystickreleased)
 	 */
 	export let joystickreleased: (joystick: number, button: number) => void;
 
@@ -6396,6 +6400,7 @@ declare namespace love {
 	 * Called when a Joystick is disconnected.
 	 *
 	 * @param joystick The now-disconnected Joystick object.
+	 * @link [love.joystickremoved](https://love2d.org/wiki/love.joystickremoved)
 	 */
 	export let joystickremoved: (joystick: Joystick) => void;
 
@@ -6405,6 +6410,7 @@ declare namespace love {
 	 * @param key Character of the pressed key.
 	 * @param scancode The scancode representing the pressed key.
 	 * @param isrepeat Whether this keypress event is a repeat. The delay between key repeats depends on the user's system settings.
+	 * @link [love.keypressed](https://love2d.org/wiki/love.keypressed)
 	 */
 	export let keypressed: (key: KeyConstant, scancode: Scancode, isrepeat: boolean) => void;
 
@@ -6413,6 +6419,7 @@ declare namespace love {
 	 *
 	 * @param key Character of the released key.
 	 * @param scancode The scancode representing the released key.
+	 * @link [love.keyreleased](https://love2d.org/wiki/love.keyreleased)
 	 */
 	export let keyreleased: (key: KeyConstant, scancode: Scancode) => void;
 
@@ -6420,20 +6427,25 @@ declare namespace love {
 	 * This function is called exactly once at the beginning of the game.
 	 *
 	 * @param arg Command line arguments given to the game.
+	 * @param unfilteredArg Unfiltered command-line arguments given to the executable (see [#Notes](https://love2d.org/wiki/love.load#Notes)).
+	 * @link [love.load](https://love2d.org/wiki/love.load)
+	 * @example
+	 * let image: Image;
+	 * love.load = () => {
+	 *   image = love.graphics.newImage("image.png");
+	 * }
+	 * 
+	 * love.draw = () => {
+	 *   love.graphics.draw(image, 50, 50);
+	 * }
 	 */
-	export let load: (arg: table) => void;
+	export let load: (arg: table, unfilteredArg?: table) => void;
 
 	/**
-	 * Callback function triggered when the system is running out of memory on mobile
-	 * devices.
+	 * Callback function triggered when the system is running out of memory on mobile devices.
 	 *
-	 *
-	 * Mobile operating systems may forcefully kill the game if it uses too much
-	 * memory, so any non-critical resource should be removed if possible (by setting
-	 * all variables referencing the resources to nil, and calling collectgarbage()),
-	 * when this event is triggered. Sounds and images in particular tend to use the
-	 * most memory.
-	 *
+	 * Mobile operating systems may forcefully kill the game if it uses too much memory, so any non-critical resource should be removed if possible (by setting all variables referencing the resources to nil, and calling collectgarbage()), when this event is triggered. Sounds and images in particular tend to use the most memory.
+	 * @link [love.lowmemory](https://love2d.org/wiki/love.lowmemory)
 	 */
 	export let lowmemory: () => void;
 
@@ -6441,6 +6453,7 @@ declare namespace love {
 	 * Callback function triggered when window receives or loses mouse focus.
 	 *
 	 * @param focus Whether the window has mouse focus or not.
+	 * @link [love.mousefocus](https://love2d.org/wiki/love.mousefocus)
 	 */
 	export let mousefocus: (focus: boolean) => void;
 
@@ -6452,6 +6465,7 @@ declare namespace love {
 	 * @param dx The amount moved along the x-axis since the last time love.mousemoved was called.
 	 * @param dy The amount moved along the y-axis since the last time love.mousemoved was called.
 	 * @param istouch True if the mouse button press originated from a touchscreen touch-press.
+	 * @link [love.mousemoved](https://love2d.org/wiki/love.mousemoved)
 	 */
 	export let mousemoved: (x: number, y: number, dx: number, dy: number, istouch: boolean) => void;
 
@@ -6462,6 +6476,7 @@ declare namespace love {
 	 * @param y Mouse y position, in pixels.
 	 * @param button The button index that was pressed. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependent
 	 * @param isTouch True if the mouse button press originated from a touchscreen touch-press.
+	 * @link [love.mousepressed](https://love2d.org/wiki/love.mousepressed)
 	 */
 	export let mousepressed: (x: number, y: number, button: number, isTouch: boolean) => void;
 
@@ -6472,6 +6487,7 @@ declare namespace love {
 	 * @param y Mouse y position, in pixels.
 	 * @param button The button index that was released. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependent.
 	 * @param isTouch True if the mouse button press originated from a touchscreen touch-release.
+	 * @link [love.mousereleased](https://love2d.org/wiki/love.mousereleased)
 	 */
 	export let mousereleased: (x: number, y: number, button: number, isTouch: boolean) => void;
 
@@ -6479,6 +6495,7 @@ declare namespace love {
 	 * Callback function triggered when the game is closed.
 	 *
 	 * @return {boolean} r, Abort quitting. If true, do not close the game.
+	 * @link [love.quit](https://love2d.org/wiki/love.quit)
 	 */
 	export let quit: () => boolean;
 
@@ -6496,13 +6513,14 @@ declare namespace love {
 	 *
 	 * @param w The new width.
 	 * @param h The new height.
+	 * @link [love.resize](https://love2d.org/wiki/love.resize)
 	 */
 	export let resize: (w: number, h: number) => void;
 
 	/**
 	 * The main function, containing the main loop. A sensible default is used when
 	 * left out.
-	 *
+	 * @link [love.run](https://love2d.org/wiki/love.run)
 	 */
 	export let run: () => void;
 
@@ -6516,6 +6534,7 @@ declare namespace love {
 	 * @param text The UTF-8 encoded unicode candidate text.
 	 * @param start The start cursor of the selected candidate text.
 	 * @param length The length of the selected candidate text. May be 0.
+	 * @link [love.textedited](https://love2d.org/wiki/love.textedited)
 	 */
 	export let textedited: (text: string, start: number, length: number) => void;
 
@@ -6524,6 +6543,7 @@ declare namespace love {
 	 * pressed on an American keyboard layout, the text "@" will be generated.
 	 *
 	 * @param text The UTF-8 encoded unicode text.
+	 * @link [love.textinput](https://love2d.org/wiki/love.textinput)
 	 */
 	export let textinput: (text: string) => void;
 
@@ -6532,6 +6552,7 @@ declare namespace love {
 	 *
 	 * @param thread The thread which produced the error.
 	 * @param errorstr The error message.
+	 * @link [love.threaderror](https://love2d.org/wiki/love.threaderror)
 	 */
 	export let threaderror: (thread: Thread, errorstr: string) => void;
 
@@ -6544,6 +6565,7 @@ declare namespace love {
 	 * @param dx The x-axis movement of the touch inside the window, in pixels.
 	 * @param dy The y-axis movement of the touch inside the window, in pixels.
 	 * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
+	 * @link [love.touchmoved](https://love2d.org/wiki/love.touchmoved)
 	 */
 	export let touchmoved: (id: LightUserData, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
@@ -6556,6 +6578,7 @@ declare namespace love {
 	 * @param dx The x-axis movement of the touch press inside the window, in pixels. This should always be zero.
 	 * @param dy The y-axis movement of the touch press inside the window, in pixels. This should always be zero.
 	 * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
+	 * @link [love.touchpressed](https://love2d.org/wiki/love.touchpressed)
 	 */
 	export let touchpressed: (id: LightUserData, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
@@ -6568,6 +6591,7 @@ declare namespace love {
 	 * @param dx The x-axis movement of the touch inside the window, in pixels.
 	 * @param dy The y-axis movement of the touch inside the window, in pixels.
 	 * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
+	 * @link [love.touchreleased](https://love2d.org/wiki/love.touchreleased)
 	 */
 	export let touchreleased: (id: LightUserData, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
@@ -6575,6 +6599,11 @@ declare namespace love {
 	 * Callback function used to update the state of the game every frame.
 	 *
 	 * @param dt Time since the last update in seconds.
+	 * @link [love.update](https://love2d.org/wiki/love.update)
+	 * @example
+	 * love.update = (delta: number) => {
+	 *   print(delta);
+	 * }
 	 */
 	export let update: (dt: number) => void;
 
@@ -6583,6 +6612,7 @@ declare namespace love {
 	 * the user.
 	 *
 	 * @param visible True if the window is visible, false if it isn't.
+	 * @link [love.visible](https://love2d.org/wiki/love.visible)
 	 */
 	export let visible: (visible: boolean) => void;
 
@@ -6591,6 +6621,7 @@ declare namespace love {
 	 *
 	 * @param x Amount of horizontal mouse wheel movement. Positive values indicate movement to the right.
 	 * @param y Amount of vertical mouse wheel movement. Positive values indicate upward movement.
+	 * @link [love.wheelmoved](https://love2d.org/wiki/love.wheelmoved)
 	 */
 	export let wheelmoved: (x: number, y: number) => void;
 
