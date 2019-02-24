@@ -316,6 +316,22 @@ type FullscreenType = 'desktop' | 'exclusive';
  */
 type MessageBoxType = 'info' | 'warning' | 'error';
 
+type VertexWinding = "cw" | "ccw";
+
+type CullMode = "back" | "front" | "none";
+
+type LightUserData = number;
+
+type Variant = any;
+
+type TextureType = "2d" | "array" | "cube" | "volume";
+
+type ShaderVariableType = any;
+
+type PixelFormat = CanvasFormat;
+
+type CanvasMipmapMode = "none" | "auto" | "manual";
+
 declare interface Source extends Object {
 	/**
 	 * Creates an identical copy of the Source in the stopped state.
@@ -6848,7 +6864,7 @@ declare namespace love {
 		 *
 		 * @param "restart" Restarts the game without relaunching the executable. This cleanly shuts down the main Lua state instance and creates a brand new one.
 		 */
-		export function quit(restartstr: RestartString): void;
+		export function quit(restartstr: "restart"): void;
 
 		/**
 		 * Like love.event.poll but blocks until there is an event in the queue.
