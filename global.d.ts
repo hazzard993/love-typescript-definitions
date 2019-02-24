@@ -83,3 +83,13 @@ declare const _VERSION: 'Lua 5.1';
  */
 /** @TupleReturn */
 declare function xpcall(f: () => any, msgh: () => any, ...args: any[]): true | [false, string];
+
+/**
+ * Returns the elements from the given list. This function is equivalent to
+ *
+ * `return list[i], list[i+1], ···, list[j]`
+ *
+ * By default, i is 1 and j is #list.
+ */
+/** @TupleReturn */
+declare function unpack(list: any[], i?: number, j?: number): any[];
