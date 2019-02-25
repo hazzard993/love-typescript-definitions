@@ -25,6 +25,6 @@
     "typescript-to-lua": "^0.15.2"
   },
   "dependencies": {
-    "types-lua": "github:ark120202/types-lua"
+    "types-lua": "^1.0.1"
   }
 }
