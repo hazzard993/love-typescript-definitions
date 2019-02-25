@@ -22,9 +22,11 @@ Link these definitions up using this `tsconfig.json`.
 ```json
 {
     "compilerOptions": {
-        "lib": ["es6"],
+        "target": "es6",
+        "module": "commonjs",
+        "lib": ["es2017"],
         "types": [
-            "types-lua/luajit",
+            "lua-types/jit",
             "love-typescript-definitions"
         ]
     }
