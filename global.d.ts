@@ -56,22 +56,6 @@ declare function loadfile(
 ): () => any | [null, string];
 
 /**
- * Similar to load, but gets the chunk from the given string.
- *
- * To load and run a given string, use the idiom
- *      assert(loadstring(s))()
- *
- * When absent, chunkname defaults to the given string.
- */
-declare function loadstring(str: string, chunkname?: string): Function;
-
-/**
- * A global variable (not a function) that holds a string containing the running
- * Lua version. The current value of this variable is "Lua 5.3".
- */
-declare const _VERSION: 'Lua 5.1';
-
-/**
  * This function is similar to pcall, except that it sets a new message handler msgh.
  */
 /** @TupleReturn */
