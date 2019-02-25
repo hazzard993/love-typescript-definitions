@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"lib": ["es6"],
-		"types": ["types-lua/jit"]
+		"types": ["lua-types/jit"]
 	},
 	"include": [
 		"test/*.ts",
