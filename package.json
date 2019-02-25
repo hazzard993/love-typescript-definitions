@@ -1,6 +1,6 @@
 {
   "name": "love-typescript-definitions",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
     "test": "tstl -p tsconfig.json"
