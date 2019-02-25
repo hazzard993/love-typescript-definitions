@@ -4,6 +4,7 @@
 
 [![LOVE](https://img.shields.io/badge/L%C3%96VE-11.2-EA316E.svg)](http://love2d.org/)
 [![tstl](https://img.shields.io/badge/TypescriptToLua-0.15.2-blue.svg)](https://github.com/Perryvw/TypescriptToLua)
+[![npm](https://img.shields.io/npm/v/love-typescript-definitions.svg)](https://www.npmjs.com/package/love-typescript-definitions)
 [![Build Status](https://travis-ci.org/hazzard993/love-typescript-definitions.svg?branch=master)](https://travis-ci.org/hazzard993/love-typescript-definitions)
 
 Contains definition files to build LÖVE 2D projects with TypeScript via the use of [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler!
