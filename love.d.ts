@@ -4812,10 +4812,9 @@ declare interface Fixture extends Object {
 	 * if the other fixture also has a category of this fixture selected.
 	 *
 	 * @param mask1 The first category.
-	 * @param mask2 The second category.
 	 * @param ... Additional categories.
 	 */
-	setMask(mask1: number, mask2: number, ...vararg: number[]): void;
+	setMask(mask1: number, ...vararg: number[]): void;
 
 	/**
 	 * Sets the restitution of the fixture.
