@@ -3,7 +3,7 @@
   "version": "0.5.4",
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
-    "test": "tstl -p tsconfig.json"
+    "test": "tslint -c tslint.json -p tsconfig.json *.d.ts && tstl -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "typescript-to-lua": "^0.15.2"
   },
   "dependencies": {
-    "lua-types": "^2.0.0"
+    "lua-types": "^2.0.0",
+    "tslint": "^5.13.0"
   }
 }

@@ -6300,7 +6300,7 @@ declare namespace love {
 	 *   const [content, size] = file.read();
 	 *   print(`Content of ${file.getFilename()} is`);
 	 *   print(content);
-	 *   print("End of file"); 
+	 *   print("End of file");
 	 * }
 	 */
 	export let filedropped: (file: File) => void;
@@ -6433,7 +6433,7 @@ declare namespace love {
 	 * love.load = () => {
 	 *   image = love.graphics.newImage("image.png");
 	 * }
-	 * 
+	 *
 	 * love.draw = () => {
 	 *   love.graphics.draw(image, 50, 50);
 	 * }

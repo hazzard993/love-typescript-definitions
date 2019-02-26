@@ -5,7 +5,7 @@ interface Conf {
 
     /**
      * This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created.
-     * 
+     *
      * Alternatively [love.filesystem.setIdentity](https://love2d.org/wiki/love.filesystem.setIdentity) can be used to set the save directory outside of the config file.
      * @example
      * t.identity = "gabe_HL3" // Correct
@@ -22,9 +22,9 @@ interface Conf {
 
     /**
      * Should be a string, representing the version of LÖVE for which your game was made.
-     * 
+     *
      * If set in the config file of the game, LÖVE will display a warning if the game isn't compatible with the current version of LÖVE being used to run the game.
-     * 
+     *
      * Its default is the version of LÖVE running.
      * @default "11.2"
      */
@@ -67,7 +67,7 @@ interface Conf {
 
         /**
          * Sets whether background audio / music from other apps should play while LÖVE is open.
-         * 
+         *
          * See [love.system.hasBackgroundMusic](https://love2d.org/wiki/love.system.hasBackgroundMusic) for more details.
          * @default true
          */
@@ -82,7 +82,7 @@ interface Conf {
 
         /**
          * Sets the title of the window the game is in.
-         * 
+         *
          * Alternatively [love.window.setTitle](https://love2d.org/wiki/love.window.setTitle) can be used to change the window title outside of the config file.
          * @default "Untitled"
          */
