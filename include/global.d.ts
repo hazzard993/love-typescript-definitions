@@ -48,7 +48,7 @@ declare function load(
  * Similar to load, but gets the chunk from file filename or from the standard
  * input, if no file name is given.
  */
-/** @TupleReturn */
+/** @tupleReturn */
 declare function loadfile(
   filename?: string,
   mode?: 'b' | 't' | 'bt',
@@ -58,7 +58,7 @@ declare function loadfile(
 /**
  * This function is similar to pcall, except that it sets a new message handler msgh.
  */
-/** @TupleReturn */
+/** @tupleReturn */
 declare function xpcall(f: () => any, msgh: () => any, ...args: any[]): true | [false, string];
 
 /**
@@ -68,5 +68,5 @@ declare function xpcall(f: () => any, msgh: () => any, ...args: any[]): true | [
  *
  * By default, i is 1 and j is #list.
  */
-/** @TupleReturn */
+/** @tupleReturn */
 declare function unpack(list: any[], i?: number, j?: number): any[];

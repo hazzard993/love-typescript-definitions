@@ -5,6 +5,6 @@
 	},
 	"include": [
 		"test/*.ts",
-		"*.d.ts"
+		"include/*.d.ts"
 	]
 }

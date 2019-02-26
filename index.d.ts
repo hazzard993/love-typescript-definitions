@@ -1,6 +1,7 @@
-import "./Conf";
-import "./debug";
-import "./global";
-import "./love";
-import "./math";
-import "./os";
+import "./include/Conf";
+import "./include/debug";
+import "./include/global";
+import "./include/love";
+import "./include/math";
+import "./include/os";
+import "./include/utf8";
