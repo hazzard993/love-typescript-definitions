@@ -4,7 +4,7 @@
  *
  * Extended information can be found in the chapter "3.4. Attenuation By Distance"
  * of the OpenAL 1.1 specification.
- *
+ * @link [DistanceModel](https://love2d.org/wiki/DistanceModel)
  */
 type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearclamped' | 'exponent' | 'exponentclamped';
 
@@ -15,81 +15,81 @@ type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearc
  * A good rule of thumb is to use stream for music files and static for all short
  * sound effects. Basically, you want to avoid loading large files into memory at
  * once.
- *
+ * @link [SourceType](https://love2d.org/wiki/SourceType)
  */
 type SourceType = 'static' | 'stream';
 
 /**
  * Units that represent time.
- *
+ * @link [TimeUnit](https://love2d.org/wiki/TimeUnit)
  */
 type TimeUnit = 'seconds' | 'samples';
 
 /**
  * Arguments to love.event.push() and the like.
- *
+ * @link [Event](https://love2d.org/wiki/Event)
  */
 type Event = 'focus' | 'joystickaxis' | 'joystickhat' | 'joystickpressed' | 'joystickreleased' | 'keypressed' | 'keyreleased' | 'mousefocus' | 'mousepressed' | 'mousereleased' | 'resize' | 'threaderror' | 'quit' | 'visible';
 
 /**
  * Buffer modes for File objects.
- *
+ * @link [BufferMode](https://love2d.org/wiki/BufferMode)
  */
 type BufferMode = 'none' | 'line' | 'full';
 
 /**
  * How to decode a given FileData.
- *
+ * @link [FileDecoder](https://love2d.org/wiki/FileDecoder)
  */
 type FileDecoder = 'file' | 'base64';
 
 /**
  * The different modes you can open a file in.
- *
+ * @link [FileMode](https://love2d.org/wiki/FileMode)
  */
 type FileMode = 'r' | 'w' | 'a' | 'c';
 
 /**
  * The type of a file.
- *
+ * @link [FileType](https://love2d.org/wiki/FileType)
  */
 type FileType = 'file' | 'directory' | 'symlink' | 'other';
 
 /**
  * Text alignment.
- *
+ * @link [AlignMode](https://love2d.org/wiki/AlignMode)
  */
 type AlignMode = 'center' | 'left' | 'right' | 'justify';
 
 /**
  * Different types of arcs that can be drawn.
- *
+ * @link [ArcType](https://love2d.org/wiki/ArcType)
  */
 type ArcType = 'pie' | 'open' | 'closed';
 
 /**
  * Types of particle area spread distribution.
- *
+ * @link [AreaSpreadDistribution](https://love2d.org/wiki/AreaSpreadDistribution)
  */
 type AreaSpreadDistribution = 'uniform' | 'normal' | 'ellipse' | 'none';
 
 /**
  * Different ways alpha affects color blending. See BlendMode and the BlendMode
  * Formulas for additional notes.
- *
+ * @link [BlendAlphaMode](https://love2d.org/wiki/BlendAlphaMode)
  */
 type BlendAlphaMode = 'alphamultiply' | 'premultiplied';
 
 /**
  * Different ways to do color blending. See BlendAlphaMode and the BlendMode
  * Formulas for additional notes.
- *
+ * @link [BlendMode](https://love2d.org/wiki/BlendMode)
  */
 type BlendMode = 'alpha' | 'replace' | 'screen' | 'add' | 'subtract' | 'multiply' | 'lighten' | 'darken';
 
 /**
  * Canvas formats.
- *
+ * @link [CanvasFormat](https://love2d.org/wiki/CanvasFormat)
  */
 type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' | 'rgb10a2' | 'rgba16f' | 'rgba32f' | 'rg11b10f' | 'srgb' | 'r8' | 'rg8' | 'r16f' | 'rg16f' | 'r32f' | 'rg32f';
 
@@ -97,74 +97,74 @@ type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' |
  * Different types of per-pixel stencil test comparisons. The pixels of an object
  * will be drawn if the comparison succeeds, for each pixel that the object
  * touches.
- *
+ * @link [CompareMode](https://love2d.org/wiki/CompareMode)
  */
 type CompareMode = 'equal' | 'notequal' | 'less' | 'lequal' | 'gequal' | 'greater';
 
 /**
  * Controls whether shapes are drawn as an outline, or filled.
- *
+ * @link [DrawMode](https://love2d.org/wiki/DrawMode)
  */
 type DrawMode = 'fill' | 'line';
 
 /**
  * How the image is filtered when scaling.
- *
+ * @link [FilterMode](https://love2d.org/wiki/FilterMode)
  */
 type FilterMode = 'linear' | 'nearest';
 
 /**
  * Graphics features that can be checked for with love.graphics.getSupported.
- *
+ * @link [GraphicsFeature](https://love2d.org/wiki/GraphicsFeature)
  */
 type GraphicsFeature = 'clampzero' | 'lighten' | 'multicanvasformats';
 
 /**
  * Types of system-dependent graphics limits checked for using
  * love.graphics.getSystemLimits.
- *
+ * @link [GraphicsLimit](https://love2d.org/wiki/GraphicsLimit)
  */
 type GraphicsLimit = 'pointsize' | 'texturesize' | 'multicanvas' | 'canvasmsaa';
 
 /**
  * Line join style.
- *
+ * @link [LineJoin](https://love2d.org/wiki/LineJoin)
  */
 type LineJoin = 'miter' | 'bevel' | 'none';
 
 /**
  * The styles in which lines are drawn.
- *
+ * @link [LineStyle](https://love2d.org/wiki/LineStyle)
  */
 type LineStyle = 'rough' | 'smooth';
 
 /**
  * How a Mesh's vertices are used when drawing.
- *
+ * @link [MeshDrawMode](https://love2d.org/wiki/MeshDrawMode)
  */
 type MeshDrawMode = 'fan' | 'strip' | 'triangles' | 'points';
 
 /**
  * How newly created particles are added to the ParticleSystem.
- *
+ * @link [ParticleInsertMode](https://love2d.org/wiki/ParticleInsertMode)
  */
 type ParticleInsertMode = 'top' | 'bottom' | 'random';
 
 /**
  * Usage hints for SpriteBatches and Meshes to optimize data storage and access.
- *
+ * @link [SpriteBatchUsage](https://love2d.org/wiki/SpriteBatchUsage)
  */
 type SpriteBatchUsage = 'dynamic' | 'static' | 'stream';
 
 /**
  * Graphics state stack types used with love.graphics.push.
- *
+ * @link [StackType](https://love2d.org/wiki/StackType)
  */
 type StackType = 'transform' | 'all';
 
 /**
  * How a stencil function modifies the stencil values of pixels it touches.
- *
+ * @link [StencilAction](https://love2d.org/wiki/StencilAction)
  */
 type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | 'decrementwrap' | 'invert';
 
@@ -173,7 +173,7 @@ type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | '
  * also affects how Meshes with texture coordinates which are outside the range of
  * [0, 1] are drawn, and the color returned by the Texel Shader function when
  * using it to sample from texture coordinates outside of the range of [0, 1].
- *
+ * @link [WrapMode](https://love2d.org/wiki/WrapMode)
  */
 type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero';
 
@@ -186,44 +186,44 @@ type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero';
  * graphics card's VRAM. This is good for saving memory space as well as improving
  * performance, since the graphics card will be able to keep more of the image's
  * pixels in its fast-access cache when drawing it.
- *
+ * @link [CompressedImageFormat](https://love2d.org/wiki/CompressedImageFormat)
  */
 type CompressedImageFormat = 'DXT1' | 'DXT3' | 'DXT5' | 'BC4' | 'BC4s' | 'BC5' | 'BC5s' | 'BC6h' | 'BC6hs' | 'BC7' | 'ETC1' | 'ETC2rgb' | 'ETC2rgba' | 'ETC2rgba1' | 'EACr' | 'EACrs' | 'EACrg' | 'EACrgs' | 'PVR1rgb2' | 'PVR1rgb4' | 'PVR1rgba2' | 'PVR1rgba4' | 'ASTC4x4' | 'ASTC5x4' | 'ASTC5x5' | 'ASTC6x5' | 'ASTC6x6' | 'ASTC8x5' | 'ASTC8x6' | 'ASTC8x8' | 'ASTC10x5' | 'ASTC10x6' | 'ASTC10x8' | 'ASTC10x10' | 'ASTC12x10' | 'ASTC12x12';
 
 /**
  * Encoded image formats.
- *
+ * @link [ImageFormat](https://love2d.org/wiki/ImageFormat)
  */
 type ImageFormat = 'tga' | 'png';
 
 /**
  * Virtual gamepad axes.
- *
+ * @link [GamepadAxis](https://love2d.org/wiki/GamepadAxis)
  */
 type GamepadAxis = 'leftx' | 'lefty' | 'rightx' | 'righty' | 'triggerleft' | 'triggerright';
 
 /**
  * Virtual gamepad buttons.
- *
+ * @link [GamepadButton](https://love2d.org/wiki/GamepadButton)
  */
 type GamepadButton = 'a' | 'b' | 'x' | 'y' | 'back' | 'guide' | 'start' | 'leftstick' | 'rightstick' | 'leftshoulder' | 'rightshoulder' | 'dpup' | 'dpdown' | 'dpleft' | 'dpright';
 
 /**
  * Joystick hat positions.
- *
+ * @link [GamepadButton](https://love2d.org/wiki/GamepadButton)
  */
 type JoystickHat = 'c' | 'd' | 'l' | 'ld' | 'lu' | 'r' | 'rd' | 'ru' | 'u';
 
 /**
  * Types of Joystick inputs.
- *
+ * @link [JoystickInputType](https://love2d.org/wiki/JoystickInputType)
  */
 type JoystickInputType = 'axis' | 'button' | 'hat';
 
 /**
  * All the keys you can press. Note that some keys may not be available on your
  * keyboard or system.
- *
+ * @link [KeyConstant](https://love2d.org/wiki/KeyConstant)
  */
 type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'space' | '!' | '"' | '#' | '$' | '&' | "'" | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | 'kp0' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp.' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kpenter' | 'kp=' | 'up' | 'down' | 'right' | 'left' | 'home' | 'end' | 'pageup' | 'pagedown' | 'insert' | 'backspace' | 'tab' | 'clear' | 'return' | 'delete' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'numlock' | 'capslock' | 'scrollock' | 'rshift' | 'lshift' | 'rctrl' | 'lctrl' | 'ralt' | 'lalt' | 'rmeta' | 'lmeta' | 'lsuper' | 'rsuper' | 'mode' | 'compose' | 'pause' | 'escape' | 'help' | 'print' | 'sysreq' | 'break' | 'menu' | 'power' | 'euro' | 'undo' | 'www' | 'mail' | 'calculator' | 'appsearch' | 'apphome' | 'appback' | 'appforward' | 'apprefresh' | 'appbookmarks';
 
@@ -246,49 +246,49 @@ type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | '
  * One could use textinput or textedited instead, but those only give back the end
  * result of keys used, i.e. you can't get modifiers on their own from it, only
  * the final symbols that were generated.
- *
+ * @link [Scancode](https://love2d.org/wiki/Scancode)
  */
 type Scancode = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0' | 'return' | 'escape' | 'backspace' | 'tab' | 'space' | '-' | '=' | '[' | ']' | '\\' | 'nonus#' | ';' | "'" | '`' | ',' | '.' | '/' | 'capslock' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'f16' | 'f17' | 'f18' | 'f19' | 'f20' | 'f21' | 'f22' | 'f23' | 'f24' | 'lctrl' | 'lshift' | 'lalt' | 'lgui' | 'rctrl' | 'rshift' | 'ralt' | 'rgui' | 'printscreen' | 'scrolllock' | 'pause' | 'insert' | 'home' | 'numlock' | 'pageup' | 'delete' | 'end' | 'pagedown' | 'right' | 'left' | 'down' | 'up' | 'nonusbackslash' | 'application' | 'execute' | 'help' | 'menu' | 'select' | 'stop' | 'again' | 'undo' | 'cut' | 'copy' | 'paste' | 'find' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kp=' | 'kpenter' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp0' | 'kp.' | 'international1' | 'international2' | 'international3' | 'international4' | 'international5' | 'international6' | 'international7' | 'international8' | 'international9' | 'lang1' | 'lang2' | 'lang3' | 'lang4' | 'lang5' | 'mute' | 'volumeup' | 'volumedown' | 'audionext' | 'audioprev' | 'audiostop' | 'audioplay' | 'audiomute' | 'mediaselect' | 'www' | 'mail' | 'calculator' | 'computer' | 'acsearch' | 'achome' | 'acback' | 'acforward' | 'acstop' | 'acrefresh' | 'acbookmarks' | 'power' | 'brightnessdown' | 'brightnessup' | 'displayswitch' | 'kbdillumtoggle' | 'kbdillumdown' | 'kbdillumup' | 'eject' | 'sleep' | 'alterase' | 'sysreq' | 'cancel' | 'clear' | 'prior' | 'return2' | 'separator' | 'out' | 'oper' | 'clearagain' | 'crsel' | 'exsel' | 'kp00' | 'kp000' | 'thsousandsseparator' | 'decimalseparator' | 'currencyunit' | 'currencysubunit' | 'app1' | 'app2' | 'unknown';
 
 /**
  * Compressed data formats.
- *
+ * @link [CompressedDataFormat](https://love2d.org/wiki/CompressedDataFormat)
  */
 type CompressedDataFormat = 'lz4' | 'zlib' | 'gzip';
 
 /**
  * The layout of matrix elements (row-major or column-major).
- *
+ * @link [MatrixLayout](https://love2d.org/wiki/MatrixLayout)
  */
 type MatrixLayout = 'row' | 'column';
 
 /**
  * Types of hardware cursors.
- *
+ * @link [CursorType](https://love2d.org/wiki/CursorType)
  */
 type CursorType = 'image' | 'arrow' | 'ibeam' | 'wait' | 'waitarrow' | 'crosshair' | 'sizenwse' | 'sizenesw' | 'sizewe' | 'sizens' | 'sizeall' | 'no' | 'hand';
 
 /**
  * The types of a Body.
- *
+ * @link [BodyType](https://love2d.org/wiki/BodyType)
  */
 type BodyType = 'static' | 'dynamic' | 'kinematic';
 
 /**
  * Different types of joints.
- *
+ * @link [JointType](https://love2d.org/wiki/JointType)
  */
 type JointType = 'distance' | 'gear' | 'mouse' | 'prismatic' | 'pulley' | 'revolute' | 'friction' | 'weld' | 'rope';
 
 /**
  * The different types of Shapes, as returned by Shape:getType.
- *
+ * @link [ShapeType](https://love2d.org/wiki/ShapeType)
  */
 type ShapeType = 'circle' | 'polygon' | 'edge' | 'chain';
 
 /**
  * The basic state of the system's power supply.
- *
+ * @link [PowerState](https://love2d.org/wiki/PowerState)
  */
 type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged';
 
@@ -305,33 +305,51 @@ type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged';
  * issues in some window managers and with multi-monitor setups. In OS X it
  * prevents switching to a different program until fullscreen mode is exited. The
  * "desktop" fullscreen mode generally avoids these issues.
- *
+ * @link [FullscreenType](https://love2d.org/wiki/FullscreenType)
  */
 type FullscreenType = 'desktop' | 'exclusive';
 
 /**
  * Types of message box dialogs. Different types may have slightly different
  * looks.
- *
+ * @link [MessageBoxType](https://love2d.org/wiki/MessageBoxType)
  */
 type MessageBoxType = 'info' | 'warning' | 'error';
 
-type VertexWinding = "cw" | "ccw";
-
+/**
+ * @link [CullMode](https://love2d.org/wiki/CullMode)
+ */
 type CullMode = "back" | "front" | "none";
+
+/**
+ * @link [TextureType](https://love2d.org/wiki/TextureType)
+ */
+type TextureType = "2d" | "array" | "cube" | "volume";
+
+/**
+ * @link [PixelFormat](https://love2d.org/wiki/PixelFormat)
+ */
+type PixelFormat = CanvasFormat;
+
+/**
+ * @link [Variant](https://love2d.org/wiki/Variant)
+ */
+type Variant = any;
+
+/**
+ * @link [CanvasMipmapMode](https://love2d.org/wiki/CanvasMipmapMode)
+ */
+type CanvasMipmapMode = "none" | "auto" | "manual";
+
+type VertexWinding = "cw" | "ccw";
 
 type LightUserData = number;
 
-type Variant = any;
-
-type TextureType = "2d" | "array" | "cube" | "volume";
-
 type ShaderVariableType = any;
 
-type PixelFormat = CanvasFormat;
-
-type CanvasMipmapMode = "none" | "auto" | "manual";
-
+/**
+ * @link [Source](https://love2d.org/wiki/Source)
+ */
 declare interface Source extends Object {
 	/**
 	 * Creates an identical copy of the Source in the stopped state.
@@ -624,8 +642,16 @@ declare interface Source extends Object {
 	tell(unit?: TimeUnit): number;
 
 }
+
+/**
+ * @link [RecordingDevice](https://love2d.org/wiki/RecordingDevice)
+ */
 declare interface RecordingDevice extends Object {
 }
+
+/**
+ * @link [File](https://love2d.org/wiki/File)
+ */
 declare interface File extends Object {
 	/**
 	 * Closes a file.
@@ -757,6 +783,10 @@ declare interface File extends Object {
 	write(data: string, size?: number): boolean;
 
 }
+
+/**
+ * @link [FileData](https://love2d.org/wiki/FileData)
+ */
 declare interface FileData extends Data {
 	/**
 	 * Gets the extension of the FileData.
@@ -773,6 +803,10 @@ declare interface FileData extends Data {
 	getFilename(): string;
 
 }
+
+/**
+ * @link [Canvas](https://love2d.org/wiki/Canvas)
+ */
 declare interface Canvas extends Texture {
 	/**
 	 * Gets the width and height of the Canvas.
@@ -889,6 +923,10 @@ declare interface Canvas extends Texture {
 	setWrap(horizontal: WrapMode, vertical?: WrapMode): void;
 
 }
+
+/**
+ * @link [Font](https://love2d.org/wiki/Font)
+ */
 declare interface Font extends Object {
 	/**
 	 * Gets the ascent of the Font. The ascent spans the distance between the baseline
@@ -1009,6 +1047,10 @@ declare interface Font extends Object {
 	setLineHeight(height: number): void;
 
 }
+
+/**
+ * @link [Mesh](https://love2d.org/wiki/Mesh)
+ */
 declare interface Mesh extends Drawable {
 	/**
 	 * Attaches a vertex attribute from a different Mesh onto this Mesh, for use when
@@ -1310,6 +1352,10 @@ declare interface Mesh extends Drawable {
 	setVertices(vertices: table): void;
 
 }
+
+/**
+ * @link [Image](https://love2d.org/wiki/Image)
+ */
 declare interface Image extends Texture {
 	/**
 	 * Gets the original ImageData or CompressedImageData used to create the Image.
@@ -1483,6 +1529,10 @@ declare interface Image extends Texture {
 	setWrap(horizontal: WrapMode, vertical?: WrapMode): void;
 
 }
+
+/**
+ * @link [ParticleSystem](https://love2d.org/wiki/ParticleSystem)
+ */
 declare interface ParticleSystem extends Drawable {
 	/**
 	 * Creates an identical copy of the ParticleSystem in the stopped state.
@@ -2033,6 +2083,10 @@ declare interface ParticleSystem extends Drawable {
 	update(dt: number): void;
 
 }
+
+/**
+ * @link [Quad](https://love2d.org/wiki/Quad)
+ */
 declare interface Quad extends Object {
 	/**
 	 * Gets reference texture dimensions initially specified in love.graphics.newQuad.
@@ -2065,6 +2119,10 @@ declare interface Quad extends Object {
 	setViewport(x: number, y: number, w: number, h: number): void;
 
 }
+
+/**
+ * @link [Shader](https://love2d.org/wiki/Shader)
+ */
 declare interface Shader extends Object {
 	/**
 	 * Gets information about an 'extern' ('uniform') variable in the shader.
@@ -2161,6 +2219,10 @@ declare interface Shader extends Object {
 	sendColor(name: string, color: table, ...vararg: table[]): void;
 
 }
+
+/**
+ * @link [SpriteBatch](https://love2d.org/wiki/SpriteBatch)
+ */
 declare interface SpriteBatch extends Drawable {
 	/**
 	 * Add a sprite to the batch.
@@ -2355,6 +2417,10 @@ declare interface SpriteBatch extends Drawable {
 	setTexture(texture: Texture): void;
 
 }
+
+/**
+ * @link [Text](https://love2d.org/wiki/Text)
+ */
 declare interface Text extends Drawable {
 	/**
 	 * Adds additional colored text to the Text object at the specified position.
@@ -2544,6 +2610,10 @@ declare interface Text extends Drawable {
 	setFont(font: Font): void;
 
 }
+
+/**
+ * @link [Texture](https://love2d.org/wiki/Texture)
+ */
 declare interface Texture extends Drawable {
 	/**
 	 * Gets the depth of a Volume Texture. Returns 1 for 2D, Cubemap, and Array
@@ -2599,6 +2669,10 @@ declare interface Texture extends Drawable {
 	isReadable(): boolean;
 
 }
+
+/**
+ * @link [Video](https://love2d.org/wiki/Video)
+ */
 declare interface Video extends Drawable {
 	/**
 	 * Gets the width and height of the Video in pixels.
@@ -2706,6 +2780,10 @@ declare interface Video extends Drawable {
 	tell(seconds: number): void;
 
 }
+
+/**
+ * @link [CompressedImageData](https://love2d.org/wiki/CompressedImageData)
+ */
 declare interface CompressedImageData extends Data {
 	/**
 	 * Gets the width and height of the CompressedImageData.
@@ -2772,6 +2850,10 @@ declare interface CompressedImageData extends Data {
 	getWidth(level: number): number;
 
 }
+
+/**
+ * @link [ImageData](https://love2d.org/wiki/ImageData)
+ */
 declare interface ImageData extends Data {
 	/**
 	 * Encodes the ImageData and optionally writes it to the save directory.
@@ -2869,6 +2951,10 @@ declare interface ImageData extends Data {
 	setPixel(x: number, y: number, r: number, g: number, b: number, a: number): void;
 
 }
+
+/**
+ * @link [Joystick](https://love2d.org/wiki/Joystick)
+ */
 declare interface Joystick extends Object {
 	/**
 	 * Gets the direction of each axis.
@@ -3063,6 +3149,10 @@ declare interface Joystick extends Object {
 	setVibration(left: number, right: number, duration: number): boolean;
 
 }
+
+/**
+ * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
+ */
 declare interface BezierCurve extends Object {
 	/**
 	 * Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1
@@ -3216,6 +3306,10 @@ declare interface BezierCurve extends Object {
 	translate(dx: number, dy: number): void;
 
 }
+
+/**
+ * @link [CompressedData](https://love2d.org/wiki/CompressedData)
+ */
 declare interface CompressedData extends Data {
 	/**
 	 * Gets the compression format of the CompressedData.
@@ -3225,6 +3319,10 @@ declare interface CompressedData extends Data {
 	getFormat(): CompressedDataFormat;
 
 }
+
+/**
+ * @link [RandomGenerator](https://love2d.org/wiki/RandomGenerator)
+ */
 declare interface RandomGenerator extends Object {
 	/**
 	 * Gets the state of the random number generator.
@@ -3324,6 +3422,10 @@ declare interface RandomGenerator extends Object {
 	setState(state: string): void;
 
 }
+
+/**
+ * @link [Transform](https://love2d.org/wiki/Transform)
+ */
 declare interface Transform extends Object {
 	/**
 	 * Applies the given other Transform object to this one.
@@ -3498,6 +3600,10 @@ declare interface Transform extends Object {
 	translate(dx: number, dy: number): Transform;
 
 }
+
+/**
+ * @link [Cursor](https://love2d.org/wiki/Cursor)
+ */
 declare interface Cursor extends Object {
 	/**
 	 * Gets the type of the Cursor.
@@ -3507,6 +3613,10 @@ declare interface Cursor extends Object {
 	getType(): CursorType;
 
 }
+
+/**
+ * @link [Body](https://love2d.org/wiki/Body)
+ */
 declare interface Body extends Object {
 	/**
 	 * Applies an angular impulse to a body. This makes a single, instantaneous
@@ -4251,6 +4361,10 @@ declare interface Body extends Object {
 	setY(y: number): void;
 
 }
+
+/**
+ * @link [ChainShape](https://love2d.org/wiki/ChainShape)
+ */
 declare interface ChainShape extends Shape {
 	/**
 	 * Returns a child of the shape as an EdgeShape.
@@ -4341,6 +4455,10 @@ declare interface ChainShape extends Shape {
 	setPreviousVertex(x: number, y: number): void;
 
 }
+
+/**
+ * @link [CircleShape](https://love2d.org/wiki/CircleShape)
+ */
 declare interface CircleShape extends Shape {
 	/**
 	 * Gets the center point of the circle shape.
@@ -4374,6 +4492,10 @@ declare interface CircleShape extends Shape {
 	setRadius(radius: number): void;
 
 }
+
+/**
+ * @link [Contact](https://love2d.org/wiki/Contact)
+ */
 declare interface Contact extends Object {
 	/**
 	 * Gets the two Fixtures that hold the shapes that are in contact.
@@ -4472,6 +4594,10 @@ declare interface Contact extends Object {
 	setRestitution(restitution: number): void;
 
 }
+
+/**
+ * @link [EdgeShape](https://love2d.org/wiki/EdgeShape)
+ */
 declare interface EdgeShape extends Shape {
 	/**
 	 * Returns the local coordinates of the edge points.
@@ -4537,6 +4663,10 @@ declare interface EdgeShape extends Shape {
 	setPreviousVertex(x: number, y: number): void;
 
 }
+
+/**
+ * @link [DistanceJoint](https://love2d.org/wiki/DistanceJoint)
+ */
 declare interface DistanceJoint extends Joint {
 	/**
 	 * Gets the damping ratio.
@@ -4581,6 +4711,10 @@ declare interface DistanceJoint extends Joint {
 	setLength(l: number): void;
 
 }
+
+/**
+ * @link [Fixture](https://love2d.org/wiki/Fixture)
+ */
 declare interface Fixture extends Object {
 	/**
 	 * Destroys the fixture
@@ -4870,6 +5004,10 @@ declare interface Fixture extends Object {
 	testPoint(x: number, y: number): boolean;
 
 }
+
+/**
+ * @link [FrictionJoint](https://love2d.org/wiki/FrictionJoint)
+ */
 declare interface FrictionJoint extends Joint {
 	/**
 	 * Gets the maximum friction force in Newtons.
@@ -4900,6 +5038,10 @@ declare interface FrictionJoint extends Joint {
 	setMaxTorque(torque: number): void;
 
 }
+
+/**
+ * @link [GearJoint](https://love2d.org/wiki/GearJoint)
+ */
 declare interface GearJoint extends Joint {
 	/**
 	 * Get the Joints connected by this GearJoint.
@@ -4925,6 +5067,10 @@ declare interface GearJoint extends Joint {
 	setRatio(ratio: number): void;
 
 }
+
+/**
+ * @link [Joint](https://love2d.org/wiki/Joint)
+ */
 declare interface Joint extends Object {
 	/**
 	 * Explicitly destroys the Joint. When you don't have time to wait for garbage
@@ -5011,6 +5157,10 @@ declare interface Joint extends Object {
 	setUserData(value: any): void;
 
 }
+
+/**
+ * @link [MotorJoint](https://love2d.org/wiki/MotorJoint)
+ */
 declare interface MotorJoint extends Joint {
 	/**
 	 * Gets the target angular offset between the two Bodies the Joint is attached to.
@@ -5044,6 +5194,10 @@ declare interface MotorJoint extends Joint {
 	setLinearOffset(x: number, y: number): void;
 
 }
+
+/**
+ * @link [MouseJoint](https://love2d.org/wiki/MouseJoint)
+ */
 declare interface MouseJoint extends Joint {
 	/**
 	 * Returns the damping ratio.
@@ -5105,6 +5259,10 @@ declare interface MouseJoint extends Joint {
 	setTarget(x: number, y: number): void;
 
 }
+
+/**
+ * @link [PolygonShape](https://love2d.org/wiki/PolygonShape)
+ */
 declare interface PolygonShape extends Shape {
 	/**
 	 * Get the local coordinates of the polygon's vertices.
@@ -5128,6 +5286,10 @@ declare interface PolygonShape extends Shape {
 	getPoints(): [number, number, number, number, number];
 
 }
+
+/**
+ * @link [PrismaticJoint](https://love2d.org/wiki/PrismaticJoint)
+ */
 declare interface PrismaticJoint extends Joint {
 	/**
 	 * Checks whether the limits are enabled.
@@ -5261,6 +5423,10 @@ declare interface PrismaticJoint extends Joint {
 	setUpperLimit(upper: number): void;
 
 }
+
+/**
+ * @link [PulleyJoint](https://love2d.org/wiki/PulleyJoint)
+ */
 declare interface PulleyJoint extends Joint {
 	/**
 	 * Get the total length of the rope.
@@ -5342,6 +5508,10 @@ declare interface PulleyJoint extends Joint {
 	setRatio(ratio: number): void;
 
 }
+
+/**
+ * @link [RevoluteJoint](https://love2d.org/wiki/RevoluteJoint)
+ */
 declare interface RevoluteJoint extends Joint {
 	/**
 	 * Checks whether the limits are enabled.
@@ -5466,6 +5636,10 @@ declare interface RevoluteJoint extends Joint {
 	setUpperLimit(upper: number): void;
 
 }
+
+/**
+ * @link [RopeJoint](https://love2d.org/wiki/RopeJoint)
+ */
 declare interface RopeJoint extends Joint {
 	/**
 	 * Gets the maximum length of a RopeJoint.
@@ -5482,6 +5656,10 @@ declare interface RopeJoint extends Joint {
 	setMaxLength(maxLength: number): void;
 
 }
+
+/**
+ * @link [Shape](https://love2d.org/wiki/Shape)
+ */
 declare interface Shape extends Object {
 	/**
 	 * Returns the points of the bounding box for the transformed shape.
@@ -5585,6 +5763,10 @@ declare interface Shape extends Object {
 	testPoint(x: number, y: number): boolean;
 
 }
+
+/**
+ * @link [WeldJoint](https://love2d.org/wiki/WeldJoint)
+ */
 declare interface WeldJoint extends Joint {
 	/**
 	 * Returns the damping ratio of the joint.
@@ -5615,6 +5797,10 @@ declare interface WeldJoint extends Joint {
 	setFrequency(freq: number): void;
 
 }
+
+/**
+ * @link [WheelJoint](https://love2d.org/wiki/WheelJoint)
+ */
 declare interface WheelJoint extends Joint {
 	/**
 	 * Gets the world-space axis vector of the Wheel Joint.
@@ -5711,6 +5897,10 @@ declare interface WheelJoint extends Joint {
 	setSpringFrequency(freq: number): void;
 
 }
+
+/**
+ * @link [World](https://love2d.org/wiki/World)
+ */
 declare interface World extends Object {
 	/**
 	 * Destroys the world, taking all bodies, joints, fixtures and their shapes with
@@ -5910,6 +6100,10 @@ declare interface World extends Object {
 	update(dt: number, velocityiterations?: number, positioniterations?: number): void;
 
 }
+
+/**
+ * @link [Decoder](https://love2d.org/wiki/Decoder)
+ */
 declare interface Decoder extends Object {
 	/**
 	 * Returns the number of bits per sample.
@@ -5941,6 +6135,10 @@ declare interface Decoder extends Object {
 	getSampleRate(): number;
 
 }
+
+/**
+ * @link [SoundData](https://love2d.org/wiki/SoundData)
+ */
 declare interface SoundData extends Data {
 	/**
 	 * Returns the number of bits per sample.
@@ -5994,6 +6192,10 @@ declare interface SoundData extends Data {
 	setSample(i: number, sample: number): void;
 
 }
+
+/**
+ * @link [Thread](https://love2d.org/wiki/Thread)
+ */
 declare interface Thread extends Object {
 	/**
 	 * Retrieves the error string from the thread if it produced an error.
@@ -6040,6 +6242,10 @@ declare interface Thread extends Object {
 	isRunning(): boolean;
 
 }
+
+/**
+ * @link [Channel](https://love2d.org/wiki/Channel)
+ */
 declare interface Channel extends Object {
 	/**
 	 * Clears all the messages in the Channel queue.
@@ -6160,8 +6366,16 @@ declare interface Channel extends Object {
 	supply(value: Variant, timeout: number): boolean;
 
 }
+
+/**
+ * @link [VideoStream](https://love2d.org/wiki/VideoStream)
+ */
 declare interface VideoStream extends Object {
 }
+
+/**
+ * @link [Data](https://love2d.org/wiki/Data)
+ */
 interface Data {
 	/**
 	 * Gets a pointer to the Data.
@@ -6185,8 +6399,16 @@ interface Data {
 	getString(): string;
 
 }
+
+/**
+ * @link [Drawable](https://love2d.org/wiki/Drawable)
+ */
 interface Drawable {
 }
+
+/**
+ * @link [Object](https://love2d.org/wiki/Object)
+ */
 interface Object {
 	/**
 	 * Gets the type of the object as a string.
@@ -6208,7 +6430,7 @@ interface Object {
 
 /**
  * Contains all LÖVE 2D modules and functions.
- * @link https://love2d.org/wiki/love
+ * @link [love](https://love2d.org/wiki/love)
  */
 declare namespace love {
 
@@ -6626,7 +6848,7 @@ declare namespace love {
 
 	/**
 	 * Provides an interface to create noise with the user's speakers.
-	 *
+	 * @link [audio](https://love2d.org/wiki/audio)
 	 */
 	export namespace audio {
 		/**
@@ -6859,7 +7081,7 @@ declare namespace love {
 	}
 	/**
 	 * Manages events, like keypresses.
-	 *
+	 * @link [event](https://love2d.org/wiki/event)
 	 */
 	export namespace event {
 		/**
@@ -6944,7 +7166,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's filesystem.
-	 *
+	 * @link [filesystem](https://love2d.org/wiki/filesystem)
 	 */
 	export namespace filesystem {
 		/**
@@ -7355,7 +7577,7 @@ declare namespace love {
 	 * Many of the functions are used to manipulate the graphics coordinate system,
 	 * which is essentially the way coordinates are mapped to the display. You can
 	 * change the position, scale, and even rotation in this way.
-	 *
+	 * @link [graphics](https://love2d.org/wiki/graphics)
 	 */
 	export namespace graphics {
 		/**
@@ -9147,7 +9369,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to decode encoded image data.
-	 *
+	 * @link [image](https://love2d.org/wiki/image)
 	 */
 	export namespace image {
 		/**
@@ -9224,7 +9446,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's joystick.
-	 *
+	 * @link [joystick](https://love2d.org/wiki/joystick)
 	 */
 	export namespace joystick {
 		/**
@@ -9329,7 +9551,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's keyboard.
-	 *
+	 * @link [keyboard](https://love2d.org/wiki/keyboard)
 	 */
 	export namespace keyboard {
 		/**
@@ -9450,7 +9672,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides system-independent mathematical functions.
-	 *
+	 * @link [math](https://love2d.org/wiki/math)
 	 */
 	export namespace math {
 		/**
@@ -9897,7 +10119,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's mouse.
-	 *
+	 * @link [mouse](https://love2d.org/wiki/mouse)
 	 */
 	export namespace mouse {
 		/**
@@ -10152,7 +10374,7 @@ declare namespace love {
 	/**
 	 * Can simulate 2D rigid body physics in a realistic manner. This module is based
 	 * on Box2D, and this API corresponds to the Box2D API as closely as possible.
-	 *
+	 * @link [physics](https://love2d.org/wiki/physics)
 	 */
 	export namespace physics {
 		/**
@@ -10675,7 +10897,7 @@ declare namespace love {
 	/**
 	 * This module is responsible for decoding sound files. It can't play the sounds,
 	 * see love.audio for that.
-	 *
+	 * @link [sound](https://love2d.org/wiki/sound)
 	 */
 	export namespace sound {
 		/**
@@ -10758,7 +10980,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides access to information about the user's system.
-	 *
+	 * @link [system](https://love2d.org/wiki/system)
 	 */
 	export namespace system {
 		/**
@@ -10838,7 +11060,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	 *
 	 * When a Thread is started, it only loads the love.thread module. Every other
 	 * module has to be loaded with require.
-	 *
+	 * @link [thread](https://love2d.org/wiki/thread)
 	 */
 	export namespace thread {
 		/**
@@ -10887,7 +11109,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	}
 	/**
 	 * Provides an interface to the user's clock.
-	 *
+	 * @link [timer](https://love2d.org/wiki/timer)
 	 */
 	export namespace timer {
 		/**
@@ -10945,7 +11167,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	}
 	/**
 	 * Provides an interface to touch-screen presses.
-	 *
+	 * @link [touch](https://love2d.org/wiki/touch)
 	 */
 	export namespace touch {
 		/**
@@ -10981,7 +11203,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	 *
 	 * It can't draw the videos, see love.graphics.newVideo and Video objects for
 	 * that.
-	 *
+	 * @link [video](https://love2d.org/wiki/video)
 	 */
 	export namespace video {
 		/**
@@ -11006,7 +11228,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	/**
 	 * Provides an interface for modifying and retrieving information about the
 	 * program's window.
-	 *
+	 * @link [window](https://love2d.org/wiki/window)
 	 */
 	export namespace window {
 		/**
