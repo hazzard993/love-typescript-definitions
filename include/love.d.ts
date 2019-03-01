@@ -6430,7 +6430,7 @@ interface Object {
 
 /**
  * Contains all LÖVE 2D modules and functions.
- * @link https://love2d.org/wiki/love
+ * @link [love](https://love2d.org/wiki/love)
  */
 declare namespace love {
 
@@ -6848,7 +6848,7 @@ declare namespace love {
 
 	/**
 	 * Provides an interface to create noise with the user's speakers.
-	 *
+	 * @link [audio](https://love2d.org/wiki/audio)
 	 */
 	export namespace audio {
 		/**
@@ -7081,7 +7081,7 @@ declare namespace love {
 	}
 	/**
 	 * Manages events, like keypresses.
-	 *
+	 * @link [event](https://love2d.org/wiki/event)
 	 */
 	export namespace event {
 		/**
@@ -7166,7 +7166,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's filesystem.
-	 *
+	 * @link [filesystem](https://love2d.org/wiki/filesystem)
 	 */
 	export namespace filesystem {
 		/**
@@ -7577,7 +7577,7 @@ declare namespace love {
 	 * Many of the functions are used to manipulate the graphics coordinate system,
 	 * which is essentially the way coordinates are mapped to the display. You can
 	 * change the position, scale, and even rotation in this way.
-	 *
+	 * @link [graphics](https://love2d.org/wiki/graphics)
 	 */
 	export namespace graphics {
 		/**
@@ -9369,7 +9369,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to decode encoded image data.
-	 *
+	 * @link [image](https://love2d.org/wiki/image)
 	 */
 	export namespace image {
 		/**
@@ -9446,7 +9446,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's joystick.
-	 *
+	 * @link [joystick](https://love2d.org/wiki/joystick)
 	 */
 	export namespace joystick {
 		/**
@@ -9551,7 +9551,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's keyboard.
-	 *
+	 * @link [keyboard](https://love2d.org/wiki/keyboard)
 	 */
 	export namespace keyboard {
 		/**
@@ -9672,7 +9672,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides system-independent mathematical functions.
-	 *
+	 * @link [math](https://love2d.org/wiki/math)
 	 */
 	export namespace math {
 		/**
@@ -10119,7 +10119,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides an interface to the user's mouse.
-	 *
+	 * @link [mouse](https://love2d.org/wiki/mouse)
 	 */
 	export namespace mouse {
 		/**
@@ -10374,7 +10374,7 @@ declare namespace love {
 	/**
 	 * Can simulate 2D rigid body physics in a realistic manner. This module is based
 	 * on Box2D, and this API corresponds to the Box2D API as closely as possible.
-	 *
+	 * @link [physics](https://love2d.org/wiki/physics)
 	 */
 	export namespace physics {
 		/**
@@ -10897,7 +10897,7 @@ declare namespace love {
 	/**
 	 * This module is responsible for decoding sound files. It can't play the sounds,
 	 * see love.audio for that.
-	 *
+	 * @link [sound](https://love2d.org/wiki/sound)
 	 */
 	export namespace sound {
 		/**
@@ -10980,7 +10980,7 @@ declare namespace love {
 	}
 	/**
 	 * Provides access to information about the user's system.
-	 *
+	 * @link [system](https://love2d.org/wiki/system)
 	 */
 	export namespace system {
 		/**
@@ -11060,7 +11060,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	 *
 	 * When a Thread is started, it only loads the love.thread module. Every other
 	 * module has to be loaded with require.
-	 *
+	 * @link [thread](https://love2d.org/wiki/thread)
 	 */
 	export namespace thread {
 		/**
@@ -11109,7 +11109,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	}
 	/**
 	 * Provides an interface to the user's clock.
-	 *
+	 * @link [timer](https://love2d.org/wiki/timer)
 	 */
 	export namespace timer {
 		/**
@@ -11167,7 +11167,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	}
 	/**
 	 * Provides an interface to touch-screen presses.
-	 *
+	 * @link [touch](https://love2d.org/wiki/touch)
 	 */
 	export namespace touch {
 		/**
@@ -11203,7 +11203,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	 *
 	 * It can't draw the videos, see love.graphics.newVideo and Video objects for
 	 * that.
-	 *
+	 * @link [video](https://love2d.org/wiki/video)
 	 */
 	export namespace video {
 		/**
@@ -11228,7 +11228,7 @@ To open a file or folder, "file://" must be prepended to the path.
 	/**
 	 * Provides an interface for modifying and retrieving information about the
 	 * program's window.
-	 *
+	 * @link [window](https://love2d.org/wiki/window)
 	 */
 	export namespace window {
 		/**
