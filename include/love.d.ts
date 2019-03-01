@@ -347,6 +347,9 @@ type LightUserData = number;
 
 type ShaderVariableType = any;
 
+/**
+ * @link [Source](https://love2d.org/wiki/Source)
+ */
 declare interface Source extends Object {
 	/**
 	 * Creates an identical copy of the Source in the stopped state.
@@ -639,8 +642,16 @@ declare interface Source extends Object {
 	tell(unit?: TimeUnit): number;
 
 }
+
+/**
+ * @link [RecordingDevice](https://love2d.org/wiki/RecordingDevice)
+ */
 declare interface RecordingDevice extends Object {
 }
+
+/**
+ * @link [File](https://love2d.org/wiki/File)
+ */
 declare interface File extends Object {
 	/**
 	 * Closes a file.
@@ -772,6 +783,10 @@ declare interface File extends Object {
 	write(data: string, size?: number): boolean;
 
 }
+
+/**
+ * @link [FileData](https://love2d.org/wiki/FileData)
+ */
 declare interface FileData extends Data {
 	/**
 	 * Gets the extension of the FileData.
@@ -788,6 +803,10 @@ declare interface FileData extends Data {
 	getFilename(): string;
 
 }
+
+/**
+ * @link [Canvas](https://love2d.org/wiki/Canvas)
+ */
 declare interface Canvas extends Texture {
 	/**
 	 * Gets the width and height of the Canvas.
@@ -904,6 +923,10 @@ declare interface Canvas extends Texture {
 	setWrap(horizontal: WrapMode, vertical?: WrapMode): void;
 
 }
+
+/**
+ * @link [Font](https://love2d.org/wiki/Font)
+ */
 declare interface Font extends Object {
 	/**
 	 * Gets the ascent of the Font. The ascent spans the distance between the baseline
@@ -1024,6 +1047,10 @@ declare interface Font extends Object {
 	setLineHeight(height: number): void;
 
 }
+
+/**
+ * @link [Mesh](https://love2d.org/wiki/Mesh)
+ */
 declare interface Mesh extends Drawable {
 	/**
 	 * Attaches a vertex attribute from a different Mesh onto this Mesh, for use when
@@ -1325,6 +1352,10 @@ declare interface Mesh extends Drawable {
 	setVertices(vertices: table): void;
 
 }
+
+/**
+ * @link [Image](https://love2d.org/wiki/Image)
+ */
 declare interface Image extends Texture {
 	/**
 	 * Gets the original ImageData or CompressedImageData used to create the Image.
@@ -1498,6 +1529,10 @@ declare interface Image extends Texture {
 	setWrap(horizontal: WrapMode, vertical?: WrapMode): void;
 
 }
+
+/**
+ * @link [ParticleSystem](https://love2d.org/wiki/ParticleSystem)
+ */
 declare interface ParticleSystem extends Drawable {
 	/**
 	 * Creates an identical copy of the ParticleSystem in the stopped state.
@@ -2048,6 +2083,10 @@ declare interface ParticleSystem extends Drawable {
 	update(dt: number): void;
 
 }
+
+/**
+ * @link [Quad](https://love2d.org/wiki/Quad)
+ */
 declare interface Quad extends Object {
 	/**
 	 * Gets reference texture dimensions initially specified in love.graphics.newQuad.
@@ -2080,6 +2119,10 @@ declare interface Quad extends Object {
 	setViewport(x: number, y: number, w: number, h: number): void;
 
 }
+
+/**
+ * @link [Shader](https://love2d.org/wiki/Shader)
+ */
 declare interface Shader extends Object {
 	/**
 	 * Gets information about an 'extern' ('uniform') variable in the shader.
@@ -2176,6 +2219,10 @@ declare interface Shader extends Object {
 	sendColor(name: string, color: table, ...vararg: table[]): void;
 
 }
+
+/**
+ * @link [SpriteBatch](https://love2d.org/wiki/SpriteBatch)
+ */
 declare interface SpriteBatch extends Drawable {
 	/**
 	 * Add a sprite to the batch.
@@ -2370,6 +2417,10 @@ declare interface SpriteBatch extends Drawable {
 	setTexture(texture: Texture): void;
 
 }
+
+/**
+ * @link [Text](https://love2d.org/wiki/Text)
+ */
 declare interface Text extends Drawable {
 	/**
 	 * Adds additional colored text to the Text object at the specified position.
@@ -2559,6 +2610,10 @@ declare interface Text extends Drawable {
 	setFont(font: Font): void;
 
 }
+
+/**
+ * @link [Texture](https://love2d.org/wiki/Texture)
+ */
 declare interface Texture extends Drawable {
 	/**
 	 * Gets the depth of a Volume Texture. Returns 1 for 2D, Cubemap, and Array
@@ -2614,6 +2669,10 @@ declare interface Texture extends Drawable {
 	isReadable(): boolean;
 
 }
+
+/**
+ * @link [Video](https://love2d.org/wiki/Video)
+ */
 declare interface Video extends Drawable {
 	/**
 	 * Gets the width and height of the Video in pixels.
@@ -2721,6 +2780,10 @@ declare interface Video extends Drawable {
 	tell(seconds: number): void;
 
 }
+
+/**
+ * @link [CompressedImageData](https://love2d.org/wiki/CompressedImageData)
+ */
 declare interface CompressedImageData extends Data {
 	/**
 	 * Gets the width and height of the CompressedImageData.
@@ -2787,6 +2850,10 @@ declare interface CompressedImageData extends Data {
 	getWidth(level: number): number;
 
 }
+
+/**
+ * @link [ImageData](https://love2d.org/wiki/ImageData)
+ */
 declare interface ImageData extends Data {
 	/**
 	 * Encodes the ImageData and optionally writes it to the save directory.
@@ -2884,6 +2951,10 @@ declare interface ImageData extends Data {
 	setPixel(x: number, y: number, r: number, g: number, b: number, a: number): void;
 
 }
+
+/**
+ * @link [Joystick](https://love2d.org/wiki/Joystick)
+ */
 declare interface Joystick extends Object {
 	/**
 	 * Gets the direction of each axis.
@@ -3078,6 +3149,10 @@ declare interface Joystick extends Object {
 	setVibration(left: number, right: number, duration: number): boolean;
 
 }
+
+/**
+ * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
+ */
 declare interface BezierCurve extends Object {
 	/**
 	 * Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1
@@ -3231,6 +3306,10 @@ declare interface BezierCurve extends Object {
 	translate(dx: number, dy: number): void;
 
 }
+
+/**
+ * @link [CompressedData](https://love2d.org/wiki/CompressedData)
+ */
 declare interface CompressedData extends Data {
 	/**
 	 * Gets the compression format of the CompressedData.
@@ -3240,6 +3319,10 @@ declare interface CompressedData extends Data {
 	getFormat(): CompressedDataFormat;
 
 }
+
+/**
+ * @link [RandomGenerator](https://love2d.org/wiki/RandomGenerator)
+ */
 declare interface RandomGenerator extends Object {
 	/**
 	 * Gets the state of the random number generator.
@@ -3339,6 +3422,10 @@ declare interface RandomGenerator extends Object {
 	setState(state: string): void;
 
 }
+
+/**
+ * @link [Transform](https://love2d.org/wiki/Transform)
+ */
 declare interface Transform extends Object {
 	/**
 	 * Applies the given other Transform object to this one.
@@ -3513,6 +3600,10 @@ declare interface Transform extends Object {
 	translate(dx: number, dy: number): Transform;
 
 }
+
+/**
+ * @link [Cursor](https://love2d.org/wiki/Cursor)
+ */
 declare interface Cursor extends Object {
 	/**
 	 * Gets the type of the Cursor.
@@ -3522,6 +3613,10 @@ declare interface Cursor extends Object {
 	getType(): CursorType;
 
 }
+
+/**
+ * @link [Body](https://love2d.org/wiki/Body)
+ */
 declare interface Body extends Object {
 	/**
 	 * Applies an angular impulse to a body. This makes a single, instantaneous
@@ -4266,6 +4361,10 @@ declare interface Body extends Object {
 	setY(y: number): void;
 
 }
+
+/**
+ * @link [ChainShape](https://love2d.org/wiki/ChainShape)
+ */
 declare interface ChainShape extends Shape {
 	/**
 	 * Returns a child of the shape as an EdgeShape.
@@ -4356,6 +4455,10 @@ declare interface ChainShape extends Shape {
 	setPreviousVertex(x: number, y: number): void;
 
 }
+
+/**
+ * @link [CircleShape](https://love2d.org/wiki/CircleShape)
+ */
 declare interface CircleShape extends Shape {
 	/**
 	 * Gets the center point of the circle shape.
@@ -4389,6 +4492,10 @@ declare interface CircleShape extends Shape {
 	setRadius(radius: number): void;
 
 }
+
+/**
+ * @link [Contact](https://love2d.org/wiki/Contact)
+ */
 declare interface Contact extends Object {
 	/**
 	 * Gets the two Fixtures that hold the shapes that are in contact.
@@ -4487,6 +4594,10 @@ declare interface Contact extends Object {
 	setRestitution(restitution: number): void;
 
 }
+
+/**
+ * @link [EdgeShape](https://love2d.org/wiki/EdgeShape)
+ */
 declare interface EdgeShape extends Shape {
 	/**
 	 * Returns the local coordinates of the edge points.
@@ -4552,6 +4663,10 @@ declare interface EdgeShape extends Shape {
 	setPreviousVertex(x: number, y: number): void;
 
 }
+
+/**
+ * @link [DistanceJoint](https://love2d.org/wiki/DistanceJoint)
+ */
 declare interface DistanceJoint extends Joint {
 	/**
 	 * Gets the damping ratio.
@@ -4596,6 +4711,10 @@ declare interface DistanceJoint extends Joint {
 	setLength(l: number): void;
 
 }
+
+/**
+ * @link [Fixture](https://love2d.org/wiki/Fixture)
+ */
 declare interface Fixture extends Object {
 	/**
 	 * Destroys the fixture
@@ -4885,6 +5004,10 @@ declare interface Fixture extends Object {
 	testPoint(x: number, y: number): boolean;
 
 }
+
+/**
+ * @link [FrictionJoint](https://love2d.org/wiki/FrictionJoint)
+ */
 declare interface FrictionJoint extends Joint {
 	/**
 	 * Gets the maximum friction force in Newtons.
@@ -4915,6 +5038,10 @@ declare interface FrictionJoint extends Joint {
 	setMaxTorque(torque: number): void;
 
 }
+
+/**
+ * @link [GearJoint](https://love2d.org/wiki/GearJoint)
+ */
 declare interface GearJoint extends Joint {
 	/**
 	 * Get the Joints connected by this GearJoint.
@@ -4940,6 +5067,10 @@ declare interface GearJoint extends Joint {
 	setRatio(ratio: number): void;
 
 }
+
+/**
+ * @link [Joint](https://love2d.org/wiki/Joint)
+ */
 declare interface Joint extends Object {
 	/**
 	 * Explicitly destroys the Joint. When you don't have time to wait for garbage
@@ -5026,6 +5157,10 @@ declare interface Joint extends Object {
 	setUserData(value: any): void;
 
 }
+
+/**
+ * @link [MotorJoint](https://love2d.org/wiki/MotorJoint)
+ */
 declare interface MotorJoint extends Joint {
 	/**
 	 * Gets the target angular offset between the two Bodies the Joint is attached to.
@@ -5059,6 +5194,10 @@ declare interface MotorJoint extends Joint {
 	setLinearOffset(x: number, y: number): void;
 
 }
+
+/**
+ * @link [MouseJoint](https://love2d.org/wiki/MouseJoint)
+ */
 declare interface MouseJoint extends Joint {
 	/**
 	 * Returns the damping ratio.
@@ -5120,6 +5259,10 @@ declare interface MouseJoint extends Joint {
 	setTarget(x: number, y: number): void;
 
 }
+
+/**
+ * @link [PolygonShape](https://love2d.org/wiki/PolygonShape)
+ */
 declare interface PolygonShape extends Shape {
 	/**
 	 * Get the local coordinates of the polygon's vertices.
@@ -5143,6 +5286,10 @@ declare interface PolygonShape extends Shape {
 	getPoints(): [number, number, number, number, number];
 
 }
+
+/**
+ * @link [PrismaticJoint](https://love2d.org/wiki/PrismaticJoint)
+ */
 declare interface PrismaticJoint extends Joint {
 	/**
 	 * Checks whether the limits are enabled.
@@ -5276,6 +5423,10 @@ declare interface PrismaticJoint extends Joint {
 	setUpperLimit(upper: number): void;
 
 }
+
+/**
+ * @link [PulleyJoint](https://love2d.org/wiki/PulleyJoint)
+ */
 declare interface PulleyJoint extends Joint {
 	/**
 	 * Get the total length of the rope.
@@ -5357,6 +5508,10 @@ declare interface PulleyJoint extends Joint {
 	setRatio(ratio: number): void;
 
 }
+
+/**
+ * @link [RevoluteJoint](https://love2d.org/wiki/RevoluteJoint)
+ */
 declare interface RevoluteJoint extends Joint {
 	/**
 	 * Checks whether the limits are enabled.
@@ -5481,6 +5636,10 @@ declare interface RevoluteJoint extends Joint {
 	setUpperLimit(upper: number): void;
 
 }
+
+/**
+ * @link [RopeJoint](https://love2d.org/wiki/RopeJoint)
+ */
 declare interface RopeJoint extends Joint {
 	/**
 	 * Gets the maximum length of a RopeJoint.
@@ -5497,6 +5656,10 @@ declare interface RopeJoint extends Joint {
 	setMaxLength(maxLength: number): void;
 
 }
+
+/**
+ * @link [Shape](https://love2d.org/wiki/Shape)
+ */
 declare interface Shape extends Object {
 	/**
 	 * Returns the points of the bounding box for the transformed shape.
@@ -5600,6 +5763,10 @@ declare interface Shape extends Object {
 	testPoint(x: number, y: number): boolean;
 
 }
+
+/**
+ * @link [WeldJoint](https://love2d.org/wiki/WeldJoint)
+ */
 declare interface WeldJoint extends Joint {
 	/**
 	 * Returns the damping ratio of the joint.
@@ -5630,6 +5797,10 @@ declare interface WeldJoint extends Joint {
 	setFrequency(freq: number): void;
 
 }
+
+/**
+ * @link [WheelJoint](https://love2d.org/wiki/WheelJoint)
+ */
 declare interface WheelJoint extends Joint {
 	/**
 	 * Gets the world-space axis vector of the Wheel Joint.
@@ -5726,6 +5897,10 @@ declare interface WheelJoint extends Joint {
 	setSpringFrequency(freq: number): void;
 
 }
+
+/**
+ * @link [World](https://love2d.org/wiki/World)
+ */
 declare interface World extends Object {
 	/**
 	 * Destroys the world, taking all bodies, joints, fixtures and their shapes with
@@ -5925,6 +6100,10 @@ declare interface World extends Object {
 	update(dt: number, velocityiterations?: number, positioniterations?: number): void;
 
 }
+
+/**
+ * @link [Decoder](https://love2d.org/wiki/Decoder)
+ */
 declare interface Decoder extends Object {
 	/**
 	 * Returns the number of bits per sample.
@@ -5956,6 +6135,10 @@ declare interface Decoder extends Object {
 	getSampleRate(): number;
 
 }
+
+/**
+ * @link [SoundData](https://love2d.org/wiki/SoundData)
+ */
 declare interface SoundData extends Data {
 	/**
 	 * Returns the number of bits per sample.
@@ -6009,6 +6192,10 @@ declare interface SoundData extends Data {
 	setSample(i: number, sample: number): void;
 
 }
+
+/**
+ * @link [Thread](https://love2d.org/wiki/Thread)
+ */
 declare interface Thread extends Object {
 	/**
 	 * Retrieves the error string from the thread if it produced an error.
@@ -6055,6 +6242,10 @@ declare interface Thread extends Object {
 	isRunning(): boolean;
 
 }
+
+/**
+ * @link [Channel](https://love2d.org/wiki/Channel)
+ */
 declare interface Channel extends Object {
 	/**
 	 * Clears all the messages in the Channel queue.
@@ -6175,8 +6366,16 @@ declare interface Channel extends Object {
 	supply(value: Variant, timeout: number): boolean;
 
 }
+
+/**
+ * @link [VideoStream](https://love2d.org/wiki/VideoStream)
+ */
 declare interface VideoStream extends Object {
 }
+
+/**
+ * @link [Data](https://love2d.org/wiki/Data)
+ */
 interface Data {
 	/**
 	 * Gets a pointer to the Data.
@@ -6200,8 +6399,16 @@ interface Data {
 	getString(): string;
 
 }
+
+/**
+ * @link [Drawable](https://love2d.org/wiki/Drawable)
+ */
 interface Drawable {
 }
+
+/**
+ * @link [Object](https://love2d.org/wiki/Object)
+ */
 interface Object {
 	/**
 	 * Gets the type of the object as a string.
