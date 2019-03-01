@@ -4,7 +4,7 @@
  *
  * Extended information can be found in the chapter "3.4. Attenuation By Distance"
  * of the OpenAL 1.1 specification.
- *
+ * @link [DistanceModel](https://love2d.org/wiki/DistanceModel)
  */
 type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearclamped' | 'exponent' | 'exponentclamped';
 
@@ -15,81 +15,81 @@ type DistanceModel = 'none' | 'inverse' | 'inverseclamped' | 'linear' | 'linearc
  * A good rule of thumb is to use stream for music files and static for all short
  * sound effects. Basically, you want to avoid loading large files into memory at
  * once.
- *
+ * @link [SourceType](https://love2d.org/wiki/SourceType)
  */
 type SourceType = 'static' | 'stream';
 
 /**
  * Units that represent time.
- *
+ * @link [TimeUnit](https://love2d.org/wiki/TimeUnit)
  */
 type TimeUnit = 'seconds' | 'samples';
 
 /**
  * Arguments to love.event.push() and the like.
- *
+ * @link [Event](https://love2d.org/wiki/Event)
  */
 type Event = 'focus' | 'joystickaxis' | 'joystickhat' | 'joystickpressed' | 'joystickreleased' | 'keypressed' | 'keyreleased' | 'mousefocus' | 'mousepressed' | 'mousereleased' | 'resize' | 'threaderror' | 'quit' | 'visible';
 
 /**
  * Buffer modes for File objects.
- *
+ * @link [BufferMode](https://love2d.org/wiki/BufferMode)
  */
 type BufferMode = 'none' | 'line' | 'full';
 
 /**
  * How to decode a given FileData.
- *
+ * @link [FileDecoder](https://love2d.org/wiki/FileDecoder)
  */
 type FileDecoder = 'file' | 'base64';
 
 /**
  * The different modes you can open a file in.
- *
+ * @link [FileMode](https://love2d.org/wiki/FileMode)
  */
 type FileMode = 'r' | 'w' | 'a' | 'c';
 
 /**
  * The type of a file.
- *
+ * @link [FileType](https://love2d.org/wiki/FileType)
  */
 type FileType = 'file' | 'directory' | 'symlink' | 'other';
 
 /**
  * Text alignment.
- *
+ * @link [AlignMode](https://love2d.org/wiki/AlignMode)
  */
 type AlignMode = 'center' | 'left' | 'right' | 'justify';
 
 /**
  * Different types of arcs that can be drawn.
- *
+ * @link [ArcType](https://love2d.org/wiki/ArcType)
  */
 type ArcType = 'pie' | 'open' | 'closed';
 
 /**
  * Types of particle area spread distribution.
- *
+ * @link [AreaSpreadDistribution](https://love2d.org/wiki/AreaSpreadDistribution)
  */
 type AreaSpreadDistribution = 'uniform' | 'normal' | 'ellipse' | 'none';
 
 /**
  * Different ways alpha affects color blending. See BlendMode and the BlendMode
  * Formulas for additional notes.
- *
+ * @link [BlendAlphaMode](https://love2d.org/wiki/BlendAlphaMode)
  */
 type BlendAlphaMode = 'alphamultiply' | 'premultiplied';
 
 /**
  * Different ways to do color blending. See BlendAlphaMode and the BlendMode
  * Formulas for additional notes.
- *
+ * @link [BlendMode](https://love2d.org/wiki/BlendMode)
  */
 type BlendMode = 'alpha' | 'replace' | 'screen' | 'add' | 'subtract' | 'multiply' | 'lighten' | 'darken';
 
 /**
  * Canvas formats.
- *
+ * @link [CanvasFormat](https://love2d.org/wiki/CanvasFormat)
  */
 type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' | 'rgb10a2' | 'rgba16f' | 'rgba32f' | 'rg11b10f' | 'srgb' | 'r8' | 'rg8' | 'r16f' | 'rg16f' | 'r32f' | 'rg32f';
 
@@ -97,74 +97,74 @@ type CanvasFormat = 'normal' | 'hdr' | 'rgba8' | 'rgba4' | 'rgb5a1' | 'rgb565' |
  * Different types of per-pixel stencil test comparisons. The pixels of an object
  * will be drawn if the comparison succeeds, for each pixel that the object
  * touches.
- *
+ * @link [CompareMode](https://love2d.org/wiki/CompareMode)
  */
 type CompareMode = 'equal' | 'notequal' | 'less' | 'lequal' | 'gequal' | 'greater';
 
 /**
  * Controls whether shapes are drawn as an outline, or filled.
- *
+ * @link [DrawMode](https://love2d.org/wiki/DrawMode)
  */
 type DrawMode = 'fill' | 'line';
 
 /**
  * How the image is filtered when scaling.
- *
+ * @link [FilterMode](https://love2d.org/wiki/FilterMode)
  */
 type FilterMode = 'linear' | 'nearest';
 
 /**
  * Graphics features that can be checked for with love.graphics.getSupported.
- *
+ * @link [GraphicsFeature](https://love2d.org/wiki/GraphicsFeature)
  */
 type GraphicsFeature = 'clampzero' | 'lighten' | 'multicanvasformats';
 
 /**
  * Types of system-dependent graphics limits checked for using
  * love.graphics.getSystemLimits.
- *
+ * @link [GraphicsLimit](https://love2d.org/wiki/GraphicsLimit)
  */
 type GraphicsLimit = 'pointsize' | 'texturesize' | 'multicanvas' | 'canvasmsaa';
 
 /**
  * Line join style.
- *
+ * @link [LineJoin](https://love2d.org/wiki/LineJoin)
  */
 type LineJoin = 'miter' | 'bevel' | 'none';
 
 /**
  * The styles in which lines are drawn.
- *
+ * @link [LineStyle](https://love2d.org/wiki/LineStyle)
  */
 type LineStyle = 'rough' | 'smooth';
 
 /**
  * How a Mesh's vertices are used when drawing.
- *
+ * @link [MeshDrawMode](https://love2d.org/wiki/MeshDrawMode)
  */
 type MeshDrawMode = 'fan' | 'strip' | 'triangles' | 'points';
 
 /**
  * How newly created particles are added to the ParticleSystem.
- *
+ * @link [ParticleInsertMode](https://love2d.org/wiki/ParticleInsertMode)
  */
 type ParticleInsertMode = 'top' | 'bottom' | 'random';
 
 /**
  * Usage hints for SpriteBatches and Meshes to optimize data storage and access.
- *
+ * @link [SpriteBatchUsage](https://love2d.org/wiki/SpriteBatchUsage)
  */
 type SpriteBatchUsage = 'dynamic' | 'static' | 'stream';
 
 /**
  * Graphics state stack types used with love.graphics.push.
- *
+ * @link [StackType](https://love2d.org/wiki/StackType)
  */
 type StackType = 'transform' | 'all';
 
 /**
  * How a stencil function modifies the stencil values of pixels it touches.
- *
+ * @link [StencilAction](https://love2d.org/wiki/StencilAction)
  */
 type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | 'decrementwrap' | 'invert';
 
@@ -173,7 +173,7 @@ type StencilAction = 'replace' | 'increment' | 'decrement' | 'incrementwrap' | '
  * also affects how Meshes with texture coordinates which are outside the range of
  * [0, 1] are drawn, and the color returned by the Texel Shader function when
  * using it to sample from texture coordinates outside of the range of [0, 1].
- *
+ * @link [WrapMode](https://love2d.org/wiki/WrapMode)
  */
 type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero';
 
@@ -186,44 +186,44 @@ type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero';
  * graphics card's VRAM. This is good for saving memory space as well as improving
  * performance, since the graphics card will be able to keep more of the image's
  * pixels in its fast-access cache when drawing it.
- *
+ * @link [CompressedImageFormat](https://love2d.org/wiki/CompressedImageFormat)
  */
 type CompressedImageFormat = 'DXT1' | 'DXT3' | 'DXT5' | 'BC4' | 'BC4s' | 'BC5' | 'BC5s' | 'BC6h' | 'BC6hs' | 'BC7' | 'ETC1' | 'ETC2rgb' | 'ETC2rgba' | 'ETC2rgba1' | 'EACr' | 'EACrs' | 'EACrg' | 'EACrgs' | 'PVR1rgb2' | 'PVR1rgb4' | 'PVR1rgba2' | 'PVR1rgba4' | 'ASTC4x4' | 'ASTC5x4' | 'ASTC5x5' | 'ASTC6x5' | 'ASTC6x6' | 'ASTC8x5' | 'ASTC8x6' | 'ASTC8x8' | 'ASTC10x5' | 'ASTC10x6' | 'ASTC10x8' | 'ASTC10x10' | 'ASTC12x10' | 'ASTC12x12';
 
 /**
  * Encoded image formats.
- *
+ * @link [ImageFormat](https://love2d.org/wiki/ImageFormat)
  */
 type ImageFormat = 'tga' | 'png';
 
 /**
  * Virtual gamepad axes.
- *
+ * @link [GamepadAxis](https://love2d.org/wiki/GamepadAxis)
  */
 type GamepadAxis = 'leftx' | 'lefty' | 'rightx' | 'righty' | 'triggerleft' | 'triggerright';
 
 /**
  * Virtual gamepad buttons.
- *
+ * @link [GamepadButton](https://love2d.org/wiki/GamepadButton)
  */
 type GamepadButton = 'a' | 'b' | 'x' | 'y' | 'back' | 'guide' | 'start' | 'leftstick' | 'rightstick' | 'leftshoulder' | 'rightshoulder' | 'dpup' | 'dpdown' | 'dpleft' | 'dpright';
 
 /**
  * Joystick hat positions.
- *
+ * @link [GamepadButton](https://love2d.org/wiki/GamepadButton)
  */
 type JoystickHat = 'c' | 'd' | 'l' | 'ld' | 'lu' | 'r' | 'rd' | 'ru' | 'u';
 
 /**
  * Types of Joystick inputs.
- *
+ * @link [JoystickInputType](https://love2d.org/wiki/JoystickInputType)
  */
 type JoystickInputType = 'axis' | 'button' | 'hat';
 
 /**
  * All the keys you can press. Note that some keys may not be available on your
  * keyboard or system.
- *
+ * @link [KeyConstant](https://love2d.org/wiki/KeyConstant)
  */
 type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'space' | '!' | '"' | '#' | '$' | '&' | "'" | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '?' | '@' | '[' | '\\' | ']' | '^' | '_' | '`' | 'kp0' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp.' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kpenter' | 'kp=' | 'up' | 'down' | 'right' | 'left' | 'home' | 'end' | 'pageup' | 'pagedown' | 'insert' | 'backspace' | 'tab' | 'clear' | 'return' | 'delete' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'numlock' | 'capslock' | 'scrollock' | 'rshift' | 'lshift' | 'rctrl' | 'lctrl' | 'ralt' | 'lalt' | 'rmeta' | 'lmeta' | 'lsuper' | 'rsuper' | 'mode' | 'compose' | 'pause' | 'escape' | 'help' | 'print' | 'sysreq' | 'break' | 'menu' | 'power' | 'euro' | 'undo' | 'www' | 'mail' | 'calculator' | 'appsearch' | 'apphome' | 'appback' | 'appforward' | 'apprefresh' | 'appbookmarks';
 
@@ -246,49 +246,49 @@ type KeyConstant = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | '
  * One could use textinput or textedited instead, but those only give back the end
  * result of keys used, i.e. you can't get modifiers on their own from it, only
  * the final symbols that were generated.
- *
+ * @link [Scancode](https://love2d.org/wiki/Scancode)
  */
 type Scancode = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0' | 'return' | 'escape' | 'backspace' | 'tab' | 'space' | '-' | '=' | '[' | ']' | '\\' | 'nonus#' | ';' | "'" | '`' | ',' | '.' | '/' | 'capslock' | 'f1' | 'f2' | 'f3' | 'f4' | 'f5' | 'f6' | 'f7' | 'f8' | 'f9' | 'f10' | 'f11' | 'f12' | 'f13' | 'f14' | 'f15' | 'f16' | 'f17' | 'f18' | 'f19' | 'f20' | 'f21' | 'f22' | 'f23' | 'f24' | 'lctrl' | 'lshift' | 'lalt' | 'lgui' | 'rctrl' | 'rshift' | 'ralt' | 'rgui' | 'printscreen' | 'scrolllock' | 'pause' | 'insert' | 'home' | 'numlock' | 'pageup' | 'delete' | 'end' | 'pagedown' | 'right' | 'left' | 'down' | 'up' | 'nonusbackslash' | 'application' | 'execute' | 'help' | 'menu' | 'select' | 'stop' | 'again' | 'undo' | 'cut' | 'copy' | 'paste' | 'find' | 'kp/' | 'kp*' | 'kp-' | 'kp+' | 'kp=' | 'kpenter' | 'kp1' | 'kp2' | 'kp3' | 'kp4' | 'kp5' | 'kp6' | 'kp7' | 'kp8' | 'kp9' | 'kp0' | 'kp.' | 'international1' | 'international2' | 'international3' | 'international4' | 'international5' | 'international6' | 'international7' | 'international8' | 'international9' | 'lang1' | 'lang2' | 'lang3' | 'lang4' | 'lang5' | 'mute' | 'volumeup' | 'volumedown' | 'audionext' | 'audioprev' | 'audiostop' | 'audioplay' | 'audiomute' | 'mediaselect' | 'www' | 'mail' | 'calculator' | 'computer' | 'acsearch' | 'achome' | 'acback' | 'acforward' | 'acstop' | 'acrefresh' | 'acbookmarks' | 'power' | 'brightnessdown' | 'brightnessup' | 'displayswitch' | 'kbdillumtoggle' | 'kbdillumdown' | 'kbdillumup' | 'eject' | 'sleep' | 'alterase' | 'sysreq' | 'cancel' | 'clear' | 'prior' | 'return2' | 'separator' | 'out' | 'oper' | 'clearagain' | 'crsel' | 'exsel' | 'kp00' | 'kp000' | 'thsousandsseparator' | 'decimalseparator' | 'currencyunit' | 'currencysubunit' | 'app1' | 'app2' | 'unknown';
 
 /**
  * Compressed data formats.
- *
+ * @link [CompressedDataFormat](https://love2d.org/wiki/CompressedDataFormat)
  */
 type CompressedDataFormat = 'lz4' | 'zlib' | 'gzip';
 
 /**
  * The layout of matrix elements (row-major or column-major).
- *
+ * @link [MatrixLayout](https://love2d.org/wiki/MatrixLayout)
  */
 type MatrixLayout = 'row' | 'column';
 
 /**
  * Types of hardware cursors.
- *
+ * @link [CursorType](https://love2d.org/wiki/CursorType)
  */
 type CursorType = 'image' | 'arrow' | 'ibeam' | 'wait' | 'waitarrow' | 'crosshair' | 'sizenwse' | 'sizenesw' | 'sizewe' | 'sizens' | 'sizeall' | 'no' | 'hand';
 
 /**
  * The types of a Body.
- *
+ * @link [BodyType](https://love2d.org/wiki/BodyType)
  */
 type BodyType = 'static' | 'dynamic' | 'kinematic';
 
 /**
  * Different types of joints.
- *
+ * @link [JointType](https://love2d.org/wiki/JointType)
  */
 type JointType = 'distance' | 'gear' | 'mouse' | 'prismatic' | 'pulley' | 'revolute' | 'friction' | 'weld' | 'rope';
 
 /**
  * The different types of Shapes, as returned by Shape:getType.
- *
+ * @link [ShapeType](https://love2d.org/wiki/ShapeType)
  */
 type ShapeType = 'circle' | 'polygon' | 'edge' | 'chain';
 
 /**
  * The basic state of the system's power supply.
- *
+ * @link [PowerState](https://love2d.org/wiki/PowerState)
  */
 type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged';
 
@@ -305,32 +305,47 @@ type PowerState = 'unknown' | 'battery' | 'nobattery' | 'charging' | 'charged';
  * issues in some window managers and with multi-monitor setups. In OS X it
  * prevents switching to a different program until fullscreen mode is exited. The
  * "desktop" fullscreen mode generally avoids these issues.
- *
+ * @link [FullscreenType](https://love2d.org/wiki/FullscreenType)
  */
 type FullscreenType = 'desktop' | 'exclusive';
 
 /**
  * Types of message box dialogs. Different types may have slightly different
  * looks.
- *
+ * @link [MessageBoxType](https://love2d.org/wiki/MessageBoxType)
  */
 type MessageBoxType = 'info' | 'warning' | 'error';
 
-type VertexWinding = "cw" | "ccw";
-
+/**
+ * @link [CullMode](https://love2d.org/wiki/CullMode)
+ */
 type CullMode = "back" | "front" | "none";
+
+/**
+ * @link [TextureType](https://love2d.org/wiki/TextureType)
+ */
+type TextureType = "2d" | "array" | "cube" | "volume";
+
+/**
+ * @link [PixelFormat](https://love2d.org/wiki/PixelFormat)
+ */
+type PixelFormat = CanvasFormat;
+
+/**
+ * @link [Variant](https://love2d.org/wiki/Variant)
+ */
+type Variant = any;
+
+/**
+ * @link [CanvasMipmapMode](https://love2d.org/wiki/CanvasMipmapMode)
+ */
+type CanvasMipmapMode = "none" | "auto" | "manual";
+
+type VertexWinding = "cw" | "ccw";
 
 type LightUserData = number;
 
-type Variant = any;
-
-type TextureType = "2d" | "array" | "cube" | "volume";
-
 type ShaderVariableType = any;
-
-type PixelFormat = CanvasFormat;
-
-type CanvasMipmapMode = "none" | "auto" | "manual";
 
 declare interface Source extends Object {
 	/**
