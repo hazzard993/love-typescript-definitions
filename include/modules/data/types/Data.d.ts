@@ -1,7 +1,7 @@
 /**
  * @link [Data](https://love2d.org/wiki/Data)
  */
-interface Data extends Object {
+declare interface Data extends Object {
 
 	/**
 	 * Creates a new copy of the Data object.
