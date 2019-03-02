@@ -39,7 +39,71 @@ declare namespace love {
 		 * @param name The name of the effect.
 		 * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
 		 */
-		export function getEffect(name: string): FilterSettings;
+		export function getEffect(name: EffectType): any;
+		export function getEffect(name: "chorus"): {
+			waveform: EffectWaveform;
+			phase: number;
+			rate: number;
+			depth: number;
+			feedback: number;
+			delay: number;
+		};
+		export function getEffect(name: "compressor"): {
+			enable: boolean;
+		};
+		export function getEffect(name: "distortion"): {
+			gain: number;
+			edge: number;
+			lowcut: number;
+			center: number;
+			bandwidth: number;
+		};
+		export function getEffect(name: "echo"): {
+			delay: number;
+			tapdelay: number;
+			damping: number;
+			feedback: number;
+			spread: number;
+		};
+		export function getEffect(name: "equalizer"): {
+			lowgain: number;
+			lowcut: number;
+			lowmidgain: number;
+			lowmidfrequency: number;
+			lowmidbandwidth: number;
+			highmidgain: number;
+			highmidfrequency: number;
+			highmidbandwidth: number;
+			highgain: number;
+			highcut: number;
+		};
+		export function getEffect(name: "flanger"): {
+			phase: number;
+			rate: number;
+			depth: number;
+			feedback: number;
+			delay: number;
+		};
+		export function getEffect(name: "reverb"): {
+			gain: number;
+			highgain: number;
+			density: number;
+			diffusion: number;
+			decaytime: number;
+			decayhighratio: number;
+			earlygain: number;
+			earlydelay: number;
+			lategain: number;
+			latedelay: number;
+			roomrolloff: number;
+			airabsorption: number;
+			highlimiit: boolean;
+		};
+		export function getEffect(name: "ringmodulator"): {
+			waveform: EffectWaveform;
+			frequency: number;
+			highcut: number;
+		};
 
 		/**
 		 * Gets the maximum number of active effects supported by the system.
@@ -108,6 +172,24 @@ declare namespace love {
 		 * @return {number} volume, The current master volume.
 		 */
 		export function getVolume(): number;
+
+		/**
+		 * Gets whether audio effects are supported in the system.
+		 * @return {boolean} supported, True if effects are supported, false otherwise.
+		 * @link [love.audio.isEffectsSupported](https://love2d.org/wiki/love.audio.isEffectsSupported)
+		 */
+		export function isEffectsSupported(): boolean;
+
+		/**
+		 * Creates a new Source usable for real-time generated sound playback with Source:queue.
+		 * @param samplerate Number of samples per second when playing.
+		 * @param bitdepth Bits per sample (8 or 16).
+		 * @param channels 1 for mono or 2 for stereo.
+		 * @param buffercount The number of buffers that can be queued up at any given time with Source:queue. Cannot be greater than 64. A sensible default (~8) is chosen if no value is specified. (Default 0)
+		 * @return {Source} source, The new Source usable with Source:queue.
+		 * @link [love.audio.newQueueableSource](https://love2d.org/wiki/love.audio.newQueueableSource)
+		 */
+		export function newQueueableSource(samplerate: number, bitdepth: number, channels: number, buffercount?: number): Source;
 
 		/**
 		 * Creates a new Source from a file or SoundData. Sources created from SoundData
@@ -217,6 +299,85 @@ declare namespace love {
 		 * @param scale The new doppler scale factor. The scale must be greater than 0.
 		 */
 		export function setDopplerScale(scale: number): void;
+
+		/**
+		 * Defines an effect that can be applied to a Source.
+		 * @return {boolean} success, Whether the effect was successfully created.
+		 * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
+		 */
+		export function setEffect(name: string, settings: object): boolean;
+		export function setEffect(name: "chorus", settings: {
+			waveform: EffectWaveform;
+			phase: number;
+			rate: number;
+			depth: number;
+			feedback: number;
+			delay: number;
+		}): boolean;
+		export function setEffect(name: "compressor", settings: {
+			enable: boolean;
+		}): boolean;
+		export function setEffect(name: "distortion", settings: {
+			gain: number;
+			edge: number;
+			lowcut: number;
+			center: number;
+			bandwidth: number;
+		}): boolean;
+		export function setEffect(name: "echo", settings: {
+			delay: number;
+			tapdelay: number;
+			damping: number;
+			feedback: number;
+			spread: number;
+		}): boolean;
+		export function setEffect(name: "equalizer", settings: {
+			lowgain: number;
+			lowcut: number;
+			lowmidgain: number;
+			lowmidfrequency: number;
+			lowmidbandwidth: number;
+			highmidgain: number;
+			highmidfrequency: number;
+			highmidbandwidth: number;
+			highgain: number;
+			highcut: number;
+		}): boolean;
+		export function setEffect(name: "flanger", settings: {
+			phase: number;
+			rate: number;
+			depth: number;
+			feedback: number;
+			delay: number;
+		}): boolean;
+		export function setEffect(name: "reverb", settings: {
+			gain: number;
+			highgain: number;
+			density: number;
+			diffusion: number;
+			decaytime: number;
+			decayhighratio: number;
+			earlygain: number;
+			earlydelay: number;
+			lategain: number;
+			latedelay: number;
+			roomrolloff: number;
+			airabsorption: number;
+			highlimiit: boolean;
+		}): boolean;
+		export function setEffect(name: "ringmodulator", settings: {
+			waveform: EffectWaveform;
+			frequency: number;
+			highcut: number;
+		}): boolean;
+
+		/**
+		 * Sets whether the system should mix the audio with the system's audio.
+		 * @param mix True to enable mixing, false to disable it.
+		 * @return {boolean} success, True if the change succeeded, false otherwise.
+		 * @link [love.audio.setMixWithSystem](https://love2d.org/wiki/love.audio.setMixWithSystem)
+		 */
+		export function setMixWithSystem(mix: boolean): boolean;
 
 		/**
 		 * Sets the orientation of the listener.
