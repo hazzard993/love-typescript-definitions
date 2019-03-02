@@ -23,6 +23,25 @@ decoder.typeOf;
 
 /**
  * Documented at
+ * https://love2d.org/wiki/RecordingDevice
+ * Obtained 2019/03/02
+ */
+let recordingDevice: RecordingDevice;
+recordingDevice.release;
+recordingDevice.type;
+recordingDevice.typeOf;
+recordingDevice.getBitDepth;
+recordingDevice.getChannelCount;
+recordingDevice.getData;
+recordingDevice.getName;
+recordingDevice.getSampleCount;
+recordingDevice.getSampleRate;
+recordingDevice.isRecording;
+recordingDevice.start;
+recordingDevice.stop;
+
+/**
+ * Documented at
  * https://love2d.org/wiki/SoundData
  */
 let soundData: SoundData;
@@ -95,21 +114,34 @@ source.tell;
 // Functions
 love;
 love.audio;
+
+/**
+ * Obtained from
+ * https://love2d.org/wiki/love.audio
+ * 2019/03/02
+ */
+love.audio.getActiveEffects;
 love.audio.getActiveSourceCount;
 love.audio.getDistanceModel;
 love.audio.getDopplerScale;
-love.audio.getSourceCount;
+love.audio.getEffect;
+love.audio.getMaxSceneEffects;
+love.audio.getMaxSourceEffects;
 love.audio.getOrientation;
 love.audio.getPosition;
+love.audio.getRecordingDevices;
+love.audio.getSourceCount;
 love.audio.getVelocity;
 love.audio.getVolume;
+love.audio.isEffectsSupported;
+love.audio.newQueueableSource;
 love.audio.newSource;
 love.audio.pause;
 love.audio.play;
-love.audio.resume;
-love.audio.rewind;
 love.audio.setDistanceModel;
 love.audio.setDopplerScale;
+love.audio.setEffect;
+love.audio.setMixWithSystem;
 love.audio.setOrientation;
 love.audio.setPosition;
 love.audio.setVelocity;

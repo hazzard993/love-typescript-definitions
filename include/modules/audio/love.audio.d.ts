@@ -5,6 +5,14 @@ declare namespace love {
 	 * @link [audio](https://love2d.org/wiki/audio)
 	 */
 	export namespace audio {
+
+		/**
+		 * Gets a list of the names of the currently enabled effects.
+		 * @return {string[]} effects, The list of the names of the currently enabled effects.
+		 * @link [love.audio.getActiveEffects](https://love2d.org/wiki/love.audio.getActiveEffects)
+		 */
+		export function getActiveEffects(): string[];
+
 		/**
 		 * Gets the current number of simultaneously playing sources.
 		 *
@@ -25,6 +33,27 @@ declare namespace love {
 		 * @return {number} scale, The current doppler scale factor.
 		 */
 		export function getDopplerScale(): number;
+
+		/**
+		 * Gets the settings associated with an effect.
+		 * @param name The name of the effect.
+		 * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
+		 */
+		export function getEffect(name: string): FilterSettings;
+
+		/**
+		 * Gets the maximum number of active effects supported by the system.
+		 * @returns {number} maximum, The maximum number of active effects.
+		 * @link [love.audio.getMaxSceneEffects](https://love2d.org/wiki/love.audio.getMaxSceneEffects)
+		 */
+		export function getMaxSceneEffects(): number;
+
+		/**
+		 * Gets the maximum number of active Effects in a single Source object, that the system can support.
+		 * @return {number} maximum, The maximum number of active Effects per Source.
+		 * @link [love.audio.getMaxSourceEffects](https://love2d.org/wiki/love.audio.getMaxSourceEffects)
+		 */
+		export function getMaxSourceEffects(): number;
 
 		/**
 		 * Returns the number of sources which are currently playing or paused.
@@ -55,6 +84,13 @@ declare namespace love {
 		 */
 		/** @tupleReturn */
 		export function getPosition(): [number, number, number];
+
+		/**
+		 * Gets a list of RecordingDevices on the system.
+		 * @return {RecordingDevice[]} devices, The list of connected recording devices.
+		 * @link [love.audio.getRecordingDevices](https://love2d.org/wiki/love.audio.getRecordingDevices)
+		 */
+		export function getRecordingDevices(): RecordingDevice[];
 
 		/**
 		 * Returns the velocity of the listener.
