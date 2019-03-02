@@ -39,71 +39,7 @@ declare namespace love {
 		 * @param name The name of the effect.
 		 * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
 		 */
-		export function getEffect(name: EffectType): any;
-		export function getEffect(name: "chorus"): {
-			waveform: EffectWaveform;
-			phase: number;
-			rate: number;
-			depth: number;
-			feedback: number;
-			delay: number;
-		};
-		export function getEffect(name: "compressor"): {
-			enable: boolean;
-		};
-		export function getEffect(name: "distortion"): {
-			gain: number;
-			edge: number;
-			lowcut: number;
-			center: number;
-			bandwidth: number;
-		};
-		export function getEffect(name: "echo"): {
-			delay: number;
-			tapdelay: number;
-			damping: number;
-			feedback: number;
-			spread: number;
-		};
-		export function getEffect(name: "equalizer"): {
-			lowgain: number;
-			lowcut: number;
-			lowmidgain: number;
-			lowmidfrequency: number;
-			lowmidbandwidth: number;
-			highmidgain: number;
-			highmidfrequency: number;
-			highmidbandwidth: number;
-			highgain: number;
-			highcut: number;
-		};
-		export function getEffect(name: "flanger"): {
-			phase: number;
-			rate: number;
-			depth: number;
-			feedback: number;
-			delay: number;
-		};
-		export function getEffect(name: "reverb"): {
-			gain: number;
-			highgain: number;
-			density: number;
-			diffusion: number;
-			decaytime: number;
-			decayhighratio: number;
-			earlygain: number;
-			earlydelay: number;
-			lategain: number;
-			latedelay: number;
-			roomrolloff: number;
-			airabsorption: number;
-			highlimiit: boolean;
-		};
-		export function getEffect(name: "ringmodulator"): {
-			waveform: EffectWaveform;
-			frequency: number;
-			highcut: number;
-		};
+		export function getEffect(name: string): EffectSettings;
 
 		/**
 		 * Gets the maximum number of active effects supported by the system.
@@ -302,74 +238,12 @@ declare namespace love {
 
 		/**
 		 * Defines an effect that can be applied to a Source.
+		 * @param name The name of the effect.
+		 * @param settings The settings to use for this effect.
 		 * @return {boolean} success, Whether the effect was successfully created.
 		 * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
 		 */
-		export function setEffect(name: string, settings: object): boolean;
-		export function setEffect(name: "chorus", settings: {
-			waveform: EffectWaveform;
-			phase: number;
-			rate: number;
-			depth: number;
-			feedback: number;
-			delay: number;
-		}): boolean;
-		export function setEffect(name: "compressor", settings: {
-			enable: boolean;
-		}): boolean;
-		export function setEffect(name: "distortion", settings: {
-			gain: number;
-			edge: number;
-			lowcut: number;
-			center: number;
-			bandwidth: number;
-		}): boolean;
-		export function setEffect(name: "echo", settings: {
-			delay: number;
-			tapdelay: number;
-			damping: number;
-			feedback: number;
-			spread: number;
-		}): boolean;
-		export function setEffect(name: "equalizer", settings: {
-			lowgain: number;
-			lowcut: number;
-			lowmidgain: number;
-			lowmidfrequency: number;
-			lowmidbandwidth: number;
-			highmidgain: number;
-			highmidfrequency: number;
-			highmidbandwidth: number;
-			highgain: number;
-			highcut: number;
-		}): boolean;
-		export function setEffect(name: "flanger", settings: {
-			phase: number;
-			rate: number;
-			depth: number;
-			feedback: number;
-			delay: number;
-		}): boolean;
-		export function setEffect(name: "reverb", settings: {
-			gain: number;
-			highgain: number;
-			density: number;
-			diffusion: number;
-			decaytime: number;
-			decayhighratio: number;
-			earlygain: number;
-			earlydelay: number;
-			lategain: number;
-			latedelay: number;
-			roomrolloff: number;
-			airabsorption: number;
-			highlimiit: boolean;
-		}): boolean;
-		export function setEffect(name: "ringmodulator", settings: {
-			waveform: EffectWaveform;
-			frequency: number;
-			highcut: number;
-		}): boolean;
+		export function setEffect(name: string, settings: EffectSettings): boolean;
 
 		/**
 		 * Sets whether the system should mix the audio with the system's audio.
