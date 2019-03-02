@@ -1,5 +1,6 @@
 import "./modules/audio/love.audio";
 import "./modules/data/love.data";
+import "./modules/event/love.event";
 import "./modules/filesystem/love.filesystem";
 
 /**
