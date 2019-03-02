@@ -23,7 +23,15 @@ declare interface Decoder extends Object {
 	 *
 	 * @return {number} channels, 1 for mono, 2 for stereo.
 	 */
-    getChannelCount(): number;
+	getChannelCount(): number;
+
+	/**
+	 * Returns the number of channels in the stream.
+	 * @return {number} channels, 1 for mono, 2 for stereo.
+	 * @link [Decoder:getChannels](https://love2d.org/wiki/Decoder:getChannels)
+	 * @deprecated since 11.0. This function has been renamed to Decoder:getChannelCount.
+	 */
+	getChannels(): number;
 
 	/**
 	 * Gets the duration of the sound file. It may not always be sample-accurate, and

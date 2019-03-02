@@ -17,7 +17,14 @@ declare interface Source extends Object {
 	 *
 	 * @return {Source} source, The new identical copy of this Source.
 	 */
-    clone(): Source;
+	clone(): Source;
+
+	/**
+	 * Gets the amount of air absorption applied to the Source.
+	 * @return {number} amount, The amount of air absorption applied to the Source.
+	 * @link [Source:getAirAbsorption](https://love2d.org/wiki/Source:getAirAbsorption)
+	 */
+	getAirAbsorption(): number;
 
 	/**
 	 * Returns the reference and maximum distance of the source.
@@ -34,7 +41,15 @@ declare interface Source extends Object {
 	 *
 	 * @return {number} channels, 1 for mono, 2 for stereo.
 	 */
-    getChannelCount(): number;
+	getChannelCount(): number;
+
+	/**
+	 * Returns the number of channels in the stream.
+	 * @returns {number} channels, 1 for mono, 2 for stereo.
+	 * @link [Source:getChannels](https://love2d.org/wiki/Source:getChannels)
+	 * @deprecated since 11.0. This function has been renamed to Source:getChannelCount.
+	 */
+	getChannels(): number;
 
 	/**
 	 * Gets the Source's directional volume cones. Together with Source:setDirection,
@@ -65,7 +80,32 @@ declare interface Source extends Object {
 	 * @param unit The time unit for the return value.
 	 * @return {number} duration, The duration of the Source, or -1 if it cannot be determined.
 	 */
-    getDuration(unit?: TimeUnit): number;
+	getDuration(unit?: TimeUnit): number;
+
+	/**
+	 * Gets the filter settings associated to a specific effect.
+	 *
+	 * This function returns undefined if the effect was applied with no filter settings associated to it.
+	 * @param name The name of the effect.
+	 * @param filtersettings An optional empty table that will be filled with the filter settings.
+	 * @return filtersettings, The settings for the filter associated to this effect, or nil if the effect is not present in this Source or has no filter associated.
+	 * @link [Source:getEffect](https://love2d.org/wiki/Source:getEffect)
+	 */
+	getEffect(name: string, filtersettings?: object): { volume: number, highgain: number, lowgain: number };
+
+	/**
+	 * Gets the filter settings currently applied to the Source.
+	 * @return settings, The filter settings to use for this Source, or nil if the Source has no active filter.
+	 * @link [Source:getFilter](https://love2d.org/wiki/Source:getFilter)
+	 */
+	getFilter(): FilterSettings;
+
+	/**
+	 * Gets the number of free buffer slots in a queueable Source.
+	 * @return {number} buffers, How many more SoundData objects can be queued up.
+	 * @link [Source:getFreeBufferCount](https://love2d.org/wiki/Source:getFreeBufferCount)
+	 */
+	getFreeBufferCount(): number;
 
 	/**
 	 * Gets the current pitch of the Source.
@@ -143,7 +183,14 @@ declare interface Source extends Object {
 	 *
 	 * @return {boolean} playing, True if the Source is playing, false otherwise.
 	 */
-    isPlaying(): boolean;
+	isPlaying(): boolean;
+
+	/**
+	 * Gets whether the Source's position, velocity, direction, and cone angles are relative to the listener.
+	 * @returns {boolean} relative, True if the position, velocity, direction and cone angles are relative to the listener, false if they're absolute.
+	 * @link [Source:isRelative](https://love2d.org/wiki/Source:isRelative)
+	 */
+	isRelative(): boolean;
 
 	/**
 	 * Returns whether the Source is stopped.
@@ -163,7 +210,17 @@ declare interface Source extends Object {
 	 *
 	 * @return {boolean} success, True if the Source started playing successfully, false otherwise.
 	 */
-    play(): boolean;
+	play(): boolean;
+
+	/**
+	 * Queues SoundData for playback in a queueable Source.
+	 *
+	 * This method requires the Source to be created via love.audio.newQueueableSource.
+	 * @param sounddata The data to queue. The SoundData's sample rate, bit depth, and channel count must match the Source's.
+	 * @return {boolean} success, True if the data was successfully queued for playback, false if there were no available buffers to use for queueing.
+	 * @link [Source:queue](https://love2d.org/wiki/Source:queue)
+	 */
+	queue(sounddata: SoundData): boolean;
 
 	/**
 	 * Resumes a paused Source.
@@ -183,7 +240,14 @@ declare interface Source extends Object {
 	 * @param position The position to seek to.
 	 * @param unit The unit of the position value.
 	 */
-    seek(position: number, unit?: TimeUnit): void;
+	seek(position: number, unit?: TimeUnit): void;
+
+	/**
+	 * Sets the amount of air absorption applied to the Source.
+	 * @param amount The amount of air absorption applied to the Source. Must be between 0 and 10.
+	 * @link [Source:setAirAbsorption](https://love2d.org/wiki/Source:setAirAbsorption)
+	 */
+	setAirAbsorption(amount: number): void;
 
 	/**
 	 * Sets the direction vector of the Source. A zero vector makes the source
@@ -193,7 +257,39 @@ declare interface Source extends Object {
 	 * @param y The Y part of the direction vector.
 	 * @param z The Z part of the direction vector.
 	 */
-    setDirection(x: number, y: number, z: number): void;
+	setDirection(x: number, y: number, z: number): void;
+
+	/**
+	 * Applies an audio effect to the Source.
+	 * @param name The name of the effect previously set up with love.audio.setEffect.
+	 * @param enable If false and the given effect name was previously enabled on this Source, disables the effect.
+	 * @return {boolean} success, If false and the given effect name was previously enabled on this Source, disables the effect.
+	 * @link [Source:setEffect](https://love2d.org/wiki/Source:setEffect)
+	 */
+	setEffect(name: string, enable?: boolean): boolean;
+
+	/**
+	 * Applies an audio effect to the Source.
+	 * @param name The name of the effect previously set up with love.audio.setEffect.
+	 * @param filtersettings The filter settings to apply prior to the effect.
+	 * @return {boolean} success, Whether the effect and filter were successfully applied to this Source.
+	 * @link [Source:setEffect](https://love2d.org/wiki/Source:setEffect)
+	 */
+	setEffect(name: string, filtersettings: FilterSettings): boolean;
+
+	/**
+	 * Sets a low-pass, high-pass, or band-pass filter to apply when playing the Source.
+	 * @param settings The filter settings to use for this Source.
+	 * @return {boolean} success, Whether the filter was successfully applied to the Source.
+	 * @link [Source:setFilter](https://love2d.org/wiki/Source:setFilter)
+	 */
+	setFilter(settings: FilterSettings): boolean;
+
+	/**
+	 * Disables filtering on this Source.
+	 * @link [Source:setFilter](https://love2d.org/wiki/Source:setFilter)
+	 */
+	setFilter(): void;
 
 	/**
 	 * Sets the reference and maximum distance of the source.
@@ -235,7 +331,14 @@ declare interface Source extends Object {
 	 * @param y The Y position of the Source.
 	 * @param z The Z position of the Source.
 	 */
-    setPosition(x: number, y: number, z: number): void;
+	setPosition(x: number, y: number, z: number): void;
+
+	/**
+	 * Sets whether the Source's position, velocity, direction, and cone angles are relative to the listener, or absolute.
+	 * @param enable True to make the position, velocity, direction and cone angles relative to the listener, false to make them absolute.
+	 * @link [Source:setRelative](https://love2d.org/wiki/Source:setRelative)
+	 */
+	setRelative(enable?: boolean): void;
 
 	/**
 	 * Sets the rolloff factor which affects the strength of the used distance
