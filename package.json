@@ -15,6 +15,9 @@
     "lua",
     "typescript"
   ],
+  "files": [
+    "**.d.ts"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
