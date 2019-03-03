@@ -17,7 +17,7 @@ declare namespace love {
 		 *
 		 * @return {table} joysticks, The list of currently connected Joysticks.
 		 */
-        export function getJoysticks(): table;
+        export function getJoysticks(): Joystick[];
 
 		/**
 		 * Loads a gamepad mappings string or file created with

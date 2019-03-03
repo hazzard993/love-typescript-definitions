@@ -5,8 +5,9 @@
 		"types": ["lua-types/jit"]
 	},
 	"include": [
-		"include/**/**.d.ts",
-		"include/*.d.ts",
-		"include/**/*_spec.ts",
+		"include/love.d.ts",
+		// "include/**/**.d.ts",
+		// "include/*.d.ts",
+		// "include/**/*_spec.ts",
 	]
 }

@@ -87,7 +87,7 @@ declare namespace love {
 		 * @return {table} items, A sequence with the names of all files and subdirectories as strings.
 		 * @link [love.filesystem.getDirectoryItems](https://love2d.org/wiki/love.filesystem.getDirectoryItems)
 		 */
-        export function getDirectoryItems(dir: string): table;
+        export function getDirectoryItems(dir: string): string[];
 
 		/**
 		 * Gets the write directory name for your game. Note that this only returns the
@@ -105,7 +105,7 @@ declare namespace love {
 		 * @return {table} info, A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields:
 		 * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
 		 */
-        export function getInfo(path: string): table;
+        export function getInfo(path: string): FileInfo;
 
 		/**
 		 * Gets information about the specified file or directory.
@@ -115,7 +115,7 @@ declare namespace love {
 		 * @return {table} info, A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields:
 		 * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
 		 */
-        export function getInfo(path: string, info: table): table;
+        export function getInfo(path: string, info: object): FileInfo;
 
         /**
          * Gets the last modification time of a file.
