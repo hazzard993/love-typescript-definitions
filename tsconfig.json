@@ -9,5 +9,6 @@
 		// "include/**/**.d.ts",
 		// "include/*.d.ts",
 		"include/**/*_spec.ts",
+		"include/*_spec.ts",
 	]
 }
