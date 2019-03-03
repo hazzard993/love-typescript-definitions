@@ -301,30 +301,6 @@ texture.setWrap;
 
 /**
  * Documented at
- * https://love2d.org/wiki/Transform
- * 2019/03/03
- */
-let transform: Transform;
-transform.release;
-transform.type;
-transform.typeOf;
-transform.apply;
-transform.clone;
-transform.getMatrix;
-transform.inverse;
-transform.inverseTransformPoint;
-transform.isAffine2DTransform;
-transform.reset;
-transform.rotate;
-transform.scale;
-transform.setMatrix;
-transform.setTransformation;
-transform.shear;
-transform.transformPoint;
-transform.translate;
-
-/**
- * Documented at
  * https://love2d.org/wiki/Video
  * 2019/03/03
  */

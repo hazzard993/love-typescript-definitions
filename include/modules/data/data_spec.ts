@@ -20,21 +20,6 @@ byteData.typeOf;
 
 /**
  * Documented at
- * https://love2d.org/wiki/CompressedData
- * Obtained 2019/03/02
- */
-let compressedData: CompressedData;
-compressedData.getFormat;
-compressedData.clone;
-compressedData.getPointer;
-compressedData.getSize;
-compressedData.getString;
-compressedData.release;
-compressedData.type;
-compressedData.typeOf;
-
-/**
- * Documented at
  * https://love2d.org/wiki/Data
  * Obtained 2019/03/02
  */
