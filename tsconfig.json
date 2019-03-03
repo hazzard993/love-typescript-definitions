@@ -5,7 +5,7 @@
 		"types": ["lua-types/jit"]
 	},
 	"include": [
-		"include/love.d.ts",
+		"index.d.ts",
 		// "include/**/**.d.ts",
 		// "include/*.d.ts",
 		"include/**/*_spec.ts",
