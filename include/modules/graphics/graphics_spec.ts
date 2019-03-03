@@ -56,25 +56,6 @@ channel.typeOf;
 
 /**
  * Documented at
- * https://love2d.org/wiki/CompressedImageData
- * 2019/03/03
- */
-let compressedImageData: CompressedImageData;
-compressedImageData.getDimensions;
-compressedImageData.getFormat;
-compressedImageData.getHeight;
-compressedImageData.getMipmapCount;
-compressedImageData.getWidth;
-compressedImageData.clone;
-compressedImageData.getPointer;
-compressedImageData.getSize;
-compressedImageData.getString;
-compressedImageData.release;
-compressedImageData.type;
-compressedImageData.typeOf;
-
-/**
- * Documented at
  * https://love2d.org/wiki/Drawable
  * 2019/03/03
  */

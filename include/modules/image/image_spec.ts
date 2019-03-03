@@ -1,5 +1,24 @@
 /**
  * Documented at
+ * https://love2d.org/wiki/CompressedImageData
+ * 2019/03/03
+ */
+let compressedImageData: CompressedImageData;
+compressedImageData.getDimensions;
+compressedImageData.getFormat;
+compressedImageData.getHeight;
+compressedImageData.getMipmapCount;
+compressedImageData.getWidth;
+compressedImageData.clone;
+compressedImageData.getPointer;
+compressedImageData.getSize;
+compressedImageData.getString;
+compressedImageData.release;
+compressedImageData.type;
+compressedImageData.typeOf;
+
+/**
+ * Documented at
  * https://love2d.org/wiki/ImageData
  * Obtained 2019/03/02
  */
@@ -20,3 +39,12 @@ imageData.setPixel;
 imageData.release;
 imageData.type;
 imageData.typeOf;
+
+let c: CompressedImageData;
+
+love;
+love.image;
+
+love.image.isCompressed;
+love.image.newCompressedData;
+love.image.newImageData;
