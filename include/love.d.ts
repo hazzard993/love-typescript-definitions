@@ -19,6 +19,8 @@ import "./modules/data/enums/HashFunction";
 import "./modules/data/love.data";
 import "./modules/data/types/ByteData";
 import "./modules/data/types/Data";
+import "./modules/event/enums/Event";
+import "./modules/event/love.event";
 import "./modules/filesystem/enums/BufferMode";
 import "./modules/filesystem/enums/FileDecoder";
 import "./modules/filesystem/enums/FileMode";
