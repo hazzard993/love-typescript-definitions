@@ -1,6 +1,7 @@
 /**
  * Arguments to love.event.push() and the like.
  * @link [Event](https://love2d.org/wiki/Event)
+ * @since 0.6.0
  */
 declare type Event = "focus" |
     "joystickpressed" |
