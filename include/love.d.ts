@@ -230,7 +230,7 @@ declare namespace love {
 	 *   love.graphics.draw(image, 50, 50);
 	 * }
 	 */
-    export let load: (arg: string[], unfilteredArg?: string[]) => void;
+    export let load: (arg: Array<string>, unfilteredArg?: Array<string>) => void;
 
 	/**
 	 * Callback function triggered when the system is running out of memory on mobile devices.

@@ -59,7 +59,7 @@ declare function loadfile(
  * This function is similar to pcall, except that it sets a new message handler msgh.
  */
 /** @tupleReturn */
-declare function xpcall(f: () => any, msgh: () => any, ...args: any[]): true | [false, string];
+declare function xpcall(f: () => any, msgh: () => any, ...args: Array<any>): true | [false, string];
 
 /**
  * Returns the elements from the given list. This function is equivalent to
@@ -69,4 +69,4 @@ declare function xpcall(f: () => any, msgh: () => any, ...args: any[]): true | [
  * By default, i is 1 and j is #list.
  */
 /** @tupleReturn */
-declare function unpack(list: any[], i?: number, j?: number): any[];
+declare function unpack(list: Array<any>, i?: number, j?: number): Array<any>;

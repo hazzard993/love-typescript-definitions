@@ -31,4 +31,5 @@ declare namespace debug {
    * thread. In this case, setfenv returns no values.
    */
   export function setfenv(f: Function | 0 | 1 | 2, tbl: table): Function | null;
+
 }

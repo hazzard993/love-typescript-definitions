@@ -17,7 +17,7 @@ declare module "utf8" {
    * byte sequence and returns a string with the concatenation of all these
    * sequences
    */
-  function char(...args: number[]): string;
+  function char(...args: Array<number>): string;
 
   /**
    * The pattern (a string, not a function) "[\0-\x7F\xC2-\xF4][\x80-\xBF]*" (see

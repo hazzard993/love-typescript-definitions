@@ -2,35 +2,40 @@ declare namespace love {
 
 	/**
 	 * Provides an interface to create noise with the user's speakers.
-	 * @link [audio](https://love2d.org/wiki/audio)
+	 * @link [love.audio](https://love2d.org/wiki/love.audio)
 	 */
 	export namespace audio {
 
 		/**
 		 * Gets a list of the names of the currently enabled effects.
-		 * @return {string[]} effects, The list of the names of the currently enabled effects.
+		 * @return effects, The list of the names of the currently enabled effects.
 		 * @link [love.audio.getActiveEffects](https://love2d.org/wiki/love.audio.getActiveEffects)
+		 * @since 11.0
 		 */
-		export function getActiveEffects(): string[];
+		export function getActiveEffects(): Array<string>;
 
 		/**
 		 * Gets the current number of simultaneously playing sources.
-		 *
-		 * @return {number} count, The current number of simultaneously playing sources.
+		 * @return count, The current number of simultaneously playing sources.
+		 * @link [love.audio.getActiveSourceCount](https://love2d.org/wiki/love.audio.getActiveSourceCount)
+		 * @since 11.0
 		 */
 		export function getActiveSourceCount(): number;
 
 		/**
 		 * Returns the distance attenuation model.
-		 *
-		 * @return {DistanceModel} model, The current distance model. The default is 'inverseclamped'.
+		 * @return model, The current distance model. The default is 'inverseclamped'.
+		 * @link [love.audio.getDistanceModel](https://love2d.org/wiki/love.audio.getDistanceModel)
+		 * @since 0.8.0
 		 */
 		export function getDistanceModel(): DistanceModel;
 
 		/**
 		 * Gets the current global scale factor for velocity-based doppler effects.
 		 *
-		 * @return {number} scale, The current doppler scale factor.
+		 * @return scale, The current doppler scale factor.
+		 * @link [love.audio.getDopplerScale](https://love2d.org/wiki/love.audio.getDopplerScale)
+		 * @since 0.9.2
 		 */
 		export function getDopplerScale(): number;
 
@@ -38,6 +43,7 @@ declare namespace love {
 		 * Gets the settings associated with an effect.
 		 * @param name The name of the effect.
 		 * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
+		 * @since 11.0
 		 */
 		export function getEffect(name: string): EffectSettings;
 
@@ -56,9 +62,11 @@ declare namespace love {
 		export function getMaxSourceEffects(): number;
 
 		/**
-		 * Returns the number of sources which are currently playing or paused.
-		 *
-		 * @return {number} numSources, The number of sources which are currently playing or paused.
+		 * Gets the current number of simultaneously playing sources.
+		 * @return numSources, The number of sources which are currently playing or paused.
+		 * @link [love.audio.getSourceCount](https://love2d.org/wiki/love.audio.getSourceCount)
+		 * @since 0.9.0
+		 * @deprecated since 11.0. It has been renamed to love.audio.getActiveSourceCount.
 		 */
 		export function getSourceCount(): number;
 
