@@ -140,6 +140,7 @@ declare namespace love {
          * @return `index` The index of the first unread byte in the data string.
          * @link [love.data.unpack](https://love2d.org/wiki/love.data.unpack)
          * @tupleReturn
+         * @since 11.0
          */
         export function unpack(format: string, data: string | Data, pos?: number): Array<any>;
 
