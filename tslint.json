@@ -2,7 +2,11 @@
     "defaultSeverity": "error",
     "jsRules": {},
     "rules": {
-        "no-trailing-whitespace": true
+        "no-trailing-whitespace": true,
+        "eofline": true,
+        "ordered-imports": true,
+        "semicolon": true,
+        "object-literal-sort-keys": true
     },
     "rulesDirectory": []
 } 

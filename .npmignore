@@ -1,2 +1,2 @@
-*
-!*.d.ts
+*_spec.ts
+*.lua
