@@ -3,18 +3,18 @@
  * @link [RopeJoint](https://love2d.org/wiki/RopeJoint)
  */
 declare interface RopeJoint extends Joint {
-	/**
-	 * Gets the maximum length of a RopeJoint.
-	 *
-	 * @return {number} maxLength, The maximum length of the RopeJoint.
-	 */
+    /**
+     * Gets the maximum length of a RopeJoint.
+     *
+     * @return {number} maxLength, The maximum length of the RopeJoint.
+     */
     getMaxLength(): number;
 
-	/**
-	 * Sets the maximum length of a RopeJoint.
-	 *
-	 * @param maxLength The maximum length of the RopeJoint.
-	 */
+    /**
+     * Sets the maximum length of a RopeJoint.
+     *
+     * @param maxLength The maximum length of the RopeJoint.
+     */
     setMaxLength(maxLength: number): void;
 
 }

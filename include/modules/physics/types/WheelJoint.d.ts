@@ -3,105 +3,105 @@
  * @link [WheelJoint](https://love2d.org/wiki/WheelJoint)
  */
 declare interface WheelJoint extends Joint {
-	/**
-	 * Gets the world-space axis vector of the Wheel Joint.
-	 *
-	 * @return {number} x, The x-axis coordinate of the world-space axis vector.
-	 * @return {number} y, The y-axis coordinate of the world-space axis vector.
-	 */
+    /**
+     * Gets the world-space axis vector of the Wheel Joint.
+     *
+     * @return {number} x, The x-axis coordinate of the world-space axis vector.
+     * @return {number} y, The y-axis coordinate of the world-space axis vector.
+     */
     /** @tupleReturn */
     getAxis(): [number, number];
 
-	/**
-	 * Returns the current joint translation speed.
-	 *
-	 * @return {number} speed, The translation speed of the joint in meters per second.
-	 */
+    /**
+     * Returns the current joint translation speed.
+     *
+     * @return {number} speed, The translation speed of the joint in meters per second.
+     */
     getJointSpeed(): number;
 
-	/**
-	 * Returns the current joint translation.
-	 *
-	 * @return {number} position, The translation of the joint in meters.
-	 */
+    /**
+     * Returns the current joint translation.
+     *
+     * @return {number} position, The translation of the joint in meters.
+     */
     getJointTranslation(): number;
 
-	/**
-	 * Returns the maximum motor torque.
-	 *
-	 * @return {number} maxTorque, The maximum torque of the joint motor in newton meters.
-	 */
+    /**
+     * Returns the maximum motor torque.
+     *
+     * @return {number} maxTorque, The maximum torque of the joint motor in newton meters.
+     */
     getMaxMotorTorque(): number;
 
-	/**
-	 * Returns the speed of the motor.
-	 *
-	 * @return {number} speed, The speed of the joint motor in radians per second.
-	 */
+    /**
+     * Returns the speed of the motor.
+     *
+     * @return {number} speed, The speed of the joint motor in radians per second.
+     */
     getMotorSpeed(): number;
 
-	/**
-	 * Returns the current torque on the motor.
-	 *
-	 * @param invdt How long the force applies. Usually the inverse time step or 1/dt.
-	 * @return {number} torque, The torque on the motor in newton meters.
-	 */
+    /**
+     * Returns the current torque on the motor.
+     *
+     * @param invdt How long the force applies. Usually the inverse time step or 1/dt.
+     * @return {number} torque, The torque on the motor in newton meters.
+     */
     getMotorTorque(invdt: number): number;
 
-	/**
-	 * Returns the damping ratio.
-	 *
-	 * @return {number} ratio, The damping ratio.
-	 */
+    /**
+     * Returns the damping ratio.
+     *
+     * @return {number} ratio, The damping ratio.
+     */
     getSpringDampingRatio(): number;
 
-	/**
-	 * Returns the spring frequency.
-	 *
-	 * @return {number} freq, The frequency in hertz.
-	 */
-	getSpringFrequency(): number;
+    /**
+     * Returns the spring frequency.
+     *
+     * @return {number} freq, The frequency in hertz.
+     */
+    getSpringFrequency(): number;
 
-	/**
-	 * Checks if the joint motor is running.
-	 * @return {boolean} on, The status of the joint motor.
-	 * @link [WheelJoint:isMotorEnabled](https://love2d.org/wiki/WheelJoint:isMotorEnabled)
-	 */
-	isMotorEnabled(): boolean;
+    /**
+     * Checks if the joint motor is running.
+     * @return {boolean} on, The status of the joint motor.
+     * @link [WheelJoint:isMotorEnabled](https://love2d.org/wiki/WheelJoint:isMotorEnabled)
+     */
+    isMotorEnabled(): boolean;
 
-	/**
-	 * Sets a new maximum motor torque.
-	 *
-	 * @param maxTorque The new maximum torque for the joint motor in newton meters.
-	 */
+    /**
+     * Sets a new maximum motor torque.
+     *
+     * @param maxTorque The new maximum torque for the joint motor in newton meters.
+     */
     setMaxMotorTorque(maxTorque: number): void;
 
-	/**
-	 * Starts and stops the joint motor.
-	 *
-	 * @param enable True turns the motor on and false turns it off.
-	 */
+    /**
+     * Starts and stops the joint motor.
+     *
+     * @param enable True turns the motor on and false turns it off.
+     */
     setMotorEnabled(enable: boolean): void;
 
-	/**
-	 * Sets a new speed for the motor.
-	 *
-	 * @param speed The new speed for the joint motor in radians per second.
-	 */
+    /**
+     * Sets a new speed for the motor.
+     *
+     * @param speed The new speed for the joint motor in radians per second.
+     */
     setMotorSpeed(speed: number): void;
 
-	/**
-	 * Sets a new damping ratio.
-	 *
-	 * @param ratio The new damping ratio.
-	 */
+    /**
+     * Sets a new damping ratio.
+     *
+     * @param ratio The new damping ratio.
+     */
     setSpringDampingRatio(ratio: number): void;
 
-	/**
-	 * Sets a new spring frequency.
-	 *
-	 * @param freq The new frequency in hertz.
-	 */
+    /**
+     * Sets a new spring frequency.
+     *
+     * @param freq The new frequency in hertz.
+     */
     setSpringFrequency(freq: number): void;
 
 }

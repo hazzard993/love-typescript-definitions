@@ -129,9 +129,9 @@ declare namespace love {
          * @return {Data | string} data, Data/string which contains the serialized data.
          * @link [love.data.pack](https://love2d.org/wiki/love.data.pack)
          */
-        export function pack(container: ContainerType, format: string, ...values: any[]): Data | string;
-        export function pack(container: "string", format: string, ...values: any[]): string;
-        export function pack(container: "data", format: string, ...values: any[]): Data;
+        export function pack(container: ContainerType, format: string, ...values: Array<any>): Data | string;
+        export function pack(container: "string", format: string, ...values: Array<any>): string;
+        export function pack(container: "data", format: string, ...values: Array<any>): Data;
 
         /**
          * Unpacks (deserializes) a byte-string or Data into simple Lua values.
@@ -143,7 +143,7 @@ declare namespace love {
          * @link [love.data.unpack](https://love2d.org/wiki/love.data.unpack)
          * @tupleReturn
          */
-        export function unpack(format: string, data: string | Data, pos?: number): any[];
+        export function unpack(format: string, data: string | Data, pos?: number): Array<any>;
 
     }
 

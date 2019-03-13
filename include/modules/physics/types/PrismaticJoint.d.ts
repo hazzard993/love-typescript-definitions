@@ -3,143 +3,143 @@
  * @link [PrismaticJoint](https://love2d.org/wiki/PrismaticJoint)
  */
 declare interface PrismaticJoint extends Joint {
-	/**
-	 * Checks whether the limits are enabled.
-	 *
-	 * @return {boolean} enabled, True if enabled, false otherwise.
-	 */
+    /**
+     * Checks whether the limits are enabled.
+     *
+     * @return {boolean} enabled, True if enabled, false otherwise.
+     */
     areLimitsEnabled(): boolean;
 
-	/**
-	 * Gets the world-space axis vector of the Prismatic Joint.
-	 *
-	 * @return {number} x, The x-axis coordinate of the world-space axis vector.
-	 * @return {number} y, The y-axis coordinate of the world-space axis vector.
-	 */
+    /**
+     * Gets the world-space axis vector of the Prismatic Joint.
+     *
+     * @return {number} x, The x-axis coordinate of the world-space axis vector.
+     * @return {number} y, The y-axis coordinate of the world-space axis vector.
+     */
     /** @tupleReturn */
     getAxis(): [number, number];
 
-	/**
-	 * Get the current joint angle speed.
-	 *
-	 * @return {number} s, Joint angle speed in meters/second.
-	 */
+    /**
+     * Get the current joint angle speed.
+     *
+     * @return {number} s, Joint angle speed in meters/second.
+     */
     getJointSpeed(): number;
 
-	/**
-	 * Get the current joint translation.
-	 *
-	 * @return {number} t, Joint translation, usually in meters.
-	 */
+    /**
+     * Get the current joint translation.
+     *
+     * @return {number} t, Joint translation, usually in meters.
+     */
     getJointTranslation(): number;
 
-	/**
-	 * Gets the joint limits.
-	 *
-	 * @return {number} lower, The lower limit, usually in meters.
-	 * @return {number} upper, The upper limit, usually in meters.
-	 */
+    /**
+     * Gets the joint limits.
+     *
+     * @return {number} lower, The lower limit, usually in meters.
+     * @return {number} upper, The upper limit, usually in meters.
+     */
     /** @tupleReturn */
     getLimits(): [number, number];
 
-	/**
-	 * Gets the lower limit.
-	 *
-	 * @return {number} lower, The lower limit, usually in meters.
-	 */
+    /**
+     * Gets the lower limit.
+     *
+     * @return {number} lower, The lower limit, usually in meters.
+     */
     getLowerLimit(): number;
 
-	/**
-	 * Gets the maximum motor force.
-	 *
-	 * @return {number} f, The maximum motor force, usually in N.
-	 */
+    /**
+     * Gets the maximum motor force.
+     *
+     * @return {number} f, The maximum motor force, usually in N.
+     */
     getMaxMotorForce(): number;
 
-	/**
-	 * Get the current motor force.
-	 *
-	 * @return {number} f, The current motor force, usually in N.
-	 */
+    /**
+     * Get the current motor force.
+     *
+     * @return {number} f, The current motor force, usually in N.
+     */
     getMotorForce(): number;
 
-	/**
-	 * Gets the motor speed.
-	 *
-	 * @return {number} s, The motor speed, usually in meters per second.
-	 */
+    /**
+     * Gets the motor speed.
+     *
+     * @return {number} s, The motor speed, usually in meters per second.
+     */
     getMotorSpeed(): number;
 
-	/**
-	 * Gets the upper limit.
-	 *
-	 * @return {number} upper, The upper limit, usually in meters.
-	 */
-	getUpperLimit(): number;
+    /**
+     * Gets the upper limit.
+     *
+     * @return {number} upper, The upper limit, usually in meters.
+     */
+    getUpperLimit(): number;
 
-	/**
-	 * Checks whether limits are enabled.
-	 * @return {boolean} enabled, True if enabled, false otherwise.
-	 * @link [PrismaticJoint:hasLimitsEnabled](https://love2d.org/wiki/PrismaticJoint:hasLimitsEnabled)
-	 * @deprecated since 11.0. This function has been renamed to PrismaticJoint:areLimitsEnabled.
-	 */
-	hasLimitsEnabled(): boolean;
+    /**
+     * Checks whether limits are enabled.
+     * @return {boolean} enabled, True if enabled, false otherwise.
+     * @link [PrismaticJoint:hasLimitsEnabled](https://love2d.org/wiki/PrismaticJoint:hasLimitsEnabled)
+     * @deprecated since 11.0. This function has been renamed to PrismaticJoint:areLimitsEnabled.
+     */
+    hasLimitsEnabled(): boolean;
 
-	/**
-	 * Checks whether the motor is enabled.
-	 *
-	 * @return {boolean} enabled, True if enabled, false if disabled.
-	 */
+    /**
+     * Checks whether the motor is enabled.
+     *
+     * @return {boolean} enabled, True if enabled, false if disabled.
+     */
     isMotorEnabled(): boolean;
 
-	/**
-	 * Sets the limits.
-	 *
-	 * @param lower The lower limit, usually in meters.
-	 * @param upper The upper limit, usually in meters.
-	 */
+    /**
+     * Sets the limits.
+     *
+     * @param lower The lower limit, usually in meters.
+     * @param upper The upper limit, usually in meters.
+     */
     setLimits(lower: number, upper: number): void;
 
-	/**
-	 * Enables or disables the limits of the joint.
-	 *
-	 * @param enable True to enable, false to disable.
-	 */
+    /**
+     * Enables or disables the limits of the joint.
+     *
+     * @param enable True to enable, false to disable.
+     */
     setLimitsEnabled(enable: boolean): void;
 
-	/**
-	 * Sets the lower limit.
-	 *
-	 * @param lower The lower limit, usually in meters.
-	 */
+    /**
+     * Sets the lower limit.
+     *
+     * @param lower The lower limit, usually in meters.
+     */
     setLowerLimit(lower: number): void;
 
-	/**
-	 * Set the maximum motor force.
-	 *
-	 * @param f The maximum motor force, usually in N.
-	 */
+    /**
+     * Set the maximum motor force.
+     *
+     * @param f The maximum motor force, usually in N.
+     */
     setMaxMotorForce(f: number): void;
 
-	/**
-	 * Starts or stops the joint motor.
-	 *
-	 * @param enable True to enable, false to disable.
-	 */
+    /**
+     * Starts or stops the joint motor.
+     *
+     * @param enable True to enable, false to disable.
+     */
     setMotorEnabled(enable: boolean): void;
 
-	/**
-	 * Sets the motor speed.
-	 *
-	 * @param s The motor speed, usually in meters per second.
-	 */
+    /**
+     * Sets the motor speed.
+     *
+     * @param s The motor speed, usually in meters per second.
+     */
     setMotorSpeed(s: number): void;
 
-	/**
-	 * Sets the upper limit.
-	 *
-	 * @param upper The upper limit, usually in meters.
-	 */
+    /**
+     * Sets the upper limit.
+     *
+     * @param upper The upper limit, usually in meters.
+     */
     setUpperLimit(upper: number): void;
 
 }

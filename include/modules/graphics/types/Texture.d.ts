@@ -15,12 +15,12 @@ declare interface Texture extends Drawable {
      */
     getDPIScale(): number;
 
-	/**
-	 * Gets the depth of a Volume Texture. Returns 1 for 2D, Cubemap, and Array
-	 * textures.
-	 *
-	 * @return {number} depth, The depth of the volume Texture.
-	 */
+    /**
+     * Gets the depth of a Volume Texture. Returns 1 for 2D, Cubemap, and Array
+     * textures.
+     *
+     * @return {number} depth, The depth of the volume Texture.
+     */
     getDepth(): number;
 
     /**
@@ -47,11 +47,11 @@ declare interface Texture extends Drawable {
      */
     getFilter(): [FilterMode, FilterMode];
 
-	/**
-	 * Gets the PixelFormat of the Texture.
-	 *
-	 * @return {PixelFormat} format, The pixel format the Texture was created with.
-	 */
+    /**
+     * Gets the PixelFormat of the Texture.
+     *
+     * @return {PixelFormat} format, The pixel format the Texture was created with.
+     */
     getFormat(): PixelFormat;
 
     /**
@@ -61,20 +61,20 @@ declare interface Texture extends Drawable {
      */
     getHeight(): number;
 
-	/**
-	 * Gets the number of layers / slices in an Array Texture. Returns 1 for 2D,
-	 * Cubemap, and Volume textures.
-	 *
-	 * @return {number} layers, The number of layers in the Array Texture.
-	 */
+    /**
+     * Gets the number of layers / slices in an Array Texture. Returns 1 for 2D,
+     * Cubemap, and Volume textures.
+     *
+     * @return {number} layers, The number of layers in the Array Texture.
+     */
     getLayerCount(): number;
 
-	/**
-	 * Gets the number of mipmaps contained in the Texture. If the texture was not
-	 * created with mipmaps, it will return 1.
-	 *
-	 * @return {number} mipmaps, The number of mipmaps in the Texture.
-	 */
+    /**
+     * Gets the number of mipmaps contained in the Texture. If the texture was not
+     * created with mipmaps, it will return 1.
+     *
+     * @return {number} mipmaps, The number of mipmaps in the Texture.
+     */
     getMipmapCount(): number;
 
     /**
@@ -109,11 +109,11 @@ declare interface Texture extends Drawable {
      */
     getPixelWidth(): number;
 
-	/**
-	 * Gets the type of the Texture.
-	 *
-	 * @return {TextureType} texturetype, The type of the Texture.
-	 */
+    /**
+     * Gets the type of the Texture.
+     *
+     * @return {TextureType} texturetype, The type of the Texture.
+     */
     getTextureType(): TextureType;
 
     /**
@@ -133,19 +133,19 @@ declare interface Texture extends Drawable {
      */
     getWrap(): [WrapMode, WrapMode];
 
-	/**
-	 * Gets whether the Texture can be drawn and sent to a Shader.
-	 *
-	 *
-	 * Canvases created with stencil and/or depth PixelFormats are not readable by
-	 * default, unless readable=true is specified in the settings table passed into
-	 * love.graphics.newCanvas.
-	 *
-	 *
-	 * Non-readable Canvases can still be rendered to.
-	 *
-	 * @return {boolean} readable, Whether the Texture is readable.
-	 */
+    /**
+     * Gets whether the Texture can be drawn and sent to a Shader.
+     *
+     *
+     * Canvases created with stencil and/or depth PixelFormats are not readable by
+     * default, unless readable=true is specified in the settings table passed into
+     * love.graphics.newCanvas.
+     *
+     *
+     * Non-readable Canvases can still be rendered to.
+     *
+     * @return {boolean} readable, Whether the Texture is readable.
+     */
     isReadable(): boolean;
 
     /**
