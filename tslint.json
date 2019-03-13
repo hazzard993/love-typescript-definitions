@@ -4,6 +4,7 @@
     "rules": {
         "array-type": [true, "generic"],
         "eofline": true,
+        "indent": [true, "spaces", 4],
         "no-trailing-whitespace": true,
         "object-literal-sort-keys": true,
         "ordered-imports": true,
