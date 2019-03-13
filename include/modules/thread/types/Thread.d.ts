@@ -3,46 +3,46 @@
  * @link [Thread](https://love2d.org/wiki/Thread)
  */
 declare interface Thread extends Object {
-	/**
-	 * Retrieves the error string from the thread if it produced an error.
-	 *
-	 * @return {string} message, The error message.
-	 */
+    /**
+     * Retrieves the error string from the thread if it produced an error.
+     *
+     * @return {string} message, The error message.
+     */
     getError(): string;
 
-	/**
-	 * Starts the thread.
-	 *
-	 *
-	 * Threads can be restarted after they have completed their execution.
-	 *
-	 */
+    /**
+     * Starts the thread.
+     *
+     *
+     * Threads can be restarted after they have completed their execution.
+     *
+     */
     start(): void;
 
-	/**
-	 * Starts the thread.
-	 *
-	 *
-	 * Threads can be restarted after they have completed their execution.
-	 *
-	 * @param args Arguments to pass to the thread
-	 */
-    start(...args: any[]): void;
+    /**
+     * Starts the thread.
+     *
+     *
+     * Threads can be restarted after they have completed their execution.
+     *
+     * @param args Arguments to pass to the thread
+     */
+    start(...args: Array<any>): void;
 
-	/**
-	 * Wait for a thread to finish. This call will block until the thread finishes.
-	 *
-	 */
+    /**
+     * Wait for a thread to finish. This call will block until the thread finishes.
+     *
+     */
     wait(): void;
 
-	/**
-	 * Returns whether the thread is currently running.
-	 *
-	 *
-	 * Threads which are not running can be (re)started with Thread:start.
-	 *
-	 * @return {boolean} running, True if the thread is running, false otherwise.
-	 */
+    /**
+     * Returns whether the thread is currently running.
+     *
+     *
+     * Threads which are not running can be (re)started with Thread:start.
+     *
+     * @return {boolean} running, True if the thread is running, false otherwise.
+     */
     isRunning(): boolean;
 
 }
