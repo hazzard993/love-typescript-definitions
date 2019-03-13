@@ -3,7 +3,7 @@
   "version": "0.9.1",
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
-    "test": "tslint -c tslint.json -p tsconfig.json include/**.d.ts include/**/**.d.ts && tstl -p tsconfig.json"
+    "test": "tslint -c tslint.json -p tsconfig.json include/**.d.ts include/**/**.d.ts include/**/*_spec.d.ts && tstl -p tsconfig.json"
   },
   "repository": {
     "type": "git",
