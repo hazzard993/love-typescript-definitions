@@ -1,3 +1,10 @@
+/**
+ * Structure used with [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect) and [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect).
+ *
+ * Documented [here](https://love2d.org/wiki/EffectType).
+ * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
+ * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
+ */
 interface EffectSettings {
     type: EffectType;
 }
