@@ -14,7 +14,7 @@ Check out [love-typescript-boilerplate](https://github.com/hazzard993/love-types
 You can install these definitions to your project via NPM!
 
 ```
-npm i love-typescript-definitions
+npm i -D love-typescript-definitions
 ```
 
 Link these definitions up using this `tsconfig.json`.
