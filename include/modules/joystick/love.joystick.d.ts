@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to the user's joystick.
+     * @noSelf
      * @link [love.joystick](https://love2d.org/wiki/love.joystick)
      */
     export namespace joystick {

@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to decode encoded image data.
+     * @noSelf
      * @link [love.image](https://love2d.org/wiki/love.image)
      */
     export namespace image {

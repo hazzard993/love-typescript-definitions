@@ -7,9 +7,10 @@ interface Conf {
      * This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created.
      *
      * Alternatively [love.filesystem.setIdentity](https://love2d.org/wiki/love.filesystem.setIdentity) can be used to set the save directory outside of the config file.
-     * @example
-     * t.identity = "gabe_HL3" // Correct
-     * t.identity = "c:/Users/gabe/HL3" // Incorrect
+```ts
+t.identity = "gabe_HL3"             // Correct
+t.identity = "c:/Users/gabe/HL3"    // Incorrect
+```
      * @default undefined
      */
     identity: string;

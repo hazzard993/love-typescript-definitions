@@ -7,6 +7,7 @@ declare namespace love {
      *
      * It can't draw the videos, see love.graphics.newVideo and Video objects for
      * that.
+     * @noSelf
      * @link [love.video](https://love2d.org/wiki/love.video)
      */
     export namespace video {

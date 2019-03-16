@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 // https://www.lua.org/manual/5.1/manual.html#5.1
 
 type table = {

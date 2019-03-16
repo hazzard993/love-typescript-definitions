@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to create noise with the user's speakers.
+     * @noSelf
      * @link [love.audio](https://love2d.org/wiki/love.audio)
      */
     export namespace audio {

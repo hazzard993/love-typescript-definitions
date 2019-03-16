@@ -20,6 +20,7 @@ declare namespace love {
      * Many of the functions are used to manipulate the graphics coordinate system,
      * which is essentially the way coordinates are mapped to the display. You can
      * change the position, scale, and even rotation in this way.
+     * @noSelf
      * @link [love.graphics](https://love2d.org/wiki/love.graphics)
      */
     export namespace graphics {
@@ -1234,14 +1235,14 @@ declare namespace love {
          * Following the mode argument, this function can accept multiple numeric arguments or a single table of numeric arguments. In either case the arguments are interpreted as alternating x and y coordinates of the polygon's vertices.
          *
          * When in fill mode, the polygon must be convex and simple or rendering artifacts may occur.
-         *
+```ts
+let vertexes = [0, 0, 16, 16, 0, 16];
+love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);
+love.graphics.polygon("line", vertexes);
+love.graphics.polygon("fill", ...vertexes);
+```
          * @param mode How to draw the polygon.
          * @param vertexes The vertices of the polygon. [x1, y1, x2, y2, ...]
-         * @example
-         * let vertexes = [0, 0, 16, 16, 0, 16];
-         * love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);
-         * love.graphics.polygon("line", vertexes);
-         * love.graphics.polygon("fill", ...vertexes);
          */
         export function polygon(mode: DrawMode, ...xys: Array<number>): void;
         export function polygon(mode: DrawMode, vertices: table): void;

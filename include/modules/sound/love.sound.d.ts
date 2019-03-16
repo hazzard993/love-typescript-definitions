@@ -3,6 +3,7 @@ declare namespace love {
     /**
      * This module is responsible for decoding sound files. It can't play the sounds,
      * see love.audio for that.
+     * @noSelf
      * @link [love.sound](https://love2d.org/wiki/love.sound)
      */
     export namespace sound {

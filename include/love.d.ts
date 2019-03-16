@@ -1,20 +1,21 @@
 /**
  * Contains all LÖVE 2D modules and functions.
+ * @noSelf
  * @link [love](https://love2d.org/wiki/love)
  */
 declare namespace love {
 
     /**
      * Gets the current running version of LÖVE.
-     *
+```ts
+let [major, minor, revision, codename] = love.getVersion();
+```
      * @return {number} major, The major version of LÖVE, i.e. 0 for version 0.9.1.
      * @return {number} minor, The minor version of LÖVE, i.e. 9 for version 0.9.1.
      * @return {number} revision, The revision version of LÖVE, i.e. 1 for version 0.9.1.
      * @return {string} codename, The codename of the current version, i.e. "Baby Inspector" for version 0.9.1.
      * @link [love.getVersion](https://love2d.org/wiki/love.getVersion)
      * @link [Version Warnings](https://love2d.org/wiki/Config_Files#version)
-     * @example
-     * let [maj, min, revision, codename] = love.getVersion();
      * @tupleReturn
      */
     export function getVersion(): [number, number, number, string];
@@ -40,36 +41,38 @@ declare namespace love {
     export function hasDeprecationOutput(): boolean;
 
     /**
-     * Should be overwritten inside a conf.lua file.
+     * Should be overwritten inside a `conf.lua` file.
+```ts
+love.conf = (t: Conf) => {
+    t.window.width = 1024;
+    t.window.height = 768;
+}
+```
      * @link [Config Files](https://love2d.org/wiki/Config_Files)
-     * @example
-     * love.conf = (t: Conf) => {
-     *   t.window.width = 1024;
-     *   t.window.height = 768;
-     * }
      */
     export let conf: (t: Conf) => void;
 
     /**
      * Callback function triggered when a directory is dragged and dropped onto the window.
-     *
+```ts
+love.directorydropped = (path: string) => {
+    print(`${path} dropped!`);
+}
+```
      * @param path The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.
      * @link [love.directorydropped](https://love2d.org/wiki/love.directorydropped)
-     * @example
-     * love.directorydropped = (path: string) => {
-     *   print(`${path} dropped!`);
-     * }
      */
     export let directorydropped: (path: string) => void;
 
     /**
      * Callback function used to draw on the screen every frame.
+```ts
+love.draw = () => {
+  love.graphics.print("Hello World!", 400, 300);
+}
+```
      * @link [love.draw](https://love2d.org/wiki/love.draw)
      * @link [love.graphics](https://love2d.org/wiki/love.graphics)
-     * @example
-     * love.draw = () => {
-     *   love.graphics.print("Hello World!", 400, 300);
-     * }
      */
     export let draw: () => void;
 
@@ -84,28 +87,28 @@ declare namespace love {
 
     /**
      * Callback function triggered when a file is dragged and dropped onto the window.
-     *
+```ts
+love.filedropped = (file: File) => {
+    const [content, size] = file.read();
+    print(`Content of ${file.getFilename()} is`);
+    print(content);
+    print("End of file");
+}
+```
      * @param file The unopened File object representing the file that was dropped.
      * @link [love.filedropped](https://love2d.org/wiki/love.filedropped)
-     * @example
-     * love.filedropped = (file: File) => {
-     *   const [content, size] = file.read();
-     *   print(`Content of ${file.getFilename()} is`);
-     *   print(content);
-     *   print("End of file");
-     * }
      */
     export let filedropped: (file: File) => void;
 
     /**
      * Callback function triggered when window receives or loses focus.
-     *
+```ts
+love.focus = (focus: boolean) => {
+    print(focus);
+}
+```
      * @param focus True if the window gains focus, false if it loses focus.
      * @link [love.focus](https://love2d.org/wiki/love.focus)
-     * @example
-     * love.focus = (focus: boolean) => {
-     *   print(focus);
-     * }
      */
     export let focus: (focus: boolean) => void;
 
@@ -216,19 +219,18 @@ declare namespace love {
 
     /**
      * This function is called exactly once at the beginning of the game.
-     *
+```ts
+let image: Image;
+
+love.load = () =>
+    image = love.graphics.newImage("image.png");
+
+love.draw = () =>
+    love.graphics.draw(image, 50, 50);
+```
      * @param arg Command line arguments given to the game.
      * @param unfilteredArg Unfiltered command-line arguments given to the executable (see [#Notes](https://love2d.org/wiki/love.load#Notes)).
      * @link [love.load](https://love2d.org/wiki/love.load)
-     * @example
-     * let image: Image;
-     * love.load = () => {
-     *   image = love.graphics.newImage("image.png");
-     * }
-     *
-     * love.draw = () => {
-     *   love.graphics.draw(image, 50, 50);
-     * }
      */
     export let load: (arg: Array<string>, unfilteredArg?: Array<string>) => void;
 
@@ -388,13 +390,13 @@ declare namespace love {
 
     /**
      * Callback function used to update the state of the game every frame.
-     *
+```ts
+love.update = (delta: number) => {
+    print(delta);
+}
+```
      * @param dt Time since the last update in seconds.
      * @link [love.update](https://love2d.org/wiki/love.update)
-     * @example
-     * love.update = (delta: number) => {
-     *   print(delta);
-     * }
      */
     export let update: (dt: number) => void;
 

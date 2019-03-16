@@ -12,6 +12,7 @@
  * All functions in this library are provided inside the debug table. All
  * functions that operate over a thread have an optional first argument which is
  * the thread to operate over. The default is always the current thread.
+ * @noSelf
  */
 declare namespace debug {
   /**

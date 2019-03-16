@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to the user's keyboard.
+     * @noSelf
      * @link [love.keyboard](https://love2d.org/wiki/love.keyboard)
      */
     export namespace keyboard {

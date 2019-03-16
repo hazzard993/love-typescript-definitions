@@ -3,6 +3,7 @@ declare namespace love {
     /**
      * Provides an interface for modifying and retrieving information about the
      * program's window.
+     * @noSelf
      * @link [love.window](https://love2d.org/wiki/love.window)
      */
     export namespace window {

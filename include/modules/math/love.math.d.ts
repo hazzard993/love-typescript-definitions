@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides system-independent mathematical functions.
+     * @noSelf
      * @link [love.math](https://love2d.org/wiki/love.math)
      */
     export namespace math {
