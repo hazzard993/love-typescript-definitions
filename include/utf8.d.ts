@@ -10,6 +10,7 @@
  * parameter assume that the given position is either the start of a byte
  * sequence or one plus the length of the subject string. As in the string
  * library, negative indices count from the end of the string.
+ * @noSelf
  */
 declare module "utf8" {
   /**

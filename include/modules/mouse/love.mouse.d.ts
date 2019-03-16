@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to the user's mouse.
+     * @noSelf
      * @link [love.mouse](https://love2d.org/wiki/love.mouse)
      */
     export namespace mouse {

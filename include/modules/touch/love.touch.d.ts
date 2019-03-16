@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to touch-screen presses.
+     * @noSelf
      * @link [love.touch](https://love2d.org/wiki/love.touch)
      */
     export namespace touch {

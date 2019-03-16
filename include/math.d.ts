@@ -7,6 +7,7 @@
  * for float (or mixed) arguments. Rounding functions (math.ceil, math.floor, and
  * math.modf) return an integer when the result fits in the range of an integer,
  * or a float otherwise.
+ * @noSelf
  */
 declare namespace math {
   /**

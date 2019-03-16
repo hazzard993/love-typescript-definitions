@@ -1,5 +1,6 @@
 /**
  * Operating System Facilities
+ * @noSelf
  */
 declare namespace os {
   /**

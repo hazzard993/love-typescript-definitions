@@ -20,6 +20,7 @@ declare namespace love {
      * Many of the functions are used to manipulate the graphics coordinate system,
      * which is essentially the way coordinates are mapped to the display. You can
      * change the position, scale, and even rotation in this way.
+     * @noSelf
      * @link [love.graphics](https://love2d.org/wiki/love.graphics)
      */
     export namespace graphics {

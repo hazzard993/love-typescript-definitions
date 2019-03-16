@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides an interface to the user's filesystem.
+     * @noSelf
      * @link [love.filesystem](https://love2d.org/wiki/love.filesystem)
      */
     export namespace filesystem {

@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Allows you to work with fonts.
+     * @noSelf
      * @link [love.font](https://love2d.org/wiki/love.font)
      */
     export namespace font {

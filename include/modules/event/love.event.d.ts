@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Manages events, like keypresses.
+     * @noSelf
      * @link [love.event](https://love2d.org/wiki/love.event)
      * @since 0.6.0
      */

@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides functionality for creating and transforming data.
+     * @noSelf
      * @link [love.data](https://love2d.org/wiki/love.data)
      * @since 11.0
      */

@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Allows you to work with threads.
+     * @noSelf
      * @link [love.thread](https://love2d.org/wiki/love.thread)
      */
     export namespace thread {

@@ -2,6 +2,7 @@ declare namespace love {
 
     /**
      * Provides access to information about the user's system.
+     * @noSelf
      * @link [love.system](https://love2d.org/wiki/love.system)
      */
     export namespace system {
