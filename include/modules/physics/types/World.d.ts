@@ -134,7 +134,7 @@ declare interface World extends Object {
      * @param y2 The y position of the end point of the ray.
      * @param callback This function gets six arguments and should return a number.
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, callback: Function): void;
+    rayCast(x1: number, y1: number, x2: number, y2: number, callback: (this: void, fix: Fixture, x: number, y: number, xn: number, yn: number, frac: number) => number): void;
 
     /**
      * Sets functions for the collision callbacks during the world update.
