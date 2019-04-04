@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"rootDir": "include",
 		"lib": ["es6"],
-		"types": ["lua-types/special/jit"]
+		"types": ["lua-types/jit"]
 	},
 	"include": [
 		"index.d.ts",

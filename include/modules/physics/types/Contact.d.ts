@@ -50,7 +50,7 @@ declare interface Contact extends Object {
      * @return {number?} y2: The y coordinate of the second contact point.
      * @tupleReturn
      */
-    getPositions(): [number, number, number?, number?]
+    getPositions(): [number, number, number?, number?];
 
     /**
      * Get the restitution between two shapes that are in contact.
