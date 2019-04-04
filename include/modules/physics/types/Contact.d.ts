@@ -1,4 +1,6 @@
 /**
+ * Contacts are objects created to manage collisions in worlds.
+ *
  * @link [Contact](https://love2d.org/wiki/Contact)
  */
 declare interface Contact extends Object {
