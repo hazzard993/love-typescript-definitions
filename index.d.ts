@@ -105,6 +105,7 @@ import "./include/modules/physics/love.physics";
 import "./include/modules/physics/types/Body";
 import "./include/modules/physics/types/ChainShape";
 import "./include/modules/physics/types/CircleShape";
+import "./include/modules/physics/types/Contact";
 import "./include/modules/physics/types/DistanceJoint";
 import "./include/modules/physics/types/EdgeShape";
 import "./include/modules/physics/types/Fixture";
