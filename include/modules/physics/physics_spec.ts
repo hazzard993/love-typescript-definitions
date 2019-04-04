@@ -115,6 +115,26 @@ circleShape.testPoint;
 
 /**
  * Documented at
+ * https://love2d.org/wiki/Contact
+ * Obtained 2019/04/03
+ */
+let contact: Contact;
+contact.getChildren;
+contact.getFixtures;
+contact.getFriction;
+contact.getNormal;
+contact.getPositions;
+contact.getRestitution;
+contact.isEnabled;
+contact.isTouching;
+contact.resetFriction;
+contact.resetRestitution;
+contact.setEnabled;
+contact.setFriction;
+contact.setRestitution;
+
+/**
+ * Documented at
  * https://love2d.org/wiki/DistanceJoint
  * Obtained 2019/03/03
  */
