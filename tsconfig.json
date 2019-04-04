@@ -1,10 +1,14 @@
 {
 	"compilerOptions": {
+		"rootDir": "include",
 		"lib": ["es6"],
-		"types": ["types-lua/jit"]
+		"types": ["lua-types/jit"]
 	},
 	"include": [
-		"test/*.ts",
-		"*.d.ts"
+		"index.d.ts",
+		// "include/**/**.d.ts",
+		// "include/*.d.ts",
+		"include/**/*_spec.ts",
+		"include/*_spec.ts",
 	]
 }

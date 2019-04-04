@@ -3,7 +3,7 @@
 ![Use](https://i.imgur.com/NPfeARe.png)
 
 [![LOVE](https://img.shields.io/badge/L%C3%96VE-11.2-EA316E.svg)](http://love2d.org/)
-[![tstl](https://img.shields.io/badge/TypescriptToLua-0.15.2-blue.svg)](https://github.com/Perryvw/TypescriptToLua)
+[![tstl](https://img.shields.io/badge/TypescriptToLua-0.17.0-blue.svg)](https://github.com/Perryvw/TypescriptToLua)
 [![npm](https://img.shields.io/npm/v/love-typescript-definitions.svg)](https://www.npmjs.com/package/love-typescript-definitions)
 [![Build Status](https://travis-ci.org/hazzard993/love-typescript-definitions.svg?branch=master)](https://travis-ci.org/hazzard993/love-typescript-definitions)
 
@@ -14,7 +14,7 @@ Check out [love-typescript-boilerplate](https://github.com/hazzard993/love-types
 You can install these definitions to your project via NPM!
 
 ```
-npm i love-typescript-definitions
+npm i -D love-typescript-definitions
 ```
 
 Link these definitions up using this `tsconfig.json`.

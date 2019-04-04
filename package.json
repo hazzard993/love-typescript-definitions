@@ -1,9 +1,9 @@
 {
   "name": "love-typescript-definitions",
-  "version": "0.5.3",
+  "version": "0.9.4",
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
-    "test": "tstl -p tsconfig.json"
+    "test": "tslint -c tslint.json -p tsconfig.json include/**.d.ts include/**/**.d.ts include/**/*_spec.d.ts && tstl -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -15,16 +15,16 @@
     "lua",
     "typescript"
   ],
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
   },
   "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
   "devDependencies": {
-    "typescript-to-lua": "^0.15.2"
+    "tslint": "^5.13.0",
+    "typescript-to-lua": "^0.17.0"
   },
   "dependencies": {
-    "lua-types": "^2.0.0"
+    "lua-types": "^2.3.2"
   }
 }
