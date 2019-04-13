@@ -5,16 +5,21 @@
  * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
  * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
  */
-interface EffectSettings {
-    type: EffectType;
-}
+declare type EffectSettings = ChorusEffectSettings
+    | CompressorEffectSettings
+    | DistortionEffectSettings
+    | EchoEffectSettings
+    | EqualizerEffectSettings
+    | FlangerEffectSettings
+    | ReverbEffectSettings
+    | RingModulatorEffectSettings;
 
 /**
  * Plays multiple copies of the sound with slight pitch and time variation.
  *
  * Used to make sounds sound "fuller" or "thicker".
  */
-interface ChorusEffectSettings extends EffectSettings {
+interface ChorusEffectSettings {
     type: "chorus";
     waveform?: EffectWaveform;
     phase?: number;
@@ -27,7 +32,7 @@ interface ChorusEffectSettings extends EffectSettings {
 /**
  * Decreases the dynamic range of the sound, making the loud and quiet parts closer in volume, producing a more uniform amplitude throughout time.
  */
-interface CompressorEffectSettings extends EffectSettings {
+interface CompressorEffectSettings {
     type: "compressor";
     enable?: boolean;
 }
@@ -35,7 +40,7 @@ interface CompressorEffectSettings extends EffectSettings {
 /**
  * Alters the sound by amplifying it until it clips, shearing off parts of the signal, leading to a compressed and distorted sound.
  */
-interface DistortionEffectSettings extends EffectSettings {
+interface DistortionEffectSettings {
     type: "distortion";
     gain?: number;
     edge?: number;
@@ -49,7 +54,7 @@ interface DistortionEffectSettings extends EffectSettings {
  *
  * Also known as delay; causes the sound to repeat at regular intervals at a decreasing volume.
  */
-interface EchoEffectSettings extends EffectSettings {
+interface EchoEffectSettings {
     type: "echo";
     delay?: number;
     tapdelay?: number;
@@ -61,7 +66,7 @@ interface EchoEffectSettings extends EffectSettings {
 /**
  * Adjust the frequency components of the sound using a 4-band (low-shelf, two band-pass and a high-shelf) equalizer.
  */
-interface EqualizerEffectSettings extends EffectSettings {
+interface EqualizerEffectSettings {
     type: "equalizer";
     lowgain?: number;
     lowcut?: number;
@@ -78,7 +83,7 @@ interface EqualizerEffectSettings extends EffectSettings {
 /**
  * Plays two copies of the sound; while varying the phase, or equivalently delaying one of them, by amounts on the order of milliseconds, resulting in phasing sounds.
  */
-interface FlangerEffectSettings extends EffectSettings {
+interface FlangerEffectSettings {
     type: "flanger";
     phase?: number;
     rate?: number;
@@ -92,7 +97,7 @@ interface FlangerEffectSettings extends EffectSettings {
  *
  * Used to simulate the reflection off of the surroundings.
  */
-interface ReverbEffectSettings extends EffectSettings {
+interface ReverbEffectSettings {
     type: "reverb";
     gain?: number;
     highgain?: number;
@@ -112,7 +117,7 @@ interface ReverbEffectSettings extends EffectSettings {
 /**
  * An implementation of amplitude modulation; multiplies the source signal with a simple waveform, to produce either volume changes, or inharmonic overtones.
  */
-interface RingModulatorEffectSettings extends EffectSettings {
+interface RingModulatorEffectSettings {
     type: "ringmodulator";
     waveform?: EffectWaveform;
     frequency?: number;

@@ -111,3 +111,18 @@ love.audio.setPosition;
 love.audio.setVelocity;
 love.audio.setVolume;
 love.audio.stop;
+
+// effect setting types
+const settings = love.audio.getEffect("effect");
+if (settings) {
+    switch (settings.type) {
+        case "chorus": settings.delay; break;
+        case "compressor": settings.enable; break;
+        case "distortion": settings.bandwidth; break;
+        case "echo": settings.damping; break;
+        case "equalizer": settings.highcut; break;
+        case "flanger": settings.delay; break;
+        case "reverb": settings.airabsorption; break;
+        case "ringmodulator": settings.frequency; break;
+    }
+}
