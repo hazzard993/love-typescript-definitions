@@ -3,7 +3,7 @@
  * https://love2d.org/wiki/Channel
  * 2019/03/03
  */
-let channel: Channel;
+declare const channel: Channel;
 channel.clear;
 channel.demand;
 channel.getCount;
@@ -21,7 +21,7 @@ channel.typeOf;
  * Documented at
  * https://love2d.org/wiki/Thread
  */
-let thread: Thread;
+declare const thread: Thread;
 thread.release;
 thread.type;
 thread.typeOf;

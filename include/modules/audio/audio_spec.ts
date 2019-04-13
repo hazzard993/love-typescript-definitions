@@ -11,7 +11,7 @@ let timeUnit: TimeUnit;
  * https://love2d.org/wiki/RecordingDevice
  * Obtained 2019/03/02
  */
-let recordingDevice: RecordingDevice;
+declare const recordingDevice: RecordingDevice;
 recordingDevice.release;
 recordingDevice.type;
 recordingDevice.typeOf;
@@ -29,7 +29,7 @@ recordingDevice.stop;
  * Documented at
  * https://love2d.org/wiki/Source
  */
-let source: Source;
+declare const source: Source;
 source.release;
 source.type;
 source.typeOf;

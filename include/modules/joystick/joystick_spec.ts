@@ -3,7 +3,7 @@
  * https://love2d.org/wiki/Joystick
  * Obtained 2019/03/03
  */
-let joystick: Joystick;
+declare const joystick: Joystick;
 joystick.getAxes;
 joystick.getAxis;
 joystick.getAxisCount;
