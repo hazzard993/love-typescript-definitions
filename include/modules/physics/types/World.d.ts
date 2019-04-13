@@ -140,7 +140,7 @@ declare interface World extends Object {
      * Sets functions for the collision callbacks during the world update.
      *
      *
-     * Four Lua functions can be given as arguments. The value nil removes a function.
+     * Four Lua functions can be given as arguments. The value _nil/null/undefined_ removes a function.
      *
      *
      * When called, each function will be passed three arguments. The first two

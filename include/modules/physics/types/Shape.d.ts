@@ -54,7 +54,7 @@ declare interface Shape extends Object {
 
     /**
      * Casts a ray against the shape and returns the surface normal vector and the
-     * line position where the ray hit. If the ray missed the shape, nil will be
+     * line position where the ray hit. If the ray missed the shape, _nil/null_ will be
      * returned. The Shape can be transformed to get it into the desired position.
      *
      *
@@ -88,9 +88,9 @@ declare interface Shape extends Object {
      * @return {number} xn, The x component of the normal vector of the edge where the ray hit the shape.
      * @return {number} yn, The y component of the normal vector of the edge where the ray hit the shape.
      * @return {number} fraction, The position on the input line where the intersection happened as a factor of the line length.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number];
+    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number] | [null, null, null];
 
     /**
      * Checks whether a point lies inside the shape. This is particularly useful for

@@ -732,7 +732,7 @@ declare interface Body extends Object {
      * Associates a Lua value with the Body.
      *
      *
-     * To delete the reference, explicitly pass nil.
+     * To delete the reference, explicitly pass _nil/null_.
      *
      * @param value The Lua value to associate with the Body.
      */

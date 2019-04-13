@@ -9,13 +9,13 @@ declare type FileInfo = {
     type: FileType;
 
     /**
-     * The size in bytes of the file, or nil if it can't be determined.
+     * The size in bytes of the file, or _nil/null_ if it can't be determined.
      */
-    size?: number;
+    size: number | null;
 
     /**
-     * The file's last modification time in seconds since the unix epoch, or nil if it can't be determined.
+     * The file's last modification time in seconds since the unix epoch, or _nil/null_ if it can't be determined.
      */
-    modtime?: number;
+    modtime: number | null;
 
 };

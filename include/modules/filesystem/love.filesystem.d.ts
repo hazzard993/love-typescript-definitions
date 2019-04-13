@@ -13,12 +13,12 @@ declare namespace love {
          * @param name The name (and path) of the file.
          * @param data The data that should be written to the file
          * @param size How many bytes to write.
-         * @return {boolean} success, True if the operation was successful, or nil if there was an error.
-         * @return {string} errormsg, The error message on failure.
+         * @return success, True if the operation was successful, or _nil/null_ if there was an error.
+         * @return errormsg, The error message on failure.
          * @tupleReturn
          * @link [love.filesystem.append](https://love2d.org/wiki/love.filesystem.append)
          */
-        export function append(name: string, data: string, size?: number): [boolean, string];
+        export function append(name: string, data: string, size?: number): [true] | [null, string];
 
         /**
          * Gets whether love.filesystem follows symbolic links.
@@ -103,31 +103,22 @@ declare namespace love {
          * Gets information about the specified file or directory.
          *
          * @param path The file or directory path to check.
-         * @return {table} info, A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields:
-         * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
-         */
-        export function getInfo(path: string): FileInfo;
-
-        /**
-         * Gets information about the specified file or directory.
-         *
-         * @param path The file or directory path to check.
          * @param info A table which will be filled in with info about the specified path.
-         * @return {table} info, A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields:
+         * @return info, A table containing information about the specified path, or _nil/null_ if nothing exists at the path.
          * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
          */
-        export function getInfo(path: string, info: object): FileInfo;
+        export function getInfo(path: string, info?: object): FileInfo | null;
 
         /**
          * Gets the last modification time of a file.
          * @param filename The path and name to a file.
-         * @return modtime, The last modification time in seconds since the unix epoch or nil on failure.
+         * @return modtime, The last modification time in seconds since the unix epoch or _nil/null_ on failure.
          * @return errormsg, The error message on failure.
          * @tupleReturn
          * @link [love.filesystem.getLastModified](https://love2d.org/wiki/love.filesystem.getLastModified)
          * @deprecated 11.0
          */
-        export function getLastModified(filename: string): [number, string];
+        export function getLastModified(filename: string): [number | null, string | null];
 
         /**
          * Gets the platform-specific absolute path of the directory containing a
@@ -175,12 +166,12 @@ declare namespace love {
         /**
          * Gets the size in bytes of a file.
          * @param filename The path and name to a file.
-         * @return size, The size in bytes of the file, or nil on failure.
+         * @return size, The size in bytes of the file, or _nil/null_ on failure.
          * @return errormsg, The error message on failure.
          * @link [love.filesystem.getSize](https://love2d.org/wiki/love.filesystem.getSize)
          * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
          */
-        export function getSize(filename: string): [number, string];
+        export function getSize(filename: string): [number | null, string | null];
 
         /**
          * Returns the full path to the the .love file or directory. If the game is fused
@@ -314,11 +305,11 @@ declare namespace love {
          *
          * @param filename The filename of the file to read.
          * @param mode The mode to open the file in.
-         * @return {File} file, The new File object, or nil if an error occurred.
-         * @return {string} errorstr, The error string if an error occurred.
+         * @return file, The new File object, or _nil/null_ if an error occurred.
+         * @return errorstr, The error string if an error occurred.
+         * @tupleReturn
          */
-        /** @tupleReturn */
-        export function newFile(filename: string, mode?: FileMode): [File, string];
+        export function newFile(filename: string, mode?: FileMode): [File | null, string | null];
 
         /**
          * Creates a new FileData object.
@@ -334,22 +325,22 @@ declare namespace love {
          * Creates a new FileData object.
          *
          * @param filepath Path to the file.
-         * @return {FileData} data, The new FileData, or nil if an error occurred.
-         * @return {string} err, The error string, if an error occurred.
+         * @return data, The new FileData, or _nil/null_ if an error occurred.
+         * @return err, The error string, if an error occurred.
+         * @tupleReturn
          */
-        /** @tupleReturn */
-        export function newFileData(filepath: string): [FileData, string];
+        export function newFileData(filepath: string): [FileData | null, string | null];
 
         /**
          * Read the contents of a file.
          *
          * @param name The name (and path) of the file.
          * @param bytes How many bytes to read.
-         * @return {string} contents, The file contents.
-         * @return {number} size, How many bytes have been read.
+         * @return contents, The file contents, or _nil/null_ if an error occurred.
+         * @return size, How many bytes have been read, or the error string.
+         * @tupleReturn
          */
-        /** @tupleReturn */
-        export function read(name: string, bytes?: number): [string, number];
+        export function read(name: string, bytes?: number): [string, number] | [null, string];
 
         /**
          * Removes a file or directory.
@@ -443,28 +434,11 @@ declare namespace love {
          * @param name The name (and path) of the file.
          * @param data The string data to write to the file.
          * @param size How many bytes to write.
-         * @return {boolean} success, If the operation was successful.
-         * @return {string} message, Error message if operation was unsuccessful.
+         * @returns _success_, If the operation was successful.
+         * @returns _message_, Error message if operation was unsuccessful.
+         * @tupleReturn
          */
-        /** @tupleReturn */
-        export function write(name: string, data: string, size?: number): [boolean, string];
-
-        /**
-         * Write data to a file.
-         *
-         *
-         * If you are getting the error message "Could not set write directory", try
-         * setting the save directory. This is done either with
-         * love.filesystem.setIdentity or by setting the identity field in love.conf.
-         *
-         * @param name The name (and path) of the file.
-         * @param data The Data object to write to the file.
-         * @param size How many bytes to write.
-         * @return {boolean} success, If the operation was successful.
-         * @return {string} message, Error message if operation was unsuccessful.
-         */
-        /** @tupleReturn */
-        export function write(name: string, data: Data, size?: number): [boolean, string];
+        export function write(name: string, data: Data | string, size?: number): [boolean, string];
 
     }
 

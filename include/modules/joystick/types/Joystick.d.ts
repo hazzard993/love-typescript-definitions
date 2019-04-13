@@ -56,24 +56,13 @@ declare interface Joystick extends Object {
     /**
      * Gets the button, axis or hat that a virtual gamepad input is bound to.
      *
-     * @param axis The virtual gamepad axis to get the binding for.
+     * @param axisOrButton The virtual gamepad axis or button to get the binding for.
      * @return {JoystickInputType} inputtype, The type of input the virtual gamepad axis is bound to.
      * @return {number} inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad axis is bound to.
-     * @return {JoystickHat} hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. nil otherwise.
+     * @return {JoystickHat} hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/null_ otherwise.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getGamepadMapping(axis: GamepadAxis): [JoystickInputType, number, JoystickHat];
-
-    /**
-     * Gets the button, axis or hat that a virtual gamepad input is bound to.
-     *
-     * @param button The virtual gamepad button to get the binding for.
-     * @return {JoystickInputType} inputtype, The type of input the virtual gamepad button is bound to.
-     * @return {number} inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad button is bound to.
-     * @return {JoystickHat} hatdirection, The direction of the hat, if the virtual gamepad button is bound to a hat. nil otherwise.
-     */
-    /** @tupleReturn */
-    getGamepadMapping(button: GamepadAxis): [JoystickInputType, number, JoystickHat];
+    getGamepadMapping(axisOrButton: GamepadAxis | GamepadButton): [JoystickInputType, number, JoystickHat | null];
 
     /**
      * Gets the direction of the Joystick's hat.
@@ -96,10 +85,10 @@ declare interface Joystick extends Object {
      * but it will change when the game is re-launched.
      *
      * @return {number} id, The Joystick's unique identifier. Remains the same as long as the game is running.
-     * @return {number} instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. nil if the Joystick is not connected.
+     * @return {number} instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. _nil/null_ if the Joystick is not connected.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getID(): [number, number];
+    getID(): [number, number | null];
 
     /**
      * Gets the name of the joystick.

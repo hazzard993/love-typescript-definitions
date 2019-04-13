@@ -23,11 +23,11 @@ declare interface RecordingDevice extends Object {
 
     /**
      * Gets all recorded audio [SoundData](https://love2d.org/wiki/SoundData) stored in the device's internal ring buffer.
-     * @return `data` The recorded audio data, or nil if the device isn't recording.
+     * @return `data` The recorded audio data, or _nil/null_ if the device isn't recording.
      * @link [RecordingDevice:getData](https://love2d.org/wiki/RecordingDevice:getData)
      * @since 11.0
      */
-    getData(): SoundData;
+    getData(): SoundData | null;
 
     /**
      * Gets the name of the recording device.
@@ -75,10 +75,10 @@ declare interface RecordingDevice extends Object {
 
     /**
      * Stops recording audio from this device. Any sound data currently in the device's buffer will be returned.
-     * @return `data` The sound data currently in the device's buffer, or nil if the device wasn't recording.
+     * @return `data` The sound data currently in the device's buffer, or _nil/null_ if the device wasn't recording.
      * @link [RecordingDevice:stop](https://love2d.org/wiki/RecordingDevice:stop)
      * @since 11.0
      */
-    stop(): SoundData;
+    stop(): SoundData | null;
 
 }

@@ -7,8 +7,9 @@ declare interface ImageData extends Data {
      * Encodes the ImageData and optionally writes it to the save directory.
      *
      * @param format The format to encode the image as.
-     * @param filename The filename to write the file to. If nil, no file will be written but the FileData will still be returned.
-     * @return {FileData} filedata, The encoded image as a new FileData object.
+     * @param filename The filename to write the file to. If unspecified, no file will be written but the FileData will still be returned.
+     * @return filedata, The encoded image as a new FileData object.
+     * @link [ImageData:encode](https://love2d.org/wiki/ImageData:encode)
      */
     encode(format: ImageFormat, filename?: string): FileData;
 
@@ -22,10 +23,10 @@ declare interface ImageData extends Data {
     getDimensions(): [number, number];
 
     /**
-     * TODO description
-     * @param TODO
-     * @return {return_type} desc, description
+     * Gets the pixel format of the ImageData.
+     * @return format, The pixel format the ImageData was created with.
      * @link [ImageData:getFormat](https://love2d.org/wiki/ImageData:getFormat)
+     * @since 11.0
      */
     getFormat(): PixelFormat;
 
