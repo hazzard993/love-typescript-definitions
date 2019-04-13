@@ -3,7 +3,7 @@
  * https://love2d.org/wiki/BezierCurve
  * Obtained 2019/03/03
  */
-let bezierCurve: BezierCurve;
+declare const bezierCurve: BezierCurve;
 bezierCurve.evaluate;
 bezierCurve.getControlPoint;
 bezierCurve.getControlPointCount;
@@ -27,7 +27,7 @@ bezierCurve.typeOf;
  * https://love2d.org/wiki/CompressedData
  * Obtained 2019/03/02
  */
-let compressedData: CompressedData;
+declare const compressedData: CompressedData;
 compressedData.getFormat;
 compressedData.clone;
 compressedData.getPointer;
@@ -42,7 +42,7 @@ compressedData.typeOf;
  * https://love2d.org/wiki/RandomGenerator
  * Obtained 2019/03/03
  */
-let randomGenerator: RandomGenerator;
+declare const randomGenerator: RandomGenerator;
 randomGenerator.release;
 randomGenerator.type;
 randomGenerator.typeOf;
@@ -58,7 +58,7 @@ randomGenerator.setState;
  * https://love2d.org/wiki/Transform
  * 2019/03/03
  */
-let transform: Transform;
+declare const transform: Transform;
 transform.release;
 transform.type;
 transform.typeOf;

@@ -8,7 +8,7 @@ let bmFontRasterizer: BMFontRasterizer;
  * https://love2d.org/wiki/Font
  * Obtained 2019/03/02
  */
-let font: Font;
+declare const font: Font;
 font.getAscent;
 font.getBaseline;
 font.getDPIScale;
@@ -31,7 +31,7 @@ font.typeOf;
  * https://love2d.org/wiki/GlyphData
  * Obtained 2019/03/02
  */
-let glyphData: GlyphData;
+declare const glyphData: GlyphData;
 glyphData.clone;
 glyphData.getPointer;
 glyphData.getSize;
@@ -45,7 +45,7 @@ glyphData.typeOf;
  * https://love2d.org/wiki/Rasterizer
  * Obtained 2019/03/02
  */
-let rasterizer: Rasterizer;
+declare const rasterizer: Rasterizer;
 rasterizer.release;
 rasterizer.type;
 rasterizer.typeOf;

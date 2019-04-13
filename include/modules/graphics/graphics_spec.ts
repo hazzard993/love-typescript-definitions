@@ -6,7 +6,7 @@ let filterMode: FilterMode;
  * https://love2d.org/wiki/File
  * 2019/03/02
  */
-let canvas: Canvas;
+declare const canvas: Canvas;
 canvas.getMSAA;
 canvas.newImageData;
 canvas.renderTo;
@@ -40,7 +40,7 @@ canvas.setWrap;
  * https://love2d.org/wiki/Drawable
  * 2019/03/03
  */
-let drawable: Drawable;
+declare const drawable: Drawable;
 drawable.release;
 drawable.type;
 drawable.typeOf;
@@ -50,7 +50,7 @@ drawable.typeOf;
  * https://love2d.org/wiki/Image
  * 2019/03/03
  */
-let image: Image;
+declare const image: Image;
 image.getFlags;
 image.isCompressed;
 image.replacePixels;
@@ -84,7 +84,7 @@ image.setWrap;
  * https://love2d.org/wiki/Mesh
  * 2019/03/03
  */
-let mesh: Mesh;
+declare const mesh: Mesh;
 mesh.attachAttribute;
 mesh.detachAttribute;
 mesh.flush;
@@ -114,7 +114,7 @@ mesh.typeOf;
  * https://love2d.org/wiki/ParticleSystem
  * 2019/03/03
  */
-let particleSystem: ParticleSystem;
+declare const particleSystem: ParticleSystem;
 particleSystem.release;
 particleSystem.type;
 particleSystem.typeOf;
@@ -186,7 +186,7 @@ particleSystem.update;
  * https://love2d.org/wiki/Quad
  * 2019/03/03
  */
-let quad: Quad;
+declare const quad: Quad;
 quad.release;
 quad.type;
 quad.typeOf;
@@ -199,7 +199,7 @@ quad.setViewport;
  * https://love2d.org/wiki/Shader
  * 2019/03/03
  */
-let shader: Shader;
+declare const shader: Shader;
 shader.release;
 shader.type;
 shader.typeOf;
@@ -213,7 +213,7 @@ shader.sendColor;
  * https://love2d.org/wiki/SpriteBatch
  * 2019/03/03
  */
-let spriteBatch: SpriteBatch;
+declare const spriteBatch: SpriteBatch;
 spriteBatch.release;
 spriteBatch.type;
 spriteBatch.typeOf;
@@ -237,7 +237,7 @@ spriteBatch.setTexture;
  * https://love2d.org/wiki/Text
  * 2019/03/03
  */
-let text: Text;
+declare const text: Text;
 text.release;
 text.type;
 text.typeOf;
@@ -257,7 +257,7 @@ text.setf;
  * https://love2d.org/wiki/Texture
  * 2019/03/02
  */
-let texture: Texture;
+declare const texture: Texture;
 texture.getDPIScale;
 texture.getDepth;
 texture.getDepthSampleMode;
@@ -285,7 +285,7 @@ texture.setWrap;
  * https://love2d.org/wiki/Video
  * 2019/03/03
  */
-let video: Video;
+declare const video: Video;
 video.release;
 video.type;
 video.typeOf;

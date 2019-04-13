@@ -135,9 +135,9 @@ declare namespace love {
         /**
          * Gets the window icon.
          *
-         * @return {ImageData} imagedata, The window icon imagedata, or nil of no icon has been set with love.window.setIcon.
+         * @return imagedata, The window icon imagedata, or _nil/null_ of no icon has been set with love.window.setIcon.
          */
-        export function getIcon(): ImageData;
+        export function getIcon(): ImageData | null;
 
         /**
          * Returns the current display mode.

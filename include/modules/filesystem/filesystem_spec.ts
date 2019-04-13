@@ -5,7 +5,7 @@ let fileDecoder: FileDecoder;
  * https://love2d.org/wiki/File
  * 2019/03/02
  */
-let file: File;
+declare const file: File;
 file.close;
 file.flush;
 file.getBuffer;

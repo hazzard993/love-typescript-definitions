@@ -26,11 +26,11 @@ declare interface EdgeShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return {number} x, The x-component of the vertex, or nil if EdgeShape:setNextVertex hasn't been called.
-     * @return {number} y, The y-component of the vertex, or nil if EdgeShape:setNextVertex hasn't been called.
+     * @return {number} x, The x-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
+     * @return {number} y, The y-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getNextVertex(): [number, number];
+    getNextVertex(): [number, number] | [null, null];
 
     /**
      * Gets the vertex that establishes a connection to the previous shape.
@@ -40,11 +40,11 @@ declare interface EdgeShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return {number} x, The x-component of the vertex, or nil if EdgeShape:setPreviousVertex hasn't been called.
-     * @return {number} y, The y-component of the vertex, or nil if EdgeShape:setPreviousVertex hasn't been called.
+     * @return {number} x, The x-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
+     * @return {number} y, The y-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getPreviousVertex(): [number, number];
+    getPreviousVertex(): [number, number] | [null, null];
 
     /**
      * Sets a vertex that establishes a connection to the next shape.

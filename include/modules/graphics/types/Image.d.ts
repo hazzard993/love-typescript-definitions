@@ -69,10 +69,10 @@ declare interface Image extends Texture {
     /**
      * Gets the mipmap filter mode for an Image.
      *
-     * @return {FilterMode} mode, The filter mode used in between mipmap levels. nil if mipmap filtering is not enabled.
+     * @return {FilterMode} mode, The filter mode used in between mipmap levels. _nil/null_ if mipmap filtering is not enabled.
      * @return {number} sharpness, Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getMipmapFilter(): [FilterMode, number];
 
     /**

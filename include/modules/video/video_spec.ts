@@ -3,7 +3,7 @@
  * https://love2d.org/wiki/VideoStream
  * 2019/03/03
  */
-let videoStream: VideoStream;
+declare const videoStream: VideoStream;
 videoStream.release;
 videoStream.type;
 videoStream.typeOf;

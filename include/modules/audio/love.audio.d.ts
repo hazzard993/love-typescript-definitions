@@ -33,8 +33,7 @@ declare namespace love {
 
         /**
          * Gets the current global scale factor for velocity-based doppler effects.
-         *
-         * @return `scale` The current doppler scale factor.
+         * @return `scale` The current doppler scale factor. Default is `1`.
          * @link [love.audio.getDopplerScale](https://love2d.org/wiki/love.audio.getDopplerScale)
          * @since 0.9.2
          */
@@ -43,10 +42,11 @@ declare namespace love {
         /**
          * Gets the settings associated with an effect.
          * @param name The name of the effect.
+         * @return `settings` The settings associated with the effect or _nil_.
          * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
          * @since 11.0
          */
-        export function getEffect(name: string): EffectSettings;
+        export function getEffect(name: string): EffectSettings | null;
 
         /**
          * Gets the maximum number of active effects supported by the system.
@@ -139,7 +139,7 @@ declare namespace love {
          * @link [love.audio.newQueueableSource](https://love2d.org/wiki/love.audio.newQueueableSource)
          * @since 11.0
          */
-        export function newQueueableSource(samplerate: number, bitdepth: 8 | 16, channels: number, buffercount?: number): Source;
+        export function newQueueableSource(samplerate: number, bitdepth: 8 | 16, channels: 1 | 2, buffercount?: number): Source;
 
         /**
          * Creates a new Source.

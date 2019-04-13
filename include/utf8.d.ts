@@ -11,6 +11,7 @@
  * sequence or one plus the length of the subject string. As in the string
  * library, negative indices count from the end of the string.
  * @noSelf
+ * @noResolution
  */
 declare module "utf8" {
   /**
@@ -59,12 +60,12 @@ declare module "utf8" {
    * i. The default for i is 1 when n is non-negative and #s + 1 otherwise, so that
    * utf8.offset(s, -n) gets the offset of the n-th character from the end of the
    * string. If the specified character is neither in the subject nor right after its
-   * end, the function returns nil.
+   * end, the function returns _nil/null_.
    *
    * As a special case, when n is 0 the function returns the start of the encoding
    * of the character that contains the i-th byte of s.
    *
    * This function assumes that s is a valid UTF-8 string.
    */
-  function offset(s: string, n?: number, i?: number): number;
+  function offset(s: string, n?: number, i?: number): number | null;
 }

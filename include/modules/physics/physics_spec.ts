@@ -3,7 +3,7 @@
  * https://love2d.org/wiki/Body
  * Obtained 2019/03/03
  */
-let body: Body;
+declare const body: Body;
 body.applyAngularImpulse;
 body.applyForce;
 body.applyLinearImpulse;
@@ -72,7 +72,7 @@ body.typeOf;
  * https://love2d.org/wiki/ChainShape
  * Obtained 2019/03/03
  */
-let chainShape: ChainShape;
+declare const chainShape: ChainShape;
 chainShape.getChildEdge;
 chainShape.getNextVertex;
 chainShape.getPoint;
@@ -97,7 +97,7 @@ chainShape.testPoint;
  * https://love2d.org/wiki/CircleShape
  * Obtained 2019/03/03
  */
-let circleShape: CircleShape;
+declare const circleShape: CircleShape;
 circleShape.getPoint;
 circleShape.getRadius;
 circleShape.setPoint;
@@ -118,7 +118,7 @@ circleShape.testPoint;
  * https://love2d.org/wiki/Contact
  * Obtained 2019/04/03
  */
-let contact: Contact;
+declare const contact: Contact;
 contact.getChildren;
 contact.getFixtures;
 contact.getFriction;
@@ -138,7 +138,7 @@ contact.setRestitution;
  * https://love2d.org/wiki/DistanceJoint
  * Obtained 2019/03/03
  */
-let distanceJoint: DistanceJoint;
+declare const distanceJoint: DistanceJoint;
 distanceJoint.getDampingRatio;
 distanceJoint.getFrequency;
 distanceJoint.getLength;
@@ -161,7 +161,7 @@ distanceJoint.setUserData;
  * https://love2d.org/wiki/EdgeShape
  * Obtained 2019/03/03
  */
-let edgeShape: EdgeShape;
+declare const edgeShape: EdgeShape;
 edgeShape.getNextVertex;
 edgeShape.getPoints;
 edgeShape.getPreviousVertex;
@@ -183,7 +183,7 @@ edgeShape.testPoint;
  * https://love2d.org/wiki/Fixture
  * Obtained 2019/03/03
  */
-let fixture: Fixture;
+declare const fixture: Fixture;
 fixture.destroy;
 fixture.getBody;
 fixture.getBoundingBox;
@@ -219,7 +219,7 @@ fixture.typeOf;
  * https://love2d.org/wiki/FrictionJoint
  * Obtained 2019/03/03
  */
-let frictionJoint: FrictionJoint;
+declare const frictionJoint: FrictionJoint;
 frictionJoint.getMaxForce;
 frictionJoint.getMaxTorque;
 frictionJoint.setMaxForce;
@@ -240,7 +240,7 @@ frictionJoint.setUserData;
  * https://love2d.org/wiki/GearJoint
  * Obtained 2019/03/03
  */
-let gearJoint: GearJoint;
+declare const gearJoint: GearJoint;
 gearJoint.getJoints;
 gearJoint.getRatio;
 gearJoint.setRatio;
@@ -260,7 +260,7 @@ gearJoint.setUserData;
  * https://love2d.org/wiki/Joint
  * Obtained 2019/03/03
  */
-let joint: Joint;
+declare const joint: Joint;
 joint.destroy;
 joint.getAnchors;
 joint.getBodies;
@@ -280,7 +280,7 @@ joint.typeOf;
  * https://love2d.org/wiki/MouseJoint
  * Obtained 2019/03/03
  */
-let mouseJoint: MouseJoint;
+declare const mouseJoint: MouseJoint;
 mouseJoint.destroy;
 mouseJoint.getAnchors;
 mouseJoint.getBodies;
@@ -305,7 +305,7 @@ mouseJoint.setTarget;
  * https://love2d.org/wiki/PolygonShape
  * Obtained 2019/03/03
  */
-let polygonShape: PolygonShape;
+declare const polygonShape: PolygonShape;
 polygonShape.release;
 polygonShape.type;
 polygonShape.typeOf;
@@ -324,7 +324,7 @@ polygonShape.testPoint;
  * https://love2d.org/wiki/PulleyJoint
  * Obtained 2019/03/03
  */
-let pulleyJoint: PulleyJoint;
+declare const pulleyJoint: PulleyJoint;
 pulleyJoint.destroy;
 pulleyJoint.getAnchors;
 pulleyJoint.getBodies;
@@ -350,7 +350,7 @@ pulleyJoint.setRatio;
  * https://love2d.org/wiki/RevoluteJoint
  * Obtained 2019/03/03
  */
-let revoluteJoint: RevoluteJoint;
+declare const revoluteJoint: RevoluteJoint;
 revoluteJoint.destroy;
 revoluteJoint.getAnchors;
 revoluteJoint.getBodies;
@@ -384,7 +384,7 @@ revoluteJoint.setMotorSpeed;
  * https://love2d.org/wiki/RopeJoint
  * Obtained 2019/03/03
  */
-let ropeJoint: RopeJoint;
+declare const ropeJoint: RopeJoint;
 ropeJoint.destroy;
 ropeJoint.getAnchors;
 ropeJoint.getBodies;
@@ -403,7 +403,7 @@ ropeJoint.setMaxLength;
  * https://love2d.org/wiki/PrismaticJoint
  * Obtained 2019/03/03
  */
-let prismaticJoint: PrismaticJoint;
+declare const prismaticJoint: PrismaticJoint;
 prismaticJoint.destroy;
 prismaticJoint.getAnchors;
 prismaticJoint.getBodies;
@@ -439,7 +439,7 @@ prismaticJoint.setUpperLimit;
  * https://love2d.org/wiki/MotorJoint
  * Obtained 2019/03/03
  */
-let motorJoint: MotorJoint;
+declare const motorJoint: MotorJoint;
 motorJoint.destroy;
 motorJoint.getAnchors;
 motorJoint.getBodies;
@@ -460,7 +460,7 @@ motorJoint.setLinearOffset;
  * https://love2d.org/wiki/Shape
  * Obtained 2019/03/03
  */
-let shape: Shape;
+declare const shape: Shape;
 shape.release;
 shape.type;
 shape.typeOf;
@@ -477,7 +477,7 @@ shape.testPoint;
  * https://love2d.org/wiki/WeldJoint
  * Obtained 2019/03/03
  */
-let weldJoint: WeldJoint;
+declare const weldJoint: WeldJoint;
 weldJoint.destroy;
 weldJoint.getAnchors;
 weldJoint.getBodies;
@@ -498,7 +498,7 @@ weldJoint.setFrequency;
  * https://love2d.org/wiki/WheelJoint
  * Obtained 2019/03/03
  */
-let wheelJoint: WheelJoint;
+declare const wheelJoint: WheelJoint;
 wheelJoint.destroy;
 wheelJoint.getAnchors;
 wheelJoint.getBodies;
@@ -529,7 +529,7 @@ wheelJoint.setSpringFrequency;
  * https://love2d.org/wiki/World
  * Obtained 2019/03/03
  */
-let world: World;
+declare const world: World;
 world.release;
 world.type;
 world.typeOf;

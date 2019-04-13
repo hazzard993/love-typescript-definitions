@@ -469,9 +469,9 @@ declare namespace love {
         /**
          * Gets the current target Canvas.
          *
-         * @return {Canvas} canvas, The Canvas set by setCanvas. Returns nil if drawing to the real screen.
+         * @return canvas, The Canvas set by setCanvas. Returns _nil/null_ if drawing to the real screen.
          */
-        export function getCanvas(): Canvas;
+        export function getCanvas(): Canvas | null;
 
         /**
          * Gets the available Canvas formats, and whether each is supported.
@@ -559,9 +559,10 @@ declare namespace love {
         /**
          * Gets the current Font object.
          *
-         * @return {Font} font, The current Font, or nil if none is set.
+         * @return font, The current Font, or _nil/null_ if none is set.
+         * @link [love.graphics.getFont](https://love2d.org/wiki/love.graphics.getFont)
          */
-        export function getFont(): Font;
+        export function getFont(): Font | null;
 
         /**
          * Gets whether triangles with clockwise- or counterclockwise-ordered vertices are
@@ -639,11 +640,13 @@ declare namespace love {
         export function getMeshCullMode(): CullMode;
 
         /**
-         * Returns the current Shader. Returns nil if none is set.
+         * Returns the current Shader. Returns _nil/null_ if none is set.
          *
-         * @return {Shader} shader, The current Shader.
+         * @return shader, The current Shader.
+         * @link [love.graphics.getShader](https://love2d.org/wiki/love.graphics.getShader)
+         * @since 0.9.0
          */
-        export function getShader(): Shader;
+        export function getShader(): Shader | null;
 
         /**
          * Gets the current depth of the transform / state stack (the number of pushes
@@ -1131,10 +1134,12 @@ declare namespace love {
          * Creates a new drawable Text object.
          *
          * @param font The font to use for the text.
-         * @param textstring The initial string of text that the new Text object will contain. May be nil.
-         * @return {Text} text, The new drawable Text object.
+         * @param textstring The initial string of text that the new Text object will contain. May be _nil/null_.
+         * @return text, The new drawable Text object.
+         * @link [love.graphics.newText](https://love2d.org/wiki/love.graphics.newText)
+         * @since 0.10.0
          */
-        export function newText(font: Font, textstring?: string): Text;
+        export function newText(font: Font, textstring?: string): Text | null;
 
         /**
          * Creates a new Quad.
@@ -1874,11 +1879,13 @@ love.graphics.polygon("fill", ...vertexes);
          *
          * @param gles Validate code as GLSL ES shader.
          * @param code The pixel shader or vertex shader code, or a filename pointing to a file with the code.
-         * @return {boolean} status, true if specified shader code doesn't contain any errors. false otherwise.
-         * @return {string} message, Reason why shader code validation failed (or nil if validation succeded).
+         * @return status, true if specified shader code doesn't contain any errors. false otherwise.
+         * @return message, Reason why shader code validation failed (or _nil/null_ if validation succeded).
+         * @tupleReturn
+         * @link [love.graphics.validateShader](https://love2d.org/wiki/love.graphics.validateShader)
+         * @since 11.0
          */
-        /** @tupleReturn */
-        export function validateShader(gles: boolean, code: string): [boolean, string];
+        export function validateShader(gles: boolean, code: string): [true, null] | [false, string];
 
         /**
          * Validates shader code. Check if specificed shader code does not contain any
@@ -1887,11 +1894,13 @@ love.graphics.polygon("fill", ...vertexes);
          * @param gles Validate code as GLSL ES shader.
          * @param pixelcode The pixel shader code, or a filename pointing to a file with the code.
          * @param vertexcode The vertex shader code, or a filename pointing to a file with the code.
-         * @return {boolean} status, true if specified shader code doesn't contain any errors. false otherwise.
-         * @return {string} message, Reason why shader code validation failed (or nil if validation succeded).
+         * @return status, true if specified shader code doesn't contain any errors. false otherwise.
+         * @return message, Reason why shader code validation failed (or _nil/null_ if validation succeded).
+         * @tupleReturn
+         * @link [love.graphics.validateShader](https://love2d.org/wiki/love.graphics.validateShader)
+         * @since 11.0
          */
-        /** @tupleReturn */
-        export function validateShader(gles: boolean, pixelcode: string, vertexcode: string): [boolean, string];
+        export function validateShader(gles: boolean, pixelcode: string, vertexcode: string): [true, null] | [false, string];
 
     }
 

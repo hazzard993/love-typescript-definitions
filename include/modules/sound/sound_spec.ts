@@ -2,7 +2,7 @@
  * Documented at
  * https://love2d.org/wiki/Decoder
  */
-let decoder: Decoder;
+declare const decoder: Decoder;
 decoder.decode;
 decoder.getBitDepth;
 decoder.getChannelCount;
@@ -17,7 +17,7 @@ decoder.typeOf;
  * Documented at
  * https://love2d.org/wiki/SoundData
  */
-let soundData: SoundData;
+declare const soundData: SoundData;
 soundData.clone;
 soundData.getPointer;
 soundData.getSize;

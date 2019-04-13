@@ -92,19 +92,19 @@ declare interface Source extends Object {
      * This function returns undefined if the effect was applied with no filter settings associated to it.
      * @param name The name of the effect.
      * @param filtersettings An optional empty table that will be filled with the filter settings.
-     * @return `filtersettings` The settings for the filter associated to this effect, or nil if the effect is not present in this Source or has no filter associated.
+     * @return `filtersettings` The settings for the filter associated to this effect, or _nil/null_ if the effect is not present in this Source or has no filter associated.
      * @link [Source:getEffect](https://love2d.org/wiki/Source:getEffect)
      * @since 11.0
      */
-    getEffect(name: string, filtersettings?: object): { volume: number, highgain: number, lowgain: number };
+    getEffect(name: string, filtersettings?: object): { volume: number, highgain: number, lowgain: number } | null;
 
     /**
      * Gets the filter settings currently applied to the Source.
-     * @return `settings` The filter settings to use for this Source, or nil if the Source has no active filter.
+     * @return `settings` The filter settings to use for this Source, or nil/null if the Source has no active filter.
      * @link [Source:getFilter](https://love2d.org/wiki/Source:getFilter)
      * @since 11.0
      */
-    getFilter(): FilterSettings;
+    getFilter(): FilterSettings | null;
 
     /**
      * Gets the number of free buffer slots in a queueable Source.

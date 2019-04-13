@@ -145,7 +145,7 @@ declare interface Fixture extends Object {
     /**
      * Casts a ray against the shape of the fixture and returns the surface normal
      * vector and the line position where the ray hit. If the ray missed the shape,
-     * nil will be returned.
+     * _nil/null_ will be returned.
      *
      *
      * The ray starts on the first point of the input line and goes towards the second
@@ -175,9 +175,9 @@ declare interface Fixture extends Object {
      * @return {number} x, The x position where the ray intersects with the shape.
      * @return {number} y, The y position where the ray intersects with the shape.
      * @return {number} fraction, The position on the input vector where the intersection happened as a number from 0 to 1.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number];
+    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [null, null, null];
 
     /**
      * Sets the categories the fixture belongs to. There can be up to 16 categories

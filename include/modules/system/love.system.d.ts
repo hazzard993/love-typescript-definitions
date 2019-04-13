@@ -25,12 +25,12 @@ declare namespace love {
         /**
          * Gets information about the system's power supply.
          *
-         * @return {PowerState} state, The basic state of the power supply.
-         * @return {number} percent, Percentage of battery life left, between 0 and 100. nil if the value can't be determined or there's no battery.
-         * @return {number} seconds, Seconds of battery life left. nil if the value can't be determined or there's no battery.
+         * @return state, The basic state of the power supply.
+         * @return percent, Percentage of battery life left, between 0 and 100. _nil/null_ if the value can't be determined or there's no battery.
+         * @return seconds, Seconds of battery life left. _nil/null_ if the value can't be determined or there's no battery.
+         * @tupleReturn
          */
-        /** @tupleReturn */
-        export function getPowerInfo(): [PowerState, number, number];
+        export function getPowerInfo(): [PowerState, number | null, number | null];
 
         /**
          * Gets the amount of logical processor in the system.

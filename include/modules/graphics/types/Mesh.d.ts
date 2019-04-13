@@ -39,20 +39,22 @@ declare interface Mesh extends Drawable {
      *
      *
      * If the Mesh's draw range has not been set previously with Mesh:setDrawRange,
-     * this function will return nil.
+     * this function will return _nil/null_.
      *
-     * @return {number} min, The index of the first vertex used when drawing, or the index of the first value in the vertex map used if one is set for this Mesh.
-     * @return {number} max, The index of the last vertex used when drawing, or the index of the last value in the vertex map used if one is set for this Mesh.
+     * @return min, The index of the first vertex used when drawing, or the index of the first value in the vertex map used if one is set for this Mesh.
+     * @return max, The index of the last vertex used when drawing, or the index of the last value in the vertex map used if one is set for this Mesh.
+     * @tupleReturn
+     * @link [Mesh:getDrawRange](https://love2d.org/wiki/Mesh:getDrawRange)
      */
-    /** @tupleReturn */
-    getDrawRange(): [number, number];
+    getDrawRange(): [number | null, number | null];
 
     /**
      * Gets the texture (Image or Canvas) used when drawing the Mesh.
      *
-     * @return {Texture} texture, The Image or Canvas to texture the Mesh with when drawing, or nil if none is set.
+     * @return texture, The Image or Canvas to texture the Mesh with when drawing, or _nil/null_ if none is set.
+     * @link [Mesh:getTexture](https://love2d.org/wiki/Mesh:getTexture)
      */
-    getTexture(): Texture;
+    getTexture(): Texture | null;
 
     /**
      * Gets the properties of a vertex in the Mesh.
@@ -119,12 +121,13 @@ declare interface Mesh extends Drawable {
      *
      *
      * If no vertex map has been set previously via Mesh:setVertexMap, then this
-     * function will return nil in LÖVE 0.10.0+, or an empty table in 0.9.2 and
+     * function will return _nil/null_ in LÖVE 0.10.0+, or an empty table in 0.9.2 and
      * older.
      *
      * @return {table} map, A table containing a list of vertex indices used when drawing.
+     * @link [Mesh:getVertexMap](https://love2d.org/wiki/Mesh:getVertexMap)
      */
-    getVertexMap(): table;
+    getVertexMap(): table | null;
 
     /**
      * Gets whether a specific vertex attribute in the Mesh is enabled. Vertex data

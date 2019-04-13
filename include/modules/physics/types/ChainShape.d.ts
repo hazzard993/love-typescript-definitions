@@ -23,8 +23,8 @@ declare interface ChainShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @param x The x-component of the vertex, or nil if ChainShape:setNextVertex hasn't been called.
-     * @param y The y-component of the vertex, or nil if ChainShape:setNextVertex hasn't been called.
+     * @param x The x-component of the vertex, or _nil/null/undefined_ if ChainShape:setNextVertex hasn't been called.
+     * @param y The y-component of the vertex, or _nil/null/undefined_ if ChainShape:setNextVertex hasn't been called.
      */
     getNextVertex(x?: number, y?: number): void;
 
@@ -58,11 +58,11 @@ declare interface ChainShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return {number} x, The x-component of the vertex, or nil if ChainShape:setNextVertex hasn't been called.
-     * @return {number} y, The y-component of the vertex, or nil if ChainShape:setNextVertex hasn't been called.
+     * @return {number} x, The x-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
+     * @return {number} y, The y-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getPreviousVertex(): [number, number];
+    getPreviousVertex(): [number, number] | [null, null];
 
     /**
      * Returns the number of vertices the shape has.

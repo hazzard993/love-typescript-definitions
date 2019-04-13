@@ -9,7 +9,7 @@ let hashFunction: HashFunction;
  * https://love2d.org/wiki/ByteData
  * Obtained 2019/03/02
  */
-let byteData: ByteData;
+declare const byteData: ByteData;
 byteData.clone;
 byteData.getPointer;
 byteData.getSize;
@@ -23,7 +23,7 @@ byteData.typeOf;
  * https://love2d.org/wiki/Data
  * Obtained 2019/03/02
  */
-let data: Data;
+declare const data: Data;
 data.clone;
 data.getPointer;
 data.getSize;

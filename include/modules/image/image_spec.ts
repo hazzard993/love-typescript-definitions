@@ -3,7 +3,7 @@
  * https://love2d.org/wiki/CompressedImageData
  * 2019/03/03
  */
-let compressedImageData: CompressedImageData;
+declare const compressedImageData: CompressedImageData;
 compressedImageData.getDimensions;
 compressedImageData.getFormat;
 compressedImageData.getHeight;
@@ -22,7 +22,7 @@ compressedImageData.typeOf;
  * https://love2d.org/wiki/ImageData
  * Obtained 2019/03/02
  */
-let imageData: ImageData;
+declare const imageData: ImageData;
 imageData.clone;
 imageData.getPointer;
 imageData.getSize;
@@ -40,7 +40,7 @@ imageData.release;
 imageData.type;
 imageData.typeOf;
 
-let c: CompressedImageData;
+declare const c: CompressedImageData;
 
 love;
 love.image;

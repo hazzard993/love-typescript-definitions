@@ -27,9 +27,9 @@ declare interface Channel extends Object {
      * It waits until a message is in the queue then returns the message value.
      *
      * @param timeout The maximum amount of time to wait.
-     * @return {any} value, The contents of the message or nil if the timeout expired.
+     * @return value, The contents of the message or _nil/null_ if the timeout expired.
      */
-    demand(timeout: number): any;
+    demand(timeout: number): any | null;
 
     /**
      * Retrieves the number of messages in the thread Channel queue.
@@ -51,11 +51,11 @@ declare interface Channel extends Object {
      * Retrieves the value of a Channel message, but leaves it in the queue.
      *
      *
-     * It returns nil if there's no message in the queue.
+     * It returns _nil/null_ if there's no message in the queue.
      *
-     * @return {any} value, The contents of the message.
+     * @return value, The contents of the message.
      */
-    peek(): any;
+    peek(): any | null;
 
     /**
      * Executes the specified function atomically with respect to this Channel.
@@ -83,11 +83,11 @@ declare interface Channel extends Object {
      * Retrieves the value of a Channel message and removes it from the message queue.
      *
      *
-     * It returns nil if there are no messages in the queue.
+     * It returns _nil/null_ if there are no messages in the queue.
      *
-     * @return {any} value, The contents of the message.
+     * @return value, The contents of the message.
      */
-    pop(): any;
+    pop(): any | null;
 
     /**
      * Send a message to the thread Channel.

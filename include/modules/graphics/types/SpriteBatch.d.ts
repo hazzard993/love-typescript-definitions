@@ -134,15 +134,16 @@ declare interface SpriteBatch extends Drawable {
      *
      *
      * If no color has been set with SpriteBatch:setColor or the current SpriteBatch
-     * color has been cleared, this method will return nil.
+     * color has been cleared, this method will return _nil/null_.
      *
      * @return {number} r, The red component (0-255).
      * @return {number} g, The green component (0-255).
      * @return {number} b, The blue component (0-255).
      * @return {number} a, The alpha component (0-255).
+     * @tupleReturn
+     * @link [SpriteBatch:getColor](https://love2d.org/wiki/SpriteBatch:getColor)
      */
-    /** @tupleReturn */
-    getColor(): [number, number, number, number];
+    getColor(): [number, number, number, number] | [null, null, null, null];
 
     /**
      * Gets the amount of sprites currently in the SpriteBatch.

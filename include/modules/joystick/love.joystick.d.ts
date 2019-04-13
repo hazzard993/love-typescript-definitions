@@ -75,10 +75,10 @@ declare namespace love {
          * @param button The virtual gamepad button to bind.
          * @param inputtype The type of input to bind the virtual gamepad button to.
          * @param inputindex The index of the axis, button, or hat to bind the virtual gamepad button to.
-         * @param hatdirection The direction of the hat, if the virtual gamepad button will be bound to a hat. nil otherwise.
+         * @param hatdirection The direction of the hat, if the virtual gamepad button will be bound to a hat. Unspecified otherwise.
          * @return {boolean} success, Whether the virtual gamepad button was successfully bound.
          */
-        export function setGamepadMapping(guid: string, button: GamepadButton, inputtype: JoystickInputType, inputindex: number, hatdirection: JoystickHat): boolean;
+        export function setGamepadMapping(guid: string, button: GamepadButton, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
 
         /**
          * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a
@@ -100,10 +100,10 @@ declare namespace love {
          * @param axis The virtual gamepad axis to bind.
          * @param inputtype The type of input to bind the virtual gamepad axis to.
          * @param inputindex The index of the axis, button, or hat to bind the virtual gamepad axis to.
-         * @param hatdirection The direction of the hat, if the virtual gamepad axis will be bound to a hat. nil otherwise.
+         * @param hatdirection The direction of the hat, if the virtual gamepad axis will be bound to a hat. Unspecified otherwise.
          * @return {boolean} success, Whether the virtual gamepad button was successfully bound.
          */
-        export function setGamepadMapping(guid: string, axis: GamepadAxis, inputtype: JoystickInputType, inputindex: number, hatdirection: JoystickHat): boolean;
+        export function setGamepadMapping(guid: string, axis: GamepadAxis, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
 
     }
 
