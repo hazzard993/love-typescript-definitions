@@ -11,7 +11,7 @@
 
 Contains definition files to build LÖVE 2D projects with TypeScript!
 
-This can be achieved with the [TypescriptToLua](https://github.com/Perryvw/TypescriptToLua) transpiler.
+This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler.
 
 Check out [love-typescript-boilerplate](https://github.com/hazzard993/love-typescript-boilerplate) to get a sample project to build off.
 
