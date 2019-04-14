@@ -9,7 +9,7 @@
     <p></p>
 </div>
 
-Contains definition files to build LÖVE 2D projects with TypeScript!
+Contains definition files to build [LÖVE 2D](https://love2d.org/) projects with TypeScript!
 
 This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler.
 
@@ -35,6 +35,12 @@ Link these definitions up using this `tsconfig.json`.
         ]
     }
 }
+```
+
+And then use tstl to transform a `main.ts` file to `main.lua`.
+
+```
+tstl -p tsconfig.json
 ```
 
 See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project.
