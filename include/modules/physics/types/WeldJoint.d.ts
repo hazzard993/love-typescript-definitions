@@ -6,14 +6,14 @@ declare interface WeldJoint extends Joint {
     /**
      * Returns the damping ratio of the joint.
      *
-     * @return {number} ratio, The damping ratio.
+     * @return ratio, The damping ratio.
      */
     getDampingRatio(): number;
 
     /**
      * Returns the frequency.
      *
-     * @return {number} freq, The frequency in hertz.
+     * @return freq, The frequency in hertz.
      */
     getFrequency(): number;
 

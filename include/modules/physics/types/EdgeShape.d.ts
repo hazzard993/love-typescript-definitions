@@ -10,10 +10,10 @@ declare interface EdgeShape extends Shape {
     /**
      * Returns the local coordinates of the edge points.
      *
-     * @return {number} x1, The x component of the first vertex.
-     * @return {number} y1, The y component of the first vertex.
-     * @return {number} x2, The x component of the second vertex.
-     * @return {number} y2, The y component of the second vertex.
+     * @return x1, The x component of the first vertex.
+     * @return y1, The y component of the first vertex.
+     * @return x2, The x component of the second vertex.
+     * @return y2, The y component of the second vertex.
      */
     /** @tupleReturn */
     getPoints(): [number, number, number, number];
@@ -26,8 +26,8 @@ declare interface EdgeShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return {number} x, The x-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
-     * @return {number} y, The y-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
+     * @return x, The x-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
+     * @return y, The y-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
      * @tupleReturn
      */
     getNextVertex(): [number, number] | [null, null];
@@ -40,8 +40,8 @@ declare interface EdgeShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return {number} x, The x-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
-     * @return {number} y, The y-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
+     * @return x, The x-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
+     * @return y, The y-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
      * @tupleReturn
      */
     getPreviousVertex(): [number, number] | [null, null];

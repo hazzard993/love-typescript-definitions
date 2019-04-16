@@ -9,21 +9,21 @@ declare namespace love {
         /**
          * Returns the average delta time (seconds per frame) over the last second.
          *
-         * @return {number} delta, The average delta time over the last second.
+         * @return delta, The average delta time over the last second.
          */
         export function getAverageDelta(): number;
 
         /**
          * Returns the time between the last two frames.
          *
-         * @return {number} dt, The time passed (in seconds).
+         * @return dt, The time passed (in seconds).
          */
         export function getDelta(): number;
 
         /**
          * Returns the current frames per second.
          *
-         * @return {number} fps, The current FPS.
+         * @return fps, The current FPS.
          */
         export function getFPS(): number;
 
@@ -32,7 +32,7 @@ declare namespace love {
          * should only be used to calculate differences between points in time, as the
          * starting time of the timer is unknown.
          *
-         * @return {number} time, The time in seconds.
+         * @return time, The time in seconds.
          */
         export function getTime(): number;
 
@@ -54,7 +54,7 @@ declare namespace love {
          * Measures the time between two frames. Calling this changes the return value of
          * love.timer.getDelta.
          *
-         * @return {number} dt, The time passed (in seconds).
+         * @return dt, The time passed (in seconds).
          */
         export function step(): number;
 

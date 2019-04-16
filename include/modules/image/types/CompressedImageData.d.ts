@@ -5,8 +5,8 @@ declare interface CompressedImageData extends Data {
     /**
      * Gets the width and height of the CompressedImageData.
      *
-     * @return {number} width, The width of the CompressedImageData.
-     * @return {number} height, The height of the CompressedImageData.
+     * @return width, The width of the CompressedImageData.
+     * @return height, The height of the CompressedImageData.
      */
     /** @tupleReturn */
     getDimensions(): [number, number];
@@ -15,8 +15,8 @@ declare interface CompressedImageData extends Data {
      * Gets the width and height of the CompressedImageData.
      *
      * @param level A mipmap level. Must be in the range of [1, CompressedImageData:getMipmapCount()].
-     * @return {number} width, The width of the CompressedImageData.
-     * @return {number} height, The height of the CompressedImageData.
+     * @return width, The width of the CompressedImageData.
+     * @return height, The height of the CompressedImageData.
      */
     /** @tupleReturn */
     getDimensions(level: number): [number, number];
@@ -24,14 +24,14 @@ declare interface CompressedImageData extends Data {
     /**
      * Gets the format of the CompressedImageData.
      *
-     * @return {CompressedImageFormat} format, The format of the CompressedImageData.
+     * @return format, The format of the CompressedImageData.
      */
     getFormat(): CompressedImageFormat;
 
     /**
      * Gets the height of the CompressedImageData.
      *
-     * @return {number} height, The height of the CompressedImageData.
+     * @return height, The height of the CompressedImageData.
      */
     getHeight(): number;
 
@@ -39,7 +39,7 @@ declare interface CompressedImageData extends Data {
      * Gets the height of the CompressedImageData.
      *
      * @param level A mipmap level. Must be in the range of [1,  CompressedImageData:getMipmapCount()].
-     * @return {number} height, The height of the CompressedImageData.
+     * @return height, The height of the CompressedImageData.
      */
     getHeight(level: number): number;
 
@@ -47,14 +47,14 @@ declare interface CompressedImageData extends Data {
      * Gets the number of mipmap levels in the CompressedImageData. The base mipmap
      * level (original image) is included in the count.
      *
-     * @return {number} mipmaps, The number of mipmap levels stored in the CompressedImageData.
+     * @return mipmaps, The number of mipmap levels stored in the CompressedImageData.
      */
     getMipmapCount(): number;
 
     /**
      * Gets the width of the CompressedImageData.
      *
-     * @return {number} width, The width of the CompressedImageData.
+     * @return width, The width of the CompressedImageData.
      */
     getWidth(): number;
 
@@ -62,7 +62,7 @@ declare interface CompressedImageData extends Data {
      * Gets the width of the CompressedImageData.
      *
      * @param level A mipmap level. Must be in the range of [1, CompressedImageData:getMipmapCount()].
-     * @return {number} width, The width of the CompressedImageData.
+     * @return width, The width of the CompressedImageData.
      */
     getWidth(level: number): number;
 

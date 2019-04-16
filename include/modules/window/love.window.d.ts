@@ -35,7 +35,7 @@ declare namespace love {
          * rather than density-independent units.
          *
          * @param pixelvalue A number in pixels to convert to density-independent units.
-         * @return {number} value, The converted number, in density-independent units.
+         * @return value, The converted number, in density-independent units.
          */
         export function fromPixels(pixelvalue: number): number;
 
@@ -62,8 +62,8 @@ declare namespace love {
          *
          * @param px The x-axis value of a coordinate in pixels.
          * @param py The y-axis value of a coordinate in pixels.
-         * @return {number} x, The converted x-axis value of the coordinate, in density-independent units.
-         * @return {number} y, The converted y-axis value of the coordinate, in density-independent units.
+         * @return x, The converted x-axis value of the coordinate, in density-independent units.
+         * @return y, The converted y-axis value of the coordinate, in density-independent units.
          */
         /** @tupleReturn */
         export function fromPixels(px: number, py: number): [number, number];
@@ -72,7 +72,7 @@ declare namespace love {
          * Gets the name of a display.
          *
          * @param displayindex The index of the display to get the name of.
-         * @return {string} name, The name of the specified display.
+         * @return name, The name of the specified display.
          */
         export function getDisplayName(displayindex: number): string;
 
@@ -95,7 +95,7 @@ declare namespace love {
          * Retina screen on Mac OS X and iOS. The flag currently does nothing on Windows
          * and Linux, and on Android it is effectively always enabled.
          *
-         * @return {number} scale, The pixel scale factor associated with the window.
+         * @return scale, The pixel scale factor associated with the window.
          */
         export function getDPIScale(): number;
 
@@ -110,7 +110,7 @@ declare namespace love {
 
         /**
          * Gets the number of connected monitors.
-         * @return {number} count, The number of currently connected displays.
+         * @return count, The number of currently connected displays.
          * @link [love.window.getDisplayCount](https://love2d.org/wiki/love.window.getDisplayCount)
          */
         export function getDisplayCount(): number;
@@ -118,8 +118,8 @@ declare namespace love {
         /**
          * Gets whether the window is fullscreen.
          *
-         * @return {boolean} fullscreen, True if the window is fullscreen, false otherwise.
-         * @return {FullscreenType} fstype, The type of fullscreen mode used.
+         * @return fullscreen, True if the window is fullscreen, false otherwise.
+         * @return fstype, The type of fullscreen mode used.
          */
         /** @tupleReturn */
         export function getFullscreen(): [boolean, FullscreenType];
@@ -128,7 +128,7 @@ declare namespace love {
          * Gets a list of supported fullscreen modes.
          *
          * @param display The index of the display, if multiple monitors are available.
-         * @return {table} modes, A table of width/height pairs. (Note that this may not be in order.)
+         * @return modes, A table of width/height pairs. (Note that this may not be in order.)
          */
         export function getFullscreenModes(display?: number): table;
 
@@ -142,9 +142,9 @@ declare namespace love {
         /**
          * Returns the current display mode.
          *
-         * @return {number} width, Window width.
-         * @return {number} height, Window height.
-         * @return {table} flags, Table containing the window properties.
+         * @return width, Window width.
+         * @return height, Window height.
+         * @return flags, Table containing the window properties.
          */
         /** @tupleReturn */
         export function getMode(): [number, number, table];
@@ -168,7 +168,7 @@ declare namespace love {
          * Retina screen on Mac OS X and iOS. The flag currently does nothing on Windows
          * and Linux, and on Android it is effectively always enabled.
          *
-         * @return {number} scale, The pixel scale factor associated with the window.
+         * @return scale, The pixel scale factor associated with the window.
          */
         export function getPixelScale(): number;
 
@@ -179,9 +179,9 @@ declare namespace love {
          * The window position is in the coordinate space of the display it is currently
          * in.
          *
-         * @return {number} x, The x-coordinate of the window's position.
-         * @return {number} y, The y-coordinate of the window's position.
-         * @return {number} display, The index of the display that the window is in.
+         * @return x, The x-coordinate of the window's position.
+         * @return y, The y-coordinate of the window's position.
+         * @return display, The index of the display that the window is in.
          */
         /** @tupleReturn */
         export function getPosition(): [number, number, number];
@@ -189,21 +189,21 @@ declare namespace love {
         /**
          * Gets the window title.
          *
-         * @return {string} title, The current window title.
+         * @return title, The current window title.
          */
         export function getTitle(): string;
 
         /**
          * Checks if the game window has keyboard focus.
          *
-         * @return {boolean} focus, True if the window has the focus or false if not.
+         * @return focus, True if the window has the focus or false if not.
          */
         export function hasFocus(): boolean;
 
         /**
          * Checks if the game window has mouse focus.
          *
-         * @return {boolean} focus, True if the window has mouse focus or false if not.
+         * @return focus, True if the window has mouse focus or false if not.
          */
         export function hasMouseFocus(): boolean;
 
@@ -215,7 +215,7 @@ declare namespace love {
          * presses) might not prevent the display from sleeping, if display sleep is
          * allowed.
          *
-         * @return {boolean} enabled, True if system display sleep is enabled / allowed, false otherwise.
+         * @return enabled, True if system display sleep is enabled / allowed, false otherwise.
          */
         export function isDisplaySleepEnabled(): boolean;
 
@@ -227,21 +227,21 @@ declare namespace love {
          * either the user has pressed the window's Maximize button or
          * love.window.maximize has been called.
          *
-         * @return {boolean} maximized, True if the window is currently maximized in windowed mode, false otherwise.
+         * @return maximized, True if the window is currently maximized in windowed mode, false otherwise.
          */
         export function isMaximized(): boolean;
 
         /**
          * Gets whether the Window is currently minimized.
          *
-         * @return {boolean} maximized, True if the window is currently minimized, false otherwise.
+         * @return maximized, True if the window is currently minimized, false otherwise.
          */
         export function isMinimized(): boolean;
 
         /**
          * Checks if the window is open.
          *
-         * @return {boolean} open, True if the window is open, false otherwise.
+         * @return open, True if the window is open, false otherwise.
          */
         export function isOpen(): boolean;
 
@@ -252,7 +252,7 @@ declare namespace love {
          * The window is considered visible if it's not minimized and the program isn't
          * hidden.
          *
-         * @return {boolean} visible, True if the window is visible or false if not.
+         * @return visible, True if the window is visible or false if not.
          */
         export function isVisible(): boolean;
 
@@ -314,7 +314,7 @@ declare namespace love {
          * when fullscreen mode is exited using this function.
          *
          * @param fullscreen Whether to enter or exit fullscreen mode.
-         * @return {boolean} success, True if successful, false otherwise.
+         * @return success, True if successful, false otherwise.
          */
         export function setFullscreen(fullscreen: boolean): boolean;
 
@@ -332,7 +332,7 @@ declare namespace love {
          *
          * @param fullscreen Whether to enter or exit fullscreen mode.
          * @param fstype The type of fullscreen mode to use.
-         * @return {boolean} success, True if successful, false otherwise.
+         * @return success, True if successful, false otherwise.
          */
         export function setFullscreen(fullscreen: boolean, fstype: FullscreenType): boolean;
 
@@ -341,7 +341,7 @@ declare namespace love {
          * very large icon images.
          *
          * @param imagedata The window icon image.
-         * @return {boolean} success, Whether the icon has been set successfully.
+         * @return success, Whether the icon has been set successfully.
          */
         export function setIcon(imagedata: ImageData): boolean;
 
@@ -360,7 +360,7 @@ declare namespace love {
          * @param width Display width.
          * @param height Display height.
          * @param flags The flags table with the options:
-         * @return {boolean} success, True if successful, false otherwise.
+         * @return success, True if successful, false otherwise.
          */
         export function setMode(width: number, height: number, flags: table): boolean;
 
@@ -391,7 +391,7 @@ declare namespace love {
          * @param message The text inside the message box.
          * @param type The type of the message box.
          * @param attachtowindow Whether the message box should be attached to the love window or free-floating.
-         * @return {boolean} success, Whether the message box was successfully displayed.
+         * @return success, Whether the message box was successfully displayed.
          */
         export function showMessageBox(title: string, message: string, type?: MessageBoxType, attachtowindow?: boolean): boolean;
 
@@ -404,7 +404,7 @@ declare namespace love {
          * @param buttonlist A table containing a list of button names to show. The table can also contain the fields enterbutton and escapebutton, which should be the index of the default button to use when the user presses 'enter' or 'escape', respectively.
          * @param type The type of the message box.
          * @param attachtowindow Whether the message box should be attached to the love window or free-floating.
-         * @return {number} pressedbutton, The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.
+         * @return pressedbutton, The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.
          */
         export function showMessageBox(title: string, message: string, buttonlist: table, type?: MessageBoxType, attachtowindow?: boolean): number;
 
@@ -430,7 +430,7 @@ declare namespace love {
          * rather than density-independent units.
          *
          * @param value A number in density-independent units to convert to pixels.
-         * @return {number} pixelvalue, The converted number, in pixels.
+         * @return pixelvalue, The converted number, in pixels.
          */
         export function toPixels(value: number): number;
 
@@ -457,8 +457,8 @@ declare namespace love {
          *
          * @param x The x-axis value of a coordinate in density-independent units to convert to pixels.
          * @param y The y-axis value of a coordinate in density-independent units to convert to pixels.
-         * @return {number} px, The converted x-axis value of the coordinate, in pixels.
-         * @return {number} py, The converted y-axis value of the coordinate, in pixels.
+         * @return px, The converted x-axis value of the coordinate, in pixels.
+         * @return py, The converted y-axis value of the coordinate, in pixels.
          */
         /** @tupleReturn */
         export function toPixels(x: number, y: number): [number, number];
@@ -479,7 +479,7 @@ declare namespace love {
          * @param width Window width.
          * @param height Window height.
          * @param settings The settings table with the following optional fields. Any field not filled in will use the current value that would be returned by love.window.getMode.
-         * @return {boolean} success, True if successful, false otherwise.
+         * @return success, True if successful, false otherwise.
          */
         export function updateMode(width: number, height: number, settings: table): boolean;
 

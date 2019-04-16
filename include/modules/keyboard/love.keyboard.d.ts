@@ -20,7 +20,7 @@ declare namespace love {
          * locations on on all systems.
          *
          * @param scancode The scancode to get the key from.
-         * @return {KeyConstant} key, The key corresponding to the given scancode, or "unknown" if the scancode doesn't map to a KeyConstant on the current system.
+         * @return key, The key corresponding to the given scancode, or "unknown" if the scancode doesn't map to a KeyConstant on the current system.
          */
         export function getKeyFromScancode(scancode: Scancode): KeyConstant;
 
@@ -38,21 +38,21 @@ declare namespace love {
          * locations on on all systems.
          *
          * @param key The key to get the scancode from.
-         * @return {Scancode} scancode, The scancode corresponding to the given key, or "unknown" if the given key has no known physical representation on the current system.
+         * @return scancode, The scancode corresponding to the given key, or "unknown" if the given key has no known physical representation on the current system.
          */
         export function getScancodeFromKey(key: KeyConstant): Scancode;
 
         /**
          * Gets whether key repeat is enabled.
          *
-         * @return {boolean} enabled, Whether key repeat is enabled.
+         * @return enabled, Whether key repeat is enabled.
          */
         export function hasKeyRepeat(): boolean;
 
         /**
          * Gets whether text input events are enabled.
          *
-         * @return {boolean} enabled, Whether text input events are enabled.
+         * @return enabled, Whether text input events are enabled.
          */
         export function hasTextInput(): boolean;
 
@@ -61,7 +61,7 @@ declare namespace love {
          * or love.keyreleased.
          *
          * @param key The key to check.
-         * @return {boolean} down, True if the key is down, false if not.
+         * @return down, True if the key is down, false if not.
          */
         export function isDown(key: KeyConstant): boolean;
 
@@ -71,7 +71,7 @@ declare namespace love {
          *
          * @param key A key to check.
          * @param ... Additional keys to check.
-         * @return {boolean} anyDown, True if any supplied key is down, false if not.
+         * @return anyDown, True if any supplied key is down, false if not.
          */
         export function isDown(key: KeyConstant, ...vararg: Array<KeyConstant>): boolean;
 
@@ -87,7 +87,7 @@ declare namespace love {
          *
          * @param scancode A Scancode to check.
          * @param ... Additional Scancodes to check.
-         * @return {boolean} down, True if any supplied Scancode is down, false if not.
+         * @return down, True if any supplied Scancode is down, false if not.
          */
         export function isScancodeDown(scancode: Scancode, ...vararg: Array<Scancode>): boolean;
 

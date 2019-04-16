@@ -8,14 +8,14 @@ declare interface Transform extends Object {
      * Applies the given other Transform object to this one.
      *
      * @param other The other Transform object to apply to this Transform.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     apply(other: Transform): Transform;
 
     /**
      * Creates a new copy of this Transform.
      *
-     * @return {Transform} clone, The copy of this Transform.
+     * @return clone, The copy of this Transform.
      */
     clone(): Transform;
 
@@ -23,10 +23,10 @@ declare interface Transform extends Object {
      * Gets the internal 4x4 transformation matrix stored by this Transform. The
      * matrix is returned in row-major order.
      *
-     * @return {number} e1_1, The first column of the first row of the matrix.
-     * @return {number} e1_2, The second column of the first row of the matrix.
-     * @return {number} ..., Additional matrix elements.
-     * @return {number} e4_4, The fourth column of the fourth row of the matrix.
+     * @return e1_1, The first column of the first row of the matrix.
+     * @return e1_2, The second column of the first row of the matrix.
+     * @return ..., Additional matrix elements.
+     * @return e4_4, The fourth column of the fourth row of the matrix.
      */
     /** @tupleReturn */
     getMatrix(): [number, number, number, number];
@@ -34,7 +34,7 @@ declare interface Transform extends Object {
     /**
      * Creates a new Transform containing the inverse of this Transform.
      *
-     * @return {Transform} inverse, A new Transform object representing the inverse of this Transform's matrix.
+     * @return inverse, A new Transform object representing the inverse of this Transform's matrix.
      */
     inverse(): Transform;
 
@@ -53,15 +53,15 @@ declare interface Transform extends Object {
      *
      * @param localX The x component of the position with the transform applied.
      * @param localY The y component of the position with the transform applied.
-     * @return {number} globalX, The x component of the position in global coordinates.
-     * @return {number} globalY, The y component of the position in global coordinates.
+     * @return globalX, The x component of the position in global coordinates.
+     * @return globalY, The y component of the position in global coordinates.
      */
     /** @tupleReturn */
     inverseTransformPoint(localX: number, localY: number): [number, number];
 
     /**
      * Checks whether the Transform is an affine transformation.
-     * @return {return_type} affine, `true` if the transform object is an affine transformation, `false` otherwise.
+     * @return affine, `true` if the transform object is an affine transformation, `false` otherwise.
      * @link [Transform:isAffine2DTransform](https://love2d.org/wiki/Transform:isAffine2DTransform)
      */
     isAffine2DTransform(): boolean;
@@ -70,7 +70,7 @@ declare interface Transform extends Object {
      * Resets the Transform to an identity state. All previously applied
      * transformations are erased.
      *
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     reset(): Transform;
 
@@ -79,7 +79,7 @@ declare interface Transform extends Object {
      * reset any previously applied transformations.
      *
      * @param angle The relative angle in radians to rotate this Transform by.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     rotate(angle: number): Transform;
 
@@ -89,7 +89,7 @@ declare interface Transform extends Object {
      *
      * @param sx The relative scale factor along the x-axis.
      * @param sy The relative scale factor along the y-axis.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     scale(sx: number, sy: number): Transform;
 
@@ -99,7 +99,7 @@ declare interface Transform extends Object {
      * @param e1_1 The first column of the first row of the matrix.
      * @param e1_2 The second column of the first row of the matrix.
      * @param ... Additional matrix elements.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     setMatrix(e1_1: number, e1_2: number, ...vararg: Array<number>): Transform;
 
@@ -110,7 +110,7 @@ declare interface Transform extends Object {
      * @param e1_1 The first column of the first row of the matrix.
      * @param e1_2 The second column of the first row of the matrix.
      * @param e4_4 The fourth column of the fourth row of the matrix.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     setMatrix(layout: MatrixLayout, e1_1: number, e1_2: number, e4_4: number): Transform;
 
@@ -119,7 +119,7 @@ declare interface Transform extends Object {
      *
      * @param layout How to interpret the matrix element arguments (row-major or column-major).
      * @param matrix A flat table containing the 16 matrix elements.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     setMatrix(layout: MatrixLayout, matrix: table): Transform;
 
@@ -128,7 +128,7 @@ declare interface Transform extends Object {
      *
      * @param layout How to interpret the matrix element arguments (row-major or column-major).
      * @param matrix A table of 4 tables, with each sub-table containing 4 matrix elements.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     setMatrix(layout: MatrixLayout, matrix: table): Transform;
 
@@ -144,7 +144,7 @@ declare interface Transform extends Object {
      * @param oy Origin offset on the y-axis.
      * @param kx Shearing / skew factor on the x-axis.
      * @param ky Shearing / skew factor on the y-axis.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     setTransformation(x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): Transform;
 
@@ -154,7 +154,7 @@ declare interface Transform extends Object {
      *
      * @param kx The shear factor along the x-axis.
      * @param ky The shear factor along the y-axis.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     shear(kx: number, ky: number): Transform;
 
@@ -167,8 +167,8 @@ declare interface Transform extends Object {
      *
      * @param globalX The x component of the position in global coordinates.
      * @param globalY The y component of the position in global coordinates.
-     * @return {number} localX, The x component of the position with the transform applied.
-     * @return {number} localY, The y component of the position with the transform applied.
+     * @return localX, The x component of the position with the transform applied.
+     * @return localY, The y component of the position with the transform applied.
      */
     /** @tupleReturn */
     transformPoint(globalX: number, globalY: number): [number, number];
@@ -179,7 +179,7 @@ declare interface Transform extends Object {
      *
      * @param dx The relative translation along the x-axis.
      * @param dy The relative translation along the y-axis.
-     * @return {Transform} transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
     translate(dx: number, dy: number): Transform;
 

@@ -96,7 +96,7 @@ declare interface Source extends Object {
      * @link [Source:getEffect](https://love2d.org/wiki/Source:getEffect)
      * @since 11.0
      */
-    getEffect(name: string, filtersettings?: object): { volume: number, highgain: number, lowgain: number } | null;
+    getEffect(name: string, filtersettings?: object): | null;
 
     /**
      * Gets the filter settings currently applied to the Source.
@@ -397,7 +397,7 @@ declare interface Source extends Object {
     /**
      * Gets the currently playing position of the Source.
      * @param unit The type of unit for the return value.
-     * @return {number} position, The currently playing position of the Source.
+     * @return position, The currently playing position of the Source.
      * @link [Source:tell](https://love2d.org/wiki/Source:tell)
      * @since 0.8.0
      */

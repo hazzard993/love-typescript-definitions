@@ -16,8 +16,8 @@ declare interface ImageData extends Data {
     /**
      * Gets the width and height of the ImageData in pixels.
      *
-     * @return {number} width, The width of the ImageData in pixels.
-     * @return {number} height, The height of the ImageData in pixels.
+     * @return width, The width of the ImageData in pixels.
+     * @return height, The height of the ImageData in pixels.
      */
     /** @tupleReturn */
     getDimensions(): [number, number];
@@ -33,7 +33,7 @@ declare interface ImageData extends Data {
     /**
      * Gets the height of the ImageData in pixels.
      *
-     * @return {number} height, The height of the ImageData in pixels.
+     * @return height, The height of the ImageData in pixels.
      */
     getHeight(): number;
 
@@ -46,10 +46,10 @@ declare interface ImageData extends Data {
      *
      * @param x The position of the pixel on the x-axis.
      * @param y The position of the pixel on the y-axis.
-     * @return {number} r, The red component (0-255).
-     * @return {number} g, The green component (0-255).
-     * @return {number} b, The blue component (0-255).
-     * @return {number} a, The alpha component (0-255).
+     * @return r, The red component (0-255).
+     * @return g, The green component (0-255).
+     * @return b, The blue component (0-255).
+     * @return a, The alpha component (0-255).
      */
     /** @tupleReturn */
     getPixel(x: number, y: number): [number, number, number, number];
@@ -57,7 +57,7 @@ declare interface ImageData extends Data {
     /**
      * Gets the width of the ImageData in pixels.
      *
-     * @return {number} width, The width of the ImageData in pixels.
+     * @return width, The width of the ImageData in pixels.
      */
     getWidth(): number;
 

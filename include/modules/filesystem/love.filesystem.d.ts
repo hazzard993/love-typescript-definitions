@@ -23,7 +23,7 @@ declare namespace love {
         /**
          * Gets whether love.filesystem follows symbolic links.
          *
-         * @return {boolean} enable, Whether love.filesystem follows symbolic links.
+         * @return enable, Whether love.filesystem follows symbolic links.
          * @link [love.filesystem.areSymlinksEnabled](https://love2d.org/wiki/love.filesystem.areSymlinksEnabled)
          */
         export function areSymlinksEnabled(): boolean;
@@ -32,7 +32,7 @@ declare namespace love {
          * Creates a directory.
          *
          * @param name The directory to create.
-         * @return {boolean} success, True if the directory was created, false if not.
+         * @return success, True if the directory was created, false if not.
          * @link [love.filesystem.createDirectory](https://love2d.org/wiki/love.filesystem.createDirectory)
          */
         export function createDirectory(name: string): boolean;
@@ -40,7 +40,7 @@ declare namespace love {
         /**
          * Check whether a file or directory exists.
          * @param filename The path to a potential file or directory.
-         * @return {return_type} desc, description
+         * @return desc, description
          * @link [love.filesystem.exists](https://love2d.org/wiki/love.filesystem.exists)
          * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
          */
@@ -49,7 +49,7 @@ declare namespace love {
         /**
          * Returns the application data directory (could be the same as getUserDirectory)
          *
-         * @return {string} path, The path of the application data directory.
+         * @return path, The path of the application data directory.
          * @link [love.filesystem.getAppdataDirectory](https://love2d.org/wiki/love.filesystem.getAppdataDirectory)
          */
         export function getAppdataDirectory(): string;
@@ -71,7 +71,7 @@ declare namespace love {
          * The paths are relative to the game's source and save directories, as well as
          * any paths mounted with love.filesystem.mount.
          *
-         * @return {string} paths, The paths that the require function will check for c libraries in love's filesystem.
+         * @return paths, The paths that the require function will check for c libraries in love's filesystem.
          * @link [love.filesystem.getCRequirePath](https://love2d.org/wiki/love.filesystem.getCRequirePath)
          */
         export function getCRequirePath(): string;
@@ -85,7 +85,7 @@ declare namespace love {
          * it will list the files and directories from both places.
          *
          * @param dir The directory.
-         * @return {table} items, A sequence with the names of all files and subdirectories as strings.
+         * @return items, A sequence with the names of all files and subdirectories as strings.
          * @link [love.filesystem.getDirectoryItems](https://love2d.org/wiki/love.filesystem.getDirectoryItems)
          */
         export function getDirectoryItems(dir: string): Array<string>;
@@ -129,7 +129,7 @@ declare namespace love {
          * the game's source .love.
          *
          * @param filepath The filepath to get the directory of.
-         * @return {string} realdir, The platform-specific full path of the directory containing the filepath.
+         * @return realdir, The platform-specific full path of the directory containing the filepath.
          * @link [love.filesystem.getRealDirectory](https://love2d.org/wiki/love.filesystem.getRealDirectory)
          */
         export function getRealDirectory(filepath: string): string;
@@ -148,7 +148,7 @@ declare namespace love {
          * The paths are relative to the game's source and save directories, as well as
          * any paths mounted with love.filesystem.mount.
          *
-         * @return {string} paths, The paths that the require function will check in love's filesystem.
+         * @return paths, The paths that the require function will check in love's filesystem.
          * @link [love.filesystem.getRequirePath](https://love2d.org/wiki/love.filesystem.getRequirePath)
          */
         export function getRequirePath(): string;
@@ -158,7 +158,7 @@ declare namespace love {
          * want to use the standard io library (or something else) to read or write in the
          * save directory.
          *
-         * @return {string} path, The absolute path to the save directory.
+         * @return path, The absolute path to the save directory.
          * @link [love.filesystem.getSaveDirectory](https://love2d.org/wiki/love.filesystem.getSaveDirectory)
          */
         export function getSaveDirectory(): string;
@@ -177,7 +177,7 @@ declare namespace love {
          * Returns the full path to the the .love file or directory. If the game is fused
          * to the LÖVE executable, then the executable is returned.
          *
-         * @return {string} path, The full platform-dependent path of the .love file or directory.
+         * @return path, The full platform-dependent path of the .love file or directory.
          * @link [love.filesystem.getSource](https://love2d.org/wiki/love.filesystem.getSource)
          */
         export function getSource(): string;
@@ -192,7 +192,7 @@ declare namespace love {
          * passed to love.filesystem.mount, which will make the directory containing the
          * main game readable by love.filesystem.
          *
-         * @return {string} path, The full platform-dependent path of the directory containing the .love file.
+         * @return path, The full platform-dependent path of the directory containing the .love file.
          * @link [love.filesystem.getSourceBaseDirectory](https://love2d.org/wiki/love.filesystem.getSourceBaseDirectory)
          */
         export function getSourceBaseDirectory(): string;
@@ -200,7 +200,7 @@ declare namespace love {
         /**
          * Returns the path of the user's directory.
          *
-         * @return {string} path, The path of the user's directory.
+         * @return path, The path of the user's directory.
          * @link [love.filesystem.getUserDirectory](https://love2d.org/wiki/love.filesystem.getUserDirectory)
          */
         export function getUserDirectory(): string;
@@ -208,7 +208,7 @@ declare namespace love {
         /**
          * Gets the current working directory.
          *
-         * @return {string} path, The current working directory.
+         * @return path, The current working directory.
          * @link [love.filesystem.getWorkingDirectory](https://love2d.org/wiki/love.filesystem.getWorkingDirectory)
          */
         export function getWorkingDirectory(): string;
@@ -225,7 +225,7 @@ declare namespace love {
         /**
          * Check whether something is a directory.
          * @param filename The path to a potential directory.
-         * @return {boolean} isDir, True if there is a directory with the specified name. False otherwise.
+         * @return isDir, True if there is a directory with the specified name. False otherwise.
          * @link [love.filesystem.isDirectory](https://love2d.org/wiki/love.filesystem.isDirectory)
          * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
          */
@@ -234,7 +234,7 @@ declare namespace love {
         /**
          * Check whether something is a file.
          * @param filename The path to a potential file.
-         * @return {boolean} isFile, True if there is a file with the specified name. False otherwise.
+         * @return isFile, True if there is a file with the specified name. False otherwise.
          * @link [love.filesystem.isFile](https://love2d.org/wiki/love.filesystem.isFile)
          */
         export function isFile(filename: string): boolean;
@@ -252,14 +252,14 @@ declare namespace love {
          * (see Game Distribution), or if "--fused" has been given as a command-line
          * argument when starting the game.
          *
-         * @return {boolean} fused, True if the game is in fused mode, false otherwise.
+         * @return fused, True if the game is in fused mode, false otherwise.
          */
         export function isFused(): boolean;
 
         /**
          * Gets whether a filepath is actually a symbolic link.
          * @param path The file or directory path to check.
-         * @return {boolean} symlink, True if the path is a symbolic link, false otherwise.
+         * @return symlink, True if the path is a symbolic link, false otherwise.
          * @link [love.filesystem.isSymlink](https://love2d.org/wiki/love.filesystem.isSymlink)
          */
         export function isSymlink(path: string): boolean;
@@ -268,7 +268,7 @@ declare namespace love {
          * Iterate over the lines in a file.
          *
          * @param name The name (and path) of the file.
-         * @return {Function} iterator, A function that iterates over all the lines in the file.
+         * @return iterator, A function that iterates over all the lines in the file.
          */
         export function lines(name: string): Function;
 
@@ -277,7 +277,7 @@ declare namespace love {
          *
          * @param name The name (and path) of the file.
          * @param errormsg The error message if file could not be opened.
-         * @return {Function} chunk, The loaded chunk.
+         * @return chunk, The loaded chunk.
          */
         export function load(name: string, errormsg?: string): Function;
 
@@ -286,7 +286,7 @@ declare namespace love {
          *
          * @param archive The folder or zip file in the game's save directory to mount.
          * @param mountpoint The new path the archive will be mounted to.
-         * @return {boolean} success, True if the archive was successfully mounted, false otherwise.
+         * @return success, True if the archive was successfully mounted, false otherwise.
          */
         export function mount(archive: string, mountpoint: string): boolean;
 
@@ -296,7 +296,7 @@ declare namespace love {
          * @param archive The folder or zip file in the game's save directory to mount.
          * @param mountpoint The new path the archive will be mounted to.
          * @param appendToPath Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game's source and save directories.
-         * @return {boolean} success, True if the archive was successfully mounted, false otherwise.
+         * @return success, True if the archive was successfully mounted, false otherwise.
          */
         export function mount(archive: string, mountpoint: string, appendToPath?: string): boolean;
 
@@ -317,7 +317,7 @@ declare namespace love {
          * @param contents The contents of the file.
          * @param name The name of the file.
          * @param decoder The method to use when decoding the contents.
-         * @return {FileData} data, Your new FileData.
+         * @return data, Your new FileData.
          */
         export function newFileData(contents: string, name: string, decoder?: FileDecoder): FileData;
 
@@ -346,7 +346,7 @@ declare namespace love {
          * Removes a file or directory.
          *
          * @param name The file or directory to remove.
-         * @return {boolean} success, True if the file/directory was removed, false otherwise.
+         * @return success, True if the file/directory was removed, false otherwise.
          */
         export function remove(name: string): boolean;
 
@@ -419,7 +419,7 @@ declare namespace love {
          * love.filesystem.mount.
          *
          * @param archive The folder or zip file in the game's save directory which is currently mounted.
-         * @return {boolean} success, True if the archive was successfully unmounted, false otherwise.
+         * @return success, True if the archive was successfully unmounted, false otherwise.
          */
         export function unmount(archive: string): boolean;
 

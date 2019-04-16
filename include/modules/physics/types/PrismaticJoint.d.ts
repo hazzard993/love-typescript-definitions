@@ -6,15 +6,15 @@ declare interface PrismaticJoint extends Joint {
     /**
      * Checks whether the limits are enabled.
      *
-     * @return {boolean} enabled, True if enabled, false otherwise.
+     * @return enabled, True if enabled, false otherwise.
      */
     areLimitsEnabled(): boolean;
 
     /**
      * Gets the world-space axis vector of the Prismatic Joint.
      *
-     * @return {number} x, The x-axis coordinate of the world-space axis vector.
-     * @return {number} y, The y-axis coordinate of the world-space axis vector.
+     * @return x, The x-axis coordinate of the world-space axis vector.
+     * @return y, The y-axis coordinate of the world-space axis vector.
      */
     /** @tupleReturn */
     getAxis(): [number, number];
@@ -22,22 +22,22 @@ declare interface PrismaticJoint extends Joint {
     /**
      * Get the current joint angle speed.
      *
-     * @return {number} s, Joint angle speed in meters/second.
+     * @return s, Joint angle speed in meters/second.
      */
     getJointSpeed(): number;
 
     /**
      * Get the current joint translation.
      *
-     * @return {number} t, Joint translation, usually in meters.
+     * @return t, Joint translation, usually in meters.
      */
     getJointTranslation(): number;
 
     /**
      * Gets the joint limits.
      *
-     * @return {number} lower, The lower limit, usually in meters.
-     * @return {number} upper, The upper limit, usually in meters.
+     * @return lower, The lower limit, usually in meters.
+     * @return upper, The upper limit, usually in meters.
      */
     /** @tupleReturn */
     getLimits(): [number, number];
@@ -45,41 +45,41 @@ declare interface PrismaticJoint extends Joint {
     /**
      * Gets the lower limit.
      *
-     * @return {number} lower, The lower limit, usually in meters.
+     * @return lower, The lower limit, usually in meters.
      */
     getLowerLimit(): number;
 
     /**
      * Gets the maximum motor force.
      *
-     * @return {number} f, The maximum motor force, usually in N.
+     * @return f, The maximum motor force, usually in N.
      */
     getMaxMotorForce(): number;
 
     /**
      * Get the current motor force.
      *
-     * @return {number} f, The current motor force, usually in N.
+     * @return f, The current motor force, usually in N.
      */
     getMotorForce(): number;
 
     /**
      * Gets the motor speed.
      *
-     * @return {number} s, The motor speed, usually in meters per second.
+     * @return s, The motor speed, usually in meters per second.
      */
     getMotorSpeed(): number;
 
     /**
      * Gets the upper limit.
      *
-     * @return {number} upper, The upper limit, usually in meters.
+     * @return upper, The upper limit, usually in meters.
      */
     getUpperLimit(): number;
 
     /**
      * Checks whether limits are enabled.
-     * @return {boolean} enabled, True if enabled, false otherwise.
+     * @return enabled, True if enabled, false otherwise.
      * @link [PrismaticJoint:hasLimitsEnabled](https://love2d.org/wiki/PrismaticJoint:hasLimitsEnabled)
      * @deprecated since 11.0. This function has been renamed to PrismaticJoint:areLimitsEnabled.
      */
@@ -88,7 +88,7 @@ declare interface PrismaticJoint extends Joint {
     /**
      * Checks whether the motor is enabled.
      *
-     * @return {boolean} enabled, True if enabled, false if disabled.
+     * @return enabled, True if enabled, false if disabled.
      */
     isMotorEnabled(): boolean;
 

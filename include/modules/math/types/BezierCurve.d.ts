@@ -13,8 +13,8 @@ declare interface BezierCurve extends Object {
      * that purpose.
      *
      * @param t Where to evaluate the curve.
-     * @return {number} x, x coordinate of the curve at parameter t.
-     * @return {number} y, y coordinate of the curve at parameter t.
+     * @return x, x coordinate of the curve at parameter t.
+     * @return y, y coordinate of the curve at parameter t.
      */
     /** @tupleReturn */
     evaluate(t: number): [number, number];
@@ -23,8 +23,8 @@ declare interface BezierCurve extends Object {
      * Get coordinates of the i-th control point. Indices start with 1.
      *
      * @param i Index of the control point.
-     * @return {number} x, Position of the control point along the x axis.
-     * @return {number} y, Position of the control point along the y axis.
+     * @return x, Position of the control point along the x axis.
+     * @return y, Position of the control point along the y axis.
      */
     /** @tupleReturn */
     getControlPoint(i: number): [number, number];
@@ -32,7 +32,7 @@ declare interface BezierCurve extends Object {
     /**
      * Get the number of control points in the Bézier curve.
      *
-     * @return {number} count, The number of control points.
+     * @return count, The number of control points.
      */
     getControlPointCount(): number;
 
@@ -40,7 +40,7 @@ declare interface BezierCurve extends Object {
      * Get degree of the Bézier curve. The degree is equal to
      * number-of-control-points - 1.
      *
-     * @return {number} degree, Degree of the Bézier curve.
+     * @return degree, Degree of the Bézier curve.
      */
     getDegree(): number;
 
@@ -52,7 +52,7 @@ declare interface BezierCurve extends Object {
      * direction of the movement and compute the direction perpendicular to the curve
      * at some parameter t.
      *
-     * @return {BezierCurve} derivative, The derivative curve.
+     * @return derivative, The derivative curve.
      */
     getDerivative(): BezierCurve;
 
@@ -62,7 +62,7 @@ declare interface BezierCurve extends Object {
      *
      * @param startpoint The starting point along the curve. Must be between 0 and 1.
      * @param endpoint The end of the segment. Must be between 0 and 1.
-     * @return {BezierCurve} curve, A BezierCurve that corresponds to the specified segment.
+     * @return curve, A BezierCurve that corresponds to the specified segment.
      */
     getSegment(startpoint: number, endpoint: number): BezierCurve;
 
@@ -96,7 +96,7 @@ declare interface BezierCurve extends Object {
      * use BezierCurve:evaluate.
      *
      * @param depth Number of recursive subdivision steps.
-     * @return {table} coordinates, List of x,y-coordinate pairs of points on the curve.
+     * @return coordinates, List of x,y-coordinate pairs of points on the curve.
      */
     render(depth?: number): table;
 
@@ -115,7 +115,7 @@ declare interface BezierCurve extends Object {
      * @param startpoint The starting point along the curve. Must be between 0 and 1.
      * @param endpoint The end of the segment to render. Must be between 0 and 1.
      * @param depth Number of recursive subdivision steps.
-     * @return {table} coordinates, List of x,y-coordinate pairs of points on the curve.
+     * @return coordinates, List of x,y-coordinate pairs of points on the curve.
      */
     renderSegment(startpoint: number, endpoint: number, depth?: number): table;
 

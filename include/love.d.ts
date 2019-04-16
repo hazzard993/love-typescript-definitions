@@ -10,10 +10,10 @@ declare namespace love {
 ```ts
 let [major, minor, revision, codename] = love.getVersion();
 ```
-     * @return {number} major, The major version of LÖVE, i.e. 0 for version 0.9.1.
-     * @return {number} minor, The minor version of LÖVE, i.e. 9 for version 0.9.1.
-     * @return {number} revision, The revision version of LÖVE, i.e. 1 for version 0.9.1.
-     * @return {string} codename, The codename of the current version, i.e. "Baby Inspector" for version 0.9.1.
+     * @return major, The major version of LÖVE, i.e. 0 for version 0.9.1.
+     * @return minor, The minor version of LÖVE, i.e. 9 for version 0.9.1.
+     * @return revision, The revision version of LÖVE, i.e. 1 for version 0.9.1.
+     * @return codename, The codename of the current version, i.e. "Baby Inspector" for version 0.9.1.
      * @link [love.getVersion](https://love2d.org/wiki/love.getVersion)
      * @link [Version Warnings](https://love2d.org/wiki/Config_Files#version)
      * @tupleReturn
@@ -35,7 +35,7 @@ let [major, minor, revision, codename] = love.getVersion();
      *
      * When deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.
      *
-     * @return {boolean} enabled, Whether deprecation output is enabled.
+     * @return enabled, Whether deprecation output is enabled.
      * @link [love.hasDeprecationOutput](https://love2d.org/wiki/love.hasDeprecationOutput)
      */
     export function hasDeprecationOutput(): boolean;
@@ -56,7 +56,7 @@ love.conf = (t: Conf) => {
      * Callback function triggered when a directory is dragged and dropped onto the window.
 ```ts
 love.directorydropped = (path: string) => {
-    print(`${path} dropped!`);
+    print(`$dropped!`);
 }
 ```
      * @param path The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.
@@ -90,7 +90,7 @@ love.draw = () => {
 ```ts
 love.filedropped = (file: File) => {
     const [content, size] = file.read();
-    print(`Content of ${file.getFilename()} is`);
+    print(`Content of $is`);
     print(content);
     print("End of file");
 }
@@ -287,7 +287,7 @@ love.draw = () =>
     /**
      * Callback function triggered when the game is closed.
      *
-     * @return {boolean} r, Abort quitting. If true, do not close the game.
+     * @return r, Abort quitting. If true, do not close the game.
      * @link [love.quit](https://love2d.org/wiki/love.quit)
      */
     export let quit: () => boolean;

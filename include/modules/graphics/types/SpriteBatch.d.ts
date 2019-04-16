@@ -17,7 +17,7 @@ declare interface SpriteBatch extends Drawable {
      * @param oy Origin offset (y-axis).
      * @param kx Shear factor (x-axis).
      * @param ky Shear factor (y-axis).
-     * @return {number} id, An identifier for the added sprite.
+     * @return id, An identifier for the added sprite.
      */
     add(x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -34,7 +34,7 @@ declare interface SpriteBatch extends Drawable {
      * @param oy Origin offset (y-axis).
      * @param kx Shear factor (x-axis).
      * @param ky Shear factor (y-axis).
-     * @return {number} id, An identifier for the added sprite.
+     * @return id, An identifier for the added sprite.
      */
     add(quad: Quad, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -50,7 +50,7 @@ declare interface SpriteBatch extends Drawable {
      * @param oy Origin offset (y-axis). (Default 0)
      * @param kx Shearing factor (x-axis). (Default 0)
      * @param ky Shearing factor (y-axis). (Default 0)
-     * @return {number} spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
+     * @return spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
      * @link [SpriteBatch:addLayer](https://love2d.org/wiki/SpriteBatch:addLayer)
      */
     addLayer(layerindex: number, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
@@ -68,7 +68,7 @@ declare interface SpriteBatch extends Drawable {
      * @param oy Origin offset (y-axis). (Default 0)
      * @param kx Shearing factor (x-axis). (Default 0)
      * @param ky Shearing factor (y-axis). (Default 0)
-     * @return {number} spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
+     * @return spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
      * @link [SpriteBatch:addLayer](https://love2d.org/wiki/SpriteBatch:addLayer)
      */
     addLayer(layerindex: number, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
@@ -78,7 +78,7 @@ declare interface SpriteBatch extends Drawable {
      * @param layerindex The index of the layer to use for this sprite.
      * @param quad The subsection of the texture's layer to use when drawing the sprite.
      * @param transform A transform object.
-     * @return {number} spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
+     * @return spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
      * @link [SpriteBatch:addLayer](https://love2d.org/wiki/SpriteBatch:addLayer)
      */
     addLayer(layerindex: number, quad: Quad, transform: Transform): number;
@@ -87,7 +87,7 @@ declare interface SpriteBatch extends Drawable {
      * Adds a layer of the SpriteBatch's Array Texture using the specified Transform.
      * @param layerindex The index of the layer to use for this sprite.
      * @param transform A transform object.
-     * @return {number} spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
+     * @return spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
      * @link [SpriteBatch:addLayer](https://love2d.org/wiki/SpriteBatch:addLayer)
      */
     addLayer(layerindex: number, transform: Transform): number;
@@ -125,7 +125,7 @@ declare interface SpriteBatch extends Drawable {
     /**
      * Gets the maximum number of sprites the SpriteBatch can hold.
      *
-     * @return {number} size, The maximum number of sprites the batch can hold.
+     * @return size, The maximum number of sprites the batch can hold.
      */
     getBufferSize(): number;
 
@@ -136,10 +136,10 @@ declare interface SpriteBatch extends Drawable {
      * If no color has been set with SpriteBatch:setColor or the current SpriteBatch
      * color has been cleared, this method will return _nil/null_.
      *
-     * @return {number} r, The red component (0-255).
-     * @return {number} g, The green component (0-255).
-     * @return {number} b, The blue component (0-255).
-     * @return {number} a, The alpha component (0-255).
+     * @return r, The red component (0-255).
+     * @return g, The green component (0-255).
+     * @return b, The blue component (0-255).
+     * @return a, The alpha component (0-255).
      * @tupleReturn
      * @link [SpriteBatch:getColor](https://love2d.org/wiki/SpriteBatch:getColor)
      */
@@ -148,14 +148,14 @@ declare interface SpriteBatch extends Drawable {
     /**
      * Gets the amount of sprites currently in the SpriteBatch.
      *
-     * @return {number} count, The amount of sprites currently in the batch.
+     * @return count, The amount of sprites currently in the batch.
      */
     getCount(): number;
 
     /**
      * Returns the Image or Canvas used by the SpriteBatch.
      *
-     * @return {Texture} texture, The Image or Canvas for the sprites.
+     * @return texture, The Image or Canvas for the sprites.
      */
     getTexture(): Texture;
 

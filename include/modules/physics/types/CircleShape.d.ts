@@ -6,8 +6,8 @@ declare interface CircleShape extends Shape {
     /**
      * Gets the center point of the circle shape.
      *
-     * @return {number} x, The x-component of the center point of the circle.
-     * @return {number} y, The y-component of the center point of the circle.
+     * @return x, The x-component of the center point of the circle.
+     * @return y, The y-component of the center point of the circle.
      * @tupleReturn
      */
     getPoint(): [number, number];
@@ -15,7 +15,7 @@ declare interface CircleShape extends Shape {
     /**
      * Gets the radius of the circle shape.
      *
-     * @return {number} radius, The radius of the circle.
+     * @return radius, The radius of the circle.
      */
     getRadius(): number;
 

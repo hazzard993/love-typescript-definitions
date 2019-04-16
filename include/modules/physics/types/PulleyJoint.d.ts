@@ -6,17 +6,17 @@ declare interface PulleyJoint extends Joint {
     /**
      * Get the total length of the rope.
      *
-     * @return {number} length, The length of the rope in the joint.
+     * @return length, The length of the rope in the joint.
      */
     getConstant(): number;
 
     /**
      * Get the ground anchor positions in world coordinates.
      *
-     * @return {number} a1x, The x coordinate of the first anchor.
-     * @return {number} a1y, The y coordinate of the first anchor.
-     * @return {number} a2x, The x coordinate of the second anchor.
-     * @return {number} a2y, The y coordinate of the second anchor.
+     * @return a1x, The x coordinate of the first anchor.
+     * @return a1y, The y coordinate of the first anchor.
+     * @return a2x, The x coordinate of the second anchor.
+     * @return a2y, The y coordinate of the second anchor.
      */
     /** @tupleReturn */
     getGroundAnchors(): [number, number, number, number];
@@ -24,22 +24,22 @@ declare interface PulleyJoint extends Joint {
     /**
      * Get the current length of the rope segment attached to the first body.
      *
-     * @return {number} length, The length of the rope segment.
+     * @return length, The length of the rope segment.
      */
     getLengthA(): number;
 
     /**
      * Get the current length of the rope segment attached to the second body.
      *
-     * @return {number} length, The length of the rope segment.
+     * @return length, The length of the rope segment.
      */
     getLengthB(): number;
 
     /**
      * Get the maximum lengths of the rope segments.
      *
-     * @return {number} len1, The maximum length of the first rope segment.
-     * @return {number} len2, The maximum length of the second rope segment.
+     * @return len1, The maximum length of the first rope segment.
+     * @return len2, The maximum length of the second rope segment.
      */
     /** @tupleReturn */
     getMaxLengths(): [number, number];
@@ -47,7 +47,7 @@ declare interface PulleyJoint extends Joint {
     /**
      * Get the pulley ratio.
      *
-     * @return {number} ratio, The pulley ratio of the joint.
+     * @return ratio, The pulley ratio of the joint.
      */
     getRatio(): number;
 

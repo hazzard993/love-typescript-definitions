@@ -7,7 +7,7 @@ declare interface Font extends Object {
     /**
      * Gets the ascent of the Font. The ascent spans the distance between the baseline
      * and the top of the glyph that reaches farthest from the baseline.
-     * @return {number} ascent, The ascent of the Font in pixels.
+     * @return ascent, The ascent of the Font in pixels.
      * @link [Font:getAscent](https://love2d.org/wiki/Font:getAscent)
      */
     getAscent(): number;
@@ -16,14 +16,14 @@ declare interface Font extends Object {
      * Gets the baseline of the Font. Most scripts share the notion of a baseline: an
      * imaginary horizontal line on which characters rest. In some scripts, parts of
      * glyphs lie below the baseline.
-     * @return {number} baseline, The baseline of the Font in pixels.
+     * @return baseline, The baseline of the Font in pixels.
      * @link [Font:getBaseline](https://love2d.org/wiki/Font:getBaseline)
      */
     getBaseline(): number;
 
     /**
      * Gets the DPI scale factor of the Font.
-     * @return {number} dpiscale, The DPI scale factor of the Font.
+     * @return dpiscale, The DPI scale factor of the Font.
      * @link [Font:getDPIScale](https://love2d.org/wiki/Font:getDPIScale)
      */
     getDPIScale(): number;
@@ -31,16 +31,16 @@ declare interface Font extends Object {
     /**
      * Gets the descent of the Font. The descent spans the distance between the
      * baseline and the lowest descending glyph in a typeface.
-     * @return {number} descent, The descent of the Font in pixels.
+     * @return descent, The descent of the Font in pixels.
      * @link [Font:getDescent](https://love2d.org/wiki/Font:getDescent)
      */
     getDescent(): number;
 
     /**
      * Gets the filter mode for a font.
-     * @return {FilterMode} min, Filter mode used when minifying the font.
-     * @return {FilterMode} mag, Filter mode used when magnifying the font.
-     * @return {number} anisotropy, Maximum amount of anisotropic filtering used.
+     * @return min, Filter mode used when minifying the font.
+     * @return mag, Filter mode used when magnifying the font.
+     * @return anisotropy, Maximum amount of anisotropic filtering used.
      * @tupleReturn
      * @link [Canvas:getFilter](https://love2d.org/wiki/Canvas:getFilter)
      */
@@ -49,7 +49,7 @@ declare interface Font extends Object {
     /**
      * Gets the height of the Font. The height of the font is the size including any
      * spacing; the height which it will need.
-     * @return {number} height, The height of the Font in pixels.
+     * @return height, The height of the Font in pixels.
      * @link [Canvas:getHeight](https://love2d.org/wiki/Canvas:getHeight)
      */
     getHeight(): number;
@@ -57,7 +57,7 @@ declare interface Font extends Object {
     /**
      * Gets the line height. This will be the value previously set by
      * Font:setLineHeight, or 1.0 by default.
-     * @return {number} height, The current line height.
+     * @return height, The current line height.
      * @link [Canvas:getLineHeight](https://love2d.org/wiki/Canvas:getLineHeight)
      */
     getLineHeight(): number;
@@ -66,7 +66,7 @@ declare interface Font extends Object {
      * Determines the horizontal size a line of text needs. Does not support
      * line-breaks.
      * @param line A line of text.
-     * @return {number} width, The width of the line.
+     * @return width, The width of the line.
      */
     getWidth(line: string): number;
 
@@ -76,8 +76,8 @@ declare interface Font extends Object {
      * This function accounts for newlines correctly (i.e. '\n').
      * @param text The text that will be wrapped.
      * @param wraplimit The maximum width in pixels of each line that text is allowed before wrapping.
-     * @return {number} width, The maximum width of the wrapped text.
-     * @return {table} wrappedtext, A sequence containing each line of text that was wrapped.
+     * @return width, The maximum width of the wrapped text.
+     * @return wrappedtext, A sequence containing each line of text that was wrapped.
      */
     /** @tupleReturn */
     getWrap(text: string, wraplimit: number): [number, table];
@@ -85,14 +85,14 @@ declare interface Font extends Object {
     /**
      * Gets whether the font can render a particular character.
      * @param character A unicode character.
-     * @return {boolean} hasglyph, Whether the font can render the glyph represented by the character.
+     * @return hasglyph, Whether the font can render the glyph represented by the character.
      */
     hasGlyphs(character: string): boolean;
 
     /**
      * Gets whether the font can render a particular character.
      * @param codepoint A unicode codepoint number.
-     * @return {boolean} hasglyph, Whether the font can render the glyph represented by the codepoint number.
+     * @return hasglyph, Whether the font can render the glyph represented by the codepoint number.
      */
     hasGlyphs(codepoint: number): boolean;
 

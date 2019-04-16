@@ -9,14 +9,14 @@ declare namespace love {
         /**
          * Gets the number of connected joysticks.
          *
-         * @return {number} joystickcount, The number of connected joysticks.
+         * @return joystickcount, The number of connected joysticks.
          */
         export function getJoystickCount(): number;
 
         /**
          * Gets a list of connected Joysticks.
          *
-         * @return {table} joysticks, The list of currently connected Joysticks.
+         * @return joysticks, The list of currently connected Joysticks.
          */
         export function getJoysticks(): Array<Joystick>;
 
@@ -42,7 +42,7 @@ declare namespace love {
          * modified.
          *
          * @param filename The filename to save the mappings string to.
-         * @return {string} mappings, The mappings string that was written to the file.
+         * @return mappings, The mappings string that was written to the file.
          */
         export function saveGamepadMappings(filename: string): string;
 
@@ -51,7 +51,7 @@ declare namespace love {
          * gamepads and have either been recently used or their gamepad bindings have been
          * modified.
          *
-         * @return {string} mappings, The mappings string.
+         * @return mappings, The mappings string.
          */
         export function saveGamepadMappings(): string;
 
@@ -76,7 +76,7 @@ declare namespace love {
          * @param inputtype The type of input to bind the virtual gamepad button to.
          * @param inputindex The index of the axis, button, or hat to bind the virtual gamepad button to.
          * @param hatdirection The direction of the hat, if the virtual gamepad button will be bound to a hat. Unspecified otherwise.
-         * @return {boolean} success, Whether the virtual gamepad button was successfully bound.
+         * @return success, Whether the virtual gamepad button was successfully bound.
          */
         export function setGamepadMapping(guid: string, button: GamepadButton, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
 
@@ -101,7 +101,7 @@ declare namespace love {
          * @param inputtype The type of input to bind the virtual gamepad axis to.
          * @param inputindex The index of the axis, button, or hat to bind the virtual gamepad axis to.
          * @param hatdirection The direction of the hat, if the virtual gamepad axis will be bound to a hat. Unspecified otherwise.
-         * @return {boolean} success, Whether the virtual gamepad button was successfully bound.
+         * @return success, Whether the virtual gamepad button was successfully bound.
          */
         export function setGamepadMapping(guid: string, axis: GamepadAxis, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
 
