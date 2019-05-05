@@ -141,52 +141,38 @@ declare namespace love {
         export function circle(mode: DrawMode, x: number, y: number, radius: number, segments: number): void;
 
         /**
-         * Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the
-         * specified color in 0.10.0 and newer.
-         *
-         *
-         * This function is called automatically before love.draw in the default love.run
-         * function. See the example in love.run for a typical use of this function.
-         *
-         *
-         * Note that the scissor area bounds the cleared region.
-         *
+         * Clears the screen to the background color in 0.9.2 and earlier, or to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
+         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
+         * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
         export function clear(): void;
 
         /**
-         * Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the
-         * specified color in 0.10.0 and newer.
-         *
-         *
-         * This function is called automatically before love.draw in the default love.run
-         * function. See the example in love.run for a typical use of this function.
-         *
-         *
-         * Note that the scissor area bounds the cleared region.
-         *
+         * Clears the screen or active Canvas to the specified color.
+```ts
+love.graphics.clear(1, 0, 0, 0, true, true);
+```
          * @param r The red channel of the color to clear the screen to.
          * @param g The green channel of the color to clear the screen to.
          * @param b The blue channel of the color to clear the screen to.
          * @param a The alpha channel of the color to clear the screen to.
+         * @param clearstencil Whether to clear the active stencil buffer, if present. It can also be an integer between 0 and 255 to clear the stencil buffer to a specific value. (Default `true`)
+         * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default `true`)
+         * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
-        export function clear(r: number, g: number, b: number, a?: number): void;
+        export function clear(r: number, g: number, b: number, a?: number, clearstencil?: boolean, cleardepth?: boolean): void;
 
         /**
-         * Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the
-         * specified color in 0.10.0 and newer.
-         *
-         *
-         * This function is called automatically before love.draw in the default love.run
-         * function. See the example in love.run for a typical use of this function.
-         *
-         *
-         * Note that the scissor area bounds the cleared region.
+         * Clears the screen an associated background color.
+```ts
+love.graphics.clear([1, 0, 0, 1], true, true);
+```
+         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
          *
          * @param color A table in the form of containing the color to clear the first active Canvas to.
          * @param ... Additional tables for each active Canvas.
          */
-        export function clear(color: table, ...vararg: Array<table>): void;
+        export function clear(...colors: Array<[number, number, number, number] | boolean>): void;
 
         /**
          * Discards (trashes) the contents of the screen or active Canvas. This is a
@@ -823,21 +809,15 @@ declare namespace love {
 
         /**
          * Draws lines between points.
-         *
-         * @param x1 The position of first point on the x-axis.
-         * @param y1 The position of first point on the y-axis.
-         * @param x2 The position of second point on the x-axis.
-         * @param y2 The position of second point on the y-axis.
-         * @param ... You can continue passing point positions to draw a polyline.
+```ts
+love.graphics.line(4, 4, 8, 8, 12, 8);      // x1y1x2y2...
+love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
+```
+         * @param points x position followed by y position continued.
+         * @link [love.graphics.line](https://love2d.org/wiki/love.graphics.line)
          */
-        export function line(x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): void;
-
-        /**
-         * Draws lines between points.
-         *
-         * @param points A table of point positions.
-         */
-        export function line(points: table): void;
+        export function line(...points: [number, number, number, number, ...Array<number>]): void;
+        export function line(points: [number, number, number, number, ...Array<number>]): void;
 
         /**
          * Interface for passing settings table to love.graphics.newCanvas
@@ -1213,26 +1193,19 @@ declare namespace love {
 
         /**
          * Draws one or more points.
+```ts
+love.graphics.points(4, 4, 8, 8, 12, 12);           // xyxyxy...
+love.graphics.points([4, 4, 8, 8, 12, 12]);         // [xyxyxy...]
+love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]); // [[xy],[xyrgba],...]
+```
+         * @param points The x and y positions of the points to draw.
          *
-         * @param x The position of the first point on the x-axis.
-         * @param y The position of the first point on the y-axis.
-         * @param ... The x and y coordinates of additional points.
+         * RGBA values are optional.
+         * @link [love.graphics.points](https://love2d.org/wiki/love.graphics.points)
          */
-        export function points(x: number, y: number, ...vararg: Array<number>): void;
-
-        /**
-         * Draws one or more points.
-         *
-         * @param points A table containing multiple point positions, in the form of {x, y, ...}.
-         */
-        export function points(points: table): void;
-
-        /**
-         * Draws one or more points.
-         *
-         * @param points A table containing multiple individually colored points, in the form of {point, ...}. Each table contains the position and color of a point in the form of {x, y, r, g, b, a}. The color components are optional.
-         */
-        export function points(points: table): void;
+        export function points(...points: Array<number>): void;
+        export function points(points: Array<number>): void;
+        export function points(points: Array<[number, number] | [number, number, number, number, number, number]>): void;
 
         /**
          * Draw a polygon.
@@ -1241,16 +1214,15 @@ declare namespace love {
          *
          * When in fill mode, the polygon must be convex and simple or rendering artifacts may occur.
 ```ts
-let vertexes = [0, 0, 16, 16, 0, 16];
-love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);
-love.graphics.polygon("line", vertexes);
-love.graphics.polygon("fill", ...vertexes);
+love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);     // "fill", xyxyxy...
+love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
 ```
          * @param mode How to draw the polygon.
-         * @param vertexes The vertices of the polygon. [x1, y1, x2, y2, ...]
+         * @param xys x and y positions for the vertices of the polygon.
+         * @link [love.graphics.polygon](https://love2d.org/wiki/love.graphics.polygon)
          */
         export function polygon(mode: DrawMode, ...xys: Array<number>): void;
-        export function polygon(mode: DrawMode, vertices: table): void;
+        export function polygon(mode: DrawMode, xys: Array<number>): void;
 
         /**
          * Pops the current coordinate transformation from the transformation stack.
@@ -1274,21 +1246,15 @@ love.graphics.polygon("fill", ...vertexes);
          */
         export function present(): void;
 
+        export type ColouredText = Array<string | [number, number, number, number]>;
+
         /**
-         * Draws text on screen. If no Font is set, one will be created and set (once) if
-         * needed.
-         *
-         *
-         * As of LOVE 0.7.1, when using translation and scaling functions while drawing
-         * text, this function assumes the scale occurs first. If you don't script with
-         * this in mind, the text won't be in the right position, or possibly even on
-         * screen.
-         *
-         *
-         * love.graphics.print and love.graphics.printf both support UTF-8 encoding.
-         * You'll also need a proper Font for special characters.
-         *
-         * @param text The text to draw.
+         * Draws text on the screen.
+```ts
+love.graphics.print("Hello");
+love.graphics.print([[1, 0, 0, 1], "Hello in red"]);
+```
+         * @param text The text to draw. Or an array [color(rgba), string, ...].
          * @param x The position to draw the object (x-axis).
          * @param y The position to draw the object (y-axis).
          * @param r Orientation (radians).
@@ -1298,93 +1264,23 @@ love.graphics.polygon("fill", ...vertexes);
          * @param oy Origin offset (y-axis).
          * @param kx Shear factor (x-axis).
          * @param ky Shear factor (y-axis).
+         * @link [love.graphics.print](https://love2d.org/wiki/love.graphics.print)
          */
-        export function print(text: string, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-
-        /**
-         * Draws text on screen. If no Font is set, one will be created and set (once) if
-         * needed.
-         *
-         *
-         * As of LOVE 0.7.1, when using translation and scaling functions while drawing
-         * text, this function assumes the scale occurs first. If you don't script with
-         * this in mind, the text won't be in the right position, or possibly even on
-         * screen.
-         *
-         *
-         * love.graphics.print and love.graphics.printf both support UTF-8 encoding.
-         * You'll also need a proper Font for special characters.
-         *
-         * @param coloredtext A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.
-         * @param x The position of the new text on the x-axis.
-         * @param y The position of the new text on the y-axis.
-         * @param angle The orientation of the object in radians.
-         * @param sx Scale factor on the x-axis.
-         * @param sy Scale factor on the y-axis.
-         * @param ox Origin offset on the x-axis.
-         * @param oy Origin offset on the y-axis.
-         * @param kx Shearing / skew factor on the x-axis.
-         * @param ky Shearing / skew factor on the y-axis.
-         */
-        export function print(coloredtext: table, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function print(text: string | ColouredText, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function print(text: string | ColouredText, transform: Transform): void;
 
         /**
          * Draws formatted text, with word wrap and alignment.
-         *
-         *
-         * See additional notes in love.graphics.print.
-         *
-         *
-         * In version 0.9.2 and earlier, wrapping was implemented by breaking up words by
-         * spaces and putting them back together to make sure things fit nicely within the
-         * limit provided. However, due to the way this is done, extra spaces between
-         * words would end up missing when printed on the screen, and some lines could
-         * overflow past the provided wrap limit. In version 0.10.0 and newer this is no
-         * longer the case.
-         *
-         * @param text A text string.
-         * @param x The position on the x-axis.
-         * @param y The position on the y-axis.
-         * @param limit Wrap the line after this many horizontal pixels.
-         * @param align The alignment.
-         * @param r Orientation (radians).
-         * @param sx Scale factor (x-axis).
-         * @param sy Scale factor (y-axis).
-         * @param ox Origin offset (x-axis).
-         * @param oy Origin offset (y-axis).
-         * @param kx Shear factor (x-axis).
-         * @param ky Shear factor (y-axis).
+```ts
+love.graphics.printf("Hello", 8, 8, 400);
+love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
+```
+         * @link [love.graphics.printf](https://love2d.org/wiki/love.graphics.printf)
          */
-        export function printf(text: string, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-
-        /**
-         * Draws formatted text, with word wrap and alignment.
-         *
-         *
-         * See additional notes in love.graphics.print.
-         *
-         *
-         * In version 0.9.2 and earlier, wrapping was implemented by breaking up words by
-         * spaces and putting them back together to make sure things fit nicely within the
-         * limit provided. However, due to the way this is done, extra spaces between
-         * words would end up missing when printed on the screen, and some lines could
-         * overflow past the provided wrap limit. In version 0.10.0 and newer this is no
-         * longer the case.
-         *
-         * @param coloredtext A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.
-         * @param x The position of the new text on the x-axis.
-         * @param y The position of the new text on the y-axis.
-         * @param wraplimit The maximum width in pixels of the text before it gets automatically wrapped to a new line.
-         * @param align The alignment of the text.
-         * @param angle The orientation of the object in radians.
-         * @param sx Scale factor on the x-axis.
-         * @param sy Scale factor on the y-axis.
-         * @param ox Origin offset on the x-axis.
-         * @param oy Origin offset on the y-axis.
-         * @param kx Shearing / skew factor on the x-axis.
-         * @param ky Shearing / skew factor on the y-axis.
-         */
-        export function printf(coloredtext: table, x: number, y: number, wraplimit: number, align: AlignMode, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, font: Font, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, transform: Transform, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, font: Font, transform: Transform, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
 
         /**
          * Copies and pushes the current coordinate transformation to the transformation
@@ -1520,26 +1416,13 @@ love.graphics.polygon("fill", ...vertexes);
         export function setBlendMode(mode: BlendMode, alphamode?: BlendAlphaMode): void;
 
         /**
-         * Captures drawing operations to a Canvas.
-         *
-         * @param canvas A render target.
-         */
-        export function setCanvas(canvas: Canvas): void;
-
-        /**
-         * Captures drawing operations to a Canvas.
-         *
+         * Captures drawing operations to a [Canvas](https://love2d.org/wiki/Canvas).
+         * @link [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
          */
         export function setCanvas(): void;
-
-        /**
-         * Captures drawing operations to a Canvas.
-         *
-         * @param canvas1 The first render target.
-         * @param canvas2 The second render target.
-         * @param ... More canvases.
-         */
-        export function setCanvas(canvas1: Canvas, canvas2: Canvas, ...vararg: Array<Canvas>): void;
+        export function setCanvas(canvas: Canvas, mipmap?: number): void;
+        export function setCanvas(...canvases: Array<Canvas>): void;
+        export function setCanvas(canvas: Canvas, slice?: number, mipmap?: number): void;
 
         /**
          * Sets the color used for drawing.

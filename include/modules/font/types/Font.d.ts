@@ -101,10 +101,12 @@ declare interface Font extends Object {
      * substitute the glyph from the next subsequent fallback Fonts. This is akin to
      * setting a "font stack" in Cascading Style Sheets (CSS).
      *
-     * @param fallbackfont1 The first fallback Font to use.
+     * @param fallbackfonts The fallback fonts in order
      * @param ... Additional fallback Fonts.
+     * @link [Font:setFallbacks](https://love2d.org/wiki/Font:setFallbacks)
+     * @since 0.10.0
      */
-    setFallbacks(fallbackfont1: Font, ...vararg: Array<Font>): void;
+    setFallbacks(...fallbackfonts: Array<Font>): void;
 
     /**
      * Sets the filter mode for a font.

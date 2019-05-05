@@ -79,8 +79,7 @@ declare interface Mesh extends Drawable {
      * @return b, The blue component of the vertex's color.
      * @return a, The alpha component of the vertex's color.
      */
-    /** @tupleReturn */
-    getVertex(index: number): [number, number, number, number, number, number, number, number];
+    getVertex(index: number): Array<[number]>;
 
     /**
      * Gets the properties of a specific attribute within a vertex in the Mesh.
@@ -92,12 +91,9 @@ declare interface Mesh extends Drawable {
      *
      * @param vertexindex The index of the the vertex to be modified.
      * @param attributeindex The index of the attribute within the vertex to be modified.
-     * @return value1, The value of the first component of the attribute.
-     * @return value2, The value of the second component of the attribute.
-     * @return ..., Any additional vertex attribute components.
+     * @return properties, The properties of the specified attribute.
      */
-    /** @tupleReturn */
-    getVertexAttribute(vertexindex: number, attributeindex: number): [number, number, number];
+    getVertexAttribute(vertexindex: number, attributeindex: number): Array<[number]>;
 
     /**
      * Returns the total number of vertices in the Mesh.
@@ -111,7 +107,7 @@ declare interface Mesh extends Drawable {
      *
      * @return format, The vertex format of the Mesh, which is a table containing tables for each vertex attribute the Mesh was created with, in the form of {attribute, ...}.
      */
-    getVertexFormat(): table;
+    getVertexFormat(): Array<[string, string, ...Array<any>]>;
 
     /**
      * Gets the vertex map for the Mesh. The vertex map describes the order in which
@@ -209,10 +205,10 @@ declare interface Mesh extends Drawable {
 
     /**
      * Sets the properties of a vertex in the Mesh.
-     *
      * @param index The index of the the vertex you want to modify.
      * @param attributecomponent The first component of the first vertex attribute in the specified vertex.
      * @param ... Additional components of all vertex attributes in the specified vertex.
+     * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
      */
     setVertex(index: number, attributecomponent: number, ...vararg: Array<number>): void;
 

@@ -57,39 +57,28 @@ declare namespace love {
         export function hasTextInput(): boolean;
 
         /**
-         * Checks whether a certain key is down. Not to be confused with love.keypressed
-         * or love.keyreleased.
-         *
-         * @param key The key to check.
-         * @return down, True if the key is down, false if not.
+         * Gets whether is screen keyboard supported.
+         * @returns supported, Whether the screen keyboard supported or not.
+         * @link [love.keyboard.hasScreenKeyboard](https://love2d.org/wiki/love.keyboard.hasScreenKeyboard)
+         * @since 0.10.0
          */
-        export function isDown(key: KeyConstant): boolean;
+        export function hasScreenKeyboard(): boolean;
 
         /**
-         * Checks whether a certain key is down. Not to be confused with love.keypressed
-         * or love.keyreleased.
-         *
-         * @param key A key to check.
-         * @param ... Additional keys to check.
-         * @return anyDown, True if any supplied key is down, false if not.
+         * Checks if one of the specified keys is down.
+         * @param keys The keys to check.
+         * @return _true_ if any supplied key is down, _false_ if not.
+         * @link [love.keyboard.isDown](https://love2d.org/wiki/love.keyboard.isDown)
          */
-        export function isDown(key: KeyConstant, ...vararg: Array<KeyConstant>): boolean;
+        export function isDown(...keys: Array<KeyConstant>): boolean;
 
         /**
-         * Checks whether the specified Scancodes are pressed. Not to be confused with
-         * love.keypressed or love.keyreleased.
-         *
-         *
-         * Unlike regular KeyConstants, Scancodes are keyboard layout-independent. The
-         * scancode "w" is used if the key in the same place as the "w" key on an American
-         * keyboard is pressed, no matter what the key is labelled or what the user's
-         * operating system settings are.
-         *
-         * @param scancode A Scancode to check.
-         * @param ... Additional Scancodes to check.
-         * @return down, True if any supplied Scancode is down, false if not.
+         * Checks if one of the specified Scancodes has been pressed.
+         * @param scancodes The Scancodes to check.
+         * @return _true_ if any supplied Scancode is down, _false_ if not.
+         * @link [love.keyboard.isScancodeDown](https://love2d.org/wiki/love.keyboard.isScancodeDown)
          */
-        export function isScancodeDown(scancode: Scancode, ...vararg: Array<Scancode>): boolean;
+        export function isScancodeDown(...scancodes: Array<Scancode>): boolean;
 
         /**
          * Enables or disables key repeat. It is disabled by default.
