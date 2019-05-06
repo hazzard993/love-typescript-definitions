@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
   "devDependencies": {
-    "tslint": "^5.13.0",
-    "typescript-to-lua": "^0.18.0"
+    "tslint": "^5.16.0",
+    "typescript-to-lua": "^0.19.0"
   },
   "dependencies": {
-    "lua-types": "^2.3.2"
+    "lua-types": "^2.4.0"
   }
 }
