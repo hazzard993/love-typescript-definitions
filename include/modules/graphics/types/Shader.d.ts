@@ -10,8 +10,8 @@ declare interface Shader extends Object {
      * @return type, The base type of the variable.
      * @return components, The number of components in the variable (e.g. 2 for a vec2 or mat2.)
      * @return arrayelements, The number of elements in the array if the variable is an array, or 1 if not.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getExternVariable(name: string): [ShaderVariableType, number, number];
 
     /**

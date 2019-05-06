@@ -14,8 +14,8 @@ declare interface File extends Object {
      *
      * @return success, Whether the file successfully flushed any buffered data to the disk.
      * @return err, The error string, if an error occurred and the file could not be flushed.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     flush(): [boolean, string];
 
     /**
@@ -23,8 +23,8 @@ declare interface File extends Object {
      *
      * @return mode, The current buffer mode of the file.
      * @return size, The maximum size in bytes of the file's buffer.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getBuffer(): [BufferMode, number];
 
     /**
@@ -90,8 +90,8 @@ declare interface File extends Object {
      * @param bytes The number of bytes to read
      * @return contents, The contents of the read bytes.
      * @return size, How many bytes have been read.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     read(bytes?: number): [string, number];
 
     /**
@@ -111,8 +111,8 @@ declare interface File extends Object {
      * @param size The maximum size in bytes of the file's buffer.
      * @return success, Whether the buffer mode was successfully set.
      * @return errorstr, The error string, if the buffer mode could not be set and an error occurred.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     setBuffer(mode: BufferMode, size?: number): [boolean, string];
 
     /**

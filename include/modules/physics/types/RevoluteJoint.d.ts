@@ -43,8 +43,8 @@ declare interface RevoluteJoint extends Joint {
      *
      * @return lower, The lower limit, in radians.
      * @return upper, The upper limit, in radians.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLimits(): [number, number];
 
     /**

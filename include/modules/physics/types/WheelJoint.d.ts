@@ -8,8 +8,8 @@ declare interface WheelJoint extends Joint {
      *
      * @return x, The x-axis coordinate of the world-space axis vector.
      * @return y, The y-axis coordinate of the world-space axis vector.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAxis(): [number, number];
 
     /**

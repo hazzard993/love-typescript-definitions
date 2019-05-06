@@ -8,8 +8,8 @@ declare interface Quad extends Object {
      *
      * @return sw, The Texture width used by the Quad.
      * @return sh, The Texture height used by the Quad.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getTextureDimensions(): [number, number];
 
     /**
@@ -19,8 +19,8 @@ declare interface Quad extends Object {
      * @return y, The top-left corner along the y-axis.
      * @return w, The width of the viewport.
      * @return h, The height of the viewport.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getViewport(): [number, number, number, number];
 
     /**

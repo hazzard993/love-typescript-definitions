@@ -63,8 +63,8 @@ declare namespace love {
          * @return lr, The red channel of the converted color in linear RGB space.
          * @return lg, The green channel of the converted color in linear RGB space.
          * @return lb, The blue channel of the converted color in linear RGB space.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function gammaToLinear(r: number, g: number, b: number): [number, number, number];
 
         /**
@@ -76,8 +76,8 @@ declare namespace love {
          * @return lr, The red channel of the converted color in linear RGB space.
          * @return lg, The green channel of the converted color in linear RGB space.
          * @return lb, The blue channel of the converted color in linear RGB space.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function gammaToLinear(color: table): [number, number, number];
 
         /**
@@ -99,8 +99,8 @@ declare namespace love {
          *
          * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
          * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getRandomSeed(): [number, number];
 
         /**
@@ -167,8 +167,8 @@ declare namespace love {
          * @return cr, The red channel of the converted color in gamma sRGB space.
          * @return cg, The green channel of the converted color in gamma sRGB space.
          * @return cb, The blue channel of the converted color in gamma sRGB space.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function linearToGamma(lr: number, lg: number, lb: number): [number, number, number];
 
         /**
@@ -186,8 +186,8 @@ declare namespace love {
          * @return cr, The red channel of the converted color in gamma sRGB space.
          * @return cg, The green channel of the converted color in gamma sRGB space.
          * @return cb, The blue channel of the converted color in gamma sRGB space.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function linearToGamma(color: table): [number, number, number];
 
         /**

@@ -7,8 +7,8 @@ declare interface CompressedImageData extends Data {
      *
      * @return width, The width of the CompressedImageData.
      * @return height, The height of the CompressedImageData.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
@@ -17,8 +17,8 @@ declare interface CompressedImageData extends Data {
      * @param level A mipmap level. Must be in the range of [1, CompressedImageData:getMipmapCount()].
      * @return width, The width of the CompressedImageData.
      * @return height, The height of the CompressedImageData.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(level: number): [number, number];
 
     /**

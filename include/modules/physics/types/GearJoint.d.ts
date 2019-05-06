@@ -6,11 +6,10 @@ declare interface GearJoint extends Joint {
     /**
      * Get the Joints connected by this GearJoint.
      *
-     * @return joint1, The first connected Joint.
-     * @return joint2, The second connected Joint.
+     * @return joints, The connected joints.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getJoints(): [Joint, Joint];
+    getJoints(): Array<Joint>;
 
     /**
      * Get the ratio of a gear joint.

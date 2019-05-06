@@ -34,8 +34,8 @@ declare interface ParticleSystem extends Drawable {
      * @return distribution, The type of distribution for new particles.
      * @return dx, The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
      * @return dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAreaSpread(): [AreaSpreadDistribution, number, number];
 
     /**
@@ -65,8 +65,8 @@ declare interface ParticleSystem extends Drawable {
      * @return b2, Second color, blue component (0-255).
      * @return a2, Second color, alpha component (0-255).
      * @return ..., Etc.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getColors(): [number, number, number, number, number, number, number, number, number];
 
     /**
@@ -113,8 +113,8 @@ declare interface ParticleSystem extends Drawable {
      * @return ymin, The minimum acceleration along the y axis.
      * @return xmax, The maximum acceleration along the x axis.
      * @return ymax, The maximum acceleration along the y axis.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearAcceleration(): [number, number, number, number];
 
     /**
@@ -122,8 +122,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum amount of linear damping applied to particles.
      * @return max, The maximum amount of linear damping applied to particles.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearDamping(): [number, number];
 
     /**
@@ -140,8 +140,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return x, The x coordinate of the rotation offget.
      * @return y, The y coordinate of the rotation offget.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getOffset(): [number, number];
 
     /**
@@ -149,8 +149,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum life of the particles (seconds).
      * @return max, The maximum life of the particles (seconds).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getParticleLifetime(): [number, number];
 
     /**
@@ -165,8 +165,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return x, Position along x-axis.
      * @return y, Position along y-axis.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPosition(): [number, number];
 
     /**
@@ -174,8 +174,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum acceleration.
      * @return max, The maximum acceleration.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getRadialAcceleration(): [number, number];
 
     /**
@@ -183,8 +183,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum initial angle (radians).
      * @return max, The maximum initial angle (radians).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getRotation(): [number, number];
 
     /**
@@ -198,9 +198,9 @@ declare interface ParticleSystem extends Drawable {
      * @return size1, The first size.
      * @return size2, The second size.
      * @return ..., Etc.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getSizes(): [number, number, number];
+    getSizes(): Array<number>;
 
     /**
      * Gets the degree of variation (0 meaning no variation and 1 meaning full
@@ -215,8 +215,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum linear speed of the particles.
      * @return max, The maximum linear speed of the particles.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getSpeed(): [number, number];
 
     /**
@@ -224,8 +224,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum spin (radians per second).
      * @return max, The maximum spin (radians per second).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getSpin(): [number, number];
 
     /**
@@ -256,8 +256,8 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return min, The minimum acceleration.
      * @return max, The maximum acceleration.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getTangentialAcceleration(): [number, number];
 
     /**

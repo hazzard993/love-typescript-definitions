@@ -8,9 +8,9 @@ declare interface Canvas extends Texture {
      *
      * @return width, The width of the Canvas, in pixels.
      * @return height, The height of the Canvas, in pixels.
+     * @tupleReturn
      * @link [Canvas:getDimensions](https://love2d.org/wiki/Canvas:getDimensions)
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
@@ -70,9 +70,9 @@ declare interface Canvas extends Texture {
      *
      * @return horizontal, Horizontal wrapping mode of the Canvas.
      * @return vertical, Vertical wrapping mode of the Canvas.
+     * @tupleReturn
      * @link [Canvas:getWrap](https://love2d.org/wiki/Canvas:getWrap)
      */
-    /** @tupleReturn */
     getWrap(): [WrapMode, WrapMode];
 
     /**

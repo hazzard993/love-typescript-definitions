@@ -34,8 +34,8 @@ declare interface ChainShape extends Shape {
      * @param index The index of the point to return.
      * @return x, The x-coordinate of the point.
      * @return y, The y-coordinate of the point.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPoint(index: number): [number, number];
 
     /**
@@ -46,9 +46,9 @@ declare interface ChainShape extends Shape {
      * @return x2, The x-coordinate of the second point.
      * @return y2, The y-coordinate of the second point.
      * @return ..., Additional x and y values.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getPoints(): [number, number, number, number, number];
+    getPoints(): Array<number>;
 
     /**
      * Gets the vertex that establishes a connection to the previous shape.

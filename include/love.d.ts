@@ -56,7 +56,7 @@ love.conf = (t: Conf) => {
      * Callback function triggered when a directory is dragged and dropped onto the window.
 ```ts
 love.directorydropped = (path: string) => {
-    print(`$dropped!`);
+    print(`${path} dropped!`);
 }
 ```
      * @param path The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.
@@ -90,7 +90,7 @@ love.draw = () => {
 ```ts
 love.filedropped = (file: File) => {
     const [content, size] = file.read();
-    print(`Content of $is`);
+    print(`Content of ${file.getFilename()} is`);
     print(content);
     print("End of file");
 }

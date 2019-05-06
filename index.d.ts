@@ -62,6 +62,7 @@ import "./include/modules/graphics/love.graphics";
 import "./include/modules/graphics/structs/ArrayImageSettings";
 import "./include/modules/graphics/structs/ImageInformation";
 import "./include/modules/graphics/structs/ImageSettings";
+import "./include/modules/graphics/structs/Stats";
 import "./include/modules/graphics/types/Canvas";
 import "./include/modules/graphics/types/Drawable";
 import "./include/modules/graphics/types/Image";

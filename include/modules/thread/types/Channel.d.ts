@@ -75,9 +75,9 @@ declare interface Channel extends Object {
      * @param ... Additional arguments that the given function will receive when it is called.
      * @return ret1, The first return value of the given function (if any.)
      * @return ..., Any other return values.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    performAtomic(func: Function, arg1: any, ...vararg: Array<any>): [any, any];
+    performAtomic(func: Function, arg1: any, ...vararg: Array<any>): Array<any>;
 
     /**
      * Retrieves the value of a Channel message and removes it from the message queue.

@@ -62,8 +62,8 @@ declare interface Mesh extends Drawable {
      * @param index The index of the the vertex you want to retrieve the information for.
      * @return attributecomponent, The first component of the first vertex attribute in the specified vertex.
      * @return ..., Additional components of all vertex attributes in the specified vertex.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getVertex(index: number): [number, number];
 
     /**

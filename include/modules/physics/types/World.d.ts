@@ -42,8 +42,8 @@ declare interface World extends Object {
      * @return endContact, Gets called when two fixtures cease to overlap.
      * @return preSolve, Gets called before a collision gets resolved.
      * @return postSolve, Gets called after the collision has been resolved.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getCallbacks(): [Function, Function, Function, Function];
 
     /**
@@ -72,8 +72,8 @@ declare interface World extends Object {
      *
      * @return x, The x component of gravity.
      * @return y, The y component of gravity.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getGravity(): [number, number];
 
     /**

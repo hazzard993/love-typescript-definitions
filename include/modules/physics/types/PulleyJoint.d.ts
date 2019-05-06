@@ -17,8 +17,8 @@ declare interface PulleyJoint extends Joint {
      * @return a1y, The y coordinate of the first anchor.
      * @return a2x, The x coordinate of the second anchor.
      * @return a2y, The y coordinate of the second anchor.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getGroundAnchors(): [number, number, number, number];
 
     /**
@@ -40,8 +40,8 @@ declare interface PulleyJoint extends Joint {
      *
      * @return len1, The maximum length of the first rope segment.
      * @return len2, The maximum length of the second rope segment.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getMaxLengths(): [number, number];
 
     /**

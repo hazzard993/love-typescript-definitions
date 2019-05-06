@@ -15,8 +15,8 @@ declare interface MotorJoint extends Joint {
      *
      * @return x, The x component of the target linear offset, relative to the first Body.
      * @return y, The y component of the target linear offset, relative to the first Body.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearOffset(): [number, number];
 
     /**

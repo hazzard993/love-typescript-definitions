@@ -8,8 +8,8 @@ declare interface Video extends Drawable {
      *
      * @return width, The width of the Video.
      * @return height, The height of the video.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
@@ -18,8 +18,8 @@ declare interface Video extends Drawable {
      * @return min, The filter mode used when scaling the Video down.
      * @return mag, The filter mode used when scaling the Video up.
      * @return anisotropy, Maximum amount of anisotropic filtering used.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getFilter(): [FilterMode, FilterMode, number];
 
     /**

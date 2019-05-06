@@ -12,8 +12,8 @@ declare namespace love {
          * @param id The identifier of the touch-press. Use love.touch.getTouches, love.touchpressed, or love.touchmoved to obtain touch id values.
          * @return x, The position along the x-axis of the touch-press inside the window, in pixels.
          * @return y, The position along the y-axis of the touch-press inside the window, in pixels.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getPosition(id: LightUserData): [number, number];
 
         /**

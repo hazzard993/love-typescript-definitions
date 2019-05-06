@@ -15,8 +15,8 @@ declare interface PrismaticJoint extends Joint {
      *
      * @return x, The x-axis coordinate of the world-space axis vector.
      * @return y, The y-axis coordinate of the world-space axis vector.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAxis(): [number, number];
 
     /**
@@ -38,8 +38,8 @@ declare interface PrismaticJoint extends Joint {
      *
      * @return lower, The lower limit, usually in meters.
      * @return upper, The upper limit, usually in meters.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLimits(): [number, number];
 
     /**

@@ -20,9 +20,9 @@ declare interface PolygonShape extends Shape {
      * @return x2, The x component of the second vertex.
      * @return y2, The y component of the second vertex.
      * @return ..., Additional x and y values.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getPoints(): [number, number, number, number, number];
+    getPoints(): Array<number>;
 
     /**
      * Validates whether the PolygonShape is convex.

@@ -12,8 +12,8 @@ declare interface RandomGenerator extends Object {
      *
      * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
      * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getSeed(): [number, number];
 
     /**

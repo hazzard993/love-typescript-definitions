@@ -78,8 +78,8 @@ declare interface Font extends Object {
      * @param wraplimit The maximum width in pixels of each line that text is allowed before wrapping.
      * @return width, The maximum width of the wrapped text.
      * @return wrappedtext, A sequence containing each line of text that was wrapped.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWrap(text: string, wraplimit: number): [number, table];
 
     /**

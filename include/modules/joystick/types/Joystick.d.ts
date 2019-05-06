@@ -9,8 +9,8 @@ declare interface Joystick extends Object {
      * @return axisDir1, Direction of axis1.
      * @return axisDir2, Direction of axis2.
      * @return axisDirN, Direction of axisN.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAxes(): [number, number, number];
 
     /**
@@ -102,8 +102,8 @@ declare interface Joystick extends Object {
      *
      * @return left, Current strength of the left vibration motor on the Joystick.
      * @return right, Current strength of the right vibration motor on the Joystick.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getVibration(): [number, number];
 
     /**

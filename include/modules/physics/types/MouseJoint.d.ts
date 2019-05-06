@@ -29,8 +29,8 @@ declare interface MouseJoint extends Joint {
      *
      * @return x, The x component of the target.
      * @return y, The x component of the target.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getTarget(): [number, number];
 
     /**

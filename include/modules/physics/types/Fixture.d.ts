@@ -26,19 +26,17 @@ declare interface Fixture extends Object {
      * @return topLeftY, The y position of the top-left point.
      * @return bottomRightX, The x position of the bottom-right point.
      * @return bottomRightY, The y position of the bottom-right point.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getBoundingBox(index?: number): [number, number, number, number];
 
     /**
      * Returns the categories the fixture belongs to.
      *
-     * @return category1, The first category.
-     * @return category2, The second category.
-     * @return ..., Additional categories.
+     * @return categories, The categories this fixture belongs to.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getCategory(): [number, number, number];
+    getCategory(): Array<number>;
 
     /**
      * Returns the density of the fixture.
@@ -54,8 +52,8 @@ declare interface Fixture extends Object {
      * @return categories, The categories as an integer from 0 to 65535.
      * @return mask, The mask as an integer from 0 to 65535.
      * @return group, The group as an integer from -32768 to 32767.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getFilterData(): [number, number, number];
 
     /**
@@ -80,12 +78,10 @@ declare interface Fixture extends Object {
     /**
      * Returns the category mask of the fixture.
      *
-     * @return mask1, The first category selected by the mask.
-     * @return mask2, The second category selected by the mask.
-     * @return ..., Additional categories selected by the mask.
+     * @return categories, The categories the mask of this fixture belongs to.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getMask(): [number, number, number];
+    getMask(): Array<number>;
 
     /**
      * Returns the mass, its center and the rotational inertia.
@@ -94,8 +90,8 @@ declare interface Fixture extends Object {
      * @return y, The y position of the center of mass.
      * @return mass, The mass of the fixture.
      * @return inertia, The rotational inertia.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getMassData(): [number, number, number, number];
 
     /**

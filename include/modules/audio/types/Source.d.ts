@@ -96,7 +96,7 @@ declare interface Source extends Object {
      * @link [Source:getEffect](https://love2d.org/wiki/Source:getEffect)
      * @since 11.0
      */
-    getEffect(name: string, filtersettings?: object): | null;
+    getEffect(name: string, filtersettings?: object): { volume: number, highgain: number, lowgain: number } | null;
 
     /**
      * Gets the filter settings currently applied to the Source.

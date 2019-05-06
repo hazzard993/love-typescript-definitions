@@ -277,8 +277,8 @@ declare interface Body extends Object {
      *
      * @return x, The x component of the velocity vector.
      * @return y, The y component of the velocity vector.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearVelocity(): [number, number];
 
     /**
@@ -296,8 +296,8 @@ declare interface Body extends Object {
      * @param y The y position to measure velocity.
      * @return vx, The x component of velocity at point (x,y).
      * @return vy, The y component of velocity at point (x,y).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearVelocityFromLocalPoint(x: number, y: number): [number, number];
 
     /**
@@ -315,8 +315,8 @@ declare interface Body extends Object {
      * @param y The y position to measure velocity.
      * @return vx, The x component of velocity at point (x,y).
      * @return vy, The y component of velocity at point (x,y).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearVelocityFromWorldPoint(x: number, y: number): [number, number];
 
     /**
@@ -327,8 +327,8 @@ declare interface Body extends Object {
      *
      * @return x, The x coordinate of the center of mass.
      * @return y, The y coordinate of the center of mass.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLocalCenter(): [number, number];
 
     /**
@@ -338,8 +338,8 @@ declare interface Body extends Object {
      * @param worldY The y position in world coordinates.
      * @return localX, The x position in local coordinates.
      * @return localY, The y position in local coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLocalPoint(worldX: number, worldY: number): [number, number];
 
     /**
@@ -349,8 +349,8 @@ declare interface Body extends Object {
      * @param worldY The vector y component in world coordinates.
      * @return localX, The vector x component in local coordinates.
      * @return localY, The vector y component in local coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLocalVector(worldX: number, worldY: number): [number, number];
 
     /**
@@ -367,8 +367,8 @@ declare interface Body extends Object {
      * @return y, The y position of the center of mass.
      * @return mass, The mass of the body.
      * @return inertia, The rotational inertia.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getMassData(): [number, number, number, number];
 
     /**
@@ -379,8 +379,8 @@ declare interface Body extends Object {
      *
      * @return x, The x position.
      * @return y, The y position.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPosition(): [number, number];
 
     /**
@@ -412,8 +412,8 @@ declare interface Body extends Object {
      *
      * @return x, The x coordinate of the center of mass.
      * @return y, The y coordinate of the center of mass.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWorldCenter(): [number, number];
 
     /**
@@ -423,26 +423,18 @@ declare interface Body extends Object {
      * @param localY The y position in local coordinates.
      * @return worldX, The x position in world coordinates.
      * @return worldY, The y position in world coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWorldPoint(localX: number, localY: number): [number, number];
 
     /**
      * Transforms multiple points from local coordinates to world coordinates.
      *
-     * @param x1 The x position of the first point.
-     * @param y1 The y position of the first point.
-     * @param x2 The x position of the second point.
-     * @param y2 The y position of the second point.
-     * @param ... More x and y points.
-     * @return x1, The transformed x position of the first point.
-     * @return y1, The transformed y position of the first point.
-     * @return x2, The transformed x position of the second point.
-     * @return y2, The transformed y position of the second point.
-     * @return ..., The transformed x and y positions of additional points.
+     * @param xys The x followed by the y position of each point.
+     * @return xys, The transformed points.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getWorldPoints(x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): [number, number, number, number, number];
+    getWorldPoints(...xys: Array<number>): Array<number>;
 
     /**
      * Transform a vector from local coordinates to world coordinates.
@@ -451,8 +443,8 @@ declare interface Body extends Object {
      * @param localY The vector y component in local coordinates.
      * @return worldX, The vector x component in world coordinates.
      * @return worldY, The vector y component in world coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWorldVector(localX: number, localY: number): [number, number];
 
     /**

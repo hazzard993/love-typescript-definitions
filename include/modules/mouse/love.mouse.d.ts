@@ -19,8 +19,8 @@ declare namespace love {
          *
          * @return x, The position of the mouse along the x-axis.
          * @return y, The position of the mouse along the y-axis.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getPosition(): [number, number];
 
         /**

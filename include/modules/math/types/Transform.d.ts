@@ -27,9 +27,9 @@ declare interface Transform extends Object {
      * @return e1_2, The second column of the first row of the matrix.
      * @return ..., Additional matrix elements.
      * @return e4_4, The fourth column of the fourth row of the matrix.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getMatrix(): [number, number, number, number];
+    getMatrix(): Array<number>;
 
     /**
      * Creates a new Transform containing the inverse of this Transform.
@@ -55,8 +55,8 @@ declare interface Transform extends Object {
      * @param localY The y component of the position with the transform applied.
      * @return globalX, The x component of the position in global coordinates.
      * @return globalY, The y component of the position in global coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     inverseTransformPoint(localX: number, localY: number): [number, number];
 
     /**
@@ -169,8 +169,8 @@ declare interface Transform extends Object {
      * @param globalY The y component of the position in global coordinates.
      * @return localX, The x component of the position with the transform applied.
      * @return localY, The y component of the position with the transform applied.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     transformPoint(globalX: number, globalY: number): [number, number];
 
     /**

@@ -64,8 +64,8 @@ declare namespace love {
          * @param py The y-axis value of a coordinate in pixels.
          * @return x, The converted x-axis value of the coordinate, in density-independent units.
          * @return y, The converted y-axis value of the coordinate, in density-independent units.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function fromPixels(px: number, py: number): [number, number];
 
         /**
@@ -120,8 +120,8 @@ declare namespace love {
          *
          * @return fullscreen, True if the window is fullscreen, false otherwise.
          * @return fstype, The type of fullscreen mode used.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getFullscreen(): [boolean, FullscreenType];
 
         /**
@@ -145,8 +145,8 @@ declare namespace love {
          * @return width, Window width.
          * @return height, Window height.
          * @return flags, Table containing the window properties.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getMode(): [number, number, table];
 
         /**
@@ -182,8 +182,8 @@ declare namespace love {
          * @return x, The x-coordinate of the window's position.
          * @return y, The y-coordinate of the window's position.
          * @return display, The index of the display that the window is in.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getPosition(): [number, number, number];
 
         /**
@@ -459,8 +459,8 @@ declare namespace love {
          * @param y The y-axis value of a coordinate in density-independent units to convert to pixels.
          * @return px, The converted x-axis value of the coordinate, in pixels.
          * @return py, The converted y-axis value of the coordinate, in pixels.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function toPixels(x: number, y: number): [number, number];
 
         /**

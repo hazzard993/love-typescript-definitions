@@ -32,8 +32,8 @@ declare interface Image extends Texture {
      *
      * @return width, The width of the Image, in pixels.
      * @return height, The height of the Image, in pixels.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
@@ -41,14 +41,15 @@ declare interface Image extends Texture {
      *
      * @return min, Filter mode used when minifying the image.
      * @return mag, Filter mode used when magnifying the image.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getFilter(): [FilterMode, FilterMode];
 
     /**
      * Gets the flags used when the image was created.
      *
      * @return flags, A table with ImageFlag keys.
+     * @link [Image:getFlags](https://love2d.org/wiki/(Image):getFlags)
      */
     getFlags(): table;
 
@@ -91,8 +92,8 @@ declare interface Image extends Texture {
      *
      * @return horizontal, Horizontal wrapping mode of the image.
      * @return vertical, Vertical wrapping mode of the image.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWrap(): [WrapMode, WrapMode];
 
     /**

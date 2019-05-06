@@ -40,7 +40,7 @@ declare namespace love {
         /**
          * Check whether a file or directory exists.
          * @param filename The path to a potential file or directory.
-         * @return desc, description
+         * @return exists, True if there is a file or directory with the specified name. False otherwise.
          * @link [love.filesystem.exists](https://love2d.org/wiki/love.filesystem.exists)
          * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
          */

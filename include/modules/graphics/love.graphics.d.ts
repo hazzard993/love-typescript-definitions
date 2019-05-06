@@ -435,12 +435,12 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         /**
          * Gets the current background color.
          *
-         * @return r, The red component (0-255).
-         * @return g, The green component (0-255).
-         * @return b, The blue component (0-255).
-         * @return a, The alpha component (0-255).
+         * @return r, The red component.
+         * @return g, The green component.
+         * @return b, The blue component.
+         * @return a, The alpha component.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getBackgroundColor(): [number, number, number, number];
 
         /**
@@ -448,8 +448,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @return mode, The current blend mode.
          * @return alphamode, The current blend alpha mode – it determines how the alpha of drawn objects affects blending.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getBlendMode(): [BlendMode, BlendAlphaMode];
 
         /**
@@ -476,12 +476,12 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         /**
          * Gets the current color.
          *
-         * @return r, The red component (0-255).
-         * @return g, The red component (0-255).
-         * @return b, The blue component (0-255).
-         * @return a, The alpha component (0-255).
+         * @return r, The red component.
+         * @return g, The red component.
+         * @return b, The blue component.
+         * @return a, The alpha component.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getColor(): [number, number, number, number];
 
         /**
@@ -497,8 +497,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @return g, Whether the green color component is active when rendering.
          * @return b, Whether the blue color component is active when rendering.
          * @return a, Whether the alpha color component is active when rendering.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getColorMask(): [boolean, boolean, boolean, boolean];
 
         /**
@@ -514,8 +514,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @return min, Filter mode used when scaling the image down.
          * @return mag, Filter mode used when scaling the image up.
          * @return anisotropy, Maximum amount of Anisotropic Filtering used.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getDefaultFilter(): [FilterMode, FilterMode, number];
 
         /**
@@ -529,8 +529,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @return comparemode, Depth comparison mode used for depth testing.
          * @return write, Whether to write update / write values to the depth buffer when rendering.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getDepthMode(): [CompareMode, boolean];
 
         /**
@@ -538,8 +538,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @return width, The width of the window.
          * @return height, The height of the window.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getDimensions(): [number, number];
 
         /**
@@ -647,7 +647,7 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @return stats, A table with the following fields:
          */
-        export function getStats(): table;
+        export function getStats(): Stats;
 
         /**
          * Gets whether stencil testing is enabled.
@@ -662,8 +662,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @return enabled, Whether stencil testing is enabled.
          * @return inverted, Whether the stencil test is inverted or not.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getStencilTest(): [boolean, boolean];
 
         /**
@@ -698,8 +698,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @return version, The version of the renderer with some extra driver-dependent version info, e.g. "2.1 INTEL-8.10.44".
          * @return vendor, The name of the graphics card vendor, e.g. "Intel Inc".
          * @return device, The name of the graphics card, e.g. "Intel HD Graphics 3000 OpenGL Engine".
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getRendererInfo(): [string, string, string, string];
 
         /**
@@ -709,8 +709,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @return y, The y component of the top-left point of the box.
          * @return width, The width of the box.
          * @return height, The height of the box.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getScissor(): [number, number, number, number];
 
         /**
@@ -782,8 +782,8 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @param screenY The y component of the screen-space position.
          * @return globalX, The x component of the position in global coordinates.
          * @return globalY, The y component of the position in global coordinates.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function inverseTransformPoint(screenX: number, screenY: number): [number, number];
 
         /**
@@ -1386,10 +1386,10 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
         /**
          * Sets the background color.
          *
-         * @param r The red component (0-255).
-         * @param g The green component (0-255).
-         * @param b The blue component (0-255).
-         * @param a The alpha component (0-255).
+         * @param r The red component.
+         * @param g The green component.
+         * @param b The blue component.
+         * @param a The alpha component.
          */
         export function setBackgroundColor(r: number, g: number, b: number, a?: number): void;
 
@@ -1719,8 +1719,8 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
          * @param globalY The y component of the position in global coordinates.
          * @return screenX, The x component of the position with graphics transformations applied.
          * @return sreenY, The y component of the position with graphics transformations applied.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function transformPoint(globalX: number, globalY: number): [number, number];
 
         /**

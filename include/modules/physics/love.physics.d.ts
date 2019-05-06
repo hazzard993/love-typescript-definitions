@@ -17,8 +17,9 @@ declare namespace love {
          * @return y1, The y-coordinate of the first point.
          * @return x2, The x-coordinate of the second point.
          * @return y2, The y-coordinate of the second point.
+         * @tupleReturn
+         * @link [love.physics.getDistance](https://love2d.org/wiki/love.physics.getDistance)
          */
-        /** @tupleReturn */
         export function getDistance(fixture1: Fixture, fixture2: Fixture): [number, number, number, number, number];
 
         /**

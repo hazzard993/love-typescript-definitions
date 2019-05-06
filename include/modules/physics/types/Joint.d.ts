@@ -19,8 +19,8 @@ declare interface Joint extends Object {
      * @return y1, The y component of the anchor on Body 1.
      * @return x2, The x component of the anchor on Body 2.
      * @return y2, The y component of the anchor on Body 2.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAnchors(): [number, number, number, number];
 
     /**
@@ -28,8 +28,8 @@ declare interface Joint extends Object {
      *
      * @return bodyA, The first Body.
      * @return bodyB, The second Body.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getBodies(): [Body, Body];
 
     /**
@@ -44,8 +44,8 @@ declare interface Joint extends Object {
      *
      * @return x, The x component of the force.
      * @return y, The y component of the force.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getReactionForce(): [number, number];
 
     /**

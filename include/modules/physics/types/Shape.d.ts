@@ -14,8 +14,8 @@ declare interface Shape extends Object {
      * @return topLeftY, The y position of the top-left point.
      * @return bottomRightX, The x position of the bottom-right point.
      * @return bottomRightY, The y position of the bottom-right point.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     computeAABB(tx: number, ty: number, tr: number, childIndex?: number): [number, number, number, number];
 
     /**
@@ -26,8 +26,8 @@ declare interface Shape extends Object {
      * @return y, The y postition of the center of mass.
      * @return mass, The mass of the shape.
      * @return inertia, The rotational inertia.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     computeMass(density: number): [number, number, number, number];
 
     /**

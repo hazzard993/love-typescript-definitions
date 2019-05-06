@@ -15,8 +15,8 @@ declare interface BezierCurve extends Object {
      * @param t Where to evaluate the curve.
      * @return x, x coordinate of the curve at parameter t.
      * @return y, y coordinate of the curve at parameter t.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     evaluate(t: number): [number, number];
 
     /**
@@ -25,8 +25,8 @@ declare interface BezierCurve extends Object {
      * @param i Index of the control point.
      * @return x, Position of the control point along the x axis.
      * @return y, Position of the control point along the y axis.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getControlPoint(i: number): [number, number];
 
     /**

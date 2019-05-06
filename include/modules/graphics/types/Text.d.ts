@@ -88,8 +88,8 @@ declare interface Text extends Drawable {
      *
      * @return width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
      * @return height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
@@ -98,8 +98,8 @@ declare interface Text extends Drawable {
      * @param index An index number returned by Text:add or Text:addf.
      * @return width, The width of the sub-string (before scaling and other transformations).
      * @return height, The height of the sub-string (before scaling and other transformations).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(index: number): [number, number];
 
     /**

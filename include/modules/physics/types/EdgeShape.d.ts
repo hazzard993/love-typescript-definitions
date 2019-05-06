@@ -14,8 +14,8 @@ declare interface EdgeShape extends Shape {
      * @return y1, The y component of the first vertex.
      * @return x2, The x component of the second vertex.
      * @return y2, The y component of the second vertex.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPoints(): [number, number, number, number];
 
     /**
