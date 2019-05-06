@@ -15,65 +15,65 @@ declare interface Joint extends Object {
     /**
      * Get the anchor points of the joint.
      *
-     * @return {number} x1, The x component of the anchor on Body 1.
-     * @return {number} y1, The y component of the anchor on Body 1.
-     * @return {number} x2, The x component of the anchor on Body 2.
-     * @return {number} y2, The y component of the anchor on Body 2.
+     * @return x1, The x component of the anchor on Body 1.
+     * @return y1, The y component of the anchor on Body 1.
+     * @return x2, The x component of the anchor on Body 2.
+     * @return y2, The y component of the anchor on Body 2.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAnchors(): [number, number, number, number];
 
     /**
      * Gets the bodies that the Joint is attached to.
      *
-     * @return {Body} bodyA, The first Body.
-     * @return {Body} bodyB, The second Body.
+     * @return bodyA, The first Body.
+     * @return bodyB, The second Body.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getBodies(): [Body, Body];
 
     /**
      * Gets whether the connected Bodies collide.
      *
-     * @return {boolean} c, True if they collide, false otherwise.
+     * @return c, True if they collide, false otherwise.
      */
     getCollideConnected(): boolean;
 
     /**
      * Gets the reaction force on Body 2 at the joint anchor.
      *
-     * @return {number} x, The x component of the force.
-     * @return {number} y, The y component of the force.
+     * @return x, The x component of the force.
+     * @return y, The y component of the force.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getReactionForce(): [number, number];
 
     /**
      * Returns the reaction torque on the second body.
      *
      * @param invdt How long the force applies. Usually the inverse time step or 1/dt.
-     * @return {number} torque, The reaction torque on the second body.
+     * @return torque, The reaction torque on the second body.
      */
     getReactionTorque(invdt: number): number;
 
     /**
      * Gets a string representing the type.
      *
-     * @return {JointType} type, A string with the name of the Joint type.
+     * @return type, A string with the name of the Joint type.
      */
     getType(): JointType;
 
     /**
      * Returns the Lua value associated with this Joint.
      *
-     * @return {any} value, The Lua value associated with the Joint.
+     * @return value, The Lua value associated with the Joint.
      */
     getUserData(): any;
 
     /**
      * Gets whether the Joint is destroyed. Destroyed joints cannot be used.
      *
-     * @return {boolean} destroyed, Whether the Joint is destroyed.
+     * @return destroyed, Whether the Joint is destroyed.
      */
     isDestroyed(): boolean;
 

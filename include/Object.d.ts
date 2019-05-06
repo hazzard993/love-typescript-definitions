@@ -14,7 +14,7 @@ interface Object {
     /**
      * Gets the type of the object as a string.
      *
-     * @return {string} type, The type as a string.
+     * @return type, The type as a string.
      */
     type(): string;
 
@@ -23,7 +23,7 @@ interface Object {
      * the specified name in its hierarchy, this function will return true.
      *
      * @param name The name of the type to check for.
-     * @return {boolean} b, True if the object is of the specified type, false otherwise.
+     * @return b, True if the object is of the specified type, false otherwise.
      */
     typeOf(name: string): boolean;
 

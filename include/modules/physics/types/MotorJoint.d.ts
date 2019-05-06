@@ -6,17 +6,17 @@ declare interface MotorJoint extends Joint {
     /**
      * Gets the target angular offset between the two Bodies the Joint is attached to.
      *
-     * @return {number} angularoffset, The target angular offset in radians: the second body's angle minus the first body's angle.
+     * @return angularoffset, The target angular offset in radians: the second body's angle minus the first body's angle.
      */
     getAngularOffset(): number;
 
     /**
      * Gets the target linear offset between the two Bodies the Joint is attached to.
      *
-     * @return {number} x, The x component of the target linear offset, relative to the first Body.
-     * @return {number} y, The y component of the target linear offset, relative to the first Body.
+     * @return x, The x component of the target linear offset, relative to the first Body.
+     * @return y, The y component of the target linear offset, relative to the first Body.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearOffset(): [number, number];
 
     /**

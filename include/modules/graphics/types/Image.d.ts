@@ -11,7 +11,7 @@ declare interface Image extends Texture {
      * Data is used to refresh the Image when love.window.setMode or Image:refresh is
      * called.
      *
-     * @return {ImageData} data, The original ImageData used to create the Image, if the image is not compressed.
+     * @return data, The original ImageData used to create the Image, if the image is not compressed.
      */
     getData(): ImageData;
 
@@ -23,38 +23,39 @@ declare interface Image extends Texture {
      * Data is used to refresh the Image when love.window.setMode or Image:refresh is
      * called.
      *
-     * @return {CompressedImageData} data, The original CompressedImageData used to create the Image, if the image is compressed.
+     * @return data, The original CompressedImageData used to create the Image, if the image is compressed.
      */
     getData(): CompressedImageData;
 
     /**
      * Gets the width and height of the Image.
      *
-     * @return {number} width, The width of the Image, in pixels.
-     * @return {number} height, The height of the Image, in pixels.
+     * @return width, The width of the Image, in pixels.
+     * @return height, The height of the Image, in pixels.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
      * Gets the filter mode for an image.
      *
-     * @return {FilterMode} min, Filter mode used when minifying the image.
-     * @return {FilterMode} mag, Filter mode used when magnifying the image.
+     * @return min, Filter mode used when minifying the image.
+     * @return mag, Filter mode used when magnifying the image.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getFilter(): [FilterMode, FilterMode];
 
     /**
      * Gets the flags used when the image was created.
      *
-     * @return {table} flags, A table with ImageFlag keys.
+     * @return flags, A table with ImageFlag keys.
+     * @link [Image:getFlags](https://love2d.org/wiki/(Image):getFlags)
      */
     getFlags(): table;
 
     /**
      * Gets whether the Image was created from CompressedData.
-     * @return {boolean} compressed, Whether the Image is stored as a compressed texture on the GPU.
+     * @return compressed, Whether the Image is stored as a compressed texture on the GPU.
      * @link [Image:isCompressed](https://love2d.org/wiki/(Image):isCompressed)
      */
     isCompressed(): boolean;
@@ -62,15 +63,15 @@ declare interface Image extends Texture {
     /**
      * Gets the height of the Image.
      *
-     * @return {number} height, The height of the Image, in pixels.
+     * @return height, The height of the Image, in pixels.
      */
     getHeight(): number;
 
     /**
      * Gets the mipmap filter mode for an Image.
      *
-     * @return {FilterMode} mode, The filter mode used in between mipmap levels. _nil/null_ if mipmap filtering is not enabled.
-     * @return {number} sharpness, Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.
+     * @return mode, The filter mode used in between mipmap levels. _nil/null_ if mipmap filtering is not enabled.
+     * @return sharpness, Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.
      * @tupleReturn
      */
     getMipmapFilter(): [FilterMode, number];
@@ -78,7 +79,7 @@ declare interface Image extends Texture {
     /**
      * Gets the width of the Image.
      *
-     * @return {number} width, The width of the Image, in pixels.
+     * @return width, The width of the Image, in pixels.
      */
     getWidth(): number;
 
@@ -89,10 +90,10 @@ declare interface Image extends Texture {
      * This function returns the currently set horizontal and vertical wrapping modes
      * for the image.
      *
-     * @return {WrapMode} horizontal, Horizontal wrapping mode of the image.
-     * @return {WrapMode} vertical, Vertical wrapping mode of the image.
+     * @return horizontal, Horizontal wrapping mode of the image.
+     * @return vertical, Vertical wrapping mode of the image.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWrap(): [WrapMode, WrapMode];
 
     /**

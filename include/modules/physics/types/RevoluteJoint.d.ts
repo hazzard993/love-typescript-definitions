@@ -6,7 +6,7 @@ declare interface RevoluteJoint extends Joint {
     /**
      * Checks whether the limits are enabled.
      *
-     * @return {boolean} enabled, True if enabled, false otherwise.
+     * @return enabled, True if enabled, false otherwise.
      */
     areLimitsEnabled(): boolean;
 
@@ -27,64 +27,64 @@ declare interface RevoluteJoint extends Joint {
     /**
      * Get the current joint angle.
      *
-     * @return {number} angle, The joint angle in radians.
+     * @return angle, The joint angle in radians.
      */
     getJointAngle(): number;
 
     /**
      * Get the current joint angle speed.
      *
-     * @return {number} s, Joint angle speed in radians/second.
+     * @return s, Joint angle speed in radians/second.
      */
     getJointSpeed(): number;
 
     /**
      * Gets the joint limits.
      *
-     * @return {number} lower, The lower limit, in radians.
-     * @return {number} upper, The upper limit, in radians.
+     * @return lower, The lower limit, in radians.
+     * @return upper, The upper limit, in radians.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLimits(): [number, number];
 
     /**
      * Gets the lower limit.
      *
-     * @return {number} lower, The lower limit, in radians.
+     * @return lower, The lower limit, in radians.
      */
     getLowerLimit(): number;
 
     /**
      * Gets the maximum motor force.
      *
-     * @return {number} f, The maximum motor force, in Nm.
+     * @return f, The maximum motor force, in Nm.
      */
     getMaxMotorTorque(): number;
 
     /**
      * Gets the motor speed.
      *
-     * @return {number} s, The motor speed, radians per second.
+     * @return s, The motor speed, radians per second.
      */
     getMotorSpeed(): number;
 
     /**
      * Get the current motor force.
      *
-     * @return {number} f, The current motor force, in Nm.
+     * @return f, The current motor force, in Nm.
      */
     getMotorTorque(): number;
 
     /**
      * Gets the upper limit.
      *
-     * @return {number} upper, The upper limit, in radians.
+     * @return upper, The upper limit, in radians.
      */
     getUpperLimit(): number;
 
     /**
      * Checks whether limits are enabled.
-     * @return {boolean} enabled, True if enabled, false otherwise.
+     * @return enabled, True if enabled, false otherwise.
      * @link [RevoluteJoint:hasLimitsEnabled](https://love2d.org/wiki/RevoluteJoint:hasLimitsEnabled)
      * @deprecated since 11.0. This function has been renamed to RevoluteJoint:areLimitsEnabled.
      */
@@ -93,7 +93,7 @@ declare interface RevoluteJoint extends Joint {
     /**
      * Checks whether the motor is enabled.
      *
-     * @return {boolean} enabled, True if enabled, false if disabled.
+     * @return enabled, True if enabled, false if disabled.
      */
     isMotorEnabled(): boolean;
 

@@ -9,7 +9,7 @@ declare namespace love {
         /**
          * Gets text from the clipboard.
          *
-         * @return {string} text, The text currently held in the system's clipboard.
+         * @return text, The text currently held in the system's clipboard.
          */
         export function getClipboardText(): string;
 
@@ -18,7 +18,7 @@ declare namespace love {
          * know the current operating system, but there are a few cases where it can be
          * useful (especially in combination with os.execute.)
          *
-         * @return {string} osString, The current operating system. "OS X", "Windows", "Linux", "Android" or "iOS".
+         * @return osString, The current operating system. "OS X", "Windows", "Linux", "Android" or "iOS".
          */
         export function getOS(): string;
 
@@ -35,13 +35,13 @@ declare namespace love {
         /**
          * Gets the amount of logical processor in the system.
          *
-         * @return {number} processorCount, Amount of logical processors.
+         * @return processorCount, Amount of logical processors.
          */
         export function getProcessorCount(): number;
 
         /**
          * Gets whether another application on the system is playing music in the background.
-         * @return {boolean} backgroundmusic, True if the user is playing music in the background via another app, false otherwise.
+         * @return backgroundmusic, True if the user is playing music in the background via another app, false otherwise.
          * @link [love.system.hasBackgroundMusic](https://love2d.org/wiki/love.system.hasBackgroundMusic)
          */
         export function hasBackgroundMusic(): boolean;
@@ -52,7 +52,7 @@ declare namespace love {
          * @param url The URL to open. Must be formatted as a proper URL.
 
 To open a file or folder, "file://" must be prepended to the path.
-         * @return {boolean} success, Whether the URL was opened successfully.
+         * @return success, Whether the URL was opened successfully.
          */
         export function openURL(url: string): boolean;
 

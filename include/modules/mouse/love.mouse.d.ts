@@ -17,10 +17,10 @@ declare namespace love {
         /**
          * Returns the current position of the mouse.
          *
-         * @return {number} x, The position of the mouse along the x-axis.
-         * @return {number} y, The position of the mouse along the y-axis.
+         * @return x, The position of the mouse along the x-axis.
+         * @return y, The position of the mouse along the y-axis.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getPosition(): [number, number];
 
         /**
@@ -36,7 +36,7 @@ declare namespace love {
          * The reported position of the mouse is not updated while relative mode is
          * enabled, even when relative mouse motion events are generated.
          *
-         * @return {boolean} enabled, True if relative mode is enabled, false if it's disabled.
+         * @return enabled, True if relative mode is enabled, false if it's disabled.
          */
         export function getRelativeMode(): boolean;
 
@@ -50,21 +50,21 @@ declare namespace love {
          * moved and when the cursor position updates, even at low framerates.
          *
          * @param ctype The type of system cursor to get.
-         * @return {Cursor} cursor, The Cursor object representing the system cursor type.
+         * @return cursor, The Cursor object representing the system cursor type.
          */
         export function getSystemCursor(ctype: CursorType): Cursor;
 
         /**
          * Returns the current x position of the mouse.
          *
-         * @return {number} x, The position of the mouse along the x-axis.
+         * @return x, The position of the mouse along the x-axis.
          */
         export function getX(): number;
 
         /**
          * Returns the current y position of the mouse.
          *
-         * @return {number} y, The position of the mouse along the y-axis.
+         * @return y, The position of the mouse along the y-axis.
          */
         export function getY(): number;
 
@@ -76,7 +76,7 @@ declare namespace love {
          * love.mouse.getSystemCursor will cause an error. Mobile devices do not support
          * cursors.
          *
-         * @return {boolean} hascursor, Whether the system has cursor functionality.
+         * @return hascursor, Whether the system has cursor functionality.
          */
         export function hasCursor(): boolean;
 
@@ -88,7 +88,7 @@ declare namespace love {
          * love.mouse.getSystemCursor will cause an error. Mobile devices do not support
          * cursors.
          *
-         * @return {boolean} supported, Whether the system has cursor functionality.
+         * @return supported, Whether the system has cursor functionality.
          */
         export function isCursorSupported(): boolean;
 
@@ -99,21 +99,21 @@ declare namespace love {
          *
          * @param button The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button, etc.
          * @param ... Additional button numbers to check.
-         * @return {boolean} down, True if the specified button is down.
+         * @return down, True if the specified button is down.
          */
         export function isDown(button: number, ...vararg: Array<number>): boolean;
 
         /**
          * Checks if the mouse is grabbed.
          *
-         * @return {boolean} grabbed, True if the cursor is grabbed, false if it is not.
+         * @return grabbed, True if the cursor is grabbed, false if it is not.
          */
         export function isGrabbed(): boolean;
 
         /**
          * Checks if the cursor is visible.
          *
-         * @return {boolean} visible, True if the cursor to visible, false if the cursor is hidden.
+         * @return visible, True if the cursor to visible, false if the cursor is hidden.
          */
         export function isVisible(): boolean;
 
@@ -135,7 +135,7 @@ declare namespace love {
          * @param imageData The ImageData to use for the the new Cursor.
          * @param hotx The x-coordinate in the ImageData of the cursor's hot spot.
          * @param hoty The y-coordinate in the ImageData of the cursor's hot spot.
-         * @return {Cursor} cursor, The new Cursor object.
+         * @return cursor, The new Cursor object.
          */
         export function newCursor(imageData: ImageData, hotx?: number, hoty?: number): Cursor;
 
@@ -157,7 +157,7 @@ declare namespace love {
          * @param filepath Path to the image to use for the new Cursor.
          * @param hotx The x-coordinate in the ImageData of the cursor's hot spot.
          * @param hoty The y-coordinate in the ImageData of the cursor's hot spot.
-         * @return {Cursor} cursor, The new Cursor object.
+         * @return cursor, The new Cursor object.
          */
         export function newCursor(filepath: string, hotx?: number, hoty?: number): Cursor;
 
@@ -179,7 +179,7 @@ declare namespace love {
          * @param fileData Data representing the image to use for the new Cursor.
          * @param hotx The x-coordinate in the ImageData of the cursor's hot spot.
          * @param hoty The y-coordinate in the ImageData of the cursor's hot spot.
-         * @return {Cursor} cursor, The new Cursor object.
+         * @return cursor, The new Cursor object.
          */
         export function newCursor(fileData: FileData, hotx?: number, hoty?: number): Cursor;
 

@@ -6,7 +6,7 @@ declare interface RopeJoint extends Joint {
     /**
      * Gets the maximum length of a RopeJoint.
      *
-     * @return {number} maxLength, The maximum length of the RopeJoint.
+     * @return maxLength, The maximum length of the RopeJoint.
      */
     getMaxLength(): number;
 

@@ -16,7 +16,7 @@ declare interface World extends Object {
 
     /**
      * Returns a table with all bodies.
-     * @return {Body[]} bodies, A sequence with all bodies.
+     * @return bodies, A sequence with all bodies.
      * @link [World:getBodies](https://love2d.org/wiki/World:getBodies)
      */
     getBodies(): Array<Body>;
@@ -24,76 +24,76 @@ declare interface World extends Object {
     /**
      * Get the number of bodies in the world.
      *
-     * @return {number} n, The number of bodies in the world.
+     * @return n, The number of bodies in the world.
      */
     getBodyCount(): number;
 
     /**
      * Returns a table with all bodies.
      *
-     * @return {table} bodies, A sequence with all bodies.
+     * @return bodies, A sequence with all bodies.
      */
     getBodyList(): table;
 
     /**
      * Returns functions for the callbacks during the world update.
      *
-     * @return {Function} beginContact, Gets called when two fixtures begin to overlap.
-     * @return {Function} endContact, Gets called when two fixtures cease to overlap.
-     * @return {Function} preSolve, Gets called before a collision gets resolved.
-     * @return {Function} postSolve, Gets called after the collision has been resolved.
+     * @return beginContact, Gets called when two fixtures begin to overlap.
+     * @return endContact, Gets called when two fixtures cease to overlap.
+     * @return preSolve, Gets called before a collision gets resolved.
+     * @return postSolve, Gets called after the collision has been resolved.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getCallbacks(): [Function, Function, Function, Function];
 
     /**
      * Returns the number of contacts in the world.
      *
-     * @return {number} n, The number of contacts in the world.
+     * @return n, The number of contacts in the world.
      */
     getContactCount(): number;
 
     /**
      * Returns the function for collision filtering.
      *
-     * @return {Function} contactFilter, The function that handles the contact filtering.
+     * @return contactFilter, The function that handles the contact filtering.
      */
     getContactFilter(): Function;
 
     /**
      * Returns a table with all contacts.
      *
-     * @return {table} contacts, A sequence with all contacts.
+     * @return contacts, A sequence with all contacts.
      */
     getContactList(): table;
 
     /**
      * Get the gravity of the world.
      *
-     * @return {number} x, The x component of gravity.
-     * @return {number} y, The y component of gravity.
+     * @return x, The x component of gravity.
+     * @return y, The y component of gravity.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getGravity(): [number, number];
 
     /**
      * Get the number of joints in the world.
      *
-     * @return {number} n, The number of joints in the world.
+     * @return n, The number of joints in the world.
      */
     getJointCount(): number;
 
     /**
      * Returns a table with all joints.
      *
-     * @return {table} joints, A sequence with all joints.
+     * @return joints, A sequence with all joints.
      */
     getJointList(): table;
 
     /**
      * Gets whether the World is destroyed. Destroyed worlds cannot be used.
      *
-     * @return {boolean} destroyed, Whether the World is destroyed.
+     * @return destroyed, Whether the World is destroyed.
      */
     isDestroyed(): boolean;
 
@@ -103,14 +103,14 @@ declare interface World extends Object {
      *
      * This will return true inside the callbacks from World:setCallbacks.
      *
-     * @return {boolean} locked, Will be true if the world is in the process of updating its state.
+     * @return locked, Will be true if the world is in the process of updating its state.
      */
     isLocked(): boolean;
 
     /**
      * Returns the sleep behaviour of the world.
      *
-     * @return {boolean} allowSleep, True if the bodies are allowed to sleep or false if not.
+     * @return allowSleep, True if the bodies are allowed to sleep or false if not.
      */
     isSleepingAllowed(): boolean;
 

@@ -6,26 +6,26 @@ declare interface Video extends Drawable {
     /**
      * Gets the width and height of the Video in pixels.
      *
-     * @return {number} width, The width of the Video.
-     * @return {number} height, The height of the video.
+     * @return width, The width of the Video.
+     * @return height, The height of the video.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
      * Gets the scaling filters used when drawing the Video.
      *
-     * @return {FilterMode} min, The filter mode used when scaling the Video down.
-     * @return {FilterMode} mag, The filter mode used when scaling the Video up.
-     * @return {number} anisotropy, Maximum amount of anisotropic filtering used.
+     * @return min, The filter mode used when scaling the Video down.
+     * @return mag, The filter mode used when scaling the Video up.
+     * @return anisotropy, Maximum amount of anisotropic filtering used.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getFilter(): [FilterMode, FilterMode, number];
 
     /**
      * Gets the height of the Video in pixels.
      *
-     * @return {number} height, The height of the Video.
+     * @return height, The height of the Video.
      */
     getHeight(): number;
 
@@ -41,21 +41,21 @@ declare interface Video extends Drawable {
     /**
      * Gets the VideoStream object used for decoding and controlling the video.
      *
-     * @return {VideoStream} stream, The VideoStream used for decoding and controlling the video.
+     * @return stream, The VideoStream used for decoding and controlling the video.
      */
     getStream(): VideoStream;
 
     /**
      * Gets the width of the Video in pixels.
      *
-     * @return {number} width, The width of the Video.
+     * @return width, The width of the Video.
      */
     getWidth(): number;
 
     /**
      * Gets whether the Video is currently playing.
      *
-     * @return {boolean} playing, Whether the video is playing.
+     * @return playing, Whether the video is playing.
      */
     isPlaying(): boolean;
 

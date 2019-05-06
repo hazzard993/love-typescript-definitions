@@ -17,7 +17,7 @@ declare interface Mesh extends Drawable {
      * Removes a previously attached vertex attribute from this Mesh.
      *
      * @param name The name of the attached vertex attribute to detach.
-     * @return {boolean} success, Whether the attribute was successfully detached.
+     * @return success, Whether the attribute was successfully detached.
      */
     detachAttribute(name: string): boolean;
 
@@ -30,7 +30,7 @@ declare interface Mesh extends Drawable {
     /**
      * Gets the mode used when drawing the Mesh.
      *
-     * @return {MeshDrawMode} mode, The mode used when drawing the Mesh.
+     * @return mode, The mode used when drawing the Mesh.
      */
     getDrawMode(): MeshDrawMode;
 
@@ -60,27 +60,26 @@ declare interface Mesh extends Drawable {
      * Gets the properties of a vertex in the Mesh.
      *
      * @param index The index of the the vertex you want to retrieve the information for.
-     * @return {number} attributecomponent, The first component of the first vertex attribute in the specified vertex.
-     * @return {number} ..., Additional components of all vertex attributes in the specified vertex.
+     * @return attributecomponent, The first component of the first vertex attribute in the specified vertex.
+     * @return ..., Additional components of all vertex attributes in the specified vertex.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getVertex(index: number): [number, number];
 
     /**
      * Gets the properties of a vertex in the Mesh.
      *
      * @param index The index of the the vertex you want to retrieve the information for.
-     * @return {number} x, The position of the vertex on the x-axis.
-     * @return {number} y, The position of the vertex on the y-axis.
-     * @return {number} u, The horizontal component of the texture coordinate.
-     * @return {number} v, The vertical component of the texture coordinate.
-     * @return {number} r, The red component of the vertex's color.
-     * @return {number} g, The green component of the vertex's color.
-     * @return {number} b, The blue component of the vertex's color.
-     * @return {number} a, The alpha component of the vertex's color.
+     * @return x, The position of the vertex on the x-axis.
+     * @return y, The position of the vertex on the y-axis.
+     * @return u, The horizontal component of the texture coordinate.
+     * @return v, The vertical component of the texture coordinate.
+     * @return r, The red component of the vertex's color.
+     * @return g, The green component of the vertex's color.
+     * @return b, The blue component of the vertex's color.
+     * @return a, The alpha component of the vertex's color.
      */
-    /** @tupleReturn */
-    getVertex(index: number): [number, number, number, number, number, number, number, number];
+    getVertex(index: number): Array<[number]>;
 
     /**
      * Gets the properties of a specific attribute within a vertex in the Mesh.
@@ -92,26 +91,23 @@ declare interface Mesh extends Drawable {
      *
      * @param vertexindex The index of the the vertex to be modified.
      * @param attributeindex The index of the attribute within the vertex to be modified.
-     * @return {number} value1, The value of the first component of the attribute.
-     * @return {number} value2, The value of the second component of the attribute.
-     * @return {number} ..., Any additional vertex attribute components.
+     * @return properties, The properties of the specified attribute.
      */
-    /** @tupleReturn */
-    getVertexAttribute(vertexindex: number, attributeindex: number): [number, number, number];
+    getVertexAttribute(vertexindex: number, attributeindex: number): Array<[number]>;
 
     /**
      * Returns the total number of vertices in the Mesh.
      *
-     * @return {number} num, The total number of vertices in this Mesh.
+     * @return num, The total number of vertices in this Mesh.
      */
     getVertexCount(): number;
 
     /**
      * Gets the vertex format that the Mesh was created with.
      *
-     * @return {table} format, The vertex format of the Mesh, which is a table containing tables for each vertex attribute the Mesh was created with, in the form of {attribute, ...}.
+     * @return format, The vertex format of the Mesh, which is a table containing tables for each vertex attribute the Mesh was created with, in the form of {attribute, ...}.
      */
-    getVertexFormat(): table;
+    getVertexFormat(): Array<[string, string, ...Array<any>]>;
 
     /**
      * Gets the vertex map for the Mesh. The vertex map describes the order in which
@@ -124,7 +120,7 @@ declare interface Mesh extends Drawable {
      * function will return _nil/null_ in LÖVE 0.10.0+, or an empty table in 0.9.2 and
      * older.
      *
-     * @return {table} map, A table containing a list of vertex indices used when drawing.
+     * @return map, A table containing a list of vertex indices used when drawing.
      * @link [Mesh:getVertexMap](https://love2d.org/wiki/Mesh:getVertexMap)
      */
     getVertexMap(): table | null;
@@ -134,7 +130,7 @@ declare interface Mesh extends Drawable {
      * from disabled attributes is not used when drawing the Mesh.
      *
      * @param name The name of the vertex attribute to enable or disable.
-     * @return {boolean} enabled, Whether the vertex attribute is used when drawing this Mesh.
+     * @return enabled, Whether the vertex attribute is used when drawing this Mesh.
      */
     isAttributeEnabled(name: string): boolean;
 
@@ -209,10 +205,10 @@ declare interface Mesh extends Drawable {
 
     /**
      * Sets the properties of a vertex in the Mesh.
-     *
      * @param index The index of the the vertex you want to modify.
      * @param attributecomponent The first component of the first vertex attribute in the specified vertex.
      * @param ... Additional components of all vertex attributes in the specified vertex.
+     * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
      */
     setVertex(index: number, attributecomponent: number, ...vararg: Array<number>): void;
 
@@ -299,7 +295,7 @@ declare interface Mesh extends Drawable {
      * Replaces a range of vertices in the Mesh with new ones. The total number of
      * vertices in a Mesh cannot be changed after it has been created.
      *
-     * @param vertices The table filled with vertex information tables for each vertex, in the form of {vertex, ...} where each vertex is a table in the form of {attributecomponent, ...}.
+     * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of {attributecomponent, ...}.
      */
     setVertices(vertices: table): void;
 

@@ -397,7 +397,7 @@ declare interface Source extends Object {
     /**
      * Gets the currently playing position of the Source.
      * @param unit The type of unit for the return value.
-     * @return {number} position, The currently playing position of the Source.
+     * @return position, The currently playing position of the Source.
      * @link [Source:tell](https://love2d.org/wiki/Source:tell)
      * @since 0.8.0
      */

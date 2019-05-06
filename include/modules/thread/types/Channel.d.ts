@@ -16,7 +16,7 @@ declare interface Channel extends Object {
      *
      * It waits until a message is in the queue then returns the message value.
      *
-     * @return {any} value, The contents of the message.
+     * @return value, The contents of the message.
      */
     demand(): any;
 
@@ -34,7 +34,7 @@ declare interface Channel extends Object {
     /**
      * Retrieves the number of messages in the thread Channel queue.
      *
-     * @return {number} count, The number of messages in the queue.
+     * @return count, The number of messages in the queue.
      */
     getCount(): number;
 
@@ -43,7 +43,7 @@ declare interface Channel extends Object {
      * Channel.
      *
      * @param id An id value previously returned by Channel:push.
-     * @return {boolean} hasread, Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.
+     * @return hasread, Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.
      */
     hasRead(id: number): boolean;
 
@@ -73,11 +73,11 @@ declare interface Channel extends Object {
      * @param func The function to call, the form of function(channel, arg1, arg2, ...) end. The Channel is passed as the first argument to the function when it is called.
      * @param arg1 Additional arguments that the given function will receive when it is called.
      * @param ... Additional arguments that the given function will receive when it is called.
-     * @return {any} ret1, The first return value of the given function (if any.)
-     * @return {any} ..., Any other return values.
+     * @return ret1, The first return value of the given function (if any.)
+     * @return ..., Any other return values.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    performAtomic(func: Function, arg1: any, ...vararg: Array<any>): [any, any];
+    performAtomic(func: Function, arg1: any, ...vararg: Array<any>): Array<any>;
 
     /**
      * Retrieves the value of a Channel message and removes it from the message queue.
@@ -106,7 +106,7 @@ declare interface Channel extends Object {
      * See any for the list of supported types.
      *
      * @param value The contents of the message.
-     * @return {boolean} success, Whether the message was successfully supplied (always true).
+     * @return success, Whether the message was successfully supplied (always true).
      */
     supply(value: any): boolean;
 
@@ -118,7 +118,7 @@ declare interface Channel extends Object {
      *
      * @param value The contents of the message.
      * @param timeout The maximum amount of time to wait.
-     * @return {boolean} success, Whether the message was successfully supplied before the timeout expired.
+     * @return success, Whether the message was successfully supplied before the timeout expired.
      */
     supply(value: any, timeout: number): boolean;
 

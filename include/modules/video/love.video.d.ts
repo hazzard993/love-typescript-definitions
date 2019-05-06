@@ -16,7 +16,7 @@ declare namespace love {
          * VideoStreams can't draw videos, see love.graphics.newVideo for that.
          *
          * @param filename The file path to the Ogg Theora video file.
-         * @return {VideoStream} videostream, A new VideoStream.
+         * @return videostream, A new VideoStream.
          */
         export function newVideoStream(filename: string): VideoStream;
 
@@ -25,7 +25,7 @@ declare namespace love {
          * VideoStreams can't draw videos, see love.graphics.newVideo for that.
          *
          * @param file The File object containing the Ogg Theora video.
-         * @return {VideoStream} videostream, A new VideoStream.
+         * @return videostream, A new VideoStream.
          */
         export function newVideoStream(file: File): VideoStream;
 

@@ -6,31 +6,31 @@ declare interface MouseJoint extends Joint {
     /**
      * Returns the damping ratio.
      *
-     * @return {number} ratio, The new damping ratio.
+     * @return ratio, The new damping ratio.
      */
     getDampingRatio(): number;
 
     /**
      * Returns the frequency.
      *
-     * @return {number} freq, The frequency in hertz.
+     * @return freq, The frequency in hertz.
      */
     getFrequency(): number;
 
     /**
      * Gets the highest allowed force.
      *
-     * @return {number} f, The max allowed force.
+     * @return f, The max allowed force.
      */
     getMaxForce(): number;
 
     /**
      * Gets the target point.
      *
-     * @return {number} x, The x component of the target.
-     * @return {number} y, The x component of the target.
+     * @return x, The x component of the target.
+     * @return y, The x component of the target.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getTarget(): [number, number];
 
     /**

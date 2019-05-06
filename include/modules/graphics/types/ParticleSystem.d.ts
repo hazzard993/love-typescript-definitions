@@ -10,7 +10,7 @@ declare interface ParticleSystem extends Drawable {
      * Cloned ParticleSystem inherit all the set-able state of the original
      * ParticleSystem, but they are initialized stopped.
      *
-     * @return {ParticleSystem} particlesystem, The new identical copy of this ParticleSystem.
+     * @return particlesystem, The new identical copy of this ParticleSystem.
      */
     clone(): ParticleSystem;
 
@@ -24,25 +24,25 @@ declare interface ParticleSystem extends Drawable {
     /**
      * Gets the amount of particles that are currently in the system.
      *
-     * @return {number} count, The current number of live particles.
+     * @return count, The current number of live particles.
      */
     getCount(): number;
 
     /**
      * Gets the area-based spawn parameters for the particles.
      *
-     * @return {AreaSpreadDistribution} distribution, The type of distribution for new particles.
-     * @return {number} dx, The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
-     * @return {number} dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
+     * @return distribution, The type of distribution for new particles.
+     * @return dx, The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
+     * @return dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAreaSpread(): [AreaSpreadDistribution, number, number];
 
     /**
      * Gets the size of the buffer (the max allowed amount of particles in the
      * system).
      *
-     * @return {number} buffer, The buffer size.
+     * @return buffer, The buffer size.
      */
     getBufferSize(): number;
 
@@ -56,23 +56,23 @@ declare interface ParticleSystem extends Drawable {
      * desired RGBA value. At least one color must be specified. A maximum of eight
      * may be used.
      *
-     * @return {number} r1, First color, red component (0-255).
-     * @return {number} g1, First color, green component (0-255).
-     * @return {number} b1, First color, blue component (0-255).
-     * @return {number} a1, First color, alpha component (0-255).
-     * @return {number} r2, Second color, red component (0-255).
-     * @return {number} g2, Second color, green component (0-255).
-     * @return {number} b2, Second color, blue component (0-255).
-     * @return {number} a2, Second color, alpha component (0-255).
-     * @return {number} ..., Etc.
+     * @return r1, First color, red component (0-255).
+     * @return g1, First color, green component (0-255).
+     * @return b1, First color, blue component (0-255).
+     * @return a1, First color, alpha component (0-255).
+     * @return r2, Second color, red component (0-255).
+     * @return g2, Second color, green component (0-255).
+     * @return b2, Second color, blue component (0-255).
+     * @return a2, Second color, alpha component (0-255).
+     * @return ..., Etc.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getColors(): [number, number, number, number, number, number, number, number, number];
 
     /**
      * Gets the direction the particles will be emitted in.
      *
-     * @return {number} direction, The direction of the particles (in radians).
+     * @return direction, The direction of the particles (in radians).
      */
     getDirection(): number;
 
@@ -90,14 +90,14 @@ declare interface ParticleSystem extends Drawable {
     /**
      * Gets the amount of particles emitted per second.
      *
-     * @return {number} rate, The amount of particles per second.
+     * @return rate, The amount of particles per second.
      */
     getEmissionRate(): number;
 
     /**
      * Gets the mode to use when the ParticleSystem adds new particles.
      *
-     * @return {ParticleInsertMode} mode, The mode to use when the ParticleSystem adds new particles.
+     * @return mode, The mode to use when the ParticleSystem adds new particles.
      */
     getInsertMode(): ParticleInsertMode;
 
@@ -109,28 +109,28 @@ declare interface ParticleSystem extends Drawable {
      * Every particle created will accelerate along the x and y axes between xmin,ymin
      * and xmax,ymax.
      *
-     * @return {number} xmin, The minimum acceleration along the x axis.
-     * @return {number} ymin, The minimum acceleration along the y axis.
-     * @return {number} xmax, The maximum acceleration along the x axis.
-     * @return {number} ymax, The maximum acceleration along the y axis.
+     * @return xmin, The minimum acceleration along the x axis.
+     * @return ymin, The minimum acceleration along the y axis.
+     * @return xmax, The maximum acceleration along the x axis.
+     * @return ymax, The maximum acceleration along the y axis.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearAcceleration(): [number, number, number, number];
 
     /**
      * Gets the amount of linear damping (constant deceleration) for particles.
      *
-     * @return {number} min, The minimum amount of linear damping applied to particles.
-     * @return {number} max, The maximum amount of linear damping applied to particles.
+     * @return min, The minimum amount of linear damping applied to particles.
+     * @return max, The maximum amount of linear damping applied to particles.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearDamping(): [number, number];
 
     /**
      * Gets how long the particle system should emit particles (if -1 then it emits
      * particles forever).
      *
-     * @return {number} life, The lifetime of the emitter (in seconds).
+     * @return life, The lifetime of the emitter (in seconds).
      */
     getEmitterLifetime(): number;
 
@@ -138,53 +138,53 @@ declare interface ParticleSystem extends Drawable {
      * Get the offget position which the particle sprite is rotated around. If this
      * function is not used, the particles rotate around their center.
      *
-     * @return {number} x, The x coordinate of the rotation offget.
-     * @return {number} y, The y coordinate of the rotation offget.
+     * @return x, The x coordinate of the rotation offget.
+     * @return y, The y coordinate of the rotation offget.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getOffset(): [number, number];
 
     /**
      * Gets the life of the particles.
      *
-     * @return {number} min, The minimum life of the particles (seconds).
-     * @return {number} max, The maximum life of the particles (seconds).
+     * @return min, The minimum life of the particles (seconds).
+     * @return max, The maximum life of the particles (seconds).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getParticleLifetime(): [number, number];
 
     /**
      * Gets the series of Quads used for the particle sprites.
      *
-     * @return {table} quads, A table containing the Quads used.
+     * @return quads, A table containing the Quads used.
      */
     getQuads(): table;
 
     /**
      * Gets the position of the emitter.
      *
-     * @return {number} x, Position along x-axis.
-     * @return {number} y, Position along y-axis.
+     * @return x, Position along x-axis.
+     * @return y, Position along y-axis.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPosition(): [number, number];
 
     /**
      * Get the radial acceleration (away from the emitter).
      *
-     * @return {number} min, The minimum acceleration.
-     * @return {number} max, The maximum acceleration.
+     * @return min, The minimum acceleration.
+     * @return max, The maximum acceleration.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getRadialAcceleration(): [number, number];
 
     /**
      * Gets the rotation of the image upon particle creation (in radians).
      *
-     * @return {number} min, The minimum initial angle (radians).
-     * @return {number} max, The maximum initial angle (radians).
+     * @return min, The minimum initial angle (radians).
+     * @return max, The maximum initial angle (radians).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getRotation(): [number, number];
 
     /**
@@ -195,58 +195,58 @@ declare interface ParticleSystem extends Drawable {
      *
      * At least one size must be specified. A maximum of eight may be used.
      *
-     * @return {number} size1, The first size.
-     * @return {number} size2, The second size.
-     * @return {number} ..., Etc.
+     * @return size1, The first size.
+     * @return size2, The second size.
+     * @return ..., Etc.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getSizes(): [number, number, number];
+    getSizes(): Array<number>;
 
     /**
      * Gets the degree of variation (0 meaning no variation and 1 meaning full
      * variation between start and end).
      *
-     * @return {number} variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
+     * @return variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
      */
     getSizeVariation(): number;
 
     /**
      * Gets the speed of the particles.
      *
-     * @return {number} min, The minimum linear speed of the particles.
-     * @return {number} max, The maximum linear speed of the particles.
+     * @return min, The minimum linear speed of the particles.
+     * @return max, The maximum linear speed of the particles.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getSpeed(): [number, number];
 
     /**
      * Gets the spin of the sprite.
      *
-     * @return {number} min, The minimum spin (radians per second).
-     * @return {number} max, The maximum spin (radians per second).
+     * @return min, The minimum spin (radians per second).
+     * @return max, The maximum spin (radians per second).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getSpin(): [number, number];
 
     /**
      * Gets the degree of variation (0 meaning no variation and 1 meaning full
      * variation between start and end).
      *
-     * @return {number} variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
+     * @return variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
      */
     getSpinVariation(): number;
 
     /**
      * Gets the amount of spread for the system.
      *
-     * @return {number} spread, The amount of spread (radians).
+     * @return spread, The amount of spread (radians).
      */
     getSpread(): number;
 
     /**
      * Gets the Image or Canvas which is to be emitted.
      *
-     * @return {Texture} texture, An Image or Canvas to use for the particle.
+     * @return texture, An Image or Canvas to use for the particle.
      */
     getTexture(): Texture;
 
@@ -254,10 +254,10 @@ declare interface ParticleSystem extends Drawable {
      * Gets the tangential acceleration (acceleration perpendicular to the particle's
      * direction).
      *
-     * @return {number} min, The minimum acceleration.
-     * @return {number} max, The maximum acceleration.
+     * @return min, The minimum acceleration.
+     * @return max, The maximum acceleration.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getTangentialAcceleration(): [number, number];
 
     /**
@@ -265,28 +265,28 @@ declare interface ParticleSystem extends Drawable {
      * enabled, particles are aligned to the angle of their velocities and rotate
      * relative to that angle.
      *
-     * @return {boolean} enabled, True if relative particle rotation is enabled, false if it's disabled.
+     * @return enabled, True if relative particle rotation is enabled, false if it's disabled.
      */
     hasRelativeRotation(): boolean;
 
     /**
      * Checks whether the particle system is actively emitting particles.
      *
-     * @return {boolean} active, True if system is active, false otherwise.
+     * @return active, True if system is active, false otherwise.
      */
     isActive(): boolean;
 
     /**
      * Checks whether the particle system is paused.
      *
-     * @return {boolean} paused, True if system is paused, false otherwise.
+     * @return paused, True if system is paused, false otherwise.
      */
     isPaused(): boolean;
 
     /**
      * Checks whether the particle system is stopped.
      *
-     * @return {boolean} stopped, True if system is stopped, false otherwise.
+     * @return stopped, True if system is stopped, false otherwise.
      */
     isStopped(): boolean;
 

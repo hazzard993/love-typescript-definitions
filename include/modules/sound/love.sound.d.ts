@@ -12,7 +12,7 @@ declare namespace love {
          *
          * @param file The file with encoded sound data.
          * @param buffer The size of each decoded chunk, in bytes.
-         * @return {Decoder} decoder, A new Decoder object.
+         * @return decoder, A new Decoder object.
          */
         export function newDecoder(file: File, buffer?: number): Decoder;
 
@@ -21,7 +21,7 @@ declare namespace love {
          *
          * @param filename The filename of the file with encoded sound data.
          * @param buffer The size of each decoded chunk, in bytes.
-         * @return {Decoder} decoder, A new Decoder object.
+         * @return decoder, A new Decoder object.
          */
         export function newDecoder(filename: string, buffer?: number): Decoder;
 
@@ -35,7 +35,7 @@ declare namespace love {
          * memory this way.
          *
          * @param filename The filename of the file to load.
-         * @return {SoundData} soundData, A new SoundData object.
+         * @return soundData, A new SoundData object.
          */
         export function newSoundData(filename: string): SoundData;
 
@@ -49,7 +49,7 @@ declare namespace love {
          * memory this way.
          *
          * @param file A File pointing to an audio file.
-         * @return {SoundData} soundData, A new SoundData object.
+         * @return soundData, A new SoundData object.
          */
         export function newSoundData(file: File): SoundData;
 
@@ -63,7 +63,7 @@ declare namespace love {
          * memory this way.
          *
          * @param data The encoded data to decode into audio.
-         * @return {SoundData} soundData, A new SoundData object.
+         * @return soundData, A new SoundData object.
          */
         export function newSoundData(data: Data): SoundData;
 
@@ -80,7 +80,7 @@ declare namespace love {
          * @param rate Number of samples per second
          * @param bits Bits per sample (8 or 16).
          * @param channels Either 1 for mono or 2 for stereo.
-         * @return {SoundData} soundData, A new SoundData object.
+         * @return soundData, A new SoundData object.
          */
         export function newSoundData(samples: number, rate?: number, bits?: number, channels?: number): SoundData;
 

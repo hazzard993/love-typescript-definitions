@@ -150,7 +150,7 @@ declare interface Body extends Object {
      * increase counter-clockwise, the y-axis points down so it becomes clockwise from
      * our point of view.
      *
-     * @return {number} angle, The angle in radians.
+     * @return angle, The angle in radians.
      */
     getAngle(): number;
 
@@ -171,7 +171,7 @@ declare interface Body extends Object {
      * and infinity meaning full damping. Normally you will use a damping value
      * between 0 and 0.1.
      *
-     * @return {number} damping, The value of the angular damping.
+     * @return damping, The value of the angular damping.
      */
     getAngularDamping(): number;
 
@@ -189,14 +189,14 @@ declare interface Body extends Object {
      * If you need the rate of change of position over time, use
      * Body:getLinearVelocity.
      *
-     * @return {number} w, The angular velocity in radians/second.
+     * @return w, The angular velocity in radians/second.
      */
     getAngularVelocity(): number;
 
     /**
      * Gets a list of all Contacts attached to the Body.
      *
-     * @return {table} contacts, A list with all contacts associated with the Body.
+     * @return contacts, A list with all contacts associated with the Body.
      */
     getContactList(): table;
 
@@ -204,21 +204,21 @@ declare interface Body extends Object {
      * @deprecated renamed to Body.getFixtures()
      * Returns a table with all fixtures.
      *
-     * @return {table} fixtures, A sequence with all fixtures.
+     * @return fixtures, A sequence with all fixtures.
      */
     getFixtureList(): table;
 
     /**
      * Returns a table with all fixtures.
      *
-     * @return {table} fixtures, A sequence with all fixtures.
+     * @return fixtures, A sequence with all fixtures.
      */
     getFixtures(): table;
 
     /**
      * Returns the gravity scale factor.
      *
-     * @return {number} scale, The gravity scale factor.
+     * @return scale, The gravity scale factor.
      */
     getGravityScale(): number;
 
@@ -228,14 +228,14 @@ declare interface Body extends Object {
      *
      * The rotational inertia is how hard is it to make the body spin.
      *
-     * @return {number} inertia, The rotational inertial of the body.
+     * @return inertia, The rotational inertial of the body.
      */
     getInertia(): number;
 
     /**
      * Returns a table containing the Joints attached to this Body.
      *
-     * @return {table} joints, A sequence with the Joints attached to the Body.
+     * @return joints, A sequence with the Joints attached to the Body.
      */
     getJointList(): table;
 
@@ -252,7 +252,7 @@ declare interface Body extends Object {
      * Damping is not the same as friction - they can be modelled together. However,
      * only damping is provided by Box2D (and LÖVE).
      *
-     * @return {number} damping, The value of the linear damping.
+     * @return damping, The value of the linear damping.
      */
     getLinearDamping(): number;
 
@@ -275,10 +275,10 @@ declare interface Body extends Object {
      * Body:getLinearVelocityFromWorldPoint allows you to specify the point in world
      * coordinates.
      *
-     * @return {number} x, The x component of the velocity vector.
-     * @return {number} y, The y component of the velocity vector.
+     * @return x, The x component of the velocity vector.
+     * @return y, The y component of the velocity vector.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearVelocity(): [number, number];
 
     /**
@@ -294,10 +294,10 @@ declare interface Body extends Object {
      *
      * @param x The x position to measure velocity.
      * @param y The y position to measure velocity.
-     * @return {number} vx, The x component of velocity at point (x,y).
-     * @return {number} vy, The y component of velocity at point (x,y).
+     * @return vx, The x component of velocity at point (x,y).
+     * @return vy, The y component of velocity at point (x,y).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearVelocityFromLocalPoint(x: number, y: number): [number, number];
 
     /**
@@ -313,10 +313,10 @@ declare interface Body extends Object {
      *
      * @param x The x position to measure velocity.
      * @param y The y position to measure velocity.
-     * @return {number} vx, The x component of velocity at point (x,y).
-     * @return {number} vy, The y component of velocity at point (x,y).
+     * @return vx, The x component of velocity at point (x,y).
+     * @return vy, The y component of velocity at point (x,y).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLinearVelocityFromWorldPoint(x: number, y: number): [number, number];
 
     /**
@@ -325,10 +325,10 @@ declare interface Body extends Object {
      *
      * Use Body:getWorldCenter to get the center of mass in world coordinates.
      *
-     * @return {number} x, The x coordinate of the center of mass.
-     * @return {number} y, The y coordinate of the center of mass.
+     * @return x, The x coordinate of the center of mass.
+     * @return y, The y coordinate of the center of mass.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLocalCenter(): [number, number];
 
     /**
@@ -336,10 +336,10 @@ declare interface Body extends Object {
      *
      * @param worldX The x position in world coordinates.
      * @param worldY The y position in world coordinates.
-     * @return {number} localX, The x position in local coordinates.
-     * @return {number} localY, The y position in local coordinates.
+     * @return localX, The x position in local coordinates.
+     * @return localY, The y position in local coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLocalPoint(worldX: number, worldY: number): [number, number];
 
     /**
@@ -347,28 +347,28 @@ declare interface Body extends Object {
      *
      * @param worldX The vector x component in world coordinates.
      * @param worldY The vector y component in world coordinates.
-     * @return {number} localX, The vector x component in local coordinates.
-     * @return {number} localY, The vector y component in local coordinates.
+     * @return localX, The vector x component in local coordinates.
+     * @return localY, The vector y component in local coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getLocalVector(worldX: number, worldY: number): [number, number];
 
     /**
      * Get the mass of the body.
      *
-     * @return {number} mass, The mass of the body (in kilograms).
+     * @return mass, The mass of the body (in kilograms).
      */
     getMass(): number;
 
     /**
      * Returns the mass, its center, and the rotational inertia.
      *
-     * @return {number} x, The x position of the center of mass.
-     * @return {number} y, The y position of the center of mass.
-     * @return {number} mass, The mass of the body.
-     * @return {number} inertia, The rotational inertia.
+     * @return x, The x position of the center of mass.
+     * @return y, The y position of the center of mass.
+     * @return mass, The mass of the body.
+     * @return inertia, The rotational inertia.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getMassData(): [number, number, number, number];
 
     /**
@@ -377,30 +377,30 @@ declare interface Body extends Object {
      *
      * Note that this may not be the center of mass of the body.
      *
-     * @return {number} x, The x position.
-     * @return {number} y, The y position.
+     * @return x, The x position.
+     * @return y, The y position.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPosition(): [number, number];
 
     /**
      * Returns the type of the body.
      *
-     * @return {BodyType} type, The body type.
+     * @return type, The body type.
      */
     getType(): BodyType;
 
     /**
      * Returns the Lua value associated with this Body.
      *
-     * @return {any} value, The Lua value associated with the Body.
+     * @return value, The Lua value associated with the Body.
      */
     getUserData(): any;
 
     /**
      * Gets the World the body lives in.
      *
-     * @return {World} world, The world the body lives in.
+     * @return world, The world the body lives in.
      */
     getWorld(): World;
 
@@ -410,10 +410,10 @@ declare interface Body extends Object {
      *
      * Use Body:getLocalCenter to get the center of mass in local coordinates.
      *
-     * @return {number} x, The x coordinate of the center of mass.
-     * @return {number} y, The y coordinate of the center of mass.
+     * @return x, The x coordinate of the center of mass.
+     * @return y, The y coordinate of the center of mass.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWorldCenter(): [number, number];
 
     /**
@@ -421,65 +421,57 @@ declare interface Body extends Object {
      *
      * @param localX The x position in local coordinates.
      * @param localY The y position in local coordinates.
-     * @return {number} worldX, The x position in world coordinates.
-     * @return {number} worldY, The y position in world coordinates.
+     * @return worldX, The x position in world coordinates.
+     * @return worldY, The y position in world coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWorldPoint(localX: number, localY: number): [number, number];
 
     /**
      * Transforms multiple points from local coordinates to world coordinates.
      *
-     * @param x1 The x position of the first point.
-     * @param y1 The y position of the first point.
-     * @param x2 The x position of the second point.
-     * @param y2 The y position of the second point.
-     * @param ... More x and y points.
-     * @return {number} x1, The transformed x position of the first point.
-     * @return {number} y1, The transformed y position of the first point.
-     * @return {number} x2, The transformed x position of the second point.
-     * @return {number} y2, The transformed y position of the second point.
-     * @return {number} ..., The transformed x and y positions of additional points.
+     * @param xys The x followed by the y position of each point.
+     * @return xys, The transformed points.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getWorldPoints(x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): [number, number, number, number, number];
+    getWorldPoints(...xys: Array<number>): Array<number>;
 
     /**
      * Transform a vector from local coordinates to world coordinates.
      *
      * @param localX The vector x component in local coordinates.
      * @param localY The vector y component in local coordinates.
-     * @return {number} worldX, The vector x component in world coordinates.
-     * @return {number} worldY, The vector y component in world coordinates.
+     * @return worldX, The vector x component in world coordinates.
+     * @return worldY, The vector y component in world coordinates.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getWorldVector(localX: number, localY: number): [number, number];
 
     /**
      * Get the x position of the body in world coordinates.
      *
-     * @return {number} x, The x position in world coordinates.
+     * @return x, The x position in world coordinates.
      */
     getX(): number;
 
     /**
      * Get the y position of the body in world coordinates.
      *
-     * @return {number} y, The y position in world coordinates.
+     * @return y, The y position in world coordinates.
      */
     getY(): number;
 
     /**
      * Returns whether the body is actively used in the simulation.
      *
-     * @return {boolean} status, True if the body is active or false if not.
+     * @return status, True if the body is active or false if not.
      */
     isActive(): boolean;
 
     /**
      * Returns the sleep status of the body.
      *
-     * @return {boolean} status, True if the body is awake or false if not.
+     * @return status, True if the body is awake or false if not.
      */
     isAwake(): boolean;
 
@@ -505,35 +497,35 @@ declare interface Body extends Object {
      * Note that static bodies (with zero mass) always use CCD, so your walls will not
      * let a fast moving body pass through even if it is not a bullet.
      *
-     * @return {boolean} status, The bullet status of the body.
+     * @return status, The bullet status of the body.
      */
     isBullet(): boolean;
 
     /**
      * Gets whether the Body is destroyed. Destroyed bodies cannot be used.
      *
-     * @return {boolean} destroyed, Whether the Body is destroyed.
+     * @return destroyed, Whether the Body is destroyed.
      */
     isDestroyed(): boolean;
 
     /**
      * Returns whether the body rotation is locked.
      *
-     * @return {boolean} fixed, True if the body's rotation is locked or false if not.
+     * @return fixed, True if the body's rotation is locked or false if not.
      */
     isFixedRotation(): boolean;
 
     /**
      * Returns the sleeping behaviour of the body.
      *
-     * @return {boolean} status, True if the body is allowed to sleep or false if not.
+     * @return status, True if the body is allowed to sleep or false if not.
      */
     isSleepingAllowed(): boolean;
 
     /**
      * Gets whether the Body is touching the given other Body.
      * @param otherbody The other body to check.
-     * @return {boolean} touching, True if this body is touching the other body, false otherwise.
+     * @return touching, True if this body is touching the other body, false otherwise.
      * @link [Body:isTouching](https://love2d.org/wiki/Body:isTouching)
      */
     isTouching(otherbody: Body): boolean;

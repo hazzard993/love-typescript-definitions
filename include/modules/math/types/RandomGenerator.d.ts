@@ -10,10 +10,10 @@ declare interface RandomGenerator extends Object {
      * The state is split into two numbers due to Lua's use of doubles for all number
      * values - doubles can't accurately represent integer values above 2^53.
      *
-     * @return {number} low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
-     * @return {number} high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
+     * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
+     * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getSeed(): [number, number];
 
     /**
@@ -29,14 +29,14 @@ declare interface RandomGenerator extends Object {
      *
      * The value of the state string does not depend on the current operating system.
      *
-     * @return {string} state, The current state of the RandomGenerator object, represented as a string.
+     * @return state, The current state of the RandomGenerator object, represented as a string.
      */
     getState(): string;
 
     /**
      * Generates a pseudo-random number in a platform independent manner.
      *
-     * @return {number} number, The pseudo random number.
+     * @return number, The pseudo random number.
      */
     random(): number;
 
@@ -44,7 +44,7 @@ declare interface RandomGenerator extends Object {
      * Generates a pseudo-random number in a platform independent manner.
      *
      * @param max The maximum possible value it should return.
-     * @return {number} number, The pseudo-random integer number.
+     * @return number, The pseudo-random integer number.
      */
     random(max: number): number;
 
@@ -53,7 +53,7 @@ declare interface RandomGenerator extends Object {
      *
      * @param min The minimum possible value it should return.
      * @param max The maximum possible value it should return.
-     * @return {number} number, The pseudo-random integer number.
+     * @return number, The pseudo-random integer number.
      */
     random(min: number, max: number): number;
 
@@ -62,7 +62,7 @@ declare interface RandomGenerator extends Object {
      *
      * @param stddev Standard deviation of the distribution.
      * @param mean The mean of the distribution.
-     * @return {number} number, Normally distributed random number with variance (stddev)² and the specified mean.
+     * @return number, Normally distributed random number with variance (stddev)² and the specified mean.
      */
     randomNormal(stddev?: number, mean?: number): number;
 

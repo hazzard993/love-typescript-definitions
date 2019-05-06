@@ -12,7 +12,7 @@ declare interface Fixture extends Object {
     /**
      * Returns the body to which the fixture is attached.
      *
-     * @return {Body} body, The parent body.
+     * @return body, The parent body.
      */
     getBody(): Body;
 
@@ -22,28 +22,26 @@ declare interface Fixture extends Object {
      * have multiple children with a chain shape.
      *
      * @param index A bounding box of the fixture.
-     * @return {number} topLeftX, The x position of the top-left point.
-     * @return {number} topLeftY, The y position of the top-left point.
-     * @return {number} bottomRightX, The x position of the bottom-right point.
-     * @return {number} bottomRightY, The y position of the bottom-right point.
+     * @return topLeftX, The x position of the top-left point.
+     * @return topLeftY, The y position of the top-left point.
+     * @return bottomRightX, The x position of the bottom-right point.
+     * @return bottomRightY, The y position of the bottom-right point.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getBoundingBox(index?: number): [number, number, number, number];
 
     /**
      * Returns the categories the fixture belongs to.
      *
-     * @return {number} category1, The first category.
-     * @return {number} category2, The second category.
-     * @return {number} ..., Additional categories.
+     * @return categories, The categories this fixture belongs to.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getCategory(): [number, number, number];
+    getCategory(): Array<number>;
 
     /**
      * Returns the density of the fixture.
      *
-     * @return {number} density, The fixture density in kilograms per square meter.
+     * @return density, The fixture density in kilograms per square meter.
      */
     getDensity(): number;
 
@@ -51,17 +49,17 @@ declare interface Fixture extends Object {
      * Returns the filter data of the fixture. Categories and masks are encoded as the
      * bits of a 16-bit integer.
      *
-     * @return {number} categories, The categories as an integer from 0 to 65535.
-     * @return {number} mask, The mask as an integer from 0 to 65535.
-     * @return {number} group, The group as an integer from -32768 to 32767.
+     * @return categories, The categories as an integer from 0 to 65535.
+     * @return mask, The mask as an integer from 0 to 65535.
+     * @return group, The group as an integer from -32768 to 32767.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getFilterData(): [number, number, number];
 
     /**
      * Returns the friction of the fixture.
      *
-     * @return {number} friction, The fixture friction.
+     * @return friction, The fixture friction.
      */
     getFriction(): number;
 
@@ -73,35 +71,33 @@ declare interface Fixture extends Object {
      *
      * The groups range from -32768 to 32767.
      *
-     * @return {number} group, The group of the fixture.
+     * @return group, The group of the fixture.
      */
     getGroupIndex(): number;
 
     /**
      * Returns the category mask of the fixture.
      *
-     * @return {number} mask1, The first category selected by the mask.
-     * @return {number} mask2, The second category selected by the mask.
-     * @return {number} ..., Additional categories selected by the mask.
+     * @return categories, The categories the mask of this fixture belongs to.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getMask(): [number, number, number];
+    getMask(): Array<number>;
 
     /**
      * Returns the mass, its center and the rotational inertia.
      *
-     * @return {number} x, The x position of the center of mass.
-     * @return {number} y, The y position of the center of mass.
-     * @return {number} mass, The mass of the fixture.
-     * @return {number} inertia, The rotational inertia.
+     * @return x, The x position of the center of mass.
+     * @return y, The y position of the center of mass.
+     * @return mass, The mass of the fixture.
+     * @return inertia, The rotational inertia.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getMassData(): [number, number, number, number];
 
     /**
      * Returns the restitution of the fixture.
      *
-     * @return {number} restitution, The fixture restitution.
+     * @return restitution, The fixture restitution.
      */
     getRestitution(): number;
 
@@ -114,7 +110,7 @@ declare interface Fixture extends Object {
      * destroyed. This shape will point to an invalid memory address and likely cause
      * crashes if you interact further with it.
      *
-     * @return {Shape} shape, The fixture's shape.
+     * @return shape, The fixture's shape.
      */
     getShape(): Shape;
 
@@ -124,21 +120,21 @@ declare interface Fixture extends Object {
      *
      * Use this function in one thread only.
      *
-     * @return {any} value, The Lua value associated with the fixture.
+     * @return value, The Lua value associated with the fixture.
      */
     getUserData(): any;
 
     /**
      * Gets whether the Fixture is destroyed. Destroyed fixtures cannot be used.
      *
-     * @return {boolean} destroyed, Whether the Fixture is destroyed.
+     * @return destroyed, Whether the Fixture is destroyed.
      */
     isDestroyed(): boolean;
 
     /**
      * Returns whether the fixture is a sensor.
      *
-     * @return {boolean} sensor, If the fixture is a sensor.
+     * @return sensor, If the fixture is a sensor.
      */
     isSensor(): boolean;
 
@@ -172,9 +168,9 @@ declare interface Fixture extends Object {
      * @param y2 The y position of the ray end point.
      * @param maxFraction The maximum distance the ray is going to travel as a number from 0 to 1.
      * @param childIndex The index of the child the ray gets cast against.
-     * @return {number} x, The x position where the ray intersects with the shape.
-     * @return {number} y, The y position where the ray intersects with the shape.
-     * @return {number} fraction, The position on the input vector where the intersection happened as a number from 0 to 1.
+     * @return x, The x position where the ray intersects with the shape.
+     * @return y, The y position where the ray intersects with the shape.
+     * @return fraction, The position on the input vector where the intersection happened as a number from 0 to 1.
      * @tupleReturn
      */
     rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [null, null, null];
@@ -286,7 +282,7 @@ declare interface Fixture extends Object {
      *
      * @param x The x position of the point.
      * @param y The y position of the point.
-     * @return {boolean} isInside, True if the point is inside or false if it is outside.
+     * @return isInside, True if the point is inside or false if it is outside.
      */
     testPoint(x: number, y: number): boolean;
 

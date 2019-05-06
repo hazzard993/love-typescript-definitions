@@ -6,37 +6,37 @@ declare interface WheelJoint extends Joint {
     /**
      * Gets the world-space axis vector of the Wheel Joint.
      *
-     * @return {number} x, The x-axis coordinate of the world-space axis vector.
-     * @return {number} y, The y-axis coordinate of the world-space axis vector.
+     * @return x, The x-axis coordinate of the world-space axis vector.
+     * @return y, The y-axis coordinate of the world-space axis vector.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getAxis(): [number, number];
 
     /**
      * Returns the current joint translation speed.
      *
-     * @return {number} speed, The translation speed of the joint in meters per second.
+     * @return speed, The translation speed of the joint in meters per second.
      */
     getJointSpeed(): number;
 
     /**
      * Returns the current joint translation.
      *
-     * @return {number} position, The translation of the joint in meters.
+     * @return position, The translation of the joint in meters.
      */
     getJointTranslation(): number;
 
     /**
      * Returns the maximum motor torque.
      *
-     * @return {number} maxTorque, The maximum torque of the joint motor in newton meters.
+     * @return maxTorque, The maximum torque of the joint motor in newton meters.
      */
     getMaxMotorTorque(): number;
 
     /**
      * Returns the speed of the motor.
      *
-     * @return {number} speed, The speed of the joint motor in radians per second.
+     * @return speed, The speed of the joint motor in radians per second.
      */
     getMotorSpeed(): number;
 
@@ -44,27 +44,27 @@ declare interface WheelJoint extends Joint {
      * Returns the current torque on the motor.
      *
      * @param invdt How long the force applies. Usually the inverse time step or 1/dt.
-     * @return {number} torque, The torque on the motor in newton meters.
+     * @return torque, The torque on the motor in newton meters.
      */
     getMotorTorque(invdt: number): number;
 
     /**
      * Returns the damping ratio.
      *
-     * @return {number} ratio, The damping ratio.
+     * @return ratio, The damping ratio.
      */
     getSpringDampingRatio(): number;
 
     /**
      * Returns the spring frequency.
      *
-     * @return {number} freq, The frequency in hertz.
+     * @return freq, The frequency in hertz.
      */
     getSpringFrequency(): number;
 
     /**
      * Checks if the joint motor is running.
-     * @return {boolean} on, The status of the joint motor.
+     * @return on, The status of the joint motor.
      * @link [WheelJoint:isMotorEnabled](https://love2d.org/wiki/WheelJoint:isMotorEnabled)
      */
     isMotorEnabled(): boolean;

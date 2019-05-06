@@ -6,21 +6,21 @@ declare interface Quad extends Object {
     /**
      * Gets reference texture dimensions initially specified in love.graphics.newQuad.
      *
-     * @return {number} sw, The Texture width used by the Quad.
-     * @return {number} sh, The Texture height used by the Quad.
+     * @return sw, The Texture width used by the Quad.
+     * @return sh, The Texture height used by the Quad.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getTextureDimensions(): [number, number];
 
     /**
      * Gets the current viewport of this Quad.
      *
-     * @return {number} x, The top-left corner along the x-axis.
-     * @return {number} y, The top-left corner along the y-axis.
-     * @return {number} w, The width of the viewport.
-     * @return {number} h, The height of the viewport.
+     * @return x, The top-left corner along the x-axis.
+     * @return y, The top-left corner along the y-axis.
+     * @return w, The width of the viewport.
+     * @return h, The height of the viewport.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getViewport(): [number, number, number, number];
 
     /**

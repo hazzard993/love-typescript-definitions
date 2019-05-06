@@ -10,37 +10,37 @@ declare interface Shape extends Object {
      * @param ty The translation of the shape on the y-axis.
      * @param tr The shape rotation.
      * @param childIndex The index of the child to compute the bounding box of.
-     * @return {number} topLeftX, The x position of the top-left point.
-     * @return {number} topLeftY, The y position of the top-left point.
-     * @return {number} bottomRightX, The x position of the bottom-right point.
-     * @return {number} bottomRightY, The y position of the bottom-right point.
+     * @return topLeftX, The x position of the top-left point.
+     * @return topLeftY, The y position of the top-left point.
+     * @return bottomRightX, The x position of the bottom-right point.
+     * @return bottomRightY, The y position of the bottom-right point.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     computeAABB(tx: number, ty: number, tr: number, childIndex?: number): [number, number, number, number];
 
     /**
      * Computes the mass properties for the shape with the specified density.
      *
      * @param density The shape density.
-     * @return {number} x, The x postition of the center of mass.
-     * @return {number} y, The y postition of the center of mass.
-     * @return {number} mass, The mass of the shape.
-     * @return {number} inertia, The rotational inertia.
+     * @return x, The x postition of the center of mass.
+     * @return y, The y postition of the center of mass.
+     * @return mass, The mass of the shape.
+     * @return inertia, The rotational inertia.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     computeMass(density: number): [number, number, number, number];
 
     /**
      * Returns the number of children the shape has.
      *
-     * @return {number} count, The number of children.
+     * @return count, The number of children.
      */
     getChildCount(): number;
 
     /**
      * Gets the radius of the shape.
      *
-     * @return {number} radius, The radius of the shape.
+     * @return radius, The radius of the shape.
      */
     getRadius(): number;
 
@@ -48,7 +48,7 @@ declare interface Shape extends Object {
      * Gets a string representing the Shape. This function can be useful for
      * conditional debug drawing.
      *
-     * @return {ShapeType} type, The type of the Shape.
+     * @return type, The type of the Shape.
      */
     getType(): ShapeType;
 
@@ -85,9 +85,9 @@ declare interface Shape extends Object {
      * @param ty The translation of the shape on the y-axis.
      * @param tr The shape rotation.
      * @param childIndex The index of the child the ray gets cast against.
-     * @return {number} xn, The x component of the normal vector of the edge where the ray hit the shape.
-     * @return {number} yn, The y component of the normal vector of the edge where the ray hit the shape.
-     * @return {number} fraction, The position on the input line where the intersection happened as a factor of the line length.
+     * @return xn, The x component of the normal vector of the edge where the ray hit the shape.
+     * @return yn, The y component of the normal vector of the edge where the ray hit the shape.
+     * @return fraction, The position on the input line where the intersection happened as a factor of the line length.
      * @tupleReturn
      */
     rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number] | [null, null, null];
@@ -100,7 +100,7 @@ declare interface Shape extends Object {
      *
      * @param x The x component of the point.
      * @param y The y component of the point.
-     * @return {boolean} hit, True if inside, false if outside
+     * @return hit, True if inside, false if outside
      */
     testPoint(x: number, y: number): boolean;
 

@@ -16,7 +16,7 @@ declare interface Text extends Drawable {
      * @param oy Origin offset on the y-axis.
      * @param kx Shearing / skew factor on the x-axis.
      * @param ky Shearing / skew factor on the y-axis.
-     * @return {number} index, An index number that can be used with Text:getWidth or Text:getHeight.
+     * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      */
     add(textstring: string, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -33,7 +33,7 @@ declare interface Text extends Drawable {
      * @param oy Origin offset on the y-axis.
      * @param kx Shearing / skew factor on the x-axis.
      * @param ky Shearing / skew factor on the y-axis.
-     * @return {number} index, An index number that can be used with Text:getWidth or Text:getHeight.
+     * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      */
     add(coloredtext: table, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -53,7 +53,7 @@ declare interface Text extends Drawable {
      * @param oy Origin offset on the y-axis.
      * @param kx Shearing / skew factor on the x-axis.
      * @param ky Shearing / skew factor on the y-axis.
-     * @return {number} index, An index number that can be used with Text:getWidth or Text:getHeight.
+     * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      */
     addf(textstring: string, wraplimit: number, align: AlignMode, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -73,7 +73,7 @@ declare interface Text extends Drawable {
      * @param oy Origin offset on the y-axis.
      * @param kx Shearing / skew factor on the x-axis.
      * @param ky Shearing / skew factor on the y-axis.
-     * @return {number} index, An index number that can be used with Text:getWidth or Text:getHeight.
+     * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      */
     addf(coloredtext: table, wraplimit: number, align: AlignMode, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -86,33 +86,33 @@ declare interface Text extends Drawable {
     /**
      * Gets the width and height of the text in pixels.
      *
-     * @return {number} width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
-     * @return {number} height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
+     * @return width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
+     * @return height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
      * Gets the width and height of the text in pixels.
      *
      * @param index An index number returned by Text:add or Text:addf.
-     * @return {number} width, The width of the sub-string (before scaling and other transformations).
-     * @return {number} height, The height of the sub-string (before scaling and other transformations).
+     * @return width, The width of the sub-string (before scaling and other transformations).
+     * @return height, The height of the sub-string (before scaling and other transformations).
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getDimensions(index: number): [number, number];
 
     /**
      * Gets the Font used with the Text object.
      *
-     * @return {Font} font, The font used with this Text object.
+     * @return font, The font used with this Text object.
      */
     getFont(): Font;
 
     /**
      * Gets the height of the text in pixels.
      *
-     * @return {number} height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
+     * @return height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
      */
     getHeight(): number;
 
@@ -120,14 +120,14 @@ declare interface Text extends Drawable {
      * Gets the height of the text in pixels.
      *
      * @param index An index number returned by Text:add or Text:addf.
-     * @return {number} height, The height of the sub-string (before scaling and other transformations).
+     * @return height, The height of the sub-string (before scaling and other transformations).
      */
     getHeight(index: number): number;
 
     /**
      * Gets the width of the text in pixels.
      *
-     * @return {number} width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
+     * @return width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
      */
     getWidth(): number;
 
@@ -135,7 +135,7 @@ declare interface Text extends Drawable {
      * Gets the width of the text in pixels.
      *
      * @param index An index number returned by Text:add or Text:addf.
-     * @return {number} width, The width of the sub-string (before scaling and other transformations).
+     * @return width, The width of the sub-string (before scaling and other transformations).
      */
     getWidth(index: number): number;
 

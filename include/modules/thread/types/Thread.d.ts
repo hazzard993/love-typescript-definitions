@@ -6,7 +6,7 @@ declare interface Thread extends Object {
     /**
      * Retrieves the error string from the thread if it produced an error.
      *
-     * @return {string} message, The error message.
+     * @return message, The error message.
      */
     getError(): string;
 
@@ -41,7 +41,7 @@ declare interface Thread extends Object {
      *
      * Threads which are not running can be (re)started with Thread:start.
      *
-     * @return {boolean} running, True if the thread is running, false otherwise.
+     * @return running, True if the thread is running, false otherwise.
      */
     isRunning(): boolean;
 

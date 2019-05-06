@@ -11,7 +11,7 @@ declare interface ChainShape extends Shape {
      * Returns a child of the shape as an EdgeShape.
      *
      * @param index The index of the child.
-     * @return {number} EdgeShape, The child as an EdgeShape.
+     * @return EdgeShape, The child as an EdgeShape.
      */
     getChildEdge(index: number): number;
 
@@ -32,23 +32,23 @@ declare interface ChainShape extends Shape {
      * Returns a point of the shape.
      *
      * @param index The index of the point to return.
-     * @return {number} x, The x-coordinate of the point.
-     * @return {number} y, The y-coordinate of the point.
+     * @return x, The x-coordinate of the point.
+     * @return y, The y-coordinate of the point.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getPoint(index: number): [number, number];
 
     /**
      * Returns all points of the shape.
      *
-     * @return {number} x1, The x-coordinate of the first point.
-     * @return {number} y1, The y-coordinate of the first point.
-     * @return {number} x2, The x-coordinate of the second point.
-     * @return {number} y2, The y-coordinate of the second point.
-     * @return {number} ..., Additional x and y values.
+     * @return x1, The x-coordinate of the first point.
+     * @return y1, The y-coordinate of the first point.
+     * @return x2, The x-coordinate of the second point.
+     * @return y2, The y-coordinate of the second point.
+     * @return ..., Additional x and y values.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getPoints(): [number, number, number, number, number];
+    getPoints(): Array<number>;
 
     /**
      * Gets the vertex that establishes a connection to the previous shape.
@@ -58,8 +58,8 @@ declare interface ChainShape extends Shape {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return {number} x, The x-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
-     * @return {number} y, The y-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
+     * @return x, The x-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
+     * @return y, The y-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
      * @tupleReturn
      */
     getPreviousVertex(): [number, number] | [null, null];
@@ -67,7 +67,7 @@ declare interface ChainShape extends Shape {
     /**
      * Returns the number of vertices the shape has.
      *
-     * @return {number} count, The number of vertices.
+     * @return count, The number of vertices.
      */
     getVertexCount(): number;
 

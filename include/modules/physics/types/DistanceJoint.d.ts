@@ -6,21 +6,21 @@ declare interface DistanceJoint extends Joint {
     /**
      * Gets the damping ratio.
      *
-     * @return {number} ratio, The damping ratio.
+     * @return ratio, The damping ratio.
      */
     getDampingRatio(): number;
 
     /**
      * Gets the response speed.
      *
-     * @return {number} Hz, The response speed.
+     * @return Hz, The response speed.
      */
     getFrequency(): number;
 
     /**
      * Gets the equilibrium distance between the two Bodies.
      *
-     * @return {number} l, The length between the two Bodies.
+     * @return l, The length between the two Bodies.
      */
     getLength(): number;
 

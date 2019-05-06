@@ -10,8 +10,8 @@ declare interface Contact extends Object {
      *
      * Used together with Fixture:rayCast or ChainShape:getChildEdge.
      *
-     * @return {number} indexA, The child index of the first fixture's shape.
-     * @return {number} indexB, The child index of the second fixture's shape.
+     * @return indexA, The child index of the first fixture's shape.
+     * @return indexB, The child index of the second fixture's shape.
      * @tupleReturn
      */
     getChildren(): [number, number];
@@ -19,8 +19,8 @@ declare interface Contact extends Object {
     /**
      * Gets the two Fixtures that hold the shapes that are in contact.
      *
-     * @return {Fixture} fixtureA, The first Fixture.
-     * @return {Fixture} fixtureB, The second Fixture.
+     * @return fixtureA, The first Fixture.
+     * @return fixtureB, The second Fixture.
      * @tupleReturn
      */
     getFixtures(): [Fixture, Fixture];
@@ -28,15 +28,15 @@ declare interface Contact extends Object {
     /**
      * Get the friction between two shapes that are in contact.
      *
-     * @return {number} The friction of the contact.
+     * @return The friction of the contact.
      */
     getFriction(): number;
 
     /**
      * Get the normal vector between two shapes that are in contact.
      *
-     * @return {number} nx: The x component of the normal vector.
-     * @return {number} ny: The y component of the normal vector.
+     * @return nx: The x component of the normal vector.
+     * @return ny: The y component of the normal vector.
      * @tupleReturn
      */
     getNormal(): [number, number];
@@ -44,10 +44,10 @@ declare interface Contact extends Object {
     /**
      * Returns the contact points of the two colliding fixtures. There can be one or two points.
      *
-     * @return {number} x1: The x coordinate of the first contact point.
-     * @return {number} y1: The y coordinate of the first contact point.
-     * @return {number?} x2: The x coordinate of the second contact point.
-     * @return {number?} y2: The y coordinate of the second contact point.
+     * @return x1: The x coordinate of the first contact point.
+     * @return y1: The y coordinate of the first contact point.
+     * @return x2: The x coordinate of the second contact point.
+     * @return y2: The y coordinate of the second contact point.
      * @tupleReturn
      */
     getPositions(): [number, number, number?, number?];
@@ -55,21 +55,21 @@ declare interface Contact extends Object {
     /**
      * Get the restitution between two shapes that are in contact.
      *
-     * @return {number} restitution, The restitution between the two shapes.
+     * @return restitution, The restitution between the two shapes.
      */
     getRestitution(): number;
 
     /**
      * Returns whether the contact is enabled. The collision will be ignored if a contact gets disabled in the preSolve callback.
      *
-     * @return {boolean} enabled, True if enabled, false otherwise.
+     * @return enabled, True if enabled, false otherwise.
      */
     isEnabled(): boolean;
 
     /**
      * Returns whether the two colliding fixtures are touching each other.
      *
-     * @return {boolean} touching, True if they touch or false if not.
+     * @return touching, True if they touch or false if not.
      */
     isTouching(): boolean;
 

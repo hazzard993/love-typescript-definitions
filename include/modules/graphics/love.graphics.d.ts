@@ -101,7 +101,7 @@ declare namespace love {
          *
          * A table of tables can also be given, where each sub-table contains all mipmap levels for the slice index of that sub-table.
          * @param settings Optional table of settings to configure the array image.
-         * @return {Image} image, An Array Image object.
+         * @return image, An Array Image object.
          * @link [love.graphics.newArrayImage](https://love2d.org/wiki/love.graphics.newArrayImage)
          */
         export function newArrayImage(slices: Array<ImageInformation>, settings?: ArrayImageSettings): Image;
@@ -141,52 +141,38 @@ declare namespace love {
         export function circle(mode: DrawMode, x: number, y: number, radius: number, segments: number): void;
 
         /**
-         * Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the
-         * specified color in 0.10.0 and newer.
-         *
-         *
-         * This function is called automatically before love.draw in the default love.run
-         * function. See the example in love.run for a typical use of this function.
-         *
-         *
-         * Note that the scissor area bounds the cleared region.
-         *
+         * Clears the screen to the background color in 0.9.2 and earlier, or to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
+         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
+         * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
         export function clear(): void;
 
         /**
-         * Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the
-         * specified color in 0.10.0 and newer.
-         *
-         *
-         * This function is called automatically before love.draw in the default love.run
-         * function. See the example in love.run for a typical use of this function.
-         *
-         *
-         * Note that the scissor area bounds the cleared region.
-         *
+         * Clears the screen or active Canvas to the specified color.
+```ts
+love.graphics.clear(1, 0, 0, 0, true, true);
+```
          * @param r The red channel of the color to clear the screen to.
          * @param g The green channel of the color to clear the screen to.
          * @param b The blue channel of the color to clear the screen to.
          * @param a The alpha channel of the color to clear the screen to.
+         * @param clearstencil Whether to clear the active stencil buffer, if present. It can also be an integer between 0 and 255 to clear the stencil buffer to a specific value. (Default `true`)
+         * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default `true`)
+         * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
-        export function clear(r: number, g: number, b: number, a?: number): void;
+        export function clear(r: number, g: number, b: number, a?: number, clearstencil?: boolean, cleardepth?: boolean): void;
 
         /**
-         * Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the
-         * specified color in 0.10.0 and newer.
+         * Clears the screen an associated background color.
+```ts
+love.graphics.clear([1, 0, 0, 1], true, true);
+```
+         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
          *
-         *
-         * This function is called automatically before love.draw in the default love.run
-         * function. See the example in love.run for a typical use of this function.
-         *
-         *
-         * Note that the scissor area bounds the cleared region.
-         *
-         * @param color A table in the form of {r, g, b, a} containing the color to clear the first active Canvas to.
+         * @param color A table in the form of containing the color to clear the first active Canvas to.
          * @param ... Additional tables for each active Canvas.
          */
-        export function clear(color: table, ...vararg: Array<table>): void;
+        export function clear(...colors: Array<[number, number, number, number] | boolean>): void;
 
         /**
          * Discards (trashes) the contents of the screen or active Canvas. This is a
@@ -449,21 +435,21 @@ declare namespace love {
         /**
          * Gets the current background color.
          *
-         * @return {number} r, The red component (0-255).
-         * @return {number} g, The green component (0-255).
-         * @return {number} b, The blue component (0-255).
-         * @return {number} a, The alpha component (0-255).
+         * @return r, The red component.
+         * @return g, The green component.
+         * @return b, The blue component.
+         * @return a, The alpha component.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getBackgroundColor(): [number, number, number, number];
 
         /**
          * Gets the blending mode.
          *
-         * @return {BlendMode} mode, The current blend mode.
-         * @return {BlendAlphaMode} alphamode, The current blend alpha mode – it determines how the alpha of drawn objects affects blending.
+         * @return mode, The current blend mode.
+         * @return alphamode, The current blend alpha mode – it determines how the alpha of drawn objects affects blending.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getBlendMode(): [BlendMode, BlendAlphaMode];
 
         /**
@@ -476,7 +462,7 @@ declare namespace love {
         /**
          * Gets the available Canvas formats, and whether each is supported.
          *
-         * @return {table} formats, A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
+         * @return formats, A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
          */
         export function getCanvasFormats(): table;
 
@@ -490,12 +476,12 @@ declare namespace love {
         /**
          * Gets the current color.
          *
-         * @return {number} r, The red component (0-255).
-         * @return {number} g, The red component (0-255).
-         * @return {number} b, The blue component (0-255).
-         * @return {number} a, The alpha component (0-255).
+         * @return r, The red component.
+         * @return g, The red component.
+         * @return b, The blue component.
+         * @return a, The alpha component.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getColor(): [number, number, number, number];
 
         /**
@@ -507,29 +493,29 @@ declare namespace love {
          * objects will affect the color of the screen. They affect love.graphics.clear
          * and Canvas:clear as well.
          *
-         * @return {boolean} r, Whether the red color component is active when rendering.
-         * @return {boolean} g, Whether the green color component is active when rendering.
-         * @return {boolean} b, Whether the blue color component is active when rendering.
-         * @return {boolean} a, Whether the alpha color component is active when rendering.
+         * @return r, Whether the red color component is active when rendering.
+         * @return g, Whether the green color component is active when rendering.
+         * @return b, Whether the blue color component is active when rendering.
+         * @return a, Whether the alpha color component is active when rendering.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getColorMask(): [boolean, boolean, boolean, boolean];
 
         /**
          * Gets the available compressed image formats, and whether each is supported.
          *
-         * @return {table} formats, A table containing CompressedFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
+         * @return formats, A table containing CompressedFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
          */
         export function getCompressedImageFormats(): table;
 
         /**
          * Returns the default scaling filters used with Images, Canvases, and Fonts.
          *
-         * @return {FilterMode} min, Filter mode used when scaling the image down.
-         * @return {FilterMode} mag, Filter mode used when scaling the image up.
-         * @return {number} anisotropy, Maximum amount of Anisotropic Filtering used.
+         * @return min, Filter mode used when scaling the image down.
+         * @return mag, Filter mode used when scaling the image up.
+         * @return anisotropy, Maximum amount of Anisotropic Filtering used.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getDefaultFilter(): [FilterMode, FilterMode, number];
 
         /**
@@ -541,19 +527,19 @@ declare namespace love {
          * Meshes with custom vertex attributes. No higher level APIs are provided to set
          * the depth of 2D graphics such as shapes, lines, and Images.
          *
-         * @return {CompareMode} comparemode, Depth comparison mode used for depth testing.
-         * @return {boolean} write, Whether to write update / write values to the depth buffer when rendering.
+         * @return comparemode, Depth comparison mode used for depth testing.
+         * @return write, Whether to write update / write values to the depth buffer when rendering.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getDepthMode(): [CompareMode, boolean];
 
         /**
          * Gets the width and height of the window.
          *
-         * @return {number} width, The width of the window.
-         * @return {number} height, The height of the window.
+         * @return width, The width of the window.
+         * @return height, The height of the window.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getDimensions(): [number, number];
 
         /**
@@ -573,14 +559,14 @@ declare namespace love {
          * love.graphics shapes, lines, and sprites are not guaranteed to have a specific
          * winding order to their internal vertices.
          *
-         * @return {VertexWinding} winding, The winding mode to use. The default winding is counterclockwise ("ccw").
+         * @return winding, The winding mode to use. The default winding is counterclockwise ("ccw").
          */
         export function getFrontFaceWinding(): VertexWinding;
 
         /**
          * Gets the height of the window.
          *
-         * @return {number} height, The height of the window.
+         * @return height, The height of the window.
          */
         export function getHeight(): number;
 
@@ -594,14 +580,14 @@ declare namespace love {
 
         /**
          * Gets the height in pixels of the window.
-         * @return {number} pixelheight, The height of the window in pixels.
+         * @return pixelheight, The height of the window in pixels.
          * @link [love.graphics.getPixelHeight](https://love2d.org/wiki/love.graphics.getPixelHeight)
          */
         export function getPixelHeight(): number;
 
         /**
          * Gets the width in pixels of the window.
-         * @return {number} pixelwidth, The width of the window in pixels.
+         * @return pixelwidth, The width of the window in pixels.
          * @link [love.graphics.getPixelWidth](https://love2d.org/wiki/love.graphics.getPixelWidth)
          */
         export function getPixelWidth(): number;
@@ -609,21 +595,21 @@ declare namespace love {
         /**
          * Gets the line join style.
          *
-         * @return {LineJoin} join, The LineJoin style.
+         * @return join, The LineJoin style.
          */
         export function getLineJoin(): LineJoin;
 
         /**
          * Gets the line style.
          *
-         * @return {LineStyle} style, The current line style.
+         * @return style, The current line style.
          */
         export function getLineStyle(): LineStyle;
 
         /**
          * Gets the current line width.
          *
-         * @return {number} width, The current line width.
+         * @return width, The current line width.
          */
         export function getLineWidth(): number;
 
@@ -635,7 +621,7 @@ declare namespace love {
          * hardware-accelerated 3D rendering via custom vertex attributes on Meshes,
          * custom vertex shaders, and depth testing with a depth buffer.
          *
-         * @return {CullMode} mode, The Mesh face culling mode in use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).
+         * @return mode, The Mesh face culling mode in use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).
          */
         export function getMeshCullMode(): CullMode;
 
@@ -652,16 +638,16 @@ declare namespace love {
          * Gets the current depth of the transform / state stack (the number of pushes
          * without corresponding pops).
          *
-         * @return {number} depth, The current depth of the transform and state love.graphics stack.
+         * @return depth, The current depth of the transform and state love.graphics stack.
          */
         export function getStackDepth(): number;
 
         /**
          * Gets performance-related rendering statistics.
          *
-         * @return {table} stats, A table with the following fields:
+         * @return stats, A table with the following fields:
          */
-        export function getStats(): table;
+        export function getStats(): Stats;
 
         /**
          * Gets whether stencil testing is enabled.
@@ -674,10 +660,10 @@ declare namespace love {
          *
          * Each Canvas has its own stencil buffer.
          *
-         * @return {boolean} enabled, Whether stencil testing is enabled.
-         * @return {boolean} inverted, Whether the stencil test is inverted or not.
+         * @return enabled, Whether stencil testing is enabled.
+         * @return inverted, Whether the stencil test is inverted or not.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getStencilTest(): [boolean, boolean];
 
         /**
@@ -687,57 +673,57 @@ declare namespace love {
          *
          * Some older or low-end systems don't always support all graphics features.
          *
-         * @return {table} features, A table containing GraphicsFeature keys, and boolean values indicating whether each feature is supported.
+         * @return features, A table containing GraphicsFeature keys, and boolean values indicating whether each feature is supported.
          */
         export function getSupported(): table;
 
         /**
          * Gets the system-dependent maximum values for love.graphics features.
          *
-         * @return {table} limits, A table containing GraphicsLimit keys, and number values.
+         * @return limits, A table containing GraphicsLimit keys, and number values.
          */
         export function getSystemLimits(): table;
 
         /**
          * Gets the point size.
          *
-         * @return {number} size, The current point size.
+         * @return size, The current point size.
          */
         export function getPointSize(): number;
 
         /**
          * Gets information about the system's video card and drivers.
          *
-         * @return {string} name, The name of the renderer, e.g. "OpenGL" or "OpenGL ES".
-         * @return {string} version, The version of the renderer with some extra driver-dependent version info, e.g. "2.1 INTEL-8.10.44".
-         * @return {string} vendor, The name of the graphics card vendor, e.g. "Intel Inc".
-         * @return {string} device, The name of the graphics card, e.g. "Intel HD Graphics 3000 OpenGL Engine".
+         * @return name, The name of the renderer, e.g. "OpenGL" or "OpenGL ES".
+         * @return version, The version of the renderer with some extra driver-dependent version info, e.g. "2.1 INTEL-8.10.44".
+         * @return vendor, The name of the graphics card vendor, e.g. "Intel Inc".
+         * @return device, The name of the graphics card, e.g. "Intel HD Graphics 3000 OpenGL Engine".
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getRendererInfo(): [string, string, string, string];
 
         /**
          * Gets the current scissor box.
          *
-         * @return {number} x, The x component of the top-left point of the box.
-         * @return {number} y, The y component of the top-left point of the box.
-         * @return {number} width, The width of the box.
-         * @return {number} height, The height of the box.
+         * @return x, The x component of the top-left point of the box.
+         * @return y, The y component of the top-left point of the box.
+         * @return width, The width of the box.
+         * @return height, The height of the box.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function getScissor(): [number, number, number, number];
 
         /**
          * Gets the available texture types, and whether each is supported.
          *
-         * @return {table} texturetypes, A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.
+         * @return texturetypes, A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.
          */
         export function getTextureTypes(): table;
 
         /**
          * Gets the width of the window.
          *
-         * @return {number} width, The width of the window.
+         * @return width, The width of the window.
          */
         export function getWidth(): number;
 
@@ -763,7 +749,7 @@ declare namespace love {
 
         /**
          * Gets whether the graphics module is able to be used.
-         * @return {return_type} active, Whether the graphics module is active and able to be used.
+         * @return active, Whether the graphics module is active and able to be used.
          * @link [love.graphics.isActive](https://love2d.org/wiki/love.graphics.isActive)
          */
         export function isActive(): boolean;
@@ -794,10 +780,10 @@ declare namespace love {
          *
          * @param screenX The x component of the screen-space position.
          * @param screenY The y component of the screen-space position.
-         * @return {number} globalX, The x component of the position in global coordinates.
-         * @return {number} globalY, The y component of the position in global coordinates.
+         * @return globalX, The x component of the position in global coordinates.
+         * @return globalY, The y component of the position in global coordinates.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function inverseTransformPoint(screenX: number, screenY: number): [number, number];
 
         /**
@@ -810,34 +796,28 @@ declare namespace love {
          * desktop systems which have graphics cards that are capable of using OpenGL 3 /
          * DirectX 10, and iOS devices that can use OpenGL ES 3.
          *
-         * @return {boolean} gammacorrect, True if gamma-correct rendering is supported and was enabled in love.conf, false otherwise.
+         * @return gammacorrect, True if gamma-correct rendering is supported and was enabled in love.conf, false otherwise.
          */
         export function isGammaCorrect(): boolean;
 
         /**
          * Gets whether wireframe mode is used when drawing.
          *
-         * @return {boolean} wireframe, True if wireframe lines are used when drawing, false if it's not.
+         * @return wireframe, True if wireframe lines are used when drawing, false if it's not.
          */
         export function isWireframe(): boolean;
 
         /**
          * Draws lines between points.
-         *
-         * @param x1 The position of first point on the x-axis.
-         * @param y1 The position of first point on the y-axis.
-         * @param x2 The position of second point on the x-axis.
-         * @param y2 The position of second point on the y-axis.
-         * @param ... You can continue passing point positions to draw a polyline.
+```ts
+love.graphics.line(4, 4, 8, 8, 12, 8);      // x1y1x2y2...
+love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
+```
+         * @param points x position followed by y position continued.
+         * @link [love.graphics.line](https://love2d.org/wiki/love.graphics.line)
          */
-        export function line(x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): void;
-
-        /**
-         * Draws lines between points.
-         *
-         * @param points A table of point positions.
-         */
-        export function line(points: table): void;
+        export function line(...points: [number, number, number, number, ...Array<number>]): void;
+        export function line(points: [number, number, number, number, ...Array<number>]): void;
 
         /**
          * Interface for passing settings table to love.graphics.newCanvas
@@ -867,7 +847,7 @@ declare namespace love {
          * @param width The width of the Canvas.
          * @param height The height of the Canvas.
          * @param settings A table of optional settings.
-         * @return {Canvas} canvas, A new Canvas object.
+         * @return canvas, A new Canvas object.
          */
         export function newCanvas(width?: number, height?: number, settings?: CanvasSettings): Canvas;
 
@@ -875,7 +855,7 @@ declare namespace love {
          * Creates a new cubemap Image.
          * @param filename The filepath to a cubemap image file (or a File, FileData, or ImageData).
          * @param settings Optional table of settings to configure the cubemap image.
-         * @return {Image} image, An cubemap Image object.
+         * @return image, An cubemap Image object.
          * @link [love.graphics.newCubeImage](https://love2d.org/wiki/love.graphics.newCubeImage)
          */
         export function newCubeImage(filename: ImageInformation, settings?: ImageSettings): Image;
@@ -884,7 +864,7 @@ declare namespace love {
          * Creates a cubemap Image given a different image file for each cube face.
          * @param faces A table containing 6 filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array. Each face image must have the same dimensions. A table of tables can also be given, where each sub-table contains all mipmap levels for the cube face index of that sub-table.
          * @param settings Optional table of settings to configure the cubemap image.
-         * @return {Image} image, An cubemap Image object.
+         * @return image, An cubemap Image object.
          * @link [love.graphics.newCubeImage](https://love2d.org/wiki/love.graphics.newCubeImage)
          */
         export function newCubeImage(faces: [ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation], settings?: ImageSettings): Image;
@@ -898,7 +878,7 @@ declare namespace love {
          * All variants which accept a filename can also accept a Data object instead.
          *
          * @param filename The filepath to the BMFont or TrueType font file.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newFont(filename: string): Font;
 
@@ -912,7 +892,7 @@ declare namespace love {
          *
          * @param filename The filepath to the TrueType font file.
          * @param size The size of the font in pixels.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newFont(filename: string, size: number): Font;
 
@@ -926,7 +906,7 @@ declare namespace love {
          *
          * @param filename The filepath to the BMFont file.
          * @param imagefilename The filepath to the BMFont's image file. If this argument is omitted, the path specified inside the BMFont file will be used.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newFont(filename: string, imagefilename: string): Font;
 
@@ -939,7 +919,7 @@ declare namespace love {
          * All variants which accept a filename can also accept a Data object instead.
          *
          * @param size The size of the font in pixels.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newFont(size: number): Font;
 
@@ -953,7 +933,7 @@ declare namespace love {
          * @param vertices The table filled with vertex information tables for each vertex as follows:
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
-         * @return {Mesh} mesh, The new Mesh.
+         * @return mesh, The new Mesh.
          */
         export function newMesh(vertices: table, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
@@ -967,7 +947,7 @@ declare namespace love {
          * @param vertexcount The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 255,255,255,255}.
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
-         * @return {Mesh} mesh, The new Mesh.
+         * @return mesh, The new Mesh.
          */
         export function newMesh(vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
@@ -979,10 +959,10 @@ declare namespace love {
          * it's drawn.
          *
          * @param vertexformat A table in the form of {attribute, ...}. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
-         * @param vertices The table filled with vertex information tables for each vertex, in the form of {vertex, ...} where each vertex is a table in the form of {attributecomponent, ...}.
+         * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of {attributecomponent, ...}.
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
-         * @return {Mesh} mesh, The new Mesh.
+         * @return mesh, The new Mesh.
          */
         export function newMesh(vertexformat: table, vertices: table, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
@@ -997,7 +977,7 @@ declare namespace love {
          * @param vertexcount The total number of vertices the Mesh will use.
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
-         * @return {Mesh} mesh, The new Mesh.
+         * @return mesh, The new Mesh.
          */
         export function newMesh(vertexformat: table, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
@@ -1007,7 +987,7 @@ declare namespace love {
          * image.
          *
          * @param filename The filepath to the image file.
-         * @return {Image} image, An Image object which can be drawn on screen.
+         * @return image, An Image object which can be drawn on screen.
          */
         export function newImage(filename: string): Image;
 
@@ -1017,7 +997,7 @@ declare namespace love {
          * image.
          *
          * @param imageData An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.
-         * @return {Image} image, An Image object which can be drawn on screen.
+         * @return image, An Image object which can be drawn on screen.
          */
         export function newImage(imageData: ImageData): Image;
 
@@ -1027,7 +1007,7 @@ declare namespace love {
          * image.
          *
          * @param compressedImageData A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.
-         * @return {Image} image, An Image object which can be drawn on screen.
+         * @return image, An Image object which can be drawn on screen.
          */
         export function newImage(compressedImageData: CompressedImageData): Image;
 
@@ -1038,7 +1018,7 @@ declare namespace love {
          *
          * @param filename The filepath to the image file (or a FileData or ImageData or CompressedImageData object).
          * @param flags A table containing the following fields:
-         * @return {Image} image, An Image object which can be drawn on screen.
+         * @return image, An Image object which can be drawn on screen.
          */
         export function newImage(filename: string, flags: table): Image;
 
@@ -1051,7 +1031,7 @@ declare namespace love {
          *
          * @param filename The filepath to the image file.
          * @param glyphs A string of the characters in the image in order from left to right.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newImageFont(filename: string, glyphs: string): Font;
 
@@ -1064,7 +1044,7 @@ declare namespace love {
          *
          * @param imageData The ImageData object to create the font from.
          * @param glyphs A string of the characters in the image in order from left to right.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newImageFont(imageData: ImageData, glyphs: string): Font;
 
@@ -1078,7 +1058,7 @@ declare namespace love {
          * @param filename The filepath to the image file.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @param extraspacing Additional spacing (positive or negative) to apply to each glyph in the Font.
-         * @return {Font} font, A Font object which can be used to draw text on screen.
+         * @return font, A Font object which can be used to draw text on screen.
          */
         export function newImageFont(filename: string, glyphs: string, extraspacing?: number): Font;
 
@@ -1087,7 +1067,7 @@ declare namespace love {
          *
          * @param texture The Image or Canvas to use.
          * @param buffer The max number of particles at the same time.
-         * @return {ParticleSystem} system, A new ParticleSystem.
+         * @return system, A new ParticleSystem.
          */
         export function newParticleSystem(texture: Texture, buffer?: number): ParticleSystem;
 
@@ -1106,7 +1086,7 @@ declare namespace love {
          * each pixel a drawn object touches.
          *
          * @param code The pixel shader or vertex shader code, or a filename pointing to a file with the code.
-         * @return {Shader} shader, A Shader object for use in drawing operations.
+         * @return shader, A Shader object for use in drawing operations.
          */
         export function newShader(code: string): Shader;
 
@@ -1126,7 +1106,7 @@ declare namespace love {
          *
          * @param pixelcode The pixel shader code, or a filename pointing to a file with the code.
          * @param vertexcode The vertex shader code, or a filename pointing to a file with the code.
-         * @return {Shader} shader, A Shader object for use in drawing operations.
+         * @return shader, A Shader object for use in drawing operations.
          */
         export function newShader(pixelcode: string, vertexcode: string): Shader;
 
@@ -1156,7 +1136,7 @@ declare namespace love {
          * @param height The height of the Quad.
          * @param sw The reference width, the width of the Image.
          * @param sh The reference height, the height of the Image.
-         * @return {Quad} quad, The new Quad.
+         * @return quad, The new Quad.
          */
         export function newQuad(x: number, y: number, width: number, height: number, sw: number, sh: number): Quad;
 
@@ -1166,7 +1146,7 @@ declare namespace love {
          * @param texture The Image or Canvas to use for the sprites.
          * @param maxsprites The max number of sprites.
          * @param usage The expected usage of the SpriteBatch. The specified usage mode affects the SpriteBatch's memory usage and performance.
-         * @return {SpriteBatch} spriteBatch, The new SpriteBatch.
+         * @return spriteBatch, The new SpriteBatch.
          */
         export function newSpriteBatch(texture: Texture, maxsprites?: number, usage?: SpriteBatchUsage): SpriteBatch;
 
@@ -1176,7 +1156,7 @@ declare namespace love {
          *
          * @param filename The file path to the Ogg Theora video file.
          * @param loadaudio Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.
-         * @return {Video} video, A new Video.
+         * @return video, A new Video.
          */
         export function newVideo(filename: string, loadaudio?: boolean): Video;
 
@@ -1186,7 +1166,7 @@ declare namespace love {
          *
          * @param videostream A video stream object.
          * @param loadaudio Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.
-         * @return {Video} video, A new Video.
+         * @return video, A new Video.
          */
         export function newVideo(videostream: VideoStream, loadaudio?: boolean): Video;
 
@@ -1194,7 +1174,7 @@ declare namespace love {
          * Creates a new volume (3D) Image.
          * @param layers A table containing filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array. A table of tables can also be given, where each sub-table represents a single mipmap level and contains all layers for that mipmap.
          * @param settings Optional table of settings to configure the volume image.
-         * @return {Image} image, A volume Image object.
+         * @return image, A volume Image object.
          * @link [love.graphics.newVolumeImage](https://love2d.org/wiki/love.graphics.newVolumeImage)
          */
         export function newVolumeImage(layers: Array<ImageInformation>, settings?: ImageSettings): Image;
@@ -1213,26 +1193,19 @@ declare namespace love {
 
         /**
          * Draws one or more points.
+```ts
+love.graphics.points(4, 4, 8, 8, 12, 12);           // xyxyxy...
+love.graphics.points([4, 4, 8, 8, 12, 12]);         // [xyxyxy...]
+love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]); // [[xy],[xyrgba],...]
+```
+         * @param points The x and y positions of the points to draw.
          *
-         * @param x The position of the first point on the x-axis.
-         * @param y The position of the first point on the y-axis.
-         * @param ... The x and y coordinates of additional points.
+         * RGBA values are optional.
+         * @link [love.graphics.points](https://love2d.org/wiki/love.graphics.points)
          */
-        export function points(x: number, y: number, ...vararg: Array<number>): void;
-
-        /**
-         * Draws one or more points.
-         *
-         * @param points A table containing multiple point positions, in the form of {x, y, ...}.
-         */
-        export function points(points: table): void;
-
-        /**
-         * Draws one or more points.
-         *
-         * @param points A table containing multiple individually colored points, in the form of {point, ...}. Each table contains the position and color of a point in the form of {x, y, r, g, b, a}. The color components are optional.
-         */
-        export function points(points: table): void;
+        export function points(...points: Array<number>): void;
+        export function points(points: Array<number>): void;
+        export function points(points: Array<[number, number] | [number, number, number, number, number, number]>): void;
 
         /**
          * Draw a polygon.
@@ -1241,16 +1214,15 @@ declare namespace love {
          *
          * When in fill mode, the polygon must be convex and simple or rendering artifacts may occur.
 ```ts
-let vertexes = [0, 0, 16, 16, 0, 16];
-love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);
-love.graphics.polygon("line", vertexes);
-love.graphics.polygon("fill", ...vertexes);
+love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);     // "fill", xyxyxy...
+love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
 ```
          * @param mode How to draw the polygon.
-         * @param vertexes The vertices of the polygon. [x1, y1, x2, y2, ...]
+         * @param xys x and y positions for the vertices of the polygon.
+         * @link [love.graphics.polygon](https://love2d.org/wiki/love.graphics.polygon)
          */
         export function polygon(mode: DrawMode, ...xys: Array<number>): void;
-        export function polygon(mode: DrawMode, vertices: table): void;
+        export function polygon(mode: DrawMode, xys: Array<number>): void;
 
         /**
          * Pops the current coordinate transformation from the transformation stack.
@@ -1274,21 +1246,15 @@ love.graphics.polygon("fill", ...vertexes);
          */
         export function present(): void;
 
+        export type ColouredText = Array<string | [number, number, number, number]>;
+
         /**
-         * Draws text on screen. If no Font is set, one will be created and set (once) if
-         * needed.
-         *
-         *
-         * As of LOVE 0.7.1, when using translation and scaling functions while drawing
-         * text, this function assumes the scale occurs first. If you don't script with
-         * this in mind, the text won't be in the right position, or possibly even on
-         * screen.
-         *
-         *
-         * love.graphics.print and love.graphics.printf both support UTF-8 encoding.
-         * You'll also need a proper Font for special characters.
-         *
-         * @param text The text to draw.
+         * Draws text on the screen.
+```ts
+love.graphics.print("Hello");
+love.graphics.print([[1, 0, 0, 1], "Hello in red"]);
+```
+         * @param text The text to draw. Or an array [color(rgba), string, ...].
          * @param x The position to draw the object (x-axis).
          * @param y The position to draw the object (y-axis).
          * @param r Orientation (radians).
@@ -1298,93 +1264,23 @@ love.graphics.polygon("fill", ...vertexes);
          * @param oy Origin offset (y-axis).
          * @param kx Shear factor (x-axis).
          * @param ky Shear factor (y-axis).
+         * @link [love.graphics.print](https://love2d.org/wiki/love.graphics.print)
          */
-        export function print(text: string, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-
-        /**
-         * Draws text on screen. If no Font is set, one will be created and set (once) if
-         * needed.
-         *
-         *
-         * As of LOVE 0.7.1, when using translation and scaling functions while drawing
-         * text, this function assumes the scale occurs first. If you don't script with
-         * this in mind, the text won't be in the right position, or possibly even on
-         * screen.
-         *
-         *
-         * love.graphics.print and love.graphics.printf both support UTF-8 encoding.
-         * You'll also need a proper Font for special characters.
-         *
-         * @param coloredtext A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.
-         * @param x The position of the new text on the x-axis.
-         * @param y The position of the new text on the y-axis.
-         * @param angle The orientation of the object in radians.
-         * @param sx Scale factor on the x-axis.
-         * @param sy Scale factor on the y-axis.
-         * @param ox Origin offset on the x-axis.
-         * @param oy Origin offset on the y-axis.
-         * @param kx Shearing / skew factor on the x-axis.
-         * @param ky Shearing / skew factor on the y-axis.
-         */
-        export function print(coloredtext: table, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function print(text: string | ColouredText, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function print(text: string | ColouredText, transform: Transform): void;
 
         /**
          * Draws formatted text, with word wrap and alignment.
-         *
-         *
-         * See additional notes in love.graphics.print.
-         *
-         *
-         * In version 0.9.2 and earlier, wrapping was implemented by breaking up words by
-         * spaces and putting them back together to make sure things fit nicely within the
-         * limit provided. However, due to the way this is done, extra spaces between
-         * words would end up missing when printed on the screen, and some lines could
-         * overflow past the provided wrap limit. In version 0.10.0 and newer this is no
-         * longer the case.
-         *
-         * @param text A text string.
-         * @param x The position on the x-axis.
-         * @param y The position on the y-axis.
-         * @param limit Wrap the line after this many horizontal pixels.
-         * @param align The alignment.
-         * @param r Orientation (radians).
-         * @param sx Scale factor (x-axis).
-         * @param sy Scale factor (y-axis).
-         * @param ox Origin offset (x-axis).
-         * @param oy Origin offset (y-axis).
-         * @param kx Shear factor (x-axis).
-         * @param ky Shear factor (y-axis).
+```ts
+love.graphics.printf("Hello", 8, 8, 400);
+love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
+```
+         * @link [love.graphics.printf](https://love2d.org/wiki/love.graphics.printf)
          */
-        export function printf(text: string, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-
-        /**
-         * Draws formatted text, with word wrap and alignment.
-         *
-         *
-         * See additional notes in love.graphics.print.
-         *
-         *
-         * In version 0.9.2 and earlier, wrapping was implemented by breaking up words by
-         * spaces and putting them back together to make sure things fit nicely within the
-         * limit provided. However, due to the way this is done, extra spaces between
-         * words would end up missing when printed on the screen, and some lines could
-         * overflow past the provided wrap limit. In version 0.10.0 and newer this is no
-         * longer the case.
-         *
-         * @param coloredtext A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.
-         * @param x The position of the new text on the x-axis.
-         * @param y The position of the new text on the y-axis.
-         * @param wraplimit The maximum width in pixels of the text before it gets automatically wrapped to a new line.
-         * @param align The alignment of the text.
-         * @param angle The orientation of the object in radians.
-         * @param sx Scale factor on the x-axis.
-         * @param sy Scale factor on the y-axis.
-         * @param ox Origin offset on the x-axis.
-         * @param oy Origin offset on the y-axis.
-         * @param kx Shearing / skew factor on the x-axis.
-         * @param ky Shearing / skew factor on the y-axis.
-         */
-        export function printf(coloredtext: table, x: number, y: number, wraplimit: number, align: AlignMode, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, font: Font, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, transform: Transform, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(text: string | ColouredText, font: Font, transform: Transform, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
 
         /**
          * Copies and pushes the current coordinate transformation to the transformation
@@ -1490,10 +1386,10 @@ love.graphics.polygon("fill", ...vertexes);
         /**
          * Sets the background color.
          *
-         * @param r The red component (0-255).
-         * @param g The green component (0-255).
-         * @param b The blue component (0-255).
-         * @param a The alpha component (0-255).
+         * @param r The red component.
+         * @param g The green component.
+         * @param b The blue component.
+         * @param a The alpha component.
          */
         export function setBackgroundColor(r: number, g: number, b: number, a?: number): void;
 
@@ -1520,26 +1416,13 @@ love.graphics.polygon("fill", ...vertexes);
         export function setBlendMode(mode: BlendMode, alphamode?: BlendAlphaMode): void;
 
         /**
-         * Captures drawing operations to a Canvas.
-         *
-         * @param canvas A render target.
-         */
-        export function setCanvas(canvas: Canvas): void;
-
-        /**
-         * Captures drawing operations to a Canvas.
-         *
+         * Captures drawing operations to a [Canvas](https://love2d.org/wiki/Canvas).
+         * @link [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
          */
         export function setCanvas(): void;
-
-        /**
-         * Captures drawing operations to a Canvas.
-         *
-         * @param canvas1 The first render target.
-         * @param canvas2 The second render target.
-         * @param ... More canvases.
-         */
-        export function setCanvas(canvas1: Canvas, canvas2: Canvas, ...vararg: Array<Canvas>): void;
+        export function setCanvas(canvas: Canvas, mipmap?: number): void;
+        export function setCanvas(...canvases: Array<Canvas>): void;
+        export function setCanvas(canvas: Canvas, slice?: number, mipmap?: number): void;
 
         /**
          * Sets the color used for drawing.
@@ -1672,7 +1555,7 @@ love.graphics.polygon("fill", ...vertexes);
          *
          * @param filename The path and name of the file with the font.
          * @param size The size of the font.
-         * @return {Font} font, The new font.
+         * @return font, The new font.
          */
         export function setNewFont(filename: string, size?: number): Font;
 
@@ -1681,7 +1564,7 @@ love.graphics.polygon("fill", ...vertexes);
          *
          * @param file A File with the font.
          * @param size The size of the font.
-         * @return {Font} font, The new font.
+         * @return font, The new font.
          */
         export function setNewFont(file: File, size?: number): Font;
 
@@ -1690,7 +1573,7 @@ love.graphics.polygon("fill", ...vertexes);
          *
          * @param data A Data with the font.
          * @param size The size of the font.
-         * @return {Font} font, The new font.
+         * @return font, The new font.
          */
         export function setNewFont(data: Data, size?: number): Font;
 
@@ -1834,10 +1717,10 @@ love.graphics.polygon("fill", ...vertexes);
          *
          * @param globalX The x component of the position in global coordinates.
          * @param globalY The y component of the position in global coordinates.
-         * @return {number} screenX, The x component of the position with graphics transformations applied.
-         * @return {number} sreenY, The y component of the position with graphics transformations applied.
+         * @return screenX, The x component of the position with graphics transformations applied.
+         * @return sreenY, The y component of the position with graphics transformations applied.
+         * @tupleReturn
          */
-        /** @tupleReturn */
         export function transformPoint(globalX: number, globalY: number): [number, number];
 
         /**
@@ -1868,7 +1751,7 @@ love.graphics.polygon("fill", ...vertexes);
 
         /**
          * Gets the DPI scale factor of the window.
-         * @return {number} scale, The pixel scale factor associated with the window.
+         * @return scale, The pixel scale factor associated with the window.
          * @link [love.graphics.getDPIScale](https://love2d.org/wiki/love.graphics.getDPIScale)
          */
         export function getDPIScale(): number;

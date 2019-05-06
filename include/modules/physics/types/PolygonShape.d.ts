@@ -15,20 +15,20 @@ declare interface PolygonShape extends Shape {
      * each vertex in the polygon. In other words, it can return the coordinates of up
      * to 8 points.
      *
-     * @return {number} x1, The x component of the first vertex.
-     * @return {number} y1, The y component of the first vertex.
-     * @return {number} x2, The x component of the second vertex.
-     * @return {number} y2, The y component of the second vertex.
-     * @return {number} ..., Additional x and y values.
+     * @return x1, The x component of the first vertex.
+     * @return y1, The y component of the first vertex.
+     * @return x2, The x component of the second vertex.
+     * @return y2, The y component of the second vertex.
+     * @return ..., Additional x and y values.
+     * @tupleReturn
      */
-    /** @tupleReturn */
-    getPoints(): [number, number, number, number, number];
+    getPoints(): Array<number>;
 
     /**
      * Validates whether the PolygonShape is convex.
      *
      * Concave PolygonShapes cannot be used in love.physics.
-     * @return {boolean} convex, Whether the PolygonShape is convex.
+     * @return convex, Whether the PolygonShape is convex.
      * @link [PolygonShape:validate](https://love2d.org/wiki/PolygonShape:validate)
      */
     validate(): boolean;

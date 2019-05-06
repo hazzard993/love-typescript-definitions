@@ -6,18 +6,18 @@ declare interface Canvas extends Texture {
     /**
      * Gets the width and height of the Canvas.
      *
-     * @return {number} width, The width of the Canvas, in pixels.
-     * @return {number} height, The height of the Canvas, in pixels.
+     * @return width, The width of the Canvas, in pixels.
+     * @return height, The height of the Canvas, in pixels.
+     * @tupleReturn
      * @link [Canvas:getDimensions](https://love2d.org/wiki/Canvas:getDimensions)
      */
-    /** @tupleReturn */
     getDimensions(): [number, number];
 
     /**
      * Gets the filter mode of the Canvas.
      *
-     * @return {FilterMode} min, Filter mode used when minifying the canvas.
-     * @return {FilterMode} mag, Filter mode used when magnifying the canvas.
+     * @return min, Filter mode used when minifying the canvas.
+     * @return mag, Filter mode used when magnifying the canvas.
      * @tupleReturn
      * @link [Canvas:getFilter](https://love2d.org/wiki/Canvas:getFilter)
      */
@@ -26,7 +26,7 @@ declare interface Canvas extends Texture {
     /**
      * Gets the texture format of the Canvas.
      *
-     * @return {CanvasFormat} format, The format of the Canvas.
+     * @return format, The format of the Canvas.
      * @link [Canvas:getFormat](https://love2d.org/wiki/Canvas:getFormat)
      */
     getFormat(): CanvasFormat;
@@ -34,7 +34,7 @@ declare interface Canvas extends Texture {
     /**
      * Gets the height of the Canvas.
      *
-     * @return {number} height, The height of the Canvas, in pixels.
+     * @return height, The height of the Canvas, in pixels.
      * @link [Canvas:getHeight](https://love2d.org/wiki/Canvas:getHeight)
      */
     getHeight(): number;
@@ -48,7 +48,7 @@ declare interface Canvas extends Texture {
      * love.graphics.newCanvas if the system running LÖVE doesn't support that
      * number.
      *
-     * @return {number} samples, The number of multisample antialiasing samples used by the canvas when drawing to it.
+     * @return samples, The number of multisample antialiasing samples used by the canvas when drawing to it.
      * @link [Canvas:getMSAA](https://love2d.org/wiki/Canvas:getMSAA)
      */
     getMSAA(): number;
@@ -56,7 +56,7 @@ declare interface Canvas extends Texture {
     /**
      * Gets the width of the Canvas.
      *
-     * @return {number} width, The width of the Canvas, in pixels.
+     * @return width, The width of the Canvas, in pixels.
      * @link [Canvas:getWidth](https://love2d.org/wiki/Canvas:getWidth)
      */
     getWidth(): number;
@@ -68,17 +68,17 @@ declare interface Canvas extends Texture {
      * This function returns the currently set horizontal and vertical wrapping modes
      * for the Canvas.
      *
-     * @return {WrapMode} horizontal, Horizontal wrapping mode of the Canvas.
-     * @return {WrapMode} vertical, Vertical wrapping mode of the Canvas.
+     * @return horizontal, Horizontal wrapping mode of the Canvas.
+     * @return vertical, Vertical wrapping mode of the Canvas.
+     * @tupleReturn
      * @link [Canvas:getWrap](https://love2d.org/wiki/Canvas:getWrap)
      */
-    /** @tupleReturn */
     getWrap(): [WrapMode, WrapMode];
 
     /**
      * Generates ImageData from the contents of the Canvas.
      *
-     * @return {ImageData} data, The image data stored in the Canvas.
+     * @return data, The image data stored in the Canvas.
      * @link [Canvas:newImageData](https://love2d.org/wiki/Canvas:newImageData)
      */
     newImageData(): ImageData;
@@ -90,7 +90,7 @@ declare interface Canvas extends Texture {
      * @param y The y-axis of the top-left corner of the area within the Canvas to capture.
      * @param width The width of the area within the Canvas to capture.
      * @param height The height of the area within the Canvas to capture.
-     * @return {ImageData} data, The new ImageData made from the Canvas' contents.
+     * @return data, The new ImageData made from the Canvas' contents.
      * @link [Canvas:newImageData](https://love2d.org/wiki/Canvas:newImageData)
      */
     newImageData(x: number, y: number, width: number, height: number): ImageData;

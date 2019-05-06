@@ -7,11 +7,11 @@ declare interface Shader extends Object {
      * Gets information about an 'extern' ('uniform') variable in the shader.
      *
      * @param name The name of the extern variable.
-     * @return {ShaderVariableType} type, The base type of the variable.
-     * @return {number} components, The number of components in the variable (e.g. 2 for a vec2 or mat2.)
-     * @return {number} arrayelements, The number of elements in the array if the variable is an array, or 1 if not.
+     * @return type, The base type of the variable.
+     * @return components, The number of components in the variable (e.g. 2 for a vec2 or mat2.)
+     * @return arrayelements, The number of elements in the array if the variable is an array, or 1 if not.
+     * @tupleReturn
      */
-    /** @tupleReturn */
     getExternVariable(name: string): [ShaderVariableType, number, number];
 
     /**
@@ -19,7 +19,7 @@ declare interface Shader extends Object {
      * be used for debugging your shaders if there's anything the graphics hardware
      * doesn't like.
      *
-     * @return {string} warnings, Warning messages (if any).
+     * @return warnings, Warning messages (if any).
      */
     getWarnings(): string;
 
@@ -32,7 +32,7 @@ declare interface Shader extends Object {
      * variable out. This function will return false in that case.
      *
      * @param name The name of the uniform variable.
-     * @return {boolean} hasuniform, Whether the uniform exists in the shader and affects its final output.
+     * @return hasuniform, Whether the uniform exists in the shader and affects its final output.
      */
     hasUniform(name: string): boolean;
 

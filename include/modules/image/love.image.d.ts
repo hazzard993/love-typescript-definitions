@@ -10,7 +10,7 @@ declare namespace love {
          * Determines whether a file can be loaded as CompressedImageData.
          *
          * @param filename The filename of the potentially compressed image file.
-         * @return {boolean} compressed, Whether the file can be loaded as CompressedImageData or not.
+         * @return compressed, Whether the file can be loaded as CompressedImageData or not.
          */
         export function isCompressed(filename: string): boolean;
 
@@ -18,7 +18,7 @@ declare namespace love {
          * Determines whether a file can be loaded as CompressedImageData.
          *
          * @param fileData A FileData potentially containing a compressed image.
-         * @return {boolean} compressed, Whether the FileData can be loaded as CompressedImageData or not.
+         * @return compressed, Whether the FileData can be loaded as CompressedImageData or not.
          */
         export function isCompressed(fileData: FileData): boolean;
 
@@ -28,7 +28,7 @@ declare namespace love {
          * CompressedImageFormat page.
          *
          * @param filename The filename of the compressed image file.
-         * @return {CompressedImageData} compressedImageData, The new CompressedImageData object.
+         * @return compressedImageData, The new CompressedImageData object.
          */
         export function newCompressedData(filename: string): CompressedImageData;
 
@@ -38,7 +38,7 @@ declare namespace love {
          * CompressedImageFormat page.
          *
          * @param fileData A FileData containing a compressed image.
-         * @return {CompressedImageData} compressedImageData, The new CompressedImageData object.
+         * @return compressedImageData, The new CompressedImageData object.
          */
         export function newCompressedData(fileData: FileData): CompressedImageData;
 
@@ -47,7 +47,7 @@ declare namespace love {
          *
          * @param width The width of the ImageData.
          * @param height The height of the ImageData.
-         * @return {ImageData} imageData, The new blank ImageData object. Each pixel's color values, (including the alpha values!) will be set to zero.
+         * @return imageData, The new blank ImageData object. Each pixel's color values, (including the alpha values!) will be set to zero.
          */
         export function newImageData(width: number, height: number): ImageData;
 
@@ -57,7 +57,7 @@ declare namespace love {
          * @param width The width of the ImageData.
          * @param height The height of the ImageData.
          * @param data The data to load into the ImageData (RGBA bytes, left to right and top to bottom).
-         * @return {ImageData} imageData, The new ImageData object.
+         * @return imageData, The new ImageData object.
          */
         export function newImageData(width: number, height: number, data: string): ImageData;
 
@@ -65,7 +65,7 @@ declare namespace love {
          * Create a new ImageData object.
          *
          * @param filename The filename of the image file.
-         * @return {ImageData} imageData, The new ImageData object.
+         * @return imageData, The new ImageData object.
          */
         export function newImageData(filename: string): ImageData;
 
@@ -73,7 +73,7 @@ declare namespace love {
          * Create a new ImageData object.
          *
          * @param filedata The encoded file data to decode into image data.
-         * @return {ImageData} imageData, The new ImageData object.
+         * @return imageData, The new ImageData object.
          */
         export function newImageData(filedata: FileData): ImageData;
 
