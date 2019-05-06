@@ -33,6 +33,9 @@ Link these definitions up using this `tsconfig.json`.
             "lua-types/jit",
             "love-typescript-definitions"
         ]
+    },
+    "tstl": {
+        "luaTarget": "JIT"
     }
 }
 ```
