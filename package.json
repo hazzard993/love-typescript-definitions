@@ -20,6 +20,9 @@
     "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
   },
   "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
+  "files": [
+    "**/**.d.ts"
+  ],
   "devDependencies": {
     "tslint": "^5.16.0",
     "typescript-to-lua": "^0.19.0"
