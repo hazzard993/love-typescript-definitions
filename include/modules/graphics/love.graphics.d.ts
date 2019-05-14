@@ -94,19 +94,6 @@ declare namespace love {
         export function captureScreenshot(callback: Function): void;
 
         /**
-         * Creates a new array Image.
-         * @param slices A table containing filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array.
-         *
-         * Each sub-image must have the same dimensions.
-         *
-         * A table of tables can also be given, where each sub-table contains all mipmap levels for the slice index of that sub-table.
-         * @param settings Optional table of settings to configure the array image.
-         * @return image, An Array Image object.
-         * @link [love.graphics.newArrayImage](https://love2d.org/wiki/love.graphics.newArrayImage)
-         */
-        export function newArrayImage(slices: Array<ImageInformation>, settings?: ArrayImageSettings): Image;
-
-        /**
          * Creates a screenshot once the current frame is done (after love.draw has
          * finished).
          *
@@ -118,6 +105,19 @@ declare namespace love {
          * @param channel The Channel to push the generated ImageData to.
          */
         export function captureScreenshot(channel: Channel): void;
+
+        /**
+         * Creates a new array Image.
+         * @param slices A table containing filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array.
+         *
+         * Each sub-image must have the same dimensions.
+         *
+         * A table of tables can also be given, where each sub-table contains all mipmap levels for the slice index of that sub-table.
+         * @param settings Optional table of settings to configure the array image.
+         * @return image, An Array Image object.
+         * @link [love.graphics.newArrayImage](https://love2d.org/wiki/love.graphics.newArrayImage)
+         */
+        export function newArrayImage(slices: Array<ImageInformation>, settings?: ArrayImageSettings): Image;
 
         /**
          * Draws a circle.
@@ -748,13 +748,6 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         export function intersectScissor(x: number, y: number, width: number, height: number): void;
 
         /**
-         * Gets whether the graphics module is able to be used.
-         * @return active, Whether the graphics module is active and able to be used.
-         * @link [love.graphics.isActive](https://love2d.org/wiki/love.graphics.isActive)
-         */
-        export function isActive(): boolean;
-
-        /**
          * Sets the scissor to the rectangle created by the intersection of the specified
          * rectangle with the existing scissor. If no scissor is active yet, it behaves
          * like love.graphics.setScissor.
@@ -769,6 +762,13 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          */
         export function intersectScissor(): void;
+
+        /**
+         * Gets whether the graphics module is able to be used.
+         * @return active, Whether the graphics module is active and able to be used.
+         * @link [love.graphics.isActive](https://love2d.org/wiki/love.graphics.isActive)
+         */
+        export function isActive(): boolean;
 
         /**
          * Converts the given 2D position from screen-space into global coordinates.
