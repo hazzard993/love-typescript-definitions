@@ -9,7 +9,8 @@
         "object-literal-sort-keys": true,
         "ordered-imports": true,
         "semicolon": true,
-        "adjacent-overload-signatures": true
+        "adjacent-overload-signatures": true,
+        "align": [true, "parameters", "arguments", "statements", "members", "elements"]
     },
     "rulesDirectory": []
 }
