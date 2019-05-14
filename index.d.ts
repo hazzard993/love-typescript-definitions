@@ -139,7 +139,7 @@ import "./include/modules/video/types/VideoStream";
 import "./include/modules/window/enums/FullscreenType";
 import "./include/modules/window/enums/MessageBoxType";
 import "./include/modules/window/love.window";
-import "./include/Object";
+import "./include/LoveObject";
 import "./include/os";
 import "./include/other";
 import "./include/utf8";

@@ -2,7 +2,7 @@
  * Represents a physical joystick.
  * @link [Joystick](https://love2d.org/wiki/Joystick)
  */
-declare interface Joystick extends Object {
+declare interface Joystick extends LoveObject {
     /**
      * Gets the direction of each axis.
      *

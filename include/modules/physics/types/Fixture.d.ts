@@ -2,7 +2,7 @@
  * Fixtures attach shapes to bodies.
  * @link [Fixture](https://love2d.org/wiki/Fixture)
  */
-declare interface Fixture extends Object {
+declare interface Fixture extends LoveObject {
     /**
      * Destroys the fixture
      *

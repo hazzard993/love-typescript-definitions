@@ -2,7 +2,7 @@
  * A Shader is used for advanced hardware-accelerated pixel or vertex manipulation.
  * @link [Shader](https://love2d.org/wiki/Shader)
  */
-declare interface Shader extends Object {
+declare interface Shader extends LoveObject {
     /**
      * Gets information about an 'extern' ('uniform') variable in the shader.
      *

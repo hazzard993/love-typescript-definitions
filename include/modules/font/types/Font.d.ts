@@ -2,7 +2,7 @@
  * Defines the shape of characters that can be drawn onto the screen.
  * @link [Font](https://love2d.org/wiki/Font)
  */
-declare interface Font extends Object {
+declare interface Font extends LoveObject {
 
     /**
      * Gets the ascent of the Font. The ascent spans the distance between the baseline

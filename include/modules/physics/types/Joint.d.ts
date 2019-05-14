@@ -2,7 +2,7 @@
  * Attach multiple bodies together to interact in unique ways.
  * @link [Joint](https://love2d.org/wiki/Joint)
  */
-declare interface Joint extends Object {
+declare interface Joint extends LoveObject {
     /**
      * Explicitly destroys the Joint. When you don't have time to wait for garbage
      * collection, this function may be used to free the object immediately, but note

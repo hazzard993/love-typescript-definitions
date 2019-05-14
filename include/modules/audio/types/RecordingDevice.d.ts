@@ -3,7 +3,7 @@
  * @link [RecordingDevice](https://love2d.org/wiki/RecordingDevice)
  * @since 11.0
  */
-declare interface RecordingDevice extends Object {
+declare interface RecordingDevice extends LoveObject {
 
     /**
      * Gets the number of bits per sample in the data currently being recorded.

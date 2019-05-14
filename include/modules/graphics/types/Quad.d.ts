@@ -2,7 +2,7 @@
  * A quadrilateral (a polygon with four sides and four corners) with texture coordinate information.
  * @link [Quad](https://love2d.org/wiki/Quad)
  */
-declare interface Quad extends Object {
+declare interface Quad extends LoveObject {
     /**
      * Gets reference texture dimensions initially specified in love.graphics.newQuad.
      *

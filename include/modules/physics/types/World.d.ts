@@ -2,7 +2,7 @@
  * A world is an object that contains all bodies and joints.
  * @link [World](https://love2d.org/wiki/World)
  */
-declare interface World extends Object {
+declare interface World extends LoveObject {
     /**
      * Destroys the world, taking all bodies, joints, fixtures and their shapes with
      * it.
