@@ -289,7 +289,7 @@ declare interface Mesh extends Drawable {
      * @param vi2 The index of the second vertex to use when drawing.
      * @param vi3 The index of the third vertex to use when drawing.
      */
-    setVertexMap(vi1: number, vi2: number, vi3: number): void;
+    setVertexMap(...vertexIndexes: Array<number>): void;
 
     /**
      * Replaces a range of vertices in the Mesh with new ones. The total number of
