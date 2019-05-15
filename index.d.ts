@@ -46,6 +46,7 @@ import "./include/modules/graphics/enums/CompareMode";
 import "./include/modules/graphics/enums/CullMode";
 import "./include/modules/graphics/enums/DrawMode";
 import "./include/modules/graphics/enums/FilterMode";
+import "./include/modules/graphics/enums/GraphicsFeature";
 import "./include/modules/graphics/enums/LineJoin";
 import "./include/modules/graphics/enums/LineStyle";
 import "./include/modules/graphics/enums/MatrixLayout";
