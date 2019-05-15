@@ -1,0 +1,12 @@
+/**
+ * Types of system-dependent graphics limits checked for using love.graphics.getSystemLimits.
+ * @link [GraphicsLimit](https://love2d.org/wiki/GraphicsLimit)
+ */
+declare type GraphicsLimit = "pointsize"
+    | "texturesize"
+    | "multicanvas"
+    | "canvasmsaa"
+    | "texturelayers"
+    | "volumetexturesize"
+    | "cubetexturesize"
+    | "anisotropy";
