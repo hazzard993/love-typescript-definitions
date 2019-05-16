@@ -51,7 +51,6 @@ drawable.typeOf;
  * 2019/03/03
  */
 declare const image: Image;
-image.getFlags;
 image.isCompressed;
 image.replacePixels;
 image.release;
