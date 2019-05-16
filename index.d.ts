@@ -62,6 +62,7 @@ import "./include/modules/graphics/enums/VertexWinding";
 import "./include/modules/graphics/enums/WrapMode";
 import "./include/modules/graphics/love.graphics";
 import "./include/modules/graphics/structs/ArrayImageSettings";
+import "./include/modules/graphics/structs/DisplayFlags";
 import "./include/modules/graphics/structs/ImageInformation";
 import "./include/modules/graphics/structs/ImageSettings";
 import "./include/modules/graphics/structs/MeshVertexDataType";
