@@ -536,7 +536,6 @@ world.typeOf;
 world.destroy;
 world.getBodies;
 world.getBodyCount;
-world.getBodyList;
 world.getCallbacks;
 world.getContactCount;
 world.getContactFilter;
