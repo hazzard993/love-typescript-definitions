@@ -10,7 +10,8 @@
         "ordered-imports": true,
         "semicolon": true,
         "adjacent-overload-signatures": true,
-        "align": [true, "parameters", "arguments", "statements", "members", "elements"]
+        "align": [true, "parameters", "arguments", "statements", "members", "elements"],
+        "ban-types": [true, ["table", "table is not descriptive enough"]]
     },
     "rulesDirectory": []
 }

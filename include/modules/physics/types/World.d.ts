@@ -29,13 +29,6 @@ declare interface World extends LoveObject {
     getBodyCount(): number;
 
     /**
-     * Returns a table with all bodies.
-     *
-     * @return bodies, A sequence with all bodies.
-     */
-    getBodyList(): table;
-
-    /**
      * Returns functions for the callbacks during the world update.
      *
      * @return beginContact, Gets called when two fixtures begin to overlap.
@@ -65,7 +58,7 @@ declare interface World extends LoveObject {
      *
      * @return contacts, A sequence with all contacts.
      */
-    getContactList(): table;
+    getContactList(): Array<Contact>;
 
     /**
      * Get the gravity of the world.
@@ -88,7 +81,7 @@ declare interface World extends LoveObject {
      *
      * @return joints, A sequence with all joints.
      */
-    getJointList(): table;
+    getJointList(): Array<Joint>;
 
     /**
      * Gets whether the World is destroyed. Destroyed worlds cannot be used.

@@ -158,7 +158,7 @@ declare interface ParticleSystem extends Drawable {
      *
      * @return quads, A table containing the Quads used.
      */
-    getQuads(): table;
+    getQuads(): Array<Quad>;
 
     /**
      * Gets the position of the emitter.
@@ -458,7 +458,7 @@ declare interface ParticleSystem extends Drawable {
      *
      * @param quads A table containing the Quads to use.
      */
-    setQuads(quads: table): void;
+    setQuads(quads: Array<Quad>): void;
 
     /**
      * Set the radial acceleration (away from the emitter).

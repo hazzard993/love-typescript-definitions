@@ -79,7 +79,7 @@ declare namespace love {
          * @param points A list of points to construct the ChainShape, in the form of {x1, y1, x2, y2, ...}.
          * @return shape, The new shape.
          */
-        export function newChainShape(loop: boolean, points: table): ChainShape;
+        export function newChainShape(loop: boolean, points: Array<number>): ChainShape;
 
         /**
          * Creates a new CircleShape.
@@ -255,7 +255,7 @@ declare namespace love {
          * @param vertices A list of vertices to construct the polygon, in the form of {x1, y1, x2, y2, x3, y3, ...}.
          * @return shape, A new PolygonShape.
          */
-        export function newPolygonShape(vertices: table): PolygonShape;
+        export function newPolygonShape(vertices: Array<number>): PolygonShape;
 
         /**
          * Create a prismatic joints between two bodies.

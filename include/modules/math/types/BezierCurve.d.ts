@@ -98,7 +98,7 @@ declare interface BezierCurve extends LoveObject {
      * @param depth Number of recursive subdivision steps.
      * @return coordinates, List of x,y-coordinate pairs of points on the curve.
      */
-    render(depth?: number): table;
+    render(depth?: number): Array<number>;
 
     /**
      * Get a list of coordinates on a specific part of the curve, to be used with
@@ -117,7 +117,7 @@ declare interface BezierCurve extends LoveObject {
      * @param depth Number of recursive subdivision steps.
      * @return coordinates, List of x,y-coordinate pairs of points on the curve.
      */
-    renderSegment(startpoint: number, endpoint: number, depth?: number): table;
+    renderSegment(startpoint: number, endpoint: number, depth?: number): Array<number>;
 
     /**
      * Rotate the Bézier curve by an angle.

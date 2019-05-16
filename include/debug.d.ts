@@ -21,7 +21,7 @@ declare namespace debug {
    * function calling getfenv. If the given function is not a Lua function, or if f
    * is 0, getfenv returns the global environment. The default for f is 1.
    */
-  export function getfenv(f?: Function | 0 | 1 | 2): table;
+  export function getfenv(f?: Function | 0 | 1 | 2): object;
 
   /**
    * Sets the environment to be used by the given function. f can be a Lua function
@@ -31,6 +31,6 @@ declare namespace debug {
    * As a special case, when f is 0 setfenv changes the environment of the running
    * thread. In this case, setfenv returns no values.
    */
-  export function setfenv(f: Function | 0 | 1 | 2, tbl: table): Function | null;
+  export function setfenv(f: Function | 0 | 1 | 2, tbl: object): Function | null;
 
 }

@@ -101,7 +101,7 @@ declare interface Transform extends LoveObject {
      * @param ... Additional matrix elements.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
-    setMatrix(e1_1: number, e1_2: number, ...vararg: Array<number>): Transform;
+    setMatrix(...rows: Array<number>): Transform;
 
     /**
      * Directly sets the Transform's internal 4x4 transformation matrix.
@@ -112,7 +112,7 @@ declare interface Transform extends LoveObject {
      * @param e4_4 The fourth column of the fourth row of the matrix.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
-    setMatrix(layout: MatrixLayout, e1_1: number, e1_2: number, e4_4: number): Transform;
+    setMatrix(layout: MatrixLayout, ...rows: Array<number>): Transform;
 
     /**
      * Directly sets the Transform's internal 4x4 transformation matrix.
@@ -121,16 +121,7 @@ declare interface Transform extends LoveObject {
      * @param matrix A flat table containing the 16 matrix elements.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      */
-    setMatrix(layout: MatrixLayout, matrix: table): Transform;
-
-    /**
-     * Directly sets the Transform's internal 4x4 transformation matrix.
-     *
-     * @param layout How to interpret the matrix element arguments (row-major or column-major).
-     * @param matrix A table of 4 tables, with each sub-table containing 4 matrix elements.
-     * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
-     */
-    setMatrix(layout: MatrixLayout, matrix: table): Transform;
+    setMatrix(layout: MatrixLayout, matrix: Array<number>): Transform;
 
     /**
      * Resets the Transform to the specified transformation parameters.

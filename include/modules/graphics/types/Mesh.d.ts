@@ -123,7 +123,7 @@ declare interface Mesh extends Drawable {
      * @return map, A table containing a list of vertex indices used when drawing.
      * @link [Mesh:getVertexMap](https://love2d.org/wiki/Mesh:getVertexMap)
      */
-    getVertexMap(): table | null;
+    getVertexMap(): Array<number> | null;
 
     /**
      * Gets whether a specific vertex attribute in the Mesh is enabled. Vertex data
@@ -218,7 +218,7 @@ declare interface Mesh extends Drawable {
      * @param index The index of the the vertex you want to modify.
      * @param vertex A table with vertex information, in the form of {attributecomponent, ...}.
      */
-    setVertex(index: number, vertex: table): void;
+    setVertex(index: number, vertex: Array<any>): void;
 
     /**
      * Sets the properties of a vertex in the Mesh.
@@ -241,7 +241,7 @@ declare interface Mesh extends Drawable {
      * @param index The index of the the vertex you want to modify.
      * @param vertex A table with vertex information.
      */
-    setVertex(index: number, vertex: table): void;
+    setVertex(index: number, vertex: VertexInformation): void;
 
     /**
      * Sets the properties of a specific attribute within a vertex in the Mesh.
@@ -272,7 +272,7 @@ declare interface Mesh extends Drawable {
      *
      * @param map A table containing a list of vertex indices to use when drawing. Values must be in the range of [1, Mesh:getVertexCount()].
      */
-    setVertexMap(map: table): void;
+    setVertexMap(map: Array<number>): void;
 
     /**
      * Sets the vertex map for the Mesh. The vertex map describes the order in which
@@ -297,14 +297,14 @@ declare interface Mesh extends Drawable {
      *
      * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of {attributecomponent, ...}.
      */
-    setVertices(vertices: table): void;
+    setVertices(vertices: Array<VertexInformation>, startvertex: number): void;
 
     /**
-     * Replaces a range of vertices in the Mesh with new ones. The total number of
-     * vertices in a Mesh cannot be changed after it has been created.
+     * Sets the vertex components of the Mesh by copying directly from the memory of a Data object.
      *
-     * @param vertices The table filled with vertex information tables for each vertex as follows:
+     * @param data A Data object to copy from. The contents of the Data must match the layout of this Mesh's vertex format.
+     * @param startvertex The index of the first vertex to replace. (Default: 1)
      */
-    setVertices(vertices: table): void;
+    setVertices(data: Data, startvertex?: number): void;
 
 }

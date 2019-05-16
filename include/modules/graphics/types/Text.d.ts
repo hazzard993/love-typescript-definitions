@@ -35,7 +35,7 @@ declare interface Text extends Drawable {
      * @param ky Shearing / skew factor on the y-axis.
      * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      */
-    add(coloredtext: table, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    add(coloredtext: Array<[number, number, number, number] | string>, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
     /**
      * Adds additional formatted / colored text to the Text object at the specified
@@ -75,7 +75,7 @@ declare interface Text extends Drawable {
      * @param ky Shearing / skew factor on the y-axis.
      * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      */
-    addf(coloredtext: table, wraplimit: number, align: AlignMode, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    addf(coloredtext: Array<[number, number, number, number] | string>, wraplimit: number, align: AlignMode, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
     /**
      * Clears the contents of the Text object.
@@ -151,7 +151,7 @@ declare interface Text extends Drawable {
      *
      * @param coloredtext A table containing colors and strings to use as the new text, in the form of { color1, string1, color2, string2, ... }.
      */
-    set(coloredtext: table): void;
+    set(coloredtext: Array<[number, number, number, number] | string>): void;
 
     /**
      * Replaces the contents of the Text object with a new unformatted string.
@@ -175,7 +175,7 @@ declare interface Text extends Drawable {
      * @param wraplimit The maximum width in pixels of the text before it gets automatically wrapped to a new line.
      * @param align The alignment of the text.
      */
-    setf(coloredtext: table, wraplimit: number, align: AlignMode): void;
+    setf(coloredtext: Array<[number, number, number, number] | string>, wraplimit: number, align: AlignMode): void;
 
     /**
      * Replaces the contents of the Text object with a new formatted string.

@@ -29,7 +29,7 @@ declare namespace love {
          *
          * @return touches, A list of active touch-press id values, which can be used with love.touch.getPosition.
          */
-        export function getTouches(): table;
+        export function getTouches(): Array<LightUserData>;
 
     }
 

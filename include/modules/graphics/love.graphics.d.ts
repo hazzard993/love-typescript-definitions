@@ -207,8 +207,9 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @param discardcolors An array containing boolean values indicating whether to discard the texture of each active Canvas, when multiple simultaneous Canvases are active.
          * @param discardstencil Whether to discard the contents of the stencil buffer of the screen / active Canvas.
+         * @link [love.graphics.discard](https://love2d.org/wiki/love.graphics.discard)
          */
-        export function discard(discardcolors: table, discardstencil?: boolean): void;
+        export function discard(discardcolors: Array<boolean>, discardstencil?: boolean): void;
 
         /**
          * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh,
@@ -464,7 +465,7 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          *
          * @return formats, A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
          */
-        export function getCanvasFormats(): table;
+        export function getCanvasFormats(): { [key in CanvasFormat]: boolean };
 
         /**
          * Gets the raw and compressed pixel formats usable for Images, and whether each is supported.
@@ -505,8 +506,9 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * Gets the available compressed image formats, and whether each is supported.
          *
          * @return formats, A table containing CompressedFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
+         * @deprecated since 11.0. It has been replaced by love.graphics.getImageFormats
          */
-        export function getCompressedImageFormats(): table;
+        export function getCompressedImageFormats(): { [key in CompressedImageFormat]: boolean };
 
         /**
          * Returns the default scaling filters used with Images, Canvases, and Fonts.
@@ -674,15 +676,17 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * Some older or low-end systems don't always support all graphics features.
          *
          * @return features, A table containing GraphicsFeature keys, and boolean values indicating whether each feature is supported.
+         * @link [love.graphics.getSupported](https://love2d.org/wiki/love.graphics.getSupported)
          */
-        export function getSupported(): table;
+        export function getSupported(): { [key in GraphicsFeature]: boolean };
 
         /**
          * Gets the system-dependent maximum values for love.graphics features.
          *
          * @return limits, A table containing GraphicsLimit keys, and number values.
+         * @link [love.graphics.getSystemLimits](https://love2d.org/wiki/love.graphics.getSystemLimits)
          */
-        export function getSystemLimits(): table;
+        export function getSystemLimits(): { [key in GraphicsLimit]: number };
 
         /**
          * Gets the point size.
@@ -717,8 +721,9 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * Gets the available texture types, and whether each is supported.
          *
          * @return texturetypes, A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.
+         * @link [love.graphics.getTextureTypes](https://love2d.org/wiki/love.graphics.getTextureTypes)
          */
-        export function getTextureTypes(): table;
+        export function getTextureTypes(): { [key in TextureType]: boolean };
 
         /**
          * Gets the width of the window.
@@ -924,62 +929,46 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newFont(size: number): Font;
 
         /**
-         * Creates a new Mesh.
-         *
-         *
-         * Use Mesh:setTexture if the Mesh should be textured with an Image or Canvas when
-         * it's drawn.
-         *
-         * @param vertices The table filled with vertex information tables for each vertex as follows:
+         * Creates a standard Mesh with the specified vertices.
+         * @param vertices The table filled with vertex information tables.
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
          * @return mesh, The new Mesh.
+         * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
-        export function newMesh(vertices: table, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+        export function newMesh(vertices: Array<VertexInformation>, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
         /**
-         * Creates a new Mesh.
-         *
-         *
-         * Use Mesh:setTexture if the Mesh should be textured with an Image or Canvas when
-         * it's drawn.
-         *
-         * @param vertexcount The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 255,255,255,255}.
+         * Creates a standard Mesh with the specified number of vertices.
+         * @param vertexcount The total number of vertices the Mesh will use. Each vertex is initialized to [0,0, 0,0, 255,255,255,255].
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
          * @return mesh, The new Mesh.
+         * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
         export function newMesh(vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
         /**
-         * Creates a new Mesh.
-         *
-         *
-         * Use Mesh:setTexture if the Mesh should be textured with an Image or Canvas when
-         * it's drawn.
-         *
-         * @param vertexformat A table in the form of {attribute, ...}. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
-         * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of {attributecomponent, ...}.
+         * Creates a Mesh with custom vertex attributes and the specified vertex data.
+         * @param vertexformat A table in the form of [attribute, ...]. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
+         * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of [attributecomponent, ...].
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
          * @return mesh, The new Mesh.
+         * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
-        export function newMesh(vertexformat: table, vertices: table, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+        export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertices: Array<Array<any>>, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
         /**
-         * Creates a new Mesh.
-         *
-         *
-         * Use Mesh:setTexture if the Mesh should be textured with an Image or Canvas when
-         * it's drawn.
-         *
-         * @param vertexformat A table in the form of {attribute, ...}. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
+         * Creates a Mesh with custom vertex attributes and the specified number of vertices.
+         * @param vertexformat A table in the form of [attribute, ...]. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
          * @param vertexcount The total number of vertices the Mesh will use.
          * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
          * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
          * @return mesh, The new Mesh.
+         * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
-        export function newMesh(vertexformat: table, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+        export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
         /**
          * Creates a new Image from a filepath, FileData, an ImageData, or a
@@ -988,6 +977,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          *
          * @param filename The filepath to the image file.
          * @return image, An Image object which can be drawn on screen.
+         * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
         export function newImage(filename: string): Image;
 
@@ -998,6 +988,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          *
          * @param imageData An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.
          * @return image, An Image object which can be drawn on screen.
+         * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
         export function newImage(imageData: ImageData): Image;
 
@@ -1008,6 +999,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          *
          * @param compressedImageData A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.
          * @return image, An Image object which can be drawn on screen.
+         * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
         export function newImage(compressedImageData: CompressedImageData): Image;
 
@@ -1018,9 +1010,12 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          *
          * @param filename The filepath to the image file (or a FileData or ImageData or CompressedImageData object).
          * @param flags A table containing the following fields:
+         * - linear: True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise.
+         * - mipmaps: If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels.
          * @return image, An Image object which can be drawn on screen.
+         * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
-        export function newImage(filename: string, flags: table): Image;
+        export function newImage(filename: string, flags: { linear?: boolean, mipmaps?: boolean | Array<string> }): Image;
 
         /**
          * Creates a new Font by loading a specifically formatted image.
@@ -1088,7 +1083,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          * @param code The pixel shader or vertex shader code, or a filename pointing to a file with the code.
          * @return shader, A Shader object for use in drawing operations.
          */
-        export function newShader(code: string): Shader;
+        export function newShader<T = undefined>(code: string): Shader<T>;
 
         /**
          * Creates a new Shader object for hardware-accelerated vertex and pixel effects.
@@ -1108,7 +1103,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          * @param vertexcode The vertex shader code, or a filename pointing to a file with the code.
          * @return shader, A Shader object for use in drawing operations.
          */
-        export function newShader(pixelcode: string, vertexcode: string): Shader;
+        export function newShader<T = undefined>(pixelcode: string, vertexcode: string): Shader;
 
         /**
          * Creates a new drawable Text object.
@@ -1398,7 +1393,7 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
          *
          * @param rgba A numerical indexed table with the red, green and blue values as numbers. Alpha is 255 if it is not in the table
          */
-        export function setBackgroundColor(rgba: table): void;
+        export function setBackgroundColor(rgba: [number, number, number, number?]): void;
 
         /**
          * Sets the blending mode.
@@ -1439,7 +1434,7 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
          *
          * @param rgba A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 255 if it is left out.
          */
-        export function setColor(rgba: table): void;
+        export function setColor(rgba: [number, number, number, number?]): void;
 
         /**
          * Sets the color mask. Enables or disables specific color components when

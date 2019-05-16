@@ -79,8 +79,9 @@ declare interface Font extends LoveObject {
      * @return width, The maximum width of the wrapped text.
      * @return wrappedtext, A sequence containing each line of text that was wrapped.
      * @tupleReturn
+     * @link [Font:getWrap](https://love2d.org/wiki/Font:getWrap)
      */
-    getWrap(text: string, wraplimit: number): [number, table];
+    getWrap(text: string, wraplimit: number): [number, Array<string>];
 
     /**
      * Gets whether the font can render a particular character.
