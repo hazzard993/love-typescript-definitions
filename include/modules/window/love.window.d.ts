@@ -130,7 +130,7 @@ declare namespace love {
          * @param display The index of the display, if multiple monitors are available.
          * @return modes, A table of width/height pairs. (Note that this may not be in order.)
          */
-        export function getFullscreenModes(display?: number): table;
+        export function getFullscreenModes(display?: number): Array<{ width: number, height: number }>;
 
         /**
          * Gets the window icon.
@@ -147,7 +147,7 @@ declare namespace love {
          * @return flags, Table containing the window properties.
          * @tupleReturn
          */
-        export function getMode(): [number, number, table];
+        export function getMode(): [number, number, DisplayFlags];
 
         /**
          * Gets the DPI scale factor associated with the window.
@@ -362,7 +362,7 @@ declare namespace love {
          * @param flags The flags table with the options:
          * @return success, True if successful, false otherwise.
          */
-        export function setMode(width: number, height: number, flags: table): boolean;
+        export function setMode(width: number, height: number, flags: DisplayFlags): boolean;
 
         /**
          * Sets the position of the window on the screen.
@@ -406,7 +406,7 @@ declare namespace love {
          * @param attachtowindow Whether the message box should be attached to the love window or free-floating.
          * @return pressedbutton, The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.
          */
-        export function showMessageBox(title: string, message: string, buttonlist: table, type?: MessageBoxType, attachtowindow?: boolean): number;
+        export function showMessageBox(title: string, message: string, buttonlist: ButtonList, type?: MessageBoxType, attachtowindow?: boolean): number;
 
         /**
          * Converts a number from density-independent units to pixels.
@@ -481,7 +481,7 @@ declare namespace love {
          * @param settings The settings table with the following optional fields. Any field not filled in will use the current value that would be returned by love.window.getMode.
          * @return success, True if successful, false otherwise.
          */
-        export function updateMode(width: number, height: number, settings: table): boolean;
+        export function updateMode(width: number, height: number, settings: DisplayFlags): boolean;
 
     }
 

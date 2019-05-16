@@ -1,7 +1,7 @@
 /**
  * @link [Body](https://love2d.org/wiki/Body)
  */
-declare interface Body extends Object {
+declare interface Body extends LoveObject {
     /**
      * Applies an angular impulse to a body. This makes a single, instantaneous
      * addition to the body momentum.
@@ -198,7 +198,7 @@ declare interface Body extends Object {
      *
      * @return contacts, A list with all contacts associated with the Body.
      */
-    getContactList(): table;
+    getContactList(): Array<Contact>;
 
     /**
      * @deprecated renamed to Body.getFixtures()
@@ -206,14 +206,7 @@ declare interface Body extends Object {
      *
      * @return fixtures, A sequence with all fixtures.
      */
-    getFixtureList(): table;
-
-    /**
-     * Returns a table with all fixtures.
-     *
-     * @return fixtures, A sequence with all fixtures.
-     */
-    getFixtures(): table;
+    getFixtureList(): Array<Fixture>;
 
     /**
      * Returns the gravity scale factor.
@@ -237,7 +230,7 @@ declare interface Body extends Object {
      *
      * @return joints, A sequence with the Joints attached to the Body.
      */
-    getJointList(): table;
+    getJointList(): Array<Joint>;
 
     /**
      * Gets the linear damping of the Body.

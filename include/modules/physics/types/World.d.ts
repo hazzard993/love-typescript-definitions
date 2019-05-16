@@ -2,7 +2,7 @@
  * A world is an object that contains all bodies and joints.
  * @link [World](https://love2d.org/wiki/World)
  */
-declare interface World extends Object {
+declare interface World extends LoveObject {
     /**
      * Destroys the world, taking all bodies, joints, fixtures and their shapes with
      * it.
@@ -27,13 +27,6 @@ declare interface World extends Object {
      * @return n, The number of bodies in the world.
      */
     getBodyCount(): number;
-
-    /**
-     * Returns a table with all bodies.
-     *
-     * @return bodies, A sequence with all bodies.
-     */
-    getBodyList(): table;
 
     /**
      * Returns functions for the callbacks during the world update.
@@ -65,7 +58,7 @@ declare interface World extends Object {
      *
      * @return contacts, A sequence with all contacts.
      */
-    getContactList(): table;
+    getContactList(): Array<Contact>;
 
     /**
      * Get the gravity of the world.
@@ -88,7 +81,7 @@ declare interface World extends Object {
      *
      * @return joints, A sequence with all joints.
      */
-    getJointList(): table;
+    getJointList(): Array<Joint>;
 
     /**
      * Gets whether the World is destroyed. Destroyed worlds cannot be used.

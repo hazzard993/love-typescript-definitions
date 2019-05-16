@@ -2,7 +2,7 @@
  * A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree
  * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
  */
-declare interface BezierCurve extends Object {
+declare interface BezierCurve extends LoveObject {
     /**
      * Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1
      * (inclusive).
@@ -98,7 +98,7 @@ declare interface BezierCurve extends Object {
      * @param depth Number of recursive subdivision steps.
      * @return coordinates, List of x,y-coordinate pairs of points on the curve.
      */
-    render(depth?: number): table;
+    render(depth?: number): Array<number>;
 
     /**
      * Get a list of coordinates on a specific part of the curve, to be used with
@@ -117,7 +117,7 @@ declare interface BezierCurve extends Object {
      * @param depth Number of recursive subdivision steps.
      * @return coordinates, List of x,y-coordinate pairs of points on the curve.
      */
-    renderSegment(startpoint: number, endpoint: number, depth?: number): table;
+    renderSegment(startpoint: number, endpoint: number, depth?: number): Array<number>;
 
     /**
      * Rotate the Bézier curve by an angle.

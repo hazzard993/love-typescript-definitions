@@ -78,7 +78,7 @@ declare namespace love {
          * @return lb, The blue channel of the converted color in linear RGB space.
          * @tupleReturn
          */
-        export function gammaToLinear(color: table): [number, number, number];
+        export function gammaToLinear(color: [number, number, number]): [number, number, number];
 
         /**
          * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful
@@ -127,28 +127,11 @@ declare namespace love {
          * PolygonShapes in love.physics, some forms of Mesh, and polygons drawn with
          * love.graphics.polygon must be simple convex polygons.
          *
-         * @param vertices The vertices of the polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.
+         * @param vertices The vertices of the polygon as a table in the form of [x1, y1, x2, y2, x3, y3, ...].
          * @return convex, Whether the given polygon is convex.
          */
-        export function isConvex(vertices: table): boolean;
-
-        /**
-         * Checks whether a polygon is convex.
-         *
-         *
-         * PolygonShapes in love.physics, some forms of Mesh, and polygons drawn with
-         * love.graphics.polygon must be simple convex polygons.
-         *
-         * @param x1 The position of the first vertex of the polygon on the x-axis.
-         * @param y1 The position of the first vertex of the polygon on the y-axis.
-         * @param x2 The position of the second vertex of the polygon on the x-axis.
-         * @param y2 The position of the second vertex of the polygon on the y-axis.
-         * @param x3 The position of the third vertex of the polygon on the x-axis.
-         * @param y3 The position of the third vertex of the polygon on the y-axis.
-         * @param ... Additional vertices.
-         * @return convex, Whether the given polygon is convex.
-         */
-        export function isConvex(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, ...vararg: Array<number>): boolean;
+        export function isConvex(vertices: Array<number>): boolean;
+        export function isConvex(...vertices: Array<number>): boolean;
 
         /**
          * Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful
@@ -188,7 +171,7 @@ declare namespace love {
          * @return cb, The blue channel of the converted color in gamma sRGB space.
          * @tupleReturn
          */
-        export function linearToGamma(color: table): [number, number, number];
+        export function linearToGamma(color: [number, number, number]): [number, number, number];
 
         /**
          * Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful
@@ -216,27 +199,10 @@ declare namespace love {
          *
          * @param vertices The vertices of the control polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.
          * @return curve, A Bézier curve object.
+         * @link [love.math.newBezierCurve](https://love2d.org/wiki/love.math.newBezierCurve)
          */
-        export function newBezierCurve(vertices: table): BezierCurve;
-
-        /**
-         * Creates a new BezierCurve object.
-         *
-         *
-         * The number of vertices in the control polygon determines the degree of the
-         * curve, e.g. three vertices define a quadratic (degree 2) Bézier curve, four
-         * vertices define a cubic (degree 3) Bézier curve, etc.
-         *
-         * @param x1 The position of the first vertex of the control polygon on the x-axis.
-         * @param y1 The position of the first vertex of the control polygon on the y-axis.
-         * @param x2 The position of the second vertex of the control polygon on the x-axis.
-         * @param y2 The position of the second vertex of the control polygon on the y-axis.
-         * @param x3 The position of the third vertex of the control polygon on the x-axis.
-         * @param y3 The position of the third vertex of the control polygon on the y-axis.
-         * @param ... Additional vertices.
-         * @return curve, A Bézier curve object.
-         */
-        export function newBezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, ...vararg: Array<number>): BezierCurve;
+        export function newBezierCurve(vertices: Array<number>): BezierCurve;
+        export function newBezierCurve(...vertices: Array<number>): BezierCurve;
 
         /**
          * Creates a new RandomGenerator object which is completely independent of other
@@ -429,23 +395,10 @@ declare namespace love {
          * Triangulate a simple polygon.
          *
          * @param polygon Polygon to triangulate. Must not intersect itself.
-         * @return triangles, List of triangles the polygon is composed of, in the form of {{x1, y1, x2, y2, x3, y3}, {x1, y1, x2, y2, x3, y3}, ...}.
+         * @return triangles, List of triangles the polygon is composed of, in the form of [[x1, y1, x2, y2, x3, y3], [x1, y1, x2, y2, x3, y3], ...].
          */
-        export function triangulate(polygon: table): table;
-
-        /**
-         * Triangulate a simple polygon.
-         *
-         * @param x1 The position of the first vertex of the polygon on the x-axis.
-         * @param y1 The position of the first vertex of the polygon on the y-axis.
-         * @param x2 The position of the second vertex of the polygon on the x-axis.
-         * @param y2 The position of the second vertex of the polygon on the y-axis.
-         * @param x3 The position of the third vertex of the polygon on the x-axis.
-         * @param y3 The position of the third vertex of the polygon on the y-axis.
-         * @param ... Additional vertices.
-         * @return triangles, List of triangles the polygon is composed of, in the form of {{x1, y1, x2, y2, x3, y3}, {x1, y1, x2, y2, x3, y3}, ...}.
-         */
-        export function triangulate(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, ...vararg: Array<number>): table;
+        export function triangulate(polygon: Array<number>): Array<Array<number>>;
+        export function triangulate(...polygon: Array<number>): Array<Array<number>>;
 
     }
 

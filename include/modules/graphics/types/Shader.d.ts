@@ -1,18 +1,9 @@
 /**
  * A Shader is used for advanced hardware-accelerated pixel or vertex manipulation.
+ * @typeparam U An object that contains all uniform variables within this shader associated with a value that can be provided to it.
  * @link [Shader](https://love2d.org/wiki/Shader)
  */
-declare interface Shader extends Object {
-    /**
-     * Gets information about an 'extern' ('uniform') variable in the shader.
-     *
-     * @param name The name of the extern variable.
-     * @return type, The base type of the variable.
-     * @return components, The number of components in the variable (e.g. 2 for a vec2 or mat2.)
-     * @return arrayelements, The number of elements in the array if the variable is an array, or 1 if not.
-     * @tupleReturn
-     */
-    getExternVariable(name: string): [ShaderVariableType, number, number];
+declare interface Shader<U extends { [key: string]: any } | undefined = undefined> extends LoveObject {
 
     /**
      * Returns any warning and error messages from compiling the shader code. This can
@@ -34,56 +25,18 @@ declare interface Shader extends Object {
      * @param name The name of the uniform variable.
      * @return hasuniform, Whether the uniform exists in the shader and affects its final output.
      */
-    hasUniform(name: string): boolean;
+    hasUniform(name: U extends undefined ? string : keyof U): boolean;
 
     /**
      * Sends one or more values to a special (uniform) variable inside the shader.
-     * Uniform variables have to be marked using the uniform or extern keyword.
      *
-     * @param name Name of the number to send to the shader.
+     * Uniform variables have to be marked using the _uniform_ or _extern_ keyword.
+     *
+     * @param name The name of the uniform / extern variable to send the value(s) to.
      * @param number Number to send to store in the uniform variable.
      * @param ... Additional numbers to send if the uniform variable is an array.
      */
-    send(name: string, number: number, ...vararg: Array<number>): void;
-
-    /**
-     * Sends one or more values to a special (uniform) variable inside the shader.
-     * Uniform variables have to be marked using the uniform or extern keyword.
-     *
-     * @param name Name of the vector to send to the shader.
-     * @param vector Numbers to send to the uniform variable as a vector. The number of elements in the table determines the type of the vector (e.g. two numbers -> vec2). At least two and at most four numbers can be used.
-     * @param ... Additional vectors to send if the uniform variable is an array. All vectors need to be of the same size (e.g. only vec3's).
-     */
-    send(name: string, vector: table, ...vararg: Array<table>): void;
-
-    /**
-     * Sends one or more values to a special (uniform) variable inside the shader.
-     * Uniform variables have to be marked using the uniform or extern keyword.
-     *
-     * @param name Name of the matrix to send to the shader.
-     * @param matrix 2x2, 3x3, or 4x4 matrix to send to the uniform variable. Using table form: {{a,b,c,d}, {e,f,g,h}, ... }.
-     * @param ... Additional matrices of the same type as matrix to store in a uniform array.
-     */
-    send(name: string, matrix: table, ...vararg: Array<table>): void;
-
-    /**
-     * Sends one or more values to a special (uniform) variable inside the shader.
-     * Uniform variables have to be marked using the uniform or extern keyword.
-     *
-     * @param name Name of the Texture to send to the shader.
-     * @param texture Texture (Image or Canvas) to send to the uniform variable.
-     */
-    send(name: string, texture: Texture): void;
-
-    /**
-     * Sends one or more values to a special (uniform) variable inside the shader.
-     * Uniform variables have to be marked using the uniform or extern keyword.
-     *
-     * @param name Name of the boolean to send to the shader.
-     * @param boolean Boolean to send to store in the uniform variable.
-     * @param ... Additional booleans to send if the uniform variable is an array.
-     */
-    send(name: string, boolean: boolean, ...vararg: Array<boolean>): void;
+    send<N extends keyof U>(name: U extends undefined ? string : N, ...values: U extends undefined ? Array<any> : U[N]): void;
 
     /**
      * Sends one or more colors to a special (extern / uniform) vec3 or vec4 variable
@@ -92,9 +45,8 @@ declare interface Shader extends Object {
      * is enabled.
      *
      * @param name The name of the color extern variable to send to in the shader.
-     * @param color A table with red, green, blue, and optional alpha color components in the range of [0, 255] to send to the extern as a vector.
-     * @param ... Additional colors to send in case the extern is an array. All colors need to be of the same size (e.g. only vec3's).
+     * @param colors A table with `[red, green, blue, and optional alpha color]` components in the range of `[0, 1]` to send to the extern as a vector.
      */
-    sendColor(name: string, color: table, ...vararg: Array<table>): void;
+    sendColor<N extends keyof U>(name: U extends undefined ? string : N, ...colors: Array<[number, number, number, number?]>): void;
 
 }

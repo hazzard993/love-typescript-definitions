@@ -2,7 +2,7 @@
  * The superclass of all data.
  * @link [Data](https://love2d.org/wiki/Data)
  */
-declare interface Data extends Object {
+declare interface Data extends LoveObject {
 
     /**
      * Creates a new copy of the Data object.

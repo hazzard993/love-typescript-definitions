@@ -1,10 +1,6 @@
 /** @noSelfInFile */
 // https://www.lua.org/manual/5.1/manual.html#5.1
 
-type table = {
-  [key: number]: any;
-  [key: string]: any;
-};
 type TableKey = number | string;
 type thread = {};
 type userdata = any;
@@ -24,7 +20,7 @@ declare let arg: { [index: number]: string };
  * function calling getfenv. If the given function is not a Lua function, or if f
  * is 0, getfenv returns the global environment. The default for f is 1.
  */
-declare function getfenv(f?: Function | 0 | 1 | 2): table;
+declare function getfenv(f?: Function | 0 | 1 | 2): object;
 
 /**
  * Loads a chunk using function func to get its pieces. Each call to func must

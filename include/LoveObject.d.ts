@@ -1,7 +1,8 @@
 /**
+ * The superclass of all LÖVE types.
  * @link [Object](https://love2d.org/wiki/Object)
  */
-interface Object {
+interface LoveObject {
 
     /**
      * Destroys the object's Lua reference.

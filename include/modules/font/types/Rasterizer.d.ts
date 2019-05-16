@@ -1,7 +1,7 @@
 /**
  * @link [Rasterizer](https://love2d.org/wiki/Rasterizer)
  */
-declare interface Rasterizer {
+declare interface Rasterizer extends LoveObject {
 
     /**
      * @todo This function is undocumented on the wiki

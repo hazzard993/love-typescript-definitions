@@ -2,7 +2,7 @@
  * Defines the shape of characters that can be drawn onto the screen.
  * @link [Font](https://love2d.org/wiki/Font)
  */
-declare interface Font extends Object {
+declare interface Font extends LoveObject {
 
     /**
      * Gets the ascent of the Font. The ascent spans the distance between the baseline
@@ -79,8 +79,9 @@ declare interface Font extends Object {
      * @return width, The maximum width of the wrapped text.
      * @return wrappedtext, A sequence containing each line of text that was wrapped.
      * @tupleReturn
+     * @link [Font:getWrap](https://love2d.org/wiki/Font:getWrap)
      */
-    getWrap(text: string, wraplimit: number): [number, table];
+    getWrap(text: string, wraplimit: number): [number, Array<string>];
 
     /**
      * Gets whether the font can render a particular character.
