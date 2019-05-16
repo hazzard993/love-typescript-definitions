@@ -46,6 +46,14 @@ declare interface Image extends Texture {
     getFilter(): [FilterMode, FilterMode];
 
     /**
+     * Gets the flags used when the image was created.
+     *
+     * @return flags, A table with ImageFlag keys.
+     * @link [Image:getFlags](https://love2d.org/wiki/(Image):getFlags)
+     */
+    getFlags(): table;
+
+    /**
      * Gets whether the Image was created from CompressedData.
      * @return compressed, Whether the Image is stored as a compressed texture on the GPU.
      * @link [Image:isCompressed](https://love2d.org/wiki/(Image):isCompressed)
