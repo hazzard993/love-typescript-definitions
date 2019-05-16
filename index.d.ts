@@ -144,6 +144,7 @@ import "./include/modules/video/love.video";
 import "./include/modules/video/types/VideoStream";
 import "./include/modules/window/enums/FullscreenType";
 import "./include/modules/window/enums/MessageBoxType";
+import "./include/modules/window/structs/ButtonList";
 import "./include/modules/window/love.window";
 import "./include/LoveObject";
 import "./include/os";
