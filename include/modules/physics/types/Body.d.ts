@@ -13,6 +13,7 @@ declare interface Body extends LoveObject {
      * to a body it is better to use Body:applyForce.
      *
      * @param impulse The impulse in kilogram-square meter per second.
+     * @link [Body:applyAngularImpulse](https://love2d.org/wiki/Body:applyAngularImpulse)
      */
     applyAngularImpulse(impulse: number): void;
 
@@ -37,6 +38,7 @@ declare interface Body extends LoveObject {
      *
      * @param fx The x component of force to apply to the center of mass.
      * @param fy The y component of force to apply to the center of mass.
+     * @link [Body:applyForce](https://love2d.org/wiki/Body:applyForce)
      */
     applyForce(fx: number, fy: number): void;
 
@@ -63,6 +65,7 @@ declare interface Body extends LoveObject {
      * @param fy The y component of force to apply.
      * @param x The x position to apply the force.
      * @param y The y position to apply the force.
+     * @link [Body:applyForce](https://love2d.org/wiki/Body:applyForce)
      */
     applyForce(fx: number, fy: number, x: number, y: number): void;
 
@@ -88,6 +91,7 @@ declare interface Body extends LoveObject {
      *
      * @param ix The x component of the impulse applied to the center of mass.
      * @param iy The y component of the impulse applied to the center of mass.
+     * @link [Body:applyLinearImpulse](https://love2d.org/wiki/Body:applyLinearImpulse)
      */
     applyLinearImpulse(ix: number, iy: number): void;
 
@@ -115,6 +119,7 @@ declare interface Body extends LoveObject {
      * @param iy The y component of the impulse.
      * @param x The x position to apply the impulse.
      * @param y The y position to apply the impulse.
+     * @link [Body:applyLinearImpulse](https://love2d.org/wiki/Body:applyLinearImpulse)
      */
     applyLinearImpulse(ix: number, iy: number, x: number, y: number): void;
 
@@ -126,6 +131,7 @@ declare interface Body extends LoveObject {
      * The effect will depend on the rotational inertia a body has.
      *
      * @param torque The torque to apply.
+     * @link [Body:applyTorque](https://love2d.org/wiki/Body:applyTorque)
      */
     applyTorque(torque: number): void;
 
@@ -135,6 +141,7 @@ declare interface Body extends LoveObject {
      * that an error will occur if you attempt to use the object after calling this
      * function.
      *
+     * @link [Body:destroy](https://love2d.org/wiki/Body:destroy)
      */
     destroy(): void;
 
@@ -151,6 +158,7 @@ declare interface Body extends LoveObject {
      * our point of view.
      *
      * @return angle, The angle in radians.
+     * @link [Body:getAngle](https://love2d.org/wiki/Body:getAngle)
      */
     getAngle(): number;
 
@@ -172,6 +180,7 @@ declare interface Body extends LoveObject {
      * between 0 and 0.1.
      *
      * @return damping, The value of the angular damping.
+     * @link [Body:getAngularDamping](https://love2d.org/wiki/Body:getAngularDamping)
      */
     getAngularDamping(): number;
 
@@ -190,6 +199,7 @@ declare interface Body extends LoveObject {
      * Body:getLinearVelocity.
      *
      * @return w, The angular velocity in radians/second.
+     * @link [Body:getAngularVelocity](https://love2d.org/wiki/Body:getAngularVelocity)
      */
     getAngularVelocity(): number;
 
@@ -197,6 +207,7 @@ declare interface Body extends LoveObject {
      * Gets a list of all Contacts attached to the Body.
      *
      * @return contacts, A list with all contacts associated with the Body.
+     * @link [Body:getContactList](https://love2d.org/wiki/Body:getContactList)
      */
     getContactList(): Array<Contact>;
 
@@ -205,6 +216,7 @@ declare interface Body extends LoveObject {
      * Returns a table with all fixtures.
      *
      * @return fixtures, A sequence with all fixtures.
+     * @link [Body:getFixtureList](https://love2d.org/wiki/Body:getFixtureList)
      */
     getFixtureList(): Array<Fixture>;
 
@@ -212,6 +224,7 @@ declare interface Body extends LoveObject {
      * Returns the gravity scale factor.
      *
      * @return scale, The gravity scale factor.
+     * @link [Body:getGravityScale](https://love2d.org/wiki/Body:getGravityScale)
      */
     getGravityScale(): number;
 
@@ -222,6 +235,7 @@ declare interface Body extends LoveObject {
      * The rotational inertia is how hard is it to make the body spin.
      *
      * @return inertia, The rotational inertial of the body.
+     * @link [Body:getInertia](https://love2d.org/wiki/Body:getInertia)
      */
     getInertia(): number;
 
@@ -229,6 +243,7 @@ declare interface Body extends LoveObject {
      * Returns a table containing the Joints attached to this Body.
      *
      * @return joints, A sequence with the Joints attached to the Body.
+     * @link [Body:getJointList](https://love2d.org/wiki/Body:getJointList)
      */
     getJointList(): Array<Joint>;
 
@@ -246,6 +261,7 @@ declare interface Body extends LoveObject {
      * only damping is provided by Box2D (and LÖVE).
      *
      * @return damping, The value of the linear damping.
+     * @link [Body:getLinearDamping](https://love2d.org/wiki/Body:getLinearDamping)
      */
     getLinearDamping(): number;
 
@@ -271,6 +287,7 @@ declare interface Body extends LoveObject {
      * @return x, The x component of the velocity vector.
      * @return y, The y component of the velocity vector.
      * @tupleReturn
+     * @link [Body:getLinearVelocity](https://love2d.org/wiki/Body:getLinearVelocity)
      */
     getLinearVelocity(): [number, number];
 
@@ -290,6 +307,7 @@ declare interface Body extends LoveObject {
      * @return vx, The x component of velocity at point (x,y).
      * @return vy, The y component of velocity at point (x,y).
      * @tupleReturn
+     * @link [Body:getLinearVelocityFromLocalPoint](https://love2d.org/wiki/Body:getLinearVelocityFromLocalPoint)
      */
     getLinearVelocityFromLocalPoint(x: number, y: number): [number, number];
 
@@ -309,6 +327,7 @@ declare interface Body extends LoveObject {
      * @return vx, The x component of velocity at point (x,y).
      * @return vy, The y component of velocity at point (x,y).
      * @tupleReturn
+     * @link [Body:getLinearVelocityFromWorldPoint](https://love2d.org/wiki/Body:getLinearVelocityFromWorldPoint)
      */
     getLinearVelocityFromWorldPoint(x: number, y: number): [number, number];
 
@@ -321,6 +340,7 @@ declare interface Body extends LoveObject {
      * @return x, The x coordinate of the center of mass.
      * @return y, The y coordinate of the center of mass.
      * @tupleReturn
+     * @link [Body:getLocalCenter](https://love2d.org/wiki/Body:getLocalCenter)
      */
     getLocalCenter(): [number, number];
 
@@ -332,6 +352,7 @@ declare interface Body extends LoveObject {
      * @return localX, The x position in local coordinates.
      * @return localY, The y position in local coordinates.
      * @tupleReturn
+     * @link [Body:getLocalPoint](https://love2d.org/wiki/Body:getLocalPoint)
      */
     getLocalPoint(worldX: number, worldY: number): [number, number];
 
@@ -343,6 +364,7 @@ declare interface Body extends LoveObject {
      * @return localX, The vector x component in local coordinates.
      * @return localY, The vector y component in local coordinates.
      * @tupleReturn
+     * @link [Body:getLocalVector](https://love2d.org/wiki/Body:getLocalVector)
      */
     getLocalVector(worldX: number, worldY: number): [number, number];
 
@@ -350,6 +372,7 @@ declare interface Body extends LoveObject {
      * Get the mass of the body.
      *
      * @return mass, The mass of the body (in kilograms).
+     * @link [Body:getMass](https://love2d.org/wiki/Body:getMass)
      */
     getMass(): number;
 
@@ -361,6 +384,7 @@ declare interface Body extends LoveObject {
      * @return mass, The mass of the body.
      * @return inertia, The rotational inertia.
      * @tupleReturn
+     * @link [Body:getMassData](https://love2d.org/wiki/Body:getMassData)
      */
     getMassData(): [number, number, number, number];
 
@@ -373,6 +397,7 @@ declare interface Body extends LoveObject {
      * @return x, The x position.
      * @return y, The y position.
      * @tupleReturn
+     * @link [Body:getPosition](https://love2d.org/wiki/Body:getPosition)
      */
     getPosition(): [number, number];
 
@@ -380,6 +405,7 @@ declare interface Body extends LoveObject {
      * Returns the type of the body.
      *
      * @return type, The body type.
+     * @link [Body:getType](https://love2d.org/wiki/Body:getType)
      */
     getType(): BodyType;
 
@@ -387,6 +413,7 @@ declare interface Body extends LoveObject {
      * Returns the Lua value associated with this Body.
      *
      * @return value, The Lua value associated with the Body.
+     * @link [Body:getUserData](https://love2d.org/wiki/Body:getUserData)
      */
     getUserData(): any;
 
@@ -394,6 +421,7 @@ declare interface Body extends LoveObject {
      * Gets the World the body lives in.
      *
      * @return world, The world the body lives in.
+     * @link [Body:getWorld](https://love2d.org/wiki/Body:getWorld)
      */
     getWorld(): World;
 
@@ -406,6 +434,7 @@ declare interface Body extends LoveObject {
      * @return x, The x coordinate of the center of mass.
      * @return y, The y coordinate of the center of mass.
      * @tupleReturn
+     * @link [Body:getWorldCenter](https://love2d.org/wiki/Body:getWorldCenter)
      */
     getWorldCenter(): [number, number];
 
@@ -417,6 +446,7 @@ declare interface Body extends LoveObject {
      * @return worldX, The x position in world coordinates.
      * @return worldY, The y position in world coordinates.
      * @tupleReturn
+     * @link [Body:getWorldPoint](https://love2d.org/wiki/Body:getWorldPoint)
      */
     getWorldPoint(localX: number, localY: number): [number, number];
 
@@ -426,6 +456,7 @@ declare interface Body extends LoveObject {
      * @param xys The x followed by the y position of each point.
      * @return xys, The transformed points.
      * @tupleReturn
+     * @link [Body:getWorldPoints](https://love2d.org/wiki/Body:getWorldPoints)
      */
     getWorldPoints(...xys: Array<number>): Array<number>;
 
@@ -437,6 +468,7 @@ declare interface Body extends LoveObject {
      * @return worldX, The vector x component in world coordinates.
      * @return worldY, The vector y component in world coordinates.
      * @tupleReturn
+     * @link [Body:getWorldVector](https://love2d.org/wiki/Body:getWorldVector)
      */
     getWorldVector(localX: number, localY: number): [number, number];
 
@@ -444,6 +476,7 @@ declare interface Body extends LoveObject {
      * Get the x position of the body in world coordinates.
      *
      * @return x, The x position in world coordinates.
+     * @link [Body:getX](https://love2d.org/wiki/Body:getX)
      */
     getX(): number;
 
@@ -451,6 +484,7 @@ declare interface Body extends LoveObject {
      * Get the y position of the body in world coordinates.
      *
      * @return y, The y position in world coordinates.
+     * @link [Body:getY](https://love2d.org/wiki/Body:getY)
      */
     getY(): number;
 
@@ -458,6 +492,7 @@ declare interface Body extends LoveObject {
      * Returns whether the body is actively used in the simulation.
      *
      * @return status, True if the body is active or false if not.
+     * @link [Body:isActive](https://love2d.org/wiki/Body:isActive)
      */
     isActive(): boolean;
 
@@ -465,6 +500,7 @@ declare interface Body extends LoveObject {
      * Returns the sleep status of the body.
      *
      * @return status, True if the body is awake or false if not.
+     * @link [Body:isAwake](https://love2d.org/wiki/Body:isAwake)
      */
     isAwake(): boolean;
 
@@ -491,6 +527,7 @@ declare interface Body extends LoveObject {
      * let a fast moving body pass through even if it is not a bullet.
      *
      * @return status, The bullet status of the body.
+     * @link [Body:isBullet](https://love2d.org/wiki/Body:isBullet)
      */
     isBullet(): boolean;
 
@@ -498,6 +535,7 @@ declare interface Body extends LoveObject {
      * Gets whether the Body is destroyed. Destroyed bodies cannot be used.
      *
      * @return destroyed, Whether the Body is destroyed.
+     * @link [Body:isDestroyed](https://love2d.org/wiki/Body:isDestroyed)
      */
     isDestroyed(): boolean;
 
@@ -505,6 +543,7 @@ declare interface Body extends LoveObject {
      * Returns whether the body rotation is locked.
      *
      * @return fixed, True if the body's rotation is locked or false if not.
+     * @link [Body:isFixedRotation](https://love2d.org/wiki/Body:isFixedRotation)
      */
     isFixedRotation(): boolean;
 
@@ -512,6 +551,7 @@ declare interface Body extends LoveObject {
      * Returns the sleeping behaviour of the body.
      *
      * @return status, True if the body is allowed to sleep or false if not.
+     * @link [Body:isSleepingAllowed](https://love2d.org/wiki/Body:isSleepingAllowed)
      */
     isSleepingAllowed(): boolean;
 
@@ -527,6 +567,7 @@ declare interface Body extends LoveObject {
      * Resets the mass of the body by recalculating it from the mass properties of the
      * fixtures.
      *
+     * @link [Body:resetMassData](https://love2d.org/wiki/Body:resetMassData)
      */
     resetMassData(): void;
 
@@ -538,6 +579,7 @@ declare interface Body extends LoveObject {
      * cause any collisions.
      *
      * @param active If the body is active or not.
+     * @link [Body:setActive](https://love2d.org/wiki/Body:setActive)
      */
     setActive(active: boolean): void;
 
@@ -557,6 +599,7 @@ declare interface Body extends LoveObject {
      * It is possible to cause a collision with another body by changing its angle.
      *
      * @param angle The angle in radians.
+     * @link [Body:setAngle](https://love2d.org/wiki/Body:setAngle)
      */
     setAngle(angle: number): void;
 
@@ -571,6 +614,7 @@ declare interface Body extends LoveObject {
      * stay between 0 and 0.1, though. Other values will look unrealistic.
      *
      * @param damping The new angular damping.
+     * @link [Body:setAngularDamping](https://love2d.org/wiki/Body:setAngularDamping)
      */
     setAngularDamping(damping: number): void;
 
@@ -585,6 +629,7 @@ declare interface Body extends LoveObject {
      * since the last call to World:update will be lost.
      *
      * @param w The new angular velocity, in radians per second
+     * @link [Body:setAngularVelocity](https://love2d.org/wiki/Body:setAngularVelocity)
      */
     setAngularVelocity(w: number): void;
 
@@ -592,6 +637,7 @@ declare interface Body extends LoveObject {
      * Wakes the body up or puts it to sleep.
      *
      * @param awake The body sleep status.
+     * @link [Body:setAwake](https://love2d.org/wiki/Body:setAwake)
      */
     setAwake(awake: boolean): void;
 
@@ -618,6 +664,7 @@ declare interface Body extends LoveObject {
      * let a fast moving body pass through even if it is not a bullet.
      *
      * @param status The bullet status of the body.
+     * @link [Body:setBullet](https://love2d.org/wiki/Body:setBullet)
      */
     setBullet(status: boolean): void;
 
@@ -628,6 +675,7 @@ declare interface Body extends LoveObject {
      * Bodies with fixed rotation don't vary the speed at which they rotate.
      *
      * @param fixed Whether the body should have fixed rotation.
+     * @link [Body:setFixedRotation](https://love2d.org/wiki/Body:setFixedRotation)
      */
     setFixedRotation(fixed: boolean): void;
 
@@ -635,6 +683,7 @@ declare interface Body extends LoveObject {
      * Sets a new gravity scale factor for the body.
      *
      * @param scale The new gravity scale factor.
+     * @link [Body:setGravityScale](https://love2d.org/wiki/Body:setGravityScale)
      */
     setGravityScale(scale: number): void;
 
@@ -642,6 +691,7 @@ declare interface Body extends LoveObject {
      * Set the inertia of a body.
      *
      * @param inertia The new moment of inertia, in kilograms per meter squared.
+     * @link [Body:setInertia](https://love2d.org/wiki/Body:setInertia)
      */
     setInertia(inertia: number): void;
 
@@ -656,6 +706,7 @@ declare interface Body extends LoveObject {
      * between 0 and 0.1, though. Other values will make the objects look "floaty".
      *
      * @param ld The new linear damping.
+     * @link [Body:setLinearDamping](https://love2d.org/wiki/Body:setLinearDamping)
      */
     setLinearDamping(ld: number): void;
 
@@ -668,6 +719,7 @@ declare interface Body extends LoveObject {
      *
      * @param x The x component of the velocity vector.
      * @param y The y component of the velocity vector.
+     * @link [Body:setLinearVelocity](https://love2d.org/wiki/Body:setLinearVelocity)
      */
     setLinearVelocity(x: number, y: number): void;
 
@@ -675,6 +727,7 @@ declare interface Body extends LoveObject {
      * Sets the mass in kilograms.
      *
      * @param mass The mass, in kilograms.
+     * @link [Body:setMass](https://love2d.org/wiki/Body:setMass)
      */
     setMass(mass: number): void;
 
@@ -685,6 +738,7 @@ declare interface Body extends LoveObject {
      * @param y The y component of the center of mass in local coordinates.
      * @param mass The mass, in kilograms.
      * @param inertia The rotational inertia, in kilograms per squared meter.
+     * @link [Body:setMassData](https://love2d.org/wiki/Body:setMassData)
      */
     setMassData(x: number, y: number, mass: number, inertia: number): void;
 
@@ -696,6 +750,7 @@ declare interface Body extends LoveObject {
      *
      * @param x The x position.
      * @param y The y position.
+     * @link [Body:setPosition](https://love2d.org/wiki/Body:setPosition)
      */
     setPosition(x: number, y: number): void;
 
@@ -703,6 +758,7 @@ declare interface Body extends LoveObject {
      * Sets the sleeping behaviour of the body.
      *
      * @param allowed True if the body is allowed to sleep or false if not.
+     * @link [Body:setSleepingAllowed](https://love2d.org/wiki/Body:setSleepingAllowed)
      */
     setSleepingAllowed(allowed: boolean): void;
 
@@ -710,6 +766,7 @@ declare interface Body extends LoveObject {
      * Sets a new body type.
      *
      * @param type The new type.
+     * @link [Body:setType](https://love2d.org/wiki/Body:setType)
      */
     setType(type: BodyType): void;
 
@@ -720,6 +777,7 @@ declare interface Body extends LoveObject {
      * To delete the reference, explicitly pass _nil/null_.
      *
      * @param value The Lua value to associate with the Body.
+     * @link [Body:setUserData](https://love2d.org/wiki/Body:setUserData)
      */
     setUserData(value: any): void;
 
@@ -727,6 +785,7 @@ declare interface Body extends LoveObject {
      * Set the x position of the body.
      *
      * @param x The x position.
+     * @link [Body:setX](https://love2d.org/wiki/Body:setX)
      */
     setX(x: number): void;
 
@@ -734,6 +793,7 @@ declare interface Body extends LoveObject {
      * Set the y position of the body.
      *
      * @param y The y position.
+     * @link [Body:setY](https://love2d.org/wiki/Body:setY)
      */
     setY(y: number): void;
 

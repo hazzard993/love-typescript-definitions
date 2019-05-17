@@ -11,6 +11,7 @@ declare namespace os {
    *
    * If the optional second argument close is true, closes the Lua state before
    * exiting.
+   * @link [os.exit](https://www.lua.org/manual/5.1/manual.html#pdf-os.exit)
    */
   export function exit(code?: boolean | number, close?: boolean): never;
 }

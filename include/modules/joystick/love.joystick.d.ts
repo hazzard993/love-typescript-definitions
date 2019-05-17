@@ -10,6 +10,7 @@ declare namespace love {
          * Gets the number of connected joysticks.
          *
          * @return joystickcount, The number of connected joysticks.
+         * @link [love.joystick.getJoystickCount](https://love2d.org/wiki/love.joystick.getJoystickCount)
          */
         export function getJoystickCount(): number;
 
@@ -17,6 +18,7 @@ declare namespace love {
          * Gets a list of connected Joysticks.
          *
          * @return joysticks, The list of currently connected Joysticks.
+         * @link [love.joystick.getJoysticks](https://love2d.org/wiki/love.joystick.getJoysticks)
          */
         export function getJoysticks(): Array<Joystick>;
 
@@ -25,6 +27,7 @@ declare namespace love {
          * love.joystick.saveGamepadMappings.
          *
          * @param filename The filename to load the mappings string from.
+         * @link [love.joystick.loadGamepadMappings](https://love2d.org/wiki/love.joystick.loadGamepadMappings)
          */
         export function loadGamepadMappings(filename: string): void;
 
@@ -33,6 +36,7 @@ declare namespace love {
          * love.joystick.saveGamepadMappings.
          *
          * @param mappings The mappings string to load.
+         * @link [love.joystick.loadGamepadMappings](https://love2d.org/wiki/love.joystick.loadGamepadMappings)
          */
         export function loadGamepadMappings(mappings: string): void;
 
@@ -43,6 +47,7 @@ declare namespace love {
          *
          * @param filename The filename to save the mappings string to.
          * @return mappings, The mappings string that was written to the file.
+         * @link [love.joystick.saveGamepadMappings](https://love2d.org/wiki/love.joystick.saveGamepadMappings)
          */
         export function saveGamepadMappings(filename: string): string;
 
@@ -52,6 +57,7 @@ declare namespace love {
          * modified.
          *
          * @return mappings, The mappings string.
+         * @link [love.joystick.saveGamepadMappings](https://love2d.org/wiki/love.joystick.saveGamepadMappings)
          */
         export function saveGamepadMappings(): string;
 
@@ -77,6 +83,7 @@ declare namespace love {
          * @param inputindex The index of the axis, button, or hat to bind the virtual gamepad button to.
          * @param hatdirection The direction of the hat, if the virtual gamepad button will be bound to a hat. Unspecified otherwise.
          * @return success, Whether the virtual gamepad button was successfully bound.
+         * @link [love.joystick.setGamepadMapping](https://love2d.org/wiki/love.joystick.setGamepadMapping)
          */
         export function setGamepadMapping(guid: string, button: GamepadButton, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
 
@@ -102,6 +109,7 @@ declare namespace love {
          * @param inputindex The index of the axis, button, or hat to bind the virtual gamepad axis to.
          * @param hatdirection The direction of the hat, if the virtual gamepad axis will be bound to a hat. Unspecified otherwise.
          * @return success, Whether the virtual gamepad button was successfully bound.
+         * @link [love.joystick.setGamepadMapping](https://love2d.org/wiki/love.joystick.setGamepadMapping)
          */
         export function setGamepadMapping(guid: string, axis: GamepadAxis, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
 

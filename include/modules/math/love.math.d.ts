@@ -13,6 +13,7 @@ declare namespace love {
          * @param format The format to use when compressing the string.
          * @param level The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.
          * @return compressedData, A new Data object containing the compressed version of the string.
+         * @link [love.math.compress](https://love2d.org/wiki/love.math.compress)
          */
         export function compress(rawstring: string, format?: CompressedDataFormat, level?: number): CompressedData;
 
@@ -23,6 +24,7 @@ declare namespace love {
          * @param format The format to use when compressing the data.
          * @param level The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.
          * @return compressedData, A new Data object containing the compressed version of the raw data.
+         * @link [love.math.compress](https://love2d.org/wiki/love.math.compress)
          */
         export function compress(data: Data, format?: CompressedDataFormat, level?: number): CompressedData;
 
@@ -31,6 +33,7 @@ declare namespace love {
          *
          * @param compressedData The compressed data to decompress.
          * @return rawstring, A string containing the raw decompressed data.
+         * @link [love.math.decompress](https://love2d.org/wiki/love.math.decompress)
          */
         export function decompress(compressedData: CompressedData): string;
 
@@ -40,6 +43,7 @@ declare namespace love {
          * @param compressedString A string containing data previously compressed with love.math.compress.
          * @param format The format that was used to compress the given string.
          * @return rawstring, A string containing the raw decompressed data.
+         * @link [love.math.decompress](https://love2d.org/wiki/love.math.decompress)
          */
         export function decompress(compressedString: string, format: CompressedDataFormat): string;
 
@@ -49,6 +53,7 @@ declare namespace love {
          * @param data A Data object containing data previously compressed with love.math.compress.
          * @param format The format that was used to compress the given data.
          * @return rawstring, A string containing the raw decompressed data.
+         * @link [love.math.decompress](https://love2d.org/wiki/love.math.decompress)
          */
         export function decompress(data: Data, format: CompressedDataFormat): string;
 
@@ -64,6 +69,7 @@ declare namespace love {
          * @return lg, The green channel of the converted color in linear RGB space.
          * @return lb, The blue channel of the converted color in linear RGB space.
          * @tupleReturn
+         * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
          */
         export function gammaToLinear(r: number, g: number, b: number): [number, number, number];
 
@@ -77,6 +83,7 @@ declare namespace love {
          * @return lg, The green channel of the converted color in linear RGB space.
          * @return lb, The blue channel of the converted color in linear RGB space.
          * @tupleReturn
+         * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
          */
         export function gammaToLinear(color: [number, number, number]): [number, number, number];
 
@@ -87,6 +94,7 @@ declare namespace love {
          *
          * @param c The value of a color channel in sRGB space to convert.
          * @return lc, The value of the color channel in linear RGB space.
+         * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
          */
         export function gammaToLinear(c: number): number;
 
@@ -100,6 +108,7 @@ declare namespace love {
          * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
          * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
          * @tupleReturn
+         * @link [love.math.getRandomSeed](https://love2d.org/wiki/love.math.getRandomSeed)
          */
         export function getRandomSeed(): [number, number];
 
@@ -117,6 +126,7 @@ declare namespace love {
          * The value of the state string does not depend on the current operating system.
          *
          * @return state, The current state of the RandomGenerator object, represented as a string.
+         * @link [love.math.getRandomState](https://love2d.org/wiki/love.math.getRandomState)
          */
         export function getRandomState(): string;
 
@@ -129,6 +139,7 @@ declare namespace love {
          *
          * @param vertices The vertices of the polygon as a table in the form of [x1, y1, x2, y2, x3, y3, ...].
          * @return convex, Whether the given polygon is convex.
+         * @link [love.math.isConvex](https://love2d.org/wiki/love.math.isConvex)
          */
         export function isConvex(vertices: Array<number>): boolean;
         export function isConvex(...vertices: Array<number>): boolean;
@@ -151,6 +162,7 @@ declare namespace love {
          * @return cg, The green channel of the converted color in gamma sRGB space.
          * @return cb, The blue channel of the converted color in gamma sRGB space.
          * @tupleReturn
+         * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
          */
         export function linearToGamma(lr: number, lg: number, lb: number): [number, number, number];
 
@@ -170,6 +182,7 @@ declare namespace love {
          * @return cg, The green channel of the converted color in gamma sRGB space.
          * @return cb, The blue channel of the converted color in gamma sRGB space.
          * @tupleReturn
+         * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
          */
         export function linearToGamma(color: [number, number, number]): [number, number, number];
 
@@ -186,6 +199,7 @@ declare namespace love {
          *
          * @param lc The value of a color channel in linear RGB space to convert.
          * @return c, The value of the color channel in gamma sRGB space.
+         * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
          */
         export function linearToGamma(lc: number): number;
 
@@ -209,6 +223,7 @@ declare namespace love {
          * RandomGenerator objects and random functions.
          *
          * @return rng, The new Random Number Generator object.
+         * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
          */
         export function newRandomGenerator(): RandomGenerator;
 
@@ -218,6 +233,7 @@ declare namespace love {
          *
          * @param seed The initial seed number to use for this object.
          * @return rng, The new Random Number Generator object.
+         * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
          */
         export function newRandomGenerator(seed: number): RandomGenerator;
 
@@ -228,6 +244,7 @@ declare namespace love {
          * @param low The lower 32 bits of the state number to use for this instance of the object.
          * @param high The higher 32 bits of the state number to use for this instance of the object.
          * @return rng, The new Random Number Generator object.
+         * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
          */
         export function newRandomGenerator(low: number, high: number): RandomGenerator;
 
@@ -235,6 +252,7 @@ declare namespace love {
          * Creates a new Transform object.
          *
          * @return transform, The new Transform object.
+         * @link [love.math.newTransform](https://love2d.org/wiki/love.math.newTransform)
          */
         export function newTransform(): Transform;
 
@@ -251,6 +269,7 @@ declare namespace love {
          * @param kx Shearing / skew factor on the x-axis.
          * @param ky Shearing / skew factor on the y-axis.
          * @return transform, The new Transform object.
+         * @link [love.math.newTransform](https://love2d.org/wiki/love.math.newTransform)
          */
         export function newTransform(x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): Transform;
 
@@ -267,6 +286,7 @@ declare namespace love {
          *
          * @param x The number used to generate the noise value.
          * @return value, The noise value in the range of [0, 1].
+         * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
          */
         export function noise(x: number): number;
 
@@ -284,6 +304,7 @@ declare namespace love {
          * @param x The first value of the 2-dimensional vector used to generate the noise value.
          * @param y The second value of the 2-dimensional vector used to generate the noise value.
          * @return value, The noise value in the range of [0, 1].
+         * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
          */
         export function noise(x: number, y: number): number;
 
@@ -302,6 +323,7 @@ declare namespace love {
          * @param y The second value of the 3-dimensional vector used to generate the noise value.
          * @param z The third value of the 3-dimensional vector used to generate the noise value.
          * @return value, The noise value in the range of [0, 1].
+         * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
          */
         export function noise(x: number, y: number, z: number): number;
 
@@ -321,6 +343,7 @@ declare namespace love {
          * @param z The third value of the 4-dimensional vector used to generate the noise value.
          * @param w The fourth value of the 4-dimensional vector used to generate the noise value.
          * @return value, The noise value in the range of [0, 1].
+         * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
          */
         export function noise(x: number, y: number, z: number, w: number): number;
 
@@ -328,6 +351,7 @@ declare namespace love {
          * Generates a pseudo-random number in a platform independent manner.
          *
          * @return number, The pseudo-random number.
+         * @link [love.math.random](https://love2d.org/wiki/love.math.random)
          */
         export function random(): number;
 
@@ -336,6 +360,7 @@ declare namespace love {
          *
          * @param max The maximum possible value it should return.
          * @return number, The pseudo-random integer number.
+         * @link [love.math.random](https://love2d.org/wiki/love.math.random)
          */
         export function random(max: number): number;
 
@@ -345,6 +370,7 @@ declare namespace love {
          * @param min The minimum possible value it should return.
          * @param max The maximum possible value it should return.
          * @return number, The pseudo-random integer number.
+         * @link [love.math.random](https://love2d.org/wiki/love.math.random)
          */
         export function random(min: number, max: number): number;
 
@@ -354,6 +380,7 @@ declare namespace love {
          * @param stddev Standard deviation of the distribution.
          * @param mean The mean of the distribution.
          * @return number, Normally distributed random number with variance (stddev)² and the specified mean.
+         * @link [love.math.randomNormal](https://love2d.org/wiki/love.math.randomNormal)
          */
         export function randomNormal(stddev?: number, mean?: number): number;
 
@@ -362,6 +389,7 @@ declare namespace love {
          * number.
          *
          * @param seed The integer number with which you want to seed the randomization. Must be within the range of [1, 2^53].
+         * @link [love.math.setRandomSeed](https://love2d.org/wiki/love.math.setRandomSeed)
          */
         export function setRandomSeed(seed: number): void;
 
@@ -371,6 +399,7 @@ declare namespace love {
          *
          * @param low The lower 32 bits of the state value. Must be within the range of [0, 2^32 - 1].
          * @param high The higher 32 bits of the state value. Must be within the range of [0, 2^32 - 1].
+         * @link [love.math.setRandomSeed](https://love2d.org/wiki/love.math.setRandomSeed)
          */
         export function setRandomSeed(low: number, high: number): void;
 
@@ -388,6 +417,7 @@ declare namespace love {
          * The value of the state string does not depend on the current operating system.
          *
          * @param state The current state of the RandomGenerator object, represented as a string.
+         * @link [love.math.setRandomState](https://love2d.org/wiki/love.math.setRandomState)
          */
         export function setRandomState(state: string): void;
 
@@ -396,6 +426,7 @@ declare namespace love {
          *
          * @param polygon Polygon to triangulate. Must not intersect itself.
          * @return triangles, List of triangles the polygon is composed of, in the form of [[x1, y1, x2, y2, x3, y3], [x1, y1, x2, y2, x3, y3], ...].
+         * @link [love.math.triangulate](https://love2d.org/wiki/love.math.triangulate)
          */
         export function triangulate(polygon: Array<number>): Array<Array<number>>;
         export function triangulate(...polygon: Array<number>): Array<Array<number>>;

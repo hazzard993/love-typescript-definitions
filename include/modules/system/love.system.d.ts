@@ -10,6 +10,7 @@ declare namespace love {
          * Gets text from the clipboard.
          *
          * @return text, The text currently held in the system's clipboard.
+         * @link [love.system.getClipboardText](https://love2d.org/wiki/love.system.getClipboardText)
          */
         export function getClipboardText(): string;
 
@@ -19,6 +20,7 @@ declare namespace love {
          * useful (especially in combination with os.execute.)
          *
          * @return osString, The current operating system. "OS X", "Windows", "Linux", "Android" or "iOS".
+         * @link [love.system.getOS](https://love2d.org/wiki/love.system.getOS)
          */
         export function getOS(): string;
 
@@ -29,6 +31,7 @@ declare namespace love {
          * @return percent, Percentage of battery life left, between 0 and 100. _nil/null_ if the value can't be determined or there's no battery.
          * @return seconds, Seconds of battery life left. _nil/null_ if the value can't be determined or there's no battery.
          * @tupleReturn
+         * @link [love.system.getPowerInfo](https://love2d.org/wiki/love.system.getPowerInfo)
          */
         export function getPowerInfo(): [PowerState, number | null, number | null];
 
@@ -36,6 +39,7 @@ declare namespace love {
          * Gets the amount of logical processor in the system.
          *
          * @return processorCount, Amount of logical processors.
+         * @link [love.system.getProcessorCount](https://love2d.org/wiki/love.system.getProcessorCount)
          */
         export function getProcessorCount(): number;
 
@@ -53,6 +57,7 @@ declare namespace love {
 
 To open a file or folder, "file://" must be prepended to the path.
          * @return success, Whether the URL was opened successfully.
+         @link [love.system.openURL](https://love2d.org/wiki/love.system.openURL)
          */
         export function openURL(url: string): boolean;
 
@@ -60,6 +65,7 @@ To open a file or folder, "file://" must be prepended to the path.
          * Puts text in the clipboard.
          *
          * @param text The new text to hold in the system's clipboard.
+         * @link [love.system.setClipboardText](https://love2d.org/wiki/love.system.setClipboardText)
          */
         export function setClipboardText(text: string): void;
 
@@ -68,6 +74,7 @@ To open a file or folder, "file://" must be prepended to the path.
          * Android and iOS devices that have a built-in vibration motor.
          *
          * @param seconds The duration to vibrate for. If called on an iOS device, it will always vibrate for 0.5 seconds due to limitations in the iOS system APIs.
+         * @link [love.system.vibrate](https://love2d.org/wiki/love.system.vibrate)
          */
         export function vibrate(seconds?: number): void;
 

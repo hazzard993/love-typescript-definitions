@@ -20,6 +20,7 @@ declare namespace debug {
    * or a number that specifies the function at that stack level: Level 1 is the
    * function calling getfenv. If the given function is not a Lua function, or if f
    * is 0, getfenv returns the global environment. The default for f is 1.
+   * @link [debug.getfenv](https://www.lua.org/manual/5.1/manual.html#pdf-debug.getfenv)
    */
   export function getfenv(f?: Function | 0 | 1 | 2): object;
 
@@ -30,6 +31,7 @@ declare namespace debug {
    *
    * As a special case, when f is 0 setfenv changes the environment of the running
    * thread. In this case, setfenv returns no values.
+   * @link [debug.setfenv](https://www.lua.org/manual/5.1/manual.html#pdf-debug.setfenv)
    */
   export function setfenv(f: Function | 0 | 1 | 2, tbl: object): Function | null;
 
