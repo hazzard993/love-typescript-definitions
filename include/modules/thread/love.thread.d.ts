@@ -11,6 +11,7 @@ declare namespace love {
          *
          * @param name The name of the channel you want to create or retrieve.
          * @return channel, A named channel object which can be further manipulated.
+         * @link [love.thread.getChannel](https://love2d.org/wiki/love.thread.getChannel)
          */
         export function getChannel(name: string): Channel;
 
@@ -22,6 +23,7 @@ declare namespace love {
          * Channel:push
          *
          * @return channel, A unnamed channel object which can be further manipulated.
+         * @link [love.thread.newChannel](https://love2d.org/wiki/love.thread.newChannel)
          */
         export function newChannel(): Channel;
 
@@ -30,6 +32,7 @@ declare namespace love {
          *
          * @param filename The name of the Lua File to use as source.
          * @return thread, A new Thread that has yet to be started.
+         * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
          */
         export function newThread(filename: string): Thread;
 
@@ -38,6 +41,7 @@ declare namespace love {
          *
          * @param fileData The FileData containing the Lua code to use as the source.
          * @return thread, A new Thread that has yet to be started.
+         * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
          */
         export function newThread(fileData: FileData): Thread;
 
@@ -46,6 +50,7 @@ declare namespace love {
          *
          * @param codestring A string containing the Lua code to use as the source. It needs to either be at least 1024 characters long, or contain at least one newline.
          * @return thread, A new Thread that has yet to be started.
+         * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
          */
         export function newThread(codestring: string): Thread;
 

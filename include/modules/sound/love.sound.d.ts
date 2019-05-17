@@ -13,6 +13,7 @@ declare namespace love {
          * @param file The file with encoded sound data.
          * @param buffer The size of each decoded chunk, in bytes.
          * @return decoder, A new Decoder object.
+         * @link [love.sound.newDecoder](https://love2d.org/wiki/love.sound.newDecoder)
          */
         export function newDecoder(file: File, buffer?: number): Decoder;
 
@@ -22,6 +23,7 @@ declare namespace love {
          * @param filename The filename of the file with encoded sound data.
          * @param buffer The size of each decoded chunk, in bytes.
          * @return decoder, A new Decoder object.
+         * @link [love.sound.newDecoder](https://love2d.org/wiki/love.sound.newDecoder)
          */
         export function newDecoder(filename: string, buffer?: number): Decoder;
 
@@ -36,6 +38,7 @@ declare namespace love {
          *
          * @param filename The filename of the file to load.
          * @return soundData, A new SoundData object.
+         * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
         export function newSoundData(filename: string): SoundData;
 
@@ -50,6 +53,7 @@ declare namespace love {
          *
          * @param file A File pointing to an audio file.
          * @return soundData, A new SoundData object.
+         * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
         export function newSoundData(file: File): SoundData;
 
@@ -64,6 +68,7 @@ declare namespace love {
          *
          * @param data The encoded data to decode into audio.
          * @return soundData, A new SoundData object.
+         * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
         export function newSoundData(data: Data): SoundData;
 
@@ -81,6 +86,7 @@ declare namespace love {
          * @param bits Bits per sample (8 or 16).
          * @param channels Either 1 for mono or 2 for stereo.
          * @return soundData, A new SoundData object.
+         * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
         export function newSoundData(samples: number, rate?: number, bits?: number, channels?: number): SoundData;
 

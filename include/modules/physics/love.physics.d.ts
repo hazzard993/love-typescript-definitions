@@ -35,6 +35,7 @@ declare namespace love {
          * number for the physics calculations.
          *
          * @return scale, The size of 1 meter in pixels.
+         * @link [love.physics.getMeter](https://love2d.org/wiki/love.physics.getMeter)
          */
         export function getMeter(): number;
 
@@ -56,6 +57,7 @@ declare namespace love {
          * @param y The y position of the body.
          * @param type The type of the body.
          * @return body, A new body.
+         * @link [love.physics.newBody](https://love2d.org/wiki/love.physics.newBody)
          */
         export function newBody(world: World, x?: number, y?: number, type?: BodyType): Body;
 
@@ -69,6 +71,7 @@ declare namespace love {
          * @param y2 The y position of the second point.
          * @param ... Additional point positions.
          * @return shape, The new shape.
+         * @link [love.physics.newChainShape](https://love2d.org/wiki/love.physics.newChainShape)
          */
         export function newChainShape(loop: boolean, x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): ChainShape;
 
@@ -78,6 +81,7 @@ declare namespace love {
          * @param loop If the chain should loop back to the first point.
          * @param points A list of points to construct the ChainShape, in the form of {x1, y1, x2, y2, ...}.
          * @return shape, The new shape.
+         * @link [love.physics.newChainShape](https://love2d.org/wiki/love.physics.newChainShape)
          */
         export function newChainShape(loop: boolean, points: Array<number>): ChainShape;
 
@@ -86,6 +90,7 @@ declare namespace love {
          *
          * @param radius The radius of the circle.
          * @return shape, The new shape.
+         * @link [love.physics.newCircleShape](https://love2d.org/wiki/love.physics.newCircleShape)
          */
         export function newCircleShape(radius: number): CircleShape;
 
@@ -96,6 +101,7 @@ declare namespace love {
          * @param y The y offset of the circle.
          * @param radius The radius of the circle.
          * @return shape, The new shape.
+         * @link [love.physics.newCircleShape](https://love2d.org/wiki/love.physics.newCircleShape)
          */
         export function newCircleShape(x: number, y: number, radius: number): CircleShape;
 
@@ -117,6 +123,7 @@ declare namespace love {
          * @param y2 The y position of the second anchor point (world space).
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new distance joint.
+         * @link [love.physics.newDistanceJoint](https://love2d.org/wiki/love.physics.newDistanceJoint)
          */
         export function newDistanceJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean): DistanceJoint;
 
@@ -128,6 +135,7 @@ declare namespace love {
          * @param x2 The x position of the second point.
          * @param y2 The y position of the second point.
          * @return shape, The new shape.
+         * @link [love.physics.newEdgeShape](https://love2d.org/wiki/love.physics.newEdgeShape)
          */
         export function newEdgeShape(x1: number, y1: number, x2: number, y2: number): EdgeShape;
 
@@ -138,6 +146,7 @@ declare namespace love {
          * @param shape The shape of the fixture.
          * @param density The density of the fixture.
          * @return fixture, The new fixture.
+         * @link [love.physics.newFixture](https://love2d.org/wiki/love.physics.newFixture)
          */
         export function newFixture(body: Body, shape: Shape, density?: number): Fixture;
 
@@ -151,6 +160,7 @@ declare namespace love {
          * @param y The y position of the anchor point.
          * @param collideConnected Specifies whether the two bodies should collide with eachother.
          * @return joint, The new FrictionJoint.
+         * @link [love.physics.newFrictionJoint](https://love2d.org/wiki/love.physics.newFrictionJoint)
          */
         export function newFrictionJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): FrictionJoint;
 
@@ -175,6 +185,7 @@ declare namespace love {
          * @param ratio The gear ratio.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new gear joint.
+         * @link [love.physics.newGearJoint](https://love2d.org/wiki/love.physics.newGearJoint)
          */
         export function newGearJoint(joint1: Joint, joint2: Joint, ratio?: number, collideConnected?: boolean): GearJoint;
 
@@ -191,6 +202,7 @@ declare namespace love {
          * @param body2 The second body to attach to the joint.
          * @param correctionFactor The joint's initial position correction factor, in the range of [0, 1].
          * @return joint, The new MotorJoint.
+         * @link [love.physics.newMotorJoint](https://love2d.org/wiki/love.physics.newMotorJoint)
          */
         export function newMotorJoint(body1: Body, body2: Body, correctionFactor?: number): MotorJoint;
 
@@ -208,6 +220,7 @@ declare namespace love {
          * @param correctionFactor The joint's initial position correction factor, in the range of [0, 1].
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new MotorJoint.
+         * @link [love.physics.newMotorJoint](https://love2d.org/wiki/love.physics.newMotorJoint)
          */
         export function newMotorJoint(body1: Body, body2: Body, correctionFactor?: number, collideConnected?: boolean): MotorJoint;
 
@@ -228,6 +241,7 @@ declare namespace love {
          * @param x The x position of the connecting point.
          * @param y The y position of the connecting point.
          * @return joint, The new mouse joint.
+         * @link [love.physics.newMouseJoint](https://love2d.org/wiki/love.physics.newMouseJoint)
          */
         export function newMouseJoint(body: Body, x: number, y: number): MouseJoint;
 
@@ -243,6 +257,7 @@ declare namespace love {
          * @param y2 The position of second point on the y-axis.
          * @param ... You can continue passing more point positions to create the PolygonShape.
          * @return shape, A new PolygonShape.
+         * @link [love.physics.newPolygonShape](https://love2d.org/wiki/love.physics.newPolygonShape)
          */
         export function newPolygonShape(x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): PolygonShape;
 
@@ -254,6 +269,7 @@ declare namespace love {
          *
          * @param vertices A list of vertices to construct the polygon, in the form of {x1, y1, x2, y2, x3, y3, ...}.
          * @return shape, A new PolygonShape.
+         * @link [love.physics.newPolygonShape](https://love2d.org/wiki/love.physics.newPolygonShape)
          */
         export function newPolygonShape(vertices: Array<number>): PolygonShape;
 
@@ -274,6 +290,7 @@ declare namespace love {
          * @param ay The y coordinate of the axis unit vector.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new prismatic joint.
+         * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
          */
         export function newPrismaticJoint(body1: Body, body2: Body, x: number, y: number, ax: number, ay: number, collideConnected?: boolean): PrismaticJoint;
 
@@ -296,6 +313,7 @@ declare namespace love {
          * @param ay The y coordinate of the axis unit vector.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new prismatic joint.
+         * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
          */
         export function newPrismaticJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, ax: number, ay: number, collideConnected?: boolean): PrismaticJoint;
 
@@ -319,6 +337,7 @@ declare namespace love {
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @param referenceAngle The reference angle between body1 and body2, in radians.
          * @return joint, The new prismatic joint.
+         * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
          */
         export function newPrismaticJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, ax: number, ay: number, collideConnected?: boolean, referenceAngle?: number): PrismaticJoint;
 
@@ -350,6 +369,7 @@ declare namespace love {
          * @param ratio The joint ratio.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new pulley joint.
+         * @link [love.physics.newPulleyJoint](https://love2d.org/wiki/love.physics.newPulleyJoint)
          */
         export function newPulleyJoint(body1: Body, body2: Body, gx1: number, gy1: number, gx2: number, gy2: number, x1: number, y1: number, x2: number, y2: number, ratio?: number, collideConnected?: boolean): PulleyJoint;
 
@@ -363,6 +383,7 @@ declare namespace love {
          * @param width The width of the rectangle.
          * @param height The height of the rectangle.
          * @return shape, A new PolygonShape.
+         * @link [love.physics.newRectangleShape](https://love2d.org/wiki/love.physics.newRectangleShape)
          */
         export function newRectangleShape(width: number, height: number): PolygonShape;
 
@@ -379,6 +400,7 @@ declare namespace love {
          * @param height The height of the rectangle.
          * @param angle The initial angle of the rectangle.
          * @return shape, A new PolygonShape.
+         * @link [love.physics.newRectangleShape](https://love2d.org/wiki/love.physics.newRectangleShape)
          */
         export function newRectangleShape(x: number, y: number, width: number, height: number, angle?: number): PolygonShape;
 
@@ -394,6 +416,7 @@ declare namespace love {
          * @param y The y position of the connecting point.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new revolute joint.
+         * @link [love.physics.newRevoluteJoint](https://love2d.org/wiki/love.physics.newRevoluteJoint)
          */
         export function newRevoluteJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): RevoluteJoint;
 
@@ -412,6 +435,7 @@ declare namespace love {
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @param referenceAngle Specifies whether the two bodies should collide with each other.
          * @return joint, The new revolute joint.
+         * @link [love.physics.newRevoluteJoint](https://love2d.org/wiki/love.physics.newRevoluteJoint)
          */
         export function newRevoluteJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean, referenceAngle?: number): RevoluteJoint;
 
@@ -428,6 +452,7 @@ declare namespace love {
          * @param maxLength The maximum distance for the bodies.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new RopeJoint.
+         * @link [love.physics.newRopeJoint](https://love2d.org/wiki/love.physics.newRopeJoint)
          */
         export function newRopeJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, maxLength: number, collideConnected?: boolean): RopeJoint;
 
@@ -442,6 +467,7 @@ declare namespace love {
          * @param y The y position of the anchor point (world space).
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new WeldJoint.
+         * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
          */
         export function newWeldJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): WeldJoint;
 
@@ -458,6 +484,7 @@ declare namespace love {
          * @param y2 The y position of the second anchor point (world space).
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new WeldJoint.
+         * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
          */
         export function newWeldJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean): WeldJoint;
 
@@ -475,6 +502,7 @@ declare namespace love {
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @param referenceAngle The reference angle between body1 and body2, in radians.
          * @return joint, The new WeldJoint.
+         * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
          */
         export function newWeldJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean, referenceAngle?: number): WeldJoint;
 
@@ -489,6 +517,7 @@ declare namespace love {
          * @param ay The y position of the axis unit vector.
          * @param collideConnected Specifies whether the two bodies should collide with each other.
          * @return joint, The new WheelJoint.
+         * @link [love.physics.newWheelJoint](https://love2d.org/wiki/love.physics.newWheelJoint)
          */
         export function newWheelJoint(body1: Body, body2: Body, x: number, y: number, ax: number, ay: number, collideConnected?: boolean): WheelJoint;
 
@@ -499,6 +528,7 @@ declare namespace love {
          * @param yg The y component of gravity.
          * @param sleep Whether the bodies in this world are allowed to sleep.
          * @return world, A brave new World.
+         * @link [love.physics.newWorld](https://love2d.org/wiki/love.physics.newWorld)
          */
         export function newWorld(xg?: number, yg?: number, sleep?: boolean): World;
 
@@ -521,6 +551,7 @@ declare namespace love {
          * pixel coordinates.
          *
          * @param scale The scale factor as an integer.
+         * @link [love.physics.setMeter](https://love2d.org/wiki/love.physics.setMeter)
          */
         export function setMeter(scale: number): void;
 

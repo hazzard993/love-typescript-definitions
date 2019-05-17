@@ -21,6 +21,7 @@ declare namespace love {
          *
          * @param scancode The scancode to get the key from.
          * @return key, The key corresponding to the given scancode, or "unknown" if the scancode doesn't map to a KeyConstant on the current system.
+         * @link [love.keyboard.getKeyFromScancode](https://love2d.org/wiki/love.keyboard.getKeyFromScancode)
          */
         export function getKeyFromScancode(scancode: Scancode): KeyConstant;
 
@@ -39,6 +40,7 @@ declare namespace love {
          *
          * @param key The key to get the scancode from.
          * @return scancode, The scancode corresponding to the given key, or "unknown" if the given key has no known physical representation on the current system.
+         * @link [love.keyboard.getScancodeFromKey](https://love2d.org/wiki/love.keyboard.getScancodeFromKey)
          */
         export function getScancodeFromKey(key: KeyConstant): Scancode;
 
@@ -46,6 +48,7 @@ declare namespace love {
          * Gets whether key repeat is enabled.
          *
          * @return enabled, Whether key repeat is enabled.
+         * @link [love.keyboard.hasKeyRepeat](https://love2d.org/wiki/love.keyboard.hasKeyRepeat)
          */
         export function hasKeyRepeat(): boolean;
 
@@ -53,6 +56,7 @@ declare namespace love {
          * Gets whether text input events are enabled.
          *
          * @return enabled, Whether text input events are enabled.
+         * @link [love.keyboard.hasTextInput](https://love2d.org/wiki/love.keyboard.hasTextInput)
          */
         export function hasTextInput(): boolean;
 
@@ -87,6 +91,7 @@ declare namespace love {
          * The interval between repeats depends on the user's system settings.
          *
          * @param enable Whether repeat keypress events should be enabled when a key is held down.
+         * @link [love.keyboard.setKeyRepeat](https://love2d.org/wiki/love.keyboard.setKeyRepeat)
          */
         export function setKeyRepeat(enable: boolean): void;
 
@@ -95,6 +100,7 @@ declare namespace love {
          * Mac, and Linux, and disabled by default on iOS and Android.
          *
          * @param enable Whether text input events should be enabled.
+         * @link [love.keyboard.setTextInput](https://love2d.org/wiki/love.keyboard.setTextInput)
          */
         export function setTextInput(enable: boolean): void;
 
@@ -107,6 +113,7 @@ declare namespace love {
          * @param y On-screen keyboard y position.
          * @param w On-screen keyboard width.
          * @param h On-screen keyboard height.
+         * @link [love.keyboard.setTextInput](https://love2d.org/wiki/love.keyboard.setTextInput)
          */
         export function setTextInput(enable: boolean, x: number, y: number, w: number, h: number): void;
 

@@ -9,7 +9,7 @@ declare namespace love {
     export namespace window {
         /**
          * Closes the window. It can be reopened with love.window.setMode.
-         *
+         * @link [love.window.close](https://love2d.org/wiki/love.window.close)
          */
         export function close(): void;
 
@@ -36,6 +36,7 @@ declare namespace love {
          *
          * @param pixelvalue A number in pixels to convert to density-independent units.
          * @return value, The converted number, in density-independent units.
+         * @link [love.window.fromPixels](https://love2d.org/wiki/love.window.fromPixels)
          */
         export function fromPixels(pixelvalue: number): number;
 
@@ -65,6 +66,7 @@ declare namespace love {
          * @return x, The converted x-axis value of the coordinate, in density-independent units.
          * @return y, The converted y-axis value of the coordinate, in density-independent units.
          * @tupleReturn
+         * @link [love.window.fromPixels](https://love2d.org/wiki/love.window.fromPixels)
          */
         export function fromPixels(px: number, py: number): [number, number];
 
@@ -73,6 +75,7 @@ declare namespace love {
          *
          * @param displayindex The index of the display to get the name of.
          * @return name, The name of the specified display.
+         * @link [love.window.getDisplayName](https://love2d.org/wiki/love.window.getDisplayName)
          */
         export function getDisplayName(displayindex: number): string;
 
@@ -96,6 +99,7 @@ declare namespace love {
          * and Linux, and on Android it is effectively always enabled.
          *
          * @return scale, The pixel scale factor associated with the window.
+         * @link [love.window.getDPIScale](https://love2d.org/wiki/love.window.getDPIScale)
          */
         export function getDPIScale(): number;
 
@@ -121,6 +125,7 @@ declare namespace love {
          * @return fullscreen, True if the window is fullscreen, false otherwise.
          * @return fstype, The type of fullscreen mode used.
          * @tupleReturn
+         * @link [love.window.getFullscreen](https://love2d.org/wiki/love.window.getFullscreen)
          */
         export function getFullscreen(): [boolean, FullscreenType];
 
@@ -129,6 +134,7 @@ declare namespace love {
          *
          * @param display The index of the display, if multiple monitors are available.
          * @return modes, A table of width/height pairs. (Note that this may not be in order.)
+         * @link [love.window.getFullscreenModes](https://love2d.org/wiki/love.window.getFullscreenModes)
          */
         export function getFullscreenModes(display?: number): Array<{ width: number, height: number }>;
 
@@ -136,6 +142,7 @@ declare namespace love {
          * Gets the window icon.
          *
          * @return imagedata, The window icon imagedata, or _nil/null_ of no icon has been set with love.window.setIcon.
+         * @link [love.window.getIcon](https://love2d.org/wiki/love.window.getIcon)
          */
         export function getIcon(): ImageData | null;
 
@@ -146,6 +153,7 @@ declare namespace love {
          * @return height, Window height.
          * @return flags, Table containing the window properties.
          * @tupleReturn
+         * @link [love.window.getMode](https://love2d.org/wiki/love.window.getMode)
          */
         export function getMode(): [number, number, DisplayFlags];
 
@@ -169,6 +177,7 @@ declare namespace love {
          * and Linux, and on Android it is effectively always enabled.
          *
          * @return scale, The pixel scale factor associated with the window.
+         * @link [love.window.getPixelScale](https://love2d.org/wiki/love.window.getPixelScale)
          */
         export function getPixelScale(): number;
 
@@ -183,6 +192,7 @@ declare namespace love {
          * @return y, The y-coordinate of the window's position.
          * @return display, The index of the display that the window is in.
          * @tupleReturn
+         * @link [love.window.getPosition](https://love2d.org/wiki/love.window.getPosition)
          */
         export function getPosition(): [number, number, number];
 
@@ -190,6 +200,7 @@ declare namespace love {
          * Gets the window title.
          *
          * @return title, The current window title.
+         * @link [love.window.getTitle](https://love2d.org/wiki/love.window.getTitle)
          */
         export function getTitle(): string;
 
@@ -197,6 +208,7 @@ declare namespace love {
          * Checks if the game window has keyboard focus.
          *
          * @return focus, True if the window has the focus or false if not.
+         * @link [love.window.hasFocus](https://love2d.org/wiki/love.window.hasFocus)
          */
         export function hasFocus(): boolean;
 
@@ -204,6 +216,7 @@ declare namespace love {
          * Checks if the game window has mouse focus.
          *
          * @return focus, True if the window has mouse focus or false if not.
+         * @link [love.window.hasMouseFocus](https://love2d.org/wiki/love.window.hasMouseFocus)
          */
         export function hasMouseFocus(): boolean;
 
@@ -216,6 +229,7 @@ declare namespace love {
          * allowed.
          *
          * @return enabled, True if system display sleep is enabled / allowed, false otherwise.
+         * @link [love.window.isDisplaySleepEnabled](https://love2d.org/wiki/love.window.isDisplaySleepEnabled)
          */
         export function isDisplaySleepEnabled(): boolean;
 
@@ -228,6 +242,7 @@ declare namespace love {
          * love.window.maximize has been called.
          *
          * @return maximized, True if the window is currently maximized in windowed mode, false otherwise.
+         * @link [love.window.isMaximized](https://love2d.org/wiki/love.window.isMaximized)
          */
         export function isMaximized(): boolean;
 
@@ -235,6 +250,7 @@ declare namespace love {
          * Gets whether the Window is currently minimized.
          *
          * @return maximized, True if the window is currently minimized, false otherwise.
+         * @link [love.window.isMinimized](https://love2d.org/wiki/love.window.isMinimized)
          */
         export function isMinimized(): boolean;
 
@@ -242,6 +258,7 @@ declare namespace love {
          * Checks if the window is open.
          *
          * @return open, True if the window is open, false otherwise.
+         * @link [love.window.isOpen](https://love2d.org/wiki/love.window.isOpen)
          */
         export function isOpen(): boolean;
 
@@ -253,6 +270,7 @@ declare namespace love {
          * hidden.
          *
          * @return visible, True if the window is visible or false if not.
+         * @link [love.window.isVisible](https://love2d.org/wiki/love.window.isVisible)
          */
         export function isVisible(): boolean;
 
@@ -263,18 +281,21 @@ declare namespace love {
          * This function has no effect if the window isn't resizable, since it essentially
          * programmatically presses the window's "maximize" button.
          *
+         * @link [love.window.maximize](https://love2d.org/wiki/love.window.maximize)
          */
         export function maximize(): void;
 
         /**
          * Minimizes the window to the system's task bar / dock.
          *
+         * @link [love.window.minimize](https://love2d.org/wiki/love.window.minimize)
          */
         export function minimize(): void;
 
         /**
          * Restores the size and position of the window if it was minimized or maximized.
          *
+         * @link [love.window.restore](https://love2d.org/wiki/love.window.restore)
          */
         export function restore(): void;
 
@@ -286,6 +307,7 @@ declare namespace love {
          * In Windows the taskbar icon will flash, and in OS X the dock icon will bounce.
          *
          * @param continuous Whether to continuously request attention until the window becomes active, or to do it only once.
+         * @link [love.window.requestAttention](https://love2d.org/wiki/love.window.requestAttention)
          */
         export function requestAttention(continuous?: boolean): void;
 
@@ -298,6 +320,7 @@ declare namespace love {
          * allowed.
          *
          * @param enable True to enable system display sleep, false to disable it.
+         * @link [love.window.setDisplaySleepEnabled](https://love2d.org/wiki/love.window.setDisplaySleepEnabled)
          */
         export function setDisplaySleepEnabled(enable: boolean): void;
 
@@ -315,6 +338,7 @@ declare namespace love {
          *
          * @param fullscreen Whether to enter or exit fullscreen mode.
          * @return success, True if successful, false otherwise.
+         * @link [love.window.setFullscreen](https://love2d.org/wiki/love.window.setFullscreen)
          */
         export function setFullscreen(fullscreen: boolean): boolean;
 
@@ -333,6 +357,7 @@ declare namespace love {
          * @param fullscreen Whether to enter or exit fullscreen mode.
          * @param fstype The type of fullscreen mode to use.
          * @return success, True if successful, false otherwise.
+         * @link [love.window.setFullscreen](https://love2d.org/wiki/love.window.setFullscreen)
          */
         export function setFullscreen(fullscreen: boolean, fstype: FullscreenType): boolean;
 
@@ -342,6 +367,7 @@ declare namespace love {
          *
          * @param imagedata The window icon image.
          * @return success, Whether the icon has been set successfully.
+         * @link [love.window.setIcon](https://love2d.org/wiki/love.window.setIcon)
          */
         export function setIcon(imagedata: ImageData): boolean;
 
@@ -361,6 +387,7 @@ declare namespace love {
          * @param height Display height.
          * @param flags The flags table with the options:
          * @return success, True if successful, false otherwise.
+         * @link [love.window.setMode](https://love2d.org/wiki/love.window.setMode)
          */
         export function setMode(width: number, height: number, flags: DisplayFlags): boolean;
 
@@ -373,6 +400,7 @@ declare namespace love {
          * @param x The x-coordinate of the window's position.
          * @param y The y-coordinate of the window's position.
          * @param display The index of the display that the new window position is relative to.
+         * @link [love.window.setPosition](https://love2d.org/wiki/love.window.setPosition)
          */
         export function setPosition(x: number, y: number, display: number): void;
 
@@ -380,6 +408,7 @@ declare namespace love {
          * Sets the window title.
          *
          * @param title The new window title.
+         * @link [love.window.setTitle](https://love2d.org/wiki/love.window.setTitle)
          */
         export function setTitle(title: string): void;
 
@@ -392,6 +421,7 @@ declare namespace love {
          * @param type The type of the message box.
          * @param attachtowindow Whether the message box should be attached to the love window or free-floating.
          * @return success, Whether the message box was successfully displayed.
+         * @link [love.window.showMessageBox](https://love2d.org/wiki/love.window.showMessageBox)
          */
         export function showMessageBox(title: string, message: string, type?: MessageBoxType, attachtowindow?: boolean): boolean;
 
@@ -405,6 +435,7 @@ declare namespace love {
          * @param type The type of the message box.
          * @param attachtowindow Whether the message box should be attached to the love window or free-floating.
          * @return pressedbutton, The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.
+         * @link [love.window.showMessageBox](https://love2d.org/wiki/love.window.showMessageBox)
          */
         export function showMessageBox(title: string, message: string, buttonlist: ButtonList, type?: MessageBoxType, attachtowindow?: boolean): number;
 
@@ -431,6 +462,7 @@ declare namespace love {
          *
          * @param value A number in density-independent units to convert to pixels.
          * @return pixelvalue, The converted number, in pixels.
+         * @link [love.window.toPixels](https://love2d.org/wiki/love.window.toPixels)
          */
         export function toPixels(value: number): number;
 
@@ -460,6 +492,7 @@ declare namespace love {
          * @return px, The converted x-axis value of the coordinate, in pixels.
          * @return py, The converted y-axis value of the coordinate, in pixels.
          * @tupleReturn
+         * @link [love.window.toPixels](https://love2d.org/wiki/love.window.toPixels)
          */
         export function toPixels(x: number, y: number): [number, number];
 
@@ -480,6 +513,7 @@ declare namespace love {
          * @param height Window height.
          * @param settings The settings table with the following optional fields. Any field not filled in will use the current value that would be returned by love.window.getMode.
          * @return success, True if successful, false otherwise.
+         * @link [love.window.close](https://love2d.org/wiki/love.window.close)
          */
         export function updateMode(width: number, height: number, settings: DisplayFlags): boolean;
 

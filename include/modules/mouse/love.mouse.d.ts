@@ -10,7 +10,7 @@ declare namespace love {
          * Gets the current Cursor.
          *
          * @return cursor, The current cursor, or _nil/null_ if no cursor is set.
-         * [love.mouse.getCursor](https://love2d.org/wiki/love.mouse.getCursor)
+         * @link [love.mouse.getCursor](https://love2d.org/wiki/love.mouse.getCursor)
          */
         export function getCursor(): Cursor | null;
 
@@ -20,6 +20,7 @@ declare namespace love {
          * @return x, The position of the mouse along the x-axis.
          * @return y, The position of the mouse along the y-axis.
          * @tupleReturn
+         * @link [love.mouse.getPosition](https://love2d.org/wiki/love.mouse.getPosition)
          */
         export function getPosition(): [number, number];
 
@@ -37,6 +38,7 @@ declare namespace love {
          * enabled, even when relative mouse motion events are generated.
          *
          * @return enabled, True if relative mode is enabled, false if it's disabled.
+         * @link [love.mouse.getRelativeMode](https://love2d.org/wiki/love.mouse.getRelativeMode)
          */
         export function getRelativeMode(): boolean;
 
@@ -51,6 +53,7 @@ declare namespace love {
          *
          * @param ctype The type of system cursor to get.
          * @return cursor, The Cursor object representing the system cursor type.
+         * @link [love.mouse.getSystemCursor](https://love2d.org/wiki/love.mouse.getSystemCursor)
          */
         export function getSystemCursor(ctype: CursorType): Cursor;
 
@@ -58,6 +61,7 @@ declare namespace love {
          * Returns the current x position of the mouse.
          *
          * @return x, The position of the mouse along the x-axis.
+         * @link [love.mouse.getX](https://love2d.org/wiki/love.mouse.getX)
          */
         export function getX(): number;
 
@@ -65,6 +69,7 @@ declare namespace love {
          * Returns the current y position of the mouse.
          *
          * @return y, The position of the mouse along the y-axis.
+         * @link [love.mouse.getY](https://love2d.org/wiki/love.mouse.getY)
          */
         export function getY(): number;
 
@@ -77,6 +82,7 @@ declare namespace love {
          * cursors.
          *
          * @return hascursor, Whether the system has cursor functionality.
+         * @link [love.mouse.hasCursor](https://love2d.org/wiki/love.mouse.hasCursor)
          */
         export function hasCursor(): boolean;
 
@@ -89,6 +95,7 @@ declare namespace love {
          * cursors.
          *
          * @return supported, Whether the system has cursor functionality.
+         * @link [love.mouse.isCursorSupported](https://love2d.org/wiki/love.mouse.isCursorSupported)
          */
         export function isCursorSupported(): boolean;
 
@@ -100,6 +107,7 @@ declare namespace love {
          * @param button The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button, etc.
          * @param ... Additional button numbers to check.
          * @return down, True if the specified button is down.
+         * @link [love.mouse.isDown](https://love2d.org/wiki/love.mouse.isDown)
          */
         export function isDown(button: number, ...vararg: Array<number>): boolean;
 
@@ -107,6 +115,7 @@ declare namespace love {
          * Checks if the mouse is grabbed.
          *
          * @return grabbed, True if the cursor is grabbed, false if it is not.
+         * @link [love.mouse.isGrabbed](https://love2d.org/wiki/love.mouse.isGrabbed)
          */
         export function isGrabbed(): boolean;
 
@@ -114,6 +123,7 @@ declare namespace love {
          * Checks if the cursor is visible.
          *
          * @return visible, True if the cursor to visible, false if the cursor is hidden.
+         * @link [love.mouse.isVisible](https://love2d.org/wiki/love.mouse.isVisible)
          */
         export function isVisible(): boolean;
 
@@ -136,6 +146,7 @@ declare namespace love {
          * @param hotx The x-coordinate in the ImageData of the cursor's hot spot.
          * @param hoty The y-coordinate in the ImageData of the cursor's hot spot.
          * @return cursor, The new Cursor object.
+         * @link [love.mouse.newCursor](https://love2d.org/wiki/love.mouse.newCursor)
          */
         export function newCursor(imageData: ImageData, hotx?: number, hoty?: number): Cursor;
 
@@ -158,6 +169,7 @@ declare namespace love {
          * @param hotx The x-coordinate in the ImageData of the cursor's hot spot.
          * @param hoty The y-coordinate in the ImageData of the cursor's hot spot.
          * @return cursor, The new Cursor object.
+         * @link [love.mouse.newCursor](https://love2d.org/wiki/love.mouse.newCursor)
          */
         export function newCursor(filepath: string, hotx?: number, hoty?: number): Cursor;
 
@@ -180,6 +192,7 @@ declare namespace love {
          * @param hotx The x-coordinate in the ImageData of the cursor's hot spot.
          * @param hoty The y-coordinate in the ImageData of the cursor's hot spot.
          * @return cursor, The new Cursor object.
+         * @link [love.mouse.newCursor](https://love2d.org/wiki/love.mouse.newCursor)
          */
         export function newCursor(fileData: FileData, hotx?: number, hoty?: number): Cursor;
 
@@ -188,7 +201,7 @@ declare namespace love {
          *
          *
          * Resets the current mouse cursor to the default when called without arguments.
-         *
+         * @link [love.mouse.setCursor](https://love2d.org/wiki/love.mouse.setCursor)
          */
         export function setCursor(): void;
 
@@ -199,6 +212,7 @@ declare namespace love {
          * Resets the current mouse cursor to the default when called without arguments.
          *
          * @param cursor The Cursor object to use as the current mouse cursor.
+         * @link [love.mouse.setCursor](https://love2d.org/wiki/love.mouse.setCursor)
          */
         export function setCursor(cursor: Cursor): void;
 
@@ -206,6 +220,7 @@ declare namespace love {
          * Grabs the mouse and confines it to the window.
          *
          * @param grab True to confine the mouse, false to let it leave the window.
+         * @link [love.mouse.setGrabbed](https://love2d.org/wiki/love.mouse.setGrabbed)
          */
         export function setGrabbed(grab: boolean): void;
 
@@ -214,6 +229,7 @@ declare namespace love {
          *
          * @param x The new position of the mouse along the x-axis.
          * @param y The new position of the mouse along the y-axis.
+         * @link [love.mouse.setPosition](https://love2d.org/wiki/love.mouse.setPosition)
          */
         export function setPosition(x: number, y: number): void;
 
@@ -231,6 +247,7 @@ declare namespace love {
          * enabled, even when relative mouse motion events are generated.
          *
          * @param enable True to enable relative mode, false to disable it.
+         * @link [love.mouse.setRelativeMode](https://love2d.org/wiki/love.mouse.setRelativeMode)
          */
         export function setRelativeMode(enable: boolean): void;
 
@@ -238,6 +255,7 @@ declare namespace love {
          * Sets the visibility of the cursor.
          *
          * @param visible True to set the cursor to visible, false to hide the cursor.
+         * @link [love.mouse.setVisible](https://love2d.org/wiki/love.mouse.setVisible)
          */
         export function setVisible(visible: boolean): void;
 
@@ -245,6 +263,7 @@ declare namespace love {
          * Sets the current X position of the mouse. Non-integer values are floored.
          *
          * @param x The new position of the mouse along the x-axis.
+         * @link [love.mouse.setX](https://love2d.org/wiki/love.mouse.setX)
          */
         export function setX(x: number): void;
 
@@ -252,6 +271,7 @@ declare namespace love {
          * Sets the current Y position of the mouse. Non-integer values are floored.
          *
          * @param y The new position of the mouse along the y-axis.
+         * @link [love.mouse.setY](https://love2d.org/wiki/love.mouse.setY)
          */
         export function setY(y: number): void;
 

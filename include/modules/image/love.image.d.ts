@@ -11,6 +11,7 @@ declare namespace love {
          *
          * @param filename The filename of the potentially compressed image file.
          * @return compressed, Whether the file can be loaded as CompressedImageData or not.
+         * @link [love.image.isCompressed](https://love2d.org/wiki/love.image.isCompressed)
          */
         export function isCompressed(filename: string): boolean;
 
@@ -19,6 +20,7 @@ declare namespace love {
          *
          * @param fileData A FileData potentially containing a compressed image.
          * @return compressed, Whether the FileData can be loaded as CompressedImageData or not.
+         * @link [love.image.](https://love2d.org/wiki/love.image.)
          */
         export function isCompressed(fileData: FileData): boolean;
 
@@ -29,6 +31,7 @@ declare namespace love {
          *
          * @param filename The filename of the compressed image file.
          * @return compressedImageData, The new CompressedImageData object.
+         * @link [love.image.newCompressedData](https://love2d.org/wiki/love.image.newCompressedData)
          */
         export function newCompressedData(filename: string): CompressedImageData;
 
@@ -39,6 +42,7 @@ declare namespace love {
          *
          * @param fileData A FileData containing a compressed image.
          * @return compressedImageData, The new CompressedImageData object.
+         * @link [love.image.newCompressedData](https://love2d.org/wiki/love.image.newCompressedData)
          */
         export function newCompressedData(fileData: FileData): CompressedImageData;
 
@@ -48,6 +52,7 @@ declare namespace love {
          * @param width The width of the ImageData.
          * @param height The height of the ImageData.
          * @return imageData, The new blank ImageData object. Each pixel's color values, (including the alpha values!) will be set to zero.
+         * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
          */
         export function newImageData(width: number, height: number): ImageData;
 
@@ -58,6 +63,7 @@ declare namespace love {
          * @param height The height of the ImageData.
          * @param data The data to load into the ImageData (RGBA bytes, left to right and top to bottom).
          * @return imageData, The new ImageData object.
+         * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
          */
         export function newImageData(width: number, height: number, data: string): ImageData;
 
@@ -66,6 +72,7 @@ declare namespace love {
          *
          * @param filename The filename of the image file.
          * @return imageData, The new ImageData object.
+         * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
          */
         export function newImageData(filename: string): ImageData;
 
@@ -74,6 +81,7 @@ declare namespace love {
          *
          * @param filedata The encoded file data to decode into image data.
          * @return imageData, The new ImageData object.
+         * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
          */
         export function newImageData(filedata: FileData): ImageData;
 

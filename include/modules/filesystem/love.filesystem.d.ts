@@ -253,6 +253,7 @@ declare namespace love {
          * argument when starting the game.
          *
          * @return fused, True if the game is in fused mode, false otherwise.
+         * @link [love.filesystem.isFused](https://love2d.org/wiki/love.filesystem.isFused)
          */
         export function isFused(): boolean;
 
@@ -269,6 +270,7 @@ declare namespace love {
          *
          * @param name The name (and path) of the file.
          * @return iterator, A function that iterates over all the lines in the file.
+         * @link [love.filesystem.lines](https://love2d.org/wiki/love.filesystem.lines)
          */
         export function lines(name: string): Function;
 
@@ -278,6 +280,7 @@ declare namespace love {
          * @param name The name (and path) of the file.
          * @param errormsg The error message if file could not be opened.
          * @return chunk, The loaded chunk.
+         * @link [love.filesystem.load](https://love2d.org/wiki/love.filesystem.load)
          */
         export function load(name: string, errormsg?: string): Function;
 
@@ -287,6 +290,7 @@ declare namespace love {
          * @param archive The folder or zip file in the game's save directory to mount.
          * @param mountpoint The new path the archive will be mounted to.
          * @return success, True if the archive was successfully mounted, false otherwise.
+         * @link [love.filesystem.mount](https://love2d.org/wiki/love.filesystem.mount)
          */
         export function mount(archive: string, mountpoint: string): boolean;
 
@@ -297,6 +301,7 @@ declare namespace love {
          * @param mountpoint The new path the archive will be mounted to.
          * @param appendToPath Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game's source and save directories.
          * @return success, True if the archive was successfully mounted, false otherwise.
+         * @link [love.filesystem.mount](https://love2d.org/wiki/love.filesystem.mount)
          */
         export function mount(archive: string, mountpoint: string, appendToPath?: string): boolean;
 
@@ -308,6 +313,7 @@ declare namespace love {
          * @return file, The new File object, or _nil/null_ if an error occurred.
          * @return errorstr, The error string if an error occurred.
          * @tupleReturn
+         * @link [love.filesystem.newFile](https://love2d.org/wiki/love.filesystem.newFile)
          */
         export function newFile(filename: string, mode?: FileMode): [File | null, string | null];
 
@@ -318,6 +324,7 @@ declare namespace love {
          * @param name The name of the file.
          * @param decoder The method to use when decoding the contents.
          * @return data, Your new FileData.
+         * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
          */
         export function newFileData(contents: string, name: string, decoder?: FileDecoder): FileData;
 
@@ -328,6 +335,7 @@ declare namespace love {
          * @return data, The new FileData, or _nil/null_ if an error occurred.
          * @return err, The error string, if an error occurred.
          * @tupleReturn
+         * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
          */
         export function newFileData(filepath: string): [FileData | null, string | null];
 
@@ -339,6 +347,7 @@ declare namespace love {
          * @return contents, The file contents, or _nil/null_ if an error occurred.
          * @return size, How many bytes have been read, or the error string.
          * @tupleReturn
+         * @link [love.filesystem.read](https://love2d.org/wiki/love.filesystem.read)
          */
         export function read(name: string, bytes?: number): [string, number] | [null, string];
 
@@ -347,6 +356,7 @@ declare namespace love {
          *
          * @param name The file or directory to remove.
          * @return success, True if the file/directory was removed, false otherwise.
+         * @link [love.filesystem.remove](https://love2d.org/wiki/love.filesystem.remove)
          */
         export function remove(name: string): boolean;
 
@@ -368,6 +378,7 @@ declare namespace love {
          * any paths mounted with love.filesystem.mount.
          *
          * @param paths The paths that the require function will check in love's filesystem.
+         * @link [love.filesystem.setCRequirePath](https://love2d.org/wiki/love.filesystem.setCRequirePath)
          */
         export function setCRequirePath(paths: string): void;
 
@@ -377,6 +388,7 @@ declare namespace love {
          *
          * @param name The new identity that will be used as write directory.
          * @param appendToPath Whether the identity directory will be searched when reading a filepath before or after the game's source directory and any currently mounted archives.
+         * @link [love.filesystem.setIdentity](https://love2d.org/wiki/love.filesystem.setIdentity)
          */
         export function setIdentity(name: string, appendToPath?: boolean): void;
 
@@ -395,6 +407,7 @@ declare namespace love {
          * any paths mounted with love.filesystem.mount.
          *
          * @param paths The paths that the require function will check in love's filesystem.
+         * @link [love.filesystem.setRequirePath](https://love2d.org/wiki/love.filesystem.setRequirePath)
          */
         export function setRequirePath(paths: string): void;
 
@@ -403,6 +416,7 @@ declare namespace love {
          * be called once, and is normally automatically done by LÖVE.
          *
          * @param path Absolute path to the game's source folder.
+         * @link [love.filesystem.setSource](https://love2d.org/wiki/love.filesystem.setSource)
          */
         export function setSource(path: string): void;
 
@@ -411,6 +425,7 @@ declare namespace love {
          * in version 0.10.0 and newer, and disabled by default in 0.9.2.
          *
          * @param enable Whether love.filesystem should follow symbolic links.
+         * @link [love.filesystem.setSymlinksEnabled](https://love2d.org/wiki/love.filesystem.setSymlinksEnabled)
          */
         export function setSymlinksEnabled(enable: boolean): void;
 
@@ -420,6 +435,7 @@ declare namespace love {
          *
          * @param archive The folder or zip file in the game's save directory which is currently mounted.
          * @return success, True if the archive was successfully unmounted, false otherwise.
+         * @link [love.filesystem.unmount](https://love2d.org/wiki/love.filesystem.unmount)
          */
         export function unmount(archive: string): boolean;
 
@@ -437,6 +453,7 @@ declare namespace love {
          * @returns _success_, If the operation was successful.
          * @returns _message_, Error message if operation was unsuccessful.
          * @tupleReturn
+         * @link [love.filesystem.write](https://love2d.org/wiki/love.filesystem.write)
          */
         export function write(name: string, data: Data | string, size?: number): [boolean, string];
 
