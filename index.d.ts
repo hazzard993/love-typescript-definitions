@@ -2,7 +2,6 @@ import "./include/Conf";
 import "./include/debug";
 import "./include/global";
 import "./include/love";
-import "./include/math";
 import "./include/modules/audio/enums/DistanceModel";
 import "./include/modules/audio/enums/EffectType";
 import "./include/modules/audio/enums/EffectWaveform";
