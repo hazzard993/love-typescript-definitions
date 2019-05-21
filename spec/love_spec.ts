@@ -1,9 +1,13 @@
+/**
+ * Documented at
+ * https://love2d.org/wiki/love
+ * Obtained 2019/05/21
+ */
 love;
-
 love.getVersion;
 love.hasDeprecationOutput;
+love.isVersionCompatible;
 love.setDeprecationOutput;
-
 love.directorydropped;
 love.draw;
 love.errorhandler;
@@ -29,7 +33,6 @@ love.touchreleased;
 love.update;
 love.visible;
 love.wheelmoved;
-
 love.gamepadaxis;
 love.gamepadpressed;
 love.gamepadreleased;

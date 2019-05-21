@@ -41,6 +41,24 @@ let [major, minor, revision, codename] = love.getVersion();
     export function hasDeprecationOutput(): boolean;
 
     /**
+     * Gets whatever the version is compatible with current running version of LÖVE.
+     * @param version The version (for example: "0.10.1").
+     * @return compatible, Whatever is the version compatible.
+     * @link [love.isVersionCompatible](https://love2d.org/wiki/love.isVersionCompatible)
+     */
+    export function isVersionCompatible(version: Conf["version"]): boolean;
+
+    /**
+     * Gets whatever the version is compatible with current running version of LÖVE.
+     * @param major The major version, i.e. 0 for version 0.10.1.
+     * @param minor The minor version, i.e. 10 for version 0.10.1.
+     * @param revision The revision version, i.e. 1 for version 0.10.1.
+     * @return compatible, Whatever is the version compatible.
+     * @link [love.isVersionCompatible](https://love2d.org/wiki/love.isVersionCompatible)
+     */
+    export function isVersionCompatible(major: number, minor: number, revision: number): boolean;
+
+    /**
      * Should be overwritten inside a `conf.lua` file.
 ```ts
 love.conf = (t: Conf) => {
