@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "esnext"
+        ],
+        "types": [
+            "../index"
+        ],
+        "strict": true
+    },
+    "include": [
+        "*.ts"
+    ]
+}
