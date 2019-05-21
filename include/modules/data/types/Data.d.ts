@@ -17,7 +17,7 @@ declare interface Data extends LoveObject {
      * @return `pointer` A raw pointer to the Data.
      * @link [Data:getPointer](https://love2d.org/wiki/Data:getPointer)
      */
-    getPointer(): LightUserData;
+    getPointer(): LightUserData<"Pointer">;
 
     /**
      * Gets the size of the Data.

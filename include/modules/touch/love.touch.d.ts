@@ -15,7 +15,7 @@ declare namespace love {
          * @tupleReturn
          * @link [love.touch.getPosition](https://love2d.org/wiki/love.touch.getPosition)
          */
-        export function getPosition(id: LightUserData): [number, number];
+        export function getPosition(id: LightUserData<"Touch">): [number, number];
 
         /**
          * Gets the current pressure of the specified touch-press.
@@ -24,7 +24,7 @@ declare namespace love {
          * @return pressure, The pressure of the touch-press. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
          * @link [love.touch.getPressure](https://love2d.org/wiki/love.touch.getPressure)
          */
-        export function getPressure(id: LightUserData): number;
+        export function getPressure(id: LightUserData<"Touch">): number;
 
         /**
          * Gets a list of all active touch-presses.
@@ -32,7 +32,7 @@ declare namespace love {
          * @return touches, A list of active touch-press id values, which can be used with love.touch.getPosition.
          * @link [love.touch.getTouches](https://love2d.org/wiki/love.touch.getTouches)
          */
-        export function getTouches(): Array<LightUserData>;
+        export function getTouches(): Array<LightUserData<"Touch">>;
 
     }
 

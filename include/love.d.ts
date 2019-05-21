@@ -360,7 +360,7 @@ love.draw = () =>
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchmoved](https://love2d.org/wiki/love.touchmoved)
      */
-    export let touchmoved: (id: LightUserData, x: number, y: number, dx: number, dy: number, pressure: number) => void;
+    export let touchmoved: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
     /**
      * Callback function triggered when the touch screen is touched.
@@ -373,7 +373,7 @@ love.draw = () =>
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchpressed](https://love2d.org/wiki/love.touchpressed)
      */
-    export let touchpressed: (id: LightUserData, x: number, y: number, dx: number, dy: number, pressure: number) => void;
+    export let touchpressed: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
     /**
      * Callback function triggered when the touch screen stops being touched.
@@ -386,7 +386,7 @@ love.draw = () =>
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchreleased](https://love2d.org/wiki/love.touchreleased)
      */
-    export let touchreleased: (id: LightUserData, x: number, y: number, dx: number, dy: number, pressure: number) => void;
+    export let touchreleased: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
     /**
      * Callback function used to update the state of the game every frame.
