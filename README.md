@@ -48,6 +48,10 @@ tstl -p tsconfig.json
 
 See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project.
 
+## Other Definitions for LÖVE 2D
+
+- [UTF-8](https://github.com/hazzard993/tstl-utf8) the utf8 module included with LÖVE 2D.
+
 ## Try the Transpiler and Definitions Online
 You'll be able to see what the TypescriptToLua transpiler creates as Lua code.
 
