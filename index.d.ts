@@ -147,6 +147,5 @@ import "./include/modules/window/enums/MessageBoxType";
 import "./include/modules/window/structs/ButtonList";
 import "./include/modules/window/love.window";
 import "./include/LoveObject";
-import "./include/os";
 import "./include/other";
 import "./include/utf8";
