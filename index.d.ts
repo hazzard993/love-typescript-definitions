@@ -1,4 +1,4 @@
-import "./include/Conf";
+import "./include/types/Conf";
 import "./include/love";
 import "./include/modules/audio/enums/DistanceModel";
 import "./include/modules/audio/enums/EffectType";
@@ -143,6 +143,6 @@ import "./include/modules/window/enums/FullscreenType";
 import "./include/modules/window/enums/MessageBoxType";
 import "./include/modules/window/structs/ButtonList";
 import "./include/modules/window/love.window";
-import "./include/LoveObject";
+import "./include/types/LoveObject";
 import "./include/other";
 import "./include/utf8";
