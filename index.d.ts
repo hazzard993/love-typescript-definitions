@@ -1,6 +1,5 @@
 import "./include/Conf";
 import "./include/debug";
-import "./include/global";
 import "./include/love";
 import "./include/modules/audio/enums/DistanceModel";
 import "./include/modules/audio/enums/EffectType";
