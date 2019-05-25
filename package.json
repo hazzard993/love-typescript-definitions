@@ -1,6 +1,10 @@
 {
   "name": "love-typescript-definitions",
+<<<<<<< HEAD
   "version": "0.11.0",
+=======
+  "version": "0.20.0",
+>>>>>>> 40de32730021e95eaf83365039f2457c96bf6b49
   "description": "Write LÖVE 2D projects with TypeScript",
   "scripts": {
     "test": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts && tstl -p spec/tsconfig.json",
