@@ -4,7 +4,7 @@
         LÖVE 2D TypeScript Definitions
         <p></p>
         <a href="http://love2d.org/"><img alt="LÖVE 2D" src="https://img.shields.io/badge/L%C3%96VE-11.2-EA316E.svg?style=for-the-badge" /></a>
-        <a href="https://github.com/TypescriptToLua/TypeScriptToLua"><img alt="TypeScriptToLua" src="https://img.shields.io/badge/TypeScriptToLua-0.21.1-blue.svg?style=for-the-badge" /></a>
+        <a href="https://github.com/TypescriptToLua/TypeScriptToLua"><img alt="TypeScriptToLua" src="https://img.shields.io/badge/TypeScriptToLua-0.22.1-blue.svg?style=for-the-badge" /></a>
         <a href="https://www.npmjs.com/package/love-typescript-definitions"><img alt="npm" src="https://img.shields.io/npm/v/love-typescript-definitions.svg?style=for-the-badge" /></a>
         <a href="https://travis-ci.org/hazzard993/love-typescript-definitions"><img alt="Build status" src="https://img.shields.io/travis/hazzard993/love-typescript-definitions/master.svg?style=for-the-badge" /></a>
     </h1>
@@ -58,6 +58,6 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 You'll be able to see what the TypescriptToLua transpiler creates as Lua code.
 
 This can be used in a `main.lua` file for a LÖVE 2D game or [run online](https://schellingb.github.io/LoveWebBuilder/run-code).
-- [LÖVE 2D Hello World](https://bit.ly/2qB3Ljj)
-- [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2zEDdli)
-- [Near Empty Editor](https://bit.ly/2zCUknC) for playing around
+- [LÖVE 2D Hello World](https://bit.ly/2IlhMLo)
+- [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2Ik5bYZ)
+- [Near Empty Editor](https://bit.ly/2XRAX4T) for playing around
