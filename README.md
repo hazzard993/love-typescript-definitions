@@ -58,6 +58,6 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 You'll be able to see what the TypescriptToLua transpiler creates as Lua code.
 
 This can be used in a `main.lua` file for a LÖVE 2D game or [run online](https://schellingb.github.io/LoveWebBuilder/run-code).
-- [LÖVE 2D Hello World](https://bit.ly/2qB3Ljj)
-- [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2zEDdli)
-- [Near Empty Editor](https://bit.ly/2zCUknC) for playing around
+- [LÖVE 2D Hello World](https://bit.ly/2IlhMLo)
+- [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2Ik5bYZ)
+- [Near Empty Editor](https://bit.ly/2XRAX4T) for playing around
