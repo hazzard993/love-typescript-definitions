@@ -14,7 +14,7 @@ Contains definition files to build [LÖVE 2D](https://love2d.org/) projects with
 
 This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler as well as [lua-types](https://github.com/ark120202/lua-types) to define the LuaJIT environment!
 
-Check out [love-typescript-boilerplate](https://github.com/hazzard993/love-typescript-boilerplate) to get a sample project to build off.
+Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off.
 
 You can install these definitions to your project via NPM!
 
