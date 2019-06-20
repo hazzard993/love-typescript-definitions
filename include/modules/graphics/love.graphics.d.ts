@@ -222,30 +222,7 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         export function discard(discardcolors: Array<boolean>, discardstencil?: boolean): void;
 
         /**
-         * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh,
-         * Text object, or Video) on the screen with optional rotation, scaling and
-         * shearing.
-         *
-         *
-         * Objects are drawn relative to their local coordinate system. The origin is by
-         * default located at the top left corner of Image and Canvas. All scaling,
-         * shearing, and rotation arguments transform the object relative to that point.
-         * Also, the position of the origin can be specified on the screen coordinate
-         * system.
-         *
-         *
-         * It's possible to rotate an object about its center by offsetting the origin to
-         * the center. Angles must be given in radians for rotation. One can also use a
-         * negative scaling factor to flip about its centerline.
-         *
-         *
-         * Note that the offsets are applied before rotation, scaling, or shearing;
-         * scaling and shearing are applied before rotation.
-         *
-         *
-         * The right and bottom edges of the object are shifted at an angle defined by the
-         * shearing factors.
-         *
+         * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh, Text object, or Video) on the screen with optional rotation, scaling and shearing.
          * @param drawable A drawable object.
          * @param x The position to draw the object (x-axis).
          * @param y The position to draw the object (y-axis).
@@ -261,30 +238,7 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         export function draw(drawable: Drawable, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
 
         /**
-         * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh,
-         * Text object, or Video) on the screen with optional rotation, scaling and
-         * shearing.
-         *
-         *
-         * Objects are drawn relative to their local coordinate system. The origin is by
-         * default located at the top left corner of Image and Canvas. All scaling,
-         * shearing, and rotation arguments transform the object relative to that point.
-         * Also, the position of the origin can be specified on the screen coordinate
-         * system.
-         *
-         *
-         * It's possible to rotate an object about its center by offsetting the origin to
-         * the center. Angles must be given in radians for rotation. One can also use a
-         * negative scaling factor to flip about its centerline.
-         *
-         *
-         * Note that the offsets are applied before rotation, scaling, or shearing;
-         * scaling and shearing are applied before rotation.
-         *
-         *
-         * The right and bottom edges of the object are shifted at an angle defined by the
-         * shearing factors.
-         *
+         * Draws the specified Quadrant of the specified Texture.
          * @param texture A Texture (Image or Canvas) to texture the Quad with.
          * @param quad The Quad to draw on screen.
          * @param x The position to draw the object (x-axis).
@@ -292,13 +246,30 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @param r Orientation (radians).
          * @param sx Scale factor (x-axis). Can be negative.
          * @param sy Scale factor (y-axis). Can be negative.
-         * @param ox Origin offset (x-axis).
-         * @param oy Origin offset (y-axis)
+         * @param ox Origin offset (x-axis). (A value of 20 would effectively move your drawable object 20 pixels to the left.)
+         * @param oy Origin offset (y-axis). (A value of 20 would effectively move your drawable object 20 pixels up.)
          * @param kx Shearing factor (x-axis).
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
          */
         export function draw(texture: Texture, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+
+        /**
+         * Draws the specified Texture with the specified Transformation to be applied to it.
+         * @param texture A Texture (Image or Canvas) to texture the Quad with.
+         * @param transform Transformation object.
+         * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
+         */
+        export function draw(texture: Texture, transform: Transform): void;
+
+        /**
+         * Draws a Quadrant of a Texture with the specified Transformation to be applied to it.
+         * @param texture A Texture (Image or Canvas) to texture the Quad with.
+         * @param quad The Quad to draw on screen.
+         * @param transform Transformation object.
+         * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
+         */
+        export function draw(texture: Texture, quad: Quad, transform: Transform): void;
 
         /**
          * Draws many instances of a Mesh with a single draw call, using hardware geometry
