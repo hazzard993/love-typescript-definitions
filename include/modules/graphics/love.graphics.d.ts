@@ -96,7 +96,7 @@ declare namespace love {
          * @param callback Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.
          * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
          */
-        export function captureScreenshot(callback: Function): void;
+        export function captureScreenshot(callback: () => void): void;
 
         /**
          * Creates a screenshot once the current frame is done (after love.draw has
@@ -859,24 +859,41 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
 
         /**
          * Creates a new Canvas object for offscreen rendering.
-         *
-         *
-         * Antialiased Canvases have slightly higher system requirements than normal
-         * Canvases. Additionally, the supported maximum number of MSAA samples varies
-         * depending on the system. Use love.graphics.getSystemLimit to check.
-         *
-         *
-         * If the number of MSAA samples specified is greater than the maximum supported
-         * by the system, the Canvas will still be created but only using the maximum
-         * supported amount (this includes 0.)
-         *
+         * @returns canvas, A new Canvas with dimensions equal to the window's size in pixels.
+         * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+         */
+        export function newCanvas(): Canvas;
+
+        /**
+         * Creates a new Canvas object with specified width and height.
+         * @param width The width of the Canvas.
+         * @param height The height of the Canvas.
+         * @param settings A table of optional settings.
+         * @return canvas, A new Canvas with specified width and height.
+         * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+         */
+        export function newCanvas(width: number, height: number): Canvas;
+
+        /**
+         * Creates a 2D or cubemap Canvas using the given settings.
          * @param width The width of the Canvas.
          * @param height The height of the Canvas.
          * @param settings A table of optional settings.
          * @return canvas, A new Canvas object.
          * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
          */
-        export function newCanvas(width?: number, height?: number, settings?: CanvasSettings): Canvas;
+        export function newCanvas(width: number, height: number, settings: CanvasSettings): Canvas;
+
+        /**
+         * Creates a volume or array texture-type Canvas.
+         * @param width The width of the Canvas.
+         * @param height The height of the Canvas.
+         * @param layers The number of array layers (if the Canvas is an Array Texture), or the volume depth (if the Canvas is a Volume Texture).
+         * @param settings A table of optional settings.
+         * @return canvas, A new Canvas with specified width and height.
+         * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+         */
+        export function newCanvas(width: number, height: number, layers: number, settings?: CanvasSettings): Canvas;
 
         /**
          * Creates a new cubemap Image.
@@ -897,13 +914,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newCubeImage(faces: [ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation], settings?: ImageSettings): Image;
 
         /**
-         * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
-         * cached, in that calling this function with the same arguments will always
-         * create a new Font object.
-         *
-         *
-         * All variants which accept a filename can also accept a Data object instead.
-         *
+         * Create a new BMFont or TrueType font.
          * @param filename The filepath to the BMFont or TrueType font file.
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
@@ -911,34 +922,32 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newFont(filename: string): Font;
 
         /**
-         * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
-         * cached, in that calling this function with the same arguments will always
-         * create a new Font object.
-         *
-         *
-         * All variants which accept a filename can also accept a Data object instead.
-         *
+         * Create a new TrueType font.
          * @param filename The filepath to the TrueType font file.
          * @param size The size of the font in pixels.
+         * @param hinting True Type hinting mode. (Default: "normal")
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
          */
-        export function newFont(filename: string, size: number): Font;
+        export function newFont(filename: string, size: number, hinting: HintingMode): Font;
 
         /**
-         * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
-         * cached, in that calling this function with the same arguments will always
-         * create a new Font object.
-         *
-         *
-         * All variants which accept a filename can also accept a Data object instead.
-         *
+         * Create a new BMFont.
          * @param filename The filepath to the BMFont file.
          * @param imagefilename The filepath to the BMFont's image file. If this argument is omitted, the path specified inside the BMFont file will be used.
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
          */
         export function newFont(filename: string, imagefilename: string): Font;
+
+        /**
+         * Create a new instance of the default font (Vera Sans) with a custom size.
+         * @param size The size of the font in pixels. (Default: 12)
+         * @param hinting True Type hinting mode.
+         * @return font, A Font object which can be used to draw text on screen.
+         * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
+         */
+        export function newFont(size?: number, hinting?: HintingMode): Font;
 
         /**
          * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
@@ -1767,7 +1776,7 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
          * @param keepvalues True to preserve old stencil values of pixels, false to re-set every pixel's stencil value to 0 before executing the stencil function. love.graphics.clear will also re-set all stencil values.
          * @link [love.graphics.stencil](https://love2d.org/wiki/love.graphics.stencil)
          */
-        export function stencil(stencilfunction: Function, action?: StencilAction, value?: number, keepvalues?: boolean): void;
+        export function stencil(stencilfunction: () => void, action?: StencilAction, value?: number, keepvalues?: boolean): void;
 
         /**
          * Converts the given 2D position from global coordinates into screen-space.
