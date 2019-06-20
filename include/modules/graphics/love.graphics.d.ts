@@ -149,17 +149,13 @@ declare namespace love {
         export function circle(mode: DrawMode, x: number, y: number, radius: number, segments: number): void;
 
         /**
-         * Clears the screen to the background color in 0.9.2 and earlier, or to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
-         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
+         * Clears the screen to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
          * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
         export function clear(): void;
 
         /**
          * Clears the screen or active Canvas to the specified color.
-```ts
-love.graphics.clear(1, 0, 0, 0, true, true);
-```
          * @param r The red channel of the color to clear the screen to.
          * @param g The green channel of the color to clear the screen to.
          * @param b The blue channel of the color to clear the screen to.
@@ -171,17 +167,24 @@ love.graphics.clear(1, 0, 0, 0, true, true);
         export function clear(r: number, g: number, b: number, a?: number, clearstencil?: boolean, cleardepth?: boolean): void;
 
         /**
-         * Clears the screen an associated background color.
-```ts
-love.graphics.clear([1, 0, 0, 1], true, true);
-```
-         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
-         *
-         * @param color A table in the form of containing the color to clear the first active Canvas to.
-         * @param ... Additional tables for each active Canvas.
+         * Clears multiple screens to an associated background color.
+         * @param color `[r,g,b,a]` colours to clear the first active Canvas to.
+         * @param remainingArgs Continued arrays of colours ending with two values which represent the remaining two parameters described in this comment.
+         * @param clearstencil First following boolean value. Whether to clear the active stencil buffer, if present. It can also be an integer between 0 and 255 to clear the stencil buffer to a specific value. (Default: true)
+         * @param cleardepth Second following boolean value. Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default: true)
          * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
-        export function clear(...colors: Array<[number, number, number, number] | boolean>): void;
+        export function clear(color: [number, number, number, number], ...remainingArgs: Array<[number, number, number, number] | boolean | number>): void;
+
+
+        /**
+         * Clears the stencil or depth buffers without having to clear the color canvas as well.
+         * @param clearcolor Whether to clear the active color canvas to transparent black (0, 0, 0, 0). Typically this should be set to false with this variant of the function.
+         * @param clearstencil Whether to clear the active stencil buffer, if present. It can also be an integer between 0 and 255 to clear the stencil buffer to a specific value.
+         * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value.
+         * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
+         */
+        export function clear(clearcolor: boolean, clearstencil: boolean | number, cleardepth: boolean | number): void;
 
         /**
          * Discards (trashes) the contents of the screen or active Canvas. This is a
