@@ -1005,11 +1005,19 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          */
         export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
+        export type NewImageFlags = {
+            /**
+             * True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
+             */
+            linear?: boolean;
+            /**
+             * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+             */
+            mipmaps?: boolean;
+        };
+
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from the image at the specified filename.
          * @param filename The filepath to the image file.
          * @return image, An Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
@@ -1017,10 +1025,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImage(filename: string): Image;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from the provided ImageData.
          * @param imageData An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.
          * @return image, An Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
@@ -1028,10 +1033,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImage(imageData: ImageData): Image;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from the provided CompressImageData.
          * @param compressedImageData A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.
          * @return image, An Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
@@ -1039,26 +1041,18 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImage(compressedImageData: CompressedImageData): Image;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData, and optionally generates or specifies mipmaps for the image.
          * @param filename The filepath to the image file (or a FileData or ImageData or CompressedImageData object).
-         * @param flags A table containing the following fields:
-         * - linear: True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise.
-         * - mipmaps: If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels.
-         * @return image, An Image object which can be drawn on screen.
+         * @param {Object} flags A table containing the following fields:
+         * @param {boolean} flags.linear True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
+         * @param {boolean} flags.mipmaps If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+         * @return image, A new Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
-        export function newImage(filename: string, flags: { linear?: boolean, mipmaps?: boolean | Array<string> }): Image;
+        export function newImage(filename: string | FileData | ImageData | CompressedImageData, flags: NewImageFlags): Image;
 
         /**
-         * Creates a new Font by loading a specifically formatted image.
-         *
-         *
-         * In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs
-         * string.
-         *
+         * Creates a new Font by loading a specifically formatted image file.
          * @param filename The filepath to the image file.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @return font, A Font object which can be used to draw text on screen.
@@ -1067,12 +1061,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImageFont(filename: string, glyphs: string): Font;
 
         /**
-         * Creates a new Font by loading a specifically formatted image.
-         *
-         *
-         * In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs
-         * string.
-         *
+         * Creates a new Font from the specifically formatted ImageData.
          * @param imageData The ImageData object to create the font from.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @return font, A Font object which can be used to draw text on screen.
@@ -1081,25 +1070,28 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImageFont(imageData: ImageData, glyphs: string): Font;
 
         /**
-         * Creates a new Font by loading a specifically formatted image.
-         *
-         *
-         * In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs
-         * string.
-         *
+         * Creates a new Font with additional spacing to apply to each glyph in the Font.
          * @param filename The filepath to the image file.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @param extraspacing Additional spacing (positive or negative) to apply to each glyph in the Font.
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newImageFont](https://love2d.org/wiki/love.graphics.newImageFont)
          */
-        export function newImageFont(filename: string, glyphs: string, extraspacing?: number): Font;
+        export function newImageFont(filename: string | ImageData, glyphs: string, extraspacing: number): Font;
 
         /**
-         * Creates a new ParticleSystem.
-         *
+         * Creates a new ParticleSystem using the specified image.
+         * @param image The image to use.
+         * @param buffer The max number of particles at the same time. (Default: 1000)
+         * @return system, A new ParticleSystem.
+         * @link [love.graphics.newParticleSystem](https://love2d.org/wiki/love.graphics.newParticleSystem)
+         */
+        // export function newParticleSystem(image: Image, buffer?: number): ParticleSystem;
+
+        /**
+         * Creates a new ParticleSystem using the specified Texture.
          * @param texture The Image or Canvas to use.
-         * @param buffer The max number of particles at the same time.
+         * @param buffer The max number of particles at the same time. (Default: 1000)
          * @return system, A new ParticleSystem.
          * @link [love.graphics.newParticleSystem](https://love2d.org/wiki/love.graphics.newParticleSystem)
          */
@@ -1188,27 +1180,41 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          */
         export function newSpriteBatch(texture: Texture, maxsprites?: number, usage?: SpriteBatchUsage): SpriteBatch;
 
-        /**
-         * Creates a new drawable Video. Currently only Ogg Theora video files are
-         * supported.
-         *
-         * @param filename The file path to the Ogg Theora video file.
-         * @param loadaudio Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.
-         * @return video, A new Video.
-         * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
-         */
-        export function newVideo(filename: string, loadaudio?: boolean): Video;
+        export type NewVideoSettings = {
+            /**
+             * Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio. (Default: false)
+             */
+            audio?: boolean;
+            /**
+             * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
+             */
+            dpiscale?: number;
+        };
 
         /**
-         * Creates a new drawable Video. Currently only Ogg Theora video files are
-         * supported.
-         *
-         * @param videostream A video stream object.
-         * @param loadaudio Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.
+         * Creates a new drawable Video from the specified video file. Currently only Ogg Theora video files are supported.
+         * @param filename The file path to the Ogg Theora video file.
          * @return video, A new Video.
          * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
          */
-        export function newVideo(videostream: VideoStream, loadaudio?: boolean): Video;
+        export function newVideo(filename: string): Video;
+
+        /**
+         * Creates a new drawable Video from the specified VideoStream. Currently only Ogg Theora video files are supported.
+         * @param videostream A video stream object.
+         * @return video, A new Video.
+         * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
+         */
+        export function newVideo(videostream: VideoStream): Video;
+
+        /**
+         * Creates a new drawable Video with the specified settings.
+         * @param filename The file path to the Ogg Theora video file (or VideoStream).
+         * @param settings Settings for the new video.
+         * @return video, A new Video.
+         * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
+         */
+        export function newVideo(filename: string | VideoStream, settings?: NewVideoSettings): Video;
 
         /**
          * Creates a new volume (3D) Image.
@@ -1613,9 +1619,16 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
 
         /**
          * Creates and sets a new font.
-         *
+         * @param size The size of the font. (Default: 12)
+         * @return font, The new font.
+         * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+         */
+        export function setNewFont(size?: number): Font;
+
+        /**
+         * Creates and sets a new font.
          * @param filename The path and name of the file with the font.
-         * @param size The size of the font.
+         * @param size The size of the font. (Default: 12)
          * @return font, The new font.
          * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
          */
@@ -1623,9 +1636,8 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
 
         /**
          * Creates and sets a new font.
-         *
          * @param file A File with the font.
-         * @param size The size of the font.
+         * @param size The size of the font. (Default: 12)
          * @return font, The new font.
          * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
          */
@@ -1633,13 +1645,20 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
 
         /**
          * Creates and sets a new font.
-         *
          * @param data A Data with the font.
-         * @param size The size of the font.
+         * @param size The size of the font. (Default: 12)
          * @return font, The new font.
          * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
          */
         export function setNewFont(data: Data, size?: number): Font;
+
+        /**
+         * Creates and sets a new font.
+         * @param data A Data with the font.
+         * @return font, The new font.
+         * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+         */
+        export function setNewFont(rasterizer: Rasterizer): Font;
 
         /**
          * Sets or resets a Shader as the current pixel effect or vertex shaders. All
