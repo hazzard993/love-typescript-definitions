@@ -1038,17 +1038,6 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          */
         export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
-        export type NewImageFlags = {
-            /**
-             * True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
-             */
-            linear?: boolean;
-            /**
-             * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
-             */
-            mipmaps?: boolean;
-        };
-
         /**
          * Creates a new Image from the image at the specified filename.
          * @param filename The filepath to the image file.
@@ -1082,7 +1071,16 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          * @return image, A new Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
-        export function newImage(filename: string | FileData | ImageData | CompressedImageData, flags: NewImageFlags): Image;
+        export function newImage(filename: string | FileData | ImageData | CompressedImageData, flags: {
+            /**
+             * True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
+             */
+            linear?: boolean;
+            /**
+             * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+             */
+            mipmaps?: boolean;
+        }): Image;
 
         /**
          * Creates a new Font by loading a specifically formatted image file.
@@ -1213,17 +1211,6 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          */
         export function newSpriteBatch(texture: Texture, maxsprites?: number, usage?: SpriteBatchUsage): SpriteBatch;
 
-        export type NewVideoSettings = {
-            /**
-             * Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio. (Default: false)
-             */
-            audio?: boolean;
-            /**
-             * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
-             */
-            dpiscale?: number;
-        };
-
         /**
          * Creates a new drawable Video from the specified video file. Currently only Ogg Theora video files are supported.
          * @param filename The file path to the Ogg Theora video file.
@@ -1247,7 +1234,16 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
          * @return video, A new Video.
          * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
          */
-        export function newVideo(filename: string | VideoStream, settings?: NewVideoSettings): Video;
+        export function newVideo(filename: string | VideoStream, settings?: {
+            /**
+             * Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio. (Default: false)
+             */
+            audio?: boolean;
+            /**
+             * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
+             */
+            dpiscale?: number;
+        }): Video;
 
         /**
          * Creates a new volume (3D) Image.
