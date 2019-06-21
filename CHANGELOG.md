@@ -1,32 +1,8 @@
 # Changelog
 
-## Version 0.?.?
+## Version 0.11.2
 
-```sh
-love-typescript-definitions -> love.<callback> must be assigned
-love-typescript-definitions/love-callback-namespace
-```
-
-```diff
-+ Allows only one `love.<callback>` implementation.
-- Implementation's type safety is up to the implementor.
-  Since you are writing your own implementation of love.<callback>, you can specify it however you want.
-  Love 2D will only use these callbacks a certain way.
-```
-
-Callbacks can be declared like this.
-
-```ts
-namespace love {
-    export function load(arg: string[], unfilteredArg: string[]) {}
-
-    export function update(dt: number) {}
-
-    export function draw() {}
-}
-```
-
-- +2 `love.graphics.draw` variants
+- Added two `love.graphics.draw` variants
 
 ```diff
   love.graphics.draw(image);
@@ -35,7 +11,7 @@ namespace love {
 + love.graphics.draw(image, quad, transform);
 ```
 
-- +1 `love.graphics.clear` variant. This was possible before but now TypeScript will display the correct documentation when highlighting the fourth variant.
+- Added one `love.graphics.clear` variant. This was possible to write before but now TypeScript will display the correct documentation when highlighting the fourth variant.
 
 ```diff
   love.graphics.clear();
@@ -47,7 +23,7 @@ namespace love {
 - Modified `love.graphics.stencil`'s function argument. `Function` to `() => void`
 - Modified `love.graphics.captureScreenshot`'s function argument. `Function` to `() => void`
 
-- +1 `love.graphics.newCanvas` variant. Used to create a volume or array texture-type Canvas.
+- Added one `love.graphics.newCanvas` variant. Used to create a volume or array texture-type Canvas.
 
 ```diff
   love.graphics.newCanvas();
@@ -56,7 +32,7 @@ namespace love {
 + love.graphics.newCanvas(100, 100, 80);
 ```
 
-- +2 `love.graphics.newFont` variants.
+- Added two `love.graphics.newFont` variants.
 
 ```diff
   love.graphics.newFont("font.ttf");
@@ -65,7 +41,7 @@ namespace love {
 + love.graphics.newFont();
 ```
 
-- `love.graphics.newImage`'s 4th variant's table flags are documented.
+- Documented one `love.graphics.newImage` variant.
 
 ```diff
   love.graphics.newImage("image.png");
@@ -74,7 +50,7 @@ namespace love {
 + love.graphics.newImage("image.png", { linear: false });
 ```
 
-- +1 undocumented `love.graphics.newImageFont` variation
+- Documented one `love.graphics.newImageFont` variant.
 
 ```diff
   love.graphics.newImageFont("abc.png", "abc");
@@ -83,15 +59,15 @@ namespace love {
 + love.graphics.newImageFont(imageData, "abc", 0);
 ```
 
-- +1 documented variation of `love.graphics.newParticleSystem`
+- Documented one `love.graphics.newParticleSystem` variant.
 
 ```diff
 + love.graphics.newParticleSystem(image);
   love.graphics.newParticleSystem(canvas);
 ```
 
-- +2 `love.graphics.newVideo` variants
-- -1 `love.graphics.newVideo` deprecated variant
+- Added two `love.graphics.newVideo` variants
+- Removed one `love.graphics.newVideo` variant. This variant was deprecated.
 
 ```diff
   love.graphics.newVideo("video.mp4");
@@ -101,7 +77,7 @@ namespace love {
 - love.graphics.newVideo(videoStream, false);
 ```
 
-- +2 `love.graphics.setNewFont` variants
+- Added two `love.graphics.setNewFont` variants.
 
 ```diff
 + love.graphics.setNewFont();
@@ -111,62 +87,4 @@ namespace love {
 + love.graphics.setNewFont(rasterizer);
 ```
 
-- `love.graphics.getStats` should show all returned properties upon hovering.
-
-```ts
-love.set("load", args => {});
-
-love.set("update", dt => {});
-
-love.set("draw", () => {});
-```
-
-```ts
-namespace love {
-    export function load(arg: string[], unfilteredArg: string[]) {}
-
-    export function update(dt: number) {}
-
-    export function draw() {}
-}
-```
-
-```ts
-namespace love {
-    load = args => {
-
-    }
-
-    update = dt => {
-
-    }
-
-    draw = () => {
-
-    }
-}
-```
-
-```ts
-love.load = args => {};
-
-love.update = dt => {};
-
-love.draw = () => {};
-```
-
-```ts
-({ load: love.load, update: love.update, draw: love.draw } = {
-    load() {
-
-    }
-
-    update() {
-
-    }
-
-    draw() {
-
-    }
-});
-```
+- Removed `Stats` interface to improve the tooltip display of `love.graphics.getStats`.
