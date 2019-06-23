@@ -96,7 +96,7 @@ declare namespace love {
          * @param callback Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.
          * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
          */
-        export function captureScreenshot(callback: Function): void;
+        export function captureScreenshot(callback: () => void): void;
 
         /**
          * Creates a screenshot once the current frame is done (after love.draw has
@@ -149,17 +149,13 @@ declare namespace love {
         export function circle(mode: DrawMode, x: number, y: number, radius: number, segments: number): void;
 
         /**
-         * Clears the screen to the background color in 0.9.2 and earlier, or to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
-         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
+         * Clears the screen to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
          * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
         export function clear(): void;
 
         /**
          * Clears the screen or active Canvas to the specified color.
-```ts
-love.graphics.clear(1, 0, 0, 0, true, true);
-```
          * @param r The red channel of the color to clear the screen to.
          * @param g The green channel of the color to clear the screen to.
          * @param b The blue channel of the color to clear the screen to.
@@ -171,17 +167,24 @@ love.graphics.clear(1, 0, 0, 0, true, true);
         export function clear(r: number, g: number, b: number, a?: number, clearstencil?: boolean, cleardepth?: boolean): void;
 
         /**
-         * Clears the screen an associated background color.
-```ts
-love.graphics.clear([1, 0, 0, 1], true, true);
-```
-         * @param colors An array of RGBA colors. The first is what color the first canvas clear to and so on.
-         *
-         * @param color A table in the form of containing the color to clear the first active Canvas to.
-         * @param ... Additional tables for each active Canvas.
+         * Clears multiple screens to an associated background color.
+         * @param color `[r,g,b,a]` colours to clear the first active Canvas to.
+         * @param remainingArgs Continued arrays of colours ending with two values which represent the remaining two parameters described in this comment.
+         * @param clearstencil First following boolean value. Whether to clear the active stencil buffer, if present. It can also be an integer between 0 and 255 to clear the stencil buffer to a specific value. (Default: true)
+         * @param cleardepth Second following boolean value. Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default: true)
          * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
-        export function clear(...colors: Array<[number, number, number, number] | boolean>): void;
+        export function clear(color: [number, number, number, number], ...remainingArgs: Array<[number, number, number, number] | boolean | number>): void;
+
+
+        /**
+         * Clears the stencil or depth buffers without having to clear the color canvas as well.
+         * @param clearcolor Whether to clear the active color canvas to transparent black (0, 0, 0, 0). Typically this should be set to false with this variant of the function.
+         * @param clearstencil Whether to clear the active stencil buffer, if present. It can also be an integer between 0 and 255 to clear the stencil buffer to a specific value.
+         * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value.
+         * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
+         */
+        export function clear(clearcolor: boolean, clearstencil: boolean | number, cleardepth: boolean | number): void;
 
         /**
          * Discards (trashes) the contents of the screen or active Canvas. This is a
@@ -222,30 +225,7 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         export function discard(discardcolors: Array<boolean>, discardstencil?: boolean): void;
 
         /**
-         * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh,
-         * Text object, or Video) on the screen with optional rotation, scaling and
-         * shearing.
-         *
-         *
-         * Objects are drawn relative to their local coordinate system. The origin is by
-         * default located at the top left corner of Image and Canvas. All scaling,
-         * shearing, and rotation arguments transform the object relative to that point.
-         * Also, the position of the origin can be specified on the screen coordinate
-         * system.
-         *
-         *
-         * It's possible to rotate an object about its center by offsetting the origin to
-         * the center. Angles must be given in radians for rotation. One can also use a
-         * negative scaling factor to flip about its centerline.
-         *
-         *
-         * Note that the offsets are applied before rotation, scaling, or shearing;
-         * scaling and shearing are applied before rotation.
-         *
-         *
-         * The right and bottom edges of the object are shifted at an angle defined by the
-         * shearing factors.
-         *
+         * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh, Text object, or Video) on the screen with optional rotation, scaling and shearing.
          * @param drawable A drawable object.
          * @param x The position to draw the object (x-axis).
          * @param y The position to draw the object (y-axis).
@@ -261,30 +241,7 @@ love.graphics.clear([1, 0, 0, 1], true, true);
         export function draw(drawable: Drawable, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
 
         /**
-         * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh,
-         * Text object, or Video) on the screen with optional rotation, scaling and
-         * shearing.
-         *
-         *
-         * Objects are drawn relative to their local coordinate system. The origin is by
-         * default located at the top left corner of Image and Canvas. All scaling,
-         * shearing, and rotation arguments transform the object relative to that point.
-         * Also, the position of the origin can be specified on the screen coordinate
-         * system.
-         *
-         *
-         * It's possible to rotate an object about its center by offsetting the origin to
-         * the center. Angles must be given in radians for rotation. One can also use a
-         * negative scaling factor to flip about its centerline.
-         *
-         *
-         * Note that the offsets are applied before rotation, scaling, or shearing;
-         * scaling and shearing are applied before rotation.
-         *
-         *
-         * The right and bottom edges of the object are shifted at an angle defined by the
-         * shearing factors.
-         *
+         * Draws the specified Quadrant of the specified Texture.
          * @param texture A Texture (Image or Canvas) to texture the Quad with.
          * @param quad The Quad to draw on screen.
          * @param x The position to draw the object (x-axis).
@@ -292,13 +249,30 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @param r Orientation (radians).
          * @param sx Scale factor (x-axis). Can be negative.
          * @param sy Scale factor (y-axis). Can be negative.
-         * @param ox Origin offset (x-axis).
-         * @param oy Origin offset (y-axis)
+         * @param ox Origin offset (x-axis). (A value of 20 would effectively move your drawable object 20 pixels to the left.)
+         * @param oy Origin offset (y-axis). (A value of 20 would effectively move your drawable object 20 pixels up.)
          * @param kx Shearing factor (x-axis).
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
          */
         export function draw(texture: Texture, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+
+        /**
+         * Draws the specified Texture with the specified Transformation to be applied to it.
+         * @param texture A Texture (Image or Canvas) to texture the Quad with.
+         * @param transform Transformation object.
+         * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
+         */
+        export function draw(texture: Texture, transform: Transform): void;
+
+        /**
+         * Draws a Quadrant of a Texture with the specified Transformation to be applied to it.
+         * @param texture A Texture (Image or Canvas) to texture the Quad with.
+         * @param quad The Quad to draw on screen.
+         * @param transform Transformation object.
+         * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
+         */
+        export function draw(texture: Texture, quad: Quad, transform: Transform): void;
 
         /**
          * Draws many instances of a Mesh with a single draw call, using hardware geometry
@@ -687,7 +661,40 @@ love.graphics.clear([1, 0, 0, 1], true, true);
          * @return stats, A table with the following fields:
          * @link [love.graphics.getStats](https://love2d.org/wiki/love.graphics.getStats)
          */
-        export function getStats(): Stats;
+        export function getStats(): {
+            /**
+             * The number of draw calls made so far during the current frame.
+             */
+            drawcalls: number;
+            /**
+             * The number of times the active Canvas has been switched so far during the current frame.
+             */
+            canvasswitches: number;
+            /**
+             * The estimated total size in bytes of video memory used by all loaded Images, Canvases, and Fonts.
+             */
+            texturememory: number;
+            /**
+             * The number of Image objects currently loaded.
+             */
+            images: number;
+            /**
+             * The number of Canvas objects currently loaded.
+             */
+            canvases: number;
+            /**
+             * The number of Font objects currently loaded.
+             */
+            fonts: number;
+            /**
+             * The number of times the active Shader has been changed so far during the current frame.
+             */
+            shaderswitches: number;
+            /**
+             * The number of draw calls that were saved by LÖVE's automatic batching, since the start of the frame.
+             */
+            drawcallsbatched: number;
+        };
 
         /**
          * Gets whether stencil testing is enabled.
@@ -885,24 +892,41 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
 
         /**
          * Creates a new Canvas object for offscreen rendering.
-         *
-         *
-         * Antialiased Canvases have slightly higher system requirements than normal
-         * Canvases. Additionally, the supported maximum number of MSAA samples varies
-         * depending on the system. Use love.graphics.getSystemLimit to check.
-         *
-         *
-         * If the number of MSAA samples specified is greater than the maximum supported
-         * by the system, the Canvas will still be created but only using the maximum
-         * supported amount (this includes 0.)
-         *
+         * @returns canvas, A new Canvas with dimensions equal to the window's size in pixels.
+         * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+         */
+        export function newCanvas(): Canvas;
+
+        /**
+         * Creates a new Canvas object with specified width and height.
+         * @param width The width of the Canvas.
+         * @param height The height of the Canvas.
+         * @param settings A table of optional settings.
+         * @return canvas, A new Canvas with specified width and height.
+         * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+         */
+        export function newCanvas(width: number, height: number): Canvas;
+
+        /**
+         * Creates a 2D or cubemap Canvas using the given settings.
          * @param width The width of the Canvas.
          * @param height The height of the Canvas.
          * @param settings A table of optional settings.
          * @return canvas, A new Canvas object.
          * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
          */
-        export function newCanvas(width?: number, height?: number, settings?: CanvasSettings): Canvas;
+        export function newCanvas(width: number, height: number, settings: CanvasSettings): Canvas;
+
+        /**
+         * Creates a volume or array texture-type Canvas.
+         * @param width The width of the Canvas.
+         * @param height The height of the Canvas.
+         * @param layers The number of array layers (if the Canvas is an Array Texture), or the volume depth (if the Canvas is a Volume Texture).
+         * @param settings A table of optional settings.
+         * @return canvas, A new Canvas with specified width and height.
+         * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+         */
+        export function newCanvas(width: number, height: number, layers: number, settings?: CanvasSettings): Canvas;
 
         /**
          * Creates a new cubemap Image.
@@ -923,13 +947,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newCubeImage(faces: [ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation], settings?: ImageSettings): Image;
 
         /**
-         * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
-         * cached, in that calling this function with the same arguments will always
-         * create a new Font object.
-         *
-         *
-         * All variants which accept a filename can also accept a Data object instead.
-         *
+         * Create a new BMFont or TrueType font.
          * @param filename The filepath to the BMFont or TrueType font file.
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
@@ -937,34 +955,32 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newFont(filename: string): Font;
 
         /**
-         * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
-         * cached, in that calling this function with the same arguments will always
-         * create a new Font object.
-         *
-         *
-         * All variants which accept a filename can also accept a Data object instead.
-         *
+         * Create a new TrueType font.
          * @param filename The filepath to the TrueType font file.
          * @param size The size of the font in pixels.
+         * @param hinting True Type hinting mode. (Default: "normal")
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
          */
-        export function newFont(filename: string, size: number): Font;
+        export function newFont(filename: string, size: number, hinting: HintingMode): Font;
 
         /**
-         * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
-         * cached, in that calling this function with the same arguments will always
-         * create a new Font object.
-         *
-         *
-         * All variants which accept a filename can also accept a Data object instead.
-         *
+         * Create a new BMFont.
          * @param filename The filepath to the BMFont file.
          * @param imagefilename The filepath to the BMFont's image file. If this argument is omitted, the path specified inside the BMFont file will be used.
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
          */
         export function newFont(filename: string, imagefilename: string): Font;
+
+        /**
+         * Create a new instance of the default font (Vera Sans) with a custom size.
+         * @param size The size of the font in pixels. (Default: 12)
+         * @param hinting True Type hinting mode.
+         * @return font, A Font object which can be used to draw text on screen.
+         * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
+         */
+        export function newFont(size?: number, hinting?: HintingMode): Font;
 
         /**
          * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
@@ -1023,10 +1039,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from the image at the specified filename.
          * @param filename The filepath to the image file.
          * @return image, An Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
@@ -1034,10 +1047,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImage(filename: string): Image;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from the provided ImageData.
          * @param imageData An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.
          * @return image, An Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
@@ -1045,10 +1055,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImage(imageData: ImageData): Image;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from the provided CompressImageData.
          * @param compressedImageData A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.
          * @return image, An Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
@@ -1056,26 +1063,27 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImage(compressedImageData: CompressedImageData): Image;
 
         /**
-         * Creates a new Image from a filepath, FileData, an ImageData, or a
-         * CompressedImageData, and optionally generates or specifies mipmaps for the
-         * image.
-         *
+         * Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData, and optionally generates or specifies mipmaps for the image.
          * @param filename The filepath to the image file (or a FileData or ImageData or CompressedImageData object).
-         * @param flags A table containing the following fields:
-         * - linear: True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise.
-         * - mipmaps: If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels.
-         * @return image, An Image object which can be drawn on screen.
+         * @param {Object} flags A table containing the following fields:
+         * @param {boolean} flags.linear True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
+         * @param {boolean} flags.mipmaps If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+         * @return image, A new Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
-        export function newImage(filename: string, flags: { linear?: boolean, mipmaps?: boolean | Array<string> }): Image;
+        export function newImage(filename: string | FileData | ImageData | CompressedImageData, flags: {
+            /**
+             * True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
+             */
+            linear?: boolean;
+            /**
+             * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+             */
+            mipmaps?: boolean | string[];
+        }): Image;
 
         /**
-         * Creates a new Font by loading a specifically formatted image.
-         *
-         *
-         * In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs
-         * string.
-         *
+         * Creates a new Font by loading a specifically formatted image file.
          * @param filename The filepath to the image file.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @return font, A Font object which can be used to draw text on screen.
@@ -1084,12 +1092,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImageFont(filename: string, glyphs: string): Font;
 
         /**
-         * Creates a new Font by loading a specifically formatted image.
-         *
-         *
-         * In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs
-         * string.
-         *
+         * Creates a new Font from the specifically formatted ImageData.
          * @param imageData The ImageData object to create the font from.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @return font, A Font object which can be used to draw text on screen.
@@ -1098,25 +1101,28 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newImageFont(imageData: ImageData, glyphs: string): Font;
 
         /**
-         * Creates a new Font by loading a specifically formatted image.
-         *
-         *
-         * In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs
-         * string.
-         *
+         * Creates a new Font with additional spacing to apply to each glyph in the Font.
          * @param filename The filepath to the image file.
          * @param glyphs A string of the characters in the image in order from left to right.
          * @param extraspacing Additional spacing (positive or negative) to apply to each glyph in the Font.
          * @return font, A Font object which can be used to draw text on screen.
          * @link [love.graphics.newImageFont](https://love2d.org/wiki/love.graphics.newImageFont)
          */
-        export function newImageFont(filename: string, glyphs: string, extraspacing?: number): Font;
+        export function newImageFont(filename: string | ImageData, glyphs: string, extraspacing: number): Font;
 
         /**
-         * Creates a new ParticleSystem.
-         *
+         * Creates a new ParticleSystem using the specified image.
+         * @param image The image to use.
+         * @param buffer The max number of particles at the same time. (Default: 1000)
+         * @return system, A new ParticleSystem.
+         * @link [love.graphics.newParticleSystem](https://love2d.org/wiki/love.graphics.newParticleSystem)
+         */
+        // export function newParticleSystem(image: Image, buffer?: number): ParticleSystem;
+
+        /**
+         * Creates a new ParticleSystem using the specified Texture.
          * @param texture The Image or Canvas to use.
-         * @param buffer The max number of particles at the same time.
+         * @param buffer The max number of particles at the same time. (Default: 1000)
          * @return system, A new ParticleSystem.
          * @link [love.graphics.newParticleSystem](https://love2d.org/wiki/love.graphics.newParticleSystem)
          */
@@ -1206,26 +1212,38 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
         export function newSpriteBatch(texture: Texture, maxsprites?: number, usage?: SpriteBatchUsage): SpriteBatch;
 
         /**
-         * Creates a new drawable Video. Currently only Ogg Theora video files are
-         * supported.
-         *
+         * Creates a new drawable Video from the specified video file. Currently only Ogg Theora video files are supported.
          * @param filename The file path to the Ogg Theora video file.
-         * @param loadaudio Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.
          * @return video, A new Video.
          * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
          */
-        export function newVideo(filename: string, loadaudio?: boolean): Video;
+        export function newVideo(filename: string): Video;
 
         /**
-         * Creates a new drawable Video. Currently only Ogg Theora video files are
-         * supported.
-         *
+         * Creates a new drawable Video from the specified VideoStream. Currently only Ogg Theora video files are supported.
          * @param videostream A video stream object.
-         * @param loadaudio Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.
          * @return video, A new Video.
          * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
          */
-        export function newVideo(videostream: VideoStream, loadaudio?: boolean): Video;
+        export function newVideo(videostream: VideoStream): Video;
+
+        /**
+         * Creates a new drawable Video with the specified settings.
+         * @param filename The file path to the Ogg Theora video file (or VideoStream).
+         * @param settings Settings for the new video.
+         * @return video, A new Video.
+         * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
+         */
+        export function newVideo(filename: string | VideoStream, settings?: {
+            /**
+             * Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio. (Default: false)
+             */
+            audio?: boolean;
+            /**
+             * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
+             */
+            dpiscale?: number;
+        }): Video;
 
         /**
          * Creates a new volume (3D) Image.
@@ -1630,9 +1648,16 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
 
         /**
          * Creates and sets a new font.
-         *
+         * @param size The size of the font. (Default: 12)
+         * @return font, The new font.
+         * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+         */
+        export function setNewFont(size?: number): Font;
+
+        /**
+         * Creates and sets a new font.
          * @param filename The path and name of the file with the font.
-         * @param size The size of the font.
+         * @param size The size of the font. (Default: 12)
          * @return font, The new font.
          * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
          */
@@ -1640,9 +1665,8 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
 
         /**
          * Creates and sets a new font.
-         *
          * @param file A File with the font.
-         * @param size The size of the font.
+         * @param size The size of the font. (Default: 12)
          * @return font, The new font.
          * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
          */
@@ -1650,13 +1674,20 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
 
         /**
          * Creates and sets a new font.
-         *
          * @param data A Data with the font.
-         * @param size The size of the font.
+         * @param size The size of the font. (Default: 12)
          * @return font, The new font.
          * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
          */
         export function setNewFont(data: Data, size?: number): Font;
+
+        /**
+         * Creates and sets a new font.
+         * @param data A Data with the font.
+         * @return font, The new font.
+         * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+         */
+        export function setNewFont(rasterizer: Rasterizer): Font;
 
         /**
          * Sets or resets a Shader as the current pixel effect or vertex shaders. All
@@ -1793,7 +1824,7 @@ love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
          * @param keepvalues True to preserve old stencil values of pixels, false to re-set every pixel's stencil value to 0 before executing the stencil function. love.graphics.clear will also re-set all stencil values.
          * @link [love.graphics.stencil](https://love2d.org/wiki/love.graphics.stencil)
          */
-        export function stencil(stencilfunction: Function, action?: StencilAction, value?: number, keepvalues?: boolean): void;
+        export function stencil(stencilfunction: () => void, action?: StencilAction, value?: number, keepvalues?: boolean): void;
 
         /**
          * Converts the given 2D position from global coordinates into screen-space.

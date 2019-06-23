@@ -63,7 +63,6 @@ import "./include/modules/graphics/structs/DisplayFlags";
 import "./include/modules/graphics/structs/ImageInformation";
 import "./include/modules/graphics/structs/ImageSettings";
 import "./include/modules/graphics/structs/MeshVertexDataType";
-import "./include/modules/graphics/structs/Stats";
 import "./include/modules/graphics/structs/VertexAttribute";
 import "./include/modules/graphics/structs/VertexInformation";
 import "./include/modules/graphics/types/Canvas";
