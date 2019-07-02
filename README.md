@@ -53,8 +53,9 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 
 ## Other Definitions / Tools to Help
 
+- [lua-types](https://github.com/ark120202/lua-types) declarations for the various Lua environments. LuaJIT included.
 - [vscode-typescript-to-lua](https://marketplace.visualstudio.com/items?itemName=ark120202.vscode-typescript-to-lua) plugin for VSCode. Highlights errors you'd encounter with TypeScriptToLua and gives _tsconfig.json_ information all within the editor.
-- [tstl-lurker](https://github.com/hazzard993/tstl-lurker) Declarations for [lurker](https://github.com/rxi/lurker). Allows code TypeScript code to be hotswapped with a running Lua game.
+- [tstl-lurker](https://github.com/hazzard993/tstl-lurker) declarations for [lurker](https://github.com/rxi/lurker). Allows code TypeScript code to be hotswapped with a running Lua game.
 - [UTF-8](https://github.com/hazzard993/tstl-utf8) the utf8 module included with LÖVE 2D.
 
 ## Try the Transpiler and Definitions Online
