@@ -16,9 +16,11 @@ This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToL
 
 Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off.
 
-You can install these definitions to your project via NPM!
+You can install these definitions to your project via NPM or Yarn!
 
-```
+```sh
+yarn add -D love-typescript-definitions
+# or
 npm i -D love-typescript-definitions
 ```
 
