@@ -27,8 +27,5 @@
   "devDependencies": {
     "tslint": "^5.16.0",
     "typescript-to-lua": "^0.23.0"
-  },
-  "dependencies": {
-    "lua-types": "^2.5.1"
   }
 }

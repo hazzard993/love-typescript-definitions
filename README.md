@@ -10,13 +10,13 @@
     </h1>
 </div>
 
-Contains definition files to build [LÖVE 2D](https://love2d.org/) projects with TypeScript!
+Contains declaration files to build [LÖVE 2D](https://love2d.org/) projects with TypeScript!
 
-This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler as well as [lua-types](https://github.com/ark120202/lua-types) to define the LuaJIT environment!
+This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler.
 
 Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off.
 
-You can install these definitions to your project via NPM or Yarn!
+You can install these declarations to your project via NPM or Yarn.
 
 ```sh
 yarn add -D love-typescript-definitions
@@ -24,16 +24,13 @@ yarn add -D love-typescript-definitions
 npm i -D love-typescript-definitions
 ```
 
-Link these definitions up using this `tsconfig.json`.
+then link them up to a `tsconfig.json` file.
 
 ```json
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "lib": ["es2017"],
+        "lib": ["esnext"],
         "types": [
-            "lua-types/jit",
             "love-typescript-definitions"
         ]
     },
@@ -43,7 +40,7 @@ Link these definitions up using this `tsconfig.json`.
 }
 ```
 
-And then use _tstl_ to transform a `main.ts` file to `main.lua`.
+and then use [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) (_tstl_) to transform a `main.ts` file to `main.lua`.
 
 ```
 tstl -p tsconfig.json
@@ -53,7 +50,7 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 
 ## Other Definitions / Tools to Help
 
-- [lua-types](https://github.com/ark120202/lua-types) declarations for the various Lua environments. LuaJIT included.
+- [lua-types](https://github.com/ark120202/lua-types) declarations for the various Lua environments. Allows LuaJIT specific functions to be used.
 - [vscode-typescript-to-lua](https://marketplace.visualstudio.com/items?itemName=ark120202.vscode-typescript-to-lua) plugin for VSCode. Highlights errors you'd encounter with TypeScriptToLua and gives _tsconfig.json_ information all within the editor.
 - [tstl-lurker](https://github.com/hazzard993/tstl-lurker) declarations for [lurker](https://github.com/rxi/lurker). Allows code TypeScript code to be hotswapped with a running Lua game.
 - [UTF-8](https://github.com/hazzard993/tstl-utf8) the utf8 module included with LÖVE 2D.
