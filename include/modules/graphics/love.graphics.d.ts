@@ -1079,7 +1079,7 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
             /**
              * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
              */
-            mipmaps?: boolean | string[];
+            mipmaps?: boolean | Array<string>;
         }): Image;
 
         /**
