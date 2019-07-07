@@ -123,7 +123,27 @@ declare namespace love {
          * @return image, An Array Image object.
          * @link [love.graphics.newArrayImage](https://love2d.org/wiki/love.graphics.newArrayImage)
          */
-        export function newArrayImage(slices: Array<ImageInformation>, settings?: ArrayImageSettings): Image;
+        export function newArrayImage(slices: Array<ImageInformation>, settings?: {
+
+            /**
+             * True to make the image use mipmaps, false to disable them. Mipmaps will be automatically generated if the image isn't a compressed texture format.
+             * @default false
+             */
+            mipmaps?: boolean;
+
+            /**
+             * True to treat the image's pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.
+             * @default false
+             */
+            linear?: boolean;
+
+            /**
+             * The DPI scale to use when drawing the array image and calling getWidth/getHeight.
+             * @default 1
+             */
+            dpiscale?: number;
+
+        }): Image;
 
         /**
          * Draws a circle.
@@ -868,10 +888,10 @@ declare namespace love {
 
         /**
          * Draws lines between points.
-```ts
-love.graphics.line(4, 4, 8, 8, 12, 8);      // x1y1x2y2...
-love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
-```
+         * ```ts
+         * love.graphics.line(4, 4, 8, 8, 12, 8);      // x1y1x2y2...
+         * love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
+         * ```
          * @param points x position followed by y position continued.
          * @link [love.graphics.line](https://love2d.org/wiki/love.graphics.line)
          */
@@ -1268,11 +1288,11 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);    // [x1y1x2y2...]
 
         /**
          * Draws one or more points.
-```ts
-love.graphics.points(4, 4, 8, 8, 12, 12);           // xyxyxy...
-love.graphics.points([4, 4, 8, 8, 12, 12]);         // [xyxyxy...]
-love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]); // [[xy],[xyrgba],...]
-```
+         * ```ts
+         * love.graphics.points(4, 4, 8, 8, 12, 12);           // xyxyxy...
+         * love.graphics.points([4, 4, 8, 8, 12, 12]);         // [xyxyxy...]
+         * love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]); // [[xy],[xyrgba],...]
+         * ```
          * @param points The x and y positions of the points to draw.
          *
          * RGBA values are optional.
@@ -1288,10 +1308,10 @@ love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]); // [[xy],[xyrgba],...]
          * Following the mode argument, this function can accept multiple numeric arguments or a single table of numeric arguments. In either case the arguments are interpreted as alternating x and y coordinates of the polygon's vertices.
          *
          * When in fill mode, the polygon must be convex and simple or rendering artifacts may occur.
-```ts
-love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);     // "fill", xyxyxy...
-love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
-```
+         * ```ts
+         * love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);     // "fill", xyxyxy...
+         * love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
+         * ```
          * @param mode How to draw the polygon.
          * @param xys x and y positions for the vertices of the polygon.
          * @link [love.graphics.polygon](https://love2d.org/wiki/love.graphics.polygon)
@@ -1325,10 +1345,10 @@ love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
 
         /**
          * Draws text on the screen.
-```ts
-love.graphics.print("Hello");
-love.graphics.print([[1, 0, 0, 1], "Hello in red"]);
-```
+         * ```ts
+         * love.graphics.print("Hello");
+         * love.graphics.print([[1, 0, 0, 1], "Hello in red"]);
+         * ```
          * @param text The text to draw. Or an array [color(rgba), string, ...].
          * @param x The position to draw the object (x-axis).
          * @param y The position to draw the object (y-axis).
@@ -1346,10 +1366,10 @@ love.graphics.print([[1, 0, 0, 1], "Hello in red"]);
 
         /**
          * Draws formatted text, with word wrap and alignment.
-```ts
-love.graphics.printf("Hello", 8, 8, 400);
-love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
-```
+         * ```ts
+         * love.graphics.printf("Hello", 8, 8, 400);
+         * love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
+         * ```
          * @link [love.graphics.printf](https://love2d.org/wiki/love.graphics.printf)
          */
         export function printf(text: string | ColouredText, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
