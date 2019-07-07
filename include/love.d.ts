@@ -7,9 +7,9 @@ declare namespace love {
 
     /**
      * Gets the current running version of LÖVE.
-```ts
-let [major, minor, revision, codename] = love.getVersion();
-```
+     * ```ts
+     * let [major, minor, revision, codename] = love.getVersion();
+     * ```
      * @return major, The major version of LÖVE, i.e. 0 for version 0.9.1.
      * @return minor, The minor version of LÖVE, i.e. 9 for version 0.9.1.
      * @return revision, The revision version of LÖVE, i.e. 1 for version 0.9.1.
@@ -42,23 +42,23 @@ let [major, minor, revision, codename] = love.getVersion();
 
     /**
      * Should be overwritten inside a `conf.lua` file.
-```ts
-love.conf = (t: Conf) => {
-    t.window.width = 1024;
-    t.window.height = 768;
-}
-```
+     * ```ts
+     * love.conf = (t: Conf) => {
+     *     t.window.width = 1024;
+     *     t.window.height = 768;
+     * }
+     * ```
      * @link [Config Files](https://love2d.org/wiki/Config_Files)
      */
     export let conf: (t: Conf) => void;
 
     /**
      * Callback function triggered when a directory is dragged and dropped onto the window.
-```ts
-love.directorydropped = (path: string) => {
-    print(`${path} dropped!`);
-}
-```
+     * ```ts
+     * love.directorydropped = (path: string) => {
+     *     print(`${path} dropped!`);
+     * }
+     * ```
      * @param path The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.
      * @link [love.directorydropped](https://love2d.org/wiki/love.directorydropped)
      */
@@ -66,11 +66,11 @@ love.directorydropped = (path: string) => {
 
     /**
      * Callback function used to draw on the screen every frame.
-```ts
-love.draw = () => {
-  love.graphics.print("Hello World!", 400, 300);
-}
-```
+     * ```ts
+     * love.draw = () => {
+     *   love.graphics.print("Hello World!", 400, 300);
+     * }
+     * ```
      * @link [love.draw](https://love2d.org/wiki/love.draw)
      * @link [love.graphics](https://love2d.org/wiki/love.graphics)
      */
@@ -87,14 +87,14 @@ love.draw = () => {
 
     /**
      * Callback function triggered when a file is dragged and dropped onto the window.
-```ts
-love.filedropped = (file: File) => {
-    const [content, size] = file.read();
-    print(`Content of ${file.getFilename()} is`);
-    print(content);
-    print("End of file");
-}
-```
+     * ```ts
+     * love.filedropped = (file: File) => {
+     *     const [content, size] = file.read();
+     *     print(`Content of ${file.getFilename()} is`);
+     *     print(content);
+     *     print("End of file");
+     * }
+     * ```
      * @param file The unopened File object representing the file that was dropped.
      * @link [love.filedropped](https://love2d.org/wiki/love.filedropped)
      */
@@ -102,11 +102,11 @@ love.filedropped = (file: File) => {
 
     /**
      * Callback function triggered when window receives or loses focus.
-```ts
-love.focus = (focus: boolean) => {
-    print(focus);
-}
-```
+     * ```ts
+     * love.focus = (focus: boolean) => {
+     *     print(focus);
+     * }
+     * ```
      * @param focus True if the window gains focus, false if it loses focus.
      * @link [love.focus](https://love2d.org/wiki/love.focus)
      */
@@ -219,15 +219,15 @@ love.focus = (focus: boolean) => {
 
     /**
      * This function is called exactly once at the beginning of the game.
-```ts
-let image: Image;
-
-love.load = () =>
-    image = love.graphics.newImage("image.png");
-
-love.draw = () =>
-    love.graphics.draw(image, 50, 50);
-```
+     * ```ts
+     * let image: Image;
+     *
+     * love.load = () =>
+     *     image = love.graphics.newImage("image.png");
+     *
+     * love.draw = () =>
+     *     love.graphics.draw(image, 50, 50);
+     * ```
      * @param arg Command line arguments given to the game.
      * @param unfilteredArg Unfiltered command-line arguments given to the executable (see [#Notes](https://love2d.org/wiki/love.load#Notes)).
      * @link [love.load](https://love2d.org/wiki/love.load)
@@ -390,11 +390,11 @@ love.draw = () =>
 
     /**
      * Callback function used to update the state of the game every frame.
-```ts
-love.update = (delta: number) => {
-    print(delta);
-}
-```
+     * ```ts
+     * love.update = (delta: number) => {
+     *     print(delta);
+     * }
+     * ```
      * @param dt Time since the last update in seconds.
      * @link [love.update](https://love2d.org/wiki/love.update)
      */
