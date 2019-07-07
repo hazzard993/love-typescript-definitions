@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.12.0
+
+- Improved indenting of example code.
+- Added some tables to describe string enums.
+- Removed `FileInfo` and `ArrayImageSettings` and added them directly to their only associated function.
+
 ## Version 0.11.2
 
 - Added two `love.graphics.draw` variants
