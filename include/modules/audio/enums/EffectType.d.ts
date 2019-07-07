@@ -3,4 +3,11 @@
  * @link [EffectType](https://love2d.org/wiki/EffectType)
  * @since 11.0
  */
-declare type EffectType = "chorus" | "compressor" | "distortion" | "echo" | "equalizer" | "flanger" | "reverb" | "ringmodulator";
+declare type EffectType = "chorus"
+    | "compressor"
+    | "distortion"
+    | "echo"
+    | "equalizer"
+    | "flanger"
+    | "reverb"
+    | "ringmodulator";
