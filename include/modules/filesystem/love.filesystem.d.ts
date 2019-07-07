@@ -107,7 +107,24 @@ declare namespace love {
          * @return info, A table containing information about the specified path, or _nil/null_ if nothing exists at the path.
          * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
          */
-        export function getInfo(path: string, info?: object): FileInfo | null;
+        export function getInfo(path: string, info?: object): {
+
+            /**
+             * The type of the object at the path (file, directory, symlink, etc.)
+             */
+            type: FileType;
+
+            /**
+             * The size in bytes of the file, or _nil/null_ if it can't be determined.
+             */
+            size: number | null;
+
+            /**
+             * The file's last modification time in seconds since the unix epoch, or _nil/null_ if it can't be determined.
+             */
+            modtime: number | null;
+
+        } | null;
 
         /**
          * Gets the last modification time of a file.

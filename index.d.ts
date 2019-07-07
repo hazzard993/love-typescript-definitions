@@ -24,7 +24,6 @@ import "./include/modules/filesystem/enums/FileDecoder";
 import "./include/modules/filesystem/enums/FileMode";
 import "./include/modules/filesystem/enums/FileType";
 import "./include/modules/filesystem/love.filesystem";
-import "./include/modules/filesystem/structs/FileInfo";
 import "./include/modules/filesystem/types/File";
 import "./include/modules/filesystem/types/FileData";
 import "./include/modules/font/enums/HintingMode";
