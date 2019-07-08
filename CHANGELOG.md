@@ -5,6 +5,52 @@
 - Improved indenting of example code.
 - Added some tables to describe string enums.
 - Removed `FileInfo`, `ArrayImageSettings` and `Conf` and added them directly to their only associated function.
+- It is now possible to extend the path used when referencing these types in _tsconfig.json_ files.
+  - `love-typescript-definitions` all LÖVE 2D declarations.
+  - `love-typescript-definitions/typings/modules` all LÖVE 2D's modules but not _love's_ callbacks and functions.
+  - `love-typescript-definitions/typings/love` all of _love's_ functions.
+  - `love-typescript-definitions/typings/love.callbacks` all of _love's_ callbacks.
+
+This can allow a namespace merge to assign functions to _love's_ callbacks like so.
+
+**tsconfig.json**
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "love-typescript-definitions/typings/modules",
+      "love-typescript-definitions/typings/love",
+    ]
+  }
+}
+```
+
+**main.ts**
+
+```ts
+namespace love {
+    export function load() {}
+    export function update() {}
+    export function draw() {}
+}
+```
+
+**Output**
+
+```lua
+love = love or {}
+do
+    function love.load()
+    end
+    function love.update()
+    end
+    function love.draw()
+    end
+end
+```
+
+See the wiki for more information about this.
 
 ## Version 0.11.2
 
