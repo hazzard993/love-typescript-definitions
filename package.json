@@ -17,6 +17,7 @@
     "typescript"
   ],
   "license": "MIT",
+  "types": "typings",
   "bugs": {
     "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
   },

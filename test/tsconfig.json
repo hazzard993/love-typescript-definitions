@@ -1,10 +1,8 @@
 {
     "compilerOptions": {
-        "lib": [
-            "esnext"
-        ],
+        "lib": ["esnext"],
         "types": [
-            "../index"
+            "../typings"
         ]
     },
     "include": [

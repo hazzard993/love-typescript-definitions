@@ -437,7 +437,17 @@ declare namespace love {
          * @return pressedbutton, The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.
          * @link [love.window.showMessageBox](https://love2d.org/wiki/love.window.showMessageBox)
          */
-        export function showMessageBox(title: string, message: string, buttonlist: ButtonList, type?: MessageBoxType, attachtowindow?: boolean): number;
+        export function showMessageBox(
+            title: string,
+            message: string,
+            buttonlist: {
+                [key: number]: string;
+                enterbutton?: number;
+                escapebutton?: number;
+            },
+            type?: MessageBoxType,
+            attachtowindow?: boolean
+        ): number;
 
         /**
          * Converts a number from density-independent units to pixels.
