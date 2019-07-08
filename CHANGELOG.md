@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 0.12.0
+## Version 0.13.0
 
 - Improved indenting of example code.
 - Added some tables to describe string enums.
