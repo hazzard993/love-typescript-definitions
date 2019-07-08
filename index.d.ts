@@ -1,4 +1,3 @@
-import "./include/types/Conf";
 import "./include/love";
 import "./include/modules/audio/enums/DistanceModel";
 import "./include/modules/audio/enums/EffectType";
