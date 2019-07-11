@@ -43,6 +43,7 @@ declare interface Texture extends Drawable {
      * Gets the filter mode of the Texture.
      * @return min, Filter mode to use when minifying the texture (rendering it at a smaller size on-screen than its size in pixels).
      * @return mag, Filter mode to use when magnifying the texture (rendering it at a smaller size on-screen than its size in pixels).
+     * @tupleReturn
      * @link [Texture:getFilter](https://love2d.org/wiki/Texture:getFilter)
      */
     getFilter(): [FilterMode, FilterMode];

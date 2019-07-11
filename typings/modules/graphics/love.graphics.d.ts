@@ -602,6 +602,7 @@ declare namespace love {
          * Gets the width and height in pixels of the window.
          * @return pixelwidth, The width of the window in pixels.
          * @return pixelheight, The width of the window in pixels.
+         * @tupleReturn
          * @link [love.graphics.getPixelDimensions](https://love2d.org/wiki/love.graphics.getPixelDimensions)
          */
         export function getPixelDimensions(): [number, number];

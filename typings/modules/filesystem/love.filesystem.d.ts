@@ -185,6 +185,7 @@ declare namespace love {
          * @param filename The path and name to a file.
          * @return size, The size in bytes of the file, or _nil/null_ on failure.
          * @return errormsg, The error message on failure.
+         * @tupleReturn
          * @link [love.filesystem.getSize](https://love2d.org/wiki/love.filesystem.getSize)
          * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
          */

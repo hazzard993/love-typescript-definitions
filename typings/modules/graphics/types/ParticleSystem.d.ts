@@ -83,6 +83,7 @@ declare interface ParticleSystem extends Drawable {
      * @return dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
      * @return angle, The angle in radians of the emission area.
      * @return directionRelativeToCenter, True if newly spawned particles will be oriented relative to the center of the emission area, false otherwise.
+     * @tupleReturn
      * @link [ParticleSystem:getEmissionArea](https://love2d.org/wiki/ParticleSystem:getEmissionArea)
      */
     getEmissionArea(): [AreaSpreadDistribution, number, number, number, boolean];
