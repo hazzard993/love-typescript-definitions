@@ -12,11 +12,13 @@
 
 Contains declaration files to build [LÖVE 2D](https://love2d.org/) projects with TypeScript!
 
-This can be achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler.
+This allows incredible static code analysis, syntax checking and type checking of would-be LÖVE 2D projects without any runtime checking overhead.
 
-Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off.
+Transpilation is achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler.
 
-You can install these declarations to your project via NPM or Yarn.
+Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off and [VS Code](https://code.visualstudio.com) (if you wish) for one of the best TypeScript editors.
+
+You can install these declarations to your project via Yarn or NPM.
 
 ```sh
 yarn add -D love-typescript-definitions
