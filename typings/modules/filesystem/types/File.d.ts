@@ -73,12 +73,18 @@ declare interface File extends LoveObject<"File"> {
     isOpen(): boolean;
 
     /**
-     * Iterate over all the lines in a file
+     * Iterate over all the lines in a file.
+     *
+     * ```ts
+     * for (const line of file.lines()) {
+     *      print(line);
+     * }
+     * ```
      *
      * @return iterator, The iterator (can be used in for loops)
      * @link [(File):lines](https://love2d.org/wiki/(File):lines)
      */
-    lines(): Function;
+    lines(): LuaIterator<string>;
 
     /**
      * Open the file for write, read or append.
