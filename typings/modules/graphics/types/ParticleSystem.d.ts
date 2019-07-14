@@ -32,17 +32,6 @@ declare interface ParticleSystem extends Drawable {
     getCount(): number;
 
     /**
-     * Gets the area-based spawn parameters for the particles.
-     *
-     * @return distribution, The type of distribution for new particles.
-     * @return dx, The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
-     * @return dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
-     * @tupleReturn
-     * @link [ParticleSystem:getAreaSpread](https://love2d.org/wiki/ParticleSystem:getAreaSpread)
-     */
-    getAreaSpread(): [AreaSpreadDistribution, number, number];
-
-    /**
      * Gets the size of the buffer (the max allowed amount of particles in the
      * system).
      *
@@ -52,28 +41,13 @@ declare interface ParticleSystem extends Drawable {
     getBufferSize(): number;
 
     /**
-     * Gets a series of colors to apply to the particle sprite. The particle system
-     * will interpolate between each color evenly over the particle's lifetime. Color
-     * modulation needs to be activated for this function to have any effect.
+     * Gets the series of colors applied to the particle sprite.
      *
-     *
-     * Arguments are passed in groups of four, representing the components of the
-     * desired RGBA value. At least one color must be specified. A maximum of eight
-     * may be used.
-     *
-     * @return r1, First color, red component (0-255).
-     * @return g1, First color, green component (0-255).
-     * @return b1, First color, blue component (0-255).
-     * @return a1, First color, alpha component (0-255).
-     * @return r2, Second color, red component (0-255).
-     * @return g2, Second color, green component (0-255).
-     * @return b2, Second color, blue component (0-255).
-     * @return a2, Second color, alpha component (0-255).
-     * @return ..., Etc.
+     * @return A repeating `[rgba]` tuple for the first colour, second colour and so on.
      * @tupleReturn
      * @link [ParticleSystem:getColors](https://love2d.org/wiki/ParticleSystem:getColors)
      */
-    getColors(): [number, number, number, number, number, number, number, number, number];
+    getColors(): Array<number>;
 
     /**
      * Gets the direction the particles will be emitted in.
@@ -345,18 +319,6 @@ declare interface ParticleSystem extends Drawable {
      * @link [ParticleSystem:reset](https://love2d.org/wiki/ParticleSystem:reset)
      */
     reset(): void;
-
-    /**
-     * Sets area-based spawn parameters for the particles. Newly created particles
-     * will spawn in an area around the emitter based on the parameters to this
-     * function.
-     *
-     * @param distribution The type of distribution for new particles.
-     * @param dx The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
-     * @param dy The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
-     * @link [ParticleSystem:setAreaSpread](https://love2d.org/wiki/ParticleSystem:setAreaSpread)
-     */
-    setAreaSpread(distribution: AreaSpreadDistribution, dx: number, dy: number): void;
 
     /**
      * Sets the size of the buffer (the max allowed amount of particles in the
