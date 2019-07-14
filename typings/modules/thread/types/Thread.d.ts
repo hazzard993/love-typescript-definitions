@@ -9,7 +9,7 @@ declare interface Thread extends LoveObject<"Thread"> {
      * @return message, The error message.
      * @link [Thread:getError](https://love2d.org/wiki/Thread:getError)
      */
-    getError(): string;
+    getError(): string | undefined;
 
     /**
      * Starts the thread.
