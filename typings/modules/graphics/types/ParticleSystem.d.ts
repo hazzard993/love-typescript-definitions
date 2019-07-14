@@ -339,18 +339,11 @@ declare interface ParticleSystem extends LoveObject {
      * desired RGBA value. At least one color must be specified. A maximum of eight
      * may be used.
      *
-     * @param r1 First color, red component (0-255).
-     * @param g1 First color, green component (0-255).
-     * @param b1 First color, blue component (0-255).
-     * @param a1 First color, alpha component (0-255).
-     * @param r2 Second color, red component (0-255).
-     * @param g2 Second color, green component (0-255).
-     * @param b2 Second color, blue component (0-255).
-     * @param a2 Second color, alpha component (0-255).
+     * @param rgbas rgba values. First set is for the first colour and so on.
      * @param ... Etc.
      * @link [ParticleSystem:setColors](https://love2d.org/wiki/ParticleSystem:setColors)
      */
-    setColors(r1: number, g1: number, b1: number, a1: number, r2: number, g2: number, b2: number, a2: number, ...vararg: Array<number>): void;
+    setColors(...rgbas: Array<number>): void;
 
     /**
      * Sets the direction the particles will be emitted in.
@@ -507,11 +500,10 @@ declare interface ParticleSystem extends LoveObject {
      * At least one size must be specified. A maximum of eight may be used.
      *
      * @param size1 The first size.
-     * @param size2 The second size.
-     * @param ... Etc.
+     * @param otherSizes The second size and so on.
      * @link [ParticleSystem:setSizes](https://love2d.org/wiki/ParticleSystem:setSizes)
      */
-    setSizes(size1: number, size2: number, ...vararg: Array<number>): void;
+    setSizes(size1: number, ...otherSizes: Array<number>): void;
 
     /**
      * Sets the degree of variation (0 meaning no variation and 1 meaning full
