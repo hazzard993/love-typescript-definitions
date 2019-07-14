@@ -4,6 +4,8 @@
  */
 interface LoveObject {
 
+    __opaque: never;
+
     /**
      * Destroys the object's Lua reference.
      *
