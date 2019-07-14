@@ -124,7 +124,7 @@ declare interface Texture extends LoveObject {
 
     /**
      * Gets the width of the Texture.
-     * @param TODO
+     *
      * @return width, The width of the Texture, in pixels.
      * @link [Texture:getWidth](https://love2d.org/wiki/Texture:getWidth)
      */
