@@ -2,7 +2,7 @@
  * A world is an object that contains all bodies and joints.
  * @link [World](https://love2d.org/wiki/World)
  */
-declare interface World extends LoveObject {
+declare interface World extends LoveObject<"World"> {
     /**
      * Destroys the world, taking all bodies, joints, fixtures and their shapes with
      * it.
@@ -11,6 +11,7 @@ declare interface World extends LoveObject {
      * An error will occur if you attempt to use any of the destroyed objects after
      * calling this function.
      *
+     * @link [World:destroy](https://love2d.org/wiki/World:destroy)
      */
     destroy(): void;
 
@@ -25,6 +26,7 @@ declare interface World extends LoveObject {
      * Get the number of bodies in the world.
      *
      * @return n, The number of bodies in the world.
+     * @link [World:getBodyCount](https://love2d.org/wiki/World:getBodyCount)
      */
     getBodyCount(): number;
 
@@ -36,13 +38,15 @@ declare interface World extends LoveObject {
      * @return preSolve, Gets called before a collision gets resolved.
      * @return postSolve, Gets called after the collision has been resolved.
      * @tupleReturn
+     * @link [World:getCallbacks](https://love2d.org/wiki/World:getCallbacks)
      */
-    getCallbacks(): [Function, Function, Function, Function];
+    getCallbacks(): [(this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any];
 
     /**
      * Returns the number of contacts in the world.
      *
      * @return n, The number of contacts in the world.
+     * @link [World:getContactCount](https://love2d.org/wiki/World:getContactCount)
      */
     getContactCount(): number;
 
@@ -50,6 +54,7 @@ declare interface World extends LoveObject {
      * Returns the function for collision filtering.
      *
      * @return contactFilter, The function that handles the contact filtering.
+     * @link [World:getContactFilter](https://love2d.org/wiki/World:getContactFilter)
      */
     getContactFilter(): Function;
 
@@ -57,6 +62,7 @@ declare interface World extends LoveObject {
      * Returns a table with all contacts.
      *
      * @return contacts, A sequence with all contacts.
+     * @link [World:getContactList](https://love2d.org/wiki/World:getContactList)
      */
     getContactList(): Array<Contact>;
 
@@ -66,6 +72,7 @@ declare interface World extends LoveObject {
      * @return x, The x component of gravity.
      * @return y, The y component of gravity.
      * @tupleReturn
+     * @link [World:getGravity](https://love2d.org/wiki/World:getGravity)
      */
     getGravity(): [number, number];
 
@@ -73,6 +80,7 @@ declare interface World extends LoveObject {
      * Get the number of joints in the world.
      *
      * @return n, The number of joints in the world.
+     * @link [World:getJointCount](https://love2d.org/wiki/World:getJointCount)
      */
     getJointCount(): number;
 
@@ -80,6 +88,7 @@ declare interface World extends LoveObject {
      * Returns a table with all joints.
      *
      * @return joints, A sequence with all joints.
+     * @link [World:getJointList](https://love2d.org/wiki/World:getJointList)
      */
     getJointList(): Array<Joint>;
 
@@ -87,6 +96,7 @@ declare interface World extends LoveObject {
      * Gets whether the World is destroyed. Destroyed worlds cannot be used.
      *
      * @return destroyed, Whether the World is destroyed.
+     * @link [World:isDestroyed](https://love2d.org/wiki/World:isDestroyed)
      */
     isDestroyed(): boolean;
 
@@ -97,6 +107,7 @@ declare interface World extends LoveObject {
      * This will return true inside the callbacks from World:setCallbacks.
      *
      * @return locked, Will be true if the world is in the process of updating its state.
+     * @link [World:isLocked](https://love2d.org/wiki/World:isLocked)
      */
     isLocked(): boolean;
 
@@ -104,6 +115,7 @@ declare interface World extends LoveObject {
      * Returns the sleep behaviour of the world.
      *
      * @return allowSleep, True if the bodies are allowed to sleep or false if not.
+     * @link [World:isSleepingAllowed](https://love2d.org/wiki/World:isSleepingAllowed)
      */
     isSleepingAllowed(): boolean;
 
@@ -115,6 +127,7 @@ declare interface World extends LoveObject {
      * @param bottomRightX The x position of the bottom-right point.
      * @param bottomRightY The y position of the bottom-right point.
      * @param callback This function gets passed one argument, the fixture, and should return a boolean. The search will continue if it is true or stop if it is false.
+     * @link [World:queryBoundingBox](https://love2d.org/wiki/World:queryBoundingBox)
      */
     queryBoundingBox(topLeftX: number, topLeftY: number, bottomRightX: number, bottomRightY: number, callback: Function): void;
 
@@ -126,6 +139,7 @@ declare interface World extends LoveObject {
      * @param x2 The x position of the end point of the ray.
      * @param y2 The y position of the end point of the ray.
      * @param callback This function gets six arguments and should return a number.
+     * @link [World:rayCast](https://love2d.org/wiki/World:rayCast)
      */
     rayCast(x1: number, y1: number, x2: number, y2: number, callback: (this: void, fix: Fixture, x: number, y: number, xn: number, yn: number, frac: number) => number): void;
 
@@ -133,7 +147,7 @@ declare interface World extends LoveObject {
      * Sets functions for the collision callbacks during the world update.
      *
      *
-     * Four Lua functions can be given as arguments. The value _nil/null/undefined_ removes a function.
+     * Four Lua functions can be given as arguments. The value _nil/undefined/undefined_ removes a function.
      *
      *
      * When called, each function will be passed three arguments. The first two
@@ -145,12 +159,12 @@ declare interface World extends LoveObject {
      * @param endContact Gets called when two fixtures cease to overlap.
      * @param preSolve Gets called before a collision gets resolved.
      * @param postSolve Gets called after the collision has been resolved.
+     * @link [World:setCallbacks](https://love2d.org/wiki/World:setCallbacks)
      */
     setCallbacks(beginContact?: (this: void, ...args: Array<any>) => any, endContact?: (this: void, ...args: Array<any>) => any, preSolve?: (this: void, ...args: Array<any>) => any, postSolve?: (this: void, ...args: Array<any>) => any): void;
 
     /**
      * Sets a function for collision filtering.
-     *
      *
      * If the group and category filtering doesn't generate a collision decision, this
      * function gets called with the two fixtures as arguments. The function should
@@ -158,14 +172,16 @@ declare interface World extends LoveObject {
      * means they will pass through each other.
      *
      * @param filter The function handling the contact filtering.
+     * @link [World:setContactFilter](https://love2d.org/wiki/World:setContactFilter)
      */
-    setContactFilter(filter: Function): void;
+    setContactFilter(filter: (this: void, fixtureA: Fixture, fixtureB: Fixture) => boolean): void;
 
     /**
      * Set the gravity of the world.
      *
      * @param x The x component of gravity.
      * @param y The y component of gravity.
+     * @link [World:setGravity](https://love2d.org/wiki/World:setGravity)
      */
     setGravity(x: number, y: number): void;
 
@@ -179,6 +195,7 @@ declare interface World extends LoveObject {
      * If sleeping is allowed, any body that has come to rest will sleep.
      *
      * @param allowSleep True if the bodies are allowed to sleep or false if not.
+     * @link [World:setSleepingAllowed](https://love2d.org/wiki/World:setSleepingAllowed)
      */
     setSleepingAllowed(allowSleep: boolean): void;
 
@@ -188,6 +205,7 @@ declare interface World extends LoveObject {
      *
      * @param x The x component of the new origin with respect to the old origin.
      * @param y The y component of the new origin with respect to the old origin.
+     * @link [World:translateOrigin](https://love2d.org/wiki/World:translateOrigin)
      */
     translateOrigin(x: number, y: number): void;
 
@@ -197,6 +215,7 @@ declare interface World extends LoveObject {
      * @param dt The time (in seconds) to advance the physics simulation.
      * @param velocityiterations The maximum number of steps used to determine the new velocities when resolving a collision.
      * @param positioniterations The maximum number of steps used to determine the new positions when resolving a collision.
+     * @link [World:update](https://love2d.org/wiki/World:update)
      */
     update(dt: number, velocityiterations?: number, positioniterations?: number): void;
 

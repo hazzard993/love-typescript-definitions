@@ -1,7 +1,7 @@
 /**
  * @link [FileData](https://love2d.org/wiki/FileData)
  */
-declare interface FileData extends Data {
+declare interface FileData extends Data<"FileData"> {
     /**
      * Gets the extension of the FileData.
      *

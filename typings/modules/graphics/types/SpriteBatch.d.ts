@@ -18,6 +18,7 @@ declare interface SpriteBatch extends Drawable {
      * @param kx Shear factor (x-axis).
      * @param ky Shear factor (y-axis).
      * @return id, An identifier for the added sprite.
+     * @link [SpriteBatch:add](https://love2d.org/wiki/SpriteBatch:add)
      */
     add(x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -35,6 +36,7 @@ declare interface SpriteBatch extends Drawable {
      * @param kx Shear factor (x-axis).
      * @param ky Shear factor (y-axis).
      * @return id, An identifier for the added sprite.
+     * @link [SpriteBatch:add](https://love2d.org/wiki/SpriteBatch:add)
      */
     add(quad: Quad, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
 
@@ -106,12 +108,14 @@ declare interface SpriteBatch extends Drawable {
      *
      * @param name The name of the vertex attribute to attach.
      * @param mesh The Mesh to get the vertex attribute from.
+     * @link [SpriteBatch:attachAttribute](https://love2d.org/wiki/SpriteBatch:attachAttribute)
      */
     attachAttribute(name: string, mesh: Mesh): void;
 
     /**
      * Removes all sprites from the buffer.
      *
+     * @link [SpriteBatch:clear](https://love2d.org/wiki/SpriteBatch:clear)
      */
     clear(): void;
 
@@ -119,6 +123,7 @@ declare interface SpriteBatch extends Drawable {
      * Immediately sends all new and modified sprite data in the batch to the graphics
      * card.
      *
+     * @link [SpriteBatch:flush](https://love2d.org/wiki/SpriteBatch:flush)
      */
     flush(): void;
 
@@ -126,6 +131,7 @@ declare interface SpriteBatch extends Drawable {
      * Gets the maximum number of sprites the SpriteBatch can hold.
      *
      * @return size, The maximum number of sprites the batch can hold.
+     * @link [SpriteBatch:getBufferSize](https://love2d.org/wiki/SpriteBatch:getBufferSize)
      */
     getBufferSize(): number;
 
@@ -134,7 +140,7 @@ declare interface SpriteBatch extends Drawable {
      *
      *
      * If no color has been set with SpriteBatch:setColor or the current SpriteBatch
-     * color has been cleared, this method will return _nil/null_.
+     * color has been cleared, this method will return _nil/undefined_.
      *
      * @return r, The red component (0-255).
      * @return g, The green component (0-255).
@@ -143,12 +149,13 @@ declare interface SpriteBatch extends Drawable {
      * @tupleReturn
      * @link [SpriteBatch:getColor](https://love2d.org/wiki/SpriteBatch:getColor)
      */
-    getColor(): [number, number, number, number] | [null, null, null, null];
+    getColor(): [number, number, number, number] | [undefined, undefined, undefined, undefined];
 
     /**
      * Gets the amount of sprites currently in the SpriteBatch.
      *
      * @return count, The amount of sprites currently in the batch.
+     * @link [SpriteBatch:getCount](https://love2d.org/wiki/SpriteBatch:getCount)
      */
     getCount(): number;
 
@@ -156,6 +163,7 @@ declare interface SpriteBatch extends Drawable {
      * Returns the Image or Canvas used by the SpriteBatch.
      *
      * @return texture, The Image or Canvas for the sprites.
+     * @link [SpriteBatch:getTexture](https://love2d.org/wiki/SpriteBatch:getTexture)
      */
     getTexture(): Texture;
 
@@ -173,6 +181,7 @@ declare interface SpriteBatch extends Drawable {
      * @param oy Origin offset (y-axis).
      * @param kx Shear factor (x-axis).
      * @param ky Shear factor (y-axis).
+     * @link [SpriteBatch:set](https://love2d.org/wiki/SpriteBatch:set)
      */
     set(id: number, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
 
@@ -191,6 +200,7 @@ declare interface SpriteBatch extends Drawable {
      * @param oy Origin offset (y-axis).
      * @param kx Shear factor (x-axis).
      * @param ky Shear factor (y-axis).
+     * @link [SpriteBatch:set](https://love2d.org/wiki/SpriteBatch:set)
      */
     set(id: number, quad: Quad, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
 
@@ -200,6 +210,7 @@ declare interface SpriteBatch extends Drawable {
      * called.
      *
      * @param size The new maximum number of sprites the batch can hold.
+     * @link [SpriteBatch:setBufferSize](https://love2d.org/wiki/SpriteBatch:setBufferSize)
      */
     setBufferSize(size: number): void;
 
@@ -216,6 +227,7 @@ declare interface SpriteBatch extends Drawable {
      * @param g The amount of green.
      * @param b The amount of blue.
      * @param a The amount of alpha.
+     * @link [SpriteBatch:setColor](https://love2d.org/wiki/SpriteBatch:setColor)
      */
     setColor(r: number, g: number, b: number, a?: number): void;
 
@@ -228,6 +240,7 @@ declare interface SpriteBatch extends Drawable {
      * love.graphics.setColor will not work on the SpriteBatch if any of the sprites
      * has its own color.
      *
+     * @link [SpriteBatch:setColor](https://love2d.org/wiki/SpriteBatch:setColor)
      */
     setColor(): void;
 
@@ -236,12 +249,14 @@ declare interface SpriteBatch extends Drawable {
      *
      * @param start The index of the first sprite to draw. Index 1 corresponds to the first sprite added with SpriteBatch:add.
      * @param count The number of sprites to draw.
+     * @link [SpriteBatch:setDrawRange](https://love2d.org/wiki/SpriteBatch:setDrawRange)
      */
     setDrawRange(start: number, count: number): void;
 
     /**
      * Restricts the drawn sprites in the SpriteBatch to a subset of the total.
      *
+     * @link [SpriteBatch:setDrawRange](https://love2d.org/wiki/SpriteBatch:setDrawRange)
      */
     setDrawRange(): void;
 
@@ -303,6 +318,7 @@ declare interface SpriteBatch extends Drawable {
      * Replaces the Image or Canvas used for the sprites.
      *
      * @param texture The new Image or Canvas to use for the sprites.
+     * @link [SpriteBatch:setTexture](https://love2d.org/wiki/SpriteBatch:setTexture)
      */
     setTexture(texture: Texture): void;
 

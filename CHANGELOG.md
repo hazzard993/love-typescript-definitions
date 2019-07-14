@@ -1,5 +1,95 @@
 # Changelog
 
+## Version 0.14.0
+
+- Enhanced `LoveObject.type`, `LoveObject.typeOf` and `LoveObject.release` to determine types.
+
+```ts
+function useQuad(quad: Quad) {
+    if (quad.type() === "Channel") {} // ❌ Impossible. Quad types return "Quad".
+}
+```
+
+```ts
+/**
+ * @param object Any object. Unknown what it is. It could be one of 56 types.
+ */
+function useObject(object: LoveObject): void {
+    if (object.typeOf("Image")) {
+        // ✔ TypeScript knows object is an Image type. 
+        // So this code shouldn't fail.
+        const [width, height] = object.getDimensions();
+    }
+    // ❌ TypeScript knows getDimensions doesn't exist on every LoveObject.
+    // So this won't work for those cases.
+    object.getDimensions();
+}
+```
+
+```ts
+function releaseImage(image: Image) {
+    if (image.release()) {
+        // ❌ TypeScript doesn't allow this call. It knows "image" no longer exists here.
+        image.getDimensions();
+    }
+    // Unfortunately no type protection here. 
+    image.getDimensions();
+}
+```
+
+- +2 _Canvas_ functions. -1 and +1 variant.
+
+```diff
++ canvas.generateMipmaps();
++ canvas.getMSAA();
+  canvas.newImageData();
+- canvas.newImageData(x, y, width, height);
++ canvas.newImageData(slice, mipmap, x, y, width, height);
+```
+
+- -2 deprecated _ParticleSystem_ methods.
+
+```diff
+- particleSystem.getAreaSpread
+- particleSystem.setAreaSpread
+```
+
+- Added 1 _love.filesystem.newFile_ variant.
+
+```diff
++ love.filesystem.newFile(filename);
+  love.filesystem.newFile(filename, mode);
+```
+
+- Added 2 _love.filesystem.getInfo_ variants
+
+```diff
++ love.filesystem.getInfo(path, filetype)
+  love.filesystem.getInfo(path, info)
++ love.filesystem.getInfo(path, filetype, info)
+```
+
+- Added 1 _love.filesystem.read_ variant.
+
+```diff
+  love.filesystem.read(name, size)
++ love.filesystem.read("string", name, size)
++ love.filesystem.read("file", name, size)
+```
+
+- Enhanced _love.filesystem.lines_ and _File#lines_ allowing them to be used in a for..of loop. (Requires `--downLevelIteration`)
+
+```ts
+for (const line of love.filesystem.lines("file.txt")) {
+    print(line);
+}
+```
+
+- Using _undefined_ instead of _null_ for missing values.
+- Added _\_\_opaque_ to _LoveObject_. This stops users being able to create any _LoveObject_ not using one Love's API.
+- Added _\_\_drawable_ to _Drawable_. This stops _LoveObject_ types being used as a Drawable object since _LoveObject_ and _Drawable_ are equivalent TS types.
+- Added `"borderellipse"` and `"borderrectangle"` to AreaSpreadDistribution.
+
 ## Version 0.13.0
 
 - Improved indenting of example code.

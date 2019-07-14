@@ -2,7 +2,7 @@
  * A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree
  * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
  */
-declare interface BezierCurve extends LoveObject {
+declare interface BezierCurve extends LoveObject<"BezierCurve"> {
     /**
      * Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1
      * (inclusive).
@@ -16,6 +16,7 @@ declare interface BezierCurve extends LoveObject {
      * @return x, x coordinate of the curve at parameter t.
      * @return y, y coordinate of the curve at parameter t.
      * @tupleReturn
+     * @link [BezierCurve:evaluate](https://love2d.org/wiki/BezierCurve:evaluate)
      */
     evaluate(t: number): [number, number];
 
@@ -26,6 +27,7 @@ declare interface BezierCurve extends LoveObject {
      * @return x, Position of the control point along the x axis.
      * @return y, Position of the control point along the y axis.
      * @tupleReturn
+     * @link [BezierCurve:getControlPoint](https://love2d.org/wiki/BezierCurve:getControlPoint)
      */
     getControlPoint(i: number): [number, number];
 
@@ -33,6 +35,7 @@ declare interface BezierCurve extends LoveObject {
      * Get the number of control points in the Bézier curve.
      *
      * @return count, The number of control points.
+     * @link [BezierCurve:getControlPointCount](https://love2d.org/wiki/BezierCurve:getControlPointCount)
      */
     getControlPointCount(): number;
 
@@ -41,6 +44,7 @@ declare interface BezierCurve extends LoveObject {
      * number-of-control-points - 1.
      *
      * @return degree, Degree of the Bézier curve.
+     * @link [BezierCurve:getDegree](https://love2d.org/wiki/BezierCurve:getDegree)
      */
     getDegree(): number;
 
@@ -53,6 +57,7 @@ declare interface BezierCurve extends LoveObject {
      * at some parameter t.
      *
      * @return derivative, The derivative curve.
+     * @link [BezierCurve:getDerivative](https://love2d.org/wiki/BezierCurve:getDerivative)
      */
     getDerivative(): BezierCurve;
 
@@ -63,6 +68,7 @@ declare interface BezierCurve extends LoveObject {
      * @param startpoint The starting point along the curve. Must be between 0 and 1.
      * @param endpoint The end of the segment. Must be between 0 and 1.
      * @return curve, A BezierCurve that corresponds to the specified segment.
+     * @link [BezierCurve:getSegment](https://love2d.org/wiki/BezierCurve:getSegment)
      */
     getSegment(startpoint: number, endpoint: number): BezierCurve;
 
@@ -74,6 +80,7 @@ declare interface BezierCurve extends LoveObject {
      * @param x Position of the control point along the x axis.
      * @param y Position of the control point along the y axis.
      * @param i Index of the control point.
+     * @link [BezierCurve:insertControlPoint](https://love2d.org/wiki/BezierCurve:insertControlPoint)
      */
     insertControlPoint(x: number, y: number, i?: number): void;
 
@@ -81,6 +88,7 @@ declare interface BezierCurve extends LoveObject {
      * Removes the specified control point.
      *
      * @param index The index of the control point to remove.
+     * @link [BezierCurve:removeControlPoint](https://love2d.org/wiki/BezierCurve:removeControlPoint)
      */
     removeControlPoint(index: number): void;
 
@@ -97,6 +105,7 @@ declare interface BezierCurve extends LoveObject {
      *
      * @param depth Number of recursive subdivision steps.
      * @return coordinates, List of x,y-coordinate pairs of points on the curve.
+     * @link [BezierCurve:render](https://love2d.org/wiki/BezierCurve:render)
      */
     render(depth?: number): Array<number>;
 
@@ -116,6 +125,7 @@ declare interface BezierCurve extends LoveObject {
      * @param endpoint The end of the segment to render. Must be between 0 and 1.
      * @param depth Number of recursive subdivision steps.
      * @return coordinates, List of x,y-coordinate pairs of points on the curve.
+     * @link [BezierCurve:renderSegment](https://love2d.org/wiki/BezierCurve:renderSegment)
      */
     renderSegment(startpoint: number, endpoint: number, depth?: number): Array<number>;
 
@@ -125,6 +135,7 @@ declare interface BezierCurve extends LoveObject {
      * @param angle Rotation angle in radians.
      * @param ox X coordinate of the rotation center.
      * @param oy Y coordinate of the rotation center.
+     * @link [BezierCurve:rotate](https://love2d.org/wiki/BezierCurve:rotate)
      */
     rotate(angle: number, ox?: number, oy?: number): void;
 
@@ -134,6 +145,7 @@ declare interface BezierCurve extends LoveObject {
      * @param s Scale factor.
      * @param ox X coordinate of the scaling center.
      * @param oy Y coordinate of the scaling center.
+     * @link [BezierCurve:scale](https://love2d.org/wiki/BezierCurve:scale)
      */
     scale(s: number, ox?: number, oy?: number): void;
 
@@ -143,6 +155,7 @@ declare interface BezierCurve extends LoveObject {
      * @param i Index of the control point.
      * @param ox Position of the control point along the x axis.
      * @param oy Position of the control point along the y axis.
+     * @link [BezierCurve:setControlPoint](https://love2d.org/wiki/BezierCurve:setControlPoint)
      */
     setControlPoint(i: number, ox: number, oy: number): void;
 
@@ -151,6 +164,7 @@ declare interface BezierCurve extends LoveObject {
      *
      * @param dx Offset along the x axis.
      * @param dy Offset along the y axis.
+     * @link [BezierCurve:translate](https://love2d.org/wiki/BezierCurve:translate)
      */
     translate(dx: number, dy: number): void;
 

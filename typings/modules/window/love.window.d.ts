@@ -108,6 +108,7 @@ declare namespace love {
          * @param display The index of the display, if multiple monitors are available. (Default 1)
          * @return width, The width of the desktop.
          * @return height, The height of the desktop.
+         * @tupleReturn
          * @link [love.window.getDesktopDimensions](https://love2d.org/wiki/love.window.getDesktopDimensions)
          */
         export function getDesktopDimensions(display?: number): [number, number];
@@ -141,10 +142,10 @@ declare namespace love {
         /**
          * Gets the window icon.
          *
-         * @return imagedata, The window icon imagedata, or _nil/null_ of no icon has been set with love.window.setIcon.
+         * @return imagedata, The window icon imagedata, or _nil/undefined_ of no icon has been set with love.window.setIcon.
          * @link [love.window.getIcon](https://love2d.org/wiki/love.window.getIcon)
          */
-        export function getIcon(): ImageData | null;
+        export function getIcon(): ImageData | undefined;
 
         /**
          * Returns the current display mode.

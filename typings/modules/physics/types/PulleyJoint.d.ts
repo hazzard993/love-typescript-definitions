@@ -2,11 +2,12 @@
  * Allows you to simulate bodies connected through pulleys.
  * @link [PulleyJoint](https://love2d.org/wiki/PulleyJoint)
  */
-declare interface PulleyJoint extends Joint {
+declare interface PulleyJoint extends Joint<"PulleyJoint"> {
     /**
      * Get the total length of the rope.
      *
      * @return length, The length of the rope in the joint.
+     * @link [PulleyJoint:getConstant](https://love2d.org/wiki/PulleyJoint:getConstant)
      */
     getConstant(): number;
 
@@ -18,6 +19,7 @@ declare interface PulleyJoint extends Joint {
      * @return a2x, The x coordinate of the second anchor.
      * @return a2y, The y coordinate of the second anchor.
      * @tupleReturn
+     * @link [PulleyJoint:getGroundAnchors](https://love2d.org/wiki/PulleyJoint:getGroundAnchors)
      */
     getGroundAnchors(): [number, number, number, number];
 
@@ -25,6 +27,7 @@ declare interface PulleyJoint extends Joint {
      * Get the current length of the rope segment attached to the first body.
      *
      * @return length, The length of the rope segment.
+     * @link [PulleyJoint:getLengthA](https://love2d.org/wiki/PulleyJoint:getLengthA)
      */
     getLengthA(): number;
 
@@ -32,6 +35,7 @@ declare interface PulleyJoint extends Joint {
      * Get the current length of the rope segment attached to the second body.
      *
      * @return length, The length of the rope segment.
+     * @link [PulleyJoint:getLengthB](https://love2d.org/wiki/PulleyJoint:getLengthB)
      */
     getLengthB(): number;
 
@@ -41,6 +45,7 @@ declare interface PulleyJoint extends Joint {
      * @return len1, The maximum length of the first rope segment.
      * @return len2, The maximum length of the second rope segment.
      * @tupleReturn
+     * @link [PulleyJoint:getMaxLengths](https://love2d.org/wiki/PulleyJoint:getMaxLengths)
      */
     getMaxLengths(): [number, number];
 
@@ -48,6 +53,7 @@ declare interface PulleyJoint extends Joint {
      * Get the pulley ratio.
      *
      * @return ratio, The pulley ratio of the joint.
+     * @link [PulleyJoint:getRatio](https://love2d.org/wiki/PulleyJoint:getRatio)
      */
     getRatio(): number;
 
@@ -59,6 +65,7 @@ declare interface PulleyJoint extends Joint {
      * joint.
      *
      * @param length The new length of the rope in the joint.
+     * @link [PulleyJoint:setConstant](https://love2d.org/wiki/PulleyJoint:setConstant)
      */
     setConstant(length: number): void;
 
@@ -72,6 +79,7 @@ declare interface PulleyJoint extends Joint {
      *
      * @param max1 The new maximum length of the first segment.
      * @param max2 The new maximum length of the second segment.
+     * @link [PulleyJoint:setMaxLengths](https://love2d.org/wiki/PulleyJoint:setMaxLengths)
      */
     setMaxLengths(max1: number, max2: number): void;
 
@@ -79,6 +87,7 @@ declare interface PulleyJoint extends Joint {
      * Set the pulley ratio.
      *
      * @param ratio The new pulley ratio of the joint.
+     * @link [PulleyJoint:setRatio](https://love2d.org/wiki/PulleyJoint:setRatio)
      */
     setRatio(ratio: number): void;
 

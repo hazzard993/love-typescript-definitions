@@ -2,7 +2,7 @@
  * A PolygonShape is a convex polygon with up to 8 vertices.
  * @link [PolygonShape](https://love2d.org/wiki/PolygonShape)
  */
-declare interface PolygonShape extends Shape {
+declare interface PolygonShape extends Shape<"PolygonShape"> {
     /**
      * Get the local coordinates of the polygon's vertices.
      *
@@ -21,6 +21,7 @@ declare interface PolygonShape extends Shape {
      * @return y2, The y component of the second vertex.
      * @return ..., Additional x and y values.
      * @tupleReturn
+     * @link [PolygonShape:getPoints](https://love2d.org/wiki/PolygonShape:getPoints)
      */
     getPoints(): Array<number>;
 

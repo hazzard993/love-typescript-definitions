@@ -2,7 +2,7 @@
  * Represents a physical joystick.
  * @link [Joystick](https://love2d.org/wiki/Joystick)
  */
-declare interface Joystick extends LoveObject {
+declare interface Joystick extends LoveObject<"Joystick"> {
     /**
      * Gets the direction of each axis.
      *
@@ -10,6 +10,7 @@ declare interface Joystick extends LoveObject {
      * @return axisDir2, Direction of axis2.
      * @return axisDirN, Direction of axisN.
      * @tupleReturn
+     * @link [Joystick:getAxes](https://love2d.org/wiki/Joystick:getAxes)
      */
     getAxes(): [number, number, number];
 
@@ -18,6 +19,7 @@ declare interface Joystick extends LoveObject {
      *
      * @param axis The index of the axis to be checked.
      * @return direction, Current value of the axis.
+     * @link [Joystick:getAxes](https://love2d.org/wiki/Joystick:getAxes)
      */
     getAxis(axis: number): number;
 
@@ -25,6 +27,7 @@ declare interface Joystick extends LoveObject {
      * Gets the number of axes on the joystick.
      *
      * @return axes, The number of axes available.
+     * @link [Joystick:getAxisCount](https://love2d.org/wiki/Joystick:getAxisCount)
      */
     getAxisCount(): number;
 
@@ -32,6 +35,7 @@ declare interface Joystick extends LoveObject {
      * Gets the number of buttons on the joystick.
      *
      * @return buttons, The number of buttons available.
+     * @link [Joystick:getButtonCount](https://love2d.org/wiki/Joystick:getButtonCount)
      */
     getButtonCount(): number;
 
@@ -41,6 +45,7 @@ declare interface Joystick extends LoveObject {
      * the same GUID. The value is platform-dependent.
      *
      * @return guid, The Joystick type's OS-dependent unique identifier.
+     * @link [Joystick:getGUID](https://love2d.org/wiki/Joystick:getGUID)
      */
     getGUID(): string;
 
@@ -50,6 +55,7 @@ declare interface Joystick extends LoveObject {
      *
      * @param axis The virtual axis to be checked.
      * @return direction, Current value of the axis.
+     * @link [Joystick:getGamepadAxis](https://love2d.org/wiki/Joystick:getGamepadAxis)
      */
     getGamepadAxis(axis: GamepadAxis): number;
 
@@ -59,16 +65,18 @@ declare interface Joystick extends LoveObject {
      * @param axisOrButton The virtual gamepad axis or button to get the binding for.
      * @return inputtype, The type of input the virtual gamepad axis is bound to.
      * @return inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad axis is bound to.
-     * @return hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/null_ otherwise.
+     * @return hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/undefined_ otherwise.
      * @tupleReturn
+     * @link [Joystick:getGamepadMapping](https://love2d.org/wiki/Joystick:getGamepadMapping)
      */
-    getGamepadMapping(axisOrButton: GamepadAxis | GamepadButton): [JoystickInputType, number, JoystickHat | null];
+    getGamepadMapping(axisOrButton: GamepadAxis | GamepadButton): [JoystickInputType, number, JoystickHat | undefined];
 
     /**
      * Gets the direction of the Joystick's hat.
      *
      * @param hat The index of the hat to be checked.
      * @return direction, The direction the hat is pushed.
+     * @link [Joystick:getHat](https://love2d.org/wiki/Joystick:getHat)
      */
     getHat(hat: number): JoystickHat;
 
@@ -76,6 +84,7 @@ declare interface Joystick extends LoveObject {
      * Gets the number of hats on the joystick.
      *
      * @return hats, How many hats the joystick has.
+     * @link [Joystick:getHatCount](https://love2d.org/wiki/Joystick:getHatCount)
      */
     getHatCount(): number;
 
@@ -85,15 +94,17 @@ declare interface Joystick extends LoveObject {
      * but it will change when the game is re-launched.
      *
      * @return id, The Joystick's unique identifier. Remains the same as long as the game is running.
-     * @return instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. _nil/null_ if the Joystick is not connected.
+     * @return instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. _nil/undefined_ if the Joystick is not connected.
      * @tupleReturn
+     * @link [Joystick:getID](https://love2d.org/wiki/Joystick:getID)
      */
-    getID(): [number, number | null];
+    getID(): [number, number | undefined];
 
     /**
      * Gets the name of the joystick.
      *
      * @return name, The name of the joystick.
+     * @link [Joystick:getName](https://love2d.org/wiki/Joystick:getName)
      */
     getName(): string;
 
@@ -103,6 +114,7 @@ declare interface Joystick extends LoveObject {
      * @return left, Current strength of the left vibration motor on the Joystick.
      * @return right, Current strength of the right vibration motor on the Joystick.
      * @tupleReturn
+     * @link [Joystick:getVibration](https://love2d.org/wiki/Joystick:getVibration)
      */
     getVibration(): [number, number];
 
@@ -110,6 +122,7 @@ declare interface Joystick extends LoveObject {
      * Gets whether the Joystick is connected.
      *
      * @return connected, True if the Joystick is currently connected, false otherwise.
+     * @link [Joystick:isConnected](https://love2d.org/wiki/Joystick:isConnected)
      */
     isConnected(): boolean;
 
@@ -123,6 +136,7 @@ declare interface Joystick extends LoveObject {
      *
      * @param ... The index of a button to check.
      * @return anyDown, True if any supplied button is down, false if not.
+     * @link [Joystick:isDown](https://love2d.org/wiki/Joystick:isDown)
      */
     isDown(...vararg: Array<number>): boolean;
 
@@ -138,6 +152,7 @@ declare interface Joystick extends LoveObject {
      * love.joystick.setGamepadMapping.
      *
      * @return isgamepad, True if the Joystick is recognized as a gamepad, false otherwise.
+     * @link [Joystick:isGamepad](https://love2d.org/wiki/Joystick:isGamepad)
      */
     isGamepad(): boolean;
 
@@ -148,6 +163,7 @@ declare interface Joystick extends LoveObject {
      *
      * @param ... The gamepad button to check.
      * @return anyDown, True if any supplied button is down, false if not.
+     * @link [Joystick:isGamepadDown](https://love2d.org/wiki/Joystick:isGamepadDown)
      */
     isGamepadDown(...vararg: Array<GamepadButton>): boolean;
 
@@ -155,6 +171,7 @@ declare interface Joystick extends LoveObject {
      * Gets whether the Joystick supports vibration.
      *
      * @return supported, True if rumble / force feedback vibration is supported on this Joystick, false if not.
+     * @link [Joystick:isVibrationSupported](https://love2d.org/wiki/Joystick:isVibrationSupported)
      */
     isVibrationSupported(): boolean;
 
@@ -164,6 +181,7 @@ declare interface Joystick extends LoveObject {
      * @param left Strength of the left vibration motor on the Joystick. Must be in the range of [0, 1].
      * @param right Strength of the right vibration motor on the Joystick. Must be in the range of [0, 1].
      * @return success, True if the vibration was successfully applied, false if not.
+     * @link [Joystick:setVibration](https://love2d.org/wiki/Joystick:setVibration)
      */
     setVibration(left: number, right: number): boolean;
 
@@ -171,6 +189,7 @@ declare interface Joystick extends LoveObject {
      * Sets the vibration motor speeds on a Joystick with rumble support.
      *
      * @return success, True if the vibration was successfully disabled, false if not.
+     * @link [Joystick:setVibration](https://love2d.org/wiki/Joystick:setVibration)
      */
     setVibration(): boolean;
 
@@ -181,6 +200,7 @@ declare interface Joystick extends LoveObject {
      * @param right Strength of the right vibration motor on the Joystick. Must be in the range of [0, 1].
      * @param duration The duration of the vibration in seconds. A negative value means infinite duration.
      * @return success, True if the vibration was successfully applied, false if not.
+     * @link [Joystick:setVibration](https://love2d.org/wiki/Joystick:setVibration)
      */
     setVibration(left: number, right: number, duration: number): boolean;
 

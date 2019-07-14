@@ -2,13 +2,14 @@
  * Restricts a point on the second body to a line on the first body.
  * @link [WheelJoint](https://love2d.org/wiki/WheelJoint)
  */
-declare interface WheelJoint extends Joint {
+declare interface WheelJoint extends Joint<"WheelJoint"> {
     /**
      * Gets the world-space axis vector of the Wheel Joint.
      *
      * @return x, The x-axis coordinate of the world-space axis vector.
      * @return y, The y-axis coordinate of the world-space axis vector.
      * @tupleReturn
+     * @link [WheelJoint:getAxis](https://love2d.org/wiki/WheelJoint:getAxis)
      */
     getAxis(): [number, number];
 
@@ -16,6 +17,7 @@ declare interface WheelJoint extends Joint {
      * Returns the current joint translation speed.
      *
      * @return speed, The translation speed of the joint in meters per second.
+     * @link [WheelJoint:getJointSpeed](https://love2d.org/wiki/WheelJoint:getJointSpeed)
      */
     getJointSpeed(): number;
 
@@ -23,6 +25,7 @@ declare interface WheelJoint extends Joint {
      * Returns the current joint translation.
      *
      * @return position, The translation of the joint in meters.
+     * @link [WheelJoint:getJointTranslation](https://love2d.org/wiki/WheelJoint:getJointTranslation)
      */
     getJointTranslation(): number;
 
@@ -30,6 +33,7 @@ declare interface WheelJoint extends Joint {
      * Returns the maximum motor torque.
      *
      * @return maxTorque, The maximum torque of the joint motor in newton meters.
+     * @link [WheelJoint:getMaxMotorTorque](https://love2d.org/wiki/WheelJoint:getMaxMotorTorque)
      */
     getMaxMotorTorque(): number;
 
@@ -37,6 +41,7 @@ declare interface WheelJoint extends Joint {
      * Returns the speed of the motor.
      *
      * @return speed, The speed of the joint motor in radians per second.
+     * @link [WheelJoint:getMotorSpeed](https://love2d.org/wiki/WheelJoint:getMotorSpeed)
      */
     getMotorSpeed(): number;
 
@@ -45,6 +50,7 @@ declare interface WheelJoint extends Joint {
      *
      * @param invdt How long the force applies. Usually the inverse time step or 1/dt.
      * @return torque, The torque on the motor in newton meters.
+     * @link [WheelJoint:getMotorTorque](https://love2d.org/wiki/WheelJoint:getMotorTorque)
      */
     getMotorTorque(invdt: number): number;
 
@@ -52,6 +58,7 @@ declare interface WheelJoint extends Joint {
      * Returns the damping ratio.
      *
      * @return ratio, The damping ratio.
+     * @link [WheelJoint:getSpringDampingRatio](https://love2d.org/wiki/WheelJoint:getSpringDampingRatio)
      */
     getSpringDampingRatio(): number;
 
@@ -59,6 +66,7 @@ declare interface WheelJoint extends Joint {
      * Returns the spring frequency.
      *
      * @return freq, The frequency in hertz.
+     * @link [WheelJoint:getSpringFrequency](https://love2d.org/wiki/WheelJoint:getSpringFrequency)
      */
     getSpringFrequency(): number;
 
@@ -73,6 +81,7 @@ declare interface WheelJoint extends Joint {
      * Sets a new maximum motor torque.
      *
      * @param maxTorque The new maximum torque for the joint motor in newton meters.
+     * @link [WheelJoint:setMaxMotorTorque](https://love2d.org/wiki/WheelJoint:setMaxMotorTorque)
      */
     setMaxMotorTorque(maxTorque: number): void;
 
@@ -80,6 +89,7 @@ declare interface WheelJoint extends Joint {
      * Starts and stops the joint motor.
      *
      * @param enable True turns the motor on and false turns it off.
+     * @link [WheelJoint:setMotorEnabled](https://love2d.org/wiki/WheelJoint:setMotorEnabled)
      */
     setMotorEnabled(enable: boolean): void;
 
@@ -87,6 +97,7 @@ declare interface WheelJoint extends Joint {
      * Sets a new speed for the motor.
      *
      * @param speed The new speed for the joint motor in radians per second.
+     * @link [WheelJoint:setMotorSpeed](https://love2d.org/wiki/WheelJoint:setMotorSpeed)
      */
     setMotorSpeed(speed: number): void;
 
@@ -94,6 +105,7 @@ declare interface WheelJoint extends Joint {
      * Sets a new damping ratio.
      *
      * @param ratio The new damping ratio.
+     * @link [WheelJoint:setSpringDampingRatio](https://love2d.org/wiki/WheelJoint:setSpringDampingRatio)
      */
     setSpringDampingRatio(ratio: number): void;
 
@@ -101,6 +113,7 @@ declare interface WheelJoint extends Joint {
      * Sets a new spring frequency.
      *
      * @param freq The new frequency in hertz.
+     * @link [WheelJoint:setSpringFrequency](https://love2d.org/wiki/WheelJoint:setSpringFrequency)
      */
     setSpringFrequency(freq: number): void;
 

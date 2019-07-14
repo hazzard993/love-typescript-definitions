@@ -1,5 +1,7 @@
-import "../types";
 import "../love.root";
+import "../structs/LoveObjects";
+import "../structs/UtilityTypes";
+import "../types";
 import "./audio/enums/DistanceModel";
 import "./audio/enums/EffectType";
 import "./audio/enums/EffectWaveform";

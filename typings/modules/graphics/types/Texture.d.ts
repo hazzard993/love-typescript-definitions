@@ -1,3 +1,5 @@
+type TextureTypes = "Canvas" | "Image";
+
 /**
  * Superclass for drawable objects which represent a texture.
  *
@@ -6,7 +8,7 @@
  * This is an abstract type that can't be created directly.
  * @link [Texture](https://love2d.org/wiki/Texture)
  */
-declare interface Texture extends Drawable {
+declare interface Texture<T extends TextureTypes = TextureTypes> extends Drawable<T> {
 
     /**
      * Gets the DPI scale factor of the Texture.
@@ -20,15 +22,16 @@ declare interface Texture extends Drawable {
      * textures.
      *
      * @return depth, The depth of the volume Texture.
+     * @link [Texture:getDepth](https://love2d.org/wiki/Texture:getDepth)
      */
     getDepth(): number;
 
     /**
      * Gets the comparison mode used when sampling from a depth texture in a shader.
-     * @return compare, The comparison mode used when sampling from this texture in a shader, or _nil/null_ if setDepthSampleMode has not been called on this Texture.
+     * @return compare, The comparison mode used when sampling from this texture in a shader, or _nil/undefined_ if setDepthSampleMode has not been called on this Texture.
      * @link [Texture:getDepthSampleMode](https://love2d.org/wiki/Texture:getDepthSampleMode)
      */
-    getDepthSampleMode(): CompareMode | null;
+    getDepthSampleMode(): CompareMode | undefined;
 
     /**
      * Gets the width and height of the Texture.
@@ -43,6 +46,7 @@ declare interface Texture extends Drawable {
      * Gets the filter mode of the Texture.
      * @return min, Filter mode to use when minifying the texture (rendering it at a smaller size on-screen than its size in pixels).
      * @return mag, Filter mode to use when magnifying the texture (rendering it at a smaller size on-screen than its size in pixels).
+     * @tupleReturn
      * @link [Texture:getFilter](https://love2d.org/wiki/Texture:getFilter)
      */
     getFilter(): [FilterMode, FilterMode];
@@ -51,6 +55,7 @@ declare interface Texture extends Drawable {
      * Gets the PixelFormat of the Texture.
      *
      * @return format, The pixel format the Texture was created with.
+     * @link [Texture:getFormat](https://love2d.org/wiki/Texture:getFormat)
      */
     getFormat(): PixelFormat;
 
@@ -66,6 +71,7 @@ declare interface Texture extends Drawable {
      * Cubemap, and Volume textures.
      *
      * @return layers, The number of layers in the Array Texture.
+     * @link [Texture:getLayerCount](https://love2d.org/wiki/Texture:getLayerCount)
      */
     getLayerCount(): number;
 
@@ -74,6 +80,7 @@ declare interface Texture extends Drawable {
      * created with mipmaps, it will return 1.
      *
      * @return mipmaps, The number of mipmaps in the Texture.
+     * @link [Texture:getMipmapCount](https://love2d.org/wiki/Texture:getMipmapCount)
      */
     getMipmapCount(): number;
 
@@ -113,12 +120,13 @@ declare interface Texture extends Drawable {
      * Gets the type of the Texture.
      *
      * @return texturetype, The type of the Texture.
+     * @link [Texture:getTextureType](https://love2d.org/wiki/Texture:getTextureType)
      */
     getTextureType(): TextureType;
 
     /**
      * Gets the width of the Texture.
-     * @param TODO
+     *
      * @return width, The width of the Texture, in pixels.
      * @link [Texture:getWidth](https://love2d.org/wiki/Texture:getWidth)
      */
@@ -145,6 +153,7 @@ declare interface Texture extends Drawable {
      * Non-readable Canvases can still be rendered to.
      *
      * @return readable, Whether the Texture is readable.
+     * @link [Texture:isReadable](https://love2d.org/wiki/Texture:isReadable)
      */
     isReadable(): boolean;
 
@@ -171,6 +180,13 @@ declare interface Texture extends Drawable {
      * @link [Texture:setMipmapFilter](https://love2d.org/wiki/Texture:setMipmapFilter)
      */
     setMipmapFilter(filtermode: FilterMode, sharpness?: number): void;
+
+    /**
+     * Disables mipmap filtering.
+     *
+     * @link [Texture:setMipmapFilter](https://love2d.org/wiki/Texture:setMipmapFilter)
+     */
+    setMipmapFilter(): void;
 
     /**
      * Sets the wrapping properties of a Texture.

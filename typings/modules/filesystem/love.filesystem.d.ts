@@ -13,12 +13,13 @@ declare namespace love {
          * @param name The name (and path) of the file.
          * @param data The data that should be written to the file
          * @param size How many bytes to write.
-         * @return success, True if the operation was successful, or _nil/null_ if there was an error.
+         * @return success, True if the operation was successful, or _nil/undefined_ if there was an error.
          * @return errormsg, The error message on failure.
          * @tupleReturn
          * @link [love.filesystem.append](https://love2d.org/wiki/love.filesystem.append)
          */
-        export function append(name: string, data: string, size?: number): [true] | [null, string];
+        export function append(name: string, data: string, size?: number): [boolean, string | undefined];
+        export function append(name: string, data: Data, size?: number): [boolean, string | undefined];
 
         /**
          * Gets whether love.filesystem follows symbolic links.
@@ -99,15 +100,7 @@ declare namespace love {
          */
         export function getIdentity(name: string): void;
 
-        /**
-         * Gets information about the specified file or directory.
-         *
-         * @param path The file or directory path to check.
-         * @param info A table which will be filled in with info about the specified path.
-         * @return info, A table containing information about the specified path, or _nil/null_ if nothing exists at the path.
-         * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
-         */
-        export function getInfo(path: string, info?: object): {
+        export type FileInfo = {
 
             /**
              * The type of the object at the path (file, directory, symlink, etc.)
@@ -115,27 +108,57 @@ declare namespace love {
             type: FileType;
 
             /**
-             * The size in bytes of the file, or _nil/null_ if it can't be determined.
+             * The size in bytes of the file, or _nil/undefined_ if it can't be determined.
              */
-            size: number | null;
+            size: number | undefined;
 
             /**
-             * The file's last modification time in seconds since the unix epoch, or _nil/null_ if it can't be determined.
+             * The file's last modification time in seconds since the unix epoch, or _nil/undefined_ if it can't be determined.
              */
-            modtime: number | null;
+            modtime: number | undefined;
 
-        } | null;
+        };
+
+        /**
+         * Gets information about the specified file or directory.
+         *
+         * @param path The file or directory path to check.
+         * @param filetype If supplied, this parameter causes getInfo to only return the info table if the item at the given path matches the specified file type. (Default _nil/undefined_)
+         * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
+         */
+        export function getInfo(path: string, filetype?: FileType): FileInfo | undefined;
+
+        /**
+         * Gets information about the specified file or directory.
+         *
+         * @param path The file or directory path to check.
+         * @param info A table which will be filled in with info about the specified path.
+         * @return info, A table containing information about the specified path, or _nil/undefined_ if nothing exists at the path.
+         * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
+         */
+        export function getInfo(path: string, info?: object): FileInfo | undefined;
+
+        /**
+         * This variant only returns info if the item at the given path is the same file type as specified in the filtertype argument, and accepts an existing table to fill in, instead of creating a new one.
+         *
+         * @param path The file or directory path to check.
+         * @param filetype Causes getInfo to only return the info table if the item at the given path matches the specified file type.
+         * @param info A table which will be filled in with info about the specified path.
+         * @link [love.filesystem.getInfo](https://love2d.org/wiki/love.filesystem.getInfo)
+         */
+        export function getInfo(path: string, filetype: FileType, info: object): FileInfo | undefined;
 
         /**
          * Gets the last modification time of a file.
+         *
          * @param filename The path and name to a file.
-         * @return modtime, The last modification time in seconds since the unix epoch or _nil/null_ on failure.
+         * @return modtime, The last modification time in seconds since the unix epoch or _nil/undefined_ on failure.
          * @return errormsg, The error message on failure.
          * @tupleReturn
          * @link [love.filesystem.getLastModified](https://love2d.org/wiki/love.filesystem.getLastModified)
          * @deprecated 11.0
          */
-        export function getLastModified(filename: string): [number | null, string | null];
+        export function getLastModified(filename: string): [number, undefined] | [undefined, string];
 
         /**
          * Gets the platform-specific absolute path of the directory containing a
@@ -183,12 +206,13 @@ declare namespace love {
         /**
          * Gets the size in bytes of a file.
          * @param filename The path and name to a file.
-         * @return size, The size in bytes of the file, or _nil/null_ on failure.
+         * @return size, The size in bytes of the file, or _nil/undefined_ on failure.
          * @return errormsg, The error message on failure.
+         * @tupleReturn
          * @link [love.filesystem.getSize](https://love2d.org/wiki/love.filesystem.getSize)
          * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
          */
-        export function getSize(filename: string): [number | null, string | null];
+        export function getSize(filename: string): [number | undefined, string | undefined];
 
         /**
          * Returns the full path to the the .love file or directory. If the game is fused
@@ -285,54 +309,83 @@ declare namespace love {
         /**
          * Iterate over the lines in a file.
          *
+         * ```ts
+         * for (const line of love.filesystem.lines("file.txt")) {
+         *      print(line);
+         * }
+         * ```
+         *
          * @param name The name (and path) of the file.
          * @return iterator, A function that iterates over all the lines in the file.
          * @link [love.filesystem.lines](https://love2d.org/wiki/love.filesystem.lines)
          */
-        export function lines(name: string): Function;
+        export function lines(name: string): LuaIterator<string>;
 
         /**
          * Loads a Lua file (but does not run it).
          *
          * @param name The name (and path) of the file.
-         * @param errormsg The error message if file could not be opened.
          * @return chunk, The loaded chunk.
+         * @return errormsg, The error message if file could not be opened.
+         * @tupleReturn
          * @link [love.filesystem.load](https://love2d.org/wiki/love.filesystem.load)
          */
-        export function load(name: string, errormsg?: string): Function;
+        export function load<T = void>(name: string, errormsg?: string): [(this: void) => T, string | undefined];
 
         /**
-         * Mounts a zip file or folder in the game's save directory for reading.
+         * Mounts a zip file or folder in the game's save directory for reading. It is also possible to mount love.filesystem.getSourceBaseDirectory if the game is in fused mode.\
          *
          * @param archive The folder or zip file in the game's save directory to mount.
          * @param mountpoint The new path the archive will be mounted to.
+         * @param appendToPath Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game's source and save directories. (Default false)
          * @return success, True if the archive was successfully mounted, false otherwise.
          * @link [love.filesystem.mount](https://love2d.org/wiki/love.filesystem.mount)
          */
-        export function mount(archive: string, mountpoint: string): boolean;
+        export function mount(archive: string, mountpoint: string, appendToPath?: boolean): boolean;
 
         /**
-         * Mounts a zip file or folder in the game's save directory for reading.
+         * Mounts the contents of the given FileData in memory. The FileData's data must contain a zipped directory structure.
          *
-         * @param archive The folder or zip file in the game's save directory to mount.
+         * @param filedata The FileData object in memory to mount.
          * @param mountpoint The new path the archive will be mounted to.
-         * @param appendToPath Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game's source and save directories.
+         * @param appendToPath Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game's source and save directories. (Default false)
          * @return success, True if the archive was successfully mounted, false otherwise.
          * @link [love.filesystem.mount](https://love2d.org/wiki/love.filesystem.mount)
          */
-        export function mount(archive: string, mountpoint: string, appendToPath?: string): boolean;
+        export function mount(filedata: FileData, mountpoint: string, appendToPath?: boolean): boolean;
+
+        /**
+         * The Data object in memory to mount.
+         *
+         * @param data The Data object in memory to mount.
+         * @param archivename The name to associate the mounted data with, for use with love.filesystem.unmount. Must be unique compared to other mounted data.
+         * @param mountpoint The new path the archive will be mounted to.
+         * @param appendToPath Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game's source and save directories. (Default false)
+         * @return success, True if the archive was successfully mounted, false otherwise.
+         * @link [love.filesystem.mount](https://love2d.org/wiki/love.filesystem.mount)
+         */
+        export function mount(data: Data, archivename: string, mountpoint: string, appendToPath?: boolean): boolean;
+
+        /**
+         * Creates a new File object. It needs to be opened before it can be accessed.
+         *
+         * @param filename The filename of the file.
+         * @return file, The new File object.
+         * @link [love.filesystem.newFile](https://love2d.org/wiki/love.filesystem.newFile)
+         */
+        export function newFile(filename: string): File;
 
         /**
          * Creates a new File object. It needs to be opened before it can be accessed.
          *
          * @param filename The filename of the file to read.
          * @param mode The mode to open the file in.
-         * @return file, The new File object, or _nil/null_ if an error occurred.
+         * @return file, The new File object, or _nil/undefined_ if an error occurred.
          * @return errorstr, The error string if an error occurred.
          * @tupleReturn
          * @link [love.filesystem.newFile](https://love2d.org/wiki/love.filesystem.newFile)
          */
-        export function newFile(filename: string, mode?: FileMode): [File | null, string | null];
+        export function newFile(filename: string, mode: FileMode): [File, undefined] | [undefined, string];
 
         /**
          * Creates a new FileData object.
@@ -343,30 +396,42 @@ declare namespace love {
          * @return data, Your new FileData.
          * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
          */
-        export function newFileData(contents: string, name: string, decoder?: FileDecoder): FileData;
+        export function newFileData(contents: string, name: string): FileData;
 
         /**
          * Creates a new FileData object.
          *
          * @param filepath Path to the file.
-         * @return data, The new FileData, or _nil/null_ if an error occurred.
+         * @return data, The new FileData, or _nil/undefined_ if an error occurred.
          * @return err, The error string, if an error occurred.
          * @tupleReturn
          * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
          */
-        export function newFileData(filepath: string): [FileData | null, string | null];
+        export function newFileData(filepath: string): [FileData, undefined] | [undefined, string];
 
         /**
          * Read the contents of a file.
          *
          * @param name The name (and path) of the file.
-         * @param bytes How many bytes to read.
-         * @return contents, The file contents, or _nil/null_ if an error occurred.
+         * @param size How many bytes to read.
+         * @return contents, The file contents, or _nil/undefined_ if an error occurred.
          * @return size, How many bytes have been read, or the error string.
          * @tupleReturn
          * @link [love.filesystem.read](https://love2d.org/wiki/love.filesystem.read)
          */
-        export function read(name: string, bytes?: number): [string, number] | [null, string];
+        export function read(name: string, size?: number): [string, number] | [undefined, string];
+
+        /**
+         * Reads the contents of a file into either a string or a FileData object.
+         *
+         * @param container What type to return the file's contents as.
+         * @param name The name (and path) of the file
+         * @param size How many bytes to read (Default all)
+         * @tupleReturn
+         * @link [love.filesystem.read](https://love2d.org/wiki/love.filesystem.read)
+         */
+        export function read(container: "string", name: string, size?: number): [string, number] | [undefined, string];
+        export function read(container: "data", name: string, size?: number): [FileData, number] | [undefined, string];
 
         /**
          * Removes a file or directory.
@@ -457,22 +522,17 @@ declare namespace love {
         export function unmount(archive: string): boolean;
 
         /**
-         * Write data to a file.
-         *
-         *
-         * If you are getting the error message "Could not set write directory", try
-         * setting the save directory. This is done either with
-         * love.filesystem.setIdentity or by setting the identity field in love.conf.
+         * Write data to a file in the save directory. If the file existed already, it will be completely replaced by the new contents.
          *
          * @param name The name (and path) of the file.
          * @param data The string data to write to the file.
          * @param size How many bytes to write.
-         * @returns _success_, If the operation was successful.
-         * @returns _message_, Error message if operation was unsuccessful.
+         * @returns success, If the operation was successful.
+         * @returns message, Error message if operation was unsuccessful.
          * @tupleReturn
          * @link [love.filesystem.write](https://love2d.org/wiki/love.filesystem.write)
          */
-        export function write(name: string, data: Data | string, size?: number): [boolean, string];
+        export function write(name: string, data: Data, size?: number): [true, undefined] | [false, string];
 
     }
 

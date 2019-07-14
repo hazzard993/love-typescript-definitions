@@ -2,7 +2,7 @@
  * Data object containing arbitrary bytes in an contiguous memory.
  * @link [CompressedData](https://love2d.org/wiki/CompressedData)
  */
-declare interface CompressedData extends Data {
+declare interface CompressedData extends Data<"CompressedData"> {
 
     /**
      * Gets the compression format of the CompressedData.

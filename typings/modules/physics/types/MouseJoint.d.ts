@@ -2,11 +2,12 @@
  * For controlling objects with the mouse.
  * @link [MouseJoint](https://love2d.org/wiki/MouseJoint)
  */
-declare interface MouseJoint extends Joint {
+declare interface MouseJoint extends Joint<"MouseJoint"> {
     /**
      * Returns the damping ratio.
      *
      * @return ratio, The new damping ratio.
+     * @link [MouseJoint:getDampingRatio](https://love2d.org/wiki/MouseJoint:getDampingRatio)
      */
     getDampingRatio(): number;
 
@@ -14,6 +15,7 @@ declare interface MouseJoint extends Joint {
      * Returns the frequency.
      *
      * @return freq, The frequency in hertz.
+     * @link [MouseJoint:getFrequency](https://love2d.org/wiki/MouseJoint:getFrequency)
      */
     getFrequency(): number;
 
@@ -21,6 +23,7 @@ declare interface MouseJoint extends Joint {
      * Gets the highest allowed force.
      *
      * @return f, The max allowed force.
+     * @link [MouseJoint:getMaxForce](https://love2d.org/wiki/MouseJoint:getMaxForce)
      */
     getMaxForce(): number;
 
@@ -30,6 +33,7 @@ declare interface MouseJoint extends Joint {
      * @return x, The x component of the target.
      * @return y, The x component of the target.
      * @tupleReturn
+     * @link [MouseJoint:getTarget](https://love2d.org/wiki/MouseJoint:getTarget)
      */
     getTarget(): [number, number];
 
@@ -37,6 +41,7 @@ declare interface MouseJoint extends Joint {
      * Sets a new damping ratio.
      *
      * @param ratio The new damping ratio.
+     * @link [MouseJoint:setDampingRatio](https://love2d.org/wiki/MouseJoint:setDampingRatio)
      */
     setDampingRatio(ratio: number): void;
 
@@ -44,6 +49,7 @@ declare interface MouseJoint extends Joint {
      * Sets a new frequency.
      *
      * @param freq The new frequency in hertz.
+     * @link [MouseJoint:setFrequency](https://love2d.org/wiki/MouseJoint:setFrequency)
      */
     setFrequency(freq: number): void;
 
@@ -51,6 +57,7 @@ declare interface MouseJoint extends Joint {
      * Sets the highest allowed force.
      *
      * @param f The max allowed force.
+     * @link [MouseJoint:setMaxForce](https://love2d.org/wiki/MouseJoint:setMaxForce)
      */
     setMaxForce(f: number): void;
 
@@ -59,6 +66,7 @@ declare interface MouseJoint extends Joint {
      *
      * @param x The x component of the target.
      * @param y The y component of the target.
+     * @link [MouseJoint:setTarget](https://love2d.org/wiki/MouseJoint:setTarget)
      */
     setTarget(x: number, y: number): void;
 

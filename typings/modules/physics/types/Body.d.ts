@@ -1,7 +1,9 @@
 /**
+ * Bodies are objects with velocity and position.
+ *
  * @link [Body](https://love2d.org/wiki/Body)
  */
-declare interface Body extends LoveObject {
+declare interface Body extends LoveObject<"Body"> {
     /**
      * Applies an angular impulse to a body. This makes a single, instantaneous
      * addition to the body momentum.
@@ -774,7 +776,7 @@ declare interface Body extends LoveObject {
      * Associates a Lua value with the Body.
      *
      *
-     * To delete the reference, explicitly pass _nil/null_.
+     * To delete the reference, explicitly pass _nil/undefined_.
      *
      * @param value The Lua value to associate with the Body.
      * @link [Body:setUserData](https://love2d.org/wiki/Body:setUserData)

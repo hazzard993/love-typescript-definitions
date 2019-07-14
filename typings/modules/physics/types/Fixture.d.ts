@@ -2,10 +2,11 @@
  * Fixtures attach shapes to bodies.
  * @link [Fixture](https://love2d.org/wiki/Fixture)
  */
-declare interface Fixture extends LoveObject {
+declare interface Fixture extends LoveObject<"Fixture"> {
     /**
      * Destroys the fixture
      *
+     * @link [Fixture:destroy](https://love2d.org/wiki/Fixture:destroy)
      */
     destroy(): void;
 
@@ -13,6 +14,7 @@ declare interface Fixture extends LoveObject {
      * Returns the body to which the fixture is attached.
      *
      * @return body, The parent body.
+     * @link [Fixture:getBody](https://love2d.org/wiki/Fixture:getBody)
      */
     getBody(): Body;
 
@@ -27,6 +29,7 @@ declare interface Fixture extends LoveObject {
      * @return bottomRightX, The x position of the bottom-right point.
      * @return bottomRightY, The y position of the bottom-right point.
      * @tupleReturn
+     * @link [Fixture:getBoundingBox](https://love2d.org/wiki/Fixture:getBoundingBox)
      */
     getBoundingBox(index?: number): [number, number, number, number];
 
@@ -35,6 +38,7 @@ declare interface Fixture extends LoveObject {
      *
      * @return categories, The categories this fixture belongs to.
      * @tupleReturn
+     * @link [Fixture:getCategory](https://love2d.org/wiki/Fixture:getCategory)
      */
     getCategory(): Array<number>;
 
@@ -42,6 +46,7 @@ declare interface Fixture extends LoveObject {
      * Returns the density of the fixture.
      *
      * @return density, The fixture density in kilograms per square meter.
+     * @link [Fixture:getDensity](https://love2d.org/wiki/Fixture:getDensity)
      */
     getDensity(): number;
 
@@ -53,6 +58,7 @@ declare interface Fixture extends LoveObject {
      * @return mask, The mask as an integer from 0 to 65535.
      * @return group, The group as an integer from -32768 to 32767.
      * @tupleReturn
+     * @link [Fixture:getFilterData](https://love2d.org/wiki/Fixture:getFilterData)
      */
     getFilterData(): [number, number, number];
 
@@ -60,6 +66,7 @@ declare interface Fixture extends LoveObject {
      * Returns the friction of the fixture.
      *
      * @return friction, The fixture friction.
+     * @link [Fixture:getFriction](https://love2d.org/wiki/Fixture:getFriction)
      */
     getFriction(): number;
 
@@ -72,6 +79,7 @@ declare interface Fixture extends LoveObject {
      * The groups range from -32768 to 32767.
      *
      * @return group, The group of the fixture.
+     * @link [Fixture:getGroupIndex](https://love2d.org/wiki/Fixture:getGroupIndex)
      */
     getGroupIndex(): number;
 
@@ -80,6 +88,7 @@ declare interface Fixture extends LoveObject {
      *
      * @return categories, The categories the mask of this fixture belongs to.
      * @tupleReturn
+     * @link [Fixture:getMask](https://love2d.org/wiki/Fixture:getMask)
      */
     getMask(): Array<number>;
 
@@ -91,6 +100,7 @@ declare interface Fixture extends LoveObject {
      * @return mass, The mass of the fixture.
      * @return inertia, The rotational inertia.
      * @tupleReturn
+     * @link [Fixture:getMassData](https://love2d.org/wiki/Fixture:getMassData)
      */
     getMassData(): [number, number, number, number];
 
@@ -98,6 +108,7 @@ declare interface Fixture extends LoveObject {
      * Returns the restitution of the fixture.
      *
      * @return restitution, The fixture restitution.
+     * @link [Fixture:getRestitution](https://love2d.org/wiki/Fixture:getRestitution)
      */
     getRestitution(): number;
 
@@ -111,6 +122,7 @@ declare interface Fixture extends LoveObject {
      * crashes if you interact further with it.
      *
      * @return shape, The fixture's shape.
+     * @link [Fixture:getShape](https://love2d.org/wiki/Fixture:getShape)
      */
     getShape(): Shape;
 
@@ -121,6 +133,7 @@ declare interface Fixture extends LoveObject {
      * Use this function in one thread only.
      *
      * @return value, The Lua value associated with the fixture.
+     * @link [Fixture:getUserData](https://love2d.org/wiki/Fixture:getUserData)
      */
     getUserData(): any;
 
@@ -128,6 +141,7 @@ declare interface Fixture extends LoveObject {
      * Gets whether the Fixture is destroyed. Destroyed fixtures cannot be used.
      *
      * @return destroyed, Whether the Fixture is destroyed.
+     * @link [Fixture:isDestroyed](https://love2d.org/wiki/Fixture:isDestroyed)
      */
     isDestroyed(): boolean;
 
@@ -135,13 +149,14 @@ declare interface Fixture extends LoveObject {
      * Returns whether the fixture is a sensor.
      *
      * @return sensor, If the fixture is a sensor.
+     * @link [Fixture:isSensor](https://love2d.org/wiki/Fixture:isSensor)
      */
     isSensor(): boolean;
 
     /**
      * Casts a ray against the shape of the fixture and returns the surface normal
      * vector and the line position where the ray hit. If the ray missed the shape,
-     * _nil/null_ will be returned.
+     * _nil/undefined_ will be returned.
      *
      *
      * The ray starts on the first point of the input line and goes towards the second
@@ -172,8 +187,9 @@ declare interface Fixture extends LoveObject {
      * @return y, The y position where the ray intersects with the shape.
      * @return fraction, The position on the input vector where the intersection happened as a number from 0 to 1.
      * @tupleReturn
+     * @link [Fixture:rayCast](https://love2d.org/wiki/Fixture:rayCast)
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [null, null, null];
+    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [undefined, undefined, undefined];
 
     /**
      * Sets the categories the fixture belongs to. There can be up to 16 categories
@@ -181,6 +197,7 @@ declare interface Fixture extends LoveObject {
      *
      * @param category1 The first category.
      * @param ... Additional categories.
+     * @link [Fixture:setCategory](https://love2d.org/wiki/Fixture:setCategory)
      */
     setCategory(category1: number, ...vararg: Array<number>): void;
 
@@ -189,6 +206,7 @@ declare interface Fixture extends LoveObject {
      * effect immediately.
      *
      * @param density The fixture density in kilograms per square meter.
+     * @link [Fixture:setDensity](https://love2d.org/wiki/Fixture:setDensity)
      */
     setDensity(density: number): void;
 
@@ -214,6 +232,7 @@ declare interface Fixture extends LoveObject {
      * @param categories The categories as an integer from 0 to 65535.
      * @param mask The mask as an integer from 0 to 65535.
      * @param group The group as an integer from -32768 to 32767.
+     * @link [Fixture:setFilterData](https://love2d.org/wiki/Fixture:setFilterData)
      */
     setFilterData(categories: number, mask: number, group: number): void;
 
@@ -221,6 +240,7 @@ declare interface Fixture extends LoveObject {
      * Sets the friction of the fixture.
      *
      * @param friction The fixture friction.
+     * @link [Fixture:setFriction](https://love2d.org/wiki/Fixture:setFriction)
      */
     setFriction(friction: number): void;
 
@@ -233,6 +253,7 @@ declare interface Fixture extends LoveObject {
      * The groups range from -32768 to 32767.
      *
      * @param group The group as an integer from -32768 to 32767.
+     * @link [Fixture:setGroupIndex](https://love2d.org/wiki/Fixture:setGroupIndex)
      */
     setGroupIndex(group: number): void;
 
@@ -246,6 +267,7 @@ declare interface Fixture extends LoveObject {
      *
      * @param mask1 The first category.
      * @param ... Additional categories.
+     * @link [Fixture:setMask](https://love2d.org/wiki/Fixture:setMask)
      */
     setMask(mask1: number, ...vararg: Array<number>): void;
 
@@ -253,6 +275,7 @@ declare interface Fixture extends LoveObject {
      * Sets the restitution of the fixture.
      *
      * @param restitution The fixture restitution.
+     * @link [Fixture:setRestitution](https://love2d.org/wiki/Fixture:setRestitution)
      */
     setRestitution(restitution: number): void;
 
@@ -264,6 +287,7 @@ declare interface Fixture extends LoveObject {
      * will still be called for this fixture.
      *
      * @param sensor The sensor status.
+     * @link [Fixture:setSensor](https://love2d.org/wiki/Fixture:setSensor)
      */
     setSensor(sensor: boolean): void;
 
@@ -274,6 +298,7 @@ declare interface Fixture extends LoveObject {
      * Use this function in one thread only.
      *
      * @param value The Lua value associated with the fixture.
+     * @link [Fixture:setUserData](https://love2d.org/wiki/Fixture:setUserData)
      */
     setUserData(value: any): void;
 
@@ -283,6 +308,7 @@ declare interface Fixture extends LoveObject {
      * @param x The x position of the point.
      * @param y The y position of the point.
      * @return isInside, True if the point is inside or false if it is outside.
+     * @link [Fixture:testPoint](https://love2d.org/wiki/Fixture:testPoint)
      */
     testPoint(x: number, y: number): boolean;
 

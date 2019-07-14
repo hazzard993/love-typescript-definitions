@@ -2,7 +2,7 @@
  * Raw (decoded) image data.
  * @link [ImageData](https://love2d.org/wiki/ImageData)
  */
-declare interface ImageData extends Data {
+declare interface ImageData extends Data<"ImageData"> {
     /**
      * Encodes the ImageData and optionally writes it to the save directory.
      *
@@ -19,6 +19,7 @@ declare interface ImageData extends Data {
      * @return width, The width of the ImageData in pixels.
      * @return height, The height of the ImageData in pixels.
      * @tupleReturn
+     * @link [ImageData:getDimensions](https://love2d.org/wiki/ImageData:getDimensions)
      */
     getDimensions(): [number, number];
 
@@ -34,6 +35,7 @@ declare interface ImageData extends Data {
      * Gets the height of the ImageData in pixels.
      *
      * @return height, The height of the ImageData in pixels.
+     * @link [ImageData:getHeight](https://love2d.org/wiki/ImageData:getHeight)
      */
     getHeight(): number;
 
@@ -51,6 +53,7 @@ declare interface ImageData extends Data {
      * @return b, The blue component.
      * @return a, The alpha component.
      * @tupleReturn
+     * @link [ImageData:getPixel](https://love2d.org/wiki/ImageData:getPixel)
      */
     getPixel(x: number, y: number): [number, number, number, number];
 
@@ -58,6 +61,7 @@ declare interface ImageData extends Data {
      * Gets the width of the ImageData in pixels.
      *
      * @return width, The width of the ImageData in pixels.
+     * @link [ImageData:getWidth](https://love2d.org/wiki/ImageData:getWidth)
      */
     getWidth(): number;
 
@@ -76,6 +80,7 @@ declare interface ImageData extends Data {
      * If the function returns fewer values, the remaining components are set to 0.
      *
      * @param pixelFunction Function parameter to apply to every pixel.
+     * @link [ImageData:mapPixel](https://love2d.org/wiki/ImageData:mapPixel)
      */
     mapPixel(pixelFunction: Function): void;
 
@@ -89,6 +94,7 @@ declare interface ImageData extends Data {
      * @param sy Source top-left position on y-axis.
      * @param sw Source width.
      * @param sh Source height.
+     * @link [ImageData:paste](https://love2d.org/wiki/ImageData:paste)
      */
     paste(source: ImageData, dx: number, dy: number, sx: number, sy: number, sw: number, sh: number): void;
 
@@ -104,6 +110,7 @@ declare interface ImageData extends Data {
      * @param g The green component (0-255).
      * @param b The blue component (0-255).
      * @param a The alpha component (0-255).
+     * @link [ImageData:setPixel](https://love2d.org/wiki/ImageData:setPixel)
      */
     setPixel(x: number, y: number, r: number, g: number, b: number, a: number): void;
 

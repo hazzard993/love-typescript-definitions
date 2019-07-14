@@ -4,10 +4,12 @@ let filterMode: FilterMode;
 /**
  * Documented at
  * https://love2d.org/wiki/File
- * 2019/03/02
+ * 2019/07/14
  */
 declare const canvas: Canvas;
+canvas.generateMipmaps;
 canvas.getMSAA;
+canvas.getMipmapMode;
 canvas.newImageData;
 canvas.renderTo;
 canvas.release;
@@ -112,7 +114,7 @@ mesh.typeOf;
 /**
  * Documented at
  * https://love2d.org/wiki/ParticleSystem
- * 2019/03/03
+ * 2019/07/14
  */
 declare const particleSystem: ParticleSystem;
 particleSystem.release;
@@ -120,7 +122,6 @@ particleSystem.type;
 particleSystem.typeOf;
 particleSystem.clone;
 particleSystem.emit;
-particleSystem.getAreaSpread;
 particleSystem.getBufferSize;
 particleSystem.getColors;
 particleSystem.getCount;
@@ -152,7 +153,6 @@ particleSystem.isStopped;
 particleSystem.moveTo;
 particleSystem.pause;
 particleSystem.reset;
-particleSystem.setAreaSpread;
 particleSystem.setBufferSize;
 particleSystem.setColors;
 particleSystem.setDirection;
