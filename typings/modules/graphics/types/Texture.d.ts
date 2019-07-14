@@ -6,7 +6,7 @@
  * This is an abstract type that can't be created directly.
  * @link [Texture](https://love2d.org/wiki/Texture)
  */
-declare interface Texture extends Drawable {
+declare interface Texture extends LoveObject {
 
     /**
      * Gets the DPI scale factor of the Texture.

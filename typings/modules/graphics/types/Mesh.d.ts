@@ -2,7 +2,7 @@
  * A 2D polygon mesh used for drawing arbitrary textured shapes.
  * @link [Mesh](https://love2d.org/wiki/Mesh)
  */
-declare interface Mesh extends Drawable {
+declare interface Mesh extends LoveObject {
     /**
      * Attaches a vertex attribute from a different Mesh onto this Mesh, for use when
      * drawing. This can be used to share vertex attribute data between several

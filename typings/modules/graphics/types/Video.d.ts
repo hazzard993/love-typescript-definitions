@@ -2,7 +2,7 @@
  * A drawable video.
  * @link [Video](https://love2d.org/wiki/Video)
  */
-declare interface Video extends Drawable {
+declare interface Video extends LoveObject {
     /**
      * Gets the width and height of the Video in pixels.
      *

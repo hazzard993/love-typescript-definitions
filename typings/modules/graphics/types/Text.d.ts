@@ -2,7 +2,7 @@
  * Drawable text.
  * @link [Text](https://love2d.org/wiki/Text)
  */
-declare interface Text extends Drawable {
+declare interface Text extends LoveObject {
     /**
      * Adds additional colored text to the Text object at the specified position.
      *

@@ -2,7 +2,7 @@
  * A ParticleSystem can be used to create particle effects like fire or smoke.
  * @link [ParticleSystem](https://love2d.org/wiki/ParticleSystem)
  */
-declare interface ParticleSystem extends Drawable {
+declare interface ParticleSystem extends LoveObject {
     /**
      * Creates an identical copy of the ParticleSystem in the stopped state.
      *
