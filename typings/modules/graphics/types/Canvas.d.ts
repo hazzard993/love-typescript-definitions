@@ -37,18 +37,6 @@ declare interface Canvas extends Texture {
     /**
      * Generates ImageData from the contents of the Canvas.
      *
-     * @param x The x-axis of the top-left corner of the area within the Canvas to capture.
-     * @param y The y-axis of the top-left corner of the area within the Canvas to capture.
-     * @param width The width of the area within the Canvas to capture.
-     * @param height The height of the area within the Canvas to capture.
-     * @return data, The new ImageData made from the Canvas' contents.
-     * @link [Canvas:newImageData](https://love2d.org/wiki/Canvas:newImageData)
-     */
-    newImageData(x: number, y: number, width: number, height: number): ImageData;
-
-    /**
-     * Generates ImageData from the contents of the Canvas.
-     *
      * @param slice The cubemap face index, array index, or depth layer for cubemap, array, or volume type Canvases, respectively. This argument is ignored for regular 2D canvases.
      * @param mipmap The mipmap index to use, for Canvases with mipmaps. (Default 1)
      * @param x The x-axis of the top-left corner (in pixels) of the area within the Canvas to capture.
