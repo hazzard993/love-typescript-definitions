@@ -7,6 +7,7 @@ declare interface Channel extends LoveObject {
     /**
      * Clears all the messages in the Channel queue.
      *
+     * @link [Channel:clear](https://love2d.org/wiki/Channel:clear)
      */
     clear(): void;
 
@@ -17,6 +18,7 @@ declare interface Channel extends LoveObject {
      * It waits until a message is in the queue then returns the message value.
      *
      * @return value, The contents of the message.
+     * @link [Channel:demand](https://love2d.org/wiki/Channel:demand)
      */
     demand(): any;
 
@@ -28,6 +30,7 @@ declare interface Channel extends LoveObject {
      *
      * @param timeout The maximum amount of time to wait.
      * @return value, The contents of the message or _nil/null_ if the timeout expired.
+     * @link [Channel:demand](https://love2d.org/wiki/Channel:demand)
      */
     demand(timeout: number): any | null;
 
@@ -35,6 +38,7 @@ declare interface Channel extends LoveObject {
      * Retrieves the number of messages in the thread Channel queue.
      *
      * @return count, The number of messages in the queue.
+     * @link [Channel:getCount](https://love2d.org/wiki/Channel:getCount)
      */
     getCount(): number;
 
@@ -44,6 +48,7 @@ declare interface Channel extends LoveObject {
      *
      * @param id An id value previously returned by Channel:push.
      * @return hasread, Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.
+     * @link [Channel:hasRead](https://love2d.org/wiki/Channel:hasRead)
      */
     hasRead(id: number): boolean;
 
@@ -54,6 +59,7 @@ declare interface Channel extends LoveObject {
      * It returns _nil/null_ if there's no message in the queue.
      *
      * @return value, The contents of the message.
+     * @link [Channel:peek](https://love2d.org/wiki/Channel:peek)
      */
     peek(): any | null;
 
@@ -76,6 +82,7 @@ declare interface Channel extends LoveObject {
      * @return ret1, The first return value of the given function (if any.)
      * @return ..., Any other return values.
      * @tupleReturn
+     * @link [Channel:performAtomic](https://love2d.org/wiki/Channel:performAtomic)
      */
     performAtomic(func: Function, arg1: any, ...vararg: Array<any>): Array<any>;
 
@@ -86,6 +93,7 @@ declare interface Channel extends LoveObject {
      * It returns _nil/null_ if there are no messages in the queue.
      *
      * @return value, The contents of the message.
+     * @link [Channel:pop](https://love2d.org/wiki/Channel:pop)
      */
     pop(): any | null;
 
@@ -96,6 +104,7 @@ declare interface Channel extends LoveObject {
      * See any for the list of supported types.
      *
      * @param value The contents of the message.
+     * @link [Channel:push](https://love2d.org/wiki/Channel:push)
      */
     push(value: any): void;
 
@@ -107,6 +116,7 @@ declare interface Channel extends LoveObject {
      *
      * @param value The contents of the message.
      * @return success, Whether the message was successfully supplied (always true).
+     * @link [Channel:supply](https://love2d.org/wiki/Channel:supply)
      */
     supply(value: any): boolean;
 
@@ -119,6 +129,7 @@ declare interface Channel extends LoveObject {
      * @param value The contents of the message.
      * @param timeout The maximum amount of time to wait.
      * @return success, Whether the message was successfully supplied before the timeout expired.
+     * @link [Channel:supply](https://love2d.org/wiki/Channel:supply)
      */
     supply(value: any, timeout: number): boolean;
 

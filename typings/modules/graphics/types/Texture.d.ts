@@ -20,6 +20,7 @@ declare interface Texture extends Drawable {
      * textures.
      *
      * @return depth, The depth of the volume Texture.
+     * @link [Texture:getDepth](https://love2d.org/wiki/Texture:getDepth)
      */
     getDepth(): number;
 
@@ -52,6 +53,7 @@ declare interface Texture extends Drawable {
      * Gets the PixelFormat of the Texture.
      *
      * @return format, The pixel format the Texture was created with.
+     * @link [Texture:getFormat](https://love2d.org/wiki/Texture:getFormat)
      */
     getFormat(): PixelFormat;
 
@@ -67,6 +69,7 @@ declare interface Texture extends Drawable {
      * Cubemap, and Volume textures.
      *
      * @return layers, The number of layers in the Array Texture.
+     * @link [Texture:getLayerCount](https://love2d.org/wiki/Texture:getLayerCount)
      */
     getLayerCount(): number;
 
@@ -75,6 +78,7 @@ declare interface Texture extends Drawable {
      * created with mipmaps, it will return 1.
      *
      * @return mipmaps, The number of mipmaps in the Texture.
+     * @link [Texture:getMipmapCount](https://love2d.org/wiki/Texture:getMipmapCount)
      */
     getMipmapCount(): number;
 
@@ -114,6 +118,7 @@ declare interface Texture extends Drawable {
      * Gets the type of the Texture.
      *
      * @return texturetype, The type of the Texture.
+     * @link [Texture:getTextureType](https://love2d.org/wiki/Texture:getTextureType)
      */
     getTextureType(): TextureType;
 
@@ -146,6 +151,7 @@ declare interface Texture extends Drawable {
      * Non-readable Canvases can still be rendered to.
      *
      * @return readable, Whether the Texture is readable.
+     * @link [Texture:isReadable](https://love2d.org/wiki/Texture:isReadable)
      */
     isReadable(): boolean;
 

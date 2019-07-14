@@ -12,6 +12,7 @@ declare interface Image extends Texture {
      * called.
      *
      * @return data, The original ImageData used to create the Image, if the image is not compressed.
+     * @link [Image:getData](https://love2d.org/wiki/Image:getData)
      */
     getData(): ImageData;
 
@@ -24,6 +25,7 @@ declare interface Image extends Texture {
      * called.
      *
      * @return data, The original CompressedImageData used to create the Image, if the image is compressed.
+     * @link [Image:getData](https://love2d.org/wiki/Image:getData)
      */
     getData(): CompressedImageData;
 
@@ -33,6 +35,7 @@ declare interface Image extends Texture {
      * @return width, The width of the Image, in pixels.
      * @return height, The height of the Image, in pixels.
      * @tupleReturn
+     * @link [Image:getDimensions](https://love2d.org/wiki/Image:getDimensions)
      */
     getDimensions(): [number, number];
 
@@ -42,6 +45,7 @@ declare interface Image extends Texture {
      * @return min, Filter mode used when minifying the image.
      * @return mag, Filter mode used when magnifying the image.
      * @tupleReturn
+     * @link [Image:getFilter](https://love2d.org/wiki/Image:getFilter)
      */
     getFilter(): [FilterMode, FilterMode];
 
@@ -56,6 +60,7 @@ declare interface Image extends Texture {
      * Gets the height of the Image.
      *
      * @return height, The height of the Image, in pixels.
+     * @link [Image:getHeight](https://love2d.org/wiki/(Image):getHeight)
      */
     getHeight(): number;
 
@@ -65,6 +70,7 @@ declare interface Image extends Texture {
      * @return mode, The filter mode used in between mipmap levels. _nil/null_ if mipmap filtering is not enabled.
      * @return sharpness, Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.
      * @tupleReturn
+     * @link [Image:getMipmapFilter](https://love2d.org/wiki/(Image):getMipmapFilter)
      */
     getMipmapFilter(): [FilterMode, number];
 
@@ -72,6 +78,7 @@ declare interface Image extends Texture {
      * Gets the width of the Image.
      *
      * @return width, The width of the Image, in pixels.
+     * @link [Image:getWidth](https://love2d.org/wiki/(Image):getWidth)
      */
     getWidth(): number;
 
@@ -85,6 +92,7 @@ declare interface Image extends Texture {
      * @return horizontal, Horizontal wrapping mode of the image.
      * @return vertical, Vertical wrapping mode of the image.
      * @tupleReturn
+     * @link [Image:getWrap](https://love2d.org/wiki/(Image):getWrap)
      */
     getWrap(): [WrapMode, WrapMode];
 
@@ -92,6 +100,7 @@ declare interface Image extends Texture {
      * Reloads the Image's contents from the ImageData or CompressedImageData used to
      * create the image.
      *
+     * @link [Image:refresh](https://love2d.org/wiki/(Image):refresh)
      */
     refresh(): void;
 
@@ -103,6 +112,7 @@ declare interface Image extends Texture {
      * @param y The y-axis of the top-left corner of the area within the Image to reload.
      * @param width The width of the area within the Image to reload.
      * @param height The height of the area within the Image to reload.
+     * @link [Image:refresh](https://love2d.org/wiki/(Image):refresh)
      */
     refresh(x: number, y: number, width: number, height: number): void;
 
@@ -112,6 +122,7 @@ declare interface Image extends Texture {
      * @param data The new ImageData to replace the contents with.
      * @param slice Which slice to replace, if applicable.
      * @param mipmap The mimap level of the new ImageData. If 0 Image:replacePixels will generate new mimaps.
+     * @link [Image:replacePixels](https://love2d.org/wiki/(Image):replacePixels)
      */
     replacePixels(data: ImageData, slice: number, mipmap?: number): void;
 
@@ -120,6 +131,7 @@ declare interface Image extends Texture {
      *
      * @param min How to scale an image down.
      * @param mag How to scale an image up.
+     * @link [Image:setFilter](https://love2d.org/wiki/(Image):setFilter)
      */
     setFilter(min: FilterMode, mag?: FilterMode): void;
 
@@ -136,6 +148,7 @@ declare interface Image extends Texture {
      *
      * @param filtermode The filter mode to use in between mipmap levels. "nearest" will often give better performance.
      * @param sharpness A positive sharpness value makes the image use a more detailed mipmap level when drawing, at the expense of performance. A negative value does the reverse.
+     * @link [Image:setMipmapFilter](https://love2d.org/wiki/(Image):setMipmapFilter)
      */
     setMipmapFilter(filtermode: FilterMode, sharpness?: number): void;
 
@@ -150,6 +163,7 @@ declare interface Image extends Texture {
      * In 0.10.0 and newer, the Image must be created with the mipmaps flag enabled
      * for the mipmap filter to have any effect.
      *
+     * @link [Image:setMipmapFilter](https://love2d.org/wiki/(Image):setMipmapFilter)
      */
     setMipmapFilter(): void;
 
@@ -171,6 +185,7 @@ declare interface Image extends Texture {
      *
      * @param horizontal Horizontal wrapping mode of the image.
      * @param vertical Vertical wrapping mode of the image.
+     * @link [Image:setWrap](https://love2d.org/wiki/(Image):setWrap)
      */
     setWrap(horizontal: WrapMode, vertical?: WrapMode): void;
 

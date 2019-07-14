@@ -9,6 +9,7 @@ declare interface Quad extends LoveObject {
      * @return sw, The Texture width used by the Quad.
      * @return sh, The Texture height used by the Quad.
      * @tupleReturn
+     * @link [Quad:getTextureDimensions](https://love2d.org/wiki/Quad:getTextureDimensions)
      */
     getTextureDimensions(): [number, number];
 
@@ -20,6 +21,7 @@ declare interface Quad extends LoveObject {
      * @return w, The width of the viewport.
      * @return h, The height of the viewport.
      * @tupleReturn
+     * @link [Quad:getViewport](https://love2d.org/wiki/Quad:getViewport)
      */
     getViewport(): [number, number, number, number];
 
@@ -30,6 +32,7 @@ declare interface Quad extends LoveObject {
      * @param y The top-right corner along the y-axis.
      * @param w The width of the viewport.
      * @param h The height of the viewport.
+     * @link [Quad:setViewport](https://love2d.org/wiki/Quad:setViewport)
      */
     setViewport(x: number, y: number, w: number, h: number): void;
 

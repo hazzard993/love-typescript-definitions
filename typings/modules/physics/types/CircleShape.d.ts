@@ -9,6 +9,7 @@ declare interface CircleShape extends Shape {
      * @return x, The x-component of the center point of the circle.
      * @return y, The y-component of the center point of the circle.
      * @tupleReturn
+     * @link [CircleShape:getPoint](https://love2d.org/wiki/CircleShape:getPoint)
      */
     getPoint(): [number, number];
 
@@ -16,6 +17,7 @@ declare interface CircleShape extends Shape {
      * Gets the radius of the circle shape.
      *
      * @return radius, The radius of the circle.
+     * @link [CircleShape:getRadius](https://love2d.org/wiki/CircleShape:getRadius)
      */
     getRadius(): number;
 
@@ -24,6 +26,7 @@ declare interface CircleShape extends Shape {
      *
      * @param x The x-component of the new center point of the circle.
      * @param y The y-component of the new center point of the circle.
+     * @link [CircleShape:setPoint](https://love2d.org/wiki/CircleShape:setPoint)
      */
     setPoint(x: number, y: number): void;
 
@@ -31,6 +34,7 @@ declare interface CircleShape extends Shape {
      * Sets the radius of the circle.
      *
      * @param radius The radius of the circle.
+     * @link [CircleShape:setRadius](https://love2d.org/wiki/CircleShape:setRadius)
      */
     setRadius(radius: number): void;
 

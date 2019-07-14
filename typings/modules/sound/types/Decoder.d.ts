@@ -15,6 +15,7 @@ declare interface Decoder extends LoveObject {
      * Returns the number of bits per sample.
      *
      * @return bitDepth, Either 8 or 16.
+     * @link [Decoder:getBitDepth](https://love2d.org/wiki/Decoder:getBitDepth)
      */
     getBitDepth(): number;
 
@@ -22,6 +23,7 @@ declare interface Decoder extends LoveObject {
      * Returns the number of channels in the stream.
      *
      * @return channels, 1 for mono, 2 for stereo.
+     * @link [Decoder:getChannelCount](https://love2d.org/wiki/Decoder:getChannelCount)
      */
     getChannelCount(): number;
 
@@ -38,6 +40,7 @@ declare interface Decoder extends LoveObject {
      * it may return -1 if the duration cannot be determined at all.
      *
      * @return duration, The duration of the sound file in seconds, or -1 if it cannot be determined.
+     * @link [Decoder:getDuration](https://love2d.org/wiki/Decoder:getDuration)
      */
     getDuration(): number;
 
@@ -45,6 +48,7 @@ declare interface Decoder extends LoveObject {
      * Returns the sample rate of the Decoder.
      *
      * @return rate, Number of samples per second.
+     * @link [Decoder:getSampleRate](https://love2d.org/wiki/Decoder:getSampleRate)
      */
     getSampleRate(): number;
 

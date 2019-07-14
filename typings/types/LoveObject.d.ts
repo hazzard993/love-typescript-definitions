@@ -16,6 +16,7 @@ interface LoveObject {
      * Gets the type of the object as a string.
      *
      * @return type, The type as a string.
+     * @link [Object:type](https://love2d.org/wiki/Object:type)
      */
     type(): string;
 
@@ -25,6 +26,7 @@ interface LoveObject {
      *
      * @param name The name of the type to check for.
      * @return b, True if the object is of the specified type, false otherwise.
+     * @link [Object:typeOf](https://love2d.org/wiki/Object:typeOf)
      */
     typeOf(name: string): boolean;
 

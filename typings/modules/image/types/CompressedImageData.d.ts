@@ -8,6 +8,7 @@ declare interface CompressedImageData extends Data {
      * @return width, The width of the CompressedImageData.
      * @return height, The height of the CompressedImageData.
      * @tupleReturn
+     * @link [CompressedImageData:getDimensions](https://love2d.org/wiki/CompressedImageData:getDimensions)
      */
     getDimensions(): [number, number];
 
@@ -18,6 +19,7 @@ declare interface CompressedImageData extends Data {
      * @return width, The width of the CompressedImageData.
      * @return height, The height of the CompressedImageData.
      * @tupleReturn
+     * @link [CompressedImageData:getDimensions](https://love2d.org/wiki/CompressedImageData:getDimensions)
      */
     getDimensions(level: number): [number, number];
 
@@ -25,6 +27,7 @@ declare interface CompressedImageData extends Data {
      * Gets the format of the CompressedImageData.
      *
      * @return format, The format of the CompressedImageData.
+     * @link [CompressedImageData:getFormat](https://love2d.org/wiki/CompressedImageData:getFormat)
      */
     getFormat(): CompressedImageFormat;
 
@@ -32,6 +35,7 @@ declare interface CompressedImageData extends Data {
      * Gets the height of the CompressedImageData.
      *
      * @return height, The height of the CompressedImageData.
+     * @link [CompressedImageData:getHeight](https://love2d.org/wiki/CompressedImageData:getHeight)
      */
     getHeight(): number;
 
@@ -40,6 +44,7 @@ declare interface CompressedImageData extends Data {
      *
      * @param level A mipmap level. Must be in the range of [1,  CompressedImageData:getMipmapCount()].
      * @return height, The height of the CompressedImageData.
+     * @link [CompressedImageData:getHeight](https://love2d.org/wiki/CompressedImageData:getHeight)
      */
     getHeight(level: number): number;
 
@@ -48,6 +53,7 @@ declare interface CompressedImageData extends Data {
      * level (original image) is included in the count.
      *
      * @return mipmaps, The number of mipmap levels stored in the CompressedImageData.
+     * @link [CompressedImageData:getMipmapCount](https://love2d.org/wiki/CompressedImageData:getMipmapCount)
      */
     getMipmapCount(): number;
 
@@ -55,6 +61,7 @@ declare interface CompressedImageData extends Data {
      * Gets the width of the CompressedImageData.
      *
      * @return width, The width of the CompressedImageData.
+     * @link [CompressedImageData:getWidth](https://love2d.org/wiki/CompressedImageData:getWidth)
      */
     getWidth(): number;
 
@@ -63,6 +70,7 @@ declare interface CompressedImageData extends Data {
      *
      * @param level A mipmap level. Must be in the range of [1, CompressedImageData:getMipmapCount()].
      * @return width, The width of the CompressedImageData.
+     * @link [CompressedImageData:getWidth](https://love2d.org/wiki/CompressedImageData:getWidth)
      */
     getWidth(level: number): number;
 

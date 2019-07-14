@@ -13,6 +13,7 @@ declare interface RandomGenerator extends LoveObject {
      * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
      * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
      * @tupleReturn
+     * @link [RandomGenerator:getSeed](https://love2d.org/wiki/RandomGenerator:getSeed)
      */
     getSeed(): [number, number];
 
@@ -30,6 +31,7 @@ declare interface RandomGenerator extends LoveObject {
      * The value of the state string does not depend on the current operating system.
      *
      * @return state, The current state of the RandomGenerator object, represented as a string.
+     * @link [RandomGenerator:getState](https://love2d.org/wiki/RandomGenerator:getState)
      */
     getState(): string;
 
@@ -37,6 +39,7 @@ declare interface RandomGenerator extends LoveObject {
      * Generates a pseudo-random number in a platform independent manner.
      *
      * @return number, The pseudo random number.
+     * @link [RandomGenerator:random](https://love2d.org/wiki/RandomGenerator:random)
      */
     random(): number;
 
@@ -45,6 +48,7 @@ declare interface RandomGenerator extends LoveObject {
      *
      * @param max The maximum possible value it should return.
      * @return number, The pseudo-random integer number.
+     * @link [RandomGenerator:random](https://love2d.org/wiki/RandomGenerator:random)
      */
     random(max: number): number;
 
@@ -54,6 +58,7 @@ declare interface RandomGenerator extends LoveObject {
      * @param min The minimum possible value it should return.
      * @param max The maximum possible value it should return.
      * @return number, The pseudo-random integer number.
+     * @link [RandomGenerator:random](https://love2d.org/wiki/RandomGenerator:random)
      */
     random(min: number, max: number): number;
 
@@ -63,6 +68,7 @@ declare interface RandomGenerator extends LoveObject {
      * @param stddev Standard deviation of the distribution.
      * @param mean The mean of the distribution.
      * @return number, Normally distributed random number with variance (stddev)² and the specified mean.
+     * @link [RandomGenerator:randomNormal](https://love2d.org/wiki/RandomGenerator:randomNormal)
      */
     randomNormal(stddev?: number, mean?: number): number;
 
@@ -71,6 +77,7 @@ declare interface RandomGenerator extends LoveObject {
      * number.
      *
      * @param seed The integer number with which you want to seed the randomization. Must be within the range of [1, 2^53].
+     * @link [RandomGenerator:setSeed](https://love2d.org/wiki/RandomGenerator:setSeed)
      */
     setSeed(seed: number): void;
 
@@ -80,6 +87,7 @@ declare interface RandomGenerator extends LoveObject {
      *
      * @param low The lower 32 bits of the state value. Must be within the range of [0, 2^32 - 1].
      * @param high The higher 32 bits of the state value. Must be within the range of [0, 2^32 - 1].
+     * @link [RandomGenerator:setSeed](https://love2d.org/wiki/RandomGenerator:setSeed)
      */
     setSeed(low: number, high?: number): void;
 
@@ -97,6 +105,7 @@ declare interface RandomGenerator extends LoveObject {
      * The effect of the state string does not depend on the current operating system.
      *
      * @param state The new state of the RandomGenerator object, represented as a string. This should originate from a previous call to RandomGenerator:getState.
+     * @link [RandomGenerator:setState](https://love2d.org/wiki/RandomGenerator:setState)
      */
     setState(state: string): void;
 

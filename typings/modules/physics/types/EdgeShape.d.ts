@@ -15,6 +15,7 @@ declare interface EdgeShape extends Shape {
      * @return x2, The x component of the second vertex.
      * @return y2, The y component of the second vertex.
      * @tupleReturn
+     * @link [EdgeShape:getPoints](https://love2d.org/wiki/EdgeShape:getPoints)
      */
     getPoints(): [number, number, number, number];
 
@@ -29,6 +30,7 @@ declare interface EdgeShape extends Shape {
      * @return x, The x-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
      * @return y, The y-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
      * @tupleReturn
+     * @link [EdgeShape:getNextVertex](https://love2d.org/wiki/EdgeShape:getNextVertex)
      */
     getNextVertex(): [number, number] | [null, null];
 
@@ -43,6 +45,7 @@ declare interface EdgeShape extends Shape {
      * @return x, The x-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
      * @return y, The y-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
      * @tupleReturn
+     * @link [EdgeShape:getPreviousVertex](https://love2d.org/wiki/EdgeShape:getPreviousVertex)
      */
     getPreviousVertex(): [number, number] | [null, null];
 
@@ -55,6 +58,7 @@ declare interface EdgeShape extends Shape {
      *
      * @param x The x-component of the vertex.
      * @param y The y-component of the vertex.
+     * @link [EdgeShape:setNextVertex](https://love2d.org/wiki/EdgeShape:setNextVertex)
      */
     setNextVertex(x: number, y: number): void;
 
@@ -67,6 +71,7 @@ declare interface EdgeShape extends Shape {
      *
      * @param x The x-component of the vertex.
      * @param y The y-component of the vertex.
+     * @link [EdgeShape:setPreviousVertex](https://love2d.org/wiki/EdgeShape:setPreviousVertex)
      */
     setPreviousVertex(x: number, y: number): void;
 

@@ -13,6 +13,7 @@ declare interface Contact extends LoveObject {
      * @return indexA, The child index of the first fixture's shape.
      * @return indexB, The child index of the second fixture's shape.
      * @tupleReturn
+     * @link [Contact:getChildren](https://love2d.org/wiki/Contact:getChildren)
      */
     getChildren(): [number, number];
 
@@ -22,6 +23,7 @@ declare interface Contact extends LoveObject {
      * @return fixtureA, The first Fixture.
      * @return fixtureB, The second Fixture.
      * @tupleReturn
+     * @link [Contact:getFixtures](https://love2d.org/wiki/Contact:getFixtures)
      */
     getFixtures(): [Fixture, Fixture];
 
@@ -29,6 +31,7 @@ declare interface Contact extends LoveObject {
      * Get the friction between two shapes that are in contact.
      *
      * @return The friction of the contact.
+     * @link [Contact:getFriction](https://love2d.org/wiki/Contact:getFriction)
      */
     getFriction(): number;
 
@@ -38,6 +41,7 @@ declare interface Contact extends LoveObject {
      * @return nx: The x component of the normal vector.
      * @return ny: The y component of the normal vector.
      * @tupleReturn
+     * @link [Contact:getNormal](https://love2d.org/wiki/Contact:getNormal)
      */
     getNormal(): [number, number];
 
@@ -49,6 +53,7 @@ declare interface Contact extends LoveObject {
      * @return x2: The x coordinate of the second contact point.
      * @return y2: The y coordinate of the second contact point.
      * @tupleReturn
+     * @link [Contact:getPositions](https://love2d.org/wiki/Contact:getPositions)
      */
     getPositions(): [number, number, number?, number?];
 
@@ -56,6 +61,7 @@ declare interface Contact extends LoveObject {
      * Get the restitution between two shapes that are in contact.
      *
      * @return restitution, The restitution between the two shapes.
+     * @link [Contact:getRestitution](https://love2d.org/wiki/Contact:getRestitution)
      */
     getRestitution(): number;
 
@@ -63,6 +69,7 @@ declare interface Contact extends LoveObject {
      * Returns whether the contact is enabled. The collision will be ignored if a contact gets disabled in the preSolve callback.
      *
      * @return enabled, True if enabled, false otherwise.
+     * @link [Contact:isEnabled](https://love2d.org/wiki/Contact:isEnabled)
      */
     isEnabled(): boolean;
 
@@ -70,16 +77,19 @@ declare interface Contact extends LoveObject {
      * Returns whether the two colliding fixtures are touching each other.
      *
      * @return touching, True if they touch or false if not.
+     * @link [Contact:isTouching](https://love2d.org/wiki/Contact:isTouching)
      */
     isTouching(): boolean;
 
     /**
      * Resets the contact friction to the mixture value of both fixtures.
+     * @link [Contact:resetFriction](https://love2d.org/wiki/Contact:resetFriction)
      */
     resetFriction(): void;
 
     /**
      * Resets the contact restitution to the mixture value of both fixtures.
+     * @link [Contact:resetRestitution](https://love2d.org/wiki/Contact:resetRestitution)
      */
     resetRestitution(): void;
 
@@ -87,6 +97,7 @@ declare interface Contact extends LoveObject {
      * Enables or disables the contact.
      *
      * @param enabled True to enable or false to disable.
+     * @link [Contact:setEnabled](https://love2d.org/wiki/Contact:setEnabled)
      */
     setEnabled(enabled: boolean): void;
 
@@ -94,6 +105,7 @@ declare interface Contact extends LoveObject {
      * Sets the contact friction.
      *
      * @param friction The contact friction.
+     * @link [Contact:setFriction](https://love2d.org/wiki/Contact:setFriction)
      */
     setFriction(friction: number): void;
 
@@ -101,6 +113,7 @@ declare interface Contact extends LoveObject {
      * Sets the contact restitution.
      *
      * @param restitution The contact restitution.
+     * @link [Contact:setRestitution](https://love2d.org/wiki/Contact:setRestitution)
      */
     setRestitution(restitution: number): void;
 }

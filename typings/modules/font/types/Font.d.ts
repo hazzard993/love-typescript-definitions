@@ -67,6 +67,7 @@ declare interface Font extends LoveObject {
      * line-breaks.
      * @param line A line of text.
      * @return width, The width of the line.
+     * @link [Canvas:getWidth](https://love2d.org/wiki/Canvas:getWidth)
      */
     getWidth(line: string): number;
 
@@ -87,6 +88,7 @@ declare interface Font extends LoveObject {
      * Gets whether the font can render a particular character.
      * @param character A unicode character.
      * @return hasglyph, Whether the font can render the glyph represented by the character.
+     * @link [Canvas:hasGlyphs](https://love2d.org/wiki/Canvas:hasGlyphs)
      */
     hasGlyphs(character: string): boolean;
 
@@ -94,6 +96,7 @@ declare interface Font extends LoveObject {
      * Gets whether the font can render a particular character.
      * @param codepoint A unicode codepoint number.
      * @return hasglyph, Whether the font can render the glyph represented by the codepoint number.
+     * @link [Canvas:hasGlyphs](https://love2d.org/wiki/Canvas:hasGlyphs)
      */
     hasGlyphs(codepoint: number): boolean;
 
@@ -115,6 +118,7 @@ declare interface Font extends LoveObject {
      * @param min How to scale a font down.
      * @param mag How to scale a font up.
      * @param anisotropy Maximum amount of anisotropic filtering used.
+     * @link [Canvas:setFilter](https://love2d.org/wiki/Canvas:setFilter)
      */
     setFilter(min: FilterMode, mag?: FilterMode, anisotropy?: number): void;
 
@@ -124,6 +128,7 @@ declare interface Font extends LoveObject {
      * default is 1.0.
      *
      * @param height The new line height.
+     * @link [Canvas:setLineHeight](https://love2d.org/wiki/Canvas:setLineHeight)
      */
     setLineHeight(height: number): void;
 

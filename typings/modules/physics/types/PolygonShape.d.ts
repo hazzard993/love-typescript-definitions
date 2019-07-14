@@ -21,6 +21,7 @@ declare interface PolygonShape extends Shape {
      * @return y2, The y component of the second vertex.
      * @return ..., Additional x and y values.
      * @tupleReturn
+     * @link [PolygonShape:getPoints](https://love2d.org/wiki/PolygonShape:getPoints)
      */
     getPoints(): Array<number>;
 

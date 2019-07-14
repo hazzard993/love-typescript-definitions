@@ -7,6 +7,7 @@ declare interface WeldJoint extends Joint {
      * Returns the damping ratio of the joint.
      *
      * @return ratio, The damping ratio.
+     * @link [WeldJoint:getDampingRatio](https://love2d.org/wiki/WeldJoint:getDampingRatio)
      */
     getDampingRatio(): number;
 
@@ -14,6 +15,7 @@ declare interface WeldJoint extends Joint {
      * Returns the frequency.
      *
      * @return freq, The frequency in hertz.
+     * @link [WeldJoint:getFrequency](https://love2d.org/wiki/WeldJoint:getFrequency)
      */
     getFrequency(): number;
 
@@ -21,6 +23,7 @@ declare interface WeldJoint extends Joint {
      * The new damping ratio.
      *
      * @param ratio The new damping ratio.
+     * @link [WeldJoint:setDampingRatio](https://love2d.org/wiki/WeldJoint:setDampingRatio)
      */
     setDampingRatio(ratio: number): void;
 
@@ -28,6 +31,7 @@ declare interface WeldJoint extends Joint {
      * Sets a new frequency.
      *
      * @param freq The new frequency in hertz.
+     * @link [WeldJoint:setFrequency](https://love2d.org/wiki/WeldJoint:setFrequency)
      */
     setFrequency(freq: number): void;
 

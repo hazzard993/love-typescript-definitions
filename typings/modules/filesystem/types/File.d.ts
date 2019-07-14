@@ -6,6 +6,7 @@ declare interface File extends LoveObject {
      * Closes a file.
      *
      * @return success, Whether closing was successful.
+     * @link [(File):close](https://love2d.org/wiki/(File):close)
      */
     close(): boolean;
 
@@ -15,6 +16,7 @@ declare interface File extends LoveObject {
      * @return success, Whether the file successfully flushed any buffered data to the disk.
      * @return err, The error string, if an error occurred and the file could not be flushed.
      * @tupleReturn
+     * @link [(File):flush](https://love2d.org/wiki/(File):flush)
      */
     flush(): [boolean, string];
 
@@ -24,6 +26,7 @@ declare interface File extends LoveObject {
      * @return mode, The current buffer mode of the file.
      * @return size, The maximum size in bytes of the file's buffer.
      * @tupleReturn
+     * @link [(File):getBuffer](https://love2d.org/wiki/(File):getBuffer)
      */
     getBuffer(): [BufferMode, number];
 
@@ -33,6 +36,7 @@ declare interface File extends LoveObject {
      * platform-dependent file path.
      *
      * @return filename, The filename of the File.
+     * @link [(File):getFilename](https://love2d.org/wiki/(File):getFilename)
      */
     getFilename(): string;
 
@@ -40,6 +44,7 @@ declare interface File extends LoveObject {
      * Gets the FileMode the file has been opened with.
      *
      * @return mode, The mode this file has been opened with.
+     * @link [(File):getMode](https://love2d.org/wiki/(File):getMode)
      */
     getMode(): FileMode;
 
@@ -47,6 +52,7 @@ declare interface File extends LoveObject {
      * Returns the file size.
      *
      * @return size, The file size
+     * @link [(File):getSize](https://love2d.org/wiki/(File):getSize)
      */
     getSize(): number;
 
@@ -54,6 +60,7 @@ declare interface File extends LoveObject {
      * Gets whether end-of-file has been reached.
      *
      * @return eof, Whether EOF has been reached.
+     * @link [(File):isEOF](https://love2d.org/wiki/(File):isEOF)
      */
     isEOF(): boolean;
 
@@ -61,6 +68,7 @@ declare interface File extends LoveObject {
      * Gets whether the file is open.
      *
      * @return open, True if the file is currently open, false otherwise.
+     * @link [(File):isOpen](https://love2d.org/wiki/(File):isOpen)
      */
     isOpen(): boolean;
 
@@ -68,6 +76,7 @@ declare interface File extends LoveObject {
      * Iterate over all the lines in a file
      *
      * @return iterator, The iterator (can be used in for loops)
+     * @link [(File):lines](https://love2d.org/wiki/(File):lines)
      */
     lines(): Function;
 
@@ -81,6 +90,7 @@ declare interface File extends LoveObject {
      *
      * @param mode The mode to open the file in.
      * @return success, True on success, false otherwise.
+     * @link [(File):open](https://love2d.org/wiki/(File):open)
      */
     open(mode: FileMode): boolean;
 
@@ -91,6 +101,7 @@ declare interface File extends LoveObject {
      * @return contents, The contents of the read bytes.
      * @return size, How many bytes have been read.
      * @tupleReturn
+     * @link [(File):read](https://love2d.org/wiki/(File):read)
      */
     read(bytes?: number): [string, number];
 
@@ -99,6 +110,7 @@ declare interface File extends LoveObject {
      *
      * @param position The position to seek to.
      * @return success, Whether the operation was successful.
+     * @link [(File):seek](https://love2d.org/wiki/(File):seek)
      */
     seek(position: number): boolean;
 
@@ -112,6 +124,7 @@ declare interface File extends LoveObject {
      * @return success, Whether the buffer mode was successfully set.
      * @return errorstr, The error string, if the buffer mode could not be set and an error occurred.
      * @tupleReturn
+     * @link [(File):setBuffer](https://love2d.org/wiki/(File):setBuffer)
      */
     setBuffer(mode: BufferMode, size?: number): [boolean, string];
 
@@ -119,6 +132,7 @@ declare interface File extends LoveObject {
      * Returns the position in the file.
      *
      * @return pos, The current position.
+     * @link [(File):tell](https://love2d.org/wiki/(File):tell)
      */
     tell(): number;
 
@@ -128,6 +142,7 @@ declare interface File extends LoveObject {
      * @param data The data to write.
      * @param size How many bytes to write.
      * @return success, Whether the operation was successful.
+     * @link [(File):write](https://love2d.org/wiki/(File):write)
      */
     write(data: string, size?: number): boolean;
 

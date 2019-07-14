@@ -15,6 +15,7 @@ declare interface Shape extends LoveObject {
      * @return bottomRightX, The x position of the bottom-right point.
      * @return bottomRightY, The y position of the bottom-right point.
      * @tupleReturn
+     * @link [Shape:computeAABB](https://love2d.org/wiki/Shape:computeAABB)
      */
     computeAABB(tx: number, ty: number, tr: number, childIndex?: number): [number, number, number, number];
 
@@ -27,6 +28,7 @@ declare interface Shape extends LoveObject {
      * @return mass, The mass of the shape.
      * @return inertia, The rotational inertia.
      * @tupleReturn
+     * @link [Shape:computeMass](https://love2d.org/wiki/Shape:computeMass)
      */
     computeMass(density: number): [number, number, number, number];
 
@@ -34,6 +36,7 @@ declare interface Shape extends LoveObject {
      * Returns the number of children the shape has.
      *
      * @return count, The number of children.
+     * @link [Shape:getChildCount](https://love2d.org/wiki/Shape:getChildCount)
      */
     getChildCount(): number;
 
@@ -41,6 +44,7 @@ declare interface Shape extends LoveObject {
      * Gets the radius of the shape.
      *
      * @return radius, The radius of the shape.
+     * @link [Shape:getRadius](https://love2d.org/wiki/Shape:getRadius)
      */
     getRadius(): number;
 
@@ -49,6 +53,7 @@ declare interface Shape extends LoveObject {
      * conditional debug drawing.
      *
      * @return type, The type of the Shape.
+     * @link [Shape:getType](https://love2d.org/wiki/Shape:getType)
      */
     getType(): ShapeType;
 
@@ -89,6 +94,7 @@ declare interface Shape extends LoveObject {
      * @return yn, The y component of the normal vector of the edge where the ray hit the shape.
      * @return fraction, The position on the input line where the intersection happened as a factor of the line length.
      * @tupleReturn
+     * @link [Shape:rayCast](https://love2d.org/wiki/Shape:rayCast)
      */
     rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number] | [null, null, null];
 
@@ -101,6 +107,7 @@ declare interface Shape extends LoveObject {
      * @param x The x component of the point.
      * @param y The y component of the point.
      * @return hit, True if inside, false if outside
+     * @link [Shape:testPoint](https://love2d.org/wiki/Shape:testPoint)
      */
     testPoint(x: number, y: number): boolean;
 

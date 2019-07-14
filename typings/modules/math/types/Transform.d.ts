@@ -9,6 +9,7 @@ declare interface Transform extends LoveObject {
      *
      * @param other The other Transform object to apply to this Transform.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:apply](https://love2d.org/wiki/Transform:apply)
      */
     apply(other: Transform): Transform;
 
@@ -16,6 +17,7 @@ declare interface Transform extends LoveObject {
      * Creates a new copy of this Transform.
      *
      * @return clone, The copy of this Transform.
+     * @link [Transform:clone](https://love2d.org/wiki/Transform:clone)
      */
     clone(): Transform;
 
@@ -28,6 +30,7 @@ declare interface Transform extends LoveObject {
      * @return ..., Additional matrix elements.
      * @return e4_4, The fourth column of the fourth row of the matrix.
      * @tupleReturn
+     * @link [Transform:getMatrix](https://love2d.org/wiki/Transform:getMatrix)
      */
     getMatrix(): Array<number>;
 
@@ -35,6 +38,7 @@ declare interface Transform extends LoveObject {
      * Creates a new Transform containing the inverse of this Transform.
      *
      * @return inverse, A new Transform object representing the inverse of this Transform's matrix.
+     * @link [Transform:inverse](https://love2d.org/wiki/Transform:inverse)
      */
     inverse(): Transform;
 
@@ -56,6 +60,7 @@ declare interface Transform extends LoveObject {
      * @return globalX, The x component of the position in global coordinates.
      * @return globalY, The y component of the position in global coordinates.
      * @tupleReturn
+     * @link [Transform:inverseTransformPoint](https://love2d.org/wiki/Transform:inverseTransformPoint)
      */
     inverseTransformPoint(localX: number, localY: number): [number, number];
 
@@ -71,6 +76,7 @@ declare interface Transform extends LoveObject {
      * transformations are erased.
      *
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:reset](https://love2d.org/wiki/Transform:reset)
      */
     reset(): Transform;
 
@@ -80,6 +86,7 @@ declare interface Transform extends LoveObject {
      *
      * @param angle The relative angle in radians to rotate this Transform by.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:rotate](https://love2d.org/wiki/Transform:rotate)
      */
     rotate(angle: number): Transform;
 
@@ -90,6 +97,7 @@ declare interface Transform extends LoveObject {
      * @param sx The relative scale factor along the x-axis.
      * @param sy The relative scale factor along the y-axis.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:scale](https://love2d.org/wiki/Transform:scale)
      */
     scale(sx: number, sy: number): Transform;
 
@@ -100,6 +108,7 @@ declare interface Transform extends LoveObject {
      * @param e1_2 The second column of the first row of the matrix.
      * @param ... Additional matrix elements.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:setMatrix](https://love2d.org/wiki/Transform:setMatrix)
      */
     setMatrix(...rows: Array<number>): Transform;
 
@@ -111,6 +120,7 @@ declare interface Transform extends LoveObject {
      * @param e1_2 The second column of the first row of the matrix.
      * @param e4_4 The fourth column of the fourth row of the matrix.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:setMatrix](https://love2d.org/wiki/Transform:setMatrix)
      */
     setMatrix(layout: MatrixLayout, ...rows: Array<number>): Transform;
 
@@ -120,6 +130,7 @@ declare interface Transform extends LoveObject {
      * @param layout How to interpret the matrix element arguments (row-major or column-major).
      * @param matrix A flat table containing the 16 matrix elements.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:setMatrix](https://love2d.org/wiki/Transform:setMatrix)
      */
     setMatrix(layout: MatrixLayout, matrix: Array<number>): Transform;
 
@@ -136,6 +147,7 @@ declare interface Transform extends LoveObject {
      * @param kx Shearing / skew factor on the x-axis.
      * @param ky Shearing / skew factor on the y-axis.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:setTransformation](https://love2d.org/wiki/Transform:setTransformation)
      */
     setTransformation(x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): Transform;
 
@@ -146,6 +158,7 @@ declare interface Transform extends LoveObject {
      * @param kx The shear factor along the x-axis.
      * @param ky The shear factor along the y-axis.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:shear](https://love2d.org/wiki/Transform:shear)
      */
     shear(kx: number, ky: number): Transform;
 
@@ -161,6 +174,7 @@ declare interface Transform extends LoveObject {
      * @return localX, The x component of the position with the transform applied.
      * @return localY, The y component of the position with the transform applied.
      * @tupleReturn
+     * @link [Transform:transformPoint](https://love2d.org/wiki/Transform:transformPoint)
      */
     transformPoint(globalX: number, globalY: number): [number, number];
 
@@ -171,6 +185,7 @@ declare interface Transform extends LoveObject {
      * @param dx The relative translation along the x-axis.
      * @param dy The relative translation along the y-axis.
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
+     * @link [Transform:translate](https://love2d.org/wiki/Transform:translate)
      */
     translate(dx: number, dy: number): Transform;
 
