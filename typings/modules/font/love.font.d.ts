@@ -18,7 +18,9 @@ declare namespace love {
 
         /**
          * Creates a new GlyphData.
-         * @param TODO
+         *
+         * @param rasterizer The Rasterizer containing the font.
+         * @param glyph The character code of the glyph.
          * @return glyph, The GlyphData.
          * @link [love.font.newGlyphData](https://love2d.org/wiki/love.font.newGlyphData)
          */
