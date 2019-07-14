@@ -24,8 +24,8 @@ declare interface ChainShape extends Shape<"ChainShape"> {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @param x The x-component of the vertex, or _nil/null/undefined_ if ChainShape:setNextVertex hasn't been called.
-     * @param y The y-component of the vertex, or _nil/null/undefined_ if ChainShape:setNextVertex hasn't been called.
+     * @param x The x-component of the vertex, or _nil/undefined/undefined_ if ChainShape:setNextVertex hasn't been called.
+     * @param y The y-component of the vertex, or _nil/undefined/undefined_ if ChainShape:setNextVertex hasn't been called.
      * @link [ChainShape:getNextVertex](https://love2d.org/wiki/ChainShape:getNextVertex)
      */
     getNextVertex(x?: number, y?: number): void;
@@ -62,12 +62,12 @@ declare interface ChainShape extends Shape<"ChainShape"> {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return x, The x-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
-     * @return y, The y-component of the vertex, or _nil/null_ if ChainShape:setNextVertex hasn't been called.
+     * @return x, The x-component of the vertex, or _nil/undefined_ if ChainShape:setNextVertex hasn't been called.
+     * @return y, The y-component of the vertex, or _nil/undefined_ if ChainShape:setNextVertex hasn't been called.
      * @tupleReturn
      * @link [ChainShape:getPreviousVertex](https://love2d.org/wiki/ChainShape:getPreviousVertex)
      */
-    getPreviousVertex(): [number, number] | [null, null];
+    getPreviousVertex(): [number, number] | [undefined, undefined];
 
     /**
      * Returns the number of vertices the shape has.

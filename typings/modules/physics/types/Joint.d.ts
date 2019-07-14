@@ -102,7 +102,7 @@ declare interface Joint<T extends JointTypes = JointTypes> extends LoveObject<T>
      * Associates a Lua value with the Joint.
      *
      *
-     * To delete the reference, explicitly pass _nil/null_.
+     * To delete the reference, explicitly pass _nil/undefined_.
      *
      * @param value The Lua value to associate with the Joint.
      * @link [Joint:setUserData](https://love2d.org/wiki/Joint:setUserData)

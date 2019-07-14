@@ -9,10 +9,10 @@ declare namespace love {
         /**
          * Gets the current Cursor.
          *
-         * @return cursor, The current cursor, or _nil/null_ if no cursor is set.
+         * @return cursor, The current cursor, or _nil/undefined_ if no cursor is set.
          * @link [love.mouse.getCursor](https://love2d.org/wiki/love.mouse.getCursor)
          */
-        export function getCursor(): Cursor | null;
+        export function getCursor(): Cursor | undefined;
 
         /**
          * Returns the current position of the mouse.

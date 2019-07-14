@@ -46,7 +46,7 @@ declare namespace love {
          * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
          * @since 11.0
          */
-        export function getEffect(name: string): EffectSettings | null;
+        export function getEffect(name: string): EffectSettings | undefined;
 
         /**
          * Gets the maximum number of active effects supported by the system.

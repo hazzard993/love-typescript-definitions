@@ -29,10 +29,10 @@ declare interface Channel extends LoveObject<"Channel"> {
      * It waits until a message is in the queue then returns the message value.
      *
      * @param timeout The maximum amount of time to wait.
-     * @return value, The contents of the message or _nil/null_ if the timeout expired.
+     * @return value, The contents of the message or _nil/undefined_ if the timeout expired.
      * @link [Channel:demand](https://love2d.org/wiki/Channel:demand)
      */
-    demand(timeout: number): any | null;
+    demand(timeout: number): any | undefined;
 
     /**
      * Retrieves the number of messages in the thread Channel queue.
@@ -56,12 +56,12 @@ declare interface Channel extends LoveObject<"Channel"> {
      * Retrieves the value of a Channel message, but leaves it in the queue.
      *
      *
-     * It returns _nil/null_ if there's no message in the queue.
+     * It returns _nil/undefined_ if there's no message in the queue.
      *
      * @return value, The contents of the message.
      * @link [Channel:peek](https://love2d.org/wiki/Channel:peek)
      */
-    peek(): any | null;
+    peek(): any | undefined;
 
     /**
      * Executes the specified function atomically with respect to this Channel.
@@ -90,12 +90,12 @@ declare interface Channel extends LoveObject<"Channel"> {
      * Retrieves the value of a Channel message and removes it from the message queue.
      *
      *
-     * It returns _nil/null_ if there are no messages in the queue.
+     * It returns _nil/undefined_ if there are no messages in the queue.
      *
      * @return value, The contents of the message.
      * @link [Channel:pop](https://love2d.org/wiki/Channel:pop)
      */
-    pop(): any | null;
+    pop(): any | undefined;
 
     /**
      * Send a message to the thread Channel.

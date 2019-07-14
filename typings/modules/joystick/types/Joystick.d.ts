@@ -65,11 +65,11 @@ declare interface Joystick extends LoveObject<"Joystick"> {
      * @param axisOrButton The virtual gamepad axis or button to get the binding for.
      * @return inputtype, The type of input the virtual gamepad axis is bound to.
      * @return inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad axis is bound to.
-     * @return hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/null_ otherwise.
+     * @return hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/undefined_ otherwise.
      * @tupleReturn
      * @link [Joystick:getGamepadMapping](https://love2d.org/wiki/Joystick:getGamepadMapping)
      */
-    getGamepadMapping(axisOrButton: GamepadAxis | GamepadButton): [JoystickInputType, number, JoystickHat | null];
+    getGamepadMapping(axisOrButton: GamepadAxis | GamepadButton): [JoystickInputType, number, JoystickHat | undefined];
 
     /**
      * Gets the direction of the Joystick's hat.
@@ -94,11 +94,11 @@ declare interface Joystick extends LoveObject<"Joystick"> {
      * but it will change when the game is re-launched.
      *
      * @return id, The Joystick's unique identifier. Remains the same as long as the game is running.
-     * @return instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. _nil/null_ if the Joystick is not connected.
+     * @return instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. _nil/undefined_ if the Joystick is not connected.
      * @tupleReturn
      * @link [Joystick:getID](https://love2d.org/wiki/Joystick:getID)
      */
-    getID(): [number, number | null];
+    getID(): [number, number | undefined];
 
     /**
      * Gets the name of the joystick.

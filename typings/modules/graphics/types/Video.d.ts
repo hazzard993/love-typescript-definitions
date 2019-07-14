@@ -33,13 +33,13 @@ declare interface Video extends Drawable<"Video"> {
     getHeight(): number;
 
     /**
-     * Gets the audio Source used for playing back the video's audio. May return _nil/null_
-     * if the video has no audio, or if Video:setSource is called with a _nil/null_ argument.
+     * Gets the audio Source used for playing back the video's audio. May return _nil/undefined_
+     * if the video has no audio, or if Video:setSource is called with a _nil/undefined_ argument.
      *
-     * @return source, The audio Source used for audio playback, or _nil/null_ if the video has no audio.
+     * @return source, The audio Source used for audio playback, or _nil/undefined_ if the video has no audio.
      * @link [Video:getSource](https://love2d.org/wiki/Video:getSource)
      */
-    getSource(): Source | null;
+    getSource(): Source | undefined;
 
     /**
      * Gets the VideoStream object used for decoding and controlling the video.

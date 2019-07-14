@@ -27,12 +27,12 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return x, The x-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
-     * @return y, The y-component of the vertex, or _nil/null_ if EdgeShape:setNextVertex hasn't been called.
+     * @return x, The x-component of the vertex, or _nil/undefined_ if EdgeShape:setNextVertex hasn't been called.
+     * @return y, The y-component of the vertex, or _nil/undefined_ if EdgeShape:setNextVertex hasn't been called.
      * @tupleReturn
      * @link [EdgeShape:getNextVertex](https://love2d.org/wiki/EdgeShape:getNextVertex)
      */
-    getNextVertex(): [number, number] | [null, null];
+    getNextVertex(): [number, number] | [undefined, undefined];
 
     /**
      * Gets the vertex that establishes a connection to the previous shape.
@@ -42,12 +42,12 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
      *
-     * @return x, The x-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
-     * @return y, The y-component of the vertex, or _nil/null_ if EdgeShape:setPreviousVertex hasn't been called.
+     * @return x, The x-component of the vertex, or _nil/undefined_ if EdgeShape:setPreviousVertex hasn't been called.
+     * @return y, The y-component of the vertex, or _nil/undefined_ if EdgeShape:setPreviousVertex hasn't been called.
      * @tupleReturn
      * @link [EdgeShape:getPreviousVertex](https://love2d.org/wiki/EdgeShape:getPreviousVertex)
      */
-    getPreviousVertex(): [number, number] | [null, null];
+    getPreviousVertex(): [number, number] | [undefined, undefined];
 
     /**
      * Sets a vertex that establishes a connection to the next shape.

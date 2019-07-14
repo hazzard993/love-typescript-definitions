@@ -61,7 +61,7 @@ declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T>
 
     /**
      * Casts a ray against the shape and returns the surface normal vector and the
-     * line position where the ray hit. If the ray missed the shape, _nil/null_ will be
+     * line position where the ray hit. If the ray missed the shape, _nil/undefined_ will be
      * returned. The Shape can be transformed to get it into the desired position.
      *
      *
@@ -98,7 +98,7 @@ declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T>
      * @tupleReturn
      * @link [Shape:rayCast](https://love2d.org/wiki/Shape:rayCast)
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number] | [null, null, null];
+    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number] | [undefined, undefined, undefined];
 
     /**
      * Checks whether a point lies inside the shape. This is particularly useful for

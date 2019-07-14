@@ -28,10 +28,10 @@ declare interface Texture<T extends TextureTypes = TextureTypes> extends Drawabl
 
     /**
      * Gets the comparison mode used when sampling from a depth texture in a shader.
-     * @return compare, The comparison mode used when sampling from this texture in a shader, or _nil/null_ if setDepthSampleMode has not been called on this Texture.
+     * @return compare, The comparison mode used when sampling from this texture in a shader, or _nil/undefined_ if setDepthSampleMode has not been called on this Texture.
      * @link [Texture:getDepthSampleMode](https://love2d.org/wiki/Texture:getDepthSampleMode)
      */
-    getDepthSampleMode(): CompareMode | null;
+    getDepthSampleMode(): CompareMode | undefined;
 
     /**
      * Gets the width and height of the Texture.

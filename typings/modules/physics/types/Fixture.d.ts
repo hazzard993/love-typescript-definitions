@@ -156,7 +156,7 @@ declare interface Fixture extends LoveObject<"Fixture"> {
     /**
      * Casts a ray against the shape of the fixture and returns the surface normal
      * vector and the line position where the ray hit. If the ray missed the shape,
-     * _nil/null_ will be returned.
+     * _nil/undefined_ will be returned.
      *
      *
      * The ray starts on the first point of the input line and goes towards the second
@@ -189,7 +189,7 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * @tupleReturn
      * @link [Fixture:rayCast](https://love2d.org/wiki/Fixture:rayCast)
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [null, null, null];
+    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [undefined, undefined, undefined];
 
     /**
      * Sets the categories the fixture belongs to. There can be up to 16 categories
