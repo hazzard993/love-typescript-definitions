@@ -1,4 +1,6 @@
 /**
+ * Bodies are objects with velocity and position.
+ *
  * @link [Body](https://love2d.org/wiki/Body)
  */
 declare interface Body extends LoveObject {
