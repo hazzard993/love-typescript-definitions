@@ -180,6 +180,13 @@ declare interface Texture extends Drawable {
     setMipmapFilter(filtermode: FilterMode, sharpness?: number): void;
 
     /**
+     * Disables mipmap filtering.
+     *
+     * @link [Texture:setMipmapFilter](https://love2d.org/wiki/Texture:setMipmapFilter)
+     */
+    setMipmapFilter(): void;
+
+    /**
      * Sets the wrapping properties of a Texture.
      * @param horiz Horizontal wrapping mode of the texture.
      * @param vert Vertical wrapping mode of the texture.
