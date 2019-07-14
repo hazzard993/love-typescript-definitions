@@ -3,9 +3,8 @@
  *
  * @link [Drawable](https://love2d.org/wiki/Drawable)
  */
-type Drawable = Mesh
-    | ParticleSystem
-    | SpriteBatch
-    | Text
-    | Texture
-    | Video;
+declare interface Drawable extends LoveObject {
+
+    _drawable: never;
+
+}

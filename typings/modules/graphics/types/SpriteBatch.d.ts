@@ -4,7 +4,7 @@
  * A SpriteBatch can be even more useful when the underlying image is a texture atlas (a single image file containing many independent images); by adding Quads to the batch, different sub-images from within the atlas can be drawn.
  * @link [SpriteBatch](https://love2d.org/wiki/SpriteBatch)
  */
-declare interface SpriteBatch extends LoveObject {
+declare interface SpriteBatch extends Drawable {
     /**
      * Add a sprite to the batch.
      *
