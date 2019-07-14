@@ -122,11 +122,11 @@ declare interface ParticleSystem extends LoveObject {
     getEmitterLifetime(): number;
 
     /**
-     * Get the offget position which the particle sprite is rotated around. If this
+     * Get the offset position which the particle sprite is rotated around. If this
      * function is not used, the particles rotate around their center.
      *
-     * @return x, The x coordinate of the rotation offget.
-     * @return y, The y coordinate of the rotation offget.
+     * @return x, The x coordinate of the rotation offset.
+     * @return y, The y coordinate of the rotation offset.
      * @tupleReturn
      * @link [ParticleSystem:getOffset](https://love2d.org/wiki/ParticleSystem:getOffset)
      */
