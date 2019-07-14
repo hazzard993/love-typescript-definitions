@@ -17,7 +17,7 @@ declare namespace love {
 
         /**
          * Returns an iterator for messages in the event queue.
-         * @return `i` Iterator function usable in a for loop.
+         * @return i, Iterator function usable in a for loop.
          * @luaIterator
          * @link [love.event.poll](https://love2d.org/wiki/love.event.poll)
          * @since 0.6.0
@@ -59,8 +59,8 @@ declare namespace love {
 
         /**
          * Like [love.event.poll](https://love2d.org/wiki/love.event.poll) but blocks until there is an event in the queue.
-         * @return `e` The type of event.
-         * @return `args` The arguments given to the event.
+         * @return e, The type of event.
+         * @return args, The arguments given to the event.
          * @tupleReturn
          * @link [love.event.wait](https://love2d.org/wiki/love.event.wait)
          * @since 0.6.0

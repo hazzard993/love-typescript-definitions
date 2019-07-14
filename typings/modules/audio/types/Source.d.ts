@@ -6,7 +6,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Creates an identical copy of the Source in the stopped state.
-     * @return `source` The new identical copy of this Source.
+     * @return source, The new identical copy of this Source.
      * @link [Source](https://love2d.org/wiki/Source)
      * @since 0.9.1
      */
@@ -14,7 +14,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the amount of air absorption applied to the Source.
-     * @return `amount` The amount of air absorption applied to the Source.
+     * @return amount, The amount of air absorption applied to the Source.
      * @link [Source:getAirAbsorption](https://love2d.org/wiki/Source:getAirAbsorption)
      * @since 11.2
      */
@@ -22,8 +22,8 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Returns the reference and maximum distance of the source.
-     * @return `ref` The reference distance.
-     * @return `max` The maximum distance.
+     * @return ref, The reference distance.
+     * @return max, The maximum distance.
      * @tupleReturn
      * @link [Source:getAttenuationDistances](https://love2d.org/wiki/Source:getAttenuationDistances)
      * @since 11.2
@@ -34,7 +34,7 @@ declare interface Source extends LoveObject<"Source"> {
      * Gets the number of channels in the Source.
      *
      * Only 1-channel (mono) Sources can use directional and positional effects.
-     * @return `channels` `1` for mono, `2` for stereo.
+     * @return channels, `1` for mono, `2` for stereo.
      * @link [Source:getChannelCount](https://love2d.org/wiki/Source:getChannelCount)
      * @since 11.0
      */
@@ -55,9 +55,9 @@ declare interface Source extends LoveObject<"Source"> {
      * Gets the Source's directional volume cones.
      *
      * Together with [Source:setDirection](https://love2d.org/wiki/Source:setDirection), the cone angles allow for the Source's volume to vary depending on its direction.
-     * @return `innerAngle` The inner angle from the Source's direction, in radians. The Source will play at normal volume if the listener is inside the cone defined by this angle.
-     * @return `outerAngle` The outer angle from the Source's direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.
-     * @return `outerVolume` The Source's volume when the listener is outside both the inner and outer cone angles.
+     * @return innerAngle, The inner angle from the Source's direction, in radians. The Source will play at normal volume if the listener is inside the cone defined by this angle.
+     * @return outerAngle, The outer angle from the Source's direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.
+     * @return outerVolume, The Source's volume when the listener is outside both the inner and outer cone angles.
      * @tupleReturn
      * @link [Source:getCone](https://love2d.org/wiki/Source:getCone)
      * @since 0.9.0
@@ -66,9 +66,9 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the direction of the Source.
-     * @return `x` The X part of the direction vector.
-     * @return `y` The Y part of the direction vector.
-     * @return `z` The Z part of the direction vector.
+     * @return x, The X part of the direction vector.
+     * @return y, The Y part of the direction vector.
+     * @return z, The Z part of the direction vector.
      * @tupleReturn
      * @link [Source:getDirection](https://love2d.org/wiki/Source:getDirection)
      * @since 0.7.0
@@ -80,7 +80,7 @@ declare interface Source extends LoveObject<"Source"> {
      *
      * For streaming Sources it may not always be sample-accurate, and may return `-1` if the duration cannot be determined at all.
      * @param unit The time unit for the return value. (Default `"seconds"`)
-     * @return `duration` The duration of the Source, or `-1` if it cannot be determined.
+     * @return duration, The duration of the Source, or `-1` if it cannot be determined.
      * @link [Source:getDuration](https://love2d.org/wiki/Source:getDuration)
      * @since 0.10.0
      */
@@ -92,7 +92,7 @@ declare interface Source extends LoveObject<"Source"> {
      * This function returns undefined if the effect was applied with no filter settings associated to it.
      * @param name The name of the effect.
      * @param filtersettings An optional empty table that will be filled with the filter settings.
-     * @return `filtersettings` The settings for the filter associated to this effect, or _nil/null_ if the effect is not present in this Source or has no filter associated.
+     * @return filtersettings, The settings for the filter associated to this effect, or _nil/null_ if the effect is not present in this Source or has no filter associated.
      * @link [Source:getEffect](https://love2d.org/wiki/Source:getEffect)
      * @since 11.0
      */
@@ -100,7 +100,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the filter settings currently applied to the Source.
-     * @return `settings` The filter settings to use for this Source, or nil/null if the Source has no active filter.
+     * @return settings, The filter settings to use for this Source, or nil/null if the Source has no active filter.
      * @link [Source:getFilter](https://love2d.org/wiki/Source:getFilter)
      * @since 11.0
      */
@@ -108,7 +108,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the number of free buffer slots in a queueable Source.
-     * @return `buffers` How many more SoundData objects can be queued up.
+     * @return buffers, How many more SoundData objects can be queued up.
      * @link [Source:getFreeBufferCount](https://love2d.org/wiki/Source:getFreeBufferCount)
      * @since 11.0
      */
@@ -116,16 +116,16 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the current pitch of the Source.
-     * @return `pitch` The pitch, where `1.0` is normal.
+     * @return pitch, The pitch, where `1.0` is normal.
      * @link [Source:getPitch](https://love2d.org/wiki/Source:getPitch)
      */
     getPitch(): number;
 
     /**
      * Gets the position of the Source.
-     * @return `x` The X position of the Source.
-     * @return `y` The Y position of the Source.
-     * @return `z` The Z position of the Source.
+     * @return x, The X position of the Source.
+     * @return y, The Y position of the Source.
+     * @return z, The Z position of the Source.
      * @tupleReturn
      * @link [Source:getPosition](https://love2d.org/wiki/Source:getPosition)
      * @since 0.7.0
@@ -134,7 +134,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Returns the rolloff factor of the source.
-     * @return `rolloff` The rolloff factor.
+     * @return rolloff, The rolloff factor.
      * @link [Source:getRolloff](https://love2d.org/wiki/Source:getRolloff)
      * @since 0.8.0
      */
@@ -142,7 +142,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the type (static or stream) of the Source.
-     * @return `sourcetype` The type of the source.
+     * @return sourcetype, The type of the source.
      * @link [Source:getType](https://love2d.org/wiki/Source:getType)
      * @since 0.10.0
      */
@@ -150,9 +150,9 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the velocity of the Source.
-     * @return `x` The X part of the velocity vector.
-     * @return `y` The Y part of the velocity vector.
-     * @return `z` The Z part of the velocity vector.
+     * @return x, The X part of the velocity vector.
+     * @return y, The Y part of the velocity vector.
+     * @return z, The Z part of the velocity vector.
      * @tupleReturn
      * @link [Source:getVelocity](https://love2d.org/wiki/Source:getVelocity)
      * @since 0.7.0
@@ -161,15 +161,15 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Gets the current volume of the Source.
-     * @return `volume` The volume of the Source, where 1.0 is normal volume.
+     * @return volume, The volume of the Source, where 1.0 is normal volume.
      * @link [Source:getVolume](https://love2d.org/wiki/Source:getVolume)
      */
     getVolume(): number;
 
     /**
      * Returns the volume limits of the source.
-     * @return `min` The minimum volume.
-     * @return `max` The maximum volume.
+     * @return min, The minimum volume.
+     * @return max, The maximum volume.
      * @tupleReturn
      * @link [Source:getVolumeLimits](https://love2d.org/wiki/Source:getVolumeLimits)
      */
@@ -177,14 +177,14 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Returns whether the Source will loop.
-     * @return `loop` `true` if the Source will loop, `false` otherwise.
+     * @return loop, `true` if the Source will loop, `false` otherwise.
      * @link [Source:isLooping](https://love2d.org/wiki/Source:isLooping)
      */
     isLooping(): boolean;
 
     /**
      * Returns whether the Source is playing.
-     * @return `playing` `true` if the Source is playing, `false` otherwise.
+     * @return playing, `true` if the Source is playing, `false` otherwise.
      * @link [Source:isPlaying](https://love2d.org/wiki/Source:isPlaying)
      * @since 0.9.0
      */
@@ -207,7 +207,7 @@ declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Starts playing the Source.
-     * @return `success` `true` if the Source started playing successfully, `false` otherwise.
+     * @return success, `true` if the Source started playing successfully, `false` otherwise.
      * @link [Source:play](https://love2d.org/wiki/Source:play)
      * @since 0.7.0
      */
@@ -218,7 +218,7 @@ declare interface Source extends LoveObject<"Source"> {
      *
      * This method requires the Source to be created via [love.audio.newQueueableSource](https://love2d.org/wiki/love.audio.newQueueableSource).
      * @param sounddata The data to queue. The SoundData's sample rate, bit depth, and channel count must match the Source's.
-     * @return `success` `true` if the data was successfully queued for playback, `false` if there were no available buffers to use for queueing.
+     * @return success, `true` if the data was successfully queued for playback, `false` if there were no available buffers to use for queueing.
      * @link [Source:queue](https://love2d.org/wiki/Source:queue)
      * @since 11.0
      */
@@ -258,7 +258,7 @@ declare interface Source extends LoveObject<"Source"> {
      * Applies an audio effect to the Source.
      * @param name The name of the effect previously set up with love.audio.setEffect.
      * @param enable If `false` and the given effect name was previously enabled on this Source, disables the effect. (Default `true`)
-     * @return `success` Whether the effect was successfully applied to this Source.
+     * @return success, Whether the effect was successfully applied to this Source.
      * @link [Source:setEffect](https://love2d.org/wiki/Source:setEffect)
      * @since 11.0
      */
@@ -268,7 +268,7 @@ declare interface Source extends LoveObject<"Source"> {
      * Applies an audio effect to the Source.
      * @param name The name of the effect previously set up with love.audio.setEffect.
      * @param filtersettings The filter settings to apply prior to the effect.
-     * @return `success` Whether the effect and filter were successfully applied to this Source.
+     * @return success, Whether the effect and filter were successfully applied to this Source.
      * @link [Source:setEffect](https://love2d.org/wiki/Source:setEffect)
      * @since 11.0
      */
@@ -277,7 +277,7 @@ declare interface Source extends LoveObject<"Source"> {
     /**
      * Sets a low-pass, high-pass, or band-pass filter to apply when playing the Source.
      * @param settings The filter settings to use for this Source.
-     * @return `success` Whether the filter was successfully applied to the Source.
+     * @return success, Whether the filter was successfully applied to the Source.
      * @link [Source:setFilter](https://love2d.org/wiki/Source:setFilter)
      * @since 11.0
      */
