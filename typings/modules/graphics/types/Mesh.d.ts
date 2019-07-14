@@ -68,7 +68,7 @@ declare interface Mesh extends Drawable {
      * @tupleReturn
      * @link [Mesh:getVertex](https://love2d.org/wiki/Mesh:getVertex)
      */
-    getVertex(index: number): [number, number];
+    getVertex(index: number): Array<number>;
 
     /**
      * Gets the properties of a vertex in the Mesh.
@@ -264,19 +264,16 @@ declare interface Mesh extends Drawable {
     /**
      * Sets the properties of a specific attribute within a vertex in the Mesh.
      *
-     *
      * Meshes without a custom vertex format specified in love.graphics.newMesh have
      * position as their first attribute, texture coordinates as their second
      * attribute, and color as their third attribute.
      *
      * @param vertexindex The index of the the vertex to be modified.
      * @param attributeindex The index of the attribute within the vertex to be modified.
-     * @param value1 The value of the first component of the attribute.
-     * @param value2 The value of the second component of the attribute.
-     * @param ... Any additional vertex attribute components.
+     * @param values The value of the first component of the attribute and so on.
      * @link [Mesh:setVertexAttribute](https://love2d.org/wiki/Mesh:setVertexAttribute)
      */
-    setVertexAttribute(vertexindex: number, attributeindex: number, value1: number, value2: number, ...vararg: Array<number>): void;
+    setVertexAttribute(vertexindex: number, attributeindex: number, ...values: Array<number>): void;
 
     /**
      * Sets the vertex map for the Mesh. The vertex map describes the order in which
