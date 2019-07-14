@@ -4,10 +4,12 @@ let filterMode: FilterMode;
 /**
  * Documented at
  * https://love2d.org/wiki/File
- * 2019/03/02
+ * 2019/07/14
  */
 declare const canvas: Canvas;
+canvas.generateMipmaps;
 canvas.getMSAA;
+canvas.getMipmapMode;
 canvas.newImageData;
 canvas.renderTo;
 canvas.release;
