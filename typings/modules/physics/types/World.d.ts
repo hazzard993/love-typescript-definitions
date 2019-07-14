@@ -40,7 +40,7 @@ declare interface World extends LoveObject {
      * @tupleReturn
      * @link [World:getCallbacks](https://love2d.org/wiki/World:getCallbacks)
      */
-    getCallbacks(): [Function, Function, Function, Function];
+    getCallbacks(): [(this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any];
 
     /**
      * Returns the number of contacts in the world.
@@ -166,7 +166,6 @@ declare interface World extends LoveObject {
     /**
      * Sets a function for collision filtering.
      *
-     *
      * If the group and category filtering doesn't generate a collision decision, this
      * function gets called with the two fixtures as arguments. The function should
      * return a boolean value where true means the fixtures will collide and false
@@ -175,7 +174,7 @@ declare interface World extends LoveObject {
      * @param filter The function handling the contact filtering.
      * @link [World:setContactFilter](https://love2d.org/wiki/World:setContactFilter)
      */
-    setContactFilter(filter: Function): void;
+    setContactFilter(filter: (this: void, fixtureA: Fixture, fixtureB: Fixture) => boolean): void;
 
     /**
      * Set the gravity of the world.
