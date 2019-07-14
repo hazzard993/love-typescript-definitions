@@ -2,7 +2,7 @@
  * A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree
  * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
  */
-declare interface BezierCurve extends LoveObject {
+declare interface BezierCurve extends LoveObject<"BezierCurve"> {
     /**
      * Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1
      * (inclusive).

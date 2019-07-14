@@ -2,7 +2,7 @@
  * For controlling objects with the mouse.
  * @link [MouseJoint](https://love2d.org/wiki/MouseJoint)
  */
-declare interface MouseJoint extends Joint {
+declare interface MouseJoint extends Joint<"MouseJoint"> {
     /**
      * Returns the damping ratio.
      *

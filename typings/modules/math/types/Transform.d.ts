@@ -2,7 +2,7 @@
  * Object containing a coordinate system transformation.
  * @link [Transform](https://love2d.org/wiki/Transform)
  */
-declare interface Transform extends LoveObject {
+declare interface Transform extends LoveObject<"Transform"> {
 
     /**
      * Applies the given other Transform object to this one.

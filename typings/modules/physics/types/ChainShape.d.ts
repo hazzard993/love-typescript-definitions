@@ -6,7 +6,7 @@
  * The shape does not have volume and can only collide with PolygonShape and CircleShape.
  * @link [ChainShape](https://love2d.org/wiki/ChainShape)
  */
-declare interface ChainShape extends Shape {
+declare interface ChainShape extends Shape<"ChainShape"> {
     /**
      * Returns a child of the shape as an EdgeShape.
      *

@@ -1,7 +1,7 @@
 /**
  * @link [Decoder](https://love2d.org/wiki/Decoder)
  */
-declare interface Decoder extends LoveObject {
+declare interface Decoder extends LoveObject<"Decoder"> {
 
     /**
      * Decodes the audio and returns a SoundData object containing the decoded audio data.

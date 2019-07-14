@@ -2,7 +2,7 @@
  * Allow two Bodies to revolve around a shared point.
  * @link [RevoluteJoint](https://love2d.org/wiki/RevoluteJoint)
  */
-declare interface RevoluteJoint extends Joint {
+declare interface RevoluteJoint extends Joint<"RevoluteJoint"> {
     /**
      * Checks whether the limits are enabled.
      *

@@ -1,7 +1,7 @@
 /**
  * @link [CompressedImageData](https://love2d.org/wiki/CompressedImageData)
  */
-declare interface CompressedImageData extends Data {
+declare interface CompressedImageData extends Data<"CompressedImageData"> {
     /**
      * Gets the width and height of the CompressedImageData.
      *

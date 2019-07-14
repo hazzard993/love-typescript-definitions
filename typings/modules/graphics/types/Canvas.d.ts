@@ -2,7 +2,7 @@
  * A Canvas is used for off-screen rendering.
  * @link [Canvas](https://love2d.org/wiki/Canvas)
  */
-declare interface Canvas extends Texture {
+declare interface Canvas extends Texture<"Canvas"> {
 
     /**
      * Generates mipmaps for the Canvas, based on the contents of the highest-resolution mipmap level.

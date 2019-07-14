@@ -1,7 +1,7 @@
 /**
  * @link [File](https://love2d.org/wiki/File)
  */
-declare interface File extends LoveObject {
+declare interface File extends LoveObject<"File"> {
     /**
      * Closes a file.
      *

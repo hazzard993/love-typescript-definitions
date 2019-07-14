@@ -2,7 +2,7 @@
  * Controls the relative motion between two Bodies.
  * @link [MotorJoint](https://love2d.org/wiki/MotorJoint)
  */
-declare interface MotorJoint extends Joint {
+declare interface MotorJoint extends Joint<"MotorJoint"> {
     /**
      * Gets the target angular offset between the two Bodies the Joint is attached to.
      *

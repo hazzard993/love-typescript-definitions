@@ -2,7 +2,7 @@
  * A random number generation object which has its own random state.
  * @link [RandomGenerator](https://love2d.org/wiki/RandomGenerator)
  */
-declare interface RandomGenerator extends LoveObject {
+declare interface RandomGenerator extends LoveObject<"RandomGenerator"> {
     /**
      * Gets the state of the random number generator.
      *

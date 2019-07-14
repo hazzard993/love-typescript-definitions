@@ -2,7 +2,7 @@
  * A Source represents audio you can play back.
  * @link [Source](https://love2d.org/wiki/Source)
  */
-declare interface Source extends LoveObject {
+declare interface Source extends LoveObject<"Source"> {
 
     /**
      * Creates an identical copy of the Source in the stopped state.

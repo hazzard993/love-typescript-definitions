@@ -2,7 +2,7 @@
  * A WeldJoint essentially glues two bodies together.
  * @link [WeldJoint](https://love2d.org/wiki/WeldJoint)
  */
-declare interface WeldJoint extends Joint {
+declare interface WeldJoint extends Joint<"WeldJoint"> {
     /**
      * Returns the damping ratio of the joint.
      *

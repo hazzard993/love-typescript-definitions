@@ -6,7 +6,7 @@
  * The shape does not have volume and can only collide with PolygonShape and CircleShape.
  * @link [EdgeShape](https://love2d.org/wiki/EdgeShape)
  */
-declare interface EdgeShape extends Shape {
+declare interface EdgeShape extends Shape<"EdgeShape"> {
     /**
      * Returns the local coordinates of the edge points.
      *

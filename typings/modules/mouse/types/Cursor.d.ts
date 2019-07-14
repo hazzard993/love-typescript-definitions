@@ -1,7 +1,7 @@
 /**
  * @link [Cursor](https://love2d.org/wiki/Cursor)
  */
-declare interface Cursor extends LoveObject {
+declare interface Cursor extends LoveObject<"Cursor"> {
     /**
      * Gets the type of the Cursor.
      *

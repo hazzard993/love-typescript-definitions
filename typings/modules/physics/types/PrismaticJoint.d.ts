@@ -2,7 +2,7 @@
  * Restricts relative motion between Bodies to one shared axis.
  * @link [PrismaticJoint](https://love2d.org/wiki/PrismaticJoint)
  */
-declare interface PrismaticJoint extends Joint {
+declare interface PrismaticJoint extends Joint<"PrismaticJoint"> {
     /**
      * Checks whether the limits are enabled.
      *

@@ -3,4 +3,4 @@
  * @link [ByteData](https://love2d.org/wiki/ByteData)
  * @since 11.0
  */
-declare interface ByteData extends Data {}
+declare interface ByteData extends Data<"ByteData"> {}

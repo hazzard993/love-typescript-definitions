@@ -1,3 +1,5 @@
+type TextureTypes = "Canvas" | "Image";
+
 /**
  * Superclass for drawable objects which represent a texture.
  *
@@ -6,7 +8,7 @@
  * This is an abstract type that can't be created directly.
  * @link [Texture](https://love2d.org/wiki/Texture)
  */
-declare interface Texture extends Drawable {
+declare interface Texture<T extends TextureTypes = TextureTypes> extends Drawable<T> {
 
     /**
      * Gets the DPI scale factor of the Texture.

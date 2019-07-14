@@ -1,8 +1,10 @@
+type ShapeTypes = "ChainShape" | "CircleShape" | "EdgeShape" | "PolygonShape";
+
 /**
  * Shapes are solid 2d geometrical objects which handle the mass and collision of a Body in love.physics.
  * @link [Shape](https://love2d.org/wiki/Shape)
  */
-declare interface Shape extends LoveObject {
+declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T> {
     /**
      * Returns the points of the bounding box for the transformed shape.
      *

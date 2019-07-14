@@ -2,7 +2,7 @@
  * Restricts a point on the second body to a line on the first body.
  * @link [WheelJoint](https://love2d.org/wiki/WheelJoint)
  */
-declare interface WheelJoint extends Joint {
+declare interface WheelJoint extends Joint<"WheelJoint"> {
     /**
      * Gets the world-space axis vector of the Wheel Joint.
      *

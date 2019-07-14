@@ -1,8 +1,20 @@
+type JointTypes = "DistanceJoint"
+    | "FrictionJoint"
+    | "GearJoint"
+    | "MotorJoint"
+    | "MouseJoint"
+    | "PrismaticJoint"
+    | "PulleyJoint"
+    | "RevoluteJoint"
+    | "RopeJoint"
+    | "WeldJoint"
+    | "WheelJoint";
+
 /**
  * Attach multiple bodies together to interact in unique ways.
  * @link [Joint](https://love2d.org/wiki/Joint)
  */
-declare interface Joint extends LoveObject {
+declare interface Joint<T extends JointTypes = JointTypes> extends LoveObject<T> {
     /**
      * Explicitly destroys the Joint. When you don't have time to wait for garbage
      * collection, this function may be used to free the object immediately, but note

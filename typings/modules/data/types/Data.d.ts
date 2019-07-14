@@ -1,8 +1,16 @@
+type DataTypes = "ByteData"
+    | "FileData"
+    | "GlyphData"
+    | "CompressedImageData"
+    | "ImageData"
+    | "CompressedData"
+    | "SoundData";
+
 /**
  * The superclass of all data.
  * @link [Data](https://love2d.org/wiki/Data)
  */
-declare interface Data extends LoveObject {
+declare interface Data<T extends DataTypes = DataTypes> extends LoveObject<T> {
 
     /**
      * Creates a new copy of the Data object.
@@ -10,7 +18,7 @@ declare interface Data extends LoveObject {
      * @link [Data:clone](https://love2d.org/wiki/Data:clone)
      * @since 11.0
      */
-    clone(): Data;
+    clone(): LoveObjects[T];
 
     /**
      * Gets a pointer to the Data.

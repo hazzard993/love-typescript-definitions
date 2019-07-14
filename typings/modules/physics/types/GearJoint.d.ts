@@ -2,7 +2,7 @@
  * Keeps bodies together in such a way that they act like gears.
  * @link [GearJoint](https://love2d.org/wiki/GearJoint)
  */
-declare interface GearJoint extends Joint {
+declare interface GearJoint extends Joint<"GearJoint"> {
     /**
      * Get the Joints connected by this GearJoint.
      *

@@ -2,7 +2,7 @@
  * A FrictionJoint applies friction to a body.
  * @link [FrictionJoint](https://love2d.org/wiki/FrictionJoint)
  */
-declare interface FrictionJoint extends Joint {
+declare interface FrictionJoint extends Joint<"FrictionJoint"> {
     /**
      * Gets the maximum friction force in Newtons.
      *

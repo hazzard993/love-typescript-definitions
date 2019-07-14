@@ -1,7 +1,7 @@
 /**
  * @link [SoundData](https://love2d.org/wiki/SoundData)
  */
-declare interface SoundData extends Data {
+declare interface SoundData extends Data<"SoundData"> {
     /**
      * Returns the number of bits per sample.
      *

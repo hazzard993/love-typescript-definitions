@@ -2,7 +2,7 @@
  * Raw (decoded) image data.
  * @link [ImageData](https://love2d.org/wiki/ImageData)
  */
-declare interface ImageData extends Data {
+declare interface ImageData extends Data<"ImageData"> {
     /**
      * Encodes the ImageData and optionally writes it to the save directory.
      *

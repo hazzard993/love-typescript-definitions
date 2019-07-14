@@ -3,7 +3,7 @@
  *
  * @link [Contact](https://love2d.org/wiki/Contact)
  */
-declare interface Contact extends LoveObject {
+declare interface Contact extends LoveObject<"Contact"> {
     /**
      * Gets the child indices of the shapes of the two colliding fixtures.
      * For ChainShapes, an index of 1 is the first edge in the chain.

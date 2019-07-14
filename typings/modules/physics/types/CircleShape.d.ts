@@ -2,7 +2,7 @@
  * Circle extends Shape and adds a radius and a local position.
  * @link [CircleShape](https://love2d.org/wiki/CircleShape)
  */
-declare interface CircleShape extends Shape {
+declare interface CircleShape extends Shape<"CircleShape"> {
     /**
      * Gets the center point of the circle shape.
      *

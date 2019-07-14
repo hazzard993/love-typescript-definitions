@@ -2,7 +2,7 @@
  * Allows you to simulate bodies connected through pulleys.
  * @link [PulleyJoint](https://love2d.org/wiki/PulleyJoint)
  */
-declare interface PulleyJoint extends Joint {
+declare interface PulleyJoint extends Joint<"PulleyJoint"> {
     /**
      * Get the total length of the rope.
      *

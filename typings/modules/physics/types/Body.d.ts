@@ -3,7 +3,7 @@
  *
  * @link [Body](https://love2d.org/wiki/Body)
  */
-declare interface Body extends LoveObject {
+declare interface Body extends LoveObject<"Body"> {
     /**
      * Applies an angular impulse to a body. This makes a single, instantaneous
      * addition to the body momentum.

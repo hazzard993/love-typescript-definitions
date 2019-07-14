@@ -2,7 +2,7 @@
  * The RopeJoint enforces a maximum distance between two points on two bodies. It has no other effect.
  * @link [RopeJoint](https://love2d.org/wiki/RopeJoint)
  */
-declare interface RopeJoint extends Joint {
+declare interface RopeJoint extends Joint<"RopeJoint"> {
     /**
      * Gets the maximum length of a RopeJoint.
      *
