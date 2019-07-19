@@ -52,9 +52,9 @@ declare namespace love {
         /**
          * Opens a URL with the user's web or file browser.
          *
+         * To open a file or folder, "file://" must be prepended to the path.
+         *
          * @param url The URL to open. Must be formatted as a proper URL.
-
-To open a file or folder, "file://" must be prepended to the path.
          * @return success, Whether the URL was opened successfully.
          @link [love.system.openURL](https://love2d.org/wiki/love.system.openURL)
          */
