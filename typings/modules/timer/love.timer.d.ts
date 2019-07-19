@@ -51,13 +51,6 @@ declare namespace love {
         /**
          * Measures the time between two frames. Calling this changes the return value of
          * love.timer.getDelta.
-         * @link [love.timer.step](https://love2d.org/wiki/love.timer.step)
-         */
-        export function step(): void;
-
-        /**
-         * Measures the time between two frames. Calling this changes the return value of
-         * love.timer.getDelta.
          *
          * @return dt, The time passed (in seconds).
          * @link [love.timer.step](https://love2d.org/wiki/love.timer.step)
