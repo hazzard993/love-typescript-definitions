@@ -98,7 +98,17 @@ declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T>
      * @tupleReturn
      * @link [Shape:rayCast](https://love2d.org/wiki/Shape:rayCast)
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, tx: number, ty: number, tr: number, childIndex?: number): [number, number, number] | [undefined, undefined, undefined];
+    rayCast(
+        x1: number,
+        y1: number,
+        x2: number,
+        y2: number,
+        maxFraction: number,
+        tx: number,
+        ty: number,
+        tr: number,
+        childIndex?: number
+    ): [number, number, number] | [undefined, undefined, undefined];
 
     /**
      * Checks whether a point lies inside the shape. This is particularly useful for
@@ -112,5 +122,4 @@ declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T>
      * @link [Shape:testPoint](https://love2d.org/wiki/Shape:testPoint)
      */
     testPoint(x: number, y: number): boolean;
-
 }

@@ -149,5 +149,4 @@ declare interface RevoluteJoint extends Joint<"RevoluteJoint"> {
      * @link [RevoluteJoint:setUpperLimit](https://love2d.org/wiki/RevoluteJoint:setUpperLimit)
      */
     setUpperLimit(upper: number): void;
-
 }

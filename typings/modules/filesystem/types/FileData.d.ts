@@ -17,5 +17,4 @@ declare interface FileData extends Data<"FileData"> {
      * @link [FileData:getFilename](https://love2d.org/wiki/FileData:getFilename)
      */
     getFilename(): string;
-
 }

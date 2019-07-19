@@ -113,5 +113,4 @@ declare interface ImageData extends Data<"ImageData"> {
      * @link [ImageData:setPixel](https://love2d.org/wiki/ImageData:setPixel)
      */
     setPixel(x: number, y: number, r: number, g: number, b: number, a: number): void;
-
 }

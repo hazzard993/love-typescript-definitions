@@ -1,0 +1,4 @@
+{
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+}

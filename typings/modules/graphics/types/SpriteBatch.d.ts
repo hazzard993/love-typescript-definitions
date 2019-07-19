@@ -20,7 +20,17 @@ declare interface SpriteBatch extends Drawable {
      * @return id, An identifier for the added sprite.
      * @link [SpriteBatch:add](https://love2d.org/wiki/SpriteBatch:add)
      */
-    add(x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    add(
+        x: number,
+        y: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Add a sprite to the batch.
@@ -38,7 +48,18 @@ declare interface SpriteBatch extends Drawable {
      * @return id, An identifier for the added sprite.
      * @link [SpriteBatch:add](https://love2d.org/wiki/SpriteBatch:add)
      */
-    add(quad: Quad, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    add(
+        quad: Quad,
+        x: number,
+        y: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Adds a layer of the SpriteBatch's Array Texture.
@@ -55,7 +76,18 @@ declare interface SpriteBatch extends Drawable {
      * @return spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
      * @link [SpriteBatch:addLayer](https://love2d.org/wiki/SpriteBatch:addLayer)
      */
-    addLayer(layerindex: number, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    addLayer(
+        layerindex: number,
+        x?: number,
+        y?: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Adds a layer of the SpriteBatch's Array Texture using the specified Quad.
@@ -73,7 +105,19 @@ declare interface SpriteBatch extends Drawable {
      * @return spriteindex, The index of the added sprite, for use with SpriteBatch:set or SpriteBatch:setLayer.
      * @link [SpriteBatch:addLayer](https://love2d.org/wiki/SpriteBatch:addLayer)
      */
-    addLayer(layerindex: number, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    addLayer(
+        layerindex: number,
+        quad: Quad,
+        x?: number,
+        y?: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Adds a layer of the SpriteBatch's Array Texture using the specified Quad and Transform.
@@ -183,7 +227,18 @@ declare interface SpriteBatch extends Drawable {
      * @param ky Shear factor (y-axis).
      * @link [SpriteBatch:set](https://love2d.org/wiki/SpriteBatch:set)
      */
-    set(id: number, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+    set(
+        id: number,
+        x: number,
+        y: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): void;
 
     /**
      * Changes a sprite in the batch. This requires the identifier returned by add and
@@ -202,7 +257,19 @@ declare interface SpriteBatch extends Drawable {
      * @param ky Shear factor (y-axis).
      * @link [SpriteBatch:set](https://love2d.org/wiki/SpriteBatch:set)
      */
-    set(id: number, quad: Quad, x: number, y: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+    set(
+        id: number,
+        quad: Quad,
+        x: number,
+        y: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): void;
 
     /**
      * Sets the maximum number of sprites the SpriteBatch can hold. Existing sprites
@@ -275,7 +342,19 @@ declare interface SpriteBatch extends Drawable {
      * @param ky Shearing factor (y-axis). (Default 0)
      * @link [SpriteBatch:setLayer](https://love2d.org/wiki/SpriteBatch:setLayer)
      */
-    setLayer(spriteindex: number, layerindex: number, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+    setLayer(
+        spriteindex: number,
+        layerindex: number,
+        x?: number,
+        y?: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): void;
 
     /**
      * Changes the sprite in the SpriteBatch.
@@ -293,7 +372,20 @@ declare interface SpriteBatch extends Drawable {
      * @param ky Shearing factor (y-axis). (Default 0)
      * @link [SpriteBatch:setLayer](https://love2d.org/wiki/SpriteBatch:setLayer)
      */
-    setLayer(spriteindex: number, layerindex: number, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+    setLayer(
+        spriteindex: number,
+        layerindex: number,
+        quad: Quad,
+        x?: number,
+        y?: number,
+        r?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): void;
 
     /**
      * Adds a layer of the SpriteBatch's Array Texture using the specified Quad and Transform.
@@ -321,5 +413,4 @@ declare interface SpriteBatch extends Drawable {
      * @link [SpriteBatch:setTexture](https://love2d.org/wiki/SpriteBatch:setTexture)
      */
     setTexture(texture: Texture): void;
-
 }

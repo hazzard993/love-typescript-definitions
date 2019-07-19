@@ -11,7 +11,4 @@
  * @link [EffectWaveform](https://love2d.org/wiki/EffectWaveform)
  * @since 11.0
  */
-declare type EffectWaveform = "sawtooth"
-    | "sine"
-    | "square"
-    | "triangle";
+declare type EffectWaveform = "sawtooth" | "sine" | "square" | "triangle";

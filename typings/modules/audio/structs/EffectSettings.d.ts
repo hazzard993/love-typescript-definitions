@@ -5,7 +5,8 @@
  * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
  * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
  */
-declare type EffectSettings = ChorusEffectSettings
+declare type EffectSettings =
+    | ChorusEffectSettings
     | CompressorEffectSettings
     | DistortionEffectSettings
     | EchoEffectSettings

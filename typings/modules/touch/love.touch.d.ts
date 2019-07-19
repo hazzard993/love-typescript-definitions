@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface to touch-screen presses.
      * @noSelf
@@ -33,7 +32,5 @@ declare namespace love {
          * @link [love.touch.getTouches](https://love2d.org/wiki/love.touch.getTouches)
          */
         export function getTouches(): Array<LightUserData<"Touch">>;
-
     }
-
 }

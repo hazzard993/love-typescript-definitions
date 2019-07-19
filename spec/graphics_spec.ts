@@ -341,8 +341,8 @@ love.graphics.printf;
 love.graphics.printf("Hello", 8, 8, 400);
 love.graphics.printf([[1, 0, 0, 1], "Hello"], 8, 8, 400);
 love.graphics.printf("This text is aligned right, and wraps when it gets too big.", 25, 25, 125, "right");
-love.graphics.printf("This text is aligned center",100, 100, 200,"center");
-love.graphics.printf("This text is aligned right",100, 100, 200,"right");
+love.graphics.printf("This text is aligned center", 100, 100, 200, "center");
+love.graphics.printf("This text is aligned right", 100, 100, 200, "right");
 love.graphics.rectangle;
 love.graphics.stencil;
 

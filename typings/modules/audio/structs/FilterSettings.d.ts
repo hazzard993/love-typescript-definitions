@@ -4,7 +4,6 @@
  * @link [Source:getFilter](https://love2d.org/wiki/Source:getFilter)
  */
 declare interface FilterSettings {
-
     /**
      * The type of filter to use.
      */
@@ -30,5 +29,4 @@ declare interface FilterSettings {
      * Must be between `0` and `1`.
      */
     lowgain?: number;
-
 }

@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Gets the current running version of LÖVE.
      * ```ts
@@ -34,5 +33,4 @@ declare namespace love {
      * @link [love.hasDeprecationOutput](https://love2d.org/wiki/love.hasDeprecationOutput)
      */
     export function hasDeprecationOutput(): boolean;
-
 }

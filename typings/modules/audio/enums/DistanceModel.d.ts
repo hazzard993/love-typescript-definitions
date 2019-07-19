@@ -15,7 +15,8 @@
  * @link [DistanceModel](https://love2d.org/wiki/DistanceModel)
  * @since 0.8.0
  */
-declare type DistanceModel = "none"
+declare type DistanceModel =
+    | "none"
     | "inverse"
     | "inverseclamped"
     | "linear"

@@ -3,4 +3,4 @@
  * looks.
  * @link [MessageBoxType](https://love2d.org/wiki/MessageBoxType)
  */
-declare type MessageBoxType = 'info' | 'warning' | 'error';
+declare type MessageBoxType = "info" | "warning" | "error";

@@ -1,12 +1,10 @@
 declare namespace love {
-
     /**
      * Allows you to work with fonts.
      * @noSelf
      * @link [love.font](https://love2d.org/wiki/love.font)
      */
     export namespace font {
-
         /**
          * Creates a new BMFont Rasterizer.
          * @param imageData The image data containing the drawable pictures of font glyphs.
@@ -50,7 +48,5 @@ declare namespace love {
          * @link [love.font.newTrueTypeRasterizer](https://love2d.org/wiki/love.font.newTrueTypeRasterizer)
          */
         export function newTrueTypeRasterizer(size: number, hinting_mode: HintingMode): Rasterizer;
-
     }
-
 }

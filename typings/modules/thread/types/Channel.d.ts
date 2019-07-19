@@ -3,7 +3,6 @@
  * @link [Channel](https://love2d.org/wiki/Channel)
  */
 declare interface Channel extends LoveObject<"Channel"> {
-
     /**
      * Clears all the messages in the Channel queue.
      *
@@ -132,5 +131,4 @@ declare interface Channel extends LoveObject<"Channel"> {
      * @link [Channel:supply](https://love2d.org/wiki/Channel:supply)
      */
     supply(value: any, timeout: number): boolean;
-
 }

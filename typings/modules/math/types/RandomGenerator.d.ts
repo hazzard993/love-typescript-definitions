@@ -108,5 +108,4 @@ declare interface RandomGenerator extends LoveObject<"RandomGenerator"> {
      * @link [RandomGenerator:setState](https://love2d.org/wiki/RandomGenerator:setState)
      */
     setState(state: string): void;
-
 }

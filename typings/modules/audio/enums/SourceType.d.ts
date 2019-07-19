@@ -9,6 +9,4 @@
  *
  * @link [SourceType](https://love2d.org/wiki/SourceType)
  */
-declare type SourceType = "static"
-    | "stream"
-    | "queue";
+declare type SourceType = "static" | "stream" | "queue";

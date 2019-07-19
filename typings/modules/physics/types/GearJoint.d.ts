@@ -27,5 +27,4 @@ declare interface GearJoint extends Joint<"GearJoint"> {
      * @link [GearJoint:setRatio](https://love2d.org/wiki/GearJoint:setRatio)
      */
     setRatio(ratio: number): void;
-
 }

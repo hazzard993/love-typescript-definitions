@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides access to information about the user's system.
      * @noSelf
@@ -77,7 +76,5 @@ To open a file or folder, "file://" must be prepended to the path.
          * @link [love.system.vibrate](https://love2d.org/wiki/love.system.vibrate)
          */
         export function vibrate(seconds?: number): void;
-
     }
-
 }

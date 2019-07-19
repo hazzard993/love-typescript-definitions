@@ -189,7 +189,14 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * @tupleReturn
      * @link [Fixture:rayCast](https://love2d.org/wiki/Fixture:rayCast)
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, maxFraction: number, childIndex?: number): [number, number, number] | [undefined, undefined, undefined];
+    rayCast(
+        x1: number,
+        y1: number,
+        x2: number,
+        y2: number,
+        maxFraction: number,
+        childIndex?: number
+    ): [number, number, number] | [undefined, undefined, undefined];
 
     /**
      * Sets the categories the fixture belongs to. There can be up to 16 categories
@@ -311,5 +318,4 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * @link [Fixture:testPoint](https://love2d.org/wiki/Fixture:testPoint)
      */
     testPoint(x: number, y: number): boolean;
-
 }

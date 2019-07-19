@@ -50,5 +50,4 @@ declare interface DistanceJoint extends Joint<"DistanceJoint"> {
      * @link [DistanceJoint:setLength](https://love2d.org/wiki/DistanceJoint:setLength)
      */
     setLength(l: number): void;
-
 }

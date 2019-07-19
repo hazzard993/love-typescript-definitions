@@ -1,4 +1,5 @@
-type JointTypes = "DistanceJoint"
+type JointTypes =
+    | "DistanceJoint"
     | "FrictionJoint"
     | "GearJoint"
     | "MotorJoint"
@@ -108,5 +109,4 @@ declare interface Joint<T extends JointTypes = JointTypes> extends LoveObject<T>
      * @link [Joint:setUserData](https://love2d.org/wiki/Joint:setUserData)
      */
     setUserData(value: any): void;
-
 }

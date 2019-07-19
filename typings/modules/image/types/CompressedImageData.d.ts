@@ -73,5 +73,4 @@ declare interface CompressedImageData extends Data<"CompressedImageData"> {
      * @link [CompressedImageData:getWidth](https://love2d.org/wiki/CompressedImageData:getWidth)
      */
     getWidth(level: number): number;
-
 }

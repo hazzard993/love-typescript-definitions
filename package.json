@@ -1,32 +1,36 @@
 {
-  "name": "love-typescript-definitions",
-  "version": "0.14.0",
-  "description": "Write LÖVE 2D projects with TypeScript",
-  "scripts": {
-    "test": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts && tstl -p spec/tsconfig.json",
-    "clean": "rm spec/*.lua"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hazzard993/love-typescript-definitions.git"
-  },
-  "keywords": [
-    "love2d",
-    "love",
-    "lua",
-    "typescript"
-  ],
-  "license": "MIT",
-  "types": "typings",
-  "bugs": {
-    "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
-  },
-  "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
-  "files": [
-    "**/**.d.ts"
-  ],
-  "devDependencies": {
-    "tslint": "^5.16.0",
-    "typescript-to-lua": "^0.23.0"
-  }
+    "name": "love-typescript-definitions",
+    "version": "0.14.0",
+    "description": "Write LÖVE 2D projects with TypeScript",
+    "scripts": {
+        "test": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts && tstl -p spec/tsconfig.json",
+        "lint:prettier": "prettier --check \"**/*.{js,ts,yml,json,md}\" || (echo 'Run `npm run fix:prettier` to fix it.' && exit 1)",
+        "lint:tslint": "tslint -p . && tslint -p test && tslint -p src/lualib",
+        "fix:prettier": "prettier --check --write \"**/*.{js,ts,yml,json,md}\"",
+        "clean": "rm spec/*.lua"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hazzard993/love-typescript-definitions.git"
+    },
+    "keywords": [
+        "love2d",
+        "love",
+        "lua",
+        "typescript"
+    ],
+    "license": "MIT",
+    "types": "typings",
+    "bugs": {
+        "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
+    },
+    "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
+    "files": [
+        "**/**.d.ts"
+    ],
+    "devDependencies": {
+        "prettier": "^1.18.2",
+        "tslint": "^5.16.0",
+        "typescript-to-lua": "^0.23.0"
+    }
 }

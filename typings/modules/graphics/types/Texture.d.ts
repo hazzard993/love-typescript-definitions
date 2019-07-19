@@ -9,7 +9,6 @@ type TextureTypes = "Canvas" | "Image";
  * @link [Texture](https://love2d.org/wiki/Texture)
  */
 declare interface Texture<T extends TextureTypes = TextureTypes> extends Drawable<T> {
-
     /**
      * Gets the DPI scale factor of the Texture.
      * @return dpiscale, The DPI scale factor of the Texture.
@@ -195,5 +194,4 @@ declare interface Texture<T extends TextureTypes = TextureTypes> extends Drawabl
      * @link [Texture:setWrap](https://love2d.org/wiki/Texture:setWrap)
      */
     setWrap(horiz: WrapMode, vert: WrapMode): void;
-
 }

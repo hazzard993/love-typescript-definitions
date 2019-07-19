@@ -10,7 +10,6 @@ declare namespace love {
      * @link [Config Files](https://love2d.org/wiki/Config_Files)
      */
     export let conf: (t: {
-
         /**
          * This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created.
          *
@@ -37,16 +36,31 @@ declare namespace love {
          * Its default is the version of LÖVE running.
          * @default "11.2"
          */
-        version: "11.2" | "11.1" | "11.0"
-        | "0.10.2" | "0.10.1" | "0.10.0"
-        | "0.9.2" | "0.9.1" | "0.9.0"
-        | "0.8.0"
-        | "0.7.2" | "0.7.1" | "0.7.0"
-        | "0.6.2" | "0.6.1" | "0.6.0"
-        | "0.5.0" | "0.4.0"
-        | "0.3.2" | "0.3.1" | "0.3.0"
-        | "0.2.1" | "0.2.0"
-        | "0.1.1";
+        version:
+            | "11.2"
+            | "11.1"
+            | "11.0"
+            | "0.10.2"
+            | "0.10.1"
+            | "0.10.0"
+            | "0.9.2"
+            | "0.9.1"
+            | "0.9.0"
+            | "0.8.0"
+            | "0.7.2"
+            | "0.7.1"
+            | "0.7.0"
+            | "0.6.2"
+            | "0.6.1"
+            | "0.6.0"
+            | "0.5.0"
+            | "0.4.0"
+            | "0.3.2"
+            | "0.3.1"
+            | "0.3.0"
+            | "0.2.1"
+            | "0.2.0"
+            | "0.1.1";
 
         /**
          * Determines whether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal, or on Windows with LÖVE 0.10.2, by running `lovec.exe` instead of `love.exe`.
@@ -73,7 +87,6 @@ declare namespace love {
         gammacorrect: boolean;
 
         audio: {
-
             /**
              * Sets whether background audio / music from other apps should play while LÖVE is open.
              *
@@ -81,14 +94,12 @@ declare namespace love {
              * @default true
              */
             mixwithsystem: boolean;
-
         };
 
         /**
          * @link https://love2d.org/wiki/Config_Files#window
          */
         window: {
-
             /**
              * Sets the title of the window the game is in.
              *
@@ -199,7 +210,6 @@ declare namespace love {
              * @default undefined
              */
             y: number;
-
         };
 
         modules: {
@@ -310,9 +320,7 @@ declare namespace love {
              * @default true
              */
             window: boolean;
-
         };
-
     }) => void;
 
     /**
@@ -623,7 +631,14 @@ declare namespace love {
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchmoved](https://love2d.org/wiki/love.touchmoved)
      */
-    export let touchmoved: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
+    export let touchmoved: (
+        id: LightUserData<"Touch">,
+        x: number,
+        y: number,
+        dx: number,
+        dy: number,
+        pressure: number
+    ) => void;
 
     /**
      * Callback function triggered when the touch screen is touched.
@@ -636,7 +651,14 @@ declare namespace love {
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchpressed](https://love2d.org/wiki/love.touchpressed)
      */
-    export let touchpressed: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
+    export let touchpressed: (
+        id: LightUserData<"Touch">,
+        x: number,
+        y: number,
+        dx: number,
+        dy: number,
+        pressure: number
+    ) => void;
 
     /**
      * Callback function triggered when the touch screen stops being touched.
@@ -649,7 +671,14 @@ declare namespace love {
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchreleased](https://love2d.org/wiki/love.touchreleased)
      */
-    export let touchreleased: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
+    export let touchreleased: (
+        id: LightUserData<"Touch">,
+        x: number,
+        y: number,
+        dx: number,
+        dy: number,
+        pressure: number
+    ) => void;
 
     /**
      * Callback function used to update the state of the game every frame.
@@ -680,5 +709,4 @@ declare namespace love {
      * @link [love.wheelmoved](https://love2d.org/wiki/love.wheelmoved)
      */
     export let wheelmoved: (x: number, y: number) => void;
-
 }

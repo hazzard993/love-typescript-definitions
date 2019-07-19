@@ -121,5 +121,4 @@ declare interface Video extends Drawable<"Video"> {
      * @link [Video:tell](https://love2d.org/wiki/Video:tell)
      */
     tell(seconds: number): void;
-
 }

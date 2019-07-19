@@ -18,5 +18,4 @@ declare interface RopeJoint extends Joint<"RopeJoint"> {
      * @link [RopeJoint:setMaxLength](https://love2d.org/wiki/RopeJoint:setMaxLength)
      */
     setMaxLength(maxLength: number): void;
-
 }

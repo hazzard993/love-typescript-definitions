@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides system-independent mathematical functions.
      * @noSelf
@@ -271,7 +270,17 @@ declare namespace love {
          * @return transform, The new Transform object.
          * @link [love.math.newTransform](https://love2d.org/wiki/love.math.newTransform)
          */
-        export function newTransform(x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): Transform;
+        export function newTransform(
+            x: number,
+            y: number,
+            angle?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): Transform;
 
         /**
          * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
@@ -430,7 +439,5 @@ declare namespace love {
          */
         export function triangulate(polygon: Array<number>): Array<Array<number>>;
         export function triangulate(...polygon: Array<number>): Array<Array<number>>;
-
     }
-
 }

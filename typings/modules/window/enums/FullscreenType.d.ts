@@ -13,4 +13,4 @@
  * "desktop" fullscreen mode generally avoids these issues.
  * @link [FullscreenType](https://love2d.org/wiki/FullscreenType)
  */
-declare type FullscreenType = 'desktop' | 'exclusive';
+declare type FullscreenType = "desktop" | "exclusive";

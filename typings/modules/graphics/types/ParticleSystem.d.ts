@@ -362,7 +362,13 @@ declare interface ParticleSystem extends Drawable {
      * @param directionRelativeToCenter The type of distribution for new particles. (Default false)
      * @link [ParticleSystem:setEmissionArea](https://love2d.org/wiki/ParticleSystem:setEmissionArea)
      */
-    setEmissionArea(distribution: AreaSpreadDistribution, dx: number, dy: number, angle?: number, directionRelativeToCenter?: boolean): void;
+    setEmissionArea(
+        distribution: AreaSpreadDistribution,
+        dx: number,
+        dy: number,
+        angle?: number,
+        directionRelativeToCenter?: boolean
+    ): void;
 
     /**
      * Sets the amount of particles emitted per second.
@@ -588,5 +594,4 @@ declare interface ParticleSystem extends Drawable {
      * @link [ParticleSystem:update](https://love2d.org/wiki/ParticleSystem:update)
      */
     update(dt: number): void;
-
 }

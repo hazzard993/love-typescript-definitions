@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface to the user's keyboard.
      * @noSelf
@@ -116,7 +115,5 @@ declare namespace love {
          * @link [love.keyboard.setTextInput](https://love2d.org/wiki/love.keyboard.setTextInput)
          */
         export function setTextInput(enable: boolean, x: number, y: number, w: number, h: number): void;
-
     }
-
 }

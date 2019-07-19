@@ -40,7 +40,12 @@ declare interface World extends LoveObject<"World"> {
      * @tupleReturn
      * @link [World:getCallbacks](https://love2d.org/wiki/World:getCallbacks)
      */
-    getCallbacks(): [(this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any, (this: void, ...args: Array<any>) => any];
+    getCallbacks(): [
+        (this: void, ...args: Array<any>) => any,
+        (this: void, ...args: Array<any>) => any,
+        (this: void, ...args: Array<any>) => any,
+        (this: void, ...args: Array<any>) => any
+    ];
 
     /**
      * Returns the number of contacts in the world.
@@ -129,7 +134,13 @@ declare interface World extends LoveObject<"World"> {
      * @param callback This function gets passed one argument, the fixture, and should return a boolean. The search will continue if it is true or stop if it is false.
      * @link [World:queryBoundingBox](https://love2d.org/wiki/World:queryBoundingBox)
      */
-    queryBoundingBox(topLeftX: number, topLeftY: number, bottomRightX: number, bottomRightY: number, callback: Function): void;
+    queryBoundingBox(
+        topLeftX: number,
+        topLeftY: number,
+        bottomRightX: number,
+        bottomRightY: number,
+        callback: Function
+    ): void;
 
     /**
      * Casts a ray and calls a function for each fixtures it intersects.
@@ -141,7 +152,13 @@ declare interface World extends LoveObject<"World"> {
      * @param callback This function gets six arguments and should return a number.
      * @link [World:rayCast](https://love2d.org/wiki/World:rayCast)
      */
-    rayCast(x1: number, y1: number, x2: number, y2: number, callback: (this: void, fix: Fixture, x: number, y: number, xn: number, yn: number, frac: number) => number): void;
+    rayCast(
+        x1: number,
+        y1: number,
+        x2: number,
+        y2: number,
+        callback: (this: void, fix: Fixture, x: number, y: number, xn: number, yn: number, frac: number) => number
+    ): void;
 
     /**
      * Sets functions for the collision callbacks during the world update.
@@ -161,7 +178,12 @@ declare interface World extends LoveObject<"World"> {
      * @param postSolve Gets called after the collision has been resolved.
      * @link [World:setCallbacks](https://love2d.org/wiki/World:setCallbacks)
      */
-    setCallbacks(beginContact?: (this: void, ...args: Array<any>) => any, endContact?: (this: void, ...args: Array<any>) => any, preSolve?: (this: void, ...args: Array<any>) => any, postSolve?: (this: void, ...args: Array<any>) => any): void;
+    setCallbacks(
+        beginContact?: (this: void, ...args: Array<any>) => any,
+        endContact?: (this: void, ...args: Array<any>) => any,
+        preSolve?: (this: void, ...args: Array<any>) => any,
+        postSolve?: (this: void, ...args: Array<any>) => any
+    ): void;
 
     /**
      * Sets a function for collision filtering.
@@ -218,5 +240,4 @@ declare interface World extends LoveObject<"World"> {
      * @link [World:update](https://love2d.org/wiki/World:update)
      */
     update(dt: number, velocityiterations?: number, positioniterations?: number): void;
-
 }

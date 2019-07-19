@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface to the user's clock.
      * @noSelf
@@ -56,7 +55,5 @@ declare namespace love {
          * @link [love.timer.step](https://love2d.org/wiki/love.timer.step)
          */
         export function step(): number;
-
     }
-
 }

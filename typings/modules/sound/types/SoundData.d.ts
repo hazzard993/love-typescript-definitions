@@ -67,5 +67,4 @@ declare interface SoundData extends Data<"SoundData"> {
      * @link [SoundData:setSample](https://love2d.org/wiki/SoundData:setSample)
      */
     setSample(i: number, sample: number): void;
-
 }

@@ -3,7 +3,6 @@
  * @link [Source](https://love2d.org/wiki/Source)
  */
 declare interface Source extends LoveObject<"Source"> {
-
     /**
      * Creates an identical copy of the Source in the stopped state.
      * @return source, The new identical copy of this Source.
@@ -96,7 +95,7 @@ declare interface Source extends LoveObject<"Source"> {
      * @link [Source:getEffect](https://love2d.org/wiki/Source:getEffect)
      * @since 11.0
      */
-    getEffect(name: string, filtersettings?: object): { volume: number, highgain: number, lowgain: number } | undefined;
+    getEffect(name: string, filtersettings?: object): { volume: number; highgain: number; lowgain: number } | undefined;
 
     /**
      * Gets the filter settings currently applied to the Source.
@@ -402,5 +401,4 @@ declare interface Source extends LoveObject<"Source"> {
      * @since 0.8.0
      */
     tell(unit?: TimeUnit): number;
-
 }

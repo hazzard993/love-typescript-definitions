@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Allows you to work with threads.
      * @noSelf
@@ -53,7 +52,5 @@ declare namespace love {
          * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
          */
         export function newThread(codestring: string): Thread;
-
     }
-
 }

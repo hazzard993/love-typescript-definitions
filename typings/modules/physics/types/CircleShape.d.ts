@@ -37,5 +37,4 @@ declare interface CircleShape extends Shape<"CircleShape"> {
      * @link [CircleShape:setRadius](https://love2d.org/wiki/CircleShape:setRadius)
      */
     setRadius(radius: number): void;
-
 }

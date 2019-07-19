@@ -3,7 +3,6 @@
  * @link [Canvas](https://love2d.org/wiki/Canvas)
  */
 declare interface Canvas extends Texture<"Canvas"> {
-
     /**
      * Generates mipmaps for the Canvas, based on the contents of the highest-resolution mipmap level.
      *
@@ -45,7 +44,14 @@ declare interface Canvas extends Texture<"Canvas"> {
      * @param height The height in pixels of the area within the Canvas to capture.
      * @return data, The new ImageData made from the Canvas' contents.
      */
-    newImageData(slice: number, mipmap: number | undefined, x: number, y: number, width: number, height: number): ImageData;
+    newImageData(
+        slice: number,
+        mipmap: number | undefined,
+        x: number,
+        y: number,
+        width: number,
+        height: number
+    ): ImageData;
 
     /**
      * Render to the Canvas using a function.
@@ -54,5 +60,4 @@ declare interface Canvas extends Texture<"Canvas"> {
      * @link [Canvas:renderTo](https://love2d.org/wiki/Canvas:renderTo)
      */
     renderTo(func: (this: void) => void): void;
-
 }

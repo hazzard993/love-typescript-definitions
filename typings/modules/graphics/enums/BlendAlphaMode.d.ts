@@ -3,4 +3,4 @@
  * Formulas for additional notes.
  * @link [BlendAlphaMode](https://love2d.org/wiki/BlendAlphaMode)
  */
-declare type BlendAlphaMode = 'alphamultiply' | 'premultiplied';
+declare type BlendAlphaMode = "alphamultiply" | "premultiplied";

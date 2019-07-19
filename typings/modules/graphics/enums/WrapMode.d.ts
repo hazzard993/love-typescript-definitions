@@ -5,4 +5,4 @@
  * using it to sample from texture coordinates outside of the range of [0, 1].
  * @link [WrapMode](https://love2d.org/wiki/WrapMode)
  */
-declare type WrapMode = 'clamp' | 'repeat' | 'mirroredrepeat' | 'clampzero';
+declare type WrapMode = "clamp" | "repeat" | "mirroredrepeat" | "clampzero";

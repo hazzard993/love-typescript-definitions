@@ -49,5 +49,4 @@ declare interface Thread extends LoveObject<"Thread"> {
      * @link [Thread:isRunning](https://love2d.org/wiki/Thread:isRunning)
      */
     isRunning(): boolean;
-
 }

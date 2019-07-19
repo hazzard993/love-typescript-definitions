@@ -102,5 +102,4 @@ declare interface ChainShape extends Shape<"ChainShape"> {
      * @link [ChainShape:setPreviousVertex](https://love2d.org/wiki/ChainShape:setPreviousVertex)
      */
     setPreviousVertex(x: number, y: number): void;
-
 }

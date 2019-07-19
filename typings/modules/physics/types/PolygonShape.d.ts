@@ -33,5 +33,4 @@ declare interface PolygonShape extends Shape<"PolygonShape"> {
      * @link [PolygonShape:validate](https://love2d.org/wiki/PolygonShape:validate)
      */
     validate(): boolean;
-
 }

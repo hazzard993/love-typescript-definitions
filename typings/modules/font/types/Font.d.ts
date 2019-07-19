@@ -3,7 +3,6 @@
  * @link [Font](https://love2d.org/wiki/Font)
  */
 declare interface Font extends LoveObject<"Font"> {
-
     /**
      * Gets the ascent of the Font. The ascent spans the distance between the baseline
      * and the top of the glyph that reaches farthest from the baseline.
@@ -131,5 +130,4 @@ declare interface Font extends LoveObject<"Font"> {
      * @link [Canvas:setLineHeight](https://love2d.org/wiki/Canvas:setLineHeight)
      */
     setLineHeight(height: number): void;
-
 }

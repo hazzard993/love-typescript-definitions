@@ -4,7 +4,6 @@
  * @link [Shader](https://love2d.org/wiki/Shader)
  */
 declare interface Shader<U extends { [key: string]: any } | undefined = undefined> extends LoveObject<"Shader"> {
-
     /**
      * Returns any warning and error messages from compiling the shader code. This can
      * be used for debugging your shaders if there's anything the graphics hardware
@@ -39,7 +38,10 @@ declare interface Shader<U extends { [key: string]: any } | undefined = undefine
      * @param ... Additional numbers to send if the uniform variable is an array.
      * @link [Shader:send](https://love2d.org/wiki/Shader:send)
      */
-    send<N extends keyof U>(name: U extends undefined ? string : N, ...values: U extends undefined ? Array<any> : U[N]): void;
+    send<N extends keyof U>(
+        name: U extends undefined ? string : N,
+        ...values: U extends undefined ? Array<any> : U[N]
+    ): void;
 
     /**
      * Sends one or more colors to a special (extern / uniform) vec3 or vec4 variable
@@ -51,6 +53,8 @@ declare interface Shader<U extends { [key: string]: any } | undefined = undefine
      * @param colors A table with `[red, green, blue, and optional alpha color]` components in the range of `[0, 1]` to send to the extern as a vector.
      * @link [Shader:sendColor](https://love2d.org/wiki/Shader:sendColor)
      */
-    sendColor<N extends keyof U>(name: U extends undefined ? string : N, ...colors: Array<[number, number, number, number?]>): void;
-
+    sendColor<N extends keyof U>(
+        name: U extends undefined ? string : N,
+        ...colors: Array<[number, number, number, number?]>
+    ): void;
 }

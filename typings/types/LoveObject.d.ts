@@ -5,7 +5,6 @@
  * @link [Object](https://love2d.org/wiki/Object)
  */
 declare interface LoveObject<T extends keyof LoveObjects = keyof LoveObjects> {
-
     __opaque: never;
 
     /**
@@ -34,5 +33,4 @@ declare interface LoveObject<T extends keyof LoveObjects = keyof LoveObjects> {
      * @link [Object:typeOf](https://love2d.org/wiki/Object:typeOf)
      */
     typeOf<T extends keyof LoveObjects>(name: T): this is LoveObjects[T];
-
 }

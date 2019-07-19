@@ -30,15 +30,13 @@ then link them up to a `tsconfig.json` file.
 
 ```json
 {
-    "compilerOptions": {
-        "lib": ["esnext"],
-        "types": [
-            "love-typescript-definitions"
-        ]
-    },
-    "tstl": {
-        "luaTarget": "JIT"
-    }
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "types": ["love-typescript-definitions"]
+  },
+  "tstl": {
+    "luaTarget": "JIT"
+  }
 }
 ```
 
@@ -58,9 +56,11 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 - [UTF-8](https://github.com/hazzard993/tstl-utf8) the utf8 module included with LÖVE 2D.
 
 ## Try the Transpiler and Definitions Online
+
 You'll be able to see what the TypescriptToLua transpiler creates as Lua code.
 
 This can be used in a `main.lua` file for a LÖVE 2D game or [run online](https://schellingb.github.io/LoveWebBuilder/run-code).
+
 - [LÖVE 2D Hello World](https://bit.ly/2IlhMLo)
 - [Classes, Autocomplete and Editor Tooltips](https://bit.ly/2Ik5bYZ)
 - [Near Empty Editor](https://bit.ly/2XRAX4T) for playing around

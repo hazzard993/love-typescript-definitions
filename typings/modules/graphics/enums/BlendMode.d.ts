@@ -3,4 +3,4 @@
  * Formulas for additional notes.
  * @link [BlendMode](https://love2d.org/wiki/BlendMode)
  */
-declare type BlendMode = 'alpha' | 'replace' | 'screen' | 'add' | 'subtract' | 'multiply' | 'lighten' | 'darken';
+declare type BlendMode = "alpha" | "replace" | "screen" | "add" | "subtract" | "multiply" | "lighten" | "darken";

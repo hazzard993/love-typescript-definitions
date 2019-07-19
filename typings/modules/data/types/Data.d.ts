@@ -1,4 +1,5 @@
-type DataTypes = "ByteData"
+type DataTypes =
+    | "ByteData"
     | "FileData"
     | "GlyphData"
     | "CompressedImageData"
@@ -11,7 +12,6 @@ type DataTypes = "ByteData"
  * @link [Data](https://love2d.org/wiki/Data)
  */
 declare interface Data<T extends DataTypes = DataTypes> extends LoveObject<T> {
-
     /**
      * Creates a new copy of the Data object.
      * @return clone, The new copy.
@@ -41,5 +41,4 @@ declare interface Data<T extends DataTypes = DataTypes> extends LoveObject<T> {
      * @since 0.9.0
      */
     getString(): string;
-
 }

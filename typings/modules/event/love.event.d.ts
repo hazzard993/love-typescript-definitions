@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Manages events, like keypresses.
      * @noSelf
@@ -7,7 +6,6 @@ declare namespace love {
      * @since 0.6.0
      */
     export namespace event {
-
         /**
          * Clears the event queue.
          * @link [love.event.clear](https://love2d.org/wiki/love.event.clear)
@@ -66,7 +64,5 @@ declare namespace love {
          * @since 0.6.0
          */
         export function wait(): [string, ...Array<any>];
-
     }
-
 }

@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * The primary responsibility for the love.graphics module is the drawing of
      * lines, shapes, text, Images and other Drawable objects onto the screen. Its
@@ -38,7 +37,15 @@ declare namespace love {
          * @param segments The number of segments used for drawing the arc.
          * @link [love.graphics.arc](https://love2d.org/wiki/love.graphics.arc)
          */
-        export function arc(drawmode: DrawMode, x: number, y: number, radius: number, angle1: number, angle2: number, segments?: number): void;
+        export function arc(
+            drawmode: DrawMode,
+            x: number,
+            y: number,
+            radius: number,
+            angle1: number,
+            angle2: number,
+            segments?: number
+        ): void;
 
         /**
          * Draws a filled or unfilled arc at position (x, y). The arc is drawn from angle1
@@ -55,7 +62,16 @@ declare namespace love {
          * @param segments The number of segments used for drawing the arc.
          * @link [love.graphics.arc](https://love2d.org/wiki/love.graphics.arc)
          */
-        export function arc(drawmode: DrawMode, arctype: ArcType, x: number, y: number, radius: number, angle1: number, angle2: number, segments?: number): void;
+        export function arc(
+            drawmode: DrawMode,
+            arctype: ArcType,
+            x: number,
+            y: number,
+            radius: number,
+            angle1: number,
+            angle2: number,
+            segments?: number
+        ): void;
 
         /**
          * Applies the given Transform object to the current coordinate transformation.
@@ -123,27 +139,28 @@ declare namespace love {
          * @return image, An Array Image object.
          * @link [love.graphics.newArrayImage](https://love2d.org/wiki/love.graphics.newArrayImage)
          */
-        export function newArrayImage(slices: Array<ImageInformation>, settings?: {
+        export function newArrayImage(
+            slices: Array<ImageInformation>,
+            settings?: {
+                /**
+                 * True to make the image use mipmaps, false to disable them. Mipmaps will be automatically generated if the image isn't a compressed texture format.
+                 * @default false
+                 */
+                mipmaps?: boolean;
 
-            /**
-             * True to make the image use mipmaps, false to disable them. Mipmaps will be automatically generated if the image isn't a compressed texture format.
-             * @default false
-             */
-            mipmaps?: boolean;
+                /**
+                 * True to treat the image's pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.
+                 * @default false
+                 */
+                linear?: boolean;
 
-            /**
-             * True to treat the image's pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.
-             * @default false
-             */
-            linear?: boolean;
-
-            /**
-             * The DPI scale to use when drawing the array image and calling getWidth/getHeight.
-             * @default 1
-             */
-            dpiscale?: number;
-
-        }): Image;
+                /**
+                 * The DPI scale to use when drawing the array image and calling getWidth/getHeight.
+                 * @default 1
+                 */
+                dpiscale?: number;
+            }
+        ): Image;
 
         /**
          * Draws a circle.
@@ -184,7 +201,14 @@ declare namespace love {
          * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default `true`)
          * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
-        export function clear(r: number, g: number, b: number, a?: number, clearstencil?: boolean, cleardepth?: boolean): void;
+        export function clear(
+            r: number,
+            g: number,
+            b: number,
+            a?: number,
+            clearstencil?: boolean,
+            cleardepth?: boolean
+        ): void;
 
         /**
          * Clears multiple screens to an associated background color.
@@ -194,8 +218,10 @@ declare namespace love {
          * @param cleardepth Second following boolean value. Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default: true)
          * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
          */
-        export function clear(color: [number, number, number, number], ...remainingArgs: Array<[number, number, number, number] | boolean | number>): void;
-
+        export function clear(
+            color: [number, number, number, number],
+            ...remainingArgs: Array<[number, number, number, number] | boolean | number>
+        ): void;
 
         /**
          * Clears the stencil or depth buffers without having to clear the color canvas as well.
@@ -258,7 +284,18 @@ declare namespace love {
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
          */
-        export function draw(drawable: Drawable, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function draw(
+            drawable: Drawable,
+            x?: number,
+            y?: number,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
 
         /**
          * Draws the specified Quadrant of the specified Texture.
@@ -275,7 +312,19 @@ declare namespace love {
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
          */
-        export function draw(texture: Texture, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function draw(
+            texture: Texture,
+            quad: Quad,
+            x?: number,
+            y?: number,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
 
         /**
          * Draws the specified Texture with the specified Transformation to be applied to it.
@@ -321,7 +370,19 @@ declare namespace love {
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.drawInstanced](https://love2d.org/wiki/love.graphics.drawInstanced)
          */
-        export function drawInstanced(mesh: Mesh, instancecount: number, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function drawInstanced(
+            mesh: Mesh,
+            instancecount: number,
+            x?: number,
+            y?: number,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
 
         /**
          * Draws many instances of a Mesh with a single draw call, using hardware geometry
@@ -360,7 +421,19 @@ declare namespace love {
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.drawLayer](https://love2d.org/wiki/love.graphics.drawLayer)
          */
-        export function drawLayer(texture: Texture, layerindex: number, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function drawLayer(
+            texture: Texture,
+            layerindex: number,
+            x?: number,
+            y?: number,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
 
         /**
          * Draws a layer of an Array Texture.
@@ -379,7 +452,20 @@ declare namespace love {
          * @param ky Shearing factor (y-axis).
          * @link [love.graphics.drawLayer](https://love2d.org/wiki/love.graphics.drawLayer)
          */
-        export function drawLayer(texture: Texture, layerindex: number, quad: Quad, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function drawLayer(
+            texture: Texture,
+            layerindex: number,
+            quad: Quad,
+            x?: number,
+            y?: number,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
 
         /**
          * Draws a layer of an Array Texture.
@@ -425,7 +511,14 @@ declare namespace love {
          * @param segments The number of segments used for drawing the ellipse.
          * @link [love.graphics.ellipse](https://love2d.org/wiki/love.graphics.ellipse)
          */
-        export function ellipse(mode: DrawMode, x: number, y: number, radiusx: number, radiusy: number, segments: number): void;
+        export function ellipse(
+            mode: DrawMode,
+            x: number,
+            y: number,
+            radiusx: number,
+            radiusy: number,
+            segments: number
+        ): void;
 
         /**
          * Immediately renders any pending automatically batched draws.
@@ -965,7 +1058,17 @@ declare namespace love {
          * @return image, An cubemap Image object.
          * @link [love.graphics.newCubeImage](https://love2d.org/wiki/love.graphics.newCubeImage)
          */
-        export function newCubeImage(faces: [ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation, ImageInformation], settings?: ImageSettings): Image;
+        export function newCubeImage(
+            faces: [
+                ImageInformation,
+                ImageInformation,
+                ImageInformation,
+                ImageInformation,
+                ImageInformation,
+                ImageInformation
+            ],
+            settings?: ImageSettings
+        ): Image;
 
         /**
          * Create a new BMFont or TrueType font.
@@ -1025,7 +1128,11 @@ declare namespace love {
          * @return mesh, The new Mesh.
          * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
-        export function newMesh(vertices: Array<VertexInformation>, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+        export function newMesh(
+            vertices: Array<VertexInformation>,
+            mode?: MeshDrawMode,
+            usage?: SpriteBatchUsage
+        ): Mesh;
 
         /**
          * Creates a standard Mesh with the specified number of vertices.
@@ -1046,7 +1153,12 @@ declare namespace love {
          * @return mesh, The new Mesh.
          * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
-        export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertices: Array<Array<any>>, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+        export function newMesh<T extends MeshVertexDataType>(
+            vertexformat: Array<VertexAttribute<T>>,
+            vertices: Array<Array<any>>,
+            mode?: MeshDrawMode,
+            usage?: SpriteBatchUsage
+        ): Mesh;
 
         /**
          * Creates a Mesh with custom vertex attributes and the specified number of vertices.
@@ -1057,7 +1169,12 @@ declare namespace love {
          * @return mesh, The new Mesh.
          * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
          */
-        export function newMesh<T extends MeshVertexDataType>(vertexformat: Array<VertexAttribute<T>>, vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+        export function newMesh<T extends MeshVertexDataType>(
+            vertexformat: Array<VertexAttribute<T>>,
+            vertexcount: number,
+            mode?: MeshDrawMode,
+            usage?: SpriteBatchUsage
+        ): Mesh;
 
         /**
          * Creates a new Image from the image at the specified filename.
@@ -1092,16 +1209,19 @@ declare namespace love {
          * @return image, A new Image object which can be drawn on screen.
          * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
          */
-        export function newImage(filename: string | FileData | ImageData | CompressedImageData, flags: {
-            /**
-             * True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
-             */
-            linear?: boolean;
-            /**
-             * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
-             */
-            mipmaps?: boolean | Array<string>;
-        }): Image;
+        export function newImage(
+            filename: string | FileData | ImageData | CompressedImageData,
+            flags: {
+                /**
+                 * True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
+                 */
+                linear?: boolean;
+                /**
+                 * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+                 */
+                mipmaps?: boolean | Array<string>;
+            }
+        ): Image;
 
         /**
          * Creates a new Font by loading a specifically formatted image file.
@@ -1255,16 +1375,19 @@ declare namespace love {
          * @return video, A new Video.
          * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
          */
-        export function newVideo(filename: string | VideoStream, settings?: {
-            /**
-             * Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio. (Default: false)
-             */
-            audio?: boolean;
-            /**
-             * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
-             */
-            dpiscale?: number;
-        }): Video;
+        export function newVideo(
+            filename: string | VideoStream,
+            settings?: {
+                /**
+                 * Whether to try to load the video's audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio. (Default: false)
+                 */
+                audio?: boolean;
+                /**
+                 * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
+                 */
+                dpiscale?: number;
+            }
+        ): Video;
 
         /**
          * Creates a new volume (3D) Image.
@@ -1301,7 +1424,9 @@ declare namespace love {
          */
         export function points(...points: Array<number>): void;
         export function points(points: Array<number>): void;
-        export function points(points: Array<[number, number] | [number, number, number, number, number, number]>): void;
+        export function points(
+            points: Array<[number, number] | [number, number, number, number, number, number]>
+        ): void;
 
         /**
          * Draw a polygon.
@@ -1362,7 +1487,18 @@ declare namespace love {
          * @param ky Shear factor (y-axis).
          * @link [love.graphics.print](https://love2d.org/wiki/love.graphics.print)
          */
-        export function print(text: string | ColouredText, x?: number, y?: number, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function print(
+            text: string | ColouredText,
+            x?: number,
+            y?: number,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
         export function print(text: string | ColouredText, transform: Transform): void;
 
         /**
@@ -1373,10 +1509,66 @@ declare namespace love {
          * ```
          * @link [love.graphics.printf](https://love2d.org/wiki/love.graphics.printf)
          */
-        export function printf(text: string | ColouredText, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-        export function printf(text: string | ColouredText, font: Font, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-        export function printf(text: string | ColouredText, transform: Transform, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
-        export function printf(text: string | ColouredText, font: Font, transform: Transform, x: number, y: number, limit: number, align?: AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): void;
+        export function printf(
+            text: string | ColouredText,
+            x: number,
+            y: number,
+            limit: number,
+            align?: AlignMode,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
+        export function printf(
+            text: string | ColouredText,
+            font: Font,
+            x: number,
+            y: number,
+            limit: number,
+            align?: AlignMode,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
+        export function printf(
+            text: string | ColouredText,
+            transform: Transform,
+            x: number,
+            y: number,
+            limit: number,
+            align?: AlignMode,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
+        export function printf(
+            text: string | ColouredText,
+            font: Font,
+            transform: Transform,
+            x: number,
+            y: number,
+            limit: number,
+            align?: AlignMode,
+            r?: number,
+            sx?: number,
+            sy?: number,
+            ox?: number,
+            oy?: number,
+            kx?: number,
+            ky?: number
+        ): void;
 
         /**
          * Copies and pushes the current coordinate transformation to the transformation
@@ -1419,7 +1611,16 @@ declare namespace love {
          * @param segments The number of segments used for drawing the round corners. A default amount will be chosen if no number is given.
          * @link [love.graphics.rectangle](https://love2d.org/wiki/love.graphics.rectangle)
          */
-        export function rectangle(mode: DrawMode, x: number, y: number, width: number, height: number, rx: number, ry?: number, segments?: number): void;
+        export function rectangle(
+            mode: DrawMode,
+            x: number,
+            y: number,
+            width: number,
+            height: number,
+            rx: number,
+            ry?: number,
+            segments?: number
+        ): void;
 
         /**
          * Replaces the current coordinate transformation with the given Transform object.
@@ -1845,7 +2046,12 @@ declare namespace love {
          * @param keepvalues True to preserve old stencil values of pixels, false to re-set every pixel's stencil value to 0 before executing the stencil function. love.graphics.clear will also re-set all stencil values.
          * @link [love.graphics.stencil](https://love2d.org/wiki/love.graphics.stencil)
          */
-        export function stencil(stencilfunction: () => void, action?: StencilAction, value?: number, keepvalues?: boolean): void;
+        export function stencil(
+            stencilfunction: () => void,
+            action?: StencilAction,
+            value?: number,
+            keepvalues?: boolean
+        ): void;
 
         /**
          * Converts the given 2D position from global coordinates into screen-space.
@@ -1925,8 +2131,10 @@ declare namespace love {
          * @link [love.graphics.validateShader](https://love2d.org/wiki/love.graphics.validateShader)
          * @since 11.0
          */
-        export function validateShader(gles: boolean, pixelcode: string, vertexcode: string): [true, undefined] | [false, string];
-
+        export function validateShader(
+            gles: boolean,
+            pixelcode: string,
+            vertexcode: string
+        ): [true, undefined] | [false, string];
     }
-
 }

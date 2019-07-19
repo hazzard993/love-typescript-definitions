@@ -798,5 +798,4 @@ declare interface Body extends LoveObject<"Body"> {
      * @link [Body:setY](https://love2d.org/wiki/Body:setY)
      */
     setY(y: number): void;
-
 }

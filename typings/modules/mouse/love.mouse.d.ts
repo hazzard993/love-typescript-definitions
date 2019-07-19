@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface to the user's mouse.
      * @noSelf
@@ -274,7 +273,5 @@ declare namespace love {
          * @link [love.mouse.setY](https://love2d.org/wiki/love.mouse.setY)
          */
         export function setY(y: number): void;
-
     }
-
 }

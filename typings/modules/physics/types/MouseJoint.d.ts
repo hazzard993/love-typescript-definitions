@@ -69,5 +69,4 @@ declare interface MouseJoint extends Joint<"MouseJoint"> {
      * @link [MouseJoint:setTarget](https://love2d.org/wiki/MouseJoint:setTarget)
      */
     setTarget(x: number, y: number): void;
-
 }

@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface for modifying and retrieving information about the
      * program's window.
@@ -137,7 +136,7 @@ declare namespace love {
          * @return modes, A table of width/height pairs. (Note that this may not be in order.)
          * @link [love.window.getFullscreenModes](https://love2d.org/wiki/love.window.getFullscreenModes)
          */
-        export function getFullscreenModes(display?: number): Array<{ width: number, height: number }>;
+        export function getFullscreenModes(display?: number): Array<{ width: number; height: number }>;
 
         /**
          * Gets the window icon.
@@ -424,7 +423,12 @@ declare namespace love {
          * @return success, Whether the message box was successfully displayed.
          * @link [love.window.showMessageBox](https://love2d.org/wiki/love.window.showMessageBox)
          */
-        export function showMessageBox(title: string, message: string, type?: MessageBoxType, attachtowindow?: boolean): boolean;
+        export function showMessageBox(
+            title: string,
+            message: string,
+            type?: MessageBoxType,
+            attachtowindow?: boolean
+        ): boolean;
 
         /**
          * Displays a message box dialog above the love window. The message box contains a
@@ -527,7 +531,5 @@ declare namespace love {
          * @link [love.window.close](https://love2d.org/wiki/love.window.close)
          */
         export function updateMode(width: number, height: number, settings: DisplayFlags): boolean;
-
     }
-
 }

@@ -90,5 +90,4 @@ declare interface PulleyJoint extends Joint<"PulleyJoint"> {
      * @link [PulleyJoint:setRatio](https://love2d.org/wiki/PulleyJoint:setRatio)
      */
     setRatio(ratio: number): void;
-
 }

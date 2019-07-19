@@ -151,5 +151,4 @@ declare interface File extends LoveObject<"File"> {
      * @link [(File):write](https://love2d.org/wiki/(File):write)
      */
     write(data: string, size?: number): boolean;
-
 }

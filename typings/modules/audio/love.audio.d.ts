@@ -1,12 +1,10 @@
 declare namespace love {
-
     /**
      * Provides an interface to create noise with the user's speakers.
      * @noSelf
      * @link [love.audio](https://love2d.org/wiki/love.audio)
      */
     export namespace audio {
-
         /**
          * Gets a list of the names of the currently enabled effects.
          * @return effects, The list of the names of the currently enabled effects.
@@ -139,7 +137,12 @@ declare namespace love {
          * @link [love.audio.newQueueableSource](https://love2d.org/wiki/love.audio.newQueueableSource)
          * @since 11.0
          */
-        export function newQueueableSource(samplerate: number, bitdepth: 8 | 16, channels: 1 | 2, buffercount?: number): Source;
+        export function newQueueableSource(
+            samplerate: number,
+            bitdepth: 8 | 16,
+            channels: 1 | 2,
+            buffercount?: number
+        ): Source;
 
         /**
          * Creates a new Source.
@@ -271,7 +274,5 @@ declare namespace love {
          */
         export function stop(...sources: Array<Source>): void;
         export function stop(sources: Array<Source>): void;
-
     }
-
 }

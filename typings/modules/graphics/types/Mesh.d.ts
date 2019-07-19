@@ -250,7 +250,17 @@ declare interface Mesh extends Drawable<"Mesh"> {
      * @param a The alpha component of the vertex's color.
      * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
      */
-    setVertex(index: number, x: number, y: number, u: number, v: number, r?: number, g?: number, b?: number, a?: number): void;
+    setVertex(
+        index: number,
+        x: number,
+        y: number,
+        u: number,
+        v: number,
+        r?: number,
+        g?: number,
+        b?: number,
+        a?: number
+    ): void;
 
     /**
      * Sets the properties of a vertex in the Mesh.
@@ -326,5 +336,4 @@ declare interface Mesh extends Drawable<"Mesh"> {
      * @link [Mesh:setVertices](https://love2d.org/wiki/Mesh:setVertices)
      */
     setVertices(data: Data, startvertex?: number): void;
-
 }

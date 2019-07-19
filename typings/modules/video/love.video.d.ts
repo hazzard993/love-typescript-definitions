@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * This module is responsible for decoding, controlling, and streaming video
      * files.
@@ -30,7 +29,5 @@ declare namespace love {
          * @link [love.video.newVideoStream](https://love2d.org/wiki/love.video.newVideoStream)
          */
         export function newVideoStream(file: File): VideoStream;
-
     }
-
 }

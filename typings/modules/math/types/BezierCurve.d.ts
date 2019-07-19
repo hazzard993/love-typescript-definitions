@@ -167,5 +167,4 @@ declare interface BezierCurve extends LoveObject<"BezierCurve"> {
      * @link [BezierCurve:translate](https://love2d.org/wiki/BezierCurve:translate)
      */
     translate(dx: number, dy: number): void;
-
 }

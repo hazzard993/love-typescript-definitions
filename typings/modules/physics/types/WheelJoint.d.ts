@@ -116,5 +116,4 @@ declare interface WheelJoint extends Joint<"WheelJoint"> {
      * @link [WheelJoint:setSpringFrequency](https://love2d.org/wiki/WheelJoint:setSpringFrequency)
      */
     setSpringFrequency(freq: number): void;
-
 }

@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface to the user's joystick.
      * @noSelf
@@ -85,7 +84,13 @@ declare namespace love {
          * @return success, Whether the virtual gamepad button was successfully bound.
          * @link [love.joystick.setGamepadMapping](https://love2d.org/wiki/love.joystick.setGamepadMapping)
          */
-        export function setGamepadMapping(guid: string, button: GamepadButton, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
+        export function setGamepadMapping(
+            guid: string,
+            button: GamepadButton,
+            inputtype: JoystickInputType,
+            inputindex: number,
+            hatdirection?: JoystickHat
+        ): boolean;
 
         /**
          * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a
@@ -111,8 +116,12 @@ declare namespace love {
          * @return success, Whether the virtual gamepad button was successfully bound.
          * @link [love.joystick.setGamepadMapping](https://love2d.org/wiki/love.joystick.setGamepadMapping)
          */
-        export function setGamepadMapping(guid: string, axis: GamepadAxis, inputtype: JoystickInputType, inputindex: number, hatdirection?: JoystickHat): boolean;
-
+        export function setGamepadMapping(
+            guid: string,
+            axis: GamepadAxis,
+            inputtype: JoystickInputType,
+            inputindex: number,
+            hatdirection?: JoystickHat
+        ): boolean;
     }
-
 }

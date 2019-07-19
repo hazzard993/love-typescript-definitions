@@ -19,7 +19,18 @@ declare interface Text extends Drawable {
      * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      * @link [Text:add](https://love2d.org/wiki/Text:add)
      */
-    add(textstring: string, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    add(
+        textstring: string,
+        x?: number,
+        y?: number,
+        angle?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Adds additional colored text to the Text object at the specified position.
@@ -37,7 +48,18 @@ declare interface Text extends Drawable {
      * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      * @link [Text:add](https://love2d.org/wiki/Text:add)
      */
-    add(coloredtext: Array<[number, number, number, number] | string>, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    add(
+        coloredtext: Array<[number, number, number, number] | string>,
+        x?: number,
+        y?: number,
+        angle?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Adds additional formatted / colored text to the Text object at the specified
@@ -58,7 +80,20 @@ declare interface Text extends Drawable {
      * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      * @link [Text:addf](https://love2d.org/wiki/Text:addf)
      */
-    addf(textstring: string, wraplimit: number, align: AlignMode, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    addf(
+        textstring: string,
+        wraplimit: number,
+        align: AlignMode,
+        x: number,
+        y: number,
+        angle?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Adds additional formatted / colored text to the Text object at the specified
@@ -79,7 +114,20 @@ declare interface Text extends Drawable {
      * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
      * @link [Text:addf](https://love2d.org/wiki/Text:addf)
      */
-    addf(coloredtext: Array<[number, number, number, number] | string>, wraplimit: number, align: AlignMode, x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): number;
+    addf(
+        coloredtext: Array<[number, number, number, number] | string>,
+        wraplimit: number,
+        align: AlignMode,
+        x: number,
+        y: number,
+        angle?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): number;
 
     /**
      * Clears the contents of the Text object.
@@ -208,5 +256,4 @@ declare interface Text extends Drawable {
      * @link [Text:setFont](https://love2d.org/wiki/Text:setFont)
      */
     setFont(font: Font): void;
-
 }

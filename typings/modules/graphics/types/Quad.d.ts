@@ -35,5 +35,4 @@ declare interface Quad extends LoveObject<"Quad"> {
      * @link [Quad:setViewport](https://love2d.org/wiki/Quad:setViewport)
      */
     setViewport(x: number, y: number, w: number, h: number): void;
-
 }

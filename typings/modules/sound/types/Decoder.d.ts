@@ -2,7 +2,6 @@
  * @link [Decoder](https://love2d.org/wiki/Decoder)
  */
 declare interface Decoder extends LoveObject<"Decoder"> {
-
     /**
      * Decodes the audio and returns a SoundData object containing the decoded audio data.
      * @returns soundData, Decoded audio data.
@@ -51,5 +50,4 @@ declare interface Decoder extends LoveObject<"Decoder"> {
      * @link [Decoder:getSampleRate](https://love2d.org/wiki/Decoder:getSampleRate)
      */
     getSampleRate(): number;
-
 }

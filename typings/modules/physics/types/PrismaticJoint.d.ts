@@ -159,5 +159,4 @@ declare interface PrismaticJoint extends Joint<"PrismaticJoint"> {
      * @link [PrismaticJoint:setUpperLimit](https://love2d.org/wiki/PrismaticJoint:setUpperLimit)
      */
     setUpperLimit(upper: number): void;
-
 }

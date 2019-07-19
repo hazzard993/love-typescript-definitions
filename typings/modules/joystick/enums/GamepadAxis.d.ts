@@ -2,4 +2,4 @@
  * Virtual gamepad axes.
  * @link [GamepadAxis](https://love2d.org/wiki/GamepadAxis)
  */
-declare type GamepadAxis = 'leftx' | 'lefty' | 'rightx' | 'righty' | 'triggerleft' | 'triggerright';
+declare type GamepadAxis = "leftx" | "lefty" | "rightx" | "righty" | "triggerleft" | "triggerright";

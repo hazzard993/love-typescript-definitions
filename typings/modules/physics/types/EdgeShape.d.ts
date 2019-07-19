@@ -74,5 +74,4 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
      * @link [EdgeShape:setPreviousVertex](https://love2d.org/wiki/EdgeShape:setPreviousVertex)
      */
     setPreviousVertex(x: number, y: number): void;
-
 }

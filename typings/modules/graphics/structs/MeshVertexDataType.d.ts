@@ -1,3 +1,1 @@
-declare type MeshVertexDataType = "byte"
-    | "unorm16"
-    | "float";
+declare type MeshVertexDataType = "byte" | "unorm16" | "float";

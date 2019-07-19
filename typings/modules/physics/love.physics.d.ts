@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Can simulate 2D rigid body physics in a realistic manner. This module is based
      * on Box2D, and this API corresponds to the Box2D API as closely as possible.
@@ -73,7 +72,14 @@ declare namespace love {
          * @return shape, The new shape.
          * @link [love.physics.newChainShape](https://love2d.org/wiki/love.physics.newChainShape)
          */
-        export function newChainShape(loop: boolean, x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): ChainShape;
+        export function newChainShape(
+            loop: boolean,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            ...vararg: Array<number>
+        ): ChainShape;
 
         /**
          * Creates a new ChainShape.
@@ -125,7 +131,15 @@ declare namespace love {
          * @return joint, The new distance joint.
          * @link [love.physics.newDistanceJoint](https://love2d.org/wiki/love.physics.newDistanceJoint)
          */
-        export function newDistanceJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean): DistanceJoint;
+        export function newDistanceJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            collideConnected?: boolean
+        ): DistanceJoint;
 
         /**
          * Creates a edge shape.
@@ -162,7 +176,13 @@ declare namespace love {
          * @return joint, The new FrictionJoint.
          * @link [love.physics.newFrictionJoint](https://love2d.org/wiki/love.physics.newFrictionJoint)
          */
-        export function newFrictionJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): FrictionJoint;
+        export function newFrictionJoint(
+            body1: Body,
+            body2: Body,
+            x: number,
+            y: number,
+            collideConnected?: boolean
+        ): FrictionJoint;
 
         /**
          * Create a gear joint connecting two joints.
@@ -187,7 +207,12 @@ declare namespace love {
          * @return joint, The new gear joint.
          * @link [love.physics.newGearJoint](https://love2d.org/wiki/love.physics.newGearJoint)
          */
-        export function newGearJoint(joint1: Joint, joint2: Joint, ratio?: number, collideConnected?: boolean): GearJoint;
+        export function newGearJoint(
+            joint1: Joint,
+            joint2: Joint,
+            ratio?: number,
+            collideConnected?: boolean
+        ): GearJoint;
 
         /**
          * Creates a joint between two bodies which controls the relative motion between
@@ -222,7 +247,12 @@ declare namespace love {
          * @return joint, The new MotorJoint.
          * @link [love.physics.newMotorJoint](https://love2d.org/wiki/love.physics.newMotorJoint)
          */
-        export function newMotorJoint(body1: Body, body2: Body, correctionFactor?: number, collideConnected?: boolean): MotorJoint;
+        export function newMotorJoint(
+            body1: Body,
+            body2: Body,
+            correctionFactor?: number,
+            collideConnected?: boolean
+        ): MotorJoint;
 
         /**
          * Create a joint between a body and the mouse.
@@ -259,7 +289,13 @@ declare namespace love {
          * @return shape, A new PolygonShape.
          * @link [love.physics.newPolygonShape](https://love2d.org/wiki/love.physics.newPolygonShape)
          */
-        export function newPolygonShape(x1: number, y1: number, x2: number, y2: number, ...vararg: Array<number>): PolygonShape;
+        export function newPolygonShape(
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            ...vararg: Array<number>
+        ): PolygonShape;
 
         /**
          * Creates a new PolygonShape.
@@ -292,7 +328,15 @@ declare namespace love {
          * @return joint, The new prismatic joint.
          * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
          */
-        export function newPrismaticJoint(body1: Body, body2: Body, x: number, y: number, ax: number, ay: number, collideConnected?: boolean): PrismaticJoint;
+        export function newPrismaticJoint(
+            body1: Body,
+            body2: Body,
+            x: number,
+            y: number,
+            ax: number,
+            ay: number,
+            collideConnected?: boolean
+        ): PrismaticJoint;
 
         /**
          * Create a prismatic joints between two bodies.
@@ -315,7 +359,17 @@ declare namespace love {
          * @return joint, The new prismatic joint.
          * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
          */
-        export function newPrismaticJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, ax: number, ay: number, collideConnected?: boolean): PrismaticJoint;
+        export function newPrismaticJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            ax: number,
+            ay: number,
+            collideConnected?: boolean
+        ): PrismaticJoint;
 
         /**
          * Create a prismatic joints between two bodies.
@@ -339,7 +393,18 @@ declare namespace love {
          * @return joint, The new prismatic joint.
          * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
          */
-        export function newPrismaticJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, ax: number, ay: number, collideConnected?: boolean, referenceAngle?: number): PrismaticJoint;
+        export function newPrismaticJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            ax: number,
+            ay: number,
+            collideConnected?: boolean,
+            referenceAngle?: number
+        ): PrismaticJoint;
 
         /**
          * Create a pulley joint to join two bodies to each other and the ground.
@@ -371,7 +436,20 @@ declare namespace love {
          * @return joint, The new pulley joint.
          * @link [love.physics.newPulleyJoint](https://love2d.org/wiki/love.physics.newPulleyJoint)
          */
-        export function newPulleyJoint(body1: Body, body2: Body, gx1: number, gy1: number, gx2: number, gy2: number, x1: number, y1: number, x2: number, y2: number, ratio?: number, collideConnected?: boolean): PulleyJoint;
+        export function newPulleyJoint(
+            body1: Body,
+            body2: Body,
+            gx1: number,
+            gy1: number,
+            gx2: number,
+            gy2: number,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            ratio?: number,
+            collideConnected?: boolean
+        ): PulleyJoint;
 
         /**
          * Shorthand for creating rectangular PolygonShapes.
@@ -402,7 +480,13 @@ declare namespace love {
          * @return shape, A new PolygonShape.
          * @link [love.physics.newRectangleShape](https://love2d.org/wiki/love.physics.newRectangleShape)
          */
-        export function newRectangleShape(x: number, y: number, width: number, height: number, angle?: number): PolygonShape;
+        export function newRectangleShape(
+            x: number,
+            y: number,
+            width: number,
+            height: number,
+            angle?: number
+        ): PolygonShape;
 
         /**
          * Creates a pivot joint between two bodies.
@@ -418,7 +502,13 @@ declare namespace love {
          * @return joint, The new revolute joint.
          * @link [love.physics.newRevoluteJoint](https://love2d.org/wiki/love.physics.newRevoluteJoint)
          */
-        export function newRevoluteJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): RevoluteJoint;
+        export function newRevoluteJoint(
+            body1: Body,
+            body2: Body,
+            x: number,
+            y: number,
+            collideConnected?: boolean
+        ): RevoluteJoint;
 
         /**
          * Creates a pivot joint between two bodies.
@@ -437,7 +527,16 @@ declare namespace love {
          * @return joint, The new revolute joint.
          * @link [love.physics.newRevoluteJoint](https://love2d.org/wiki/love.physics.newRevoluteJoint)
          */
-        export function newRevoluteJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean, referenceAngle?: number): RevoluteJoint;
+        export function newRevoluteJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            collideConnected?: boolean,
+            referenceAngle?: number
+        ): RevoluteJoint;
 
         /**
          * Create a joint between two bodies. Its only function is enforcing a max
@@ -454,7 +553,16 @@ declare namespace love {
          * @return joint, The new RopeJoint.
          * @link [love.physics.newRopeJoint](https://love2d.org/wiki/love.physics.newRopeJoint)
          */
-        export function newRopeJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, maxLength: number, collideConnected?: boolean): RopeJoint;
+        export function newRopeJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            maxLength: number,
+            collideConnected?: boolean
+        ): RopeJoint;
 
         /**
          * Creates a constraint joint between two bodies. A WeldJoint essentially glues
@@ -469,7 +577,13 @@ declare namespace love {
          * @return joint, The new WeldJoint.
          * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
          */
-        export function newWeldJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): WeldJoint;
+        export function newWeldJoint(
+            body1: Body,
+            body2: Body,
+            x: number,
+            y: number,
+            collideConnected?: boolean
+        ): WeldJoint;
 
         /**
          * Creates a constraint joint between two bodies. A WeldJoint essentially glues
@@ -486,7 +600,15 @@ declare namespace love {
          * @return joint, The new WeldJoint.
          * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
          */
-        export function newWeldJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean): WeldJoint;
+        export function newWeldJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            collideConnected?: boolean
+        ): WeldJoint;
 
         /**
          * Creates a constraint joint between two bodies. A WeldJoint essentially glues
@@ -504,7 +626,16 @@ declare namespace love {
          * @return joint, The new WeldJoint.
          * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
          */
-        export function newWeldJoint(body1: Body, body2: Body, x1: number, y1: number, x2: number, y2: number, collideConnected?: boolean, referenceAngle?: number): WeldJoint;
+        export function newWeldJoint(
+            body1: Body,
+            body2: Body,
+            x1: number,
+            y1: number,
+            x2: number,
+            y2: number,
+            collideConnected?: boolean,
+            referenceAngle?: number
+        ): WeldJoint;
 
         /**
          * Creates a wheel joint.
@@ -519,7 +650,15 @@ declare namespace love {
          * @return joint, The new WheelJoint.
          * @link [love.physics.newWheelJoint](https://love2d.org/wiki/love.physics.newWheelJoint)
          */
-        export function newWheelJoint(body1: Body, body2: Body, x: number, y: number, ax: number, ay: number, collideConnected?: boolean): WheelJoint;
+        export function newWheelJoint(
+            body1: Body,
+            body2: Body,
+            x: number,
+            y: number,
+            ax: number,
+            ay: number,
+            collideConnected?: boolean
+        ): WheelJoint;
 
         /**
          * Creates a new World.
@@ -554,7 +693,5 @@ declare namespace love {
          * @link [love.physics.setMeter](https://love2d.org/wiki/love.physics.setMeter)
          */
         export function setMeter(scale: number): void;
-
     }
-
 }

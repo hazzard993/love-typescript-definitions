@@ -34,5 +34,4 @@ declare interface WeldJoint extends Joint<"WeldJoint"> {
      * @link [WeldJoint:setFrequency](https://love2d.org/wiki/WeldJoint:setFrequency)
      */
     setFrequency(freq: number): void;
-
 }

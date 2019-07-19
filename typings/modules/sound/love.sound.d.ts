@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * This module is responsible for decoding sound files. It can't play the sounds,
      * see love.audio for that.
@@ -89,7 +88,5 @@ declare namespace love {
          * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
         export function newSoundData(samples: number, rate?: number, bits?: number, channels?: number): SoundData;
-
     }
-
 }

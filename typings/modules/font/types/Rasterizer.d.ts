@@ -2,7 +2,6 @@
  * @link [Rasterizer](https://love2d.org/wiki/Rasterizer)
  */
 declare interface Rasterizer extends LoveObject<"Rasterizer"> {
-
     /**
      * @todo This function is undocumented on the wiki
      */
@@ -42,5 +41,4 @@ declare interface Rasterizer extends LoveObject<"Rasterizer"> {
      * @todo This function is undocumented on the wiki
      */
     hasGlyphs: Function;
-
 }

@@ -3,7 +3,6 @@
  * @link [Transform](https://love2d.org/wiki/Transform)
  */
 declare interface Transform extends LoveObject<"Transform"> {
-
     /**
      * Applies the given other Transform object to this one.
      *
@@ -149,7 +148,17 @@ declare interface Transform extends LoveObject<"Transform"> {
      * @return transform, The Transform object the method was called on. Allows easily chaining Transform methods.
      * @link [Transform:setTransformation](https://love2d.org/wiki/Transform:setTransformation)
      */
-    setTransformation(x: number, y: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number): Transform;
+    setTransformation(
+        x: number,
+        y: number,
+        angle?: number,
+        sx?: number,
+        sy?: number,
+        ox?: number,
+        oy?: number,
+        kx?: number,
+        ky?: number
+    ): Transform;
 
     /**
      * Applies a shear factor (skew) to the Transform's coordinate system. This method
@@ -188,5 +197,4 @@ declare interface Transform extends LoveObject<"Transform"> {
      * @link [Transform:translate](https://love2d.org/wiki/Transform:translate)
      */
     translate(dx: number, dy: number): Transform;
-
 }

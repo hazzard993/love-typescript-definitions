@@ -34,5 +34,4 @@ declare interface FrictionJoint extends Joint<"FrictionJoint"> {
      * @link [FrictionJoint:setMaxTorque](https://love2d.org/wiki/FrictionJoint:setMaxTorque)
      */
     setMaxTorque(torque: number): void;
-
 }

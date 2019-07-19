@@ -3,7 +3,6 @@
  * @link [Image](https://love2d.org/wiki/Image)
  */
 declare interface Image extends Texture<"Image"> {
-
     /**
      * Gets whether the Image was created from CompressedData.
      * @return compressed, Whether the Image is stored as a compressed texture on the GPU.
@@ -20,5 +19,4 @@ declare interface Image extends Texture<"Image"> {
      * @link [Image:replacePixels](https://love2d.org/wiki/(Image):replacePixels)
      */
     replacePixels(data: ImageData, slice: number, mipmap?: number): void;
-
 }

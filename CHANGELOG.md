@@ -6,7 +6,8 @@
 
 ```ts
 function useQuad(quad: Quad) {
-    if (quad.type() === "Channel") {} // ❌ Impossible. Quad types return "Quad".
+  if (quad.type() === "Channel") {
+  } // ❌ Impossible. Quad types return "Quad".
 }
 ```
 
@@ -15,25 +16,25 @@ function useQuad(quad: Quad) {
  * @param object Any object. Unknown what it is. It could be one of 56 types.
  */
 function useObject(object: LoveObject): void {
-    if (object.typeOf("Image")) {
-        // ✔ TypeScript knows object is an Image type. 
-        // So this code shouldn't fail.
-        const [width, height] = object.getDimensions();
-    }
-    // ❌ TypeScript knows getDimensions doesn't exist on every LoveObject.
-    // So this won't work for those cases.
-    object.getDimensions();
+  if (object.typeOf("Image")) {
+    // ✔ TypeScript knows object is an Image type.
+    // So this code shouldn't fail.
+    const [width, height] = object.getDimensions();
+  }
+  // ❌ TypeScript knows getDimensions doesn't exist on every LoveObject.
+  // So this won't work for those cases.
+  object.getDimensions();
 }
 ```
 
 ```ts
 function releaseImage(image: Image) {
-    if (image.release()) {
-        // ❌ TypeScript doesn't allow this call. It knows "image" no longer exists here.
-        image.getDimensions();
-    }
-    // Unfortunately no type protection here. 
+  if (image.release()) {
+    // ❌ TypeScript doesn't allow this call. It knows "image" no longer exists here.
     image.getDimensions();
+  }
+  // Unfortunately no type protection here.
+  image.getDimensions();
 }
 ```
 
@@ -81,7 +82,7 @@ function releaseImage(image: Image) {
 
 ```ts
 for (const line of love.filesystem.lines("file.txt")) {
-    print(line);
+  print(line);
 }
 ```
 

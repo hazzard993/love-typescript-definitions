@@ -9,5 +9,4 @@ declare interface Cursor extends LoveObject<"Cursor"> {
      * @link [Cursor:getType](https://love2d.org/wiki/Cursor:getType)
      */
     getType(): CursorType;
-
 }

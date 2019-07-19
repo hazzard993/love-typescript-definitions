@@ -203,5 +203,4 @@ declare interface Joystick extends LoveObject<"Joystick"> {
      * @link [Joystick:setVibration](https://love2d.org/wiki/Joystick:setVibration)
      */
     setVibration(left: number, right: number, duration: number): boolean;
-
 }

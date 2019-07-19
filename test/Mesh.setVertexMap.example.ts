@@ -9,11 +9,11 @@ love.load = () => {
 
     // We want to make a Mesh with 1 vertex in the middle of the image, and 4 at the corners.
     const vertices: Array<VertexInformation> = [
-        [w/2, h/2, 0.5, 0.5, 255,   0,   0], // Center vertex, with a red tint.
-        [0,   0,   0,   0,   255, 255, 255], // Top left.
-        [w,   0,   1,   0,   255, 255, 255], // Top right.
-        [w,   h,   1,   1,   255, 255, 255], // Bottom right.
-        [0,   h,   0,   1,   255, 255, 255], // Bottom left.
+        [w / 2, h / 2, 0.5, 0.5, 255, 0, 0], // Center vertex, with a red tint.
+        [0, 0, 0, 0, 255, 255, 255], // Top left.
+        [w, 0, 1, 0, 255, 255, 255], // Top right.
+        [w, h, 1, 1, 255, 255, 255], // Bottom right.
+        [0, h, 0, 1, 255, 255, 255], // Bottom left.
     ];
 
     // But there's a problem! The drawn mesh will have a big triangle missing on its left side.

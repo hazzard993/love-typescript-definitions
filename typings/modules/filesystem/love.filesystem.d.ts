@@ -1,12 +1,10 @@
 declare namespace love {
-
     /**
      * Provides an interface to the user's filesystem.
      * @noSelf
      * @link [love.filesystem](https://love2d.org/wiki/love.filesystem)
      */
     export namespace filesystem {
-
         /**
          * Append data to an existing file.
          *
@@ -101,7 +99,6 @@ declare namespace love {
         export function getIdentity(name: string): void;
 
         export type FileInfo = {
-
             /**
              * The type of the object at the path (file, directory, symlink, etc.)
              */
@@ -116,7 +113,6 @@ declare namespace love {
              * The file's last modification time in seconds since the unix epoch, or _nil/undefined_ if it can't be determined.
              */
             modtime: number | undefined;
-
         };
 
         /**
@@ -533,7 +529,5 @@ declare namespace love {
          * @link [love.filesystem.write](https://love2d.org/wiki/love.filesystem.write)
          */
         export function write(name: string, data: Data, size?: number): [true, undefined] | [false, string];
-
     }
-
 }

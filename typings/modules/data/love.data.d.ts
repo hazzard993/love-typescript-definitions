@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides functionality for creating and transforming data.
      * @noSelf
@@ -7,7 +6,6 @@ declare namespace love {
      * @since 11.0
      */
     export namespace data {
-
         /**
          * Compresses a string or data using a specific compression algorithm.
          * @param container What type to return the compressed data as.
@@ -18,9 +16,24 @@ declare namespace love {
          * @link [love.data.compress](https://love2d.org/wiki/love.data.compress)
          * @since 11.0
          */
-        export function compress(container: ContainerType, format: CompressedDataFormat, rawstring: string, level?: number): string | ByteData;
-        export function compress(container: "string", format: CompressedDataFormat, rawstring: string, level?: number): string;
-        export function compress(container: "data", format: CompressedDataFormat, rawstring: string, level?: number): ByteData;
+        export function compress(
+            container: ContainerType,
+            format: CompressedDataFormat,
+            rawstring: string,
+            level?: number
+        ): string | ByteData;
+        export function compress(
+            container: "string",
+            format: CompressedDataFormat,
+            rawstring: string,
+            level?: number
+        ): string;
+        export function compress(
+            container: "data",
+            format: CompressedDataFormat,
+            rawstring: string,
+            level?: number
+        ): ByteData;
 
         /**
          * Compresses a string or data using a specific compression algorithm.
@@ -32,7 +45,12 @@ declare namespace love {
          * @link [love.data.decode](https://love2d.org/wiki/love.data.decode)
          * @since 11.0
          */
-        export function decode(container: ContainerType, format: EncodeFormat, sourceString: string, level?: number): ByteData | string;
+        export function decode(
+            container: ContainerType,
+            format: EncodeFormat,
+            sourceString: string,
+            level?: number
+        ): ByteData | string;
         export function decode(container: "string", format: EncodeFormat, sourceString: string, level?: number): string;
         export function decode(container: "data", format: EncodeFormat, sourceString: string, level?: number): ByteData;
 
@@ -47,9 +65,21 @@ declare namespace love {
         export function decompress(container: ContainerType, compressedData: CompressedData): Data | string;
         export function decompress(container: "string", compressedData: CompressedData): string;
         export function decompress(container: "data", compressedData: CompressedData): Data;
-        export function decompress(container: ContainerType, format: CompressedDataFormat, compressedData: CompressedData): Data | string;
-        export function decompress(container: "string", format: CompressedDataFormat, compressedData: CompressedData): string;
-        export function decompress(container: "data", format: CompressedDataFormat, compressedData: CompressedData): Data;
+        export function decompress(
+            container: ContainerType,
+            format: CompressedDataFormat,
+            compressedData: CompressedData
+        ): Data | string;
+        export function decompress(
+            container: "string",
+            format: CompressedDataFormat,
+            compressedData: CompressedData
+        ): string;
+        export function decompress(
+            container: "data",
+            format: CompressedDataFormat,
+            compressedData: CompressedData
+        ): Data;
         export function decompress(container: ContainerType, format: CompressedDataFormat, data: Data): Data | string;
         export function decompress(container: "string", format: CompressedDataFormat, data: Data): string;
         export function decompress(container: "data", format: CompressedDataFormat, data: Data): Data;
@@ -64,9 +94,24 @@ declare namespace love {
          * @link [love.data.encode](https://love2d.org/wiki/love.data.encode)
          * @since 11.0
          */
-        export function encode(container: ContainerType, format: EncodeFormat, sourceString: string, linelength?: number): ByteData | string;
-        export function encode(container: "string", format: EncodeFormat, sourceString: string, linelength?: number): string;
-        export function encode(container: "data", format: EncodeFormat, sourceString: string, linelength?: number): ByteData;
+        export function encode(
+            container: ContainerType,
+            format: EncodeFormat,
+            sourceString: string,
+            linelength?: number
+        ): ByteData | string;
+        export function encode(
+            container: "string",
+            format: EncodeFormat,
+            sourceString: string,
+            linelength?: number
+        ): string;
+        export function encode(
+            container: "data",
+            format: EncodeFormat,
+            sourceString: string,
+            linelength?: number
+        ): ByteData;
 
         /**
          * Gets the size in bytes that a given format used with love.data.pack will use.
@@ -144,7 +189,5 @@ declare namespace love {
          * @since 11.0
          */
         export function unpack(format: string, data: string | Data, pos?: number): Array<any>;
-
     }
-
 }

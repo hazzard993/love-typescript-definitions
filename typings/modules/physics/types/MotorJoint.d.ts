@@ -37,5 +37,4 @@ declare interface MotorJoint extends Joint<"MotorJoint"> {
      * @link [MotorJoint:setLinearOffset](https://love2d.org/wiki/MotorJoint:setLinearOffset)
      */
     setLinearOffset(x: number, y: number): void;
-
 }

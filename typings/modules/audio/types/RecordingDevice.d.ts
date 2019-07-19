@@ -4,7 +4,6 @@
  * @since 11.0
  */
 declare interface RecordingDevice extends LoveObject<"RecordingDevice"> {
-
     /**
      * Gets the number of bits per sample in the data currently being recorded.
      * @return bits, The number of bits per sample in the data that's currently being recorded.
@@ -80,5 +79,4 @@ declare interface RecordingDevice extends LoveObject<"RecordingDevice"> {
      * @since 11.0
      */
     stop(): SoundData | undefined;
-
 }

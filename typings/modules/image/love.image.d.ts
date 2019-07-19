@@ -1,5 +1,4 @@
 declare namespace love {
-
     /**
      * Provides an interface to decode encoded image data.
      * @noSelf
@@ -84,7 +83,5 @@ declare namespace love {
          * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
          */
         export function newImageData(filedata: FileData): ImageData;
-
     }
-
 }
