@@ -22,8 +22,7 @@ declare namespace love {
         export function getJoysticks(): Array<Joystick>;
 
         /**
-         * Loads a gamepad mappings string or file created with
-         * love.joystick.saveGamepadMappings.
+         * Loads a gamepad mappings string from a file.
          *
          * @param filename The filename to load the mappings string from.
          * @link [love.joystick.loadGamepadMappings](https://love2d.org/wiki/love.joystick.loadGamepadMappings)
@@ -31,8 +30,7 @@ declare namespace love {
         export function loadGamepadMappings(filename: string): void;
 
         /**
-         * Loads a gamepad mappings string or file created with
-         * love.joystick.saveGamepadMappings.
+         * Loads a gamepad mappings string directly.
          *
          * @param mappings The mappings string to load.
          * @link [love.joystick.loadGamepadMappings](https://love2d.org/wiki/love.joystick.loadGamepadMappings)
@@ -40,9 +38,7 @@ declare namespace love {
         export function loadGamepadMappings(mappings: string): void;
 
         /**
-         * Saves the virtual gamepad mappings of all Joysticks that are recognized as
-         * gamepads and have either been recently used or their gamepad bindings have been
-         * modified.
+         * Saves the gamepad mappings of all relevant joysticks to a file.
          *
          * @param filename The filename to save the mappings string to.
          * @return mappings, The mappings string that was written to the file.
@@ -51,9 +47,7 @@ declare namespace love {
         export function saveGamepadMappings(filename: string): string;
 
         /**
-         * Saves the virtual gamepad mappings of all Joysticks that are recognized as
-         * gamepads and have either been recently used or their gamepad bindings have been
-         * modified.
+         * Returns the mappings string without writing to a file.
          *
          * @return mappings, The mappings string.
          * @link [love.joystick.saveGamepadMappings](https://love2d.org/wiki/love.joystick.saveGamepadMappings)
@@ -61,20 +55,7 @@ declare namespace love {
         export function saveGamepadMappings(): string;
 
         /**
-         * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a
-         * certain type. For example, if this function is used with a GUID returned by a
-         * Dualshock 3 controller in OS X, the binding will affect Joystick:getGamepadAxis
-         * and Joystick:isGamepadDown for all Dualshock 3 controllers used with the game
-         * when run in OS X.
-         *
-         *
-         * LÖVE includes built-in gamepad bindings for many common controllers. This
-         * function lets you change the bindings or add new ones for types of Joysticks
-         * which aren't recognized as gamepads by default.
-         *
-         *
-         * The virtual gamepad buttons and axes are designed around the Xbox 360
-         * controller layout.
+         * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a certain type.
          *
          * @param guid The OS-dependent GUID for the type of Joystick the binding will affect.
          * @param button The virtual gamepad button to bind.
@@ -93,20 +74,7 @@ declare namespace love {
         ): boolean;
 
         /**
-         * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a
-         * certain type. For example, if this function is used with a GUID returned by a
-         * Dualshock 3 controller in OS X, the binding will affect Joystick:getGamepadAxis
-         * and Joystick:isGamepadDown for all Dualshock 3 controllers used with the game
-         * when run in OS X.
-         *
-         *
-         * LÖVE includes built-in gamepad bindings for many common controllers. This
-         * function lets you change the bindings or add new ones for types of Joysticks
-         * which aren't recognized as gamepads by default.
-         *
-         *
-         * The virtual gamepad buttons and axes are designed around the Xbox 360
-         * controller layout.
+         * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a certain type.
          *
          * @param guid The OS-dependent GUID for the type of Joystick the binding will affect.
          * @param axis The virtual gamepad axis to bind.
