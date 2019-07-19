@@ -48,9 +48,19 @@ declare namespace love {
         export function hasScreenKeyboard(): boolean;
 
         /**
-         * Checks if one of the specified keys is down.
-         * @param keys The keys to check.
-         * @return _true_ if any supplied key is down, _false_ if not.
+         * Checks whether a certain key is down. Not to be confused with love.keypressed or love.keyreleased.
+         *
+         * @param key The key to check.
+         * @return down, True if the key is down, false if not.
+         * @link [love.keyboard.isDown](https://love2d.org/wiki/love.keyboard.isDown)
+         */
+        export function isDown(key: KeyConstant): boolean;
+
+        /**
+         * Checks whether a certain key is down. Not to be confused with love.keypressed or love.keyreleased.
+         *
+         * @param keys Keys to check.
+         * @return anyDown, True if any supplied key is down, false if not.
          * @link [love.keyboard.isDown](https://love2d.org/wiki/love.keyboard.isDown)
          */
         export function isDown(...keys: Array<KeyConstant>): boolean;
