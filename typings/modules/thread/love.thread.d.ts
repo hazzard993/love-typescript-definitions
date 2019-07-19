@@ -27,7 +27,7 @@ declare namespace love {
         export function newChannel(): Channel;
 
         /**
-         * Creates a new Thread from a File or Data object.
+         * Creates a new Thread from a filename, string or FileData object containing Lua code.
          *
          * @param filename The name of the Lua File to use as source.
          * @return thread, A new Thread that has yet to be started.

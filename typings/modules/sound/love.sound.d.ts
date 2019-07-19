@@ -9,7 +9,6 @@ declare namespace love {
         /**
          * Attempts to find a decoder for the encoded sound data in the specified file.
          *
-         * @param file The file or filename of the file with encoded sound data.
          * @param buffer The size of each decoded chunk, in bytes. (Default 2048)
          * @return decoder, A new Decoder object.
          * @link [love.sound.newDecoder](https://love2d.org/wiki/love.sound.newDecoder)
@@ -22,7 +21,6 @@ declare namespace love {
          *
          * The sound data will be decoded to the memory in a raw format. It is recommended to create only short sounds like effects, as a 3 minute song uses 30 MB of memory this way.
          *
-         * @param filename The filename of the file to load.
          * @return soundData, A new SoundData object.
          * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
