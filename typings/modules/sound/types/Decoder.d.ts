@@ -1,4 +1,6 @@
 /**
+ * An object which can gradually decode a sound file.
+ *
  * @link [Decoder](https://love2d.org/wiki/Decoder)
  */
 declare interface Decoder extends LoveObject<"Decoder"> {
@@ -25,14 +27,6 @@ declare interface Decoder extends LoveObject<"Decoder"> {
      * @link [Decoder:getChannelCount](https://love2d.org/wiki/Decoder:getChannelCount)
      */
     getChannelCount(): number;
-
-    /**
-     * Returns the number of channels in the stream.
-     * @return channels, 1 for mono, 2 for stereo.
-     * @link [Decoder:getChannels](https://love2d.org/wiki/Decoder:getChannels)
-     * @deprecated since 11.0. This function has been renamed to Decoder:getChannelCount.
-     */
-    getChannels(): number;
 
     /**
      * Gets the duration of the sound file. It may not always be sample-accurate, and

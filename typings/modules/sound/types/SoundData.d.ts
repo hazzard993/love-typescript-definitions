@@ -1,4 +1,6 @@
 /**
+ * Contains raw audio samples. You can not play SoundData back directly. You must wrap a Source object around it.
+ *
  * @link [SoundData](https://love2d.org/wiki/SoundData)
  */
 declare interface SoundData extends Data<"SoundData"> {
@@ -17,14 +19,6 @@ declare interface SoundData extends Data<"SoundData"> {
      * @link [SoundData:getChannelCount](https://love2d.org/wiki/SoundData:getChannelCount)
      */
     getChannelCount(): number;
-
-    /**
-     * Returns the number of channels in the stream.
-     * @returns channels, 1 for mono, 2 for stereo.
-     * @link [SoundData:getChannels](https://love2d.org/wiki/SoundData:getChannels)
-     * @deprecated since 11.0. This function has been renamed to SoundData:getChannelCount.
-     */
-    getChannels(): number;
 
     /**
      * Gets the duration of the sound data.
