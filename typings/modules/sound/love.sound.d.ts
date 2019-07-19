@@ -9,81 +9,34 @@ declare namespace love {
         /**
          * Attempts to find a decoder for the encoded sound data in the specified file.
          *
-         * @param file The file with encoded sound data.
-         * @param buffer The size of each decoded chunk, in bytes.
+         * @param file The file or filename of the file with encoded sound data.
+         * @param buffer The size of each decoded chunk, in bytes. (Default 2048)
          * @return decoder, A new Decoder object.
          * @link [love.sound.newDecoder](https://love2d.org/wiki/love.sound.newDecoder)
          */
         export function newDecoder(file: File, buffer?: number): Decoder;
-
-        /**
-         * Attempts to find a decoder for the encoded sound data in the specified file.
-         *
-         * @param filename The filename of the file with encoded sound data.
-         * @param buffer The size of each decoded chunk, in bytes.
-         * @return decoder, A new Decoder object.
-         * @link [love.sound.newDecoder](https://love2d.org/wiki/love.sound.newDecoder)
-         */
         export function newDecoder(filename: string, buffer?: number): Decoder;
 
         /**
-         * Creates new SoundData from a file. It's also possible to create SoundData with
-         * a custom sample rate, channel and bit depth.
+         * Creates new SoundData from a filepath, File, or Decoder.
          *
-         *
-         * The sound data will be decoded to the memory in a raw format. It is recommended
-         * to create only short sounds like effects, as a 3 minute song uses 30 MB of
-         * memory this way.
+         * The sound data will be decoded to the memory in a raw format. It is recommended to create only short sounds like effects, as a 3 minute song uses 30 MB of memory this way.
          *
          * @param filename The filename of the file to load.
          * @return soundData, A new SoundData object.
          * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
         export function newSoundData(filename: string): SoundData;
-
-        /**
-         * Creates new SoundData from a file. It's also possible to create SoundData with
-         * a custom sample rate, channel and bit depth.
-         *
-         *
-         * The sound data will be decoded to the memory in a raw format. It is recommended
-         * to create only short sounds like effects, as a 3 minute song uses 30 MB of
-         * memory this way.
-         *
-         * @param file A File pointing to an audio file.
-         * @return soundData, A new SoundData object.
-         * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
-         */
         export function newSoundData(file: File): SoundData;
+        export function newSoundData(decoder: Decoder): SoundData;
 
         /**
-         * Creates new SoundData from a file. It's also possible to create SoundData with
-         * a custom sample rate, channel and bit depth.
-         *
-         *
-         * The sound data will be decoded to the memory in a raw format. It is recommended
-         * to create only short sounds like effects, as a 3 minute song uses 30 MB of
-         * memory this way.
-         *
-         * @param data The encoded data to decode into audio.
-         * @return soundData, A new SoundData object.
-         * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
-         */
-        export function newSoundData(data: Data): SoundData;
-
-        /**
-         * Creates new SoundData from a file. It's also possible to create SoundData with
-         * a custom sample rate, channel and bit depth.
-         *
-         *
-         * The sound data will be decoded to the memory in a raw format. It is recommended
-         * to create only short sounds like effects, as a 3 minute song uses 30 MB of
-         * memory this way.
+         * Creates SoundData with a custom sample rate, channel and bit depth.
          *
          * @param samples Total number of samples.
-         * @param rate Number of samples per second
-         * @param bits Bits per sample (8 or 16).
-         * @param channels Either 1 for mono or 2 for stereo.
+         * @param rate Number of samples per second. (Default 44100)
+         * @param bits Bits per sample (8 or 16). (Default 16)
+         * @param channels Either 1 for mono or 2 for stereo. (Default 2)
          * @return soundData, A new SoundData object.
          * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
          */
