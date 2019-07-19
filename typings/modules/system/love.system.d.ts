@@ -21,7 +21,7 @@ declare namespace love {
          * @return osString, The current operating system. "OS X", "Windows", "Linux", "Android" or "iOS".
          * @link [love.system.getOS](https://love2d.org/wiki/love.system.getOS)
          */
-        export function getOS(): string;
+        export function getOS(): "OS X" | "iOS" | "UWP" | "Windows" | "Android" | "Linux" | "Unknown";
 
         /**
          * Gets information about the system's power supply.
