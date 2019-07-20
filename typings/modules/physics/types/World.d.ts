@@ -64,14 +64,6 @@ declare interface World extends LoveObject<"World"> {
     getContactFilter(): Function;
 
     /**
-     * Returns a table with all contacts.
-     *
-     * @return contacts, A sequence with all contacts.
-     * @link [World:getContactList](https://love2d.org/wiki/World:getContactList)
-     */
-    getContactList(): Array<Contact>;
-
-    /**
      * Get the gravity of the world.
      *
      * @return x, The x component of gravity.
@@ -88,14 +80,6 @@ declare interface World extends LoveObject<"World"> {
      * @link [World:getJointCount](https://love2d.org/wiki/World:getJointCount)
      */
     getJointCount(): number;
-
-    /**
-     * Returns a table with all joints.
-     *
-     * @return joints, A sequence with all joints.
-     * @link [World:getJointList](https://love2d.org/wiki/World:getJointList)
-     */
-    getJointList(): Array<Joint>;
 
     /**
      * Gets whether the World is destroyed. Destroyed worlds cannot be used.
