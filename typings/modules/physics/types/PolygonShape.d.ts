@@ -6,10 +6,8 @@ declare interface PolygonShape extends Shape<"PolygonShape"> {
     /**
      * Get the local coordinates of the polygon's vertices.
      *
-     *
      * This function has a variable number of return values. It can be used in a
      * nested fashion with love.graphics.polygon.
-     *
      *
      * This function may have up to 16 return values, since it returns two values for
      * each vertex in the polygon. In other words, it can return the coordinates of up

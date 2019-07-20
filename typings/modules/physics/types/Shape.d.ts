@@ -64,11 +64,9 @@ declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T>
      * line position where the ray hit. If the ray missed the shape, _nil/undefined_ will be
      * returned. The Shape can be transformed to get it into the desired position.
      *
-     *
      * The ray starts on the first point of the input line and goes towards the second
      * point of the line. The fourth argument is the maximum distance the ray is going
      * to travel as a scale factor of the input line length.
-     *
      *
      * The childIndex parameter is used to specify which child of a parent shape, such
      * as a ChainShape, will be ray casted. For ChainShapes, the index of 1 is the
@@ -76,10 +74,8 @@ declare interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T>
      * specified so if you want to test every shape of the parent, you must loop
      * through all of its children.
      *
-     *
      * The world position of the impact can be calculated by multiplying the line
      * vector with the third return value and adding it to the line starting point.
-     *
      *
      * hitx, hity = x1 + (x2 - x1) * fraction, y1 + (y2 - y1) * fraction
      *

@@ -7,7 +7,6 @@ declare interface World extends LoveObject<"World"> {
      * Destroys the world, taking all bodies, joints, fixtures and their shapes with
      * it.
      *
-     *
      * An error will occur if you attempt to use any of the destroyed objects after
      * calling this function.
      *
@@ -92,7 +91,6 @@ declare interface World extends LoveObject<"World"> {
     /**
      * Returns if the world is updating its state.
      *
-     *
      * This will return true inside the callbacks from World:setCallbacks.
      *
      * @return locked, Will be true if the world is in the process of updating its state.
@@ -147,9 +145,7 @@ declare interface World extends LoveObject<"World"> {
     /**
      * Sets functions for the collision callbacks during the world update.
      *
-     *
      * Four Lua functions can be given as arguments. The value _nil/undefined/undefined_ removes a function.
-     *
      *
      * When called, each function will be passed three arguments. The first two
      * arguments are the colliding fixtures and the third argument is the Contact
@@ -194,9 +190,7 @@ declare interface World extends LoveObject<"World"> {
     /**
      * Set the sleep behaviour of the world.
      *
-     *
      * A sleeping body is much more efficient to simulate than when awake.
-     *
      *
      * If sleeping is allowed, any body that has come to rest will sleep.
      *

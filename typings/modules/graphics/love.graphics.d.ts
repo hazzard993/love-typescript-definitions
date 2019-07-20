@@ -6,15 +6,12 @@ declare namespace love {
      * Fonts) into memory, creating specialized objects (such as ParticleSystems or
      * Canvases) and managing screen geometry.
      *
-     *
      * LÖVE's coordinate system is rooted in the upper-left corner of the screen,
      * which is at location (0, 0). The x axis is horizontal: larger values are
      * further to the right. The y axis is vertical: larger values are further towards
      * the bottom.
      *
-     *
      * In many cases, you draw images or shapes in terms of their upper-left corner.
-     *
      *
      * Many of the functions are used to manipulate the graphics coordinate system,
      * which is essentially the way coordinates are mapped to the display. You can
@@ -76,7 +73,6 @@ declare namespace love {
         /**
          * Applies the given Transform object to the current coordinate transformation.
          *
-         *
          * This effectively multiplies the existing coordinate transformation's matrix
          * with the Transform object's internal matrix to produce the new coordinate
          * transformation.
@@ -89,7 +85,6 @@ declare namespace love {
         /**
          * Creates a screenshot once the current frame is done (after love.draw has
          * finished).
-         *
          *
          * Since this function enqueues a screenshot capture rather than executing it
          * immediately, it can be called from an input callback or love.update and it will
@@ -104,7 +99,6 @@ declare namespace love {
          * Creates a screenshot once the current frame is done (after love.draw has
          * finished).
          *
-         *
          * Since this function enqueues a screenshot capture rather than executing it
          * immediately, it can be called from an input callback or love.update and it will
          * still capture all of what's drawn to the screen in that frame.
@@ -117,7 +111,6 @@ declare namespace love {
         /**
          * Creates a screenshot once the current frame is done (after love.draw has
          * finished).
-         *
          *
          * Since this function enqueues a screenshot capture rather than executing it
          * immediately, it can be called from an input callback or love.update and it will
@@ -236,12 +229,10 @@ declare namespace love {
          * Discards (trashes) the contents of the screen or active Canvas. This is a
          * performance optimization function with niche use cases.
          *
-         *
          * If the active Canvas has just been changed and the "replace" BlendMode is about
          * to be used to draw something which covers the entire screen, calling
          * love.graphics.discard rather than calling love.graphics.clear or doing nothing
          * may improve performance on mobile devices.
-         *
          *
          * On some desktop systems this function may do nothing.
          *
@@ -255,12 +246,10 @@ declare namespace love {
          * Discards (trashes) the contents of the screen or active Canvas. This is a
          * performance optimization function with niche use cases.
          *
-         *
          * If the active Canvas has just been changed and the "replace" BlendMode is about
          * to be used to draw something which covers the entire screen, calling
          * love.graphics.discard rather than calling love.graphics.clear or doing nothing
          * may improve performance on mobile devices.
-         *
          *
          * On some desktop systems this function may do nothing.
          *
@@ -347,12 +336,10 @@ declare namespace love {
          * Draws many instances of a Mesh with a single draw call, using hardware geometry
          * instancing.
          *
-         *
          * Each instance can have unique properties (positions, colors, etc.) but will not
          * by default unless a custom Shader along with either per-instance attributes or
          * the love_InstanceID GLSL 3 vertex shader variable is used, otherwise they will
          * all render at the same position on top of each other.
-         *
          *
          * Instancing is not supported by some older GPUs that are only capable of using
          * OpenGL ES 2 or OpenGL 2. Use love.graphics.getSupported to check.
@@ -388,12 +375,10 @@ declare namespace love {
          * Draws many instances of a Mesh with a single draw call, using hardware geometry
          * instancing.
          *
-         *
          * Each instance can have unique properties (positions, colors, etc.) but will not
          * by default unless a custom Shader along with either per-instance attributes or
          * the love_InstanceID GLSL 3 vertex shader variable is used, otherwise they will
          * all render at the same position on top of each other.
-         *
          *
          * Instancing is not supported by some older GPUs that are only capable of using
          * OpenGL ES 2 or OpenGL 2. Use love.graphics.getSupported to check.
@@ -523,16 +508,13 @@ declare namespace love {
         /**
          * Immediately renders any pending automatically batched draws.
          *
-         *
          * LÖVE will call this function internally as needed when most state is changed,
          * so it is not necessary to manually call it.
-         *
          *
          * The current batch will be automatically flushed by love.graphics state changes
          * (except for the transform stack and the current color), as well as Shader:send
          * and methods on Textures which change their state. Using a different Image in
          * consecutive love.graphics.draw calls will also flush the current batch.
-         *
          *
          * SpriteBatches, ParticleSystems, Meshes, and Text objects do their own batching
          * and do not affect automatic batching of other draws.
@@ -601,7 +583,6 @@ declare namespace love {
          * Gets the active color components used when drawing. Normally all 4 components
          * are active unless love.graphics.setColorMask has been used.
          *
-         *
          * The color mask determines whether individual components of the colors of drawn
          * objects will affect the color of the screen. They affect love.graphics.clear
          * and Canvas:clear as well.
@@ -629,7 +610,6 @@ declare namespace love {
         /**
          * Gets the current depth test mode and whether writing to the depth buffer is
          * enabled.
-         *
          *
          * This is low-level functionality designed for use with custom vertex shaders and
          * Meshes with custom vertex attributes. No higher level APIs are provided to set
@@ -663,7 +643,6 @@ declare namespace love {
         /**
          * Gets whether triangles with clockwise- or counterclockwise-ordered vertices are
          * considered front-facing.
-         *
          *
          * This is designed for use in combination with Mesh face culling. Other
          * love.graphics shapes, lines, and sprites are not guaranteed to have a specific
@@ -731,7 +710,6 @@ declare namespace love {
 
         /**
          * Gets whether back-facing triangles in a Mesh are culled.
-         *
          *
          * Mesh face culling is designed for use with low level custom
          * hardware-accelerated 3D rendering via custom vertex attributes on Meshes,
@@ -804,11 +782,9 @@ declare namespace love {
         /**
          * Gets whether stencil testing is enabled.
          *
-         *
          * When stencil testing is enabled, the geometry of everything that is drawn will
          * be clipped / stencilled out based on whether it intersects with what has been
          * previously drawn to the stencil buffer.
-         *
          *
          * Each Canvas has its own stencil buffer.
          *
@@ -822,7 +798,6 @@ declare namespace love {
         /**
          * Gets the optional graphics features and whether they're supported on the
          * system.
-         *
          *
          * Some older or low-end systems don't always support all graphics features.
          *
@@ -892,10 +867,8 @@ declare namespace love {
          * rectangle with the existing scissor. If no scissor is active yet, it behaves
          * like love.graphics.setScissor.
          *
-         *
          * The scissor limits the drawing area to a specified rectangle. This affects all
          * graphics calls, including love.graphics.clear.
-         *
          *
          * The dimensions of the scissor is unaffected by graphical transformations
          * (translate, scale, ...).
@@ -913,10 +886,8 @@ declare namespace love {
          * rectangle with the existing scissor. If no scissor is active yet, it behaves
          * like love.graphics.setScissor.
          *
-         *
          * The scissor limits the drawing area to a specified rectangle. This affects all
          * graphics calls, including love.graphics.clear.
-         *
          *
          * The dimensions of the scissor is unaffected by graphical transformations
          * (translate, scale, ...).
@@ -934,7 +905,6 @@ declare namespace love {
         /**
          * Converts the given 2D position from screen-space into global coordinates.
          *
-         *
          * This effectively applies the reverse of the current graphics transformations to
          * the given position. A similar Transform:inverseTransformPoint method exists for
          * Transform objects.
@@ -951,7 +921,6 @@ declare namespace love {
         /**
          * Gets whether gamma-correct rendering is supported and enabled. It can be
          * enabled by setting t.gammacorrect = true in love.conf.
-         *
          *
          * Not all devices support gamma-correct rendering, in which case it will be
          * automatically disabled and this function will return false. It is supported on
@@ -1101,7 +1070,6 @@ declare namespace love {
          * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
          * cached, in that calling this function with the same arguments will always
          * create a new Font object.
-         *
          *
          * All variants which accept a filename can also accept a Data object instead.
          *
@@ -1264,11 +1232,9 @@ declare namespace love {
          * Creates a new Shader object for hardware-accelerated vertex and pixel effects.
          * A Shader contains either vertex shader code, pixel shader code, or both.
          *
-         *
          * Vertex shader code must contain at least one function, named position, which is
          * the function that will produce transformed vertex positions of drawn objects in
          * screen-space.
-         *
          *
          * Pixel shader code must contain at least one function, named effect, which is
          * the function that will produce the color which is blended onto the screen for
@@ -1284,11 +1250,9 @@ declare namespace love {
          * Creates a new Shader object for hardware-accelerated vertex and pixel effects.
          * A Shader contains either vertex shader code, pixel shader code, or both.
          *
-         *
          * Vertex shader code must contain at least one function, named position, which is
          * the function that will produce transformed vertex positions of drawn objects in
          * screen-space.
-         *
          *
          * Pixel shader code must contain at least one function, named effect, which is
          * the function that will produce the color which is blended onto the screen for
@@ -1314,7 +1278,6 @@ declare namespace love {
 
         /**
          * Creates a new Quad.
-         *
          *
          * The purpose of a Quad is to describe the result of the following transformation
          * on any drawable object. The object is first scaled to dimensions sw * sh. The
@@ -1392,7 +1355,6 @@ declare namespace love {
         /**
          * Resets the current coordinate transformation.
          *
-         *
          * This function is always used to reverse any previous calls to
          * love.graphics.rotate, love.graphics.scale, love.graphics.shear or
          * love.graphics.translate. It returns the current transformation state to its
@@ -1439,7 +1401,6 @@ declare namespace love {
         /**
          * Pops the current coordinate transformation from the transformation stack.
          *
-         *
          * This function is always used to reverse a previous push operation. It returns
          * the current transformation state to what it was before the last preceding push.
          * For an example, see the description of love.graphics.push.
@@ -1449,7 +1410,6 @@ declare namespace love {
 
         /**
          * Displays the results of drawing operations on the screen.
-         *
          *
          * This function is used when writing your own love.run function. It presents all
          * the results of your drawing operations on the screen. See the example in
@@ -1565,7 +1525,6 @@ declare namespace love {
          * Copies and pushes the current coordinate transformation to the transformation
          * stack.
          *
-         *
          * This function is always used to prepare for a corresponding pop operation
          * later. It stores the current coordinate transformation state into the
          * transformation stack and keeps it active. Later changes to the transformation
@@ -1624,7 +1583,6 @@ declare namespace love {
         /**
          * Resets the current graphics settings.
          *
-         *
          * Calling reset makes the current drawing color white, the current background
          * color black, resets any active Canvas or Shader, and removes any scissor
          * settings. It sets the BlendMode to alpha. It also sets both the point and line
@@ -1635,7 +1593,6 @@ declare namespace love {
 
         /**
          * Rotates the coordinate system in two dimensions.
-         *
          *
          * Calling this function affects all future drawing operations by rotating the
          * coordinate system around the origin by the given amount of radians. This change
@@ -1649,12 +1606,10 @@ declare namespace love {
         /**
          * Scales the coordinate system in two dimensions.
          *
-         *
          * By default the coordinate system in LÖVE corresponds to the display pixels in
          * horizontal and vertical directions one-to-one, and the x-axis increases towards
          * the right while the y-axis increases downwards. Scaling the coordinate system
          * changes this relation.
-         *
          *
          * After scaling by sx and sy, all coordinates are treated as if they were
          * multiplied by sx and sy. Every result of a drawing operation is also
@@ -1664,10 +1619,8 @@ declare namespace love {
          * means everything will be drawn flipped or upside down, or both. Scaling by zero
          * is not a useful operation.
          *
-         *
          * Scale and translate are not commutative operations, therefore, calling them in
          * different orders will change the outcome.
-         *
          *
          * Scaling lasts until love.draw exits.
          *
@@ -1746,7 +1699,6 @@ declare namespace love {
          * rendering and clearing the screen. For example, if red is set to false, no
          * further changes will be made to the red component of any pixels.
          *
-         *
          * Enables all color components when called without arguments.
          *
          * @param red Render red component.
@@ -1762,7 +1714,6 @@ declare namespace love {
          * rendering and clearing the screen. For example, if red is set to false, no
          * further changes will be made to the red component of any pixels.
          *
-         *
          * Enables all color components when called without arguments.
          * @link [love.graphics.setColorMask](https://love2d.org/wiki/love.graphics.setColorMask)
          */
@@ -1770,7 +1721,6 @@ declare namespace love {
 
         /**
          * Sets the default scaling filters used with Images, Canvases, and Fonts.
-         *
          *
          * This function does not apply retroactively to loaded images.
          *
@@ -1783,7 +1733,6 @@ declare namespace love {
 
         /**
          * Configures depth testing and writing to the depth buffer.
-         *
          *
          * This is low-level functionality designed for use with custom vertex shaders and
          * Meshes with custom vertex attributes. No higher level APIs are provided to set
@@ -1799,7 +1748,6 @@ declare namespace love {
          * Set an already-loaded Font as the current font or create and load a new one
          * from the file and size.
          *
-         *
          * It's recommended that Font objects are created with love.graphics.newFont in
          * the loading stage and then passed to this function in the drawing stage.
          *
@@ -1811,7 +1759,6 @@ declare namespace love {
         /**
          * Sets whether triangles with clockwise- or counterclockwise-ordered vertices are
          * considered front-facing.
-         *
          *
          * This is designed for use in combination with Mesh face culling. Other
          * love.graphics shapes, lines, and sprites are not guaranteed to have a specific
@@ -1848,7 +1795,6 @@ declare namespace love {
 
         /**
          * Sets whether back-facing triangles in a Mesh are culled.
-         *
          *
          * This is designed for use with low level custom hardware-accelerated 3D
          * rendering via custom vertex attributes on Meshes, custom vertex shaders, and
@@ -1907,7 +1853,6 @@ declare namespace love {
          * drawing operations until the next love.graphics.setShader will be drawn using
          * the Shader object specified.
          *
-         *
          * Disables the shaders when called without arguments.
          * @link [love.graphics.setShader](https://love2d.org/wiki/love.graphics.setShader)
          */
@@ -1917,7 +1862,6 @@ declare namespace love {
          * Sets or resets a Shader as the current pixel effect or vertex shaders. All
          * drawing operations until the next love.graphics.setShader will be drawn using
          * the Shader object specified.
-         *
          *
          * Disables the shaders when called without arguments.
          *
@@ -1937,7 +1881,6 @@ declare namespace love {
         /**
          * Sets or disables scissor.
          *
-         *
          * The scissor limits the drawing area to a specified rectangle. This affects all
          * graphics calls, including love.graphics.clear.
          *
@@ -1952,7 +1895,6 @@ declare namespace love {
         /**
          * Sets or disables scissor.
          *
-         *
          * The scissor limits the drawing area to a specified rectangle. This affects all
          * graphics calls, including love.graphics.clear.
          * @link [love.graphics.setScissor](https://love2d.org/wiki/love.graphics.setScissor)
@@ -1962,13 +1904,11 @@ declare namespace love {
         /**
          * Configures or disables stencil testing.
          *
-         *
          * When stencil testing is enabled, the geometry of everything that is drawn
          * afterward will be clipped / stencilled out based on a comparison between the
          * arguments of this function and the stencil value of each pixel that the
          * geometry touches. The stencil values of pixels are affected via
          * love.graphics.stencil.
-         *
          *
          * Each Canvas has its own per-pixel stencil values.
          *
@@ -1981,13 +1921,11 @@ declare namespace love {
         /**
          * Configures or disables stencil testing.
          *
-         *
          * When stencil testing is enabled, the geometry of everything that is drawn
          * afterward will be clipped / stencilled out based on a comparison between the
          * arguments of this function and the stencil value of each pixel that the
          * geometry touches. The stencil values of pixels are affected via
          * love.graphics.stencil.
-         *
          *
          * Each Canvas has its own per-pixel stencil values.
          * @link [love.graphics.setStencilTest](https://love2d.org/wiki/love.graphics.setStencilTest)
@@ -1996,7 +1934,6 @@ declare namespace love {
 
         /**
          * Sets whether wireframe lines will be used when drawing.
-         *
          *
          * Wireframe mode should only be used for debugging. The lines drawn with it
          * enabled do not behave like regular love.graphics lines: their widths don't
@@ -2020,13 +1957,11 @@ declare namespace love {
         /**
          * Draws geometry as a stencil.
          *
-         *
          * The geometry drawn by the supplied function sets invisible stencil values of
          * pixels, instead of setting pixel colors. The stencil values of pixels can act
          * like a mask / stencil - love.graphics.setStencilTest can be used afterward to
          * determine how further rendering is affected by the stencil values in each
          * pixel.
-         *
          *
          * Each Canvas has its own per-pixel stencil values. Stencil values are within the
          * range of [0, 255].
@@ -2047,7 +1982,6 @@ declare namespace love {
         /**
          * Converts the given 2D position from global coordinates into screen-space.
          *
-         *
          * This effectively applies the current graphics transformations to the given
          * position. A similar Transform:transformPoint method exists for Transform
          * objects.
@@ -2064,20 +1998,16 @@ declare namespace love {
         /**
          * Translates the coordinate system in two dimensions.
          *
-         *
          * When this function is called with two numbers, dx, and dy, all the following
          * drawing operations take effect as if their x and y coordinates were x+dx and
          * y+dy.
          *
-         *
          * Scale and translate are not commutative operations, therefore, calling them in
          * different orders will change the outcome.
-         *
          *
          * This change lasts until love.graphics.clear is called (which is called
          * automatically before love.draw in the default love.run function), or a
          * love.graphics.pop reverts to a previous coordinate system state.
-         *
          *
          * Translating using whole numbers will prevent tearing/blurring of images and
          * fonts draw after translating.

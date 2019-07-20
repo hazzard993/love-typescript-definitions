@@ -17,4 +17,4 @@ channel.release;
 channel.type;
 channel.typeOf;
 
-const [a] = channel.performAtomic((a: number) => [0], 0);
+const [a] = channel.performAtomic<(this: void, a: number) => [number]>((a: number) => [0], 0);

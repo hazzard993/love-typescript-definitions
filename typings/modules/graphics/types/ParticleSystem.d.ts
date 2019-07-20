@@ -6,7 +6,6 @@ declare interface ParticleSystem extends Drawable {
     /**
      * Creates an identical copy of the ParticleSystem in the stopped state.
      *
-     *
      * Cloned ParticleSystem inherit all the set-able state of the original
      * ParticleSystem, but they are initialized stopped.
      *
@@ -88,7 +87,6 @@ declare interface ParticleSystem extends Drawable {
     /**
      * Gets the linear acceleration (acceleration along the x and y axes) for
      * particles.
-     *
      *
      * Every particle created will accelerate along the x and y axes between xmin,ymin
      * and xmax,ymax.
@@ -184,7 +182,6 @@ declare interface ParticleSystem extends Drawable {
      * Gets a series of sizes by which to scale a particle sprite. 1.0 is normal size.
      * The particle system will interpolate between each size evenly over the
      * particle's lifetime.
-     *
      *
      * At least one size must be specified. A maximum of eight may be used.
      *
@@ -334,7 +331,6 @@ declare interface ParticleSystem extends Drawable {
      * will interpolate between each color evenly over the particle's lifetime. Color
      * modulation needs to be activated for this function to have any effect.
      *
-     *
      * Arguments are passed in groups of four, representing the components of the
      * desired RGBA value. At least one color must be specified. A maximum of eight
      * may be used.
@@ -398,7 +394,6 @@ declare interface ParticleSystem extends Drawable {
     /**
      * Sets the linear acceleration (acceleration along the x and y axes) for
      * particles.
-     *
      *
      * Every particle created will accelerate along the x and y axes between xmin,ymin
      * and xmax,ymax.
@@ -501,7 +496,6 @@ declare interface ParticleSystem extends Drawable {
      * Sets a series of sizes by which to scale a particle sprite. 1.0 is normal size.
      * The particle system will interpolate between each size evenly over the
      * particle's lifetime.
-     *
      *
      * At least one size must be specified. A maximum of eight may be used.
      *

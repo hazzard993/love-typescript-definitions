@@ -414,7 +414,6 @@ declare namespace love {
     /**
      * Called when a Joystick is connected.
      *
-     *
      * This callback is also triggered after love.load for every Joystick which was
      * already connected when the game started up.
      *
@@ -568,7 +567,6 @@ declare namespace love {
      * or if love.window.setMode is called with an unsupported width or height in
      * fullscreen and the window chooses the closest appropriate size.
      *
-     *
      * Calls to love.window.setMode will only trigger this event if the width or
      * height of the window after the call doesn't match the requested width and
      * height. This can happen if a fullscreen mode is requested which doesn't match
@@ -590,7 +588,6 @@ declare namespace love {
 
     /**
      * Called when the candidate text for an IME (Input Method Editor) has changed.
-     *
      *
      * The candidate text is not the final text that the user will eventually choose.
      * Use love.textinput for that.

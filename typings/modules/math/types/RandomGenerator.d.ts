@@ -6,7 +6,6 @@ declare interface RandomGenerator extends LoveObject<"RandomGenerator"> {
     /**
      * Gets the state of the random number generator.
      *
-     *
      * The state is split into two numbers due to Lua's use of doubles for all number
      * values - doubles can't accurately represent integer values above 2^53.
      *
@@ -22,11 +21,9 @@ declare interface RandomGenerator extends LoveObject<"RandomGenerator"> {
      * implementation-dependent string which is only useful for later use with
      * RandomGenerator:setState.
      *
-     *
      * This is different from RandomGenerator:getSeed in that getState gets the
      * RandomGenerator's current state, whereas getSeed gets the previously set seed
      * number.
-     *
      *
      * The value of the state string does not depend on the current operating system.
      *
@@ -96,11 +93,9 @@ declare interface RandomGenerator extends LoveObject<"RandomGenerator"> {
      * argument for this function is an opaque implementation-dependent string and
      * should only originate from a previous call to RandomGenerator:getState.
      *
-     *
      * This is different from RandomGenerator:setSeed in that setState directly sets
      * the RandomGenerator's current implementation-dependent state, whereas setSeed
      * gives it a new seed value.
-     *
      *
      * The effect of the state string does not depend on the current operating system.
      *

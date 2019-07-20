@@ -22,7 +22,6 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
     /**
      * Gets the vertex that establishes a connection to the next shape.
      *
-     *
      * Setting next and previous EdgeShape vertices can help prevent unwanted
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
@@ -36,7 +35,6 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
 
     /**
      * Gets the vertex that establishes a connection to the previous shape.
-     *
      *
      * Setting next and previous EdgeShape vertices can help prevent unwanted
      * collisions when a flat shape slides along the edge and moves over to the new
@@ -52,7 +50,6 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
     /**
      * Sets a vertex that establishes a connection to the next shape.
      *
-     *
      * This can help prevent unwanted collisions when a flat shape slides along the
      * edge and moves over to the new shape.
      *
@@ -64,7 +61,6 @@ declare interface EdgeShape extends Shape<"EdgeShape"> {
 
     /**
      * Sets a vertex that establishes a connection to the previous shape.
-     *
      *
      * This can help prevent unwanted collisions when a flat shape slides along the
      * edge and moves over to the new shape.

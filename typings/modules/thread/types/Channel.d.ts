@@ -13,7 +13,6 @@ declare interface Channel extends LoveObject<"Channel"> {
     /**
      * Retrieves the value of a Channel message and removes it from the message queue.
      *
-     *
      * It waits until a message is in the queue then returns the message value.
      *
      * @return value, The contents of the message.
@@ -23,7 +22,6 @@ declare interface Channel extends LoveObject<"Channel"> {
 
     /**
      * Retrieves the value of a Channel message and removes it from the message queue.
-     *
      *
      * It waits until a message is in the queue then returns the message value.
      *
@@ -54,7 +52,6 @@ declare interface Channel extends LoveObject<"Channel"> {
     /**
      * Retrieves the value of a Channel message, but leaves it in the queue.
      *
-     *
      * It returns _nil/undefined_ if there's no message in the queue.
      *
      * @return value, The contents of the message.
@@ -65,12 +62,10 @@ declare interface Channel extends LoveObject<"Channel"> {
     /**
      * Executes the specified function atomically with respect to this Channel.
      *
-     *
      * Calling multiple methods in a row on the same Channel is often useful. However
      * if multiple Threads are calling this Channel's methods at the same time, the
      * different calls on each Thread might end up interleaved (e.g. one or more of
      * the second thread's calls may happen in between the first thread's calls.)
-     *
      *
      * This method avoids that issue by making sure the Thread calling the method has
      * exclusive access to the Channel until the specified function has returned.
@@ -88,7 +83,6 @@ declare interface Channel extends LoveObject<"Channel"> {
     /**
      * Retrieves the value of a Channel message and removes it from the message queue.
      *
-     *
      * It returns _nil/undefined_ if there are no messages in the queue.
      *
      * @return value, The contents of the message.
@@ -98,7 +92,6 @@ declare interface Channel extends LoveObject<"Channel"> {
 
     /**
      * Send a message to the thread Channel.
-     *
      *
      * See any for the list of supported types.
      *
@@ -110,7 +103,6 @@ declare interface Channel extends LoveObject<"Channel"> {
     /**
      * Send a message to the thread Channel and wait for a thread to accept it.
      *
-     *
      * See any for the list of supported types.
      *
      * @param value The contents of the message.
@@ -121,7 +113,6 @@ declare interface Channel extends LoveObject<"Channel"> {
 
     /**
      * Send a message to the thread Channel and wait for a thread to accept it.
-     *
      *
      * See any for the list of supported types.
      *

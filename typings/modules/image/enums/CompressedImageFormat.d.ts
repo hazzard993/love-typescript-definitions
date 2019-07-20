@@ -2,7 +2,6 @@
  * Compressed image data formats. Here and here are a couple overviews of many of
  * the formats.
  *
- *
  * Unlike traditional PNG or jpeg, these formats stay compressed in RAM and in the
  * graphics card's VRAM. This is good for saving memory space as well as improving
  * performance, since the graphics card will be able to keep more of the image's

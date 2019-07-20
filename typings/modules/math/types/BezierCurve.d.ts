@@ -7,7 +7,6 @@ declare interface BezierCurve extends LoveObject<"BezierCurve"> {
      * Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1
      * (inclusive).
      *
-     *
      * This function can be used to move objects along paths or tween parameters.
      * However it should not be used to render the curve, see BezierCurve:render for
      * that purpose.
@@ -50,7 +49,6 @@ declare interface BezierCurve extends LoveObject<"BezierCurve"> {
 
     /**
      * Get the derivative of the Bézier curve.
-     *
      *
      * This function can be used to rotate sprites moving along a curve in the
      * direction of the movement and compute the direction perpendicular to the curve
@@ -95,10 +93,8 @@ declare interface BezierCurve extends LoveObject<"BezierCurve"> {
     /**
      * Get a list of coordinates to be used with love.graphics.line.
      *
-     *
      * This function samples the Bézier curve using recursive subdivision. You can
      * control the recursion depth using the depth parameter.
-     *
      *
      * If you are just interested to know the position on the curve given a parameter,
      * use BezierCurve:evaluate.
@@ -113,10 +109,8 @@ declare interface BezierCurve extends LoveObject<"BezierCurve"> {
      * Get a list of coordinates on a specific part of the curve, to be used with
      * love.graphics.line.
      *
-     *
      * This function samples the Bézier curve using recursive subdivision. You can
      * control the recursion depth using the depth parameter.
-     *
      *
      * If you are just need to know the position on the curve given a parameter, use
      * BezierCurve:evaluate.

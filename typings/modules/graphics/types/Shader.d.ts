@@ -17,7 +17,6 @@ declare interface Shader<U extends { [key: string]: any } | undefined = undefine
     /**
      * Gets whether a uniform / extern variable exists in the Shader.
      *
-     *
      * If a graphics driver's shader compiler determines that a uniform / extern
      * variable doesn't affect the final output of the shader, it may optimize the
      * variable out. This function will return false in that case.

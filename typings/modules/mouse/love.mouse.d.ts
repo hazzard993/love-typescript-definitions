@@ -26,12 +26,10 @@ declare namespace love {
         /**
          * Gets whether relative mode is enabled for the mouse.
          *
-         *
          * If relative mode is enabled, the cursor is hidden and doesn't move when the
          * mouse does, but relative mouse motion events are still generated via
          * love.mousemoved. This lets the mouse move in any direction indefinitely without
          * the cursor getting stuck at the edges of the screen.
-         *
          *
          * The reported position of the mouse is not updated while relative mode is
          * enabled, even when relative mouse motion events are generated.
@@ -43,7 +41,6 @@ declare namespace love {
 
         /**
          * Gets a Cursor object representing a system-native hardware cursor.
-         *
          *
          * Hardware cursors are framerate-independent and work the same way as normal
          * operating system cursors. Unlike drawing an image at the mouse's current
@@ -74,7 +71,6 @@ declare namespace love {
 
         /**
          * Gets whether cursor functionality is supported.
-         *
          *
          * If it isn't supported, calling love.mouse.newCursor and
          * love.mouse.getSystemCursor will cause an error. Mobile devices do not support
@@ -116,12 +112,10 @@ declare namespace love {
         /**
          * Creates a new hardware Cursor object from an image file or ImageData.
          *
-         *
          * Hardware cursors are framerate-independent and work the same way as normal
          * operating system cursors. Unlike drawing an image at the mouse's current
          * coordinates, hardware cursors never have visible lag between when the mouse is
          * moved and when the cursor position updates, even at low framerates.
-         *
          *
          * The hot spot is the point the operating system uses to determine what was
          * clicked and at what position the mouse cursor is. For example, the normal arrow
@@ -139,12 +133,10 @@ declare namespace love {
         /**
          * Creates a new hardware Cursor object from an image file or ImageData.
          *
-         *
          * Hardware cursors are framerate-independent and work the same way as normal
          * operating system cursors. Unlike drawing an image at the mouse's current
          * coordinates, hardware cursors never have visible lag between when the mouse is
          * moved and when the cursor position updates, even at low framerates.
-         *
          *
          * The hot spot is the point the operating system uses to determine what was
          * clicked and at what position the mouse cursor is. For example, the normal arrow
@@ -162,12 +154,10 @@ declare namespace love {
         /**
          * Creates a new hardware Cursor object from an image file or ImageData.
          *
-         *
          * Hardware cursors are framerate-independent and work the same way as normal
          * operating system cursors. Unlike drawing an image at the mouse's current
          * coordinates, hardware cursors never have visible lag between when the mouse is
          * moved and when the cursor position updates, even at low framerates.
-         *
          *
          * The hot spot is the point the operating system uses to determine what was
          * clicked and at what position the mouse cursor is. For example, the normal arrow
@@ -185,7 +175,6 @@ declare namespace love {
         /**
          * Sets the current mouse cursor.
          *
-         *
          * Resets the current mouse cursor to the default when called without arguments.
          * @link [love.mouse.setCursor](https://love2d.org/wiki/love.mouse.setCursor)
          */
@@ -193,7 +182,6 @@ declare namespace love {
 
         /**
          * Sets the current mouse cursor.
-         *
          *
          * Resets the current mouse cursor to the default when called without arguments.
          *
@@ -222,12 +210,10 @@ declare namespace love {
         /**
          * Sets whether relative mode is enabled for the mouse.
          *
-         *
          * When relative mode is enabled, the cursor is hidden and doesn't move when the
          * mouse does, but relative mouse motion events are still generated via
          * love.mousemoved. This lets the mouse move in any direction indefinitely without
          * the cursor getting stuck at the edges of the screen.
-         *
          *
          * The reported position of the mouse is not updated while relative mode is
          * enabled, even when relative mouse motion events are generated.

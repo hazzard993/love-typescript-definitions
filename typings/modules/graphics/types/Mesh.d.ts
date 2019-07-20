@@ -40,7 +40,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
     /**
      * Gets the range of vertices used when drawing the Mesh.
      *
-     *
      * If the Mesh's draw range has not been set previously with Mesh:setDrawRange,
      * this function will return _nil/undefined_.
      *
@@ -89,7 +88,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
     /**
      * Gets the properties of a specific attribute within a vertex in the Mesh.
      *
-     *
      * Meshes without a custom vertex format specified in love.graphics.newMesh have
      * position as their first attribute, texture coordinates as their second
      * attribute, and color as their third attribute.
@@ -122,7 +120,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
      * the vertices are used when the Mesh is drawn. The vertices, vertex map, and
      * mesh draw mode work together to determine what exactly is displayed on the
      * screen.
-     *
      *
      * If no vertex map has been set previously via Mesh:setVertexMap, then this
      * function will return _nil/undefined_ in LÖVE 0.10.0+, or an empty table in 0.9.2 and
@@ -164,11 +161,9 @@ declare interface Mesh extends Drawable<"Mesh"> {
     /**
      * Restricts the drawn vertices of the Mesh to a subset of the total.
      *
-     *
      * If a vertex map is used with the Mesh, this method will set a subset of the
      * values in the vertex map array to use, instead of a subset of the total
      * vertices in the Mesh.
-     *
      *
      * For example, if Mesh:setVertexMap(1, 2, 3, 1, 3, 4) and Mesh:setDrawRange(4, 6)
      * are called, vertices 1, 3, and 4 will be drawn.
@@ -182,11 +177,9 @@ declare interface Mesh extends Drawable<"Mesh"> {
     /**
      * Restricts the drawn vertices of the Mesh to a subset of the total.
      *
-     *
      * If a vertex map is used with the Mesh, this method will set a subset of the
      * values in the vertex map array to use, instead of a subset of the total
      * vertices in the Mesh.
-     *
      *
      * For example, if Mesh:setVertexMap(1, 2, 3, 1, 3, 4) and Mesh:setDrawRange(4, 6)
      * are called, vertices 1, 3, and 4 will be drawn.
@@ -198,7 +191,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
     /**
      * Sets the texture (Image or Canvas) used when drawing the Mesh.
      *
-     *
      * When called without an argument disables the texture. Untextured meshes have a
      * white color by default.
      *
@@ -208,7 +200,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
 
     /**
      * Sets the texture (Image or Canvas) used when drawing the Mesh.
-     *
      *
      * When called without an argument disables the texture. Untextured meshes have a
      * white color by default.
@@ -291,7 +282,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
      * mesh draw mode work together to determine what exactly is displayed on the
      * screen.
      *
-     *
      * The vertex map allows you to re-order or reuse vertices when drawing without
      * changing the actual vertex parameters or duplicating vertices. It is especially
      * useful when combined with different Mesh Draw Modes.
@@ -306,7 +296,6 @@ declare interface Mesh extends Drawable<"Mesh"> {
      * the vertices are used when the Mesh is drawn. The vertices, vertex map, and
      * mesh draw mode work together to determine what exactly is displayed on the
      * screen.
-     *
      *
      * The vertex map allows you to re-order or reuse vertices when drawing without
      * changing the actual vertex parameters or duplicating vertices. It is especially

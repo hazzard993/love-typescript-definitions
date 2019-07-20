@@ -144,7 +144,6 @@ declare interface SpriteBatch extends Drawable {
      * per-vertex or additional per-sprite information instead of just having
      * per-sprite colors.
      *
-     *
      * Each sprite in a SpriteBatch has 4 vertices in the following order: top-left,
      * bottom-left, top-right, bottom-right. The index returned by SpriteBatch:add
      * (and used by SpriteBatch:set) can used to determine the first vertex of a
@@ -181,7 +180,6 @@ declare interface SpriteBatch extends Drawable {
 
     /**
      * Gets the color that will be used for the next add and set operations.
-     *
      *
      * If no color has been set with SpriteBatch:setColor or the current SpriteBatch
      * color has been cleared, this method will return _nil/undefined_.
@@ -275,7 +273,6 @@ declare interface SpriteBatch extends Drawable {
      * Sets the color that will be used for the next add and set operations. Calling
      * the function without arguments will clear the color.
      *
-     *
      * In version [[0.9.2]] and older, the global color set with
      * love.graphics.setColor will not work on the SpriteBatch if any of the sprites
      * has its own color.
@@ -291,7 +288,6 @@ declare interface SpriteBatch extends Drawable {
     /**
      * Sets the color that will be used for the next add and set operations. Calling
      * the function without arguments will clear the color.
-     *
      *
      * In version [[0.9.2]] and older, the global color set with
      * love.graphics.setColor will not work on the SpriteBatch if any of the sprites

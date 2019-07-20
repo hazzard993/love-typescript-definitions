@@ -17,7 +17,6 @@ declare namespace love {
         /**
          * Create a new unnamed thread channel.
          *
-         *
          * One use for them is to pass new unnamed channels to other threads via
          * Channel:push
          *

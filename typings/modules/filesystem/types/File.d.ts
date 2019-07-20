@@ -89,7 +89,6 @@ declare interface File extends LoveObject<"File"> {
     /**
      * Open the file for write, read or append.
      *
-     *
      * If you are getting the error message "Could not set write directory", try
      * setting the save directory. This is done either with
      * love.filesystem.setIdentity or by setting the identity field in love.conf.

@@ -14,7 +14,6 @@ declare interface Thread extends LoveObject<"Thread"> {
     /**
      * Starts the thread.
      *
-     *
      * Threads can be restarted after they have completed their execution.
      *
      * @link [Thread:start](https://love2d.org/wiki/Thread:start)
@@ -23,7 +22,6 @@ declare interface Thread extends LoveObject<"Thread"> {
 
     /**
      * Starts the thread.
-     *
      *
      * Threads can be restarted after they have completed their execution.
      *
@@ -41,7 +39,6 @@ declare interface Thread extends LoveObject<"Thread"> {
 
     /**
      * Returns whether the thread is currently running.
-     *
      *
      * Threads which are not running can be (re)started with Thread:start.
      *

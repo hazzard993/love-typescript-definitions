@@ -19,7 +19,6 @@ declare interface ChainShape extends Shape<"ChainShape"> {
     /**
      * Gets the vertex that establishes a connection to the next shape.
      *
-     *
      * Setting next and previous ChainShape vertices can help prevent unwanted
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
@@ -57,7 +56,6 @@ declare interface ChainShape extends Shape<"ChainShape"> {
     /**
      * Gets the vertex that establishes a connection to the previous shape.
      *
-     *
      * Setting next and previous ChainShape vertices can help prevent unwanted
      * collisions when a flat shape slides along the edge and moves over to the new
      * shape.
@@ -80,7 +78,6 @@ declare interface ChainShape extends Shape<"ChainShape"> {
     /**
      * Sets a vertex that establishes a connection to the next shape.
      *
-     *
      * This can help prevent unwanted collisions when a flat shape slides along the
      * edge and moves over to the new shape.
      *
@@ -92,7 +89,6 @@ declare interface ChainShape extends Shape<"ChainShape"> {
 
     /**
      * Sets a vertex that establishes a connection to the previous shape.
-     *
      *
      * This can help prevent unwanted collisions when a flat shape slides along the
      * edge and moves over to the new shape.

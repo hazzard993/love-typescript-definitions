@@ -1,18 +1,15 @@
 /**
  * Keyboard scancodes.
  *
- *
  * Scancodes are keyboard layout-independent, so the scancode "w" will be
  * generated if the key in the same place as the "w" key on an American QWERTY
  * keyboard is pressed, no matter what the key is labelled or what the user's
  * operating system settings are.
  *
- *
  * Using scancodes, rather than keycodes, is useful because keyboards with layouts
  * differing from the US/UK layout(s) might have keys that generate 'unknown'
  * keycodes, but the scancodes will still be detected. This however would
  * necessitate having a list for each keyboard layout one would choose to support.
- *
  *
  * One could use textinput or textedited instead, but those only give back the end
  * result of keys used, i.e. you can't get modifiers on their own from it, only

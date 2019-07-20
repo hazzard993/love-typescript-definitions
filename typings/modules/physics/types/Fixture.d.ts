@@ -75,7 +75,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * always collide if the group is positive or never collide if it's negative. The
      * group zero means no group.
      *
-     *
      * The groups range from -32768 to 32767.
      *
      * @return group, The group of the fixture.
@@ -116,7 +115,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * Returns the shape of the fixture. This shape is a reference to the actual data
      * used in the simulation. It's possible to change its values between timesteps.
      *
-     *
      * Do not call any functions on this shape after the parent fixture has been
      * destroyed. This shape will point to an invalid memory address and likely cause
      * crashes if you interact further with it.
@@ -128,7 +126,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
 
     /**
      * Returns the Lua value associated with this fixture.
-     *
      *
      * Use this function in one thread only.
      *
@@ -158,11 +155,9 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * vector and the line position where the ray hit. If the ray missed the shape,
      * _nil/undefined_ will be returned.
      *
-     *
      * The ray starts on the first point of the input line and goes towards the second
      * point of the line. The fourth argument is the maximum distance the ray is going
      * to travel as a scale factor of the input line length.
-     *
      *
      * The childIndex parameter is used to specify which child of a parent shape, such
      * as a ChainShape, will be ray casted. For ChainShapes, the index of 1 is the
@@ -170,10 +165,8 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * specified so if you want to test every shape of the parent, you must loop
      * through all of its children.
      *
-     *
      * The world position of the impact can be calculated by multiplying the line
      * vector with the third return value and adding it to the line starting point.
-     *
      *
      * hitx, hity = x1 + (x2 - x1) * fraction, y1 + (y2 - y1) * fraction
      *
@@ -220,10 +213,8 @@ declare interface Fixture extends LoveObject<"Fixture"> {
     /**
      * Sets the filter data of the fixture.
      *
-     *
      * Groups, categories, and mask can be used to define the collision behaviour of
      * the fixture.
-     *
      *
      * If two fixtures are in the same group they either always collide if the group
      * is positive, or never collide if it's negative. If the group is zero or they do
@@ -231,7 +222,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * the other fixture with their masks. The fixtures do not collide if that's not
      * the case. If they do have each other's categories selected, the return value of
      * the custom contact filter will be used. They always collide if none was set.
-     *
      *
      * There can be up to 16 categories. Categories and masks are encoded as the bits
      * of a 16-bit integer.
@@ -256,7 +246,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
      * collide if the group is positive or never collide if it's negative. The group
      * zero means no group.
      *
-     *
      * The groups range from -32768 to 32767.
      *
      * @param group The group as an integer from -32768 to 32767.
@@ -267,7 +256,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
     /**
      * Sets the category mask of the fixture. There can be up to 16 categories
      * represented as a number from 1 to 16.
-     *
      *
      * This fixture will collide with the fixtures that are in the selected categories
      * if the other fixture also has a category of this fixture selected.
@@ -289,7 +277,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
     /**
      * Sets whether the fixture should act as a sensor.
      *
-     *
      * Sensor do not produce collisions responses, but the begin and end callbacks
      * will still be called for this fixture.
      *
@@ -300,7 +287,6 @@ declare interface Fixture extends LoveObject<"Fixture"> {
 
     /**
      * Associates a Lua value with the fixture.
-     *
      *
      * Use this function in one thread only.
      *

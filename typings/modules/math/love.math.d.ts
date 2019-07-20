@@ -49,7 +49,6 @@ declare namespace love {
         /**
          * Gets the seed of the random number generator.
          *
-         *
          * The state is split into two numbers due to Lua's use of doubles for all number
          * values - doubles can't accurately represent integer values above 2^53.
          *
@@ -65,11 +64,9 @@ declare namespace love {
          * implementation-dependent string which is only useful for later use with
          * RandomGenerator:setState.
          *
-         *
          * This is different from RandomGenerator:getSeed in that getState gets the
          * RandomGenerator's current state, whereas getSeed gets the previously set seed
          * number.
-         *
          *
          * The value of the state string does not depend on the current operating system.
          *
@@ -80,7 +77,6 @@ declare namespace love {
 
         /**
          * Checks whether a polygon is convex.
-         *
          *
          * PolygonShapes in love.physics, some forms of Mesh, and polygons drawn with
          * love.graphics.polygon must be simple convex polygons.
@@ -97,7 +93,6 @@ declare namespace love {
          * when storing linear RGB color values in an image, because the linear RGB color
          * space has less precision than sRGB for dark colors, which can result in
          * noticeable color banding when drawing.
-         *
          *
          * In general, colors chosen based on what they look like on-screen are already in
          * gamma-space and should not be double-converted. Colors calculated using math
@@ -120,7 +115,6 @@ declare namespace love {
          * space has less precision than sRGB for dark colors, which can result in
          * noticeable color banding when drawing.
          *
-         *
          * In general, colors chosen based on what they look like on-screen are already in
          * gamma-space and should not be double-converted. Colors calculated using math
          * are often in the linear RGB space.
@@ -140,7 +134,6 @@ declare namespace love {
          * space has less precision than sRGB for dark colors, which can result in
          * noticeable color banding when drawing.
          *
-         *
          * In general, colors chosen based on what they look like on-screen are already in
          * gamma-space and should not be double-converted. Colors calculated using math
          * are often in the linear RGB space.
@@ -153,7 +146,6 @@ declare namespace love {
 
         /**
          * Creates a new BezierCurve object.
-         *
          *
          * The number of vertices in the control polygon determines the degree of the
          * curve, e.g. three vertices define a quadratic (degree 2) Bézier curve, four
@@ -235,10 +227,8 @@ declare namespace love {
          * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
          * will always be the same, given the same arguments.
          *
-         *
          * Simplex noise is closely related to Perlin noise. It is widely used for
          * procedural content generation.
-         *
          *
          * There are many webpages which discuss Perlin and Simplex noise in detail.
          *
@@ -252,10 +242,8 @@ declare namespace love {
          * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
          * will always be the same, given the same arguments.
          *
-         *
          * Simplex noise is closely related to Perlin noise. It is widely used for
          * procedural content generation.
-         *
          *
          * There are many webpages which discuss Perlin and Simplex noise in detail.
          *
@@ -270,10 +258,8 @@ declare namespace love {
          * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
          * will always be the same, given the same arguments.
          *
-         *
          * Simplex noise is closely related to Perlin noise. It is widely used for
          * procedural content generation.
-         *
          *
          * There are many webpages which discuss Perlin and Simplex noise in detail.
          *
@@ -289,10 +275,8 @@ declare namespace love {
          * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
          * will always be the same, given the same arguments.
          *
-         *
          * Simplex noise is closely related to Perlin noise. It is widely used for
          * procedural content generation.
-         *
          *
          * There are many webpages which discuss Perlin and Simplex noise in detail.
          *
@@ -366,11 +350,9 @@ declare namespace love {
          * implementation-dependent string which is only useful for later use with
          * RandomGenerator:setState.
          *
-         *
          * This is different from RandomGenerator:getSeed in that getState gets the
          * RandomGenerator's current state, whereas getSeed gets the previously set seed
          * number.
-         *
          *
          * The value of the state string does not depend on the current operating system.
          *

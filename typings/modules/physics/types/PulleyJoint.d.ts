@@ -60,7 +60,6 @@ declare interface PulleyJoint extends Joint<"PulleyJoint"> {
     /**
      * Set the total length of the rope.
      *
-     *
      * Setting a new length for the rope updates the maximum length values of the
      * joint.
      *
@@ -71,7 +70,6 @@ declare interface PulleyJoint extends Joint<"PulleyJoint"> {
 
     /**
      * Set the maximum lengths of the rope segments.
-     *
      *
      * The physics module also imposes maximum values for the rope segments. If the
      * parameters exceed these values, the maximum values are set instead of the

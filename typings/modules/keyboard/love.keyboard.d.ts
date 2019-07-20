@@ -76,7 +76,6 @@ declare namespace love {
         /**
          * Enables or disables key repeat. It is disabled by default.
          *
-         *
          * The interval between repeats depends on the user's system settings.
          *
          * @param enable Whether repeat keypress events should be enabled when a key is held down.

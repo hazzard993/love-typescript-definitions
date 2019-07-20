@@ -143,11 +143,9 @@ declare interface Texture<T extends TextureTypes = TextureTypes> extends Drawabl
     /**
      * Gets whether the Texture can be drawn and sent to a Shader.
      *
-     *
      * Canvases created with stencil and/or depth PixelFormats are not readable by
      * default, unless readable=true is specified in the settings table passed into
      * love.graphics.newCanvas.
-     *
      *
      * Non-readable Canvases can still be rendered to.
      *

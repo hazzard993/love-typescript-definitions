@@ -45,10 +45,8 @@ declare interface Transform extends LoveObject<"Transform"> {
      * Applies the reverse of the Transform object's transformation to the given 2D
      * position.
      *
-     *
      * This effectively converts the given position from the local coordinate space of
      * the Transform into global coordinates.
-     *
      *
      * One use of this method can be to convert a screen-space mouse position into
      * global world coordinates, if the given Transform has transformations applied
@@ -173,7 +171,6 @@ declare interface Transform extends LoveObject<"Transform"> {
 
     /**
      * Applies the Transform object's transformation to the given 2D position.
-     *
      *
      * This effectively converts the given position from global coordinates into the
      * local coordinate space of the Transform.

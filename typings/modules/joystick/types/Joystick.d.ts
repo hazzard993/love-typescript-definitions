@@ -129,7 +129,6 @@ declare interface Joystick extends LoveObject<"Joystick"> {
     /**
      * Checks if a button on the Joystick is pressed.
      *
-     *
      * LÖVE 0.9.0 had a bug which required the button indices passed to
      * Joystick:isDown to be 0-based instead of 1-based, for example button 1 would be
      * 0 for this function. It was fixed in 0.9.1.
@@ -145,7 +144,6 @@ declare interface Joystick extends LoveObject<"Joystick"> {
      * Joystick's buttons and axes can be used in a standardized manner across
      * different operating systems and joystick models via Joystick:getGamepadAxis and
      * related functions.
-     *
      *
      * LÖVE automatically recognizes most popular controllers with a similar layout
      * to the Xbox 360 controller as gamepads, but you can add more with

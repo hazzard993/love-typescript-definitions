@@ -48,7 +48,6 @@ declare namespace love {
          * Gets the filesystem paths that will be searched for c libraries when require is
          * called.
          *
-         *
          * The paths string returned by this function is a sequence of path templates
          * separated by semicolons. The argument passed to require will be inserted in
          * place of any question mark ("?") character in each template (after the dot
@@ -56,7 +55,6 @@ declare namespace love {
          * separators.) Additionally, any occurrence of a double question mark ("??") will
          * be replaced by the name passed to require and the default library extension for
          * the platform.
-         *
          *
          * The paths are relative to the game's source and save directories, as well as
          * any paths mounted with love.filesystem.mount.
@@ -69,7 +67,6 @@ declare namespace love {
         /**
          * Returns a table with the names of files and subdirectories in the specified
          * path. The table is not sorted in any way; the order is undefined.
-         *
          *
          * If the path passed to the function exists in the game and the save directory,
          * it will list the files and directories from both places.
@@ -139,7 +136,6 @@ declare namespace love {
          * Gets the platform-specific absolute path of the directory containing a
          * filepath.
          *
-         *
          * This can be used to determine whether a file is inside the save directory or
          * the game's source .love.
          *
@@ -152,13 +148,11 @@ declare namespace love {
         /**
          * Gets the filesystem paths that will be searched when require is called.
          *
-         *
          * The paths string returned by this function is a sequence of path templates
          * separated by semicolons. The argument passed to require will be inserted in
          * place of any question mark ("?") character in each template (after the dot
          * characters in the argument passed to require are replaced by directory
          * separators.)
-         *
          *
          * The paths are relative to the game's source and save directories, as well as
          * any paths mounted with love.filesystem.mount.
@@ -191,7 +185,6 @@ declare namespace love {
          * Returns the full path to the directory containing the .love file. If the game
          * is fused to the LÖVE executable, then the directory containing the executable
          * is returned.
-         *
          *
          * If love.filesystem.isFused is true, the path returned by this function can be
          * passed to love.filesystem.mount, which will make the directory containing the
@@ -230,11 +223,9 @@ declare namespace love {
         /**
          * Gets whether the game is in fused mode or not.
          *
-         *
          * If a game is in fused mode, its save directory will be directly in the Appdata
          * directory instead of Appdata/LOVE/. The game will also be able to load C Lua
          * dynamic libraries which are located in the save directory.
-         *
          *
          * A game is in fused mode if the source .love has been fused to the executable
          * (see Game Distribution), or if "--fused" has been given as a command-line
@@ -385,7 +376,6 @@ declare namespace love {
          * Sets the filesystem paths that will be searched for c libraries when require is
          * called.
          *
-         *
          * The paths string returned by this function is a sequence of path templates
          * separated by semicolons. The argument passed to require will be inserted in
          * place of any question mark ("?") character in each template (after the dot
@@ -393,7 +383,6 @@ declare namespace love {
          * separators.) Additionally, any occurrence of a double question mark ("??") will
          * be replaced by the name passed to require and the default library extension for
          * the platform.
-         *
          *
          * The paths are relative to the game's source and save directories, as well as
          * any paths mounted with love.filesystem.mount.
@@ -416,13 +405,11 @@ declare namespace love {
         /**
          * Sets the filesystem paths that will be searched when require is called.
          *
-         *
          * The paths string given to this function is a sequence of path templates
          * separated by semicolons. The argument passed to require will be inserted in
          * place of any question mark ("?") character in each template (after the dot
          * characters in the argument passed to require are replaced by directory
          * separators.)
-         *
          *
          * The paths are relative to the game's source and save directories, as well as
          * any paths mounted with love.filesystem.mount.

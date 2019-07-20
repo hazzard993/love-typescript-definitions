@@ -42,7 +42,6 @@ declare interface ImageData extends Data<"ImageData"> {
     /**
      * Gets the color of a pixel at a specific position in the image.
      *
-     *
      * Valid x and y values start at 0 and go up to image width and height minus 1.
      * Non-integer values are floored.
      *
@@ -68,10 +67,8 @@ declare interface ImageData extends Data<"ImageData"> {
     /**
      * Transform an image by applying a function to every pixel.
      *
-     *
      * This function is a higher order function. It takes another function as a
      * parameter, and calls it once for each pixel in the ImageData.
-     *
      *
      * The function parameter is called with six parameters for each pixel in turn.
      * The parameters are numbers that represent the x and y coordinates of the pixel
@@ -100,7 +97,6 @@ declare interface ImageData extends Data<"ImageData"> {
 
     /**
      * Sets the color of a pixel at a specific position in the image.
-     *
      *
      * Valid x and y values start at 0 and go up to image width and height minus 1.
      *
