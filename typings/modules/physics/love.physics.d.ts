@@ -64,22 +64,11 @@ declare namespace love {
          * Creates a new ChainShape.
          *
          * @param loop If the chain should loop back to the first point.
-         * @param x1 The x position of the first point.
-         * @param y1 The y position of the first point.
-         * @param x2 The x position of the second point.
-         * @param y2 The y position of the second point.
-         * @param ... Additional point positions.
+         * @param xys The x and y positions of each point.
          * @return shape, The new shape.
          * @link [love.physics.newChainShape](https://love2d.org/wiki/love.physics.newChainShape)
          */
-        export function newChainShape(
-            loop: boolean,
-            x1: number,
-            y1: number,
-            x2: number,
-            y2: number,
-            ...vararg: Array<number>
-        ): ChainShape;
+        export function newChainShape(loop: boolean, ...xys: Array<number>): ChainShape;
 
         /**
          * Creates a new ChainShape.
@@ -278,24 +267,13 @@ declare namespace love {
         /**
          * Creates a new PolygonShape.
          *
-         *
          * This shape can have 8 vertices at most, and must form a convex shape.
          *
-         * @param x1 The position of first point on the x-axis.
-         * @param y1 The position of first point on the y-axis.
-         * @param x2 The position of second point on the x-axis.
-         * @param y2 The position of second point on the y-axis.
-         * @param ... You can continue passing more point positions to create the PolygonShape.
+         * @param xys The x and y positions of the points to create the polygon shape.
          * @return shape, A new PolygonShape.
          * @link [love.physics.newPolygonShape](https://love2d.org/wiki/love.physics.newPolygonShape)
          */
-        export function newPolygonShape(
-            x1: number,
-            y1: number,
-            x2: number,
-            y2: number,
-            ...vararg: Array<number>
-        ): PolygonShape;
+        export function newPolygonShape(...xys: Array<number>): PolygonShape;
 
         /**
          * Creates a new PolygonShape.
