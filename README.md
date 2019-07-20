@@ -46,7 +46,7 @@ and then use [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLu
 tstl -p tsconfig.json
 ```
 
-See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project.
+See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project and [CHANGELOG.md](CHANGELOG.md) for recent changes.
 
 ## Other Definitions / Tools to Help
 
