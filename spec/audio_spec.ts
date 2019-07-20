@@ -94,7 +94,6 @@ love.audio.getMaxSourceEffects;
 love.audio.getOrientation;
 love.audio.getPosition;
 love.audio.getRecordingDevices;
-love.audio.getSourceCount;
 love.audio.getVelocity;
 love.audio.getVolume;
 love.audio.isEffectsSupported;
