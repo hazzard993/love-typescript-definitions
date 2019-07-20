@@ -83,7 +83,7 @@ declare interface Channel extends LoveObject<"Channel"> {
      * @tupleReturn
      * @link [Channel:performAtomic](https://love2d.org/wiki/Channel:performAtomic)
      */
-    performAtomic(func: Function, arg1: any, ...vararg: Array<any>): Array<any>;
+    performAtomic<T extends (this: void, ...args: any[]) => any[]>(func: T, ...args: Parameters<T>): ReturnType<T>;
 
     /**
      * Retrieves the value of a Channel message and removes it from the message queue.

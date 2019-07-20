@@ -16,3 +16,5 @@ channel.supply;
 channel.release;
 channel.type;
 channel.typeOf;
+
+const [a] = channel.performAtomic((a: number) => [0], 0);
