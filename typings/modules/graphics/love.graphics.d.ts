@@ -112,7 +112,7 @@ declare namespace love {
          * @param callback Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.
          * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
          */
-        export function captureScreenshot(callback: () => void): void;
+        export function captureScreenshot(callback: (this: void) => void): void;
 
         /**
          * Creates a screenshot once the current frame is done (after love.draw has
@@ -2047,7 +2047,7 @@ declare namespace love {
          * @link [love.graphics.stencil](https://love2d.org/wiki/love.graphics.stencil)
          */
         export function stencil(
-            stencilfunction: () => void,
+            stencilfunction: (this: void) => void,
             action?: StencilAction,
             value?: number,
             keepvalues?: boolean

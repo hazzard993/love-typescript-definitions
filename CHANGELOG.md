@@ -4,7 +4,7 @@
 
 ## Packing and Unpacking
 
-- Enhanced `love.data.pack` and `love.data.unpack` keep track of the formatting and values to create the packed value for type safety. See [packing and unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking).
+- Enhanced _love.data.pack_ and _love.data.unpack_ keep track of the formatting and values to create the packed value for type safety. See [packing and unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking).
 
 ```ts
 function unpack(
@@ -24,7 +24,7 @@ unpack(love.data.pack("data", "n1", 1, 2, 3, 4));
 // ✔
 ```
 
-- Enhanced `love.system.getOS`. It can only return one of a select number of strings.
+- Enhanced _love.system.getOS_. It can only return one of a select number of strings.
 
 ```ts
 switch (love.system.getOS()) {
@@ -39,17 +39,17 @@ switch (love.system.getOS()) {
 }
 ```
 
-- Removed `SoundData` and `Decoder`'s `getChannels` method. This was removed.
-- Updated `love.timer.step` removing a variant that did not exist.
+- Removed _SoundData_ and _Decoder_'s _getChannels_ method. This was removed.
+- Updated _love.timer.step_ removing a variant that did not exist.
 
 ## Version 0.14.0
 
-- Enhanced `LoveObject.type`, `LoveObject.typeOf` and `LoveObject.release` to determine types.
+- Enhanced _LoveObject.type_, _LoveObject.typeOf_ and _LoveObject.release_ to determine types.
 
 ```ts
 function useQuad(quad: Quad) {
-  if (quad.type() === "Channel") {
-  } // ❌ Impossible. Quad types return "Quad".
+  const equal = quad.type() === "Channel";
+  // ❌ Impossible. Quad types return "Quad".
 }
 ```
 
@@ -59,24 +59,31 @@ function useQuad(quad: Quad) {
  */
 function useObject(object: LoveObject): void {
   if (object.typeOf("Image")) {
+    const [width, height] = object.getDimensions();
     // ✔ TypeScript knows object is an Image type.
     // So this code shouldn't fail.
-    const [width, height] = object.getDimensions();
   }
+  object.getDimensions();
   // ❌ TypeScript knows getDimensions doesn't exist on every LoveObject.
   // So this won't work for those cases.
-  object.getDimensions();
 }
 ```
 
 ```ts
 function releaseImage(image: Image) {
   if (image.release()) {
-    // ❌ TypeScript doesn't allow this call. It knows "image" no longer exists here.
+    // ❌ TypeScript doesn't allow this call.
+    // It knows image does not exist.
     image.getDimensions();
   }
-  // Unfortunately no type protection here.
-  image.getDimensions();
+}
+```
+
+- Enhanced _love.filesystem.lines_ and _File#lines_ allowing them to be used in a for..of loop. (Requires `--downLevelIteration`)
+
+```ts
+for (const line of love.filesystem.lines("file.txt")) {
+  print(line);
 }
 ```
 
@@ -97,14 +104,14 @@ function releaseImage(image: Image) {
 - particleSystem.setAreaSpread
 ```
 
-- Added 1 _love.filesystem.newFile_ variant.
+- +1 _love.filesystem.newFile_ variant.
 
 ```diff
 + love.filesystem.newFile(filename);
   love.filesystem.newFile(filename, mode);
 ```
 
-- Added 2 _love.filesystem.getInfo_ variants
+- +2 _love.filesystem.getInfo_ variants
 
 ```diff
 + love.filesystem.getInfo(path, filetype)
@@ -112,7 +119,7 @@ function releaseImage(image: Image) {
 + love.filesystem.getInfo(path, filetype, info)
 ```
 
-- Added 1 _love.filesystem.read_ variant.
+- +1 _love.filesystem.read_ variant.
 
 ```diff
   love.filesystem.read(name, size)
@@ -120,24 +127,16 @@ function releaseImage(image: Image) {
 + love.filesystem.read("file", name, size)
 ```
 
-- Enhanced _love.filesystem.lines_ and _File#lines_ allowing them to be used in a for..of loop. (Requires `--downLevelIteration`)
-
-```ts
-for (const line of love.filesystem.lines("file.txt")) {
-  print(line);
-}
-```
-
 - Using _undefined_ instead of _null_ for missing values.
 - Added _\_\_opaque_ to _LoveObject_. This stops users being able to create any _LoveObject_ not using one Love's API.
 - Added _\_\_drawable_ to _Drawable_. This stops _LoveObject_ types being used as a Drawable object since _LoveObject_ and _Drawable_ are equivalent TS types.
-- Added `"borderellipse"` and `"borderrectangle"` to AreaSpreadDistribution.
+- +2 enum values `"borderellipse"` and `"borderrectangle"` added to AreaSpreadDistribution.
 
 ## Version 0.13.0
 
 - Improved indenting of example code.
 - Added some tables to describe string enums.
-- Removed `FileInfo`, `ArrayImageSettings` and `Conf` and added them directly to their only associated function.
+- Removed _FileInfo_, _ArrayImageSettings_ and _Conf_ and added them directly to their only associated function.
 - It is now possible to extend the path used when referencing these types in _tsconfig.json_ files.
   - `love-typescript-definitions` all LÖVE 2D declarations.
   - `love-typescript-definitions/typings/modules` all LÖVE 2D's modules but not _love's_ callbacks and functions.
@@ -146,7 +145,7 @@ for (const line of love.filesystem.lines("file.txt")) {
 
 ## Version 0.11.2
 
-- Added two `love.graphics.draw` variants
+- +2 _love.graphics.draw_ variants
 
 ```diff
   love.graphics.draw(image);
@@ -155,7 +154,7 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.draw(image, quad, transform);
 ```
 
-- Added one `love.graphics.clear` variant. This was possible to write before but now TypeScript will display the correct documentation when highlighting the fourth variant.
+- +1 _love.graphics.clear_ variant. This was possible to write before but now TypeScript will display the correct documentation when highlighting the fourth variant.
 
 ```diff
   love.graphics.clear();
@@ -164,10 +163,10 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.clear(true, 255, 255);
 ```
 
-- Modified `love.graphics.stencil`'s function argument. `Function` to `() => void`
-- Modified `love.graphics.captureScreenshot`'s function argument. `Function` to `() => void`
+- Modified _love.graphics.stencil_'s function argument. `Function` to `() => void`
+- Modified _love.graphics.captureScreenshot_'s function argument. `Function` to `() => void`
 
-- Added one `love.graphics.newCanvas` variant. Used to create a volume or array texture-type Canvas.
+- +1 _love.graphics.newCanvas_ variant. Used to create a volume or array texture-type Canvas.
 
 ```diff
   love.graphics.newCanvas();
@@ -176,7 +175,7 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.newCanvas(100, 100, 80);
 ```
 
-- Added two `love.graphics.newFont` variants.
+- +2 _love.graphics.newFont_ variants.
 
 ```diff
   love.graphics.newFont("font.ttf");
@@ -185,7 +184,7 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.newFont();
 ```
 
-- Documented one `love.graphics.newImage` variant.
+- +1 documented _love.graphics.newImage_ variant.
 
 ```diff
   love.graphics.newImage("image.png");
@@ -194,7 +193,7 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.newImage("image.png", { linear: false });
 ```
 
-- Documented one `love.graphics.newImageFont` variant.
+- +1 documented _love.graphics.newImageFont_ variant.
 
 ```diff
   love.graphics.newImageFont("abc.png", "abc");
@@ -203,15 +202,15 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.newImageFont(imageData, "abc", 0);
 ```
 
-- Documented one `love.graphics.newParticleSystem` variant.
+- +1 documented _love.graphics.newParticleSystem_ variant.
 
 ```diff
 + love.graphics.newParticleSystem(image);
   love.graphics.newParticleSystem(canvas);
 ```
 
-- Added two `love.graphics.newVideo` variants
-- Removed one `love.graphics.newVideo` variant. This variant was deprecated.
+- +2 _love.graphics.newVideo_ variants
+- -1 _love.graphics.newVideo_ variant. This variant was deprecated.
 
 ```diff
   love.graphics.newVideo("video.mp4");
@@ -221,7 +220,7 @@ for (const line of love.filesystem.lines("file.txt")) {
 - love.graphics.newVideo(videoStream, false);
 ```
 
-- Added two `love.graphics.setNewFont` variants.
+- +2 _love.graphics.setNewFont_ variants.
 
 ```diff
 + love.graphics.setNewFont();
@@ -231,4 +230,4 @@ for (const line of love.filesystem.lines("file.txt")) {
 + love.graphics.setNewFont(rasterizer);
 ```
 
-- Removed `Stats` interface to improve the tooltip display of `love.graphics.getStats`.
+- Removed `Stats` interface to improve the tooltip display of _love.graphics.getStats_.
