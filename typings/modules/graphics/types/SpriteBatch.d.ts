@@ -272,16 +272,6 @@ declare interface SpriteBatch extends Drawable {
     ): void;
 
     /**
-     * Sets the maximum number of sprites the SpriteBatch can hold. Existing sprites
-     * in the batch (up to the new maximum) will not be cleared when this function is
-     * called.
-     *
-     * @param size The new maximum number of sprites the batch can hold.
-     * @link [SpriteBatch:setBufferSize](https://love2d.org/wiki/SpriteBatch:setBufferSize)
-     */
-    setBufferSize(size: number): void;
-
-    /**
      * Sets the color that will be used for the next add and set operations. Calling
      * the function without arguments will clear the color.
      *
