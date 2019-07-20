@@ -22,7 +22,7 @@ declare interface MotorJoint extends Joint<"MotorJoint"> {
     getLinearOffset(): [number, number];
 
     /**
-     * Sets the target angluar offset between the two Bodies the Joint is attached to.
+     * Sets the target angular offset between the two Bodies the Joint is attached to.
      *
      * @param angularoffset The target angular offset in radians: the second body's angle minus the first body's angle.
      * @link [MotorJoint:setAngularOffset](https://love2d.org/wiki/MotorJoint:setAngularOffset)
