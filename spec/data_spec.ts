@@ -51,3 +51,37 @@ love.data.newByteData;
 love.data.newDataView;
 love.data.pack;
 love.data.unpack;
+
+{
+    const byteData: ByteData = love.data.encode("data", "base64", "");
+    const stringData: string = love.data.encode("string", "base64", "");
+
+    const unpack = (
+        packedData: love.data.PackedData<{
+            format: "n1";
+            values: [1, 2, 3, 4];
+        }>
+    ) => {
+        love.data.unpack("n1", packedData);
+    };
+
+    let a: number, e: string;
+    const data = love.data.pack("data", "n1", 1, 2, 3, 4);
+    // [a] = love.data.unpack("n2", data); // ❌ Wrong unpacking format
+    // [e] = love.data.unpack("n1", data); // ❌ Unpacked data is not assignable to a string
+    [a] = love.data.unpack("n1", data); // ✔
+    unpack(data);
+}
+
+{
+    const unpack = (
+        packedData: love.data.PackedData<{
+            format: "n1";
+            values: [1, 2, 3, 4];
+        }>
+    ) => {
+        love.data.unpack("n1", packedData);
+    };
+
+    unpack(love.data.pack("data", "n1", 1, 2, 3, 4));
+}

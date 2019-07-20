@@ -7,7 +7,8 @@ declare namespace love {
      */
     export namespace data {
         /**
-         * Compresses a string or data using a specific compression algorithm.
+         * Compresses a string using a specific compression algorithm.
+         *
          * @param container What type to return the compressed data as.
          * @param format The format to use when compressing the string.
          * @param rawstring The raw (un-compressed) string to compress.
@@ -16,76 +17,78 @@ declare namespace love {
          * @link [love.data.compress](https://love2d.org/wiki/love.data.compress)
          * @since 11.0
          */
-        export function compress(
-            container: ContainerType,
+        export function compress<T extends ContainerType>(
+            container: T,
             format: CompressedDataFormat,
             rawstring: string,
             level?: number
-        ): string | ByteData;
-        export function compress(
-            container: "string",
-            format: CompressedDataFormat,
-            rawstring: string,
-            level?: number
-        ): string;
-        export function compress(
-            container: "data",
-            format: CompressedDataFormat,
-            rawstring: string,
-            level?: number
-        ): ByteData;
+        ): T extends "string" ? string : ByteData;
 
         /**
-         * Compresses a string or data using a specific compression algorithm.
+         * Compresses data using a specific compression algorithm.
+         *
          * @param container What type to return the compressed data as.
          * @param format The format to use when compressing the string.
-         * @param sourceString The raw (un-compressed) string to compress.
-         * @param level The level of compression to use, between `0` and `9`. `-1` indicates the default level. The meaning of this argument depends on the compression format being used.
+         * @param data A Data object containing the raw (un-compressed) data to compress.
+         * @param level The level of compression to use, between `0` and `9`. `-1` indicates the default level. The meaning of this argument depends on the compression format being used. (Default `-1`)
+         * @return compressedData, CompressedData/string which contains the compressed version of rawstring.
+         * @link [love.data.compress](https://love2d.org/wiki/love.data.compress)
+         * @since 11.0
+         */
+        export function compress<T extends ContainerType>(
+            container: T,
+            format: CompressedDataFormat,
+            data: Data,
+            level?: number
+        ): T extends "string" ? string : ByteData;
+
+        /**
+         * Decode Data or a string from any of the EncodeFormats to Data or string.
+         *
+         * @param container What type to return the decoded data as.
+         * @param format The format of the input data.
+         * @param source The raw (encoded) data to decode.
          * @return decoded, ByteData/string which contains the decoded version of source.
          * @link [love.data.decode](https://love2d.org/wiki/love.data.decode)
          * @since 11.0
          */
-        export function decode(
-            container: ContainerType,
+        export function decode<T extends ContainerType>(
+            container: T,
             format: EncodeFormat,
-            sourceString: string,
-            level?: number
-        ): ByteData | string;
-        export function decode(container: "string", format: EncodeFormat, sourceString: string, level?: number): string;
-        export function decode(container: "data", format: EncodeFormat, sourceString: string, level?: number): ByteData;
+            source: string
+        ): T extends "string" ? string : ByteData;
+        export function decode<T extends ContainerType>(
+            container: T,
+            format: EncodeFormat,
+            source: Data
+        ): T extends "string" ? string : ByteData;
 
         /**
-         * Decompresses a CompressedData or previously compressed string or Data object.
+         * Decompresses a CompressedData or previously compressed string or Data object
+         *
          * @param container What type to return the decompressed data as.
-         * @param compressedData The compressed data to decompress.
          * @return decompressedData, Data/string containing the raw decompressed data.
          * @link [love.data.decompress](https://love2d.org/wiki/love.data.decompress)
          * @since 11.0
          */
-        export function decompress(container: ContainerType, compressedData: CompressedData): Data | string;
-        export function decompress(container: "string", compressedData: CompressedData): string;
-        export function decompress(container: "data", compressedData: CompressedData): Data;
-        export function decompress(
-            container: ContainerType,
+        export function decompress<T extends ContainerType>(
+            container: T,
+            compressedData: CompressedData
+        ): T extends "string" ? string : Data;
+        export function decompress<T extends ContainerType>(
+            container: T,
             format: CompressedDataFormat,
             compressedData: CompressedData
-        ): Data | string;
-        export function decompress(
-            container: "string",
+        ): T extends "string" ? string : Data;
+        export function decompress<T extends ContainerType>(
+            container: T,
             format: CompressedDataFormat,
-            compressedData: CompressedData
-        ): string;
-        export function decompress(
-            container: "data",
-            format: CompressedDataFormat,
-            compressedData: CompressedData
-        ): Data;
-        export function decompress(container: ContainerType, format: CompressedDataFormat, data: Data): Data | string;
-        export function decompress(container: "string", format: CompressedDataFormat, data: Data): string;
-        export function decompress(container: "data", format: CompressedDataFormat, data: Data): Data;
+            data: Data
+        ): T extends "string" ? string : Data;
 
         /**
          * Encode Data or a string to a Data or string in one of the EncodeFormats.
+         *
          * @param container What type to return the encoded data as.
          * @param format The format of the output data.
          * @param sourceString The raw data to encode.
@@ -94,27 +97,16 @@ declare namespace love {
          * @link [love.data.encode](https://love2d.org/wiki/love.data.encode)
          * @since 11.0
          */
-        export function encode(
-            container: ContainerType,
+        export function encode<T extends ContainerType>(
+            container: T,
             format: EncodeFormat,
             sourceString: string,
             linelength?: number
-        ): ByteData | string;
-        export function encode(
-            container: "string",
-            format: EncodeFormat,
-            sourceString: string,
-            linelength?: number
-        ): string;
-        export function encode(
-            container: "data",
-            format: EncodeFormat,
-            sourceString: string,
-            linelength?: number
-        ): ByteData;
+        ): T extends "string" ? string : ByteData;
 
         /**
          * Gets the size in bytes that a given format used with love.data.pack will use.
+         *
          * @param format A string determining how the values are packed. Follows the rules of [Lua 5.3's string.pack format strings](https://www.lua.org/manual/5.3/manual.html#6.4.2).
          * @return size, The size in bytes that the packed data will use.
          * @link [love.data.getPackedSize](https://love2d.org/wiki/love.data.getPackedSize)
@@ -124,6 +116,7 @@ declare namespace love {
 
         /**
          * Compute the message digest of a string using a specified hash algorithm.
+         *
          * @param hashFunction Hash algorithm to use.
          * @param string String/Data to hash.
          * @return rawdigest, Raw message digest string.
@@ -134,6 +127,7 @@ declare namespace love {
 
         /**
          * Creates a new ByteData by copying the contents of the specified string.
+         *
          * @param datastring The byte string to copy.
          * @return bytedata, The new Data object.
          * @link [love.data.newByteData](https://love2d.org/wiki/love.data.newByteData)
@@ -143,6 +137,7 @@ declare namespace love {
 
         /**
          * Creates a new ByteData by copying from an existing Data object.
+         *
          * @param data The existing Data object to copy.
          * @param offset The offset of the subsection to copy, in bytes. (Default `0`)
          * @param size The size in bytes of the new Data object. (Default `data.getSize()`)
@@ -153,7 +148,18 @@ declare namespace love {
         export function newByteData(data: Data, offset?: number, size?: number): ByteData;
 
         /**
+         * Creates a new empty ByteData with the specific size.
+         *
+         * @param size The size in bytes of the new Data object.
+         * @return bytedata, The new Data object.
+         * @link [love.data.newByteData](https://love2d.org/wiki/love.data.newByteData)
+         * @since 11.0
+         */
+        export function newByteData(size: number): ByteData;
+
+        /**
          * Creates a new Data referencing a subsection of an existing Data object.
+         *
          * @param data The Data object to reference.
          * @param offset The offset of the subsection to reference, in bytes.
          * @param size The size in bytes of the subsection to reference.
@@ -164,8 +170,30 @@ declare namespace love {
          */
         export function newDataView(data: Data, offset: number, size: number): Data;
 
+        export type Packable = string | number | boolean;
+
+        export type PackedMetatable<F extends string = string, D extends Array<Packable> = Array<Packable>> = {
+            format: F;
+            values: D;
+        };
+
+        export interface PackedDataString<M extends PackedMetatable> extends String {
+            __metatable?: M;
+        }
+
+        export interface PackedDataObject<M extends PackedMetatable> extends Data {
+            __metatable?: M;
+        }
+
+        export type PackedData<M extends PackedMetatable = PackedMetatable> = PackedDataString<M> | PackedDataObject<M>;
+
+        export type PackedDataMetatable<Type> = Type extends PackedData<infer M> ? M : never;
+
         /**
          * Packs (serializes) simple Lua values.
+         *
+         * The format that describes how the values are packed is [documented here](https://www.lua.org/manual/5.3/manual.html#6.4.2).
+         *
          * @param container What type to return the encoded data as.
          * @param format A string determining how the values are packed. Follows the rules of Lua 5.3's [string.pack](https://www.lua.org/manual/5.3/manual.html#pdf-string.unpack) format strings.
          * @param values Values to serialize.
@@ -173,13 +201,16 @@ declare namespace love {
          * @link [love.data.pack](https://love2d.org/wiki/love.data.pack)
          * @since 11.0
          */
-        export function pack(container: ContainerType, format: string, ...values: Array<any>): Data | string;
-        export function pack(container: "string", format: string, ...values: Array<any>): string;
-        export function pack(container: "data", format: string, ...values: Array<any>): Data;
+        export function pack<T extends ContainerType, F extends string, D extends Packable[]>(
+            container: T,
+            format: F,
+            ...values: D
+        ): T extends "string" ? PackedDataString<{ format: F; values: D }> : PackedDataObject<{ format: F; values: D }>;
 
         /**
          * Unpacks (deserializes) a byte-string or Data into simple Lua values.
-         * @param format A string determining how the values were packed. Follows the rules of Lua 5.3's [string.pack](https://www.lua.org/manual/5.3/manual.html#pdf-string.unpack) format strings.
+         *
+         * @param format A string determining how the values were packed. Follows the rules of Lua 5.3's [string.pack](https://www.lua.org/manual/5.3/manual.html#pdf-string.pack) format strings.
          * @param datastring A string containing the packed (serialized) data.
          * @param pos Where to start reading in the string. Negative values can be used to read relative from the end of the string.
          * @return All unpacked values
@@ -188,6 +219,10 @@ declare namespace love {
          * @tupleReturn
          * @since 11.0
          */
-        export function unpack(format: string, data: string | Data, pos?: number): Array<any>;
+        export function unpack<P extends PackedData>(
+            format: PackedDataMetatable<P>["format"],
+            data: P,
+            pos?: number
+        ): PackedDataMetatable<P>["values"];
     }
 }

@@ -1,5 +1,26 @@
 # Changelog
 
+## Version 0.15.0
+
+## Packing and Unpacking
+
+- Enhanced `love.data.pack` and `love.data.unpack` keep track of the formatting and values to create the packed value for type safety. See [packing and unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking).
+
+```ts
+function unpack(
+  packedData: love.data.PackedData<{
+    format: "n1";
+    values: [1, 2, 3, 4];
+  }>
+) {
+  love.data.unpack("n1", packedData);
+}
+
+unpack(love.data.pack("data", "n1", 1, 2, 3)); // ❌ Expected 4 values to be packed
+unpack(love.data.pack("data", "n2", 1, 2, 3, 4)); // ❌ Unsupported formatting
+unpack(love.data.pack("data", "n1", 1, 2, 3, 4)); // ✔
+```
+
 ## Version 0.14.0
 
 - Enhanced `LoveObject.type`, `LoveObject.typeOf` and `LoveObject.release` to determine types.

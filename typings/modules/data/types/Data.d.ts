@@ -1,4 +1,5 @@
 type DataTypes =
+    | "Data"
     | "ByteData"
     | "FileData"
     | "GlyphData"
@@ -11,7 +12,7 @@ type DataTypes =
  * The superclass of all data.
  * @link [Data](https://love2d.org/wiki/Data)
  */
-declare interface Data<T extends DataTypes = DataTypes> extends LoveObject<T> {
+declare interface Data<T extends DataTypes = "Data"> extends LoveObject<T> {
     /**
      * Creates a new copy of the Data object.
      * @return clone, The new copy.
