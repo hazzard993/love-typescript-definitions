@@ -37,15 +37,6 @@ declare namespace love {
         export function createDirectory(name: string): boolean;
 
         /**
-         * Check whether a file or directory exists.
-         * @param filename The path to a potential file or directory.
-         * @return exists, True if there is a file or directory with the specified name. False otherwise.
-         * @link [love.filesystem.exists](https://love2d.org/wiki/love.filesystem.exists)
-         * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
-         */
-        export function exists(filename: string): boolean;
-
-        /**
          * Returns the application data directory (could be the same as getUserDirectory)
          *
          * @return path, The path of the application data directory.
@@ -145,18 +136,6 @@ declare namespace love {
         export function getInfo(path: string, filetype: FileType, info: object): FileInfo | undefined;
 
         /**
-         * Gets the last modification time of a file.
-         *
-         * @param filename The path and name to a file.
-         * @return modtime, The last modification time in seconds since the unix epoch or _nil/undefined_ on failure.
-         * @return errormsg, The error message on failure.
-         * @tupleReturn
-         * @link [love.filesystem.getLastModified](https://love2d.org/wiki/love.filesystem.getLastModified)
-         * @deprecated 11.0
-         */
-        export function getLastModified(filename: string): [number, undefined] | [undefined, string];
-
-        /**
          * Gets the platform-specific absolute path of the directory containing a
          * filepath.
          *
@@ -198,17 +177,6 @@ declare namespace love {
          * @link [love.filesystem.getSaveDirectory](https://love2d.org/wiki/love.filesystem.getSaveDirectory)
          */
         export function getSaveDirectory(): string;
-
-        /**
-         * Gets the size in bytes of a file.
-         * @param filename The path and name to a file.
-         * @return size, The size in bytes of the file, or _nil/undefined_ on failure.
-         * @return errormsg, The error message on failure.
-         * @tupleReturn
-         * @link [love.filesystem.getSize](https://love2d.org/wiki/love.filesystem.getSize)
-         * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
-         */
-        export function getSize(filename: string): [number | undefined, string | undefined];
 
         /**
          * Returns the full path to the the .love file or directory. If the game is fused
@@ -260,23 +228,6 @@ declare namespace love {
         export function init(appname: string): void;
 
         /**
-         * Check whether something is a directory.
-         * @param filename The path to a potential directory.
-         * @return isDir, True if there is a directory with the specified name. False otherwise.
-         * @link [love.filesystem.isDirectory](https://love2d.org/wiki/love.filesystem.isDirectory)
-         * @deprecated since 11.0. This function is deprecated and is replaced by love.filesystem.getInfo.
-         */
-        export function isDirectory(filename: string): boolean;
-
-        /**
-         * Check whether something is a file.
-         * @param filename The path to a potential file.
-         * @return isFile, True if there is a file with the specified name. False otherwise.
-         * @link [love.filesystem.isFile](https://love2d.org/wiki/love.filesystem.isFile)
-         */
-        export function isFile(filename: string): boolean;
-
-        /**
          * Gets whether the game is in fused mode or not.
          *
          *
@@ -293,14 +244,6 @@ declare namespace love {
          * @link [love.filesystem.isFused](https://love2d.org/wiki/love.filesystem.isFused)
          */
         export function isFused(): boolean;
-
-        /**
-         * Gets whether a filepath is actually a symbolic link.
-         * @param path The file or directory path to check.
-         * @return symlink, True if the path is a symbolic link, false otherwise.
-         * @link [love.filesystem.isSymlink](https://love2d.org/wiki/love.filesystem.isSymlink)
-         */
-        export function isSymlink(path: string): boolean;
 
         /**
          * Iterate over the lines in a file.
