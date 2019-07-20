@@ -80,8 +80,6 @@ transform.translate;
 love;
 love.math;
 
-love.math.compress;
-love.math.decompress;
 love.math.gammaToLinear;
 love.math.getRandomSeed;
 love.math.isConvex;

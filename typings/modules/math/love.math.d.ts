@@ -6,57 +6,6 @@ declare namespace love {
      */
     export namespace math {
         /**
-         * Compresses a string or data using a specific compression algorithm.
-         *
-         * @param rawstring The raw (un-compressed) string to compress.
-         * @param format The format to use when compressing the string.
-         * @param level The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.
-         * @return compressedData, A new Data object containing the compressed version of the string.
-         * @link [love.math.compress](https://love2d.org/wiki/love.math.compress)
-         */
-        export function compress(rawstring: string, format?: CompressedDataFormat, level?: number): CompressedData;
-
-        /**
-         * Compresses a string or data using a specific compression algorithm.
-         *
-         * @param data A Data object containing the raw (un-compressed) data to compress.
-         * @param format The format to use when compressing the data.
-         * @param level The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.
-         * @return compressedData, A new Data object containing the compressed version of the raw data.
-         * @link [love.math.compress](https://love2d.org/wiki/love.math.compress)
-         */
-        export function compress(data: Data, format?: CompressedDataFormat, level?: number): CompressedData;
-
-        /**
-         * Decompresses a CompressedData or previously compressed string or Data object.
-         *
-         * @param compressedData The compressed data to decompress.
-         * @return rawstring, A string containing the raw decompressed data.
-         * @link [love.math.decompress](https://love2d.org/wiki/love.math.decompress)
-         */
-        export function decompress(compressedData: CompressedData): string;
-
-        /**
-         * Decompresses a CompressedData or previously compressed string or Data object.
-         *
-         * @param compressedString A string containing data previously compressed with love.math.compress.
-         * @param format The format that was used to compress the given string.
-         * @return rawstring, A string containing the raw decompressed data.
-         * @link [love.math.decompress](https://love2d.org/wiki/love.math.decompress)
-         */
-        export function decompress(compressedString: string, format: CompressedDataFormat): string;
-
-        /**
-         * Decompresses a CompressedData or previously compressed string or Data object.
-         *
-         * @param data A Data object containing data previously compressed with love.math.compress.
-         * @param format The format that was used to compress the given data.
-         * @return rawstring, A string containing the raw decompressed data.
-         * @link [love.math.decompress](https://love2d.org/wiki/love.math.decompress)
-         */
-        export function decompress(data: Data, format: CompressedDataFormat): string;
-
-        /**
          * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful
          * when doing gamma-correct rendering and you need to do math in linear RGB in the
          * few cases where LÖVE doesn't handle conversions automatically.
