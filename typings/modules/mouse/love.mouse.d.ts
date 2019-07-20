@@ -80,19 +80,6 @@ declare namespace love {
          * love.mouse.getSystemCursor will cause an error. Mobile devices do not support
          * cursors.
          *
-         * @return hascursor, Whether the system has cursor functionality.
-         * @link [love.mouse.hasCursor](https://love2d.org/wiki/love.mouse.hasCursor)
-         */
-        export function hasCursor(): boolean;
-
-        /**
-         * Gets whether cursor functionality is supported.
-         *
-         *
-         * If it isn't supported, calling love.mouse.newCursor and
-         * love.mouse.getSystemCursor will cause an error. Mobile devices do not support
-         * cursors.
-         *
          * @return supported, Whether the system has cursor functionality.
          * @link [love.mouse.isCursorSupported](https://love2d.org/wiki/love.mouse.isCursorSupported)
          */
