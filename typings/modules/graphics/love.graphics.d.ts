@@ -616,15 +616,6 @@ declare namespace love {
         export function getColorMask(): [boolean, boolean, boolean, boolean];
 
         /**
-         * Gets the available compressed image formats, and whether each is supported.
-         *
-         * @return formats, A table containing CompressedFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
-         * @deprecated since 11.0. It has been replaced by love.graphics.getImageFormats
-         * @link [love.graphics.getCompressedImageFormats](https://love2d.org/wiki/love.graphics.getCompressedImageFormats)
-         */
-        export function getCompressedImageFormats(): { [key in CompressedImageFormat]: boolean };
-
-        /**
          * Returns the default scaling filters used with Images, Canvases, and Fonts.
          *
          * @return min, Filter mode used when scaling the image down.
