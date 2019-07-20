@@ -16,10 +16,31 @@ function unpack(
   love.data.unpack("n1", packedData);
 }
 
-unpack(love.data.pack("data", "n1", 1, 2, 3)); // ❌ Expected 4 values to be packed
-unpack(love.data.pack("data", "n2", 1, 2, 3, 4)); // ❌ Unsupported formatting
-unpack(love.data.pack("data", "n1", 1, 2, 3, 4)); // ✔
+unpack(love.data.pack("data", "n1", 1, 2, 3));
+// ❌ Expected 4 values to be packed
+unpack(love.data.pack("data", "n2", 1, 2, 3, 4));
+// ❌ Unsupported formatting
+unpack(love.data.pack("data", "n1", 1, 2, 3, 4));
+// ✔
 ```
+
+- Enhanced `love.system.getOS`. It can only return one of a select number of strings.
+
+```ts
+switch (love.system.getOS()) {
+  case "Android":
+  case "Linux":
+  case "OS X":
+  case "UWP":
+  case "Unknown":
+  case "Windows":
+  case "iOS":
+  case "PSP": // ❌ Impossible unless the source was modified
+}
+```
+
+- Removed `SoundData` and `Decoder`'s `getChannels` method. This was removed.
+- Updated `love.timer.step` removing a variant that did not exist.
 
 ## Version 0.14.0
 
