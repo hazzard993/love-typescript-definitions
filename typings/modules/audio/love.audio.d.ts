@@ -63,15 +63,6 @@ declare namespace love {
         export function getMaxSourceEffects(): number;
 
         /**
-         * Gets the current number of simultaneously playing sources.
-         * @return numSources, The number of sources which are currently playing or paused.
-         * @link [love.audio.getSourceCount](https://love2d.org/wiki/love.audio.getSourceCount)
-         * @since 0.9.0
-         * @deprecated since 11.0. It has been renamed to love.audio.getActiveSourceCount.
-         */
-        export function getSourceCount(): number;
-
-        /**
          * Returns the orientation of the listener.
          * @return fx, The X component of the forward vector of the listener orientation.
          * @return fy, The Y component of the forward vector of the listener orientation.
