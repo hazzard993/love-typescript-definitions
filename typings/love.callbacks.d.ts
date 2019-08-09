@@ -1,3 +1,4 @@
+/** @noSelf */
 declare namespace love {
     /**
      * Should be overwritten inside a `conf.lua` file.
