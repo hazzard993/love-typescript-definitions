@@ -42,7 +42,7 @@ then link them up to a `tsconfig.json` file.
 
 and then use [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) (_tstl_) to transform a `main.ts` file to `main.lua`.
 
-> TIP: Check out _tstl_'s watch mode (`--watch`) if you're after fast and automatic transpilation as files are updated.
+> TIP: Use _tstl_'s watch mode (`--watch`) if you're after fast and automatic transpilation as files are updated.
 
 ```
 tstl -p tsconfig.json
