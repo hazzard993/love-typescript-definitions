@@ -57,7 +57,7 @@ love.data.unpack;
     const stringData: string = love.data.encode("string", "base64", "");
 
     const unpack = (
-        packedData: love.data.PackedData<{
+        packedData: import("love.data").PackedData<{
             format: "n1";
             values: [1, 2, 3, 4];
         }>
@@ -75,7 +75,7 @@ love.data.unpack;
 
 {
     const unpack = (
-        packedData: love.data.PackedData<{
+        packedData: import("love.data").PackedData<{
             format: "n1";
             values: [1, 2, 3, 4];
         }>

@@ -1,44 +1,48 @@
-/**
- * @link [Rasterizer](https://love2d.org/wiki/Rasterizer)
- */
-declare interface Rasterizer extends LoveObject<"Rasterizer"> {
-    /**
-     * @todo This function is undocumented on the wiki
-     */
-    getAdvance: Function;
+declare module "love.font" {
+    import { LoveObject } from "love";
 
     /**
-     * @todo This function is undocumented on the wiki
+     * @link [Rasterizer](https://love2d.org/wiki/Rasterizer)
      */
-    getAscent: Function;
+    export interface Rasterizer extends LoveObject<"Rasterizer"> {
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        getAdvance: Function;
 
-    /**
-     * @todo This function is undocumented on the wiki
-     */
-    getDescent: Function;
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        getAscent: Function;
 
-    /**
-     * @todo This function is undocumented on the wiki
-     */
-    getGlyphCount: Function;
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        getDescent: Function;
 
-    /**
-     * @todo This function is undocumented on the wiki
-     */
-    getGlyphData: Function;
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        getGlyphCount: Function;
 
-    /**
-     * @link [Rasterizer:getHeight](https://love2d.org/wiki/Rasterizer:getHeight)
-     */
-    getHeight(): number;
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        getGlyphData: Function;
 
-    /**
-     * @todo This function is undocumented on the wiki
-     */
-    getLineHeight: Function;
+        /**
+         * @link [Rasterizer:getHeight](https://love2d.org/wiki/Rasterizer:getHeight)
+         */
+        getHeight(): number;
 
-    /**
-     * @todo This function is undocumented on the wiki
-     */
-    hasGlyphs: Function;
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        getLineHeight: Function;
+
+        /**
+         * @todo This function is undocumented on the wiki
+         */
+        hasGlyphs: Function;
+    }
 }

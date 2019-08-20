@@ -1,63 +1,67 @@
-/**
- * A Canvas is used for off-screen rendering.
- * @link [Canvas](https://love2d.org/wiki/Canvas)
- */
-declare interface Canvas extends Texture<"Canvas"> {
-    /**
-     * Generates mipmaps for the Canvas, based on the contents of the highest-resolution mipmap level.
-     *
-     * @link [Canvas:generateMipmaps](https://love2d.org/wiki/Canvas:generateMipmaps)
-     */
-    generateMipmaps(): void;
+declare module "love.graphics" {
+    import { ImageData } from "love.image";
 
     /**
-     * Gets the number of multisample antialiasing (MSAA) samples used when drawing to the Canvas.
-     *
-     * @return samples, The number of multisample antialiasing samples used by the canvas when drawing to it.
-     * @link [Canvas:getMSAA](https://love2d.org/wiki/Canvas:getMSAA)
+     * A Canvas is used for off-screen rendering.
+     * @link [Canvas](https://love2d.org/wiki/Canvas)
      */
-    getMSAA(): number;
+    export interface Canvas extends Texture<"Canvas"> {
+        /**
+         * Generates mipmaps for the Canvas, based on the contents of the highest-resolution mipmap level.
+         *
+         * @link [Canvas:generateMipmaps](https://love2d.org/wiki/Canvas:generateMipmaps)
+         */
+        generateMipmaps(): void;
 
-    /**
-     * Gets the MipmapMode this Canvas was created with.
-     *
-     * @return mode, The mipmap mode this Canvas was created with.
-     */
-    getMipmapMode(): CanvasMipmapMode;
+        /**
+         * Gets the number of multisample antialiasing (MSAA) samples used when drawing to the Canvas.
+         *
+         * @return samples, The number of multisample antialiasing samples used by the canvas when drawing to it.
+         * @link [Canvas:getMSAA](https://love2d.org/wiki/Canvas:getMSAA)
+         */
+        getMSAA(): number;
 
-    /**
-     * Generates ImageData from the contents of the Canvas.
-     *
-     * @return data, The image data stored in the Canvas.
-     * @link [Canvas:newImageData](https://love2d.org/wiki/Canvas:newImageData)
-     */
-    newImageData(): ImageData;
+        /**
+         * Gets the MipmapMode this Canvas was created with.
+         *
+         * @return mode, The mipmap mode this Canvas was created with.
+         */
+        getMipmapMode(): CanvasMipmapMode;
 
-    /**
-     * Generates ImageData from the contents of the Canvas.
-     *
-     * @param slice The cubemap face index, array index, or depth layer for cubemap, array, or volume type Canvases, respectively. This argument is ignored for regular 2D canvases.
-     * @param mipmap The mipmap index to use, for Canvases with mipmaps. (Default 1)
-     * @param x The x-axis of the top-left corner (in pixels) of the area within the Canvas to capture.
-     * @param y The y-axis of the top-left corner (in pixels) of the area within the Canvas to capture.
-     * @param width The width in pixels of the area within the Canvas to capture.
-     * @param height The height in pixels of the area within the Canvas to capture.
-     * @return data, The new ImageData made from the Canvas' contents.
-     */
-    newImageData(
-        slice: number,
-        mipmap: number | undefined,
-        x: number,
-        y: number,
-        width: number,
-        height: number
-    ): ImageData;
+        /**
+         * Generates ImageData from the contents of the Canvas.
+         *
+         * @return data, The image data stored in the Canvas.
+         * @link [Canvas:newImageData](https://love2d.org/wiki/Canvas:newImageData)
+         */
+        newImageData(): ImageData;
 
-    /**
-     * Render to the Canvas using a function.
-     *
-     * @param func A function performing drawing operations.
-     * @link [Canvas:renderTo](https://love2d.org/wiki/Canvas:renderTo)
-     */
-    renderTo(func: (this: void) => void): void;
+        /**
+         * Generates ImageData from the contents of the Canvas.
+         *
+         * @param slice The cubemap face index, array index, or depth layer for cubemap, array, or volume type Canvases, respectively. This argument is ignored for regular 2D canvases.
+         * @param mipmap The mipmap index to use, for Canvases with mipmaps. (Default 1)
+         * @param x The x-axis of the top-left corner (in pixels) of the area within the Canvas to capture.
+         * @param y The y-axis of the top-left corner (in pixels) of the area within the Canvas to capture.
+         * @param width The width in pixels of the area within the Canvas to capture.
+         * @param height The height in pixels of the area within the Canvas to capture.
+         * @return data, The new ImageData made from the Canvas' contents.
+         */
+        newImageData(
+            slice: number,
+            mipmap: number | undefined,
+            x: number,
+            y: number,
+            width: number,
+            height: number
+        ): ImageData;
+
+        /**
+         * Render to the Canvas using a function.
+         *
+         * @param func A function performing drawing operations.
+         * @link [Canvas:renderTo](https://love2d.org/wiki/Canvas:renderTo)
+         */
+        renderTo(func: (this: void) => void): void;
+    }
 }

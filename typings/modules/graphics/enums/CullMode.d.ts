@@ -1,5 +1,7 @@
-/**
- * How Mesh geometry is culled when rendering.
- * @link [CullMode](https://love2d.org/wiki/CullMode)
- */
-declare type CullMode = "back" | "front" | "none";
+declare module "love.graphics" {
+    /**
+     * How Mesh geometry is culled when rendering.
+     * @link [CullMode](https://love2d.org/wiki/CullMode)
+     */
+    export type CullMode = "back" | "front" | "none";
+}
