@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.keyboard" {
     /**
      * Gets the key corresponding to the given hardware scancode.

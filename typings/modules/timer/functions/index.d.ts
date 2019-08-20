@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.timer" {
     /**
      * Returns the average delta time (seconds per frame) over the last second.

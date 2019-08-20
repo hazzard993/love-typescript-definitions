@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.physics" {
     /**
      * Returns the two closest points between two fixtures and their distance.

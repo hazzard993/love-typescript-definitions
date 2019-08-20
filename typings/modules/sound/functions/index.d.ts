@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.sound" {
     import { File } from "love.filesystem";
 

@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.image" {
     import { FileData } from "love.filesystem";
 

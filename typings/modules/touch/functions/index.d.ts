@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.touch" {
     import { LightUserData } from "love";
 

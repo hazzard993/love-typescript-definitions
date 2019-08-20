@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.math" {
     /**
      * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful

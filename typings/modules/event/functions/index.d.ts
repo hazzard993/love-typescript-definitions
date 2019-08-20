@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.event" {
     /**
      * Clears the event queue.

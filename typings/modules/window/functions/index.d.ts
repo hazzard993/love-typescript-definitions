@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.window" {
     import { ImageData } from "love.image";
     import { DisplayFlags } from "love.graphics";

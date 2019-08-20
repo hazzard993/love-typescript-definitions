@@ -3,7 +3,6 @@ import "./types";
 
 /**
  * Allows you to work with threads.
- * @noSelf
  * @noResolution
  * @link [love.thread](https://love2d.org/wiki/love.thread)
  */

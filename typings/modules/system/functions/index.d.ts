@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.system" {
     /**
      * Gets text from the clipboard.

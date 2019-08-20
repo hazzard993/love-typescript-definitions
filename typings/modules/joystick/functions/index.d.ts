@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.joystick" {
     /**
      * Gets the number of connected joysticks.

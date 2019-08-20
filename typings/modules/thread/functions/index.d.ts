@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.thread" {
     import { FileData } from "love.filesystem";
 

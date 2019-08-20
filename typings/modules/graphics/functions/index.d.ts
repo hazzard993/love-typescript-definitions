@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.graphics" {
     import { Transform } from "love.math";
     import { Channel } from "love.thread";

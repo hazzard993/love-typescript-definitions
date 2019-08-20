@@ -7,7 +7,6 @@ import "./types";
  *
  * It can't draw the videos, see love.graphics.newVideo and Video objects for
  * that.
- * @noSelf
  * @noResolution
  * @link [love.video](https://love2d.org/wiki/love.video)
  */

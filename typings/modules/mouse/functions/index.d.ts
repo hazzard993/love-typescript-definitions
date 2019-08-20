@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.mouse" {
     import { FileData } from "love.filesystem";
     import { ImageData } from "love.image";

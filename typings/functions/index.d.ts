@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love" {
     /**
      * Gets the current running version of LÖVE.

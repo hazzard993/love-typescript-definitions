@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.video" {
     import { File } from "love.filesystem";
 

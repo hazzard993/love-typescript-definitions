@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.data" {
     import { CompressedDataFormat, CompressedData } from "love.math";
 

@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.font" {
     import { FileData } from "love.filesystem";
     import { ImageData } from "love.image";

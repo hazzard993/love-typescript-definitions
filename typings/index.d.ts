@@ -6,7 +6,6 @@ import "./types";
 
 /**
  * Contains all LÖVE 2D modules and functions.
- * @noSelf
  * @noResolution
  * @link [love](https://love2d.org/wiki/love)
  */

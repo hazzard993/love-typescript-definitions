@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.audio" {
     import { Decoder, SoundData } from "love.sound";
     import { File, FileData } from "love.filesystem";

@@ -1,3 +1,4 @@
+/** @noSelf */
 declare module "love.filesystem" {
     import { Data } from "love.data";
     import { LuaIterator } from "love";
