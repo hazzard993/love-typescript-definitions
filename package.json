@@ -1,6 +1,6 @@
 {
     "name": "love-typescript-definitions",
-    "version": "0.15.0",
+    "version": "0.15.1",
     "description": "Write LÖVE 2D projects with TypeScript",
     "scripts": {
         "test": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts && tstl -p spec/tsconfig.json",
@@ -32,6 +32,6 @@
         "is-ci": "^2.0.0",
         "prettier": "^1.18.2",
         "tslint": "^5.16.0",
-        "typescript-to-lua": "^0.24.0"
+        "typescript-to-lua": "^0.26.0"
     }
 }
