@@ -1,4 +1,6 @@
-/**
- * Undocumented
- */
-declare type VertexWinding = "cw" | "ccw";
+declare module "love.graphics" {
+    /**
+     * Undocumented
+     */
+    export type VertexWinding = "cw" | "ccw";
+}

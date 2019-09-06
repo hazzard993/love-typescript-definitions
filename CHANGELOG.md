@@ -1,5 +1,55 @@
 # Changelog
 
+## Version 0.16.0
+
+There are now two ways to call LÖVE's functions.
+
+```ts
+love.graphics.newImage("image.png");
+```
+
+```ts
+import { newImage } from "love.graphics";
+
+newImage("image.png");
+```
+
+These modules contain all of LÖVE's functions, types and enums.
+
+Advantages:
+
+- Doesn't pollute the environment with all of LÖVE's types
+- Reveals code's reliance on LÖVE's API
+  - Code is easier to adapt to any LuaJIT environment
+- Enables LÖVE modules to be mocked for testing instead of using bootstrap scripts to create objects
+
+Also good for users who prefer to avoid global variables.
+
+Here are the type paths to use for choosing one of these two methods:
+
+| Type Path                       | Description                                                                      |
+| ------------------------------- | -------------------------------------------------------------------------------- |
+| `love-typescript-definitions`   | All types, structs, modules and the `love` namespace will be globally available. |
+| `/expose-modules-only`          | Only LÖVE's modules will be globally available. (`love.graphics`, etc)           |
+| `/expose-love-global-callbacks` | Exposes the `love` namespace purely for overriding callbacks.                    |
+
+> VS Code can automatically create import paths to members within these declarations.
+
+If you want to use LÖVE in this modular way, configure your _types_ in your _tsconfig.json_ like so:
+
+```json
+{
+  "types": [
+    "love-typescript-definitions/expose-modules-only",
+    "love-typescript-definitions/expose-love-global-callbacks"
+  ]
+}
+```
+
+- `love.data.PackedData` must be accessed in a different way. Use...
+  - `import("love.data").PackedData` or
+  - `import { PackedData } from "love.data"`
+
 ## Version 0.15.0
 
 ## Packing and Unpacking

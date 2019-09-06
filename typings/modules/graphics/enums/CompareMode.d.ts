@@ -1,4 +1,6 @@
-/**
- * @link [CompareMode](https://love2d.org/wiki/CompareMode)
- */
-declare type CompareMode = "equal" | "notequal" | "less" | "lequal" | "gequal" | "greater";
+declare module "love.graphics" {
+    /**
+     * @link [CompareMode](https://love2d.org/wiki/CompareMode)
+     */
+    export type CompareMode = "equal" | "notequal" | "less" | "lequal" | "gequal" | "greater";
+}

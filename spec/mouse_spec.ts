@@ -7,7 +7,6 @@ love.mouse.getRelativeMode;
 love.mouse.getSystemCursor;
 love.mouse.getX;
 love.mouse.getY;
-love.mouse.hasCursor;
 love.mouse.isCursorSupported;
 love.mouse.isDown;
 love.mouse.isGrabbed;

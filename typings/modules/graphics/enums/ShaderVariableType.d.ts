@@ -1,4 +1,6 @@
-/**
- * @todo Needs information
- */
-declare type ShaderVariableType = any;
+declare module "love.graphics" {
+    /**
+     * @todo Needs information
+     */
+    export type ShaderVariableType = any;
+}

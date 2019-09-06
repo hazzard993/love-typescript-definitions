@@ -1,45 +1,49 @@
-type DataTypes =
-    | "Data"
-    | "ByteData"
-    | "FileData"
-    | "GlyphData"
-    | "CompressedImageData"
-    | "ImageData"
-    | "CompressedData"
-    | "SoundData";
+declare module "love.data" {
+    import { LoveObject, LoveObjects, LightUserData } from "love";
 
-/**
- * The superclass of all data.
- * @link [Data](https://love2d.org/wiki/Data)
- */
-declare interface Data<T extends DataTypes = "Data"> extends LoveObject<T> {
-    /**
-     * Creates a new copy of the Data object.
-     * @return clone, The new copy.
-     * @link [Data:clone](https://love2d.org/wiki/Data:clone)
-     * @since 11.0
-     */
-    clone(): LoveObjects[T];
+    export type DataTypes =
+        | "Data"
+        | "ByteData"
+        | "FileData"
+        | "GlyphData"
+        | "CompressedImageData"
+        | "ImageData"
+        | "CompressedData"
+        | "SoundData";
 
     /**
-     * Gets a pointer to the Data.
-     * @return pointer, A raw pointer to the Data.
-     * @link [Data:getPointer](https://love2d.org/wiki/Data:getPointer)
+     * The superclass of all data.
+     * @link [Data](https://love2d.org/wiki/Data)
      */
-    getPointer(): LightUserData<"Pointer">;
+    export interface Data<T extends DataTypes = "Data"> extends LoveObject<T> {
+        /**
+         * Creates a new copy of the Data object.
+         * @return clone, The new copy.
+         * @link [Data:clone](https://love2d.org/wiki/Data:clone)
+         * @since 11.0
+         */
+        clone(): LoveObjects[T];
 
-    /**
-     * Gets the size of the Data.
-     * @return size, The size of the Data in bytes.
-     * @link [Data:getSize](https://love2d.org/wiki/Data:getSize)
-     */
-    getSize(): number;
+        /**
+         * Gets a pointer to the Data.
+         * @return pointer, A raw pointer to the Data.
+         * @link [Data:getPointer](https://love2d.org/wiki/Data:getPointer)
+         */
+        getPointer(): LightUserData<"Pointer">;
 
-    /**
-     * Gets the full Data as a string.
-     * @return data, The raw data.
-     * @link [Data:getString](https://love2d.org/wiki/Data:getString)
-     * @since 0.9.0
-     */
-    getString(): string;
+        /**
+         * Gets the size of the Data.
+         * @return size, The size of the Data in bytes.
+         * @link [Data:getSize](https://love2d.org/wiki/Data:getSize)
+         */
+        getSize(): number;
+
+        /**
+         * Gets the full Data as a string.
+         * @return data, The raw data.
+         * @link [Data:getString](https://love2d.org/wiki/Data:getString)
+         * @since 0.9.0
+         */
+        getString(): string;
+    }
 }
