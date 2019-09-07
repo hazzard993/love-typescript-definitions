@@ -195,6 +195,7 @@ declare module "love.data" {
      * @param values Values to serialize.
      * @return data, Data/string which contains the serialized data.
      * @link [love.data.pack](https://love2d.org/wiki/love.data.pack)
+     * @link [Packing and Unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking)
      * @since 11.0
      */
     export function pack<T extends ContainerType, F extends string, D extends Packable[]>(
@@ -212,6 +213,7 @@ declare module "love.data" {
      * @return All unpacked values
      * @return index, The index of the first unread byte in the data string.
      * @link [love.data.unpack](https://love2d.org/wiki/love.data.unpack)
+     * @link [Packing and Unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking)
      * @tupleReturn
      * @since 11.0
      */
