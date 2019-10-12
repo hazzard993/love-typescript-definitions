@@ -5,7 +5,7 @@ declare module "love.thread" {
      * An object which can be used to send and receive data between different threads.
      * @link [Channel](https://love2d.org/wiki/Channel)
      */
-    export interface Channel extends LoveObject<"Channel"> {
+    export interface Channel<T = any> extends LoveObject<"Channel"> {
         /**
          * Clears all the messages in the Channel queue.
          *
@@ -21,7 +21,7 @@ declare module "love.thread" {
          * @return value, The contents of the message.
          * @link [Channel:demand](https://love2d.org/wiki/Channel:demand)
          */
-        demand(): any;
+        demand(): T;
 
         /**
          * Retrieves the value of a Channel message and removes it from the message queue.
@@ -32,7 +32,7 @@ declare module "love.thread" {
          * @return value, The contents of the message or _nil/undefined_ if the timeout expired.
          * @link [Channel:demand](https://love2d.org/wiki/Channel:demand)
          */
-        demand(timeout: number): any | undefined;
+        demand(timeout: number): T | undefined;
 
         /**
          * Retrieves the number of messages in the thread Channel queue.
@@ -60,7 +60,7 @@ declare module "love.thread" {
          * @return value, The contents of the message.
          * @link [Channel:peek](https://love2d.org/wiki/Channel:peek)
          */
-        peek(): any | undefined;
+        peek(): T | undefined;
 
         /**
          * Executes the specified function atomically with respect to this Channel.
@@ -91,7 +91,7 @@ declare module "love.thread" {
          * @return value, The contents of the message.
          * @link [Channel:pop](https://love2d.org/wiki/Channel:pop)
          */
-        pop(): any | undefined;
+        pop(): T | undefined;
 
         /**
          * Send a message to the thread Channel.
@@ -101,7 +101,7 @@ declare module "love.thread" {
          * @param value The contents of the message.
          * @link [Channel:push](https://love2d.org/wiki/Channel:push)
          */
-        push(value: any): void;
+        push(value: T): void;
 
         /**
          * Send a message to the thread Channel and wait for a thread to accept it.
@@ -112,7 +112,7 @@ declare module "love.thread" {
          * @return success, Whether the message was successfully supplied (always true).
          * @link [Channel:supply](https://love2d.org/wiki/Channel:supply)
          */
-        supply(value: any): boolean;
+        supply(value: T): boolean;
 
         /**
          * Send a message to the thread Channel and wait for a thread to accept it.
@@ -124,6 +124,6 @@ declare module "love.thread" {
          * @return success, Whether the message was successfully supplied before the timeout expired.
          * @link [Channel:supply](https://love2d.org/wiki/Channel:supply)
          */
-        supply(value: any, timeout: number): boolean;
+        supply(value: T, timeout: number): boolean;
     }
 }

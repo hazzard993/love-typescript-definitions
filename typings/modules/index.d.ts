@@ -1,4 +1,5 @@
 import "./audio";
+import "./arg";
 import "./data";
 import "./event";
 import "./filesystem";
@@ -9,6 +10,7 @@ import "./joystick";
 import "./keyboard";
 import "./math";
 import "./mouse";
+import "./path";
 import "./physics";
 import "./sound";
 import "./system";
