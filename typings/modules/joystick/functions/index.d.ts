@@ -17,6 +17,16 @@ declare module "love.joystick" {
     export function getJoysticks(): Array<Joystick>;
 
     /**
+     * Gets the full gamepad mapping string of the Joysticks which have the given GUID, or nil if the GUID isn't recognized as a gamepad.
+     *
+     * The mapping string contains binding information used to map the Joystick's buttons an axes to the standard gamepad layout, and can be used later with love.joystick.loadGamepadMappings.
+     * @returns A string containing the Joystick's gamepad mappings, or nil if the Joystick is not recognized as a gamepad.
+     * @link [love.joystick.getGamepadMappingString](https://love2d.org/wiki/love.joystick.getGamepadMappingString)
+     * @since 11.3
+     */
+    export function getGamepadMappingString(): string | undefined;
+
+    /**
      * Loads a gamepad mappings string from a file.
      *
      * @param filename The filename to load the mappings string from.

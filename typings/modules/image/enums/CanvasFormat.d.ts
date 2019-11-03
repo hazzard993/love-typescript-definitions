@@ -4,21 +4,23 @@ declare module "love.image" {
      * @link [CanvasFormat](https://love2d.org/wiki/CanvasFormat)
      */
     export type CanvasFormat =
-        | "normal"
         | "hdr"
-        | "rgba8"
-        | "rgba4"
-        | "rgb5a1"
-        | "rgb565"
+        | "normal"
+        | "r16"
+        | "r16f"
+        | "r32f"
+        | "r8"
+        | "rg11b10f"
+        | "rg16"
+        | "rg16f"
+        | "rg32f"
+        | "rg8"
         | "rgb10a2"
+        | "rgb565"
+        | "rgb5a1"
         | "rgba16f"
         | "rgba32f"
-        | "rg11b10f"
-        | "srgb"
-        | "r8"
-        | "rg8"
-        | "r16f"
-        | "rg16f"
-        | "r32f"
-        | "rg32f";
+        | "rgba4"
+        | "rgba8"
+        | "srgb";
 }

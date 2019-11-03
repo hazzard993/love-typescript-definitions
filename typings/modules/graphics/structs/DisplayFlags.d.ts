@@ -14,6 +14,10 @@ declare module "love.graphics" {
          */
         fullscreentype?: FullscreenType;
         /**
+         * Enable automatic DPI scaling. (Default: true)
+         */
+        usedpiscale?: boolean;
+        /**
          * True if LÃ–VE should wait for vsync, false otherwise. (Default: true)
          */
         vsync?: boolean;

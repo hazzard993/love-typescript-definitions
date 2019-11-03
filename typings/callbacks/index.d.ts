@@ -7,6 +7,7 @@ declare module "love.callbacks" {
     import { Joystick, GamepadAxis, GamepadButton, JoystickHat } from "love.joystick";
     import { KeyConstant, Scancode } from "love.keyboard";
     import { Thread } from "love.thread";
+    import { DisplayOrientation } from "love.window";
 
     /**
      * Should be overwritten inside a `conf.lua` file.
@@ -103,6 +104,14 @@ declare module "love.callbacks" {
              * @default true
              */
             mixwithsystem: boolean;
+
+            /**
+             * Request and use microphone capabilities in Android
+             *
+             * @default false
+             * @since 11.3
+             */
+            mic: boolean;
         };
 
         /**
@@ -171,6 +180,12 @@ declare module "love.callbacks" {
              * @default "desktop"
              */
             fullscreentype: "desktop" | "exclusive";
+
+            /**
+             * Enable automatic DPI scaling (boolean)
+             * @default true
+             */
+            usedpiscale: boolean;
 
             /**
              * Vertical sync mode
@@ -331,6 +346,15 @@ declare module "love.callbacks" {
             window: boolean;
         };
     }) => void;
+
+    /**
+     * Called when the device display orientation changed, for example, user rotated their phone 180 degrees.
+     * @param index The index of the display that changed orientation.
+     * @param orientation The new orientation.
+     * @link [love.displayrotated](https://love2d.org/wiki/love.displayrotated)
+     * @since 11.3
+     */
+    export let displayrotated: (index: number, orientation: DisplayOrientation) => void;
 
     /**
      * Callback function triggered when a directory is dragged and dropped onto the window.
