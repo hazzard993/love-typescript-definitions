@@ -53,6 +53,6 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 - [encompass-ecs](https://encompass-ecs.github.io/), a powerful engine-agnostic framework to help you code games, or other kinds of simulations.
 - [vscode-typescript-to-lua](https://marketplace.visualstudio.com/items?itemName=ark120202.vscode-typescript-to-lua) plugin for VSCode. Highlights errors you'd encounter with TypeScriptToLua and gives _tsconfig.json_ information all within the editor.
 - [local-lua-debugger-vscode](https://github.com/tomblind/local-lua-debugger-vscode), a simple Lua debugger which requires no additional dependencies. Works with TypeScriptToLua and LÖVE.
-- [TypeScriptGame](https://github.com/yancouto/simple-stuff/tree/master/TypeScriptGame), an example game made with these declarations by @yancouto
+- [TypeScriptGame](https://github.com/yancouto/simple-stuff/tree/master/TypeScriptGame), an example game made with these declarations by [@yancouto](https://github.com/yancouto)
 - [tstl-lurker](https://github.com/hazzard993/tstl-lurker) declarations for [lurker](https://github.com/rxi/lurker). Allows code TypeScript code to be hotswapped with a running Lua game.
 - [UTF-8](https://github.com/hazzard993/tstl-utf8) the utf8 module included with LÖVE 2D.
