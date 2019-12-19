@@ -1,6 +1,5 @@
-import "./love";
-import "./love.audio";
 import "./love.arg";
+import "./love.audio";
 import "./love.data";
 import "./love.event";
 import "./love.filesystem";
@@ -20,6 +19,7 @@ import "./love.timer";
 import "./love.touch";
 import "./love.video";
 import "./love.window";
+import "./love";
 
 declare module "love" {
     export const audio: typeof import("love.audio");

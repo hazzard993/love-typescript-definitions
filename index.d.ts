@@ -1,2 +1,2 @@
+import "./global";
 import "./typings";
-import "./expose-love-global";
