@@ -1,6 +1,16 @@
 /** @noSelf */
 declare module "love.math" {
     /**
+     * Converts a color from 0..1 to 0..255 range.
+     * @param rgba The red, green, blue and optional alpha component.
+     * @returns The red, green, blue and optional alpha component converted to a 255 range.
+     * @tupleReturn
+     * @link [love.math.colorToBytes](https://love2d.org/wiki/love.math.colorToBytes)
+     * @since 11.3
+     */
+    export function colorToBytes<T extends [number, number, number, number?]>(...rgba: T): T;
+
+    /**
      * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful
      * when doing gamma-correct rendering and you need to do math in linear RGB in the
      * few cases where LÖVE doesn't handle conversions automatically.

@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.17.0
+
+Declarations now include 11.3 changes.
+
+See that changelog [here](https://love2d.org/wiki/11.3).
+
 ## Version 0.16.0
 
 There are now two ways to call LÖVE's functions.

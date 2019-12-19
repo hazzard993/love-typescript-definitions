@@ -70,6 +70,15 @@ declare module "love.window" {
     export function getDisplayName(displayindex: number): string;
 
     /**
+     * Gets current device display orientation.
+     * @param index Display index to get its display orientation, or nil for default display index.
+     * @returns Current device display orientation.
+     * @link [love.window.getDisplayOrientation](https://love2d.org/wiki/love.window.getDisplayOrientation)
+     * @since 11.3
+     */
+    export function getDisplayOrientation(index?: number): DisplayOrientation;
+
+    /**
      * Gets the DPI scale factor associated with the window.
      *
      * The pixel density inside the window might be greater (or smaller) than the
@@ -160,12 +169,29 @@ declare module "love.window" {
     export function getPosition(): [number, number, number];
 
     /**
+     * Gets area inside the window which is known to be unobstructed by a system title bar, the iPhone X notch, etc. Useful for making sure UI elements can be seen by the user.
+     * @returns The x, y, width and height of the safe area.
+     * @tupleReturn
+     * @link [love.window.getSafeArea](https://love2d.org/wiki/love.window.getSafeArea)
+     * @since 11.3
+     */
+    export function getSafeArea(): [number, number, number, number];
+
+    /**
      * Gets the window title.
      *
      * @return title, The current window title.
      * @link [love.window.getTitle](https://love2d.org/wiki/love.window.getTitle)
      */
     export function getTitle(): string;
+
+    /**
+     * Gets current vertical synchronization (vsync).
+     * @returns Current vsync status. 1 if enabled, 0 if disabled, and -1 for adaptive vsync.
+     * @link [love.window.getVSync](https://love2d.org/wiki/love.window.getVSync)
+     * @since 11.3
+     */
+    export function getVSync(): 1 | 0 | -1;
 
     /**
      * Checks if the game window has keyboard focus.
@@ -363,6 +389,14 @@ declare module "love.window" {
      * @link [love.window.setTitle](https://love2d.org/wiki/love.window.setTitle)
      */
     export function setTitle(title: string): void;
+
+    /**
+     * Sets vertical synchronization mode.
+     * @param vsync VSync number: 1 to enable, 0 to disable, and -1 for adaptive vsync.
+     * @link [love.window.setVSync](https://love2d.org/wiki/love.window.setVSync)
+     * @since 11.3
+     */
+    export function setVSync(vsync: 1 | 0 | -1): void;
 
     /**
      * Displays a message box dialog above the love window. The message box contains a

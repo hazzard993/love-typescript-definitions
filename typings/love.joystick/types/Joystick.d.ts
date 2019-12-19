@@ -43,6 +43,17 @@ declare module "love.joystick" {
         getButtonCount(): number;
 
         /**
+         * Gets the USB vendor ID, product ID, and product version numbers of joystick which consistent across operating systems.
+         *
+         * Can be used to show different icons, etc. for different gamepads.
+         * @tupleReturn
+         * @link [Joystick:getDeviceInfo](https://love2d.org/wiki/Joystick:getDeviceInfo)
+         * @returns The USB vendor ID, product ID and the version of the joystick.
+         * @since 11.3
+         */
+        getDeviceInfo(): [number, number, number];
+
+        /**
          * Gets a stable GUID unique to the type of the physical joystick which does not
          * change over time. For example, all Sony Dualshock 3 controllers in OS X have
          * the same GUID. The value is platform-dependent.
@@ -51,6 +62,16 @@ declare module "love.joystick" {
          * @link [Joystick:getGUID](https://love2d.org/wiki/Joystick:getGUID)
          */
         getGUID(): string;
+
+        /**
+         * Gets the full gamepad mapping string of this Joystick, or nil if it's not recognized as a gamepad.
+         *
+         * The mapping string contains binding information used to map the Joystick's buttons an axes to the standard gamepad layout, and can be used later with love.joystick.loadGamepadMappings.
+         * @returns A string containing the Joystick's gamepad mappings, or nil if the Joystick is not recognized as a gamepad.
+         * @link [Joystick:getGamepadMappingString](https://love2d.org/wiki/Joystick:getGamepadMappingString)
+         * @since 11.3
+         */
+        getGamepadMappingString(): string | undefined;
 
         /**
          * Gets the direction of a virtual gamepad axis. If the Joystick isn't recognized

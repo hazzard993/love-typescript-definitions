@@ -8,6 +8,15 @@ declare module "love.sound" {
      */
     export interface Decoder extends LoveObject<"Decoder"> {
         /**
+         * Creates a new copy of current decoder.
+         *
+         * The new decoder will start decoding from the beginning of the audio stream.
+         * @returns New copy of the decoder.
+         * @link [Decoder:clone](https://love2d.org/wiki/Decoder:clone)
+         */
+        clone(): Decoder;
+
+        /**
          * Decodes the audio and returns a SoundData object containing the decoded audio data.
          * @returns soundData, Decoded audio data.
          * @link [Decoder:decode](https://love2d.org/wiki/Decoder:decode)

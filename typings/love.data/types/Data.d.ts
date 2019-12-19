@@ -25,6 +25,16 @@ declare module "love.data" {
         clone(): LoveObjects[T];
 
         /**
+         * Gets an FFI pointer to the Data.
+         *
+         * This function should be preferred instead of Data:getPointer because the latter uses light userdata which can't store more all possible memory addresses on some new ARM64 architectures, when LuaJIT is used.
+         * @link [Data:getFFIPointer](https://love2d.org/wiki/Data:getFFIPointer)
+         * @returns A raw void* pointer to the Data, or nil if FFI is unavailable.
+         * @since 11.3
+         */
+        getFFIPointer(): LightUserData<"Pointer">;
+
+        /**
          * Gets a pointer to the Data.
          * @return pointer, A raw pointer to the Data.
          * @link [Data:getPointer](https://love2d.org/wiki/Data:getPointer)
