@@ -331,7 +331,10 @@ love.graphics.line([4, 4, 8, 8, 12, 8]);
 love.graphics.points;
 love.graphics.points(4, 4, 8, 8, 12, 12);
 love.graphics.points([4, 4, 8, 8, 12, 12]);
-love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]);
+love.graphics.points([
+    [4, 4],
+    [8, 8, 0, 1, 1, 1],
+]);
 love.graphics.polygon;
 love.graphics.present;
 love.graphics.print;
