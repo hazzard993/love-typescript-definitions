@@ -35,6 +35,7 @@
         "@types/node": "^13.1.4",
         "is-ci": "^2.0.0",
         "prettier": "^1.18.2",
-        "tslint": "^5.16.0"
+        "tslint": "^5.16.0",
+        "typescript-to-lua": "^0.30.1"
     }
 }
