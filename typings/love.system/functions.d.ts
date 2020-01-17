@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides access to information about the user's system.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.system](https://love2d.org/wiki/love.system)
+ */
 declare module "love.system" {
     /**
      * Gets text from the clipboard.

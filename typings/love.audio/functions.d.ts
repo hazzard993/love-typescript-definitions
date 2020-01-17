@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to create noise with the user's speakers.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.audio](https://love2d.org/wiki/love.audio)
+ */
 declare module "love.audio" {
     import { Decoder, SoundData } from "love.sound";
     import { File, FileData } from "love.filesystem";

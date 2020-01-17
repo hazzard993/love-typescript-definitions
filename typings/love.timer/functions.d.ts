@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to the user's clock.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.timer](https://love2d.org/wiki/love.timer)
+ */
 declare module "love.timer" {
     /**
      * Returns the average delta time (seconds per frame) over the last second.

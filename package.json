@@ -16,6 +16,7 @@
         "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
     },
     "scripts": {
+        "build:doc": "typedoc --includeDeclarations --excludeExternals --out docs --mode file --exclude node_modules/** typings",
         "test": "yarn test:tslint && yarn test:tstl && yarn test:scripts",
         "test:tslint": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts",
         "test:tstl": "tstl -p spec/tsconfig.json",
@@ -36,6 +37,7 @@
         "is-ci": "^2.0.0",
         "prettier": "^1.18.2",
         "tslint": "^5.16.0",
+        "typedoc": "^0.16.7",
         "typescript-to-lua": "^0.30.1"
     }
 }

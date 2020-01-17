@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to touch-screen presses.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.touch](https://love2d.org/wiki/love.touch)
+ */
 declare module "love.touch" {
     import { LightUserData } from "love";
 

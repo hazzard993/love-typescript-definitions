@@ -1,14 +1,14 @@
+import { LightUserData } from "love";
+import { File } from "love.filesystem";
+import { Joystick, GamepadAxis, GamepadButton, JoystickHat } from "love.joystick";
+import { KeyConstant, Scancode } from "love.keyboard";
+import { Thread } from "love.thread";
+import { DisplayOrientation } from "love.window";
+
 /**
  * @noSelf
  */
-declare module "love.callbacks" {
-    import { LightUserData } from "love";
-    import { File } from "love.filesystem";
-    import { Joystick, GamepadAxis, GamepadButton, JoystickHat } from "love.joystick";
-    import { KeyConstant, Scancode } from "love.keyboard";
-    import { Thread } from "love.thread";
-    import { DisplayOrientation } from "love.window";
-
+export declare namespace callbacks {
     /**
      * Should be overwritten inside a `conf.lua` file.
      * ```ts

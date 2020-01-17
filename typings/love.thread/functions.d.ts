@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Allows you to work with threads.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.thread](https://love2d.org/wiki/love.thread)
+ */
 declare module "love.thread" {
     import { FileData } from "love.filesystem";
 

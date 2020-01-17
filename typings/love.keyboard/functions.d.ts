@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to the user's keyboard.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.keyboard](https://love2d.org/wiki/love.keyboard)
+ */
 declare module "love.keyboard" {
     /**
      * Gets the key corresponding to the given hardware scancode.

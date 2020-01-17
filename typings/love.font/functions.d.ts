@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Allows you to work with fonts.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.font](https://love2d.org/wiki/love.font)
+ */
 declare module "love.font" {
     import { FileData } from "love.filesystem";
     import { ImageData } from "love.image";

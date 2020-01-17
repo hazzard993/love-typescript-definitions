@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to decode encoded image data.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.image](https://love2d.org/wiki/love.image)
+ */
 declare module "love.image" {
     import { FileData } from "love.filesystem";
 

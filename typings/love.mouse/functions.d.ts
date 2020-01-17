@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to the user's mouse.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.mouse](https://love2d.org/wiki/love.mouse)
+ */
 declare module "love.mouse" {
     import { FileData } from "love.filesystem";
     import { ImageData } from "love.image";

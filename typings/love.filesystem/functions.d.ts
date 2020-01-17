@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides an interface to the user's filesystem.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.filesystem](https://love2d.org/wiki/love.filesystem)
+ */
 declare module "love.filesystem" {
     import { Data } from "love.data";
     import { LuaIterator } from "love";

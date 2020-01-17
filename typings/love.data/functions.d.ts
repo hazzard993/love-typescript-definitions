@@ -1,4 +1,11 @@
-/** @noSelf */
+/**
+ * Provides functionality for creating and transforming data.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.data](https://love2d.org/wiki/love.data)
+ * @since 11.0
+ */
 declare module "love.data" {
     import { CompressedDataFormat, CompressedData } from "love.math";
 

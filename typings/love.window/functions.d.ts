@@ -1,4 +1,11 @@
-/** @noSelf */
+/**
+ * Provides an interface for modifying and retrieving information about the
+ * program's window.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.window](https://love2d.org/wiki/love.window)
+ */
 declare module "love.window" {
     import { ImageData } from "love.image";
     import { DisplayFlags } from "love.graphics";

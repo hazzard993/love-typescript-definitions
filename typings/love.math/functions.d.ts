@@ -1,4 +1,10 @@
-/** @noSelf */
+/**
+ * Provides system-independent mathematical functions.
+ *
+ * @noResolution
+ * @noSelf
+ * @link [love.math](https://love2d.org/wiki/love.math)
+ */
 declare module "love.math" {
     /**
      * Converts a color from 0..1 to 0..255 range.
