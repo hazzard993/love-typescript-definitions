@@ -18,7 +18,7 @@
     },
     "scripts": {
         "build:doc": "typedoc --includeDeclarations --excludeExternals --out docs --mode file --media media --exclude node_modules/** typings",
-        "test": "yarn test:tstl && yarn test:scripts",
+        "test": "yarn test:tstl",
         "test:tstl": "tstl -p spec/tsconfig.json",
         "test:scripts": "node scripts/tuple-check.js",
         "lint:prettier": "prettier --check \"**/*.{js,ts,yml,json,md}\" || (echo 'Run `npm run fix:prettier` to fix it.' && exit 1)",
