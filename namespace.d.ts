@@ -73,4 +73,4 @@ declare type EffectWaveform = import("love.audio").EffectWaveform;
 declare type EffectType = import("love.audio").EffectType;
 declare type DistanceModel = import("love.audio").DistanceModel;
 
-declare const love: typeof import("love") & typeof import("./typings/love/callbacks").callbacks;
+declare const love: typeof import("love") & import("./typings/love/callbacks").Callbacks;

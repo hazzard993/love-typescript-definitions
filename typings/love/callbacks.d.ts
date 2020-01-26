@@ -8,7 +8,7 @@ import { DisplayOrientation } from "love.window";
 /**
  * @noSelf
  */
-export declare namespace callbacks {
+export interface Callbacks {
     /**
      * Should be overwritten inside a `conf.lua` file.
      * ```ts
@@ -19,7 +19,7 @@ export declare namespace callbacks {
      * ```
      * @link [Config Files](https://love2d.org/wiki/Config_Files)
      */
-    export let conf: (t: {
+    conf?: (t: {
         /**
          * This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created.
          *
@@ -354,7 +354,7 @@ export declare namespace callbacks {
      * @link [love.displayrotated](https://love2d.org/wiki/love.displayrotated)
      * @since 11.3
      */
-    export let displayrotated: (index: number, orientation: DisplayOrientation) => void;
+    displayrotated?: (index: number, orientation: DisplayOrientation) => void;
 
     /**
      * Callback function triggered when a directory is dragged and dropped onto the window.
@@ -366,7 +366,7 @@ export declare namespace callbacks {
      * @param path The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.
      * @link [love.directorydropped](https://love2d.org/wiki/love.directorydropped)
      */
-    export let directorydropped: (path: string) => void;
+    directorydropped?: (path: string) => void;
 
     /**
      * Callback function used to draw on the screen every frame.
@@ -378,7 +378,7 @@ export declare namespace callbacks {
      * @link [love.draw](https://love2d.org/wiki/love.draw)
      * @link [love.graphics](https://love2d.org/wiki/love.graphics)
      */
-    export let draw: () => void;
+    draw?: () => void;
 
     /**
      * The error handler, used to display error messages.
@@ -387,7 +387,7 @@ export declare namespace callbacks {
      * @link [love.errorhandler](https://love2d.org/wiki/love.errorhandler)
      * @tutorial https://love2d.org/wiki/love.errorhandler
      */
-    export let errorhandler: (msg: string) => void;
+    errorhandler?: (msg: string) => void;
 
     /**
      * Callback function triggered when a file is dragged and dropped onto the window.
@@ -402,7 +402,7 @@ export declare namespace callbacks {
      * @param file The unopened File object representing the file that was dropped.
      * @link [love.filedropped](https://love2d.org/wiki/love.filedropped)
      */
-    export let filedropped: (file: File) => void;
+    filedropped?: (file: File) => void;
 
     /**
      * Callback function triggered when window receives or loses focus.
@@ -414,7 +414,7 @@ export declare namespace callbacks {
      * @param focus True if the window gains focus, false if it loses focus.
      * @link [love.focus](https://love2d.org/wiki/love.focus)
      */
-    export let focus: (focus: boolean) => void;
+    focus?: (focus: boolean) => void;
 
     /**
      * Called when a Joystick's virtual gamepad axis is moved.
@@ -424,7 +424,7 @@ export declare namespace callbacks {
      * @param value The new axis value.
      * @link [love.gamepadaxis](https://love2d.org/wiki/love.gamepadaxis)
      */
-    export let gamepadaxis: (joystick: Joystick, axis: GamepadAxis, value: number) => void;
+    gamepadaxis?: (joystick: Joystick, axis: GamepadAxis, value: number) => void;
 
     /**
      * Called when a Joystick's virtual gamepad button is pressed.
@@ -433,7 +433,7 @@ export declare namespace callbacks {
      * @param button The virtual gamepad button.
      * @link [love.gamepadpressed](https://love2d.org/wiki/love.gamepadpressed)
      */
-    export let gamepadpressed: (joystick: Joystick, button: GamepadButton) => void;
+    gamepadpressed?: (joystick: Joystick, button: GamepadButton) => void;
 
     /**
      * Called when a Joystick's virtual gamepad button is released.
@@ -442,7 +442,7 @@ export declare namespace callbacks {
      * @param button The virtual gamepad button.
      * @link [love.gamepadreleased](https://love2d.org/wiki/love.gamepadreleased)
      */
-    export let gamepadreleased: (joystick: Joystick, button: GamepadButton) => void;
+    gamepadreleased?: (joystick: Joystick, button: GamepadButton) => void;
 
     /**
      * Called when a Joystick is connected.
@@ -453,7 +453,7 @@ export declare namespace callbacks {
      * @param joystick The newly connected Joystick object.
      * @link [love.joystickadded](https://love2d.org/wiki/love.joystickadded)
      */
-    export let joystickadded: (joystick: Joystick) => void;
+    joystickadded?: (joystick: Joystick) => void;
 
     /**
      * Called when a joystick axis moves.
@@ -463,7 +463,7 @@ export declare namespace callbacks {
      * @param value The new axis value.
      * @link [love.joystickaxis](https://love2d.org/wiki/love.joystickaxis)
      */
-    export let joystickaxis: (joystick: Joystick, axis: number, value: number) => void;
+    joystickaxis?: (joystick: Joystick, axis: number, value: number) => void;
 
     /**
      * Called when a joystick hat direction changes.
@@ -473,7 +473,7 @@ export declare namespace callbacks {
      * @param direction The new hat direction.
      * @link [love.joystickhat](https://love2d.org/wiki/love.joystickhat)
      */
-    export let joystickhat: (joystick: Joystick, hat: number, direction: JoystickHat) => void;
+    joystickhat?: (joystick: Joystick, hat: number, direction: JoystickHat) => void;
 
     /**
      * Called when a joystick button is pressed.
@@ -482,7 +482,7 @@ export declare namespace callbacks {
      * @param button The button number.
      * @link [love.joystickpressed](https://love2d.org/wiki/love.joystickpressed)
      */
-    export let joystickpressed: (joystick: number, button: number) => void;
+    joystickpressed?: (joystick: number, button: number) => void;
 
     /**
      * Called when a joystick button is released.
@@ -491,7 +491,7 @@ export declare namespace callbacks {
      * @param button The button number.
      * @link [love.joystickreleased](https://love2d.org/wiki/love.joystickreleased)
      */
-    export let joystickreleased: (joystick: number, button: number) => void;
+    joystickreleased?: (joystick: number, button: number) => void;
 
     /**
      * Called when a Joystick is disconnected.
@@ -499,7 +499,7 @@ export declare namespace callbacks {
      * @param joystick The now-disconnected Joystick object.
      * @link [love.joystickremoved](https://love2d.org/wiki/love.joystickremoved)
      */
-    export let joystickremoved: (joystick: Joystick) => void;
+    joystickremoved?: (joystick: Joystick) => void;
 
     /**
      * Callback function triggered when a key is pressed.
@@ -509,7 +509,7 @@ export declare namespace callbacks {
      * @param isrepeat Whether this keypress event is a repeat. The delay between key repeats depends on the user's system settings.
      * @link [love.keypressed](https://love2d.org/wiki/love.keypressed)
      */
-    export let keypressed: (key: KeyConstant, scancode: Scancode, isrepeat: boolean) => void;
+    keypressed?: (key: KeyConstant, scancode: Scancode, isrepeat: boolean) => void;
 
     /**
      * Callback function triggered when a keyboard key is released.
@@ -518,7 +518,7 @@ export declare namespace callbacks {
      * @param scancode The scancode representing the released key.
      * @link [love.keyreleased](https://love2d.org/wiki/love.keyreleased)
      */
-    export let keyreleased: (key: KeyConstant, scancode: Scancode) => void;
+    keyreleased?: (key: KeyConstant, scancode: Scancode) => void;
 
     /**
      * This function is called exactly once at the beginning of the game.
@@ -535,7 +535,7 @@ export declare namespace callbacks {
      * @param unfilteredArg Unfiltered command-line arguments given to the executable (see [#Notes](https://love2d.org/wiki/love.load#Notes)).
      * @link [love.load](https://love2d.org/wiki/love.load)
      */
-    export let load: (arg: Array<string>, unfilteredArg?: Array<string>) => void;
+    load?: (arg: Array<string>, unfilteredArg?: Array<string>) => void;
 
     /**
      * Callback function triggered when the system is running out of memory on mobile devices.
@@ -543,7 +543,7 @@ export declare namespace callbacks {
      * Mobile operating systems may forcefully kill the game if it uses too much memory, so any non-critical resource should be removed if possible (by setting all variables referencing the resources to nil, and calling collectgarbage()), when this event is triggered. Sounds and images in particular tend to use the most memory.
      * @link [love.lowmemory](https://love2d.org/wiki/love.lowmemory)
      */
-    export let lowmemory: () => void;
+    lowmemory?: () => void;
 
     /**
      * Callback function triggered when window receives or loses mouse focus.
@@ -551,7 +551,7 @@ export declare namespace callbacks {
      * @param focus Whether the window has mouse focus or not.
      * @link [love.mousefocus](https://love2d.org/wiki/love.mousefocus)
      */
-    export let mousefocus: (focus: boolean) => void;
+    mousefocus?: (focus: boolean) => void;
 
     /**
      * Callback function triggered when the mouse is moved.
@@ -563,7 +563,7 @@ export declare namespace callbacks {
      * @param istouch True if the mouse button press originated from a touchscreen touch-press.
      * @link [love.mousemoved](https://love2d.org/wiki/love.mousemoved)
      */
-    export let mousemoved: (x: number, y: number, dx: number, dy: number, istouch: boolean) => void;
+    mousemoved?: (x: number, y: number, dx: number, dy: number, istouch: boolean) => void;
 
     /**
      * Callback function triggered when a mouse button is pressed.
@@ -574,7 +574,7 @@ export declare namespace callbacks {
      * @param isTouch True if the mouse button press originated from a touchscreen touch-press.
      * @link [love.mousepressed](https://love2d.org/wiki/love.mousepressed)
      */
-    export let mousepressed: (x: number, y: number, button: number, isTouch: boolean) => void;
+    mousepressed?: (x: number, y: number, button: number, isTouch: boolean) => void;
 
     /**
      * Callback function triggered when a mouse button is released.
@@ -585,7 +585,7 @@ export declare namespace callbacks {
      * @param isTouch True if the mouse button press originated from a touchscreen touch-release.
      * @link [love.mousereleased](https://love2d.org/wiki/love.mousereleased)
      */
-    export let mousereleased: (x: number, y: number, button: number, isTouch: boolean) => void;
+    mousereleased?: (x: number, y: number, button: number, isTouch: boolean) => void;
 
     /**
      * Callback function triggered when the game is closed.
@@ -593,7 +593,7 @@ export declare namespace callbacks {
      * @return r, Abort quitting. If true, do not close the game.
      * @link [love.quit](https://love2d.org/wiki/love.quit)
      */
-    export let quit: () => boolean;
+    quit?: () => boolean;
 
     /**
      * Called when the window is resized, for example if the user resizes the window,
@@ -610,14 +610,14 @@ export declare namespace callbacks {
      * @param h The new height.
      * @link [love.resize](https://love2d.org/wiki/love.resize)
      */
-    export let resize: (w: number, h: number) => void;
+    resize?: (w: number, h: number) => void;
 
     /**
      * The main function, containing the main loop. A sensible default is used when
      * left out.
      * @link [love.run](https://love2d.org/wiki/love.run)
      */
-    export let run: () => void;
+    run?: () => void;
 
     /**
      * Called when the candidate text for an IME (Input Method Editor) has changed.
@@ -630,7 +630,7 @@ export declare namespace callbacks {
      * @param length The length of the selected candidate text. May be 0.
      * @link [love.textedited](https://love2d.org/wiki/love.textedited)
      */
-    export let textedited: (text: string, start: number, length: number) => void;
+    textedited?: (text: string, start: number, length: number) => void;
 
     /**
      * Called when text has been entered by the user. For example if shift-2 is
@@ -639,7 +639,7 @@ export declare namespace callbacks {
      * @param text The UTF-8 encoded unicode text.
      * @link [love.textinput](https://love2d.org/wiki/love.textinput)
      */
-    export let textinput: (text: string) => void;
+    textinput?: (text: string) => void;
 
     /**
      * Callback function triggered when a Thread encounters an error.
@@ -648,7 +648,7 @@ export declare namespace callbacks {
      * @param errorstr The error message.
      * @link [love.threaderror](https://love2d.org/wiki/love.threaderror)
      */
-    export let threaderror: (thread: Thread, errorstr: string) => void;
+    threaderror?: (thread: Thread, errorstr: string) => void;
 
     /**
      * Callback function triggered when a touch press moves inside the touch screen.
@@ -661,14 +661,7 @@ export declare namespace callbacks {
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchmoved](https://love2d.org/wiki/love.touchmoved)
      */
-    export let touchmoved: (
-        id: LightUserData<"Touch">,
-        x: number,
-        y: number,
-        dx: number,
-        dy: number,
-        pressure: number
-    ) => void;
+    touchmoved?: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
     /**
      * Callback function triggered when the touch screen is touched.
@@ -681,14 +674,7 @@ export declare namespace callbacks {
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchpressed](https://love2d.org/wiki/love.touchpressed)
      */
-    export let touchpressed: (
-        id: LightUserData<"Touch">,
-        x: number,
-        y: number,
-        dx: number,
-        dy: number,
-        pressure: number
-    ) => void;
+    touchpressed?: (id: LightUserData<"Touch">, x: number, y: number, dx: number, dy: number, pressure: number) => void;
 
     /**
      * Callback function triggered when the touch screen stops being touched.
@@ -701,7 +687,7 @@ export declare namespace callbacks {
      * @param pressure The amount of pressure being applied. Most touch screens aren't pressure sensitive, in which case the pressure will be 1.
      * @link [love.touchreleased](https://love2d.org/wiki/love.touchreleased)
      */
-    export let touchreleased: (
+    touchreleased?: (
         id: LightUserData<"Touch">,
         x: number,
         y: number,
@@ -720,7 +706,7 @@ export declare namespace callbacks {
      * @param dt Time since the last update in seconds.
      * @link [love.update](https://love2d.org/wiki/love.update)
      */
-    export let update: (dt: number) => void;
+    update?: (dt: number) => void;
 
     /**
      * Callback function triggered when window is minimized/hidden or unminimized by
@@ -729,7 +715,7 @@ export declare namespace callbacks {
      * @param visible True if the window is visible, false if it isn't.
      * @link [love.visible](https://love2d.org/wiki/love.visible)
      */
-    export let visible: (visible: boolean) => void;
+    visible?: (visible: boolean) => void;
 
     /**
      * Callback function triggered when the mouse wheel is moved.
@@ -738,5 +724,5 @@ export declare namespace callbacks {
      * @param y Amount of vertical mouse wheel movement. Positive values indicate upward movement.
      * @link [love.wheelmoved](https://love2d.org/wiki/love.wheelmoved)
      */
-    export let wheelmoved: (x: number, y: number) => void;
+    wheelmoved?: (x: number, y: number) => void;
 }

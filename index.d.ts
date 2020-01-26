@@ -1,2 +1,2 @@
-import "./global";
+import "./namespace";
 import "./typings";

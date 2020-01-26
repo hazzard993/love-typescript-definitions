@@ -5,6 +5,7 @@
     "license": "MIT",
     "types": "index.d.ts",
     "files": [
+        "docs/**",
         "**/**.d.ts"
     ],
     "homepage": "https://github.com/hazzard993/love-typescript-definitions#readme",
@@ -16,7 +17,7 @@
         "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
     },
     "scripts": {
-        "build:doc": "typedoc --includeDeclarations --excludeExternals --out docs --mode file --exclude node_modules/** typings",
+        "build:doc": "typedoc --includeDeclarations --excludeExternals --out docs --mode file --media media --exclude node_modules/** typings",
         "test": "yarn test:tslint && yarn test:tstl && yarn test:scripts",
         "test:tslint": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts",
         "test:tstl": "tstl -p spec/tsconfig.json",
@@ -38,6 +39,6 @@
         "prettier": "^1.18.2",
         "tslint": "^5.16.0",
         "typedoc": "^0.16.7",
-        "typescript-to-lua": "^0.30.1"
+        "typescript-to-lua": "^0.31.0"
     }
 }

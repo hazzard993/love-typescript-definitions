@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.18.0
+
+Docs are now available.
+
+Access them at `node_modules/love-typescript-definitions/docs/index.html`.
+
 ## Version 0.17.0
 
 Declarations now include 11.3 changes.
@@ -36,8 +42,8 @@ Here are the type paths to use for choosing one of these two methods:
 | Type Path                       | Description                                                                      |
 | ------------------------------- | -------------------------------------------------------------------------------- |
 | `love-typescript-definitions`   | All types, structs, modules and the `love` namespace will be globally available. |
-| `/expose-modules-only`          | Only LÖVE's modules will be globally available. (`love.graphics`, etc)           |
-| `/expose-love-global-callbacks` | Exposes the `love` namespace purely for overriding callbacks.                    |
+| `/modules`                      | Only LÖVE's modules will be globally available. (`love.graphics`, etc)           |
+| `/namespace` | Exposes the `love` namespace purely for overriding callbacks.                    |
 
 > VS Code can automatically create import paths to members within these declarations.
 
@@ -46,8 +52,9 @@ If you want to use LÖVE in this modular way, configure your _types_ in your _ts
 ```json
 {
   "types": [
-    "love-typescript-definitions/expose-modules-only",
-    "love-typescript-definitions/expose-love-global-callbacks"
+    "love-typescript-definitions/modules",
+    "love-typescript-definitions/namespace",
+    "love-typescript-definitions"
   ]
 }
 ```
