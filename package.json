@@ -18,12 +18,10 @@
     },
     "scripts": {
         "build:doc": "typedoc --includeDeclarations --excludeExternals --out docs --mode file --media media --exclude node_modules/** typings",
-        "test": "yarn test:tslint && yarn test:tstl && yarn test:scripts",
-        "test:tslint": "tslint -c tslint.json include/**.d.ts include/**/**.d.ts",
+        "test": "yarn test:tstl && yarn test:scripts",
         "test:tstl": "tstl -p spec/tsconfig.json",
         "test:scripts": "node scripts/tuple-check.js",
         "lint:prettier": "prettier --check \"**/*.{js,ts,yml,json,md}\" || (echo 'Run `npm run fix:prettier` to fix it.' && exit 1)",
-        "lint:tslint": "tslint -p . && tslint -p test && tslint -p src/lualib",
         "fix:prettier": "prettier --check --write \"**/*.{js,ts,yml,json,md}\"",
         "clean": "rm spec/*.lua"
     },
@@ -37,7 +35,6 @@
         "@types/node": "^13.1.4",
         "is-ci": "^2.0.0",
         "prettier": "^1.18.2",
-        "tslint": "^5.16.0",
         "typedoc": "^0.16.7",
         "typescript-to-lua": "^0.31.0"
     }
