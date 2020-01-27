@@ -1,11 +1,11 @@
 declare module "love.math" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * A random number generation object which has its own random state.
      * @link [RandomGenerator](https://love2d.org/wiki/RandomGenerator)
      */
-    export interface RandomGenerator extends LoveObject<"RandomGenerator"> {
+    export interface RandomGenerator extends Type<"RandomGenerator"> {
         /**
          * Gets the state of the random number generator.
          *

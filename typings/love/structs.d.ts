@@ -1,2 +1,2 @@
-import "./LoveObjects";
+import "./Types";
 import "./UtilityTypes";

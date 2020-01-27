@@ -1,11 +1,11 @@
 declare module "love.math" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * A BÃ©zier curve object that can evaluate and render BÃ©zier curves of arbitrary degree
      * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
      */
-    export interface BezierCurve extends LoveObject<"BezierCurve"> {
+    export interface BezierCurve extends Type<"BezierCurve"> {
         /**
          * Evaluate BÃ©zier curve at parameter t. The parameter must be between 0 and 1
          * (inclusive).

@@ -39,11 +39,11 @@ Also good for users who prefer to avoid global variables.
 
 Here are the type paths to use for choosing one of these two methods:
 
-| Type Path                       | Description                                                                      |
-| ------------------------------- | -------------------------------------------------------------------------------- |
-| `love-typescript-definitions`   | All types, structs, modules and the `love` namespace will be globally available. |
-| `/modules`                      | Only LÖVE's modules will be globally available. (`love.graphics`, etc)           |
-| `/namespace` | Exposes the `love` namespace purely for overriding callbacks.                    |
+| Type Path                     | Description                                                                      |
+| ----------------------------- | -------------------------------------------------------------------------------- |
+| `love-typescript-definitions` | All types, structs, modules and the `love` namespace will be globally available. |
+| `/modules`                    | Only LÖVE's modules will be globally available. (`love.graphics`, etc)           |
+| `/namespace`                  | Exposes the `love` namespace purely for overriding callbacks.                    |
 
 > VS Code can automatically create import paths to members within these declarations.
 

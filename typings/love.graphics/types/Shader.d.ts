@@ -1,5 +1,5 @@
 declare module "love.graphics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * A Shader is used for advanced hardware-accelerated pixel or vertex manipulation.
@@ -7,7 +7,7 @@ declare module "love.graphics" {
      * @link [Shader](https://love2d.org/wiki/Shader)
      * @link [Type Safe Shaders](https://github.com/hazzard993/love-typescript-definitions/wiki/Type-Safe-Shaders)
      */
-    export interface Shader<U extends { [key: string]: any } | undefined = undefined> extends LoveObject<"Shader"> {
+    export interface Shader<U extends { [key: string]: any } | undefined = undefined> extends Type<"Shader"> {
         /**
          * Returns any warning and error messages from compiling the shader code. This can
          * be used for debugging your shaders if there's anything the graphics hardware

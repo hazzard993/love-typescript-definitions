@@ -1,12 +1,12 @@
 declare module "love.math" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
     import { MatrixLayout } from "love.graphics";
 
     /**
      * Object containing a coordinate system transformation.
      * @link [Transform](https://love2d.org/wiki/Transform)
      */
-    export interface Transform extends LoveObject<"Transform"> {
+    export interface Transform extends Type<"Transform"> {
         /**
          * Applies the given other Transform object to this one.
          *

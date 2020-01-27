@@ -1,5 +1,5 @@
 declare module "love.physics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     export type ShapeTypes = "ChainShape" | "CircleShape" | "EdgeShape" | "PolygonShape";
 
@@ -7,7 +7,7 @@ declare module "love.physics" {
      * Shapes are solid 2d geometrical objects which handle the mass and collision of a Body in love.physics.
      * @link [Shape](https://love2d.org/wiki/Shape)
      */
-    export interface Shape<T extends ShapeTypes = ShapeTypes> extends LoveObject<T> {
+    export interface Shape<T extends ShapeTypes = ShapeTypes> extends Type<T> {
         /**
          * Returns the points of the bounding box for the transformed shape.
          *

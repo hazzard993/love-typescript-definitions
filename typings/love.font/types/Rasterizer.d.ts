@@ -1,10 +1,10 @@
 declare module "love.font" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * @link [Rasterizer](https://love2d.org/wiki/Rasterizer)
      */
-    export interface Rasterizer extends LoveObject<"Rasterizer"> {
+    export interface Rasterizer extends Type<"Rasterizer"> {
         /**
          * @todo This function is undocumented on the wiki
          */

@@ -1,11 +1,11 @@
 declare module "love.joystick" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * Represents a physical joystick.
      * @link [Joystick](https://love2d.org/wiki/Joystick)
      */
-    export interface Joystick extends LoveObject<"Joystick"> {
+    export interface Joystick extends Type<"Joystick"> {
         /**
          * Gets the direction of each axis.
          *

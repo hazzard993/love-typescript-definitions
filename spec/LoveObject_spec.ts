@@ -1,9 +1,9 @@
-declare let loveObject: LoveObject;
+declare let type: Type;
 
-if (loveObject.typeOf("Image")) {
-    const [width, height] = loveObject.getDimensions();
+if (type.typeOf("Image")) {
+    const [width, height] = type.getDimensions();
 }
 
-if (loveObject.typeOf("Quad")) {
-    const [width, height] = loveObject.getTextureDimensions();
+if (type.typeOf("Quad")) {
+    const [width, height] = type.getTextureDimensions();
 }

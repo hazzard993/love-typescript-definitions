@@ -1,10 +1,10 @@
 declare module "love.filesystem" {
-    import { LoveObject, LuaIterator } from "love";
+    import { Type, LuaIterator } from "love";
 
     /**
      * @link [File](https://love2d.org/wiki/File)
      */
-    export interface File extends LoveObject<"File"> {
+    export interface File extends Type<"File"> {
         /**
          * Closes a file.
          *

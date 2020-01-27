@@ -1,12 +1,12 @@
 declare module "love.physics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * Contacts are objects created to manage collisions in worlds.
      *
      * @link [Contact](https://love2d.org/wiki/Contact)
      */
-    export interface Contact extends LoveObject<"Contact"> {
+    export interface Contact extends Type<"Contact"> {
         /**
          * Gets the child indices of the shapes of the two colliding fixtures.
          * For ChainShapes, an index of 1 is the first edge in the chain.
