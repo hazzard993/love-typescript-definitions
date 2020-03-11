@@ -1,12 +1,12 @@
 declare module "love.physics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * Bodies are objects with velocity and position.
      *
      * @link [Body](https://love2d.org/wiki/Body)
      */
-    export interface Body extends LoveObject<"Body"> {
+    export interface Body extends Type<"Body"> {
         /**
          * Applies an angular impulse to a body. This makes a single, instantaneous
          * addition to the body momentum.

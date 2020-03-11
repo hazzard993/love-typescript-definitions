@@ -1,11 +1,11 @@
 declare module "love.graphics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * A quadrilateral (a polygon with four sides and four corners) with texture coordinate information.
      * @link [Quad](https://love2d.org/wiki/Quad)
      */
-    export interface Quad extends LoveObject<"Quad"> {
+    export interface Quad extends Type<"Quad"> {
         /**
          * Gets reference texture dimensions initially specified in love.graphics.newQuad.
          *

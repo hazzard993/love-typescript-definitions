@@ -1,12 +1,12 @@
 declare module "love.font" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
     import { FilterMode } from "love.graphics";
 
     /**
      * Defines the shape of characters that can be drawn onto the screen.
      * @link [Font](https://love2d.org/wiki/Font)
      */
-    export interface Font extends LoveObject<"Font"> {
+    export interface Font extends Type<"Font"> {
         /**
          * Gets the ascent of the Font. The ascent spans the distance between the baseline
          * and the top of the glyph that reaches farthest from the baseline.

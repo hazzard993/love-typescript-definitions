@@ -1,5 +1,5 @@
 declare module "love.physics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     export type JointTypes =
         | "DistanceJoint"
@@ -18,7 +18,7 @@ declare module "love.physics" {
      * Attach multiple bodies together to interact in unique ways.
      * @link [Joint](https://love2d.org/wiki/Joint)
      */
-    export interface Joint<T extends JointTypes = JointTypes> extends LoveObject<T> {
+    export interface Joint<T extends JointTypes = JointTypes> extends Type<T> {
         /**
          * Explicitly destroys the Joint. When you don't have time to wait for garbage
          * collection, this function may be used to free the object immediately, but note

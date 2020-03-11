@@ -1,11 +1,11 @@
 declare module "love.physics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * A world is an object that contains all bodies and joints.
      * @link [World](https://love2d.org/wiki/World)
      */
-    export interface World extends LoveObject<"World"> {
+    export interface World extends Type<"World"> {
         /**
          * Destroys the world, taking all bodies, joints, fixtures and their shapes with
          * it.

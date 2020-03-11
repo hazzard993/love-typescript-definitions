@@ -47,8 +47,8 @@ declare module "love" {
     import { Channel, Thread } from "love.thread";
     import { VideoStream } from "love.video";
 
-    export type LoveObjects = {
-        Object: LoveObject<keyof LoveObjects>;
+    export type Types = {
+        Object: Type<keyof Types>;
         RecordingDevice: RecordingDevice;
         Source: Source;
         ByteData: ByteData;

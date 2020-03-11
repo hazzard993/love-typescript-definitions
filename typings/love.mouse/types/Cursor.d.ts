@@ -1,10 +1,10 @@
 declare module "love.mouse" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * @link [Cursor](https://love2d.org/wiki/Cursor)
      */
-    export interface Cursor extends LoveObject<"Cursor"> {
+    export interface Cursor extends Type<"Cursor"> {
         /**
          * Gets the type of the Cursor.
          *

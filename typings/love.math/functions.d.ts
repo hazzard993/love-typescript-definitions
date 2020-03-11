@@ -7,64 +7,62 @@
  */
 declare module "love.math" {
     /**
+     * Contains the red, green, blue and alpha values respectively.
+     *
+     * The alpha value is optional.
+     */
+    export type RGBA = [number, number, number, number?];
+
+    /**
+     * Converts a color from 0..255 to 0..1 range.
+     *
+     * @param rgba The red, green, blue and alpha (optional) values within a 0..255 range.
+     * @returns The provided values within a 0..1 range.
+     * @tupleReturn
+     * @link [love.math.colorFromBytes](https://www.love2d.org/wiki/love.math.colorFromBytes)
+     * @since 11.3
+     */
+    export function colorFromBytes<T extends RGBA>(...rgba: T): T;
+    export function colorFromBytes<T extends RGBA>(rgba: T): T;
+
+    /**
      * Converts a color from 0..1 to 0..255 range.
-     * @param rgba The red, green, blue and optional alpha component.
-     * @returns The red, green, blue and optional alpha component converted to a 255 range.
+     *
+     * @param rgba The red, green, blue and alpha (optional) values within a 0..1 range.
+     * @returns The provided values within a 0..255 range.
      * @tupleReturn
      * @link [love.math.colorToBytes](https://love2d.org/wiki/love.math.colorToBytes)
      * @since 11.3
      */
-    export function colorToBytes<T extends [number, number, number, number?]>(...rgba: T): T;
+    export function colorToBytes<T extends RGBA>(...rgba: T): T;
+    export function colorToBytes<T extends RGBA>(rgba: T): T;
 
     /**
-     * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful
-     * when doing gamma-correct rendering and you need to do math in linear RGB in the
-     * few cases where LÖVE doesn't handle conversions automatically.
+     * Contains the red, green and blue values respectively.
+     */
+    export type RGB = [number, number, number];
+
+    /**
+     * Converts sRGB to RGB (gamma-space to linear-space).
      *
-     * @param r The red channel of the sRGB color to convert.
-     * @param g The green channel of the sRGB color to convert.
-     * @param b The blue channel of the sRGB color to convert.
-     * @return lr, The red channel of the converted color in linear RGB space.
-     * @return lg, The green channel of the converted color in linear RGB space.
-     * @return lb, The blue channel of the converted color in linear RGB space.
      * @tupleReturn
-     * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
+     * @link
+     * [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
+     * @since 0.9.1
      */
-    export function gammaToLinear(r: number, g: number, b: number): [number, number, number];
-
-    /**
-     * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful
-     * when doing gamma-correct rendering and you need to do math in linear RGB in the
-     * few cases where LÖVE doesn't handle conversions automatically.
-     *
-     * @param color An array with the red, green, and blue channels of the sRGB color to convert.
-     * @return lr, The red channel of the converted color in linear RGB space.
-     * @return lg, The green channel of the converted color in linear RGB space.
-     * @return lb, The blue channel of the converted color in linear RGB space.
-     * @tupleReturn
-     * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
-     */
-    export function gammaToLinear(color: [number, number, number]): [number, number, number];
-
-    /**
-     * Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful
-     * when doing gamma-correct rendering and you need to do math in linear RGB in the
-     * few cases where LÖVE doesn't handle conversions automatically.
-     *
-     * @param c The value of a color channel in sRGB space to convert.
-     * @return lc, The value of the color channel in linear RGB space.
-     * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
-     */
+    export function gammaToLinear(...rgb: RGB): RGB;
+    export function gammaToLinear(rgb: RGB): RGB;
     export function gammaToLinear(c: number): number;
 
     /**
      * Gets the seed of the random number generator.
      *
-     * The state is split into two numbers due to Lua's use of doubles for all number
-     * values - doubles can't accurately represent integer values above 2^53.
+     * The state is split into two numbers due to Lua's use of doubles for all
+     * number values - doubles can't accurately represent integer values above
+     * 2^53.
      *
-     * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
-     * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
+     * @returns Two Integers representing the lower and higher 32 bits of the
+     * random number generator's 64 bit state value respectively.
      * @tupleReturn
      * @link [love.math.getRandomSeed](https://love2d.org/wiki/love.math.getRandomSeed)
      */
@@ -87,73 +85,36 @@ declare module "love.math" {
     export function getRandomState(): string;
 
     /**
+     * An array of numbers describing vertices.
+     *
+     * @example
+     * [0, 0, 16, 16, 16, 0] // x1, y1, x2, y2, x3, y3, ...
+     */
+    export type Vertices = number[];
+
+    /**
      * Checks whether a polygon is convex.
      *
-     * PolygonShapes in love.physics, some forms of Mesh, and polygons drawn with
-     * love.graphics.polygon must be simple convex polygons.
+     * PolygonShapes in love.physics, some forms of Mesh, and polygons drawn
+     * {@link "love.graphics".polygon love.graphics.polygon} must be simple
+     * convex polygons.
      *
-     * @param vertices The vertices of the polygon as a table in the form of [x1, y1, x2, y2, x3, y3, ...].
-     * @return convex, Whether the given polygon is convex.
+     * @param vertices The vertices of the polygon.
+     * @returns true if the given polygon is convex.
      * @link [love.math.isConvex](https://love2d.org/wiki/love.math.isConvex)
      */
-    export function isConvex(vertices: Array<number>): boolean;
-    export function isConvex(...vertices: Array<number>): boolean;
+    export function isConvex(...vertices: Vertices): boolean;
+    export function isConvex(vertices: Vertices): boolean;
 
     /**
-     * Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful
-     * when storing linear RGB color values in an image, because the linear RGB color
-     * space has less precision than sRGB for dark colors, which can result in
-     * noticeable color banding when drawing.
+     * Converts RGB to sRGB (linear-space to gamma-space).
      *
-     * In general, colors chosen based on what they look like on-screen are already in
-     * gamma-space and should not be double-converted. Colors calculated using math
-     * are often in the linear RGB space.
-     *
-     * @param lr The red channel of the linear RGB color to convert.
-     * @param lg The green channel of the linear RGB color to convert.
-     * @param lb The blue channel of the linear RGB color to convert.
-     * @return cr, The red channel of the converted color in gamma sRGB space.
-     * @return cg, The green channel of the converted color in gamma sRGB space.
-     * @return cb, The blue channel of the converted color in gamma sRGB space.
      * @tupleReturn
      * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
      */
-    export function linearToGamma(lr: number, lg: number, lb: number): [number, number, number];
-
-    /**
-     * Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful
-     * when storing linear RGB color values in an image, because the linear RGB color
-     * space has less precision than sRGB for dark colors, which can result in
-     * noticeable color banding when drawing.
-     *
-     * In general, colors chosen based on what they look like on-screen are already in
-     * gamma-space and should not be double-converted. Colors calculated using math
-     * are often in the linear RGB space.
-     *
-     * @param color An array with the red, green, and blue channels of the linear RGB color to convert.
-     * @return cr, The red channel of the converted color in gamma sRGB space.
-     * @return cg, The green channel of the converted color in gamma sRGB space.
-     * @return cb, The blue channel of the converted color in gamma sRGB space.
-     * @tupleReturn
-     * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
-     */
-    export function linearToGamma(color: [number, number, number]): [number, number, number];
-
-    /**
-     * Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful
-     * when storing linear RGB color values in an image, because the linear RGB color
-     * space has less precision than sRGB for dark colors, which can result in
-     * noticeable color banding when drawing.
-     *
-     * In general, colors chosen based on what they look like on-screen are already in
-     * gamma-space and should not be double-converted. Colors calculated using math
-     * are often in the linear RGB space.
-     *
-     * @param lc The value of a color channel in linear RGB space to convert.
-     * @return c, The value of the color channel in gamma sRGB space.
-     * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
-     */
-    export function linearToGamma(lc: number): number;
+    export function linearToGamma(...rgb: RGB): RGB;
+    export function linearToGamma(rgb: RGB): RGB;
+    export function linearToGamma(c: number): number;
 
     /**
      * Creates a new BezierCurve object.
@@ -162,18 +123,18 @@ declare module "love.math" {
      * curve, e.g. three vertices define a quadratic (degree 2) Bézier curve, four
      * vertices define a cubic (degree 3) Bézier curve, etc.
      *
-     * @param vertices The vertices of the control polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.
-     * @return curve, A Bézier curve object.
+     * @param vertices The vertices of the control polygon.
+     * @returns A Bézier curve object.
      * @link [love.math.newBezierCurve](https://love2d.org/wiki/love.math.newBezierCurve)
      */
-    export function newBezierCurve(vertices: Array<number>): BezierCurve;
-    export function newBezierCurve(...vertices: Array<number>): BezierCurve;
+    export function newBezierCurve(vertices: Vertices): BezierCurve;
+    export function newBezierCurve(...vertices: Vertices): BezierCurve;
 
     /**
      * Creates a new RandomGenerator object which is completely independent of other
      * RandomGenerator objects and random functions.
      *
-     * @return rng, The new Random Number Generator object.
+     * @returns The new Random Number Generator object.
      * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
      */
     export function newRandomGenerator(): RandomGenerator;
@@ -183,7 +144,7 @@ declare module "love.math" {
      * RandomGenerator objects and random functions.
      *
      * @param seed The initial seed number to use for this object.
-     * @return rng, The new Random Number Generator object.
+     * @returns The new Random Number Generator object.
      * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
      */
     export function newRandomGenerator(seed: number): RandomGenerator;
@@ -194,7 +155,7 @@ declare module "love.math" {
      *
      * @param low The lower 32 bits of the state number to use for this instance of the object.
      * @param high The higher 32 bits of the state number to use for this instance of the object.
-     * @return rng, The new Random Number Generator object.
+     * @returns The new Random Number Generator object.
      * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
      */
     export function newRandomGenerator(low: number, high: number): RandomGenerator;
@@ -202,7 +163,7 @@ declare module "love.math" {
     /**
      * Creates a new Transform object.
      *
-     * @return transform, The new Transform object.
+     * @returns The new Transform object.
      * @link [love.math.newTransform](https://love2d.org/wiki/love.math.newTransform)
      */
     export function newTransform(): Transform;
@@ -244,7 +205,7 @@ declare module "love.math" {
      * There are many webpages which discuss Perlin and Simplex noise in detail.
      *
      * @param x The number used to generate the noise value.
-     * @return value, The noise value in the range of [0, 1].
+     * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
     export function noise(x: number): number;
@@ -260,7 +221,7 @@ declare module "love.math" {
      *
      * @param x The first value of the 2-dimensional vector used to generate the noise value.
      * @param y The second value of the 2-dimensional vector used to generate the noise value.
-     * @return value, The noise value in the range of [0, 1].
+     * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
     export function noise(x: number, y: number): number;
@@ -277,7 +238,7 @@ declare module "love.math" {
      * @param x The first value of the 3-dimensional vector used to generate the noise value.
      * @param y The second value of the 3-dimensional vector used to generate the noise value.
      * @param z The third value of the 3-dimensional vector used to generate the noise value.
-     * @return value, The noise value in the range of [0, 1].
+     * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
     export function noise(x: number, y: number, z: number): number;
@@ -295,7 +256,7 @@ declare module "love.math" {
      * @param y The second value of the 4-dimensional vector used to generate the noise value.
      * @param z The third value of the 4-dimensional vector used to generate the noise value.
      * @param w The fourth value of the 4-dimensional vector used to generate the noise value.
-     * @return value, The noise value in the range of [0, 1].
+     * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
     export function noise(x: number, y: number, z: number, w: number): number;
@@ -303,7 +264,7 @@ declare module "love.math" {
     /**
      * Generates a pseudo-random number in a platform independent manner.
      *
-     * @return number, The pseudo-random number.
+     * @returns The pseudo-random number.
      * @link [love.math.random](https://love2d.org/wiki/love.math.random)
      */
     export function random(): number;
@@ -312,7 +273,7 @@ declare module "love.math" {
      * Generates a pseudo-random number in a platform independent manner.
      *
      * @param max The maximum possible value it should return.
-     * @return number, The pseudo-random integer number.
+     * @returns The pseudo-random integer number.
      * @link [love.math.random](https://love2d.org/wiki/love.math.random)
      */
     export function random(max: number): number;
@@ -322,7 +283,7 @@ declare module "love.math" {
      *
      * @param min The minimum possible value it should return.
      * @param max The maximum possible value it should return.
-     * @return number, The pseudo-random integer number.
+     * @returns The pseudo-random integer number.
      * @link [love.math.random](https://love2d.org/wiki/love.math.random)
      */
     export function random(min: number, max: number): number;
@@ -332,7 +293,7 @@ declare module "love.math" {
      *
      * @param stddev Standard deviation of the distribution.
      * @param mean The mean of the distribution.
-     * @return number, Normally distributed random number with variance (stddev)² and the specified mean.
+     * @returns Normally distributed random number with variance (stddev)² and the specified mean.
      * @link [love.math.randomNormal](https://love2d.org/wiki/love.math.randomNormal)
      */
     export function randomNormal(stddev?: number, mean?: number): number;
@@ -376,9 +337,9 @@ declare module "love.math" {
      * Triangulate a simple polygon.
      *
      * @param polygon Polygon to triangulate. Must not intersect itself.
-     * @return triangles, List of triangles the polygon is composed of, in the form of [[x1, y1, x2, y2, x3, y3], [x1, y1, x2, y2, x3, y3], ...].
+     * @return triangles, List of triangles the polygon is composed of.
      * @link [love.math.triangulate](https://love2d.org/wiki/love.math.triangulate)
      */
-    export function triangulate(polygon: Array<number>): Array<Array<number>>;
-    export function triangulate(...polygon: Array<number>): Array<Array<number>>;
+    export function triangulate(polygon: Vertices): Vertices[];
+    export function triangulate(...polygon: Vertices): Vertices[];
 }

@@ -1,12 +1,12 @@
 declare module "love.sound" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * An object which can gradually decode a sound file.
      *
      * @link [Decoder](https://love2d.org/wiki/Decoder)
      */
-    export interface Decoder extends LoveObject<"Decoder"> {
+    export interface Decoder extends Type<"Decoder"> {
         /**
          * Creates a new copy of current decoder.
          *

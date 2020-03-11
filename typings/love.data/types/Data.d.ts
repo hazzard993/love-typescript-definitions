@@ -1,5 +1,5 @@
 declare module "love.data" {
-    import { LoveObject, LoveObjects, LightUserData } from "love";
+    import { Type, Types, LightUserData } from "love";
 
     export type DataTypes =
         | "Data"
@@ -15,14 +15,14 @@ declare module "love.data" {
      * The superclass of all data.
      * @link [Data](https://love2d.org/wiki/Data)
      */
-    export interface Data<T extends DataTypes = "Data"> extends LoveObject<T> {
+    export interface Data<T extends DataTypes = "Data"> extends Type<T> {
         /**
          * Creates a new copy of the Data object.
          * @return clone, The new copy.
          * @link [Data:clone](https://love2d.org/wiki/Data:clone)
          * @since 11.0
          */
-        clone(): LoveObjects[T];
+        clone(): Types[T];
 
         /**
          * Gets an FFI pointer to the Data.

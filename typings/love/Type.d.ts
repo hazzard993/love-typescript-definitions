@@ -5,8 +5,9 @@ declare module "love" {
      * Use `typeOf` to determine what subtype that is.
      * @link [Object](https://love2d.org/wiki/Object)
      */
-    export interface LoveObject<T extends keyof LoveObjects = keyof LoveObjects> {
-        __opaque: never;
+    export interface Type<T extends keyof Types = keyof Types> {
+        /** @ignore */
+        " __opaque": never;
 
         /**
          * Destroys the object's Lua reference.
@@ -33,6 +34,6 @@ declare module "love" {
          * @return b, True if the object is of the specified type, false otherwise.
          * @link [Object:typeOf](https://love2d.org/wiki/Object:typeOf)
          */
-        typeOf<T extends keyof LoveObjects>(name: T): this is LoveObjects[T];
+        typeOf<T extends keyof Types>(name: T): this is Types[T];
     }
 }

@@ -4,7 +4,7 @@ declare module "love.audio" {
      * @link [Source:setFilter](https://love2d.org/wiki/Source:setFilter)
      * @link [Source:getFilter](https://love2d.org/wiki/Source:getFilter)
      */
-    export interface FilterSettings {
+    export type FilterSettings = {
         /**
          * The type of filter to use.
          */
@@ -30,5 +30,5 @@ declare module "love.audio" {
          * Must be between `0` and `1`.
          */
         lowgain?: number;
-    }
+    };
 }

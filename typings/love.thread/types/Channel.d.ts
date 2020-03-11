@@ -1,11 +1,11 @@
 declare module "love.thread" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * An object which can be used to send and receive data between different threads.
      * @link [Channel](https://love2d.org/wiki/Channel)
      */
-    export interface Channel<T = any> extends LoveObject<"Channel"> {
+    export interface Channel<T = any> extends Type<"Channel"> {
         /**
          * Clears all the messages in the Channel queue.
          *

@@ -1,5 +1,5 @@
 declare module "love.graphics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
     export type DrawableTypes =
         | "Mesh"
         | "ParticleSystem"
@@ -15,7 +15,7 @@ declare module "love.graphics" {
      *
      * @link [Drawable](https://love2d.org/wiki/Drawable)
      */
-    export interface Drawable<T extends DrawableTypes = DrawableTypes> extends LoveObject<T> {
+    export interface Drawable<T extends DrawableTypes = DrawableTypes> extends Type<T> {
         _drawable: never;
     }
 }

@@ -1,11 +1,11 @@
 declare module "love.physics" {
-    import { LoveObject } from "love";
+    import { Type } from "love";
 
     /**
      * Fixtures attach shapes to bodies.
      * @link [Fixture](https://love2d.org/wiki/Fixture)
      */
-    export interface Fixture extends LoveObject<"Fixture"> {
+    export interface Fixture extends Type<"Fixture"> {
         /**
          * Destroys the fixture
          *
