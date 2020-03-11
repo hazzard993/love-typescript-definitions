@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.19.0
+
+- Renamed `LoveObject` to `Type`
+- Renames `LoveObjects` to `Types`
+- Added `colorFromBytes`
+- Changed some documentation
+  - Added clickable links to docs
+  - Inlined return values
+
 ## Version 0.18.0
 
 Docs are now available.
