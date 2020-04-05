@@ -1,62 +1,83 @@
 declare module "love" {
     export type Config = {
         /**
-         * This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created.
+         * Save directory name.
          *
-         * Alternatively [love.filesystem.setIdentity](https://love2d.org/wiki/love.filesystem.setIdentity) can be used to set the save directory outside of the config file.
-         * ```ts
-         * t.identity = "gabe_HL3"             // Correct
-         * t.identity = "c:/Users/gabe/HL3"    // Incorrect
-         * ```
+         * Not a path.
+         *
+         * [love.filesystem.setIdentity][1] can also be used to change this.
+         *
+         * [1]: https://love2d.org/wiki/love.filesystem.setIdentity
+         *
          * @default undefined
          */
-        identity: string;
+        identity?: string;
 
         /**
-         * This flag determines if game directory should be searched first then save directory (`true`) or otherwise (`false`)
+         * Search the game directory will be searched before the save
+         * directory.
+         *
          * @default false
          */
         appendidentity: boolean;
 
         /**
-         * Should be a string, representing the version of LÖVE for which your game was made.
+         * The version of LÖVE this application was made for.
          *
-         * If set in the config file of the game, LÖVE will display a warning if the game isn't compatible with the current version of LÖVE being used to run the game.
+         * Its default is the running version.
          *
-         * Its default is the version of LÖVE running.
-         * @default "11.2"
+         * _A warning is displayed if the running version isn't compatible._
+         *
+         * ```ts
+         * config.version = "11.3";
+         * /// warn if incompatible with 11.3
+         * ```
          */
         version: Version;
 
         /**
-         * Determines whether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal, or on Windows with LÖVE 0.10.2, by running `lovec.exe` instead of `love.exe`.
+         * Spawn a console alongside the game window (Windows only).
+         *
          * @default false
          */
         console: boolean;
 
         /**
-         * Sets whether the device accelerometer on iOS and Android should be exposed as a 3-axis Joystick. Disabling the accelerometer when it's not used may reduce CPU usage.
+         * Used for reducing CPU usage on iOS or Android devices.
+         *
+         * If unset the device accelerometer will NOT be exposed as a 3-axis
+         * Joystick.
+         *
          * @default true
          */
         accelerometerjoystick: boolean;
 
         /**
-         * Sets whether files are saved in external storage (true) or internal storage (false) on Android.
+         * Save files to external storage on Android.
+         *
+         * By default they are saved in internal storage (or when flag is _false_).
+         *
          * @default false
          */
         externalstorage: boolean;
 
         /**
-         * Determines whether [gamma-correct rendering](https://love2d.org/wiki/love.graphics.isGammaCorrect) is enabled, when the system supports it.
+         * Enables [gamma-correct rendering][1] if the system supports it.
+         *
+         * [1]: https://love2d.org/wiki/love.graphics.isGammaCorrect
+         *
          * @default false
          */
         gammacorrect: boolean;
 
         audio: {
             /**
-             * Sets whether background audio / music from other apps should play while LÖVE is open.
+             * Allow background audio / music from other apps to play while LÖVE
+             * is open.
              *
-             * See [love.system.hasBackgroundMusic](https://love2d.org/wiki/love.system.hasBackgroundMusic) for more details.
+             * [1]: https://love2d.org/wiki/love.system.hasBackgroundMusic
+             *
+             * @link [love.system.hasBackgroundMusic][1]
              * @default true
              */
             mixwithsystem: boolean;
@@ -70,235 +91,169 @@ declare module "love" {
             mic: boolean;
         };
 
-        /**
-         * @link https://love2d.org/wiki/Config_Files#window
-         */
         window: {
             /**
-             * Sets the title of the window the game is in.
+             * Window title.
              *
-             * Alternatively [love.window.setTitle](https://love2d.org/wiki/love.window.setTitle) can be used to change the window title outside of the config file.
+             * [love.window.setTitle][1] can also be used.
+             *
+             * [1]: https://love2d.org/wiki/love.window.setTitle
              * @default "Untitled"
              */
             title: string;
 
             /**
-             * A filepath to an image to use as the window's icon. Not all operating systems support very large icon images.
-             * The icon can also be changed with [love.window.setIcon](https://love2d.org/wiki/love.window.setIcon).
+             * A filepath to an image to use as the window's icon.
+             *
+             * The icon can also be changed with [love.window.setIcon][1].
+             *
+             * [1]: https://love2d.org/wiki/love.window.setIcon
+             *
              * @default undefined
              */
-            icon: string;
+            icon?: string;
 
             /**
-             * The window width
+             * Window width.
+             *
              * @default 800
              */
             width: number;
 
             /**
-             * The window height
+             * Window height.
+             *
              * @default 600
              */
             height: number;
 
             /**
-             * Removes all border visuals from the window. Note that the effects may wary between operating systems.
+             * Remove all border visuals.
+             *
              * @default false
              */
             borderless: boolean;
 
             /**
-             * Let the window be resizable
+             * Allow window to be resized.
+             *
              * @default false
              */
             resizable: boolean;
 
             /**
-             * Minimum window width if the window is resizable
+             * Minimum window width, if it is resizable.
+             *
              * @default 1
              */
             minwidth: number;
 
             /**
-             * Minimum window height if the window is resizable
+             * Minimum window height, if it is resizable.
+             *
              * @default 1
              */
             minheight: number;
 
             /**
-             * Enable fullscreen
+             * Make window fullscreen.
+             *
              * @default false
              */
             fullscreen: boolean;
 
             /**
-             * Choose between "desktop" fullscreen or "exclusive" fullscreen mode
+             * Set the window's fullscreen mode.
+             *
              * @default "desktop"
              */
             fullscreentype: "desktop" | "exclusive";
 
             /**
-             * Enable automatic DPI scaling (boolean)
+             * Enable automatic DPI scaling.
+             *
              * @default true
              */
             usedpiscale: boolean;
 
             /**
-             * Vertical sync mode
+             * Vertical sync mode.
+             *
              * @default 1
              */
             vsync: number;
 
             /**
-             * The number of samples to use with multi - sampled antialiasing
+             * The number of samples to use with multi - sampled antialiasing.
+             *
              * @default 0
              */
             msaa: number;
 
             /**
-             * The number of bits per sample in the depth buffer
+             * The number of bits per sample in the depth buffer.
+             *
              * @default undefined
              */
-            depth: number;
+            depth?: number;
 
             /**
-             * The number of bits per sample in the stencil buffer
+             * The number of bits per sample in the stencil buffer.
+             *
              * @default undefined
              */
-            stencil: number;
+            stencil?: number;
 
             /**
-             * Index of the monitor to show the window in
+             * The monitor index to show the window on.
+             *
              * @default 1
              */
             display: number;
 
             /**
-             * Enable high - dpi mode for the window on a Retina display
+             * Enable high dpi mode for the window on a Retina display.
+             *
              * @default false
              */
             highdpi: boolean;
 
             /**
-             * The x - coordinate of the window's position in the specified display
+             * Set x coordinate.
+             *
              * @default undefined
              */
-            x: number;
+            x?: number;
 
             /**
-             * The y - coordinate of the window's position in the specified display
+             * Set y coordinate.
+             *
              * @default undefined
              */
-            y: number;
+            y?: number;
         };
 
+        /**
+         * Set any of these flags to false to disable a module.
+         */
         modules: {
-            /**
-             * Enable/Disable the audio module
-             * @default true
-             */
             audio: boolean;
-
-            /**
-             * Enable/Disable the data module
-             * @default true
-             */
             data: boolean;
-
-            /**
-             * Enable/Disable the event module
-             * @default true
-             */
             event: boolean;
-
-            /**
-             * Enable/Disable the font module
-             * @default true
-             */
             font: boolean;
-
-            /**
-             * Enable/Disable the graphics module
-             * @default true
-             */
             graphics: boolean;
-
-            /**
-             * Enable/Disable the image module
-             * @default true
-             */
             image: boolean;
-
-            /**
-             * Enable/Disable the joystick module
-             * @default true
-             */
             joystick: boolean;
-
-            /**
-             * Enable/Disable the keyboard module
-             * @default true
-             */
             keyboard: boolean;
-
-            /**
-             * Enable/Disable the math module
-             * @default true
-             */
             math: boolean;
-
-            /**
-             * Enable/Disable the mouse module
-             * @default true
-             */
             mouse: boolean;
-
-            /**
-             * Enable/Disable the physics module
-             * @default true
-             */
             physics: boolean;
-
-            /**
-             * Enable/Disable the sound module
-             * @default true
-             */
             sound: boolean;
-
-            /**
-             * Enable/Disable the system module
-             * @default true
-             */
             system: boolean;
-
-            /**
-             * Enable/Disable the thread module
-             * @default true
-             */
             thread: boolean;
-
-            /**
-             * Enable/Disable the timer module
-             * @default true
-             */
             timer: boolean;
-
-            /**
-             * Enable/Disable the touch module
-             * @default true
-             */
             touch: boolean;
-
-            /**
-             * Enable/Disable the video module
-             * @default true
-             */
             video: boolean;
-
-            /**
-             * Enable/Disable the window module
-             * @default true
-             */
             window: boolean;
         };
     };
