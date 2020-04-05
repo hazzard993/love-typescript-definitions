@@ -1,54 +1,87 @@
-import { Conf, LightUserData } from "love";
+import { Config, LightUserData } from "love";
 import { File } from "love.filesystem";
 import { Joystick, GamepadAxis, GamepadButton, JoystickHat } from "love.joystick";
 import { KeyConstant, Scancode } from "love.keyboard";
 import { Thread } from "love.thread";
 import { DisplayOrientation } from "love.window";
 
+declare global {
+    /**
+     * Extend this to implement custom handlers.
+     *
+     * ```ts
+     * // define a new event
+     * declare interface CustomHandlers {
+     *   handler: (this: void, a: string) => void;
+     * }
+     *
+     * // handle event
+     * love.handlers.handler = a => print(a);
+     *
+     * // dispatch event
+     * love.event.push("handler", "Hello World");
+     * ```
+     *
+     * @noSelf
+     */
+    export interface CustomHandlers {}
+}
+
 /**
+ * All LÖVE 2D handlers.
+ *
+ * You can add to these handlers by extending `CustomHandlers`.
+ *
  * @noSelf
  */
-export interface Callbacks {
+export interface Handlers extends CustomHandlers {
     /**
      * Should be overwritten inside a `conf.lua` file.
+     *
      * ```ts
      * love.conf = (t: Conf) => {
      *     t.window.width = 1024;
      *     t.window.height = 768;
-     * }
+     * };
      * ```
-     * @link [Config Files](https://love2d.org/wiki/Config_Files)
+     *
+     * [1]: https://love2d.org/wiki/Config_Files
+     * @link [Config Files][1]
      */
-    conf?: (t: Conf) => void;
+    conf?: (config: Config) => void;
 
     /**
      * Called when the device display orientation changed, for example, user rotated their phone 180 degrees.
-     * @param index The index of the display that changed orientation.
-     * @param orientation The new orientation.
+     * @param displayIndex The index of the display that changed orientation.
+     * @param newOrientation The new orientation.
      * @link [love.displayrotated](https://love2d.org/wiki/love.displayrotated)
      * @since 11.3
      */
-    displayrotated?: (index: number, orientation: DisplayOrientation) => void;
+    displayrotated?: (displayIndex: number, newOrientation: DisplayOrientation) => void;
 
     /**
      * Callback function triggered when a directory is dragged and dropped onto the window.
+     *
      * ```ts
-     * love.directorydropped = (path: string) => {
+     * love.directorydropped = path => {
      *     print(`${path} dropped!`);
      * }
      * ```
-     * @param path The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.
+     *
+     * @param fullDirectoryPath The full platform-dependent path to the directory.
      * @link [love.directorydropped](https://love2d.org/wiki/love.directorydropped)
      */
-    directorydropped?: (path: string) => void;
+    directorydropped?: (fullDirectoryPath: string) => void;
 
     /**
      * Callback function used to draw on the screen every frame.
+     *
      * ```ts
      * love.draw = () => {
      *   love.graphics.print("Hello World!", 400, 300);
-     * }
+     * };
      * ```
+     *
      * @link [love.draw](https://love2d.org/wiki/love.draw)
      * @link [love.graphics](https://love2d.org/wiki/love.graphics)
      */

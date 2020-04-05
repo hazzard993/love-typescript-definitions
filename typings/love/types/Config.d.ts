@@ -1,5 +1,5 @@
 declare module "love" {
-    export type Conf = {
+    export type Config = {
         /**
          * This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created.
          *

@@ -36,7 +36,10 @@ declare module "love.event" {
      * @link [love.event.push](https://love2d.org/wiki/love.event.push)
      * @since 0.6.0
      */
-    export function push(e: Event, ...args: Array<any>): void;
+    export function push<E extends Event>(
+        e: E,
+        ...args: Parameters<Required<import("../love/handlers").Handlers>[E]>
+    ): void;
 
     /**
      * Adds the quit event to the queue.
