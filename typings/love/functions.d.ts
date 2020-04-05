@@ -26,6 +26,13 @@ declare module "love" {
     export function setDeprecationOutput(enable: boolean): void;
 
     /**
+     * Gets whatever the version is compatible with current running version of LÖVE.
+     * @link [love.isVersionCompatible](https://love2d.org/wiki/love.isVersionCompatible)
+     */
+    export function isVersionCompatible(version: Version): boolean;
+    export function isVersionCompatible(major: number, minor: number, revision: number): boolean;
+
+    /**
      * Gets whether LÖVE displays warnings when using deprecated functionality. It is disabled by default in fused mode, and enabled by default otherwise.
      *
      * When deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.

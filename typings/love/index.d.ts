@@ -1,3 +1,5 @@
+import "./types/Conf";
+import "./enums/Version";
 import "./callbacks";
 import "./functions";
 import "./LightUserData";
