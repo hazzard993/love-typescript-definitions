@@ -1,9 +1,8 @@
 import "./types/Conf";
-import "./enums/Version";
+import "./types/Version";
+import "./types/LightUserData";
+import "./types/Type";
+import "./types/Types";
+import "./types/UtilityTypes";
 import "./callbacks";
 import "./functions";
-import "./LightUserData";
-import "./structs";
-import "./Type";
-import "./Types";
-import "./UtilityTypes";
