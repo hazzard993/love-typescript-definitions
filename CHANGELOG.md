@@ -2,6 +2,7 @@
 
 ## Version 0.20.0
 
+- Stopped `love.graphics.newText` potentially returning `undefined`
 - +2 _love.isVersionCompatible_ variants
 
 ```diff
