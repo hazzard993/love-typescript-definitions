@@ -1279,7 +1279,7 @@ declare module "love.graphics" {
      * @link [love.graphics.newText](https://love2d.org/wiki/love.graphics.newText)
      * @since 0.10.0
      */
-    export function newText(font: Font, textstring?: string): Text | undefined;
+    export function newText(font: Font, textstring?: string): Text;
 
     /**
      * Creates a new Quad.
