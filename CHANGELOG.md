@@ -1,5 +1,30 @@
 # Changelog
 
+## Version 0.20.0
+
+- Stopped `love.graphics.newText` potentially returning `undefined`
+- +2 _love.isVersionCompatible_ variants
+
+```diff
++ love.isVersionCompatible(version);
++ love.isVersionCompatible(major, minor, revision);
+```
+
+- Added _love.handlers_ typings. Custom handlers can now be defined
+
+```ts
+// define a new event
+declare interface CustomHandlers {
+  handler: (this: void, a: string) => void;
+}
+
+// handle event
+love.handlers.handler = a => print(a);
+
+// dispatch event
+love.event.push("handler", "Hello World");
+```
+
 ## Version 0.19.0
 
 - Renamed `LoveObject` to `Type`

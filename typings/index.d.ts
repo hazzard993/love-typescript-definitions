@@ -41,4 +41,5 @@ declare module "love" {
     export const touch: typeof import("love.touch");
     export const video: typeof import("love.video");
     export const window: typeof import("love.window");
+    export const handlers: import("./love/handlers").Handlers;
 }
