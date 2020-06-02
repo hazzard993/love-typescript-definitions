@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.20.2
+
+- +1 _love.filesystem.write_ variants
+
+```diff
+love.filesystem.write(name, string, size);
+```
+
 ## Version 0.20.0
 
 - Stopped `love.graphics.newText` potentially returning `undefined`
