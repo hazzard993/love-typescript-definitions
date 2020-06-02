@@ -455,12 +455,13 @@ declare module "love.filesystem" {
      * Write data to a file in the save directory. If the file existed already, it will be completely replaced by the new contents.
      *
      * @param name The name (and path) of the file.
-     * @param data The string data to write to the file.
+     * @param data The string or Data to write to the file.
      * @param size How many bytes to write.
      * @returns success, If the operation was successful.
      * @returns message, Error message if operation was unsuccessful.
      * @tupleReturn
      * @link [love.filesystem.write](https://love2d.org/wiki/love.filesystem.write)
      */
+    export function write(name: string, data: string, size?: number): [true, undefined] | [false, string];
     export function write(name: string, data: Data, size?: number): [true, undefined] | [false, string];
 }
