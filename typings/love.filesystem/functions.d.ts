@@ -85,10 +85,10 @@ declare module "love.filesystem" {
      * Gets the write directory name for your game. Note that this only returns the
      * name of the folder to store your files in, not the full location.
      *
-     * @param name The identity that is used as write directory.
+     * @return The identity that is used as write directory.
      * @link [love.filesystem.getIdentity](https://love2d.org/wiki/love.filesystem.getIdentity)
      */
-    export function getIdentity(name: string): void;
+    export function getIdentity(): string;
 
     export type FileInfo = {
         /**
