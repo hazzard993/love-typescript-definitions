@@ -1687,7 +1687,7 @@ declare module "love.graphics" {
      * @param alpha The amount of alpha. The alpha value will be applied to all subsequent draw operations, even the drawing of an image.
      * @link [love.graphics.setColor](https://love2d.org/wiki/love.graphics.setColor)
      */
-    export function setColor(red: number, green: number, blue: number, alpha: number): void;
+    export function setColor(red: number, green: number, blue: number, alpha?: number): void;
 
     /**
      * Sets the color used for drawing.
