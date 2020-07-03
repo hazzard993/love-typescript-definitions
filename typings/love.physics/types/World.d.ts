@@ -67,7 +67,7 @@ declare module "love.physics" {
 
         /**
          * Returns a sequence of all the contacts in this world
-         * 
+         *
          * @return contacts
          * @link [World:getContacts](https://love2d.org/wiki/World:getContacts)
          */
