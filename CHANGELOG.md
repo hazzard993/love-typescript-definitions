@@ -1,5 +1,38 @@
 # Changelog
 
+## Version 0.20.3
+
+- +1 _World_ method
+
+```diff
+World.getContacts()
+```
+
+- Correction to `love.graphics.setColor` (_a_ is optional)
+
+```diff
++ love.graphics.setColor(r, g, b)
+love.graphics.setColor(r, g, b, a)
+```
+
+- Improved `love.filesystem.getInfo`
+
+```ts
+const info = love.filesystem.getInfo("file.txt", "file");
+if (info) {
+  info.type; // This must be a file
+}
+```
+
+- Correction to `love.filesystem.getRealDirectory`
+
+```diff
++ const [path, err] = love.filesystem.getRealDirectory("file");
+- const path = love.filesystem.getRealDirectory("file");
+```
+
+- Noted some potentially fatal errors that can occur in `love.filesystem`.
+
 ## Version 0.20.2
 
 - +1 _love.filesystem.write_ variants
