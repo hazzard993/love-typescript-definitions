@@ -66,6 +66,14 @@ declare module "love.physics" {
         getContactFilter(): Function;
 
         /**
+         * Returns a sequence of all the contacts in this world
+         * 
+         * @return contacts
+         * @link [World:getContacts](https://love2d.org/wiki/World:getContacts)
+         */
+        getContacts(): Contact[];
+
+        /**
          * Get the gravity of the world.
          *
          * @return x, The x component of gravity.
