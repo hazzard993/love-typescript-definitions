@@ -29,8 +29,6 @@ npm install -D --prefix node_modules/@types love-typescript-definitions lua-type
 then write up a `main.ts` file.
 
 ```ts
-/// <reference no-default-lib="true" />
-/// <reference lib="esnext" />
 love.draw = () => {
   love.graphics.print("Hello World");
 };
