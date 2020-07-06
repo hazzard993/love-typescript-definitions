@@ -12,37 +12,29 @@
 
 Contains declaration files to build [LÖVE 2D](https://love2d.org/) projects with TypeScript!
 
-This allows incredible static code analysis, syntax checking and type checking of would-be LÖVE 2D projects without any runtime checking overhead.
+Built for use with [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua). Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off.
 
-Transpilation is achieved with the [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) transpiler.
-
-Check out [love-typescript-template](https://github.com/hazzard993/love-typescript-template) to get a sample project to build off and [VS Code](https://code.visualstudio.com) (if you wish) for one of the best TypeScript editors.
-
-You can install these declarations to your project via Yarn or NPM.
+Or run the following in a terminal to try it out:
 
 ```sh
-yarn add -D --modules-folder node_modules/@types love-typescript-definitions lua-types
-# or
-npm install -D --prefix node_modules/@types love-typescript-definitions lua-types
+# Requires TypeScriptToLua (tstl) to be installed
+git clone https://github.com/hazzard993/love-typescript-definitions.git ./node_modules/@types/love-typescript-definitions
+echo "love.draw = () => { love.graphics.print('Hello World') };" > main.ts
+tstl main.ts
+love .
 ```
-
-then write up a `main.ts` file.
-
-```ts
-love.draw = () => {
-  love.graphics.print("Hello World");
-};
-```
-
-and then use [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScriptToLua) (_tstl_) to transform a `main.ts` file to `main.lua`.
 
 > TIP: Use _tstl_'s watch mode (`--watch`) if you're after fast and automatic transpilation as files are updated.
 
-```
-tstl main.ts
+Available on NPM.
+
+```sh
+yarn add love-typescript-definitions
+# or
+npm install love-typescript-definitions
 ```
 
-This package also ships with documentation (`node_modules/love-typescript-definitions/docs/index.html`).
+This version comes with documentation (`node_modules/love-typescript-definitions/docs/index.html`).
 
 See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project and [CHANGELOG.md](CHANGELOG.md) for recent changes.
 
