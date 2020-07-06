@@ -1,5 +1,25 @@
 # Changelog
 
+## Version 0.21.0
+
+- **BREAKING**: Removed types that are defined globally. This is to prevent name clashing when mixing libraries
+
+### Before
+
+```ts
+const image: Image = love.graphics.newImage("image.png");
+// the "Image" type may clash with other libraries
+```
+
+### After
+
+```ts
+import { Image } from "love.graphics";
+// this statement only imports a type. it is removed when transpiled
+
+const image: Image = love.graphics.newImage("image.png");
+```
+
 ## Version 0.20.3
 
 - +1 _World_ method
