@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
-        "lib": ["esnext"],
-        "types": ["../index"],
-        "strict": true
+        "strict": true,
+        "types": ["../index"]
     },
     "include": ["*.ts"]
 }
