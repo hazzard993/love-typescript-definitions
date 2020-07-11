@@ -1,5 +1,5 @@
 declare module "love.graphics" {
-    import { Font } from "love.font";
+    import { Font } from "love.graphics";
 
     /**
      * Drawable text.

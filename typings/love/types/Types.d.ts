@@ -2,10 +2,11 @@ declare module "love" {
     import { RecordingDevice, Source } from "love.audio";
     import { ByteData, Data } from "love.data";
     import { File, FileData } from "love.filesystem";
-    import { BMFontRasterizer, Font, GlyphData, Rasterizer } from "love.font";
+    import { BMFontRasterizer, GlyphData, Rasterizer } from "love.font";
     import {
         Canvas,
         Drawable,
+        Font,
         Image,
         Mesh,
         ParticleSystem,

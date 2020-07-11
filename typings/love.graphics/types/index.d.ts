@@ -1,5 +1,6 @@
 ﻿import "./Canvas";
 import "./Drawable";
+import "./Font";
 import "./Image";
 import "./Mesh";
 import "./ParticleSystem";

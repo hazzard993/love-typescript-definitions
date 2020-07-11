@@ -24,7 +24,7 @@ declare module "love.graphics" {
     import { Transform } from "love.math";
     import { Channel } from "love.thread";
     import { CanvasFormat, ImageData, PixelFormat, CompressedImageData } from "love.image";
-    import { Font, HintingMode, Rasterizer } from "love.font";
+    import { HintingMode, Rasterizer } from "love.font";
     import { File, FileData } from "love.filesystem";
     import { VideoStream } from "love.video";
     import { Data } from "love.data";

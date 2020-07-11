@@ -1,4 +1,4 @@
-declare module "love.font" {
+declare module "love.graphics" {
     import { Type } from "love";
     import { FilterMode } from "love.graphics";
 
@@ -45,7 +45,7 @@ declare module "love.font" {
          * @return mag, Filter mode used when magnifying the font.
          * @return anisotropy, Maximum amount of anisotropic filtering used.
          * @tupleReturn
-         * @link [Canvas:getFilter](https://love2d.org/wiki/Canvas:getFilter)
+         * @link [Font:getFilter](https://love2d.org/wiki/Font:getFilter)
          */
         getFilter(): [FilterMode, FilterMode, number];
 
@@ -53,7 +53,7 @@ declare module "love.font" {
          * Gets the height of the Font. The height of the font is the size including any
          * spacing; the height which it will need.
          * @return height, The height of the Font in pixels.
-         * @link [Canvas:getHeight](https://love2d.org/wiki/Canvas:getHeight)
+         * @link [Font:getHeight](https://love2d.org/wiki/Font:getHeight)
          */
         getHeight(): number;
 
@@ -61,7 +61,7 @@ declare module "love.font" {
          * Gets the line height. This will be the value previously set by
          * Font:setLineHeight, or 1.0 by default.
          * @return height, The current line height.
-         * @link [Canvas:getLineHeight](https://love2d.org/wiki/Canvas:getLineHeight)
+         * @link [Font:getLineHeight](https://love2d.org/wiki/Font:getLineHeight)
          */
         getLineHeight(): number;
 
@@ -70,7 +70,7 @@ declare module "love.font" {
          * line-breaks.
          * @param line A line of text.
          * @return width, The width of the line.
-         * @link [Canvas:getWidth](https://love2d.org/wiki/Canvas:getWidth)
+         * @link [Font:getWidth](https://love2d.org/wiki/Font:getWidth)
          */
         getWidth(line: string): number;
 
@@ -91,7 +91,7 @@ declare module "love.font" {
          * Gets whether the font can render a particular character.
          * @param character A unicode character.
          * @return hasglyph, Whether the font can render the glyph represented by the character.
-         * @link [Canvas:hasGlyphs](https://love2d.org/wiki/Canvas:hasGlyphs)
+         * @link [Font:hasGlyphs](https://love2d.org/wiki/Font:hasGlyphs)
          */
         hasGlyphs(character: string): boolean;
 
@@ -99,7 +99,7 @@ declare module "love.font" {
          * Gets whether the font can render a particular character.
          * @param codepoint A unicode codepoint number.
          * @return hasglyph, Whether the font can render the glyph represented by the codepoint number.
-         * @link [Canvas:hasGlyphs](https://love2d.org/wiki/Canvas:hasGlyphs)
+         * @link [Font:hasGlyphs](https://love2d.org/wiki/Font:hasGlyphs)
          */
         hasGlyphs(codepoint: number): boolean;
 
@@ -121,7 +121,7 @@ declare module "love.font" {
          * @param min How to scale a font down.
          * @param mag How to scale a font up.
          * @param anisotropy Maximum amount of anisotropic filtering used.
-         * @link [Canvas:setFilter](https://love2d.org/wiki/Canvas:setFilter)
+         * @link [Font:setFilter](https://love2d.org/wiki/Font:setFilter)
          */
         setFilter(min: FilterMode, mag?: FilterMode, anisotropy?: number): void;
 
@@ -131,7 +131,7 @@ declare module "love.font" {
          * default is 1.0.
          *
          * @param height The new line height.
-         * @link [Canvas:setLineHeight](https://love2d.org/wiki/Canvas:setLineHeight)
+         * @link [Font:setLineHeight](https://love2d.org/wiki/Font:setLineHeight)
          */
         setLineHeight(height: number): void;
     }
