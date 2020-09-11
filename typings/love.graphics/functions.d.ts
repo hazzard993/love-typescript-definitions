@@ -556,10 +556,11 @@ declare module "love.graphics" {
     /**
      * Gets the current target Canvas.
      *
-     * @return canvas, The Canvas set by setCanvas. Returns _nil/undefined_ if drawing to the real screen.
+     * @returns All active canvases.
+     * @tupleReturn
      * @link [love.graphics.getCanvas](https://love2d.org/wiki/love.graphics.getCanvas)
      */
-    export function getCanvas(): Canvas | undefined;
+    export function getCanvas(): Canvas[];
 
     /**
      * Gets the available Canvas formats, and whether each is supported.
