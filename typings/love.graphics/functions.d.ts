@@ -115,7 +115,7 @@ declare module "love.graphics" {
      * @param callback Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.
      * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
      */
-    export function captureScreenshot(callback: (this: void) => void): void;
+    export function captureScreenshot(callback: (this: void, screenshot: ImageData) => void): void;
 
     /**
      * Creates a screenshot once the current frame is done (after love.draw has
