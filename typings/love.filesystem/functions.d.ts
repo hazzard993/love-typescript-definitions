@@ -112,7 +112,7 @@ declare module "love.filesystem" {
      * @returns {FileInfo<T>} _nil/undefined_ if nothing exists at the specified path.
      * @link [love.filesystem.getInfo](1)
      */
-    export function getInfo<T extends FileType>(path: string, filetype?: T): FileInfo<T>;
+    export function getInfo<T extends FileType>(path: string, filetype?: T): FileInfo<T> | undefined;
 
     /**
      * Returns {@link FileInfo} for something on the filesystem.
