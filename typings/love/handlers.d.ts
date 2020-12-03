@@ -279,9 +279,10 @@ export interface Handlers extends CustomHandlers {
      * @param y Mouse y position, in pixels.
      * @param button The button index that was pressed. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependent
      * @param isTouch True if the mouse button press originated from a touchscreen touch-press.
+     * @param presses The number of presses in a short time frame and small area, used to simulate double, triple clicks
      * @link [love.mousepressed](https://love2d.org/wiki/love.mousepressed)
      */
-    mousepressed?: (x: number, y: number, button: number, isTouch: boolean) => void;
+    mousepressed?: (x: number, y: number, button: number, isTouch: boolean, presses: number) => void;
 
     /**
      * Callback function triggered when a mouse button is released.
@@ -290,9 +291,10 @@ export interface Handlers extends CustomHandlers {
      * @param y Mouse y position, in pixels.
      * @param button The button index that was released. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependent.
      * @param isTouch True if the mouse button press originated from a touchscreen touch-release.
+     * @param presses The number of presses in a short time frame and small area, used to simulate double, triple clicks
      * @link [love.mousereleased](https://love2d.org/wiki/love.mousereleased)
      */
-    mousereleased?: (x: number, y: number, button: number, isTouch: boolean) => void;
+    mousereleased?: (x: number, y: number, button: number, isTouch: boolean, presses: number) => void;
 
     /**
      * Callback function triggered when the game is closed.
