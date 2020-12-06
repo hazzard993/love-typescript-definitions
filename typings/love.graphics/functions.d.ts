@@ -1042,24 +1042,28 @@ declare module "love.graphics" {
 
     /**
      * Create a new BMFont or TrueType font.
+     *
      * @param filename The filepath to the BMFont or TrueType font file.
-     * @return font, A Font object which can be used to draw text on screen.
+     * @returns font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
      */
     export function newFont(filename: string): Font;
 
     /**
      * Create a new TrueType font.
+     *
      * @param filename The filepath to the TrueType font file.
      * @param size The size of the font in pixels.
      * @param hinting True Type hinting mode. (Default: "normal")
-     * @return font, A Font object which can be used to draw text on screen.
+     * @param dpiscale The DPI scale factor of the font. (Default: love.graphics.getDPIScale())
+     * @returns font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
      */
-    export function newFont(filename: string, size: number, hinting: HintingMode): Font;
+    export function newFont(filename: string, size: number, hinting?: HintingMode, dpiscale?: number): Font;
 
     /**
      * Create a new BMFont.
+     *
      * @param filename The filepath to the BMFont file.
      * @param imagefilename The filepath to the BMFont's image file. If this argument is omitted, the path specified inside the BMFont file will be used.
      * @return font, A Font object which can be used to draw text on screen.
@@ -1069,12 +1073,14 @@ declare module "love.graphics" {
 
     /**
      * Create a new instance of the default font (Vera Sans) with a custom size.
+     *
      * @param size The size of the font in pixels. (Default: 12)
      * @param hinting True Type hinting mode.
-     * @return font, A Font object which can be used to draw text on screen.
+     * @param dpiscale The DPI scale factor of the font.
+     * @returns font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
      */
-    export function newFont(size?: number, hinting?: HintingMode): Font;
+    export function newFont(size?: number, hinting?: HintingMode, dpiscale?: number): Font;
 
     /**
      * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
