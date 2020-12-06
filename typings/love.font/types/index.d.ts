@@ -1,3 +1,2 @@
-﻿import "./BMFontRasterizer";
-import "./GlyphData";
+﻿import "./GlyphData";
 import "./Rasterizer";

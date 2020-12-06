@@ -7,15 +7,37 @@ declare module "love.graphics" {
      */
     export interface Mesh extends Drawable<"Mesh"> {
         /**
-         * Attaches a vertex attribute from a different Mesh onto this Mesh, for use when
-         * drawing. This can be used to share vertex attribute data between several
+         * Attaches a vertex attribute from a different Mesh onto this Mesh, for
+         * use when drawing.
+         *
+         * This can be used to share vertex attribute data between several
          * different Meshes.
          *
          * @param name The name of the vertex attribute to attach.
          * @param mesh The Mesh to get the vertex attribute from.
          * @link [Mesh:attachAttribute](https://love2d.org/wiki/Mesh:attachAttribute)
+         * @since 0.10.0
          */
         attachAttribute(name: string, mesh: Mesh): void;
+
+        /**
+         * Attaches a vertex attribute from a different Mesh onto this Mesh, for
+         * use when drawing.
+         *
+         * This can be used to share vertex attribute data between several
+         * different Meshes.
+         *
+         * @param name The name of the vertex attribute to attach.
+         * @param mesh The Mesh to get the vertex attribute from.
+         * @param step Whether the attribute will be per-vertex or per-instance
+         * when the mesh is drawn. (Default: "pervertex")
+         * @param attachname The name of the attribute to use in shader code.
+         * Defaults to the name of the attribute in the given mesh. Can be used
+         * to use a different name for this attribute when rendering. (Default: name)
+         * @link [Mesh:attachAttribute](https://love2d.org/wiki/Mesh:attachAttribute)
+         * @since 0.10.0
+         */
+        attachAttribute(name: string, mesh: Mesh, step: VertexAttributeStep, attachname?: string): void;
 
         /**
          * Removes a previously attached vertex attribute from this Mesh.
@@ -310,6 +332,16 @@ declare module "love.graphics" {
          * @link [Mesh:setVertexMap](https://love2d.org/wiki/Mesh:setVertexMap)
          */
         setVertexMap(...vertexIndexes: Array<number>): void;
+
+        /**
+         * Sets the vertex map for the Mesh.
+         *
+         * @param data Array of vertex indices to use when drawing. Values must be in the range of [0, Mesh:getVertexCount()-1]
+         * @param datatype Datatype of the vertex indices array above.
+         * @link [Mesh:setVertexMap](https://love2d.org/wiki/Mesh:setVertexMap)
+         * @since 0.9.0
+         */
+        setVertexMap(data: Data, datatype: IndexDataType): void;
 
         /**
          * Replaces a range of vertices in the Mesh with new ones. The total number of

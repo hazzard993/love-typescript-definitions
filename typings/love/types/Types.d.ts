@@ -2,7 +2,7 @@ declare module "love" {
     import { RecordingDevice, Source } from "love.audio";
     import { ByteData, CompressedData, Data } from "love.data";
     import { File, FileData } from "love.filesystem";
-    import { BMFontRasterizer, GlyphData, Rasterizer } from "love.font";
+    import { GlyphData, Rasterizer } from "love.font";
     import {
         Canvas,
         Drawable,
@@ -56,7 +56,6 @@ declare module "love" {
         Data: Data;
         File: File;
         FileData: FileData;
-        BMFontRasterizer: BMFontRasterizer;
         Font: Font;
         GlyphData: GlyphData;
         Rasterizer: Rasterizer;
