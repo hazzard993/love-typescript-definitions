@@ -971,7 +971,7 @@ declare module "love.graphics" {
         readable?: boolean;
         msaa?: number;
         dpiscale?: number;
-        mipmaps?: CanvasMipmapMode;
+        mipmaps?: MipmapMode;
     }
 
     /**

@@ -26,7 +26,7 @@ declare module "love.graphics" {
          *
          * @return mode, The mipmap mode this Canvas was created with.
          */
-        getMipmapMode(): CanvasMipmapMode;
+        getMipmapMode(): MipmapMode;
 
         /**
          * Generates ImageData from the contents of the Canvas.
