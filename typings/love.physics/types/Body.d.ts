@@ -187,21 +187,44 @@ declare module "love.physics" {
         getAngularVelocity(): number;
 
         /**
+         * @deprecated renamed to Body:getContacts.
+         *
          * Gets a list of all Contacts attached to the Body.
          *
          * @return contacts, A list with all contacts associated with the Body.
          * @link [Body:getContactList](https://love2d.org/wiki/Body:getContactList)
+         * @since 0.9.2
          */
-        getContactList(): Array<Contact>;
+        getContactList(): Contact[];
+
+        /**
+         * Gets a list of all Contacts attached to the Body.
+         *
+         * @return contacts, A list with all contacts associated with the Body.
+         * @link [Body:getContacts](https://love2d.org/wiki/Body:getContacts)
+         * @since 11.0
+         */
+        getContacts(): Contact[];
 
         /**
          * @deprecated renamed to Body.getFixtures()
+         *
          * Returns a table with all fixtures.
          *
          * @return fixtures, A sequence with all fixtures.
          * @link [Body:getFixtureList](https://love2d.org/wiki/Body:getFixtureList)
+         * @since 0.8.0
          */
-        getFixtureList(): Array<Fixture>;
+        getFixtureList(): Fixture[];
+
+        /**
+         * Returns a table with all fixtures.
+         *
+         * @returns fixtures, A sequence with all fixtures.
+         * @link [Body:getFixtures](https://love2d.org/wiki/Body:getFixtures)
+         * @since 11.0
+         */
+        getFixtures(): Fixture[];
 
         /**
          * Returns the gravity scale factor.
@@ -222,12 +245,24 @@ declare module "love.physics" {
         getInertia(): number;
 
         /**
+         * @deprecated renamed to Body:getJoints.
+         *
          * Returns a table containing the Joints attached to this Body.
          *
          * @return joints, A sequence with the Joints attached to the Body.
          * @link [Body:getJointList](https://love2d.org/wiki/Body:getJointList)
+         * @since 0.9.2
          */
-        getJointList(): Array<Joint>;
+        getJointList(): Joint[];
+
+        /**
+         * Returns a table containing the Joints attached to this Body.
+         *
+         * @returns A sequence with the Joints attached to the Body.
+         * @link [Body:getJoints](https://love2d.org/wiki/Body:getJoints)
+         * @since 11.0
+         */
+        getJoints(): Joint[];
 
         /**
          * Gets the linear damping of the Body.
@@ -427,7 +462,7 @@ declare module "love.physics" {
          * @tupleReturn
          * @link [Body:getWorldPoints](https://love2d.org/wiki/Body:getWorldPoints)
          */
-        getWorldPoints(...xys: Array<number>): Array<number>;
+        getWorldPoints(...xys: number[]): number[];
 
         /**
          * Transform a vector from local coordinates to world coordinates.

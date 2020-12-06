@@ -959,8 +959,8 @@ declare module "love.graphics" {
      * @param points x position followed by y position continued.
      * @link [love.graphics.line](https://love2d.org/wiki/love.graphics.line)
      */
-    export function line(...points: [number, number, number, number, ...Array<number>]): void;
-    export function line(points: [number, number, number, number, ...Array<number>]): void;
+    export function line(...points: number[]): void;
+    export function line(points: number[]): void;
 
     /**
      * Interface for passing settings table to love.graphics.newCanvas
