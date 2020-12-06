@@ -46,17 +46,6 @@ declare module "love.physics" {
         getChildCount(): number;
 
         /**
-         * Returns the points in the shape.
-         *
-         * Every two numbers are associated with an X and Y position.
-         *
-         * @returns x and y coordinates for each point on the shape.
-         * @tupleReturn
-         * @link [Shape:getPoints](https://love2d.org/wiki/Shape:getPoints)
-         */
-        getPoints(): number[];
-
-        /**
          * Gets the radius of the shape.
          *
          * @return radius, The radius of the shape.
