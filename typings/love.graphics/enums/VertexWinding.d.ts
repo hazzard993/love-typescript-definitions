@@ -1,6 +1,13 @@
 declare module "love.graphics" {
     /**
-     * Undocumented
+     * How Mesh geometry vertices are ordered.
+     *
+     * | Value | Description |
+     * |:-|:-|
+     * | `"cw"` | Clockwise |
+     * | `"ccw"` | Counter-clockwise |
+     *
+     * @link [VertexWinding](https://love2d.org/wiki/VertexWinding)
      */
     export type VertexWinding = "cw" | "ccw";
 }
