@@ -1,6 +1,4 @@
-declare module "love.math" {
-    import { Data } from "love.data";
-
+declare module "love.data" {
     /**
      * Data object containing arbitrary bytes in an contiguous memory.
      * @link [CompressedData](https://love2d.org/wiki/CompressedData)

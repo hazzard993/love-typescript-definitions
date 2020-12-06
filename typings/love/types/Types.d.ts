@@ -1,6 +1,6 @@
 declare module "love" {
     import { RecordingDevice, Source } from "love.audio";
-    import { ByteData, Data } from "love.data";
+    import { ByteData, CompressedData, Data } from "love.data";
     import { File, FileData } from "love.filesystem";
     import { BMFontRasterizer, GlyphData, Rasterizer } from "love.font";
     import {
@@ -19,7 +19,7 @@ declare module "love" {
     } from "love.graphics";
     import { ImageData, CompressedImageData } from "love.image";
     import { Joystick } from "love.joystick";
-    import { BezierCurve, CompressedData, RandomGenerator, Transform } from "love.math";
+    import { BezierCurve, RandomGenerator, Transform } from "love.math";
     import { Cursor } from "love.mouse";
     import {
         Body,

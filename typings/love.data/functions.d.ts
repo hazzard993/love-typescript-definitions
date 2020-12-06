@@ -7,8 +7,6 @@
  * @since 11.0
  */
 declare module "love.data" {
-    import { CompressedDataFormat, CompressedData } from "love.math";
-
     /**
      * Compresses a string using a specific compression algorithm.
      *
