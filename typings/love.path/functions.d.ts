@@ -7,7 +7,7 @@ declare module "love" {
          * @returns The path in its modified state.
          * @link [love.path.normalslashes](https://bitbucket.org/rude/love/src/8d55498fe68106bb279fbc21f36f94e00b5caf09/src/scripts/boot.lua#lines-29)
          */
-        export function normalslashes(path: string): string;
+        export function normalslashes(this: void, path: string): string;
 
         /**
          * Makes sure there is a slash at the end of a path.
@@ -15,7 +15,7 @@ declare module "love" {
          * @param path The path to return with a slash at the end.
          * @returns A path with a slash at the end.
          */
-        export function endslash(path: string): string;
+        export function endslash(this: void, path: string): string;
 
         /**
          * Checks whether a path is absolute or not.
@@ -23,7 +23,7 @@ declare module "love" {
          * @param path The path to check.
          * @returns `true` if the path is absolute, `false` otherwise.
          */
-        export function abs(path: string): boolean;
+        export function abs(this: void, path: string): boolean;
 
         /**
          * Converts any path into a full path.
@@ -31,7 +31,7 @@ declare module "love" {
          * @param path A relative path from the cwd or a full path.
          * @returns The full path.
          */
-        export function getFull(path: string): string;
+        export function getFull(this: void, path: string): string;
 
         /**
          * Returns the leaf of a full path.
@@ -41,6 +41,6 @@ declare module "love" {
          * @param path The path to obtain the leaf from.
          * @returns The last part of the path.
          */
-        export function leaf(path: string): string;
+        export function leaf(this: void, path: string): string;
     }
 }
