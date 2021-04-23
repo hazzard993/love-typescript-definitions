@@ -21,7 +21,7 @@ declare module "love.audio" {
      * @link [love.audio.getActiveEffects](https://love2d.org/wiki/love.audio.getActiveEffects)
      * @since 11.0
      */
-    export function getActiveEffects(): string[];
+    function getActiveEffects(): string[];
 
     /**
      * Gets the current number of simultaneously playing sources.
@@ -30,7 +30,7 @@ declare module "love.audio" {
      * @link [love.audio.getActiveSourceCount](https://love2d.org/wiki/love.audio.getActiveSourceCount)
      * @since 11.0
      */
-    export function getActiveSourceCount(): number;
+    function getActiveSourceCount(): number;
 
     /**
      * Returns the distance attenuation model.
@@ -39,7 +39,7 @@ declare module "love.audio" {
      * @link [love.audio.getDistanceModel](https://love2d.org/wiki/love.audio.getDistanceModel)
      * @since 0.8.0
      */
-    export function getDistanceModel(): DistanceModel;
+    function getDistanceModel(): DistanceModel;
 
     /**
      * Gets the current global scale factor for velocity-based doppler effects.
@@ -47,7 +47,7 @@ declare module "love.audio" {
      * @link [love.audio.getDopplerScale](https://love2d.org/wiki/love.audio.getDopplerScale)
      * @since 0.9.2
      */
-    export function getDopplerScale(): number;
+    function getDopplerScale(): number;
 
     /**
      * Gets the settings associated with an effect.
@@ -57,7 +57,7 @@ declare module "love.audio" {
      * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
      * @since 11.0
      */
-    export function getEffect(name: string): EffectSettings | undefined;
+    function getEffect(name: string): EffectSettings | undefined;
 
     /**
      * Gets the maximum number of active effects supported by the system.
@@ -66,7 +66,7 @@ declare module "love.audio" {
      * @link [love.audio.getMaxSceneEffects](https://love2d.org/wiki/love.audio.getMaxSceneEffects)
      * @since 11.0
      */
-    export function getMaxSceneEffects(): number;
+    function getMaxSceneEffects(): number;
 
     /**
      * Gets the maximum number of active Effects in a single Source object, that the system can support.
@@ -75,7 +75,7 @@ declare module "love.audio" {
      * @link [love.audio.getMaxSourceEffects](https://love2d.org/wiki/love.audio.getMaxSourceEffects)
      * @since 11.0
      */
-    export function getMaxSourceEffects(): number;
+    function getMaxSourceEffects(): number;
 
     /**
      * Returns the orientation of the listener.
@@ -85,19 +85,17 @@ declare module "love.audio" {
      * ```
      *
      * @returns The X, Y and Z components of the Forward vector of the listener orientation and the Up vector of the listener orientation.
-     * @tupleReturn
      * @link [love.audio.getOrientation](https://love2d.org/wiki/love.audio.getOrientation)
      */
-    export function getOrientation(): [number, number, number, number, number, number];
+    function getOrientation(): LuaMultiReturn<[fx: number, fy: number, fz: number, ux: number, uy: number, uz: number]>;
 
     /**
      * Returns the position of the listener. Only works for mono sources.
      *
      * @returns The X, Y and Z position of the listener.
-     * @tupleReturn
      * @link [love.audio.getPosition](https://love2d.org/wiki/love.audio.getPosition)
      */
-    export function getPosition(): [number, number, number];
+    function getPosition(): LuaMultiReturn<[x: number, y: number, z: number]>;
 
     /**
      * Gets a list of {@link RecordingDevice RecordingDevices} on the system.
@@ -106,15 +104,15 @@ declare module "love.audio" {
      * @link [love.audio.getRecordingDevices](https://love2d.org/wiki/love.audio.getRecordingDevices)
      * @since 11.0
      */
-    export function getRecordingDevices(): RecordingDevice[];
+    function getRecordingDevices(): RecordingDevice[];
 
     /**
      * Returns the velocity of the listener.
+     *
      * @returns The X, Y and Z velocity of the listener.
-     * @tupleReturn
      * @link [love.audio.getVelocity](https://love2d.org/wiki/love.audio.getVelocity)
      */
-    export function getVelocity(): [number, number, number];
+    function getVelocity(): LuaMultiReturn<[x: number, y: number, z: number]>;
 
     /**
      * Returns the master volume.
@@ -122,7 +120,7 @@ declare module "love.audio" {
      * @returns The current master volume.
      * @link [love.audio.getVolume](https://love2d.org/wiki/love.audio.getVolume)
      */
-    export function getVolume(): number;
+    function getVolume(): number;
 
     /**
      * Gets whether audio effects are supported in the system.
@@ -131,7 +129,7 @@ declare module "love.audio" {
      * @link [love.audio.isEffectsSupported](https://love2d.org/wiki/love.audio.isEffectsSupported)
      * @since 11.0
      */
-    export function isEffectsSupported(): boolean;
+    function isEffectsSupported(): boolean;
 
     /**
      * Creates a new Source usable for real-time generated sound playback with {@link Source.queue}.
@@ -144,12 +142,7 @@ declare module "love.audio" {
      * @link [love.audio.newQueueableSource](https://love2d.org/wiki/love.audio.newQueueableSource)
      * @since 11.0
      */
-    export function newQueueableSource(
-        samplerate: number,
-        bitdepth: 8 | 16,
-        channels: 1 | 2,
-        buffercount?: number
-    ): Source;
+    function newQueueableSource(samplerate: number, bitdepth: 8 | 16, channels: 1 | 2, buffercount?: number): Source;
 
     /**
      * Creates a new Source.
@@ -159,8 +152,8 @@ declare module "love.audio" {
      * @returns A new Source that can play the specified audio.
      * @link [love.audio.newSource](https://love2d.org/wiki/love.audio.newSource)
      */
-    export function newSource(source: string | File | Decoder | FileData, type: SourceType): Source;
-    export function newSource(data: SoundData): Source;
+    function newSource(source: string | File | Decoder | FileData, type: SourceType): Source;
+    function newSource(data: SoundData): Source;
 
     /**
      * Pauses all currently active Sources and returns them.
@@ -168,7 +161,7 @@ declare module "love.audio" {
      * @returns A list of Sources that were paused by this call.
      * @link [love.audio.pause](https://love2d.org/wiki/love.audio.pause)
      */
-    export function pause(): Source[];
+    function pause(): Source[];
 
     /**
      * Pauses the given {@link Source Sources}.
@@ -176,8 +169,8 @@ declare module "love.audio" {
      * @param sources The sources on which to pause the playback.
      * @link [love.audio.pause](https://love2d.org/wiki/love.audio.pause)
      */
-    export function pause(...sources: Source[]): void;
-    export function pause(sources: Source[]): void;
+    function pause(...sources: Source[]): void;
+    function pause(sources: Source[]): void;
 
     /**
      * Plays the specified {@link Source}.
@@ -185,7 +178,7 @@ declare module "love.audio" {
      * @param source The Source to play.
      * @link [love.audio.play](https://love2d.org/wiki/love.audio.play)
      */
-    export function play(source: Source): void;
+    function play(source: Source): void;
 
     /**
      * Starts playing multiple {@link Source Sources} simultaneously.
@@ -193,8 +186,8 @@ declare module "love.audio" {
      * @param sources A list of sources to play.
      * @link [love.audio.play](https://love2d.org/wiki/love.audio.play)
      */
-    export function play(...sources: Source[]): void;
-    export function play(sources: Source[]): void;
+    function play(...sources: Source[]): void;
+    function play(sources: Source[]): void;
 
     /**
      * Sets the distance attenuation model.
@@ -203,7 +196,7 @@ declare module "love.audio" {
      * @link [love.audio.setDistanceModel](https://love2d.org/wiki/love.audio.setDistanceModel)
      * @since 0.8.0
      */
-    export function setDistanceModel(model: DistanceModel): void;
+    function setDistanceModel(model: DistanceModel): void;
 
     /**
      * Sets a global scale factor for velocity-based doppler effects.
@@ -212,7 +205,7 @@ declare module "love.audio" {
      * @link [love.audio.setDopplerScale](https://love2d.org/wiki/love.audio.setDopplerScale)
      * @since 0.9.2
      */
-    export function setDopplerScale(scale: number): void;
+    function setDopplerScale(scale: number): void;
 
     /**
      * Defines an effect that can be applied to a {@link Source}.
@@ -223,7 +216,7 @@ declare module "love.audio" {
      * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
      * @since 11.0
      */
-    export function setEffect(name: string, settings: EffectSettings): boolean;
+    function setEffect(name: string, settings: EffectSettings): boolean;
 
     /**
      * Defines an effect that can be applied to a {@link Source}.
@@ -234,7 +227,7 @@ declare module "love.audio" {
      * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
      * @since 11.0
      */
-    export function setEffect(name: string, enabled?: boolean): boolean;
+    function setEffect(name: string, enabled?: boolean): boolean;
 
     /**
      * Sets whether the system should mix the audio with the system's audio.
@@ -244,7 +237,7 @@ declare module "love.audio" {
      * @link [love.audio.setMixWithSystem](https://love2d.org/wiki/love.audio.setMixWithSystem)
      * @since 11.0
      */
-    export function setMixWithSystem(mix: boolean): boolean;
+    function setMixWithSystem(mix: boolean): boolean;
 
     /**
      * Sets the orientation of the listener.
@@ -257,7 +250,7 @@ declare module "love.audio" {
      * @param uz The Z component of the up vector of the listener orientation.
      * @link [love.audio.setOrientation](https://love2d.org/wiki/love.audio.setOrientation)
      */
-    export function setOrientation(fx: number, fy: number, fz: number, ux: number, uy: number, uz: number): void;
+    function setOrientation(fx: number, fy: number, fz: number, ux: number, uy: number, uz: number): void;
 
     /**
      * Sets the position of the listener, which determines how sounds play.
@@ -267,7 +260,7 @@ declare module "love.audio" {
      * @param z The Z position of the listener.
      * @link [love.audio.setPosition](https://love2d.org/wiki/love.audio.setPosition)
      */
-    export function setPosition(x: number, y: number, z: number): void;
+    function setPosition(x: number, y: number, z: number): void;
 
     /**
      * Sets the velocity of the listener.
@@ -277,7 +270,7 @@ declare module "love.audio" {
      * @param z The Z velocity of the listener.
      * @link [love.audio.setVelocity](https://love2d.org/wiki/love.audio.setVelocity)
      */
-    export function setVelocity(x: number, y: number, z: number): void;
+    function setVelocity(x: number, y: number, z: number): void;
 
     /**
      * Sets the master volume.
@@ -285,14 +278,14 @@ declare module "love.audio" {
      * @param volume `1.0` is max and `0.0` is off.
      * @link [love.audio.setVolume](https://love2d.org/wiki/love.audio.setVolume)
      */
-    export function setVolume(volume: number): void;
+    function setVolume(volume: number): void;
 
     /**
      * Stops currently played {@link Source Sources}.
      *
      * @link [love.audio.stop](https://love2d.org/wiki/love.audio.stop)
      */
-    export function stop(): void;
+    function stop(): void;
 
     /**
      * Simultaneously stops all given {@link Source Sources}.
@@ -300,6 +293,6 @@ declare module "love.audio" {
      * @param sources The list of sources to stop
      * @link [love.audio.stop](https://love2d.org/wiki/love.audio.stop)
      */
-    export function stop(...sources: Source[]): void;
-    export function stop(sources: Source[]): void;
+    function stop(...sources: Source[]): void;
+    function stop(sources: Source[]): void;
 }

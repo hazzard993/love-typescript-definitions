@@ -3,7 +3,7 @@ declare module "love.graphics" {
      * A ParticleSystem can be used to create particle effects like fire or smoke.
      * @link [ParticleSystem](https://love2d.org/wiki/ParticleSystem)
      */
-    export interface ParticleSystem extends Drawable {
+    interface ParticleSystem extends Drawable {
         /**
          * Creates an identical copy of the ParticleSystem in the stopped state.
          *
@@ -44,10 +44,10 @@ declare module "love.graphics" {
          * Gets the series of colors applied to the particle sprite.
          *
          * @return A repeating `[rgba]` tuple for the first colour, second colour and so on.
-         * @tupleReturn
          * @link [ParticleSystem:getColors](https://love2d.org/wiki/ParticleSystem:getColors)
+         * @since 0.9.0
          */
-        getColors(): Array<number>;
+        getColors(): LuaMultiReturn<number[]>;
 
         /**
          * Gets the direction the particles will be emitted in.
@@ -59,21 +59,29 @@ declare module "love.graphics" {
 
         /**
          * Gets the area-based spawn parameters for the particles.
+         *
          * @return distribution, The type of distribution for new particles.
          * @return dx, The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.
          * @return dy, The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.
          * @return angle, The angle in radians of the emission area.
          * @return directionRelativeToCenter, True if newly spawned particles will be oriented relative to the center of the emission area, false otherwise.
-         * @tupleReturn
          * @link [ParticleSystem:getEmissionArea](https://love2d.org/wiki/ParticleSystem:getEmissionArea)
+         * @since 11.0
          */
-        getEmissionArea(): [AreaSpreadDistribution, number, number, number, boolean];
+        getEmissionArea(): [
+            distribution: AreaSpreadDistribution,
+            dx: number,
+            dy: number,
+            angle: number,
+            directionRelativeToCenter: boolean
+        ];
 
         /**
          * Gets the amount of particles emitted per second.
          *
          * @return rate, The amount of particles per second.
          * @link [ParticleSystem:getEmissionRate](https://love2d.org/wiki/ParticleSystem:getEmissionRate)
+         * @since 0.9.0
          */
         getEmissionRate(): number;
 
@@ -82,6 +90,7 @@ declare module "love.graphics" {
          *
          * @return mode, The mode to use when the ParticleSystem adds new particles.
          * @link [ParticleSystem:getInsertMode](https://love2d.org/wiki/ParticleSystem:getInsertMode)
+         * @since 0.9.0
          */
         getInsertMode(): ParticleInsertMode;
 
@@ -96,20 +105,20 @@ declare module "love.graphics" {
          * @return ymin, The minimum acceleration along the y axis.
          * @return xmax, The maximum acceleration along the x axis.
          * @return ymax, The maximum acceleration along the y axis.
-         * @tupleReturn
          * @link [ParticleSystem:getLinearAcceleration](https://love2d.org/wiki/ParticleSystem:getLinearAcceleration)
+         * @since 0.9.0
          */
-        getLinearAcceleration(): [number, number, number, number];
+        getLinearAcceleration(): LuaMultiReturn<[xmin: number, ymin: number, xmax: number, ymax: number]>;
 
         /**
          * Gets the amount of linear damping (constant deceleration) for particles.
          *
          * @return min, The minimum amount of linear damping applied to particles.
          * @return max, The maximum amount of linear damping applied to particles.
-         * @tupleReturn
          * @link [ParticleSystem:getLinearDamping](https://love2d.org/wiki/ParticleSystem:getLinearDamping)
+         * @since 0.9.2
          */
-        getLinearDamping(): [number, number];
+        getLinearDamping(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Gets how long the particle system should emit particles (if -1 then it emits
@@ -117,6 +126,7 @@ declare module "love.graphics" {
          *
          * @return life, The lifetime of the emitter (in seconds).
          * @link [ParticleSystem:getEmitterLifetime](https://love2d.org/wiki/ParticleSystem:getEmitterLifetime)
+         * @since 0.9.0
          */
         getEmitterLifetime(): number;
 
@@ -126,20 +136,20 @@ declare module "love.graphics" {
          *
          * @return x, The x coordinate of the rotation offset.
          * @return y, The y coordinate of the rotation offset.
-         * @tupleReturn
          * @link [ParticleSystem:getOffset](https://love2d.org/wiki/ParticleSystem:getOffset)
+         * @since 0.9.0
          */
-        getOffset(): [number, number];
+        getOffset(): LuaMultiReturn<[ox: number, oy: number]>;
 
         /**
          * Gets the life of the particles.
          *
          * @return min, The minimum life of the particles (seconds).
          * @return max, The maximum life of the particles (seconds).
-         * @tupleReturn
          * @link [ParticleSystem:getParticleLifetime](https://love2d.org/wiki/ParticleSystem:getParticleLifetime)
+         * @since 0.9.0
          */
-        getParticleLifetime(): [number, number];
+        getParticleLifetime(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Gets the series of Quads used for the particle sprites.
@@ -147,37 +157,36 @@ declare module "love.graphics" {
          * @return quads, A table containing the Quads used.
          * @link [ParticleSystem:getQuads](https://love2d.org/wiki/ParticleSystem:getQuads)
          */
-        getQuads(): Array<Quad>;
+        getQuads(): Quad[];
 
         /**
          * Gets the position of the emitter.
          *
          * @return x, Position along x-axis.
          * @return y, Position along y-axis.
-         * @tupleReturn
          * @link [ParticleSystem:getPosition](https://love2d.org/wiki/ParticleSystem:getPosition)
          */
-        getPosition(): [number, number];
+        getPosition(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Get the radial acceleration (away from the emitter).
          *
          * @return min, The minimum acceleration.
          * @return max, The maximum acceleration.
-         * @tupleReturn
          * @link [ParticleSystem:getRadialAcceleration](https://love2d.org/wiki/ParticleSystem:getRadialAcceleration)
+         * @since 0.9.0
          */
-        getRadialAcceleration(): [number, number];
+        getRadialAcceleration(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Gets the rotation of the image upon particle creation (in radians).
          *
          * @return min, The minimum initial angle (radians).
          * @return max, The maximum initial angle (radians).
-         * @tupleReturn
          * @link [ParticleSystem:getRotation](https://love2d.org/wiki/ParticleSystem:getRotation)
+         * @since 0.9.0
          */
-        getRotation(): [number, number];
+        getRotation(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Gets a series of sizes by which to scale a particle sprite. 1.0 is normal size.
@@ -189,10 +198,10 @@ declare module "love.graphics" {
          * @return size1, The first size.
          * @return size2, The second size.
          * @return ..., Etc.
-         * @tupleReturn
          * @link [ParticleSystem:getSizes](https://love2d.org/wiki/ParticleSystem:getSizes)
+         * @since 0.9.0
          */
-        getSizes(): Array<number>;
+        getSizes(): LuaMultiReturn<number[]>;
 
         /**
          * Gets the degree of variation (0 meaning no variation and 1 meaning full
@@ -200,6 +209,7 @@ declare module "love.graphics" {
          *
          * @return variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
          * @link [ParticleSystem:getSizeVariation](https://love2d.org/wiki/ParticleSystem:getSizeVariation)
+         * @since 0.9.0
          */
         getSizeVariation(): number;
 
@@ -208,20 +218,21 @@ declare module "love.graphics" {
          *
          * @return min, The minimum linear speed of the particles.
          * @return max, The maximum linear speed of the particles.
-         * @tupleReturn
          * @link [ParticleSystem:getSpeed](https://love2d.org/wiki/ParticleSystem:getSpeed)
+         * @since 0.9.0
          */
-        getSpeed(): [number, number];
+        getSpeed(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Gets the spin of the sprite.
          *
-         * @return min, The minimum spin (radians per second).
-         * @return max, The maximum spin (radians per second).
-         * @tupleReturn
+         * @returns min, The minimum spin (radians per second).
+         * @returns max, The maximum spin (radians per second).
+         * @returns variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
          * @link [ParticleSystem:getSpin](https://love2d.org/wiki/ParticleSystem:getSpin)
+         * @since 0.9.0
          */
-        getSpin(): [number, number];
+        getSpin(): LuaMultiReturn<[min: number, max: number, variation: number]>;
 
         /**
          * Gets the degree of variation (0 meaning no variation and 1 meaning full
@@ -229,6 +240,7 @@ declare module "love.graphics" {
          *
          * @return variation, The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).
          * @link [ParticleSystem:getSpinVariation](https://love2d.org/wiki/ParticleSystem:getSpinVariation)
+         * @since 0.9.0
          */
         getSpinVariation(): number;
 
@@ -245,6 +257,7 @@ declare module "love.graphics" {
          *
          * @return texture, An Image or Canvas to use for the particle.
          * @link [ParticleSystem:getTexture](https://love2d.org/wiki/ParticleSystem:getTexture)
+         * @since 0.9.1
          */
         getTexture(): Texture;
 
@@ -254,10 +267,10 @@ declare module "love.graphics" {
          *
          * @return min, The minimum acceleration.
          * @return max, The maximum acceleration.
-         * @tupleReturn
          * @link [ParticleSystem:getTangentialAcceleration](https://love2d.org/wiki/ParticleSystem:getTangentialAcceleration)
+         * @since 0.9.0
          */
-        getTangentialAcceleration(): [number, number];
+        getTangentialAcceleration(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Gets whether particle angles and rotations are relative to their velocities. If
@@ -266,6 +279,7 @@ declare module "love.graphics" {
          *
          * @return enabled, True if relative particle rotation is enabled, false if it's disabled.
          * @link [ParticleSystem:hasRelativeRotation](https://love2d.org/wiki/ParticleSystem:hasRelativeRotation)
+         * @since 0.9.1
          */
         hasRelativeRotation(): boolean;
 
@@ -282,6 +296,7 @@ declare module "love.graphics" {
          *
          * @return paused, True if system is paused, false otherwise.
          * @link [ParticleSystem:isPaused](https://love2d.org/wiki/ParticleSystem:isPaused)
+         * @since 0.9.0
          */
         isPaused(): boolean;
 
@@ -290,6 +305,7 @@ declare module "love.graphics" {
          *
          * @return stopped, True if system is stopped, false otherwise.
          * @link [ParticleSystem:isStopped](https://love2d.org/wiki/ParticleSystem:isStopped)
+         * @since 0.9.0
          */
         isStopped(): boolean;
 
@@ -299,7 +315,8 @@ declare module "love.graphics" {
          *
          * @param x Position along x-axis.
          * @param y Position along y-axis.
-         * @link [ParticleSystem:clone](https://love2d.org/wiki/ParticleSystem:clone)
+         * @link [ParticleSystem:moveTo](https://love2d.org/wiki/ParticleSystem:moveTo)
+         * @since 0.9.1
          */
         moveTo(x: number, y: number): void;
 
@@ -340,7 +357,7 @@ declare module "love.graphics" {
          * @param ... Etc.
          * @link [ParticleSystem:setColors](https://love2d.org/wiki/ParticleSystem:setColors)
          */
-        setColors(...rgbas: Array<number>): void;
+        setColors(...rgbas: number[]): void;
 
         /**
          * Sets the direction the particles will be emitted in.
@@ -358,6 +375,7 @@ declare module "love.graphics" {
          * @param angle The angle in radians of the emission area. (Default 0)
          * @param directionRelativeToCenter The type of distribution for new particles. (Default false)
          * @link [ParticleSystem:setEmissionArea](https://love2d.org/wiki/ParticleSystem:setEmissionArea)
+         * @since 11.0
          */
         setEmissionArea(
             distribution: AreaSpreadDistribution,
@@ -381,6 +399,7 @@ declare module "love.graphics" {
          *
          * @param life The lifetime of the emitter (in seconds).
          * @link [ParticleSystem:setEmitterLifetime](https://love2d.org/wiki/ParticleSystem:setEmitterLifetime)
+         * @since 0.9.0
          */
         setEmitterLifetime(life: number): void;
 
@@ -389,6 +408,7 @@ declare module "love.graphics" {
          *
          * @param mode The mode to use when the ParticleSystem adds new particles.
          * @link [ParticleSystem:setInsertMode](https://love2d.org/wiki/ParticleSystem:setInsertMode)
+         * @since 0.9.0
          */
         setInsertMode(mode: ParticleInsertMode): void;
 
@@ -401,11 +421,12 @@ declare module "love.graphics" {
          *
          * @param xmin The minimum acceleration along the x axis.
          * @param ymin The minimum acceleration along the y axis.
-         * @param xmax The maximum acceleration along the x axis.
-         * @param ymax The maximum acceleration along the y axis.
+         * @param xmax The maximum acceleration along the x axis. (Default: xmin)
+         * @param ymax The maximum acceleration along the y axis. (Default: ymin)
          * @link [ParticleSystem:setLinearAcceleration](https://love2d.org/wiki/ParticleSystem:setLinearAcceleration)
+         * @since 0.9.0
          */
-        setLinearAcceleration(xmin: number, ymin?: number, xmax?: number, ymax?: number): void;
+        setLinearAcceleration(xmin: number, ymin: number, xmax?: number, ymax?: number): void;
 
         /**
          * Sets the amount of linear damping (constant deceleration) for particles.
@@ -413,6 +434,7 @@ declare module "love.graphics" {
          * @param min The minimum amount of linear damping applied to particles.
          * @param max The maximum amount of linear damping applied to particles.
          * @link [ParticleSystem:setLinearDamping](https://love2d.org/wiki/ParticleSystem:setLinearDamping)
+         * @since 0.9.2
          */
         setLinearDamping(min: number, max: number): void;
 
@@ -432,6 +454,7 @@ declare module "love.graphics" {
          * @param min The minimum life of the particles (seconds).
          * @param max The maximum life of the particles (seconds).
          * @link [ParticleSystem:setParticleLifetime](https://love2d.org/wiki/ParticleSystem:setParticleLifetime)
+         * @since 0.9.0
          */
         setParticleLifetime(min: number, max?: number): void;
 
@@ -449,21 +472,11 @@ declare module "love.graphics" {
          * Quad from the list based on the particle's current lifetime, allowing for the
          * use of animated sprite sheets with ParticleSystems.
          *
-         * @param quad1 The first Quad to use.
-         * @param quad2 The second Quad to use.
+         * @param quads All Quads to use.
          * @link [ParticleSystem:setQuads](https://love2d.org/wiki/ParticleSystem:setQuads)
+         * @since 0.9.2
          */
-        setQuads(quad1: Quad, quad2: Quad): void;
-
-        /**
-         * Sets a series of Quads to use for the particle sprites. Particles will choose a
-         * Quad from the list based on the particle's current lifetime, allowing for the
-         * use of animated sprite sheets with ParticleSystems.
-         *
-         * @param quads A table containing the Quads to use.
-         * @link [ParticleSystem:setQuads](https://love2d.org/wiki/ParticleSystem:setQuads)
-         */
-        setQuads(quads: Array<Quad>): void;
+        setQuads(...quads: Quad[]): void;
 
         /**
          * Set the radial acceleration (away from the emitter).
@@ -481,6 +494,7 @@ declare module "love.graphics" {
          *
          * @param enable True to enable relative particle rotation, false to disable it.
          * @link [ParticleSystem:setRelativeRotation](https://love2d.org/wiki/ParticleSystem:setRelativeRotation)
+         * @since 0.9.1
          */
         setRelativeRotation(enable: boolean): void;
 
@@ -500,11 +514,11 @@ declare module "love.graphics" {
          *
          * At least one size must be specified. A maximum of eight may be used.
          *
-         * @param size1 The first size.
-         * @param otherSizes The second size and so on.
+         * @param sizes All sizes to use.
          * @link [ParticleSystem:setSizes](https://love2d.org/wiki/ParticleSystem:setSizes)
+         * @since 0.8.0
          */
-        setSizes(size1: number, ...otherSizes: Array<number>): void;
+        setSizes(...sizes: number[]): void;
 
         /**
          * Sets the degree of variation (0 meaning no variation and 1 meaning full
@@ -555,6 +569,7 @@ declare module "love.graphics" {
          *
          * @param texture An Image or Canvas to use for the particle.
          * @link [ParticleSystem:setTexture](https://love2d.org/wiki/ParticleSystem:setTexture)
+         * @since 0.9.1
          */
         setTexture(texture: Texture): void;
 

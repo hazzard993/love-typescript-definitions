@@ -11,48 +11,44 @@ declare module "love.math" {
      *
      * The alpha value is optional.
      */
-    export type RGBA = [number, number, number, number?];
+    type RGBA = [r: number, g: number, b: number, a?: number];
 
     /**
      * Converts a color from 0..255 to 0..1 range.
      *
      * @param rgba The red, green, blue and alpha (optional) values within a 0..255 range.
      * @returns The provided values within a 0..1 range.
-     * @tupleReturn
      * @link [love.math.colorFromBytes](https://www.love2d.org/wiki/love.math.colorFromBytes)
      * @since 11.3
      */
-    export function colorFromBytes<T extends RGBA>(...rgba: T): T;
-    export function colorFromBytes<T extends RGBA>(rgba: T): T;
+    function colorFromBytes(...rgba: RGBA): LuaMultiReturn<RGBA>;
+    function colorFromBytes(rgba: RGBA): LuaMultiReturn<RGBA>;
 
     /**
      * Converts a color from 0..1 to 0..255 range.
      *
      * @param rgba The red, green, blue and alpha (optional) values within a 0..1 range.
      * @returns The provided values within a 0..255 range.
-     * @tupleReturn
      * @link [love.math.colorToBytes](https://love2d.org/wiki/love.math.colorToBytes)
      * @since 11.3
      */
-    export function colorToBytes<T extends RGBA>(...rgba: T): T;
-    export function colorToBytes<T extends RGBA>(rgba: T): T;
+    function colorToBytes(...rgba: RGBA): LuaMultiReturn<RGBA>;
+    function colorToBytes(rgba: RGBA): LuaMultiReturn<RGBA>;
 
     /**
      * Contains the red, green and blue values respectively.
      */
-    export type RGB = [number, number, number];
+    type RGB = [r: number, g: number, b: number];
 
     /**
      * Converts sRGB to RGB (gamma-space to linear-space).
      *
-     * @tupleReturn
-     * @link
-     * [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
+     * @link [love.math.gammaToLinear](https://love2d.org/wiki/love.math.gammaToLinear)
      * @since 0.9.1
      */
-    export function gammaToLinear(...rgb: RGB): RGB;
-    export function gammaToLinear(rgb: RGB): RGB;
-    export function gammaToLinear(c: number): number;
+    function gammaToLinear(...rgb: RGB): LuaMultiReturn<RGB>;
+    function gammaToLinear(rgb: RGB): LuaMultiReturn<RGB>;
+    function gammaToLinear(c: number): number;
 
     /**
      * Gets the seed of the random number generator.
@@ -63,10 +59,9 @@ declare module "love.math" {
      *
      * @returns Two Integers representing the lower and higher 32 bits of the
      * random number generator's 64 bit state value respectively.
-     * @tupleReturn
      * @link [love.math.getRandomSeed](https://love2d.org/wiki/love.math.getRandomSeed)
      */
-    export function getRandomSeed(): [number, number];
+    function getRandomSeed(): LuaMultiReturn<[low: number, high: number]>;
 
     /**
      * Gets the current state of the random number generator. This returns an opaque
@@ -82,7 +77,7 @@ declare module "love.math" {
      * @return state, The current state of the RandomGenerator object, represented as a string.
      * @link [love.math.getRandomState](https://love2d.org/wiki/love.math.getRandomState)
      */
-    export function getRandomState(): string;
+    function getRandomState(): string;
 
     /**
      * An array of numbers describing vertices.
@@ -90,7 +85,7 @@ declare module "love.math" {
      * @example
      * [0, 0, 16, 16, 16, 0] // x1, y1, x2, y2, x3, y3, ...
      */
-    export type Vertices = number[];
+    type Vertices = number[];
 
     /**
      * Checks whether a polygon is convex.
@@ -103,18 +98,17 @@ declare module "love.math" {
      * @returns true if the given polygon is convex.
      * @link [love.math.isConvex](https://love2d.org/wiki/love.math.isConvex)
      */
-    export function isConvex(...vertices: Vertices): boolean;
-    export function isConvex(vertices: Vertices): boolean;
+    function isConvex(...vertices: Vertices): boolean;
+    function isConvex(vertices: Vertices): boolean;
 
     /**
      * Converts RGB to sRGB (linear-space to gamma-space).
      *
-     * @tupleReturn
      * @link [love.math.linearToGamma](https://love2d.org/wiki/love.math.linearToGamma)
      */
-    export function linearToGamma(...rgb: RGB): RGB;
-    export function linearToGamma(rgb: RGB): RGB;
-    export function linearToGamma(c: number): number;
+    function linearToGamma(...rgb: RGB): LuaMultiReturn<RGB>;
+    function linearToGamma(rgb: RGB): LuaMultiReturn<RGB>;
+    function linearToGamma(c: number): number;
 
     /**
      * Creates a new BezierCurve object.
@@ -127,8 +121,8 @@ declare module "love.math" {
      * @returns A Bézier curve object.
      * @link [love.math.newBezierCurve](https://love2d.org/wiki/love.math.newBezierCurve)
      */
-    export function newBezierCurve(vertices: Vertices): BezierCurve;
-    export function newBezierCurve(...vertices: Vertices): BezierCurve;
+    function newBezierCurve(vertices: Vertices): BezierCurve;
+    function newBezierCurve(...vertices: Vertices): BezierCurve;
 
     /**
      * Creates a new RandomGenerator object which is completely independent of other
@@ -137,7 +131,7 @@ declare module "love.math" {
      * @returns The new Random Number Generator object.
      * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
      */
-    export function newRandomGenerator(): RandomGenerator;
+    function newRandomGenerator(): RandomGenerator;
 
     /**
      * Creates a new RandomGenerator object which is completely independent of other
@@ -147,7 +141,7 @@ declare module "love.math" {
      * @returns The new Random Number Generator object.
      * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
      */
-    export function newRandomGenerator(seed: number): RandomGenerator;
+    function newRandomGenerator(seed: number): RandomGenerator;
 
     /**
      * Creates a new RandomGenerator object which is completely independent of other
@@ -158,7 +152,7 @@ declare module "love.math" {
      * @returns The new Random Number Generator object.
      * @link [love.math.newRandomGenerator](https://love2d.org/wiki/love.math.newRandomGenerator)
      */
-    export function newRandomGenerator(low: number, high: number): RandomGenerator;
+    function newRandomGenerator(low: number, high: number): RandomGenerator;
 
     /**
      * Creates a new Transform object.
@@ -166,7 +160,7 @@ declare module "love.math" {
      * @returns The new Transform object.
      * @link [love.math.newTransform](https://love2d.org/wiki/love.math.newTransform)
      */
-    export function newTransform(): Transform;
+    function newTransform(): Transform;
 
     /**
      * Creates a new Transform object.
@@ -183,7 +177,7 @@ declare module "love.math" {
      * @return transform, The new Transform object.
      * @link [love.math.newTransform](https://love2d.org/wiki/love.math.newTransform)
      */
-    export function newTransform(
+    function newTransform(
         x: number,
         y: number,
         angle?: number,
@@ -208,7 +202,7 @@ declare module "love.math" {
      * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
-    export function noise(x: number): number;
+    function noise(x: number): number;
 
     /**
      * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
@@ -224,7 +218,7 @@ declare module "love.math" {
      * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
-    export function noise(x: number, y: number): number;
+    function noise(x: number, y: number): number;
 
     /**
      * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
@@ -241,7 +235,7 @@ declare module "love.math" {
      * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
-    export function noise(x: number, y: number, z: number): number;
+    function noise(x: number, y: number, z: number): number;
 
     /**
      * Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value
@@ -259,7 +253,7 @@ declare module "love.math" {
      * @returns The noise value in the range of [0, 1].
      * @link [love.math.noise](https://love2d.org/wiki/love.math.noise)
      */
-    export function noise(x: number, y: number, z: number, w: number): number;
+    function noise(x: number, y: number, z: number, w: number): number;
 
     /**
      * Generates a pseudo-random number in a platform independent manner.
@@ -267,7 +261,7 @@ declare module "love.math" {
      * @returns The pseudo-random number.
      * @link [love.math.random](https://love2d.org/wiki/love.math.random)
      */
-    export function random(): number;
+    function random(): number;
 
     /**
      * Generates a pseudo-random number in a platform independent manner.
@@ -276,7 +270,7 @@ declare module "love.math" {
      * @returns The pseudo-random integer number.
      * @link [love.math.random](https://love2d.org/wiki/love.math.random)
      */
-    export function random(max: number): number;
+    function random(max: number): number;
 
     /**
      * Generates a pseudo-random number in a platform independent manner.
@@ -286,7 +280,7 @@ declare module "love.math" {
      * @returns The pseudo-random integer number.
      * @link [love.math.random](https://love2d.org/wiki/love.math.random)
      */
-    export function random(min: number, max: number): number;
+    function random(min: number, max: number): number;
 
     /**
      * Get a normally distributed pseudo random number.
@@ -296,7 +290,7 @@ declare module "love.math" {
      * @returns Normally distributed random number with variance (stddev)² and the specified mean.
      * @link [love.math.randomNormal](https://love2d.org/wiki/love.math.randomNormal)
      */
-    export function randomNormal(stddev?: number, mean?: number): number;
+    function randomNormal(stddev?: number, mean?: number): number;
 
     /**
      * Sets the seed of the random number generator using the specified integer
@@ -305,7 +299,7 @@ declare module "love.math" {
      * @param seed The integer number with which you want to seed the randomization. Must be within the range of [1, 2^53].
      * @link [love.math.setRandomSeed](https://love2d.org/wiki/love.math.setRandomSeed)
      */
-    export function setRandomSeed(seed: number): void;
+    function setRandomSeed(seed: number): void;
 
     /**
      * Sets the seed of the random number generator using the specified integer
@@ -315,7 +309,7 @@ declare module "love.math" {
      * @param high The higher 32 bits of the state value. Must be within the range of [0, 2^32 - 1].
      * @link [love.math.setRandomSeed](https://love2d.org/wiki/love.math.setRandomSeed)
      */
-    export function setRandomSeed(low: number, high: number): void;
+    function setRandomSeed(low: number, high: number): void;
 
     /**
      * Gets the current state of the random number generator. This returns an opaque
@@ -331,7 +325,7 @@ declare module "love.math" {
      * @param state The current state of the RandomGenerator object, represented as a string.
      * @link [love.math.setRandomState](https://love2d.org/wiki/love.math.setRandomState)
      */
-    export function setRandomState(state: string): void;
+    function setRandomState(state: string): void;
 
     /**
      * Triangulate a simple polygon.
@@ -340,6 +334,6 @@ declare module "love.math" {
      * @return triangles, List of triangles the polygon is composed of.
      * @link [love.math.triangulate](https://love2d.org/wiki/love.math.triangulate)
      */
-    export function triangulate(polygon: Vertices): Vertices[];
-    export function triangulate(...polygon: Vertices): Vertices[];
+    function triangulate(polygon: Vertices): Vertices[];
+    function triangulate(...polygon: Vertices): Vertices[];
 }

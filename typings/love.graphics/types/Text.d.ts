@@ -5,7 +5,7 @@ declare module "love.graphics" {
      * Drawable text.
      * @link [Text](https://love2d.org/wiki/Text)
      */
-    export interface Text extends Drawable {
+    interface Text extends Drawable {
         /**
          * Adds additional colored text to the Text object at the specified position.
          *
@@ -21,6 +21,7 @@ declare module "love.graphics" {
          * @param ky Shearing / skew factor on the y-axis.
          * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
          * @link [Text:add](https://love2d.org/wiki/Text:add)
+         * @since 0.10.0
          */
         add(
             textstring: string,
@@ -50,9 +51,10 @@ declare module "love.graphics" {
          * @param ky Shearing / skew factor on the y-axis.
          * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
          * @link [Text:add](https://love2d.org/wiki/Text:add)
+         * @since 0.10.0
          */
         add(
-            coloredtext: Array<[number, number, number, number] | string>,
+            coloredtext: Array<[r: number, g: number, b: number, a?: number] | string>,
             x?: number,
             y?: number,
             angle?: number,
@@ -82,6 +84,7 @@ declare module "love.graphics" {
          * @param ky Shearing / skew factor on the y-axis.
          * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
          * @link [Text:addf](https://love2d.org/wiki/Text:addf)
+         * @since 0.10.0
          */
         addf(
             textstring: string,
@@ -116,9 +119,10 @@ declare module "love.graphics" {
          * @param ky Shearing / skew factor on the y-axis.
          * @return index, An index number that can be used with Text:getWidth or Text:getHeight.
          * @link [Text:addf](https://love2d.org/wiki/Text:addf)
+         * @since 0.10.0
          */
         addf(
-            coloredtext: Array<[number, number, number, number] | string>,
+            coloredtext: Array<[r: number, g: number, b: number, a?: number] | string>,
             wraplimit: number,
             align: AlignMode,
             x: number,
@@ -136,6 +140,7 @@ declare module "love.graphics" {
          * Clears the contents of the Text object.
          *
          * @link [Text:clear](https://love2d.org/wiki/Text:clear)
+         * @since 0.10.0
          */
         clear(): void;
 
@@ -144,10 +149,10 @@ declare module "love.graphics" {
          *
          * @return width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
          * @return height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
-         * @tupleReturn
          * @link [Text:getDimensions](https://love2d.org/wiki/Text:getDimensions)
+         * @since 0.10.1
          */
-        getDimensions(): [number, number];
+        getDimensions(): LuaMultiReturn<[width: number, height: number]>;
 
         /**
          * Gets the width and height of the text in pixels.
@@ -155,16 +160,17 @@ declare module "love.graphics" {
          * @param index An index number returned by Text:add or Text:addf.
          * @return width, The width of the sub-string (before scaling and other transformations).
          * @return height, The height of the sub-string (before scaling and other transformations).
-         * @tupleReturn
          * @link [Text:getDimensions](https://love2d.org/wiki/Text:getDimensions)
+         * @since 0.10.1
          */
-        getDimensions(index: number): [number, number];
+        getDimensions(index: number): LuaMultiReturn<[width: number, height: number]>;
 
         /**
          * Gets the Font used with the Text object.
          *
          * @return font, The font used with this Text object.
          * @link [Text:getFont](https://love2d.org/wiki/Text:getFont)
+         * @since 0.10.0
          */
         getFont(): Font;
 
@@ -173,6 +179,7 @@ declare module "love.graphics" {
          *
          * @return height, The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.
          * @link [Text:getHeight](https://love2d.org/wiki/Text:getHeight)
+         * @since 0.10.0
          */
         getHeight(): number;
 
@@ -182,6 +189,7 @@ declare module "love.graphics" {
          * @param index An index number returned by Text:add or Text:addf.
          * @return height, The height of the sub-string (before scaling and other transformations).
          * @link [Text:getHeight](https://love2d.org/wiki/Text:getHeight)
+         * @since 0.10.0
          */
         getHeight(index: number): number;
 
@@ -190,6 +198,7 @@ declare module "love.graphics" {
          *
          * @return width, The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.
          * @link [Text:getWidth](https://love2d.org/wiki/Text:getWidth)
+         * @since 0.10.0
          */
         getWidth(): number;
 
@@ -199,6 +208,7 @@ declare module "love.graphics" {
          * @param index An index number returned by Text:add or Text:addf.
          * @return width, The width of the sub-string (before scaling and other transformations).
          * @link [Text:getWidth](https://love2d.org/wiki/Text:getWidth)
+         * @since 0.10.0
          */
         getWidth(index: number): number;
 
@@ -207,6 +217,7 @@ declare module "love.graphics" {
          *
          * @param textstring The new string of text to use.
          * @link [Text:set](https://love2d.org/wiki/Text:set)
+         * @since 0.10.0
          */
         set(textstring: string): void;
 
@@ -215,13 +226,15 @@ declare module "love.graphics" {
          *
          * @param coloredtext A table containing colors and strings to use as the new text, in the form of { color1, string1, color2, string2, ... }.
          * @link [Text:set](https://love2d.org/wiki/Text:set)
+         * @since 0.10.0
          */
-        set(coloredtext: Array<[number, number, number, number] | string>): void;
+        set(coloredtext: Array<[r: number, g: number, b: number, a?: number] | string>): void;
 
         /**
          * Replaces the contents of the Text object with a new unformatted string.
          *
          * @link [Text:set](https://love2d.org/wiki/Text:set)
+         * @since 0.10.0
          */
         set(): void;
 
@@ -232,6 +245,7 @@ declare module "love.graphics" {
          * @param wraplimit The maximum width in pixels of the text before it gets automatically wrapped to a new line.
          * @param align The alignment of the text.
          * @link [Text:setf](https://love2d.org/wiki/Text:setf)
+         * @since 0.10.0
          */
         setf(textstring: string, wraplimit: number, align: AlignMode): void;
 
@@ -242,6 +256,7 @@ declare module "love.graphics" {
          * @param wraplimit The maximum width in pixels of the text before it gets automatically wrapped to a new line.
          * @param align The alignment of the text.
          * @link [Text:setf](https://love2d.org/wiki/Text:setf)
+         * @since 0.10.0
          */
         setf(coloredtext: Array<[number, number, number, number] | string>, wraplimit: number, align: AlignMode): void;
 
@@ -249,6 +264,7 @@ declare module "love.graphics" {
          * Replaces the contents of the Text object with a new formatted string.
          *
          * @link [Text:setf](https://love2d.org/wiki/Text:setf)
+         * @since 0.10.0
          */
         setf(): void;
 
@@ -257,6 +273,7 @@ declare module "love.graphics" {
          *
          * @param font The new font to use with this Text object.
          * @link [Text:setFont](https://love2d.org/wiki/Text:setFont)
+         * @since 0.10.0
          */
         setFont(font: Font): void;
     }

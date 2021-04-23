@@ -15,17 +15,16 @@ declare module "love.mouse" {
      * @return cursor, The current cursor, or _nil/undefined_ if no cursor is set.
      * @link [love.mouse.getCursor](https://love2d.org/wiki/love.mouse.getCursor)
      */
-    export function getCursor(): Cursor | undefined;
+    function getCursor(): Cursor | undefined;
 
     /**
      * Returns the current position of the mouse.
      *
      * @return x, The position of the mouse along the x-axis.
      * @return y, The position of the mouse along the y-axis.
-     * @tupleReturn
      * @link [love.mouse.getPosition](https://love2d.org/wiki/love.mouse.getPosition)
      */
-    export function getPosition(): [number, number];
+    function getPosition(): LuaMultiReturn<[x: number, y: number]>;
 
     /**
      * Gets whether relative mode is enabled for the mouse.
@@ -41,7 +40,7 @@ declare module "love.mouse" {
      * @return enabled, True if relative mode is enabled, false if it's disabled.
      * @link [love.mouse.getRelativeMode](https://love2d.org/wiki/love.mouse.getRelativeMode)
      */
-    export function getRelativeMode(): boolean;
+    function getRelativeMode(): boolean;
 
     /**
      * Gets a Cursor object representing a system-native hardware cursor.
@@ -55,7 +54,7 @@ declare module "love.mouse" {
      * @return cursor, The Cursor object representing the system cursor type.
      * @link [love.mouse.getSystemCursor](https://love2d.org/wiki/love.mouse.getSystemCursor)
      */
-    export function getSystemCursor(ctype: CursorType): Cursor;
+    function getSystemCursor(ctype: CursorType): Cursor;
 
     /**
      * Returns the current x position of the mouse.
@@ -63,7 +62,7 @@ declare module "love.mouse" {
      * @return x, The position of the mouse along the x-axis.
      * @link [love.mouse.getX](https://love2d.org/wiki/love.mouse.getX)
      */
-    export function getX(): number;
+    function getX(): number;
 
     /**
      * Returns the current y position of the mouse.
@@ -71,7 +70,7 @@ declare module "love.mouse" {
      * @return y, The position of the mouse along the y-axis.
      * @link [love.mouse.getY](https://love2d.org/wiki/love.mouse.getY)
      */
-    export function getY(): number;
+    function getY(): number;
 
     /**
      * Gets whether cursor functionality is supported.
@@ -83,7 +82,7 @@ declare module "love.mouse" {
      * @return supported, Whether the system has cursor functionality.
      * @link [love.mouse.isCursorSupported](https://love2d.org/wiki/love.mouse.isCursorSupported)
      */
-    export function isCursorSupported(): boolean;
+    function isCursorSupported(): boolean;
 
     /**
      * Checks whether a certain mouse button is down. This function does not detect
@@ -95,7 +94,7 @@ declare module "love.mouse" {
      * @return down, True if the specified button is down.
      * @link [love.mouse.isDown](https://love2d.org/wiki/love.mouse.isDown)
      */
-    export function isDown(button: number, ...vararg: Array<number>): boolean;
+    function isDown(button: number, ...vararg: Array<number>): boolean;
 
     /**
      * Checks if the mouse is grabbed.
@@ -103,7 +102,7 @@ declare module "love.mouse" {
      * @return grabbed, True if the cursor is grabbed, false if it is not.
      * @link [love.mouse.isGrabbed](https://love2d.org/wiki/love.mouse.isGrabbed)
      */
-    export function isGrabbed(): boolean;
+    function isGrabbed(): boolean;
 
     /**
      * Checks if the cursor is visible.
@@ -111,7 +110,7 @@ declare module "love.mouse" {
      * @return visible, True if the cursor to visible, false if the cursor is hidden.
      * @link [love.mouse.isVisible](https://love2d.org/wiki/love.mouse.isVisible)
      */
-    export function isVisible(): boolean;
+    function isVisible(): boolean;
 
     /**
      * Creates a new hardware Cursor object from an image file or ImageData.
@@ -132,7 +131,7 @@ declare module "love.mouse" {
      * @return cursor, The new Cursor object.
      * @link [love.mouse.newCursor](https://love2d.org/wiki/love.mouse.newCursor)
      */
-    export function newCursor(imageData: ImageData, hotx?: number, hoty?: number): Cursor;
+    function newCursor(imageData: ImageData, hotx?: number, hoty?: number): Cursor;
 
     /**
      * Creates a new hardware Cursor object from an image file or ImageData.
@@ -153,7 +152,7 @@ declare module "love.mouse" {
      * @return cursor, The new Cursor object.
      * @link [love.mouse.newCursor](https://love2d.org/wiki/love.mouse.newCursor)
      */
-    export function newCursor(filepath: string, hotx?: number, hoty?: number): Cursor;
+    function newCursor(filepath: string, hotx?: number, hoty?: number): Cursor;
 
     /**
      * Creates a new hardware Cursor object from an image file or ImageData.
@@ -174,7 +173,7 @@ declare module "love.mouse" {
      * @return cursor, The new Cursor object.
      * @link [love.mouse.newCursor](https://love2d.org/wiki/love.mouse.newCursor)
      */
-    export function newCursor(fileData: FileData, hotx?: number, hoty?: number): Cursor;
+    function newCursor(fileData: FileData, hotx?: number, hoty?: number): Cursor;
 
     /**
      * Sets the current mouse cursor.
@@ -182,7 +181,7 @@ declare module "love.mouse" {
      * Resets the current mouse cursor to the default when called without arguments.
      * @link [love.mouse.setCursor](https://love2d.org/wiki/love.mouse.setCursor)
      */
-    export function setCursor(): void;
+    function setCursor(): void;
 
     /**
      * Sets the current mouse cursor.
@@ -192,7 +191,7 @@ declare module "love.mouse" {
      * @param cursor The Cursor object to use as the current mouse cursor.
      * @link [love.mouse.setCursor](https://love2d.org/wiki/love.mouse.setCursor)
      */
-    export function setCursor(cursor: Cursor): void;
+    function setCursor(cursor: Cursor): void;
 
     /**
      * Grabs the mouse and confines it to the window.
@@ -200,7 +199,7 @@ declare module "love.mouse" {
      * @param grab True to confine the mouse, false to let it leave the window.
      * @link [love.mouse.setGrabbed](https://love2d.org/wiki/love.mouse.setGrabbed)
      */
-    export function setGrabbed(grab: boolean): void;
+    function setGrabbed(grab: boolean): void;
 
     /**
      * Sets the current position of the mouse. Non-integer values are floored.
@@ -209,7 +208,7 @@ declare module "love.mouse" {
      * @param y The new position of the mouse along the y-axis.
      * @link [love.mouse.setPosition](https://love2d.org/wiki/love.mouse.setPosition)
      */
-    export function setPosition(x: number, y: number): void;
+    function setPosition(x: number, y: number): void;
 
     /**
      * Sets whether relative mode is enabled for the mouse.
@@ -225,7 +224,7 @@ declare module "love.mouse" {
      * @param enable True to enable relative mode, false to disable it.
      * @link [love.mouse.setRelativeMode](https://love2d.org/wiki/love.mouse.setRelativeMode)
      */
-    export function setRelativeMode(enable: boolean): void;
+    function setRelativeMode(enable: boolean): void;
 
     /**
      * Sets the visibility of the cursor.
@@ -233,7 +232,7 @@ declare module "love.mouse" {
      * @param visible True to set the cursor to visible, false to hide the cursor.
      * @link [love.mouse.setVisible](https://love2d.org/wiki/love.mouse.setVisible)
      */
-    export function setVisible(visible: boolean): void;
+    function setVisible(visible: boolean): void;
 
     /**
      * Sets the current X position of the mouse. Non-integer values are floored.
@@ -241,7 +240,7 @@ declare module "love.mouse" {
      * @param x The new position of the mouse along the x-axis.
      * @link [love.mouse.setX](https://love2d.org/wiki/love.mouse.setX)
      */
-    export function setX(x: number): void;
+    function setX(x: number): void;
 
     /**
      * Sets the current Y position of the mouse. Non-integer values are floored.
@@ -249,5 +248,5 @@ declare module "love.mouse" {
      * @param y The new position of the mouse along the y-axis.
      * @link [love.mouse.setY](https://love2d.org/wiki/love.mouse.setY)
      */
-    export function setY(y: number): void;
+    function setY(y: number): void;
 }

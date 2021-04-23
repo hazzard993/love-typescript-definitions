@@ -6,7 +6,7 @@ declare module "love.sound" {
      *
      * @link [SoundData](https://love2d.org/wiki/SoundData)
      */
-    export interface SoundData extends Data<"SoundData"> {
+    interface SoundData extends Data<"SoundData"> {
         /**
          * Returns the number of bits per sample.
          *

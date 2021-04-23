@@ -80,7 +80,7 @@ declare interface CustomHandlers {
 }
 
 // handle event
-love.handlers.handler = a => print(a);
+love.handlers.handler = (a) => print(a);
 
 // dispatch event
 love.event.push("handler", "Hello World");

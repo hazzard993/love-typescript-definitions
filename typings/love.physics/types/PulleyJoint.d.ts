@@ -3,7 +3,7 @@ declare module "love.physics" {
      * Allows you to simulate bodies connected through pulleys.
      * @link [PulleyJoint](https://love2d.org/wiki/PulleyJoint)
      */
-    export interface PulleyJoint extends Joint<"PulleyJoint"> {
+    interface PulleyJoint extends Joint<"PulleyJoint"> {
         /**
          * Get the total length of the rope.
          *
@@ -19,10 +19,9 @@ declare module "love.physics" {
          * @return a1y, The y coordinate of the first anchor.
          * @return a2x, The x coordinate of the second anchor.
          * @return a2y, The y coordinate of the second anchor.
-         * @tupleReturn
          * @link [PulleyJoint:getGroundAnchors](https://love2d.org/wiki/PulleyJoint:getGroundAnchors)
          */
-        getGroundAnchors(): [number, number, number, number];
+        getGroundAnchors(): LuaMultiReturn<[a1x: number, a1y: number, a2x: number, a2y: number]>;
 
         /**
          * Get the current length of the rope segment attached to the first body.
@@ -45,10 +44,9 @@ declare module "love.physics" {
          *
          * @return len1, The maximum length of the first rope segment.
          * @return len2, The maximum length of the second rope segment.
-         * @tupleReturn
          * @link [PulleyJoint:getMaxLengths](https://love2d.org/wiki/PulleyJoint:getMaxLengths)
          */
-        getMaxLengths(): [number, number];
+        getMaxLengths(): LuaMultiReturn<[len1: number, len2: number]>;
 
         /**
          * Get the pulley ratio.

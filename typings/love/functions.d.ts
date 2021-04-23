@@ -7,15 +7,11 @@ declare module "love" {
      * const [major, minor, revision, codename] = love.getVersion();
      * ```
      *
-     * [ref]: https://love2d.org/wiki/love.getVersion
-     *
-     * [1]: https://love2d.org/wiki/Config_Files#version
      * @returns The major, minor, revision and codename respectively.
-     * @link [love.getVersion][ref]
-     * @link [Version Warnings][1]
-     * @tupleReturn
+     * @link [love.getVersion][https://love2d.org/wiki/love.getVersion]
+     * @link [Version Warnings][https://love2d.org/wiki/Config_Files#version]
      */
-    export function getVersion(): [number, number, number, string];
+    function getVersion(): [major: number, minor: number, revision: number, codename: string];
 
     /**
      * Sets whether LÖVE displays warnings when using deprecated functionality.
@@ -27,7 +23,7 @@ declare module "love" {
      * @param enable Whether to enable or disable deprecation output.
      * @link [love.setDeprecationOutput][ref]
      */
-    export function setDeprecationOutput(enable: boolean): void;
+    function setDeprecationOutput(enable: boolean): void;
 
     /**
      * Gets whatever the version is compatible with current running version of
@@ -37,8 +33,8 @@ declare module "love" {
      * @link [love.isVersionCompatible][ref]
      * @returns True if the current version of LÖVE is compatible.
      */
-    export function isVersionCompatible(version: Version): boolean;
-    export function isVersionCompatible(major: number, minor: number, revision: number): boolean;
+    function isVersionCompatible(version: Version): boolean;
+    function isVersionCompatible(major: number, minor: number, revision: number): boolean;
 
     /**
      * Gets whether LÖVE displays warnings when using deprecated functionality.
@@ -53,5 +49,5 @@ declare module "love" {
      * @return enabled, Whether deprecation output is enabled.
      * @link [love.hasDeprecationOutput][ref]
      */
-    export function hasDeprecationOutput(): boolean;
+    function hasDeprecationOutput(): boolean;
 }

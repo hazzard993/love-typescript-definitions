@@ -11,5 +11,14 @@ declare module "love.graphics" {
      * - [7] (default: 1) - The alpha component of the vertex color.
      * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
      */
-    export type VertexInformation = [number, number, ...Array<number>];
+    type VertexInformation = [
+        x: number,
+        y: number,
+        u?: number,
+        v?: number,
+        r?: number,
+        g?: number,
+        b?: number,
+        a?: number
+    ];
 }

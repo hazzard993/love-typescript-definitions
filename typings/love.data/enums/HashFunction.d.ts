@@ -14,5 +14,5 @@ declare module "love.data" {
      * @link [HashFunction](https://love2d.org/wiki/HashFunction)
      * @since 11.0
      */
-    export type HashFunction = "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512";
+    type HashFunction = "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512";
 }

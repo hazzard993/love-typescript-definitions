@@ -24,7 +24,7 @@ declare global {
      *
      * @noSelf
      */
-    export interface CustomHandlers {}
+    interface CustomHandlers {}
 }
 
 /**
@@ -34,7 +34,7 @@ declare global {
  *
  * @noSelf
  */
-export interface Handlers extends CustomHandlers {
+interface Handlers extends CustomHandlers {
     /**
      * Should be overwritten inside a `conf.lua` file.
      *

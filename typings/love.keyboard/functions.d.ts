@@ -13,7 +13,7 @@ declare module "love.keyboard" {
      * @return key, The key corresponding to the given scancode, or "unknown" if the scancode doesn't map to a KeyConstant on the current system.
      * @link [love.keyboard.getKeyFromScancode](https://love2d.org/wiki/love.keyboard.getKeyFromScancode)
      */
-    export function getKeyFromScancode(scancode: Scancode): KeyConstant;
+    function getKeyFromScancode(scancode: Scancode): KeyConstant;
 
     /**
      * Gets the hardware scancode corresponding to the given key.
@@ -22,7 +22,7 @@ declare module "love.keyboard" {
      * @return scancode, The scancode corresponding to the given key, or "unknown" if the given key has no known physical representation on the current system.
      * @link [love.keyboard.getScancodeFromKey](https://love2d.org/wiki/love.keyboard.getScancodeFromKey)
      */
-    export function getScancodeFromKey(key: KeyConstant): Scancode;
+    function getScancodeFromKey(key: KeyConstant): Scancode;
 
     /**
      * Gets whether key repeat is enabled.
@@ -30,7 +30,7 @@ declare module "love.keyboard" {
      * @return enabled, Whether key repeat is enabled.
      * @link [love.keyboard.hasKeyRepeat](https://love2d.org/wiki/love.keyboard.hasKeyRepeat)
      */
-    export function hasKeyRepeat(): boolean;
+    function hasKeyRepeat(): boolean;
 
     /**
      * Gets whether text input events are enabled.
@@ -38,7 +38,7 @@ declare module "love.keyboard" {
      * @return enabled, Whether text input events are enabled.
      * @link [love.keyboard.hasTextInput](https://love2d.org/wiki/love.keyboard.hasTextInput)
      */
-    export function hasTextInput(): boolean;
+    function hasTextInput(): boolean;
 
     /**
      * Gets whether is screen keyboard supported.
@@ -46,7 +46,7 @@ declare module "love.keyboard" {
      * @link [love.keyboard.hasScreenKeyboard](https://love2d.org/wiki/love.keyboard.hasScreenKeyboard)
      * @since 0.10.0
      */
-    export function hasScreenKeyboard(): boolean;
+    function hasScreenKeyboard(): boolean;
 
     /**
      * Checks whether a certain key is down. Not to be confused with love.keypressed or love.keyreleased.
@@ -55,7 +55,7 @@ declare module "love.keyboard" {
      * @return down, True if the key is down, false if not.
      * @link [love.keyboard.isDown](https://love2d.org/wiki/love.keyboard.isDown)
      */
-    export function isDown(key: KeyConstant): boolean;
+    function isDown(key: KeyConstant): boolean;
 
     /**
      * Checks whether a certain key is down. Not to be confused with love.keypressed or love.keyreleased.
@@ -64,7 +64,7 @@ declare module "love.keyboard" {
      * @return anyDown, True if any supplied key is down, false if not.
      * @link [love.keyboard.isDown](https://love2d.org/wiki/love.keyboard.isDown)
      */
-    export function isDown(...keys: Array<KeyConstant>): boolean;
+    function isDown(...keys: Array<KeyConstant>): boolean;
 
     /**
      * Checks if one of the specified Scancodes has been pressed.
@@ -72,7 +72,7 @@ declare module "love.keyboard" {
      * @return _true_ if any supplied Scancode is down, _false_ if not.
      * @link [love.keyboard.isScancodeDown](https://love2d.org/wiki/love.keyboard.isScancodeDown)
      */
-    export function isScancodeDown(...scancodes: Array<Scancode>): boolean;
+    function isScancodeDown(...scancodes: Array<Scancode>): boolean;
 
     /**
      * Enables or disables key repeat. It is disabled by default.
@@ -82,7 +82,7 @@ declare module "love.keyboard" {
      * @param enable Whether repeat keypress events should be enabled when a key is held down.
      * @link [love.keyboard.setKeyRepeat](https://love2d.org/wiki/love.keyboard.setKeyRepeat)
      */
-    export function setKeyRepeat(enable: boolean): void;
+    function setKeyRepeat(enable: boolean): void;
 
     /**
      * Enables or disables text input events. It is enabled by default on Windows,
@@ -91,7 +91,7 @@ declare module "love.keyboard" {
      * @param enable Whether text input events should be enabled.
      * @link [love.keyboard.setTextInput](https://love2d.org/wiki/love.keyboard.setTextInput)
      */
-    export function setTextInput(enable: boolean): void;
+    function setTextInput(enable: boolean): void;
 
     /**
      * Enables or disables text input events. It is enabled by default on Windows,
@@ -104,5 +104,5 @@ declare module "love.keyboard" {
      * @param h On-screen keyboard height.
      * @link [love.keyboard.setTextInput](https://love2d.org/wiki/love.keyboard.setTextInput)
      */
-    export function setTextInput(enable: boolean, x: number, y: number, w: number, h: number): void;
+    function setTextInput(enable: boolean, x: number, y: number, w: number, h: number): void;
 }

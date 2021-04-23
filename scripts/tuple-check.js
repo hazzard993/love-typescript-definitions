@@ -15,7 +15,7 @@ class DeclarationCheckingError extends Error {}
  * @param {import("typescript-to-lua").TransformationContext} context
  * @returns {(statement: import("typescript").FunctionDeclaration | import("typescript").MethodSignature) => string}
  */
-const expectFunctionDeclarationToUseTupleReturn = context => statement => {
+const expectFunctionDeclarationToUseTupleReturn = (context) => (statement) => {
     if (!utils.hasTupleReturnAnnotation(context, statement)) {
         throw new DeclarationCheckingError(
             `${statement.name.getText()} returns a tuple type and is expected to use @tupleReturn`
@@ -28,7 +28,7 @@ const expectFunctionDeclarationToUseTupleReturn = context => statement => {
 /**
  * @param {import("typescript").SourceFile} sourceFile
  */
-const isSourceFileFromThisRepo = sourceFile =>
+const isSourceFileFromThisRepo = (sourceFile) =>
     !program.isSourceFileDefaultLibrary(sourceFile) && !program.isSourceFileFromExternalLibrary(sourceFile);
 
 /**
@@ -38,7 +38,7 @@ function expectAllTupleReturnCallSignatureToUseTupleAnnotations() {
     return program
         .getSourceFiles()
         .filter(isSourceFileFromThisRepo)
-        .map(sourceFile => {
+        .map((sourceFile) => {
             const context = new tstl.TransformationContext(program, sourceFile, new Map());
             const functionDeclarationsChecked = sourceFile.statements
                 .filter(ts.isModuleDeclaration)

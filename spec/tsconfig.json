@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "strict": true,
-        "types": ["../index"]
+        "lib": ["ESNext"],
+        "types": ["../index", "typescript-to-lua/language-extensions"]
     },
     "include": ["*.ts"]
 }

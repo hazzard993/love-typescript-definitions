@@ -5,5 +5,5 @@ declare module "love.video" {
      * An object which decodes, streams, and controls Videos.
      * @link [VideoStream](https://love2d.org/wiki/VideoStream)
      */
-    export interface VideoStream extends Type<"VideoStream"> {}
+    interface VideoStream extends Type<"VideoStream"> {}
 }

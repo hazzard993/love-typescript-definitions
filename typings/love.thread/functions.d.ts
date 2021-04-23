@@ -15,7 +15,7 @@ declare module "love.thread" {
      * @return channel, A named channel object which can be further manipulated.
      * @link [love.thread.getChannel](https://love2d.org/wiki/love.thread.getChannel)
      */
-    export function getChannel(name: string): Channel;
+    function getChannel(name: string): Channel;
 
     /**
      * Create a new unnamed thread channel.
@@ -26,7 +26,7 @@ declare module "love.thread" {
      * @return channel, A unnamed channel object which can be further manipulated.
      * @link [love.thread.newChannel](https://love2d.org/wiki/love.thread.newChannel)
      */
-    export function newChannel(): Channel;
+    function newChannel(): Channel;
 
     /**
      * Creates a new Thread from a filename, string or FileData object containing Lua code.
@@ -35,7 +35,7 @@ declare module "love.thread" {
      * @return thread, A new Thread that has yet to be started.
      * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
      */
-    export function newThread(filename: string): Thread;
+    function newThread(filename: string): Thread;
 
     /**
      * Creates a new Thread from a File or Data object.
@@ -44,7 +44,7 @@ declare module "love.thread" {
      * @return thread, A new Thread that has yet to be started.
      * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
      */
-    export function newThread(fileData: FileData): Thread;
+    function newThread(fileData: FileData): Thread;
 
     /**
      * Creates a new Thread from a File or Data object.
@@ -53,5 +53,5 @@ declare module "love.thread" {
      * @return thread, A new Thread that has yet to be started.
      * @link [love.thread.newThread](https://love2d.org/wiki/love.thread.newThread)
      */
-    export function newThread(codestring: string): Thread;
+    function newThread(codestring: string): Thread;
 }

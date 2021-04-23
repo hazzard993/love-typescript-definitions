@@ -7,7 +7,7 @@ declare module "love.graphics" {
      * A SpriteBatch can be even more useful when the underlying image is a texture atlas (a single image file containing many independent images); by adding Quads to the batch, different sub-images from within the atlas can be drawn.
      * @link [SpriteBatch](https://love2d.org/wiki/SpriteBatch)
      */
-    export interface SpriteBatch extends Drawable {
+    interface SpriteBatch extends Drawable {
         /**
          * Add a sprite to the batch.
          *
@@ -191,10 +191,10 @@ declare module "love.graphics" {
          * @return g, The green component (0-255).
          * @return b, The blue component (0-255).
          * @return a, The alpha component (0-255).
-         * @tupleReturn
          * @link [SpriteBatch:getColor](https://love2d.org/wiki/SpriteBatch:getColor)
+         * @since 0.9.0
          */
-        getColor(): [number, number, number, number] | [undefined, undefined, undefined, undefined];
+        getColor(): LuaMultiReturn<[r: number, g: number, b: number, a: number] | []>;
 
         /**
          * Gets the amount of sprites currently in the SpriteBatch.

@@ -16,7 +16,7 @@ declare module "love.audio" {
      * @link [DistanceModel](https://love2d.org/wiki/DistanceModel)
      * @since 0.8.0
      */
-    export type DistanceModel =
+    type DistanceModel =
         | "none"
         | "inverse"
         | "inverseclamped"

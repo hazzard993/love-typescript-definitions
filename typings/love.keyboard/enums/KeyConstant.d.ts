@@ -4,7 +4,7 @@ declare module "love.keyboard" {
      * keyboard or system.
      * @link [KeyConstant](https://love2d.org/wiki/KeyConstant)
      */
-    export type KeyConstant =
+    type KeyConstant =
         | "a"
         | "b"
         | "c"

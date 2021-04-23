@@ -1,10 +1,14 @@
 declare module "love.filesystem" {
     import { Type, LuaIterator } from "love";
+    import { ContainerType } from "love.data";
 
     /**
+     * Represents a file on the filesystem. A function that takes a file path
+     * can also take a File.
+     *
      * @link [File](https://love2d.org/wiki/File)
      */
-    export interface File extends Type<"File"> {
+    interface File extends Type<"File"> {
         /**
          * Closes a file.
          *
@@ -17,21 +21,21 @@ declare module "love.filesystem" {
          * Flushes any buffered written data in the file to the disk.
          *
          * @return success, Whether the file successfully flushed any buffered data to the disk.
-         * @return err, The error string, if an error occurred and the file could not be flushed.
-         * @tupleReturn
+         * @return errormsg, The error string, if an error occurred and the file could not be flushed.
          * @link [(File):flush](https://love2d.org/wiki/(File):flush)
+         * @since 0.9.0
          */
-        flush(): [boolean, string];
+        flush(): LuaMultiReturn<[success: true]> | LuaMultiReturn<[success: false, errormsg: string]>;
 
         /**
          * Gets the buffer mode of a file.
          *
          * @return mode, The current buffer mode of the file.
          * @return size, The maximum size in bytes of the file's buffer.
-         * @tupleReturn
          * @link [(File):getBuffer](https://love2d.org/wiki/(File):getBuffer)
+         * @since 0.9.0
          */
-        getBuffer(): [BufferMode, number];
+        getBuffer(): LuaMultiReturn<[mode: BufferMode, size: number]>;
 
         /**
          * Gets the filename that the File object was created with. If the file object
@@ -40,6 +44,7 @@ declare module "love.filesystem" {
          *
          * @return filename, The filename of the File.
          * @link [(File):getFilename](https://love2d.org/wiki/(File):getFilename)
+         * @since 0.10.0
          */
         getFilename(): string;
 
@@ -48,6 +53,7 @@ declare module "love.filesystem" {
          *
          * @return mode, The mode this file has been opened with.
          * @link [(File):getMode](https://love2d.org/wiki/(File):getMode)
+         * @since 0.9.0
          */
         getMode(): FileMode;
 
@@ -64,6 +70,7 @@ declare module "love.filesystem" {
          *
          * @return eof, Whether EOF has been reached.
          * @link [(File):isEOF](https://love2d.org/wiki/(File):isEOF)
+         * @since 0.10.0
          */
         isEOF(): boolean;
 
@@ -72,6 +79,7 @@ declare module "love.filesystem" {
          *
          * @return open, True if the file is currently open, false otherwise.
          * @link [(File):isOpen](https://love2d.org/wiki/(File):isOpen)
+         * @since 0.9.0
          */
         isOpen(): boolean;
 
@@ -108,10 +116,24 @@ declare module "love.filesystem" {
          * @param bytes The number of bytes to read
          * @return contents, The contents of the read bytes.
          * @return size, How many bytes have been read.
-         * @tupleReturn
          * @link [(File):read](https://love2d.org/wiki/(File):read)
          */
-        read(bytes?: number): [string, number];
+        read(bytes?: number): LuaMultiReturn<[contents: string, size: number]>;
+
+        /**
+         * Reads the contents of a file into either a string or a FileData object.
+         *
+         * @param container What type to return the file's contents as.
+         * @param bytes The number of bytes to read. (Default: all)
+         * @return contents, The contents of the read bytes.
+         * @return size, How many bytes have been read.
+         * @link [(File):read](https://love2d.org/wiki/(File):read)
+         * @since 11.0
+         */
+        read<T extends ContainerType>(
+            container: T,
+            bytes?: number
+        ): LuaMultiReturn<[contents: T extends "string" ? string : FileData, size: number]>;
 
         /**
          * Seek to a position in a file.
@@ -130,11 +152,14 @@ declare module "love.filesystem" {
          * @param mode The buffer mode to use.
          * @param size The maximum size in bytes of the file's buffer.
          * @return success, Whether the buffer mode was successfully set.
-         * @return errorstr, The error string, if the buffer mode could not be set and an error occurred.
-         * @tupleReturn
+         * @return errormsg, The error string, if the buffer mode could not be set and an error occurred.
          * @link [(File):setBuffer](https://love2d.org/wiki/(File):setBuffer)
+         * @since 0.9.0
          */
-        setBuffer(mode: BufferMode, size?: number): [boolean, string];
+        setBuffer(
+            mode: BufferMode,
+            size?: number
+        ): LuaMultiReturn<[success: true]> | LuaMultiReturn<[success: false, errormsg: string]>;
 
         /**
          * Returns the position in the file.

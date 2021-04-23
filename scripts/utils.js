@@ -20,7 +20,7 @@ module.exports.hasTupleReturnAnnotation = (context, statement) => {
 /**
  * @param {import("typescript").ModuleDeclaration} module
  */
-module.exports.getFunctionDeclarationsOfModuleDeclaration = module => {
+module.exports.getFunctionDeclarationsOfModuleDeclaration = (module) => {
     if (!module.body) {
         return [];
     }
@@ -33,7 +33,7 @@ module.exports.getFunctionDeclarationsOfModuleDeclaration = module => {
 /**
  * @param {import("typescript").ModuleDeclaration} module
  */
-module.exports.getInterfaceDeclarationsOfModuleDeclaration = module => {
+module.exports.getInterfaceDeclarationsOfModuleDeclaration = (module) => {
     if (!module.body) {
         return [];
     }
@@ -46,14 +46,14 @@ module.exports.getInterfaceDeclarationsOfModuleDeclaration = module => {
 /**
  * @param {import("typescript").InterfaceDeclaration} interface
  */
-module.exports.getMethodsOfInterface = interface => {
+module.exports.getMethodsOfInterface = (interface) => {
     return interface.members.filter(ts.isMethodSignature);
 };
 
 /**
  * @param {import("typescript").FunctionDeclaration | import("typescript").MethodSignature} statement
  */
-module.exports.hasTupleReturnType = statement => {
+module.exports.hasTupleReturnType = (statement) => {
     if (!statement.type) {
         return false;
     }

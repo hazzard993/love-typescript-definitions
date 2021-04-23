@@ -7,7 +7,7 @@ declare module "love.physics" {
      * The shape does not have volume and can only collide with PolygonShape and CircleShape.
      * @link [EdgeShape](https://love2d.org/wiki/EdgeShape)
      */
-    export interface EdgeShape extends Shape<"EdgeShape"> {
+    interface EdgeShape extends Shape<"EdgeShape"> {
         /**
          * Returns the local coordinates of the edge points.
          *
@@ -15,10 +15,9 @@ declare module "love.physics" {
          * @return y1, The y component of the first vertex.
          * @return x2, The x component of the second vertex.
          * @return y2, The y component of the second vertex.
-         * @tupleReturn
          * @link [EdgeShape:getPoints](https://love2d.org/wiki/EdgeShape:getPoints)
          */
-        getPoints(): [number, number, number, number];
+        getPoints(): LuaMultiReturn<[x1: number, y1: number, x2: number, y2: number]>;
 
         /**
          * Gets the vertex that establishes a connection to the next shape.
@@ -29,10 +28,9 @@ declare module "love.physics" {
          *
          * @return x, The x-component of the vertex, or _nil/undefined_ if EdgeShape:setNextVertex hasn't been called.
          * @return y, The y-component of the vertex, or _nil/undefined_ if EdgeShape:setNextVertex hasn't been called.
-         * @tupleReturn
          * @link [EdgeShape:getNextVertex](https://love2d.org/wiki/EdgeShape:getNextVertex)
          */
-        getNextVertex(): [number, number] | [undefined, undefined];
+        getNextVertex(): LuaMultiReturn<[x: number, y: number] | []>;
 
         /**
          * Gets the vertex that establishes a connection to the previous shape.
@@ -43,10 +41,9 @@ declare module "love.physics" {
          *
          * @return x, The x-component of the vertex, or _nil/undefined_ if EdgeShape:setPreviousVertex hasn't been called.
          * @return y, The y-component of the vertex, or _nil/undefined_ if EdgeShape:setPreviousVertex hasn't been called.
-         * @tupleReturn
          * @link [EdgeShape:getPreviousVertex](https://love2d.org/wiki/EdgeShape:getPreviousVertex)
          */
-        getPreviousVertex(): [number, number] | [undefined, undefined];
+        getPreviousVertex(): LuaMultiReturn<[x: number, y: number] | []>;
 
         /**
          * Sets a vertex that establishes a connection to the next shape.

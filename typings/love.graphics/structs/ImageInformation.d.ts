@@ -4,5 +4,5 @@ declare module "love.graphics" {
     /**
      * Is not documented.
      */
-    export type ImageInformation = string | File | FileData | CompressedImageData;
+    type ImageInformation = string | File | FileData | CompressedImageData;
 }

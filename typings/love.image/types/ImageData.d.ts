@@ -6,7 +6,7 @@ declare module "love.image" {
      * Raw (decoded) image data.
      * @link [ImageData](https://love2d.org/wiki/ImageData)
      */
-    export interface ImageData extends Data<"ImageData"> {
+    interface ImageData extends Data<"ImageData"> {
         /**
          * Encodes the ImageData and optionally writes it to the save directory.
          *
@@ -22,10 +22,10 @@ declare module "love.image" {
          *
          * @return width, The width of the ImageData in pixels.
          * @return height, The height of the ImageData in pixels.
-         * @tupleReturn
          * @link [ImageData:getDimensions](https://love2d.org/wiki/ImageData:getDimensions)
+         * @since 0.9.0
          */
-        getDimensions(): [number, number];
+        getDimensions(): LuaMultiReturn<[width: number, height: number]>;
 
         /**
          * Gets the pixel format of the ImageData.
@@ -55,10 +55,9 @@ declare module "love.image" {
          * @return g, The green component.
          * @return b, The blue component.
          * @return a, The alpha component.
-         * @tupleReturn
          * @link [ImageData:getPixel](https://love2d.org/wiki/ImageData:getPixel)
          */
-        getPixel(x: number, y: number): [number, number, number, number];
+        getPixel(x: number, y: number): LuaMultiReturn<[r: number, g: number, b: number, a: number]>;
 
         /**
          * Gets the width of the ImageData in pixels.

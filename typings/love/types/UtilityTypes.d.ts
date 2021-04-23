@@ -4,5 +4,5 @@ declare module "love" {
      *
      * @luaIterator
      */
-    export type LuaIterator<T> = T[];
+    type LuaIterator<T> = T[];
 }

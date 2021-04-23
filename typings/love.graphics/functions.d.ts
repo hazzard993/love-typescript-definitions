@@ -43,7 +43,7 @@ declare module "love.graphics" {
      * @param segments The number of segments used for drawing the arc.
      * @link [love.graphics.arc](https://love2d.org/wiki/love.graphics.arc)
      */
-    export function arc(
+    function arc(
         drawmode: DrawMode,
         x: number,
         y: number,
@@ -68,7 +68,7 @@ declare module "love.graphics" {
      * @param segments The number of segments used for drawing the arc.
      * @link [love.graphics.arc](https://love2d.org/wiki/love.graphics.arc)
      */
-    export function arc(
+    function arc(
         drawmode: DrawMode,
         arctype: ArcType,
         x: number,
@@ -89,7 +89,7 @@ declare module "love.graphics" {
      * @param transform The Transform object to apply to the current graphics coordinate transform.
      * @link [love.graphics.applyTransform](https://love2d.org/wiki/love.graphics.applyTransform)
      */
-    export function applyTransform(transform: Transform): void;
+    function applyTransform(transform: Transform): void;
 
     /**
      * Creates a screenshot once the current frame is done (after love.draw has
@@ -102,7 +102,7 @@ declare module "love.graphics" {
      * @param filename The filename to save the screenshot to. The encoded image type is determined based on the extension of the filename, and must be one of the ImageFormats.
      * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
      */
-    export function captureScreenshot(filename: string): void;
+    function captureScreenshot(filename: string): void;
 
     /**
      * Creates a screenshot once the current frame is done (after love.draw has
@@ -115,7 +115,7 @@ declare module "love.graphics" {
      * @param callback Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.
      * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
      */
-    export function captureScreenshot(callback: (this: void, screenshot: ImageData) => void): void;
+    function captureScreenshot(callback: (this: void, screenshot: ImageData) => void): void;
 
     /**
      * Creates a screenshot once the current frame is done (after love.draw has
@@ -128,7 +128,7 @@ declare module "love.graphics" {
      * @param channel The Channel to push the generated ImageData to.
      * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
      */
-    export function captureScreenshot(channel: Channel): void;
+    function captureScreenshot(channel: Channel): void;
 
     /**
      * Creates a new array Image.
@@ -141,7 +141,7 @@ declare module "love.graphics" {
      * @return image, An Array Image object.
      * @link [love.graphics.newArrayImage](https://love2d.org/wiki/love.graphics.newArrayImage)
      */
-    export function newArrayImage(
+    function newArrayImage(
         slices: Array<ImageInformation>,
         settings?: {
             /**
@@ -173,7 +173,7 @@ declare module "love.graphics" {
      * @param radius The radius of the circle.
      * @link [love.graphics.circle](https://love2d.org/wiki/love.graphics.circle)
      */
-    export function circle(mode: DrawMode, x: number, y: number, radius: number): void;
+    function circle(mode: DrawMode, x: number, y: number, radius: number): void;
 
     /**
      * Draws a circle.
@@ -185,13 +185,13 @@ declare module "love.graphics" {
      * @param segments The number of segments used for drawing the circle. Note: The default variable for the segments parameter varies between different versions of LÖVE.
      * @link [love.graphics.circle](https://love2d.org/wiki/love.graphics.circle)
      */
-    export function circle(mode: DrawMode, x: number, y: number, radius: number, segments: number): void;
+    function circle(mode: DrawMode, x: number, y: number, radius: number, segments: number): void;
 
     /**
      * Clears the screen to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.
      * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
      */
-    export function clear(): void;
+    function clear(): void;
 
     /**
      * Clears the screen or active Canvas to the specified color.
@@ -203,14 +203,7 @@ declare module "love.graphics" {
      * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default `true`)
      * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
      */
-    export function clear(
-        r: number,
-        g: number,
-        b: number,
-        a?: number,
-        clearstencil?: boolean,
-        cleardepth?: boolean
-    ): void;
+    function clear(r: number, g: number, b: number, a?: number, clearstencil?: boolean, cleardepth?: boolean): void;
 
     /**
      * Clears multiple screens to an associated background color.
@@ -220,7 +213,7 @@ declare module "love.graphics" {
      * @param cleardepth Second following boolean value. Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value. (Default: true)
      * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
      */
-    export function clear(
+    function clear(
         color: [number, number, number, number],
         ...remainingArgs: Array<[number, number, number, number] | boolean | number>
     ): void;
@@ -232,7 +225,7 @@ declare module "love.graphics" {
      * @param cleardepth Whether to clear the active depth buffer, if present. It can also be a number between 0 and 1 to clear the depth buffer to a specific value.
      * @link [love.graphics.clear](https://love2d.org/wiki/love.graphics.clear)
      */
-    export function clear(clearcolor: boolean, clearstencil: boolean | number, cleardepth: boolean | number): void;
+    function clear(clearcolor: boolean, clearstencil: boolean | number, cleardepth: boolean | number): void;
 
     /**
      * Discards (trashes) the contents of the screen or active Canvas. This is a
@@ -249,7 +242,7 @@ declare module "love.graphics" {
      * @param discardstencil Whether to discard the contents of the stencil buffer of the screen / active Canvas.
      * @link [love.graphics.discard](https://love2d.org/wiki/love.graphics.discard)
      */
-    export function discard(discardcolor?: boolean, discardstencil?: boolean): void;
+    function discard(discardcolor?: boolean, discardstencil?: boolean): void;
 
     /**
      * Discards (trashes) the contents of the screen or active Canvas. This is a
@@ -266,7 +259,7 @@ declare module "love.graphics" {
      * @param discardstencil Whether to discard the contents of the stencil buffer of the screen / active Canvas.
      * @link [love.graphics.discard](https://love2d.org/wiki/love.graphics.discard)
      */
-    export function discard(discardcolors: Array<boolean>, discardstencil?: boolean): void;
+    function discard(discardcolors: Array<boolean>, discardstencil?: boolean): void;
 
     /**
      * Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh, Text object, or Video) on the screen with optional rotation, scaling and shearing.
@@ -282,7 +275,7 @@ declare module "love.graphics" {
      * @param ky Shearing factor (y-axis).
      * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
      */
-    export function draw(
+    function draw(
         drawable: Drawable,
         x?: number,
         y?: number,
@@ -310,7 +303,7 @@ declare module "love.graphics" {
      * @param ky Shearing factor (y-axis).
      * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
      */
-    export function draw(
+    function draw(
         texture: Texture,
         quad: Quad,
         x?: number,
@@ -330,7 +323,7 @@ declare module "love.graphics" {
      * @param transform Transformation object.
      * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
      */
-    export function draw(texture: Texture, transform: Transform): void;
+    function draw(texture: Texture, transform: Transform): void;
 
     /**
      * Draws a Quadrant of a Texture with the specified Transformation to be applied to it.
@@ -339,7 +332,7 @@ declare module "love.graphics" {
      * @param transform Transformation object.
      * @link [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw)
      */
-    export function draw(texture: Texture, quad: Quad, transform: Transform): void;
+    function draw(texture: Texture, quad: Quad, transform: Transform): void;
 
     /**
      * Draws many instances of a Mesh with a single draw call, using hardware geometry
@@ -366,7 +359,7 @@ declare module "love.graphics" {
      * @param ky Shearing factor (y-axis).
      * @link [love.graphics.drawInstanced](https://love2d.org/wiki/love.graphics.drawInstanced)
      */
-    export function drawInstanced(
+    function drawInstanced(
         mesh: Mesh,
         instancecount: number,
         x?: number,
@@ -397,7 +390,7 @@ declare module "love.graphics" {
      * @param transform A transform object.
      * @link [love.graphics.drawInstanced](https://love2d.org/wiki/love.graphics.drawInstanced)
      */
-    export function drawInstanced(mesh: Mesh, instancecount: number, transform: Transform): void;
+    function drawInstanced(mesh: Mesh, instancecount: number, transform: Transform): void;
 
     /**
      * Draws a layer of an Array Texture.
@@ -415,7 +408,7 @@ declare module "love.graphics" {
      * @param ky Shearing factor (y-axis).
      * @link [love.graphics.drawLayer](https://love2d.org/wiki/love.graphics.drawLayer)
      */
-    export function drawLayer(
+    function drawLayer(
         texture: Texture,
         layerindex: number,
         x?: number,
@@ -446,7 +439,7 @@ declare module "love.graphics" {
      * @param ky Shearing factor (y-axis).
      * @link [love.graphics.drawLayer](https://love2d.org/wiki/love.graphics.drawLayer)
      */
-    export function drawLayer(
+    function drawLayer(
         texture: Texture,
         layerindex: number,
         quad: Quad,
@@ -469,7 +462,7 @@ declare module "love.graphics" {
      * @param transform A transform object.
      * @link [love.graphics.drawLayer](https://love2d.org/wiki/love.graphics.drawLayer)
      */
-    export function drawLayer(texture: Texture, layerindex: number, transform: Transform): void;
+    function drawLayer(texture: Texture, layerindex: number, transform: Transform): void;
 
     /**
      * Draws a layer of an Array Texture.
@@ -480,7 +473,7 @@ declare module "love.graphics" {
      * @param transform A transform object.
      * @link [love.graphics.drawLayer](https://love2d.org/wiki/love.graphics.drawLayer)
      */
-    export function drawLayer(texture: Texture, layerindex: number, quad: Quad, transform: Transform): void;
+    function drawLayer(texture: Texture, layerindex: number, quad: Quad, transform: Transform): void;
 
     /**
      * Draws an ellipse.
@@ -492,7 +485,7 @@ declare module "love.graphics" {
      * @param radiusy The radius of the ellipse along the y-axis (half the ellipse's height).
      * @link [love.graphics.ellipse](https://love2d.org/wiki/love.graphics.ellipse)
      */
-    export function ellipse(mode: DrawMode, x: number, y: number, radiusx: number, radiusy: number): void;
+    function ellipse(mode: DrawMode, x: number, y: number, radiusx: number, radiusy: number): void;
 
     /**
      * Draws an ellipse.
@@ -505,14 +498,7 @@ declare module "love.graphics" {
      * @param segments The number of segments used for drawing the ellipse.
      * @link [love.graphics.ellipse](https://love2d.org/wiki/love.graphics.ellipse)
      */
-    export function ellipse(
-        mode: DrawMode,
-        x: number,
-        y: number,
-        radiusx: number,
-        radiusy: number,
-        segments: number
-    ): void;
+    function ellipse(mode: DrawMode, x: number, y: number, radiusx: number, radiusy: number, segments: number): void;
 
     /**
      * Immediately renders any pending automatically batched draws.
@@ -529,7 +515,7 @@ declare module "love.graphics" {
      * and do not affect automatic batching of other draws.
      * @link [love.graphics.flushBatch](https://love2d.org/wiki/love.graphics.flushBatch)
      */
-    export function flushBatch(): void;
+    function flushBatch(): void;
 
     /**
      * Gets the current background color.
@@ -538,29 +524,27 @@ declare module "love.graphics" {
      * @return g, The green component.
      * @return b, The blue component.
      * @return a, The alpha component.
-     * @tupleReturn
      * @link [love.graphics.getBackgroundColor](https://love2d.org/wiki/love.graphics.getBackgroundColor)
      */
-    export function getBackgroundColor(): [number, number, number, number];
+    function getBackgroundColor(): LuaMultiReturn<[r: number, g: number, b: number, a: number]>;
 
     /**
      * Gets the blending mode.
      *
      * @return mode, The current blend mode.
      * @return alphamode, The current blend alpha mode – it determines how the alpha of drawn objects affects blending.
-     * @tupleReturn
      * @link [love.graphics.getBlendMode](https://love2d.org/wiki/love.graphics.getBlendMode)
      */
-    export function getBlendMode(): [BlendMode, BlendAlphaMode];
+    function getBlendMode(): LuaMultiReturn<[mode: BlendMode, alphamode: BlendAlphaMode]>;
 
     /**
      * Gets the current target Canvas.
      *
      * @returns All active canvases.
-     * @tupleReturn
      * @link [love.graphics.getCanvas](https://love2d.org/wiki/love.graphics.getCanvas)
+     * @since 0.8.0
      */
-    export function getCanvas(): Canvas[];
+    function getCanvas(): LuaMultiReturn<Canvas[]>;
 
     /**
      * Gets the available Canvas formats, and whether each is supported.
@@ -568,14 +552,14 @@ declare module "love.graphics" {
      * @return formats, A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
      * @link [love.graphics.getCanvasFormats](https://love2d.org/wiki/love.graphics.getCanvasFormats)
      */
-    export function getCanvasFormats(): { [key in CanvasFormat]: boolean };
+    function getCanvasFormats(): { [key in CanvasFormat]: boolean };
 
     /**
      * Gets the raw and compressed pixel formats usable for Images, and whether each is supported.
      * @return formats, A table containing PixelFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.
      * @link [love.graphics.getImageFormats](https://love2d.org/wiki/love.graphics.getImageFormats)
      */
-    export function getImageFormats(): { [key in PixelFormat]: boolean };
+    function getImageFormats(): { [key in PixelFormat]: boolean };
 
     /**
      * Gets the current color.
@@ -584,10 +568,9 @@ declare module "love.graphics" {
      * @return g, The red component.
      * @return b, The blue component.
      * @return a, The alpha component.
-     * @tupleReturn
      * @link [love.graphics.getColor](https://love2d.org/wiki/love.graphics.getColor)
      */
-    export function getColor(): [number, number, number, number];
+    function getColor(): LuaMultiReturn<[r: number, g: number, b: number, a: number]>;
 
     /**
      * Gets the active color components used when drawing. Normally all 4 components
@@ -601,10 +584,10 @@ declare module "love.graphics" {
      * @return g, Whether the green color component is active when rendering.
      * @return b, Whether the blue color component is active when rendering.
      * @return a, Whether the alpha color component is active when rendering.
-     * @tupleReturn
      * @link [love.graphics.getColorMask](https://love2d.org/wiki/love.graphics.getColorMask)
+     * @since 0.9.0
      */
-    export function getColorMask(): [boolean, boolean, boolean, boolean];
+    function getColorMask(): LuaMultiReturn<[r: boolean, g: boolean, b: boolean, a: boolean]>;
 
     /**
      * Returns the default scaling filters used with Images, Canvases, and Fonts.
@@ -612,10 +595,10 @@ declare module "love.graphics" {
      * @return min, Filter mode used when scaling the image down.
      * @return mag, Filter mode used when scaling the image up.
      * @return anisotropy, Maximum amount of Anisotropic Filtering used.
-     * @tupleReturn
      * @link [love.graphics.getDefaultFilter](https://love2d.org/wiki/love.graphics.getDefaultFilter)
+     * @since 0.9.0
      */
-    export function getDefaultFilter(): [FilterMode, FilterMode, number];
+    function getDefaultFilter(): LuaMultiReturn<[min: FilterMode, mag: FilterMode, anisotropy: number]>;
 
     /**
      * Gets the current depth test mode and whether writing to the depth buffer is
@@ -627,28 +610,29 @@ declare module "love.graphics" {
      *
      * @return comparemode, Depth comparison mode used for depth testing.
      * @return write, Whether to write update / write values to the depth buffer when rendering.
-     * @tupleReturn
      * @link [love.graphics.getDepthMode](https://love2d.org/wiki/love.graphics.getDepthMode)
+     * @since 11.0
      */
-    export function getDepthMode(): [CompareMode, boolean];
+    function getDepthMode(): LuaMultiReturn<[comparemode: CompareMode, write: boolean]>;
 
     /**
      * Gets the width and height of the window.
      *
      * @return width, The width of the window.
      * @return height, The height of the window.
-     * @tupleReturn
      * @link [love.graphics.getDimensions](https://love2d.org/wiki/love.graphics.getDimensions)
+     * @since 11.0
      */
-    export function getDimensions(): [number, number];
+    function getDimensions(): LuaMultiReturn<[comparemode: number, write: number]>;
 
     /**
      * Gets the current Font object.
      *
      * @return font, The current Font, or _nil/undefined_ if none is set.
      * @link [love.graphics.getFont](https://love2d.org/wiki/love.graphics.getFont)
+     * @since 0.9.0
      */
-    export function getFont(): Font | undefined;
+    function getFont(): Font | undefined;
 
     /**
      * Gets whether triangles with clockwise- or counterclockwise-ordered vertices are
@@ -660,63 +644,72 @@ declare module "love.graphics" {
      *
      * @return winding, The winding mode to use. The default winding is counterclockwise ("ccw").
      * @link [love.graphics.getFrontFaceWinding](https://love2d.org/wiki/love.graphics.getFrontFaceWinding)
+     * @since 11.0
      */
-    export function getFrontFaceWinding(): VertexWinding;
+    function getFrontFaceWinding(): VertexWinding;
 
     /**
      * Gets the height of the window.
      *
      * @return height, The height of the window.
      * @link [love.graphics.getHeight](https://love2d.org/wiki/love.graphics.getHeight)
+     * @since 0.2.1
      */
-    export function getHeight(): number;
+    function getHeight(): number;
 
     /**
      * Gets the width and height in pixels of the window.
+     *
      * @return pixelwidth, The width of the window in pixels.
      * @return pixelheight, The width of the window in pixels.
-     * @tupleReturn
      * @link [love.graphics.getPixelDimensions](https://love2d.org/wiki/love.graphics.getPixelDimensions)
+     * @since 11.0
      */
-    export function getPixelDimensions(): [number, number];
+    function getPixelDimensions(): LuaMultiReturn<[pixelwidth: number, pixelheight: number]>;
 
     /**
      * Gets the height in pixels of the window.
+     *
      * @return pixelheight, The height of the window in pixels.
      * @link [love.graphics.getPixelHeight](https://love2d.org/wiki/love.graphics.getPixelHeight)
+     * @since 11.0
      */
-    export function getPixelHeight(): number;
+    function getPixelHeight(): number;
 
     /**
      * Gets the width in pixels of the window.
+     *
      * @return pixelwidth, The width of the window in pixels.
      * @link [love.graphics.getPixelWidth](https://love2d.org/wiki/love.graphics.getPixelWidth)
+     * @since 11.0
      */
-    export function getPixelWidth(): number;
+    function getPixelWidth(): number;
 
     /**
      * Gets the line join style.
      *
-     * @return join, The LineJoin style.\
+     * @return join, The LineJoin style.
      * @link [love.graphics.getLineJoin](https://love2d.org/wiki/love.graphics.getLineJoin)
      */
-    export function getLineJoin(): LineJoin;
+    function getLineJoin(): LineJoin;
 
     /**
      * Gets the line style.
      *
      * @return style, The current line style.
      * @link [love.graphics.getLineStyle](https://love2d.org/wiki/love.graphics.getLineStyle)
+     * @since 0.3.2
      */
-    export function getLineStyle(): LineStyle;
+    function getLineStyle(): LineStyle;
 
     /**
      * Gets the current line width.
      *
      * @return width, The current line width.
      * @link [love.graphics.getLineWidth](https://love2d.org/wiki/love.graphics.getLineWidth)
+     * @since 0.3.2
      */
-    export function getLineWidth(): number;
+    function getLineWidth(): number;
 
     /**
      * Gets whether back-facing triangles in a Mesh are culled.
@@ -727,8 +720,9 @@ declare module "love.graphics" {
      *
      * @return mode, The Mesh face culling mode in use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).
      * @link [love.graphics.getMeshCullMode](https://love2d.org/wiki/love.graphics.getMeshCullMode)
+     * @since 11.0
      */
-    export function getMeshCullMode(): CullMode;
+    function getMeshCullMode(): CullMode;
 
     /**
      * Returns the current Shader. Returns _nil/undefined_ if none is set.
@@ -737,7 +731,7 @@ declare module "love.graphics" {
      * @link [love.graphics.getShader](https://love2d.org/wiki/love.graphics.getShader)
      * @since 0.9.0
      */
-    export function getShader(): Shader | undefined;
+    function getShader(): Shader | undefined;
 
     /**
      * Gets the current depth of the transform / state stack (the number of pushes
@@ -746,7 +740,7 @@ declare module "love.graphics" {
      * @return depth, The current depth of the transform and state love.graphics stack.
      * @link [love.graphics.getStackDepth](https://love2d.org/wiki/love.graphics.getStackDepth)
      */
-    export function getStackDepth(): number;
+    function getStackDepth(): number;
 
     /**
      * Gets performance-related rendering statistics.
@@ -754,7 +748,7 @@ declare module "love.graphics" {
      * @return stats, A table with the following fields:
      * @link [love.graphics.getStats](https://love2d.org/wiki/love.graphics.getStats)
      */
-    export function getStats(): {
+    function getStats(): {
         /**
          * The number of draw calls made so far during the current frame.
          */
@@ -798,12 +792,12 @@ declare module "love.graphics" {
      *
      * Each Canvas has its own stencil buffer.
      *
-     * @return enabled, Whether stencil testing is enabled.
-     * @return inverted, Whether the stencil test is inverted or not.
-     * @tupleReturn
+     * @return comparemode, The type of comparison that is made for each pixel. Will be "always" if stencil testing is disabled.
+     * @return comparevalue, The value used when comparing with the stencil value of each pixel.
      * @link [love.graphics.getStencilTest](https://love2d.org/wiki/love.graphics.getStencilTest)
+     * @since 0.10.0
      */
-    export function getStencilTest(): [boolean, boolean];
+    function getStencilTest(): LuaMultiReturn<[comparemode: boolean, comparevalue: boolean]>;
 
     /**
      * Gets the optional graphics features and whether they're supported on the
@@ -813,16 +807,18 @@ declare module "love.graphics" {
      *
      * @return features, A table containing GraphicsFeature keys, and boolean values indicating whether each feature is supported.
      * @link [love.graphics.getSupported](https://love2d.org/wiki/love.graphics.getSupported)
+     * @since 0.10.0
      */
-    export function getSupported(): { [key in GraphicsFeature]: boolean };
+    function getSupported(): { [key in GraphicsFeature]: boolean };
 
     /**
      * Gets the system-dependent maximum values for love.graphics features.
      *
      * @return limits, A table containing GraphicsLimit keys, and number values.
      * @link [love.graphics.getSystemLimits](https://love2d.org/wiki/love.graphics.getSystemLimits)
+     * @since 0.10.0
      */
-    export function getSystemLimits(): { [key in GraphicsLimit]: number };
+    function getSystemLimits(): { [key in GraphicsLimit]: number };
 
     /**
      * Gets the point size.
@@ -830,7 +826,7 @@ declare module "love.graphics" {
      * @return size, The current point size.
      * @link [love.graphics.getPointSize](https://love2d.org/wiki/love.graphics.getPointSize)
      */
-    export function getPointSize(): number;
+    function getPointSize(): number;
 
     /**
      * Gets information about the system's video card and drivers.
@@ -839,10 +835,10 @@ declare module "love.graphics" {
      * @return version, The version of the renderer with some extra driver-dependent version info, e.g. "2.1 INTEL-8.10.44".
      * @return vendor, The name of the graphics card vendor, e.g. "Intel Inc".
      * @return device, The name of the graphics card, e.g. "Intel HD Graphics 3000 OpenGL Engine".
-     * @tupleReturn
      * @link [love.graphics.getRendererInfo](https://love2d.org/wiki/love.graphics.getRendererInfo)
+     * @since 0.9.0
      */
-    export function getRendererInfo(): [string, string, string, string];
+    function getRendererInfo(): LuaMultiReturn<[name: string, version: string, vendor: string, device: string]>;
 
     /**
      * Gets the current scissor box.
@@ -851,26 +847,28 @@ declare module "love.graphics" {
      * @return y, The y component of the top-left point of the box.
      * @return width, The width of the box.
      * @return height, The height of the box.
-     * @tupleReturn
      * @link [love.graphics.getScissor](https://love2d.org/wiki/love.graphics.getScissor)
+     * @since 0.4.0
      */
-    export function getScissor(): [number, number, number, number];
+    function getScissor(): LuaMultiReturn<[x: number, y: number, width: number, height: number]>;
 
     /**
      * Gets the available texture types, and whether each is supported.
      *
      * @return texturetypes, A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.
      * @link [love.graphics.getTextureTypes](https://love2d.org/wiki/love.graphics.getTextureTypes)
+     * @since 11.0
      */
-    export function getTextureTypes(): { [key in TextureType]: boolean };
+    function getTextureTypes(): { [key in TextureType]: boolean };
 
     /**
      * Gets the width of the window.
      *
      * @return width, The width of the window.
      * @link [love.graphics.getWidth](https://love2d.org/wiki/love.graphics.getWidth)
+     * @since 0.2.1
      */
-    export function getWidth(): number;
+    function getWidth(): number;
 
     /**
      * Sets the scissor to the rectangle created by the intersection of the specified
@@ -888,8 +886,9 @@ declare module "love.graphics" {
      * @param width The width of the rectangle to intersect with the existing scissor rectangle.
      * @param height The height of the rectangle to intersect with the existing scissor rectangle.
      * @link [love.graphics.intersectScissor](https://love2d.org/wiki/love.graphics.intersectScissor)
+     * @since 0.10.0
      */
-    export function intersectScissor(x: number, y: number, width: number, height: number): void;
+    function intersectScissor(x: number, y: number, width: number, height: number): void;
 
     /**
      * Sets the scissor to the rectangle created by the intersection of the specified
@@ -901,16 +900,20 @@ declare module "love.graphics" {
      *
      * The dimensions of the scissor is unaffected by graphical transformations
      * (translate, scale, ...).
+     *
      * @link [love.graphics.intersectScissor](https://love2d.org/wiki/love.graphics.intersectScissor)
+     * @since 0.10.0
      */
-    export function intersectScissor(): void;
+    function intersectScissor(): void;
 
     /**
      * Gets whether the graphics module is able to be used.
+     *
      * @return active, Whether the graphics module is active and able to be used.
      * @link [love.graphics.isActive](https://love2d.org/wiki/love.graphics.isActive)
+     * @since 0.10.0
      */
-    export function isActive(): boolean;
+    function isActive(): boolean;
 
     /**
      * Converts the given 2D position from screen-space into global coordinates.
@@ -923,10 +926,13 @@ declare module "love.graphics" {
      * @param screenY The y component of the screen-space position.
      * @return globalX, The x component of the position in global coordinates.
      * @return globalY, The y component of the position in global coordinates.
-     * @tupleReturn
      * @link [love.graphics.inverseTransformPoint](https://love2d.org/wiki/love.graphics.inverseTransformPoint)
+     * @since 11.0
      */
-    export function inverseTransformPoint(screenX: number, screenY: number): [number, number];
+    function inverseTransformPoint(
+        screenX: number,
+        screenY: number
+    ): LuaMultiReturn<[globalX: number, globalY: number]>;
 
     /**
      * Gets whether gamma-correct rendering is supported and enabled. It can be
@@ -939,16 +945,18 @@ declare module "love.graphics" {
      *
      * @return gammacorrect, True if gamma-correct rendering is supported and was enabled in love.conf, false otherwise.
      * @link [love.graphics.isGammaCorrect](https://love2d.org/wiki/love.graphics.isGammaCorrect)
+     * @since 0.10.0
      */
-    export function isGammaCorrect(): boolean;
+    function isGammaCorrect(): boolean;
 
     /**
      * Gets whether wireframe mode is used when drawing.
      *
      * @return wireframe, True if wireframe lines are used when drawing, false if it's not.
      * @link [love.graphics.isWireframe](https://love2d.org/wiki/love.graphics.isWireframe)
+     * @since 0.9.1
      */
-    export function isWireframe(): boolean;
+    function isWireframe(): boolean;
 
     /**
      * Draws lines between points.
@@ -959,13 +967,13 @@ declare module "love.graphics" {
      * @param points x position followed by y position continued.
      * @link [love.graphics.line](https://love2d.org/wiki/love.graphics.line)
      */
-    export function line(...points: number[]): void;
-    export function line(points: number[]): void;
+    function line(...points: number[]): void;
+    function line(points: number[]): void;
 
     /**
      * Interface for passing settings table to love.graphics.newCanvas
      */
-    export interface CanvasSettings {
+    interface CanvasSettings {
         type?: TextureType;
         format?: PixelFormat;
         readable?: boolean;
@@ -976,50 +984,60 @@ declare module "love.graphics" {
 
     /**
      * Creates a new Canvas object for offscreen rendering.
+     *
      * @returns canvas, A new Canvas with dimensions equal to the window's size in pixels.
      * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+     * @since 0.8.0
      */
-    export function newCanvas(): Canvas;
+    function newCanvas(): Canvas;
 
     /**
      * Creates a new Canvas object with specified width and height.
+     *
      * @param width The width of the Canvas.
      * @param height The height of the Canvas.
      * @param settings A table of optional settings.
      * @return canvas, A new Canvas with specified width and height.
      * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+     * @since 0.8.0
      */
-    export function newCanvas(width: number, height: number): Canvas;
+    function newCanvas(width: number, height: number): Canvas;
 
     /**
      * Creates a 2D or cubemap Canvas using the given settings.
+     *
      * @param width The width of the Canvas.
      * @param height The height of the Canvas.
      * @param settings A table of optional settings.
      * @return canvas, A new Canvas object.
      * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+     * @since 11.0
      */
-    export function newCanvas(width: number, height: number, settings: CanvasSettings): Canvas;
+    function newCanvas(width: number, height: number, settings: CanvasSettings): Canvas;
 
     /**
      * Creates a volume or array texture-type Canvas.
+     *
      * @param width The width of the Canvas.
      * @param height The height of the Canvas.
      * @param layers The number of array layers (if the Canvas is an Array Texture), or the volume depth (if the Canvas is a Volume Texture).
      * @param settings A table of optional settings.
      * @return canvas, A new Canvas with specified width and height.
      * @link [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas)
+     * @since 11.0
      */
-    export function newCanvas(width: number, height: number, layers: number, settings?: CanvasSettings): Canvas;
+    function newCanvas(width: number, height: number, layers: number, settings?: CanvasSettings): Canvas;
 
     /**
      * Creates a new cubemap Image.
+     *
      * @param filename The filepath to a cubemap image file (or a File, FileData, or ImageData).
      * @param settings Optional table of settings to configure the cubemap image.
      * @return image, An cubemap Image object.
      * @link [love.graphics.newCubeImage](https://love2d.org/wiki/love.graphics.newCubeImage)
+     * @since 11.0
      */
-    export function newCubeImage(filename: ImageInformation, settings?: ImageSettings): Image;
+    function newCubeImage(filename: ImageInformation, settings?: ImageSettings): Image;
 
     /**
      * Creates a cubemap Image given a different image file for each cube face.
@@ -1027,15 +1045,16 @@ declare module "love.graphics" {
      * @param settings Optional table of settings to configure the cubemap image.
      * @return image, An cubemap Image object.
      * @link [love.graphics.newCubeImage](https://love2d.org/wiki/love.graphics.newCubeImage)
+     * @since 11.0
      */
-    export function newCubeImage(
+    function newCubeImage(
         faces: [
-            ImageInformation,
-            ImageInformation,
-            ImageInformation,
-            ImageInformation,
-            ImageInformation,
-            ImageInformation
+            faceA: ImageInformation,
+            faceB: ImageInformation,
+            faceC: ImageInformation,
+            faceD: ImageInformation,
+            faceE: ImageInformation,
+            faceF: ImageInformation
         ],
         settings?: ImageSettings
     ): Image;
@@ -1047,7 +1066,7 @@ declare module "love.graphics" {
      * @returns font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
      */
-    export function newFont(filename: string): Font;
+    function newFont(filename: string): Font;
 
     /**
      * Create a new TrueType font.
@@ -1058,8 +1077,9 @@ declare module "love.graphics" {
      * @param dpiscale The DPI scale factor of the font. (Default: love.graphics.getDPIScale())
      * @returns font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
+     * @since 11.0
      */
-    export function newFont(filename: string, size: number, hinting?: HintingMode, dpiscale?: number): Font;
+    function newFont(filename: string, size: number, hinting?: HintingMode, dpiscale?: number): Font;
 
     /**
      * Create a new BMFont.
@@ -1069,7 +1089,7 @@ declare module "love.graphics" {
      * @return font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
      */
-    export function newFont(filename: string, imagefilename: string): Font;
+    function newFont(filename: string, imagefilename: string): Font;
 
     /**
      * Create a new instance of the default font (Vera Sans) with a custom size.
@@ -1079,8 +1099,9 @@ declare module "love.graphics" {
      * @param dpiscale The DPI scale factor of the font.
      * @returns font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
+     * @since 11.0
      */
-    export function newFont(size?: number, hinting?: HintingMode, dpiscale?: number): Font;
+    function newFont(size?: number, hinting?: HintingMode, dpiscale?: number): Font;
 
     /**
      * Creates a new Font from a TrueType Font or BMFont file. Created fonts are not
@@ -1092,39 +1113,57 @@ declare module "love.graphics" {
      * @param size The size of the font in pixels.
      * @return font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newFont](https://love2d.org/wiki/love.graphics.newFont)
+     * @since 11.0
      */
-    export function newFont(size: number): Font;
+    function newFont(size: number): Font;
 
     /**
      * Creates a standard Mesh with the specified vertices.
+     *
      * @param vertices The table filled with vertex information tables.
      * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
      * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
      * @return mesh, The new Mesh.
      * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
+     * @since 0.10.0
      */
-    export function newMesh(vertices: Array<VertexInformation>, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+    function newMesh(
+        vertices: [
+            faceA: ImageInformation,
+            faceB: ImageInformation,
+            faceC: ImageInformation,
+            faceD: ImageInformation,
+            faceE: ImageInformation,
+            faceF: ImageInformation
+        ],
+        mode?: MeshDrawMode,
+        usage?: SpriteBatchUsage
+    ): Mesh;
 
     /**
      * Creates a standard Mesh with the specified number of vertices.
+     *
      * @param vertexcount The total number of vertices the Mesh will use. Each vertex is initialized to [0,0, 0,0, 255,255,255,255].
      * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
      * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
      * @return mesh, The new Mesh.
      * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
+     * @since 0.10.0
      */
-    export function newMesh(vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
+    function newMesh(vertexcount: number, mode?: MeshDrawMode, usage?: SpriteBatchUsage): Mesh;
 
     /**
      * Creates a Mesh with custom vertex attributes and the specified vertex data.
+     *
      * @param vertexformat A table in the form of [attribute, ...]. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
      * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of [attributecomponent, ...].
      * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
      * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
      * @return mesh, The new Mesh.
      * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
+     * @since 0.10.0
      */
-    export function newMesh<T extends MeshVertexDataType>(
+    function newMesh<T extends MeshVertexDataType>(
         vertexformat: Array<VertexAttribute<T>>,
         vertices: Array<Array<any>>,
         mode?: MeshDrawMode,
@@ -1133,14 +1172,16 @@ declare module "love.graphics" {
 
     /**
      * Creates a Mesh with custom vertex attributes and the specified number of vertices.
+     *
      * @param vertexformat A table in the form of [attribute, ...]. Each attribute is a table which specifies a custom vertex attribute used for each vertex.
      * @param vertexcount The total number of vertices the Mesh will use.
      * @param mode How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.
      * @param usage The expected usage of the Mesh. The specified usage mode affects the Mesh's memory usage and performance.
      * @return mesh, The new Mesh.
      * @link [love.graphics.newMesh](https://love2d.org/wiki/love.graphics.newMesh)
+     * @since 0.10.0
      */
-    export function newMesh<T extends MeshVertexDataType>(
+    function newMesh<T extends MeshVertexDataType>(
         vertexformat: Array<VertexAttribute<T>>,
         vertexcount: number,
         mode?: MeshDrawMode,
@@ -1149,11 +1190,12 @@ declare module "love.graphics" {
 
     /**
      * Creates a new Image from the image at the specified filename.
+     *
      * @param filename The filepath to the image file.
      * @return image, An Image object which can be drawn on screen.
      * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
      */
-    export function newImage(filename: string): Image;
+    function newImage(filename: string): Image;
 
     /**
      * Creates a new Image from the provided ImageData.
@@ -1161,26 +1203,27 @@ declare module "love.graphics" {
      * @return image, An Image object which can be drawn on screen.
      * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
      */
-    export function newImage(imageData: ImageData): Image;
+    function newImage(imageData: ImageData): Image;
 
     /**
      * Creates a new Image from the provided CompressImageData.
+     *
      * @param compressedImageData A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.
      * @return image, An Image object which can be drawn on screen.
      * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
+     * @since 0.9.0
      */
-    export function newImage(compressedImageData: CompressedImageData): Image;
+    function newImage(compressedImageData: CompressedImageData): Image;
 
     /**
      * Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData, and optionally generates or specifies mipmaps for the image.
      * @param filename The filepath to the image file (or a FileData or ImageData or CompressedImageData object).
-     * @param {Object} flags A table containing the following fields:
-     * @param {boolean} flags.linear True if the image's pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise. (Default: false)
-     * @param {boolean} flags.mipmaps If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
+     * @param flags A table.
      * @return image, A new Image object which can be drawn on screen.
      * @link [love.graphics.newImage](https://love2d.org/wiki/love.graphics.newImage)
+     * @since 0.9.0
      */
-    export function newImage(
+    function newImage(
         filename: string | FileData | ImageData | CompressedImageData,
         flags: {
             /**
@@ -1196,49 +1239,56 @@ declare module "love.graphics" {
 
     /**
      * Creates a new Font by loading a specifically formatted image file.
+     *
      * @param filename The filepath to the image file.
      * @param glyphs A string of the characters in the image in order from left to right.
      * @return font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newImageFont](https://love2d.org/wiki/love.graphics.newImageFont)
      */
-    export function newImageFont(filename: string, glyphs: string): Font;
+    function newImageFont(filename: string, glyphs: string): Font;
 
     /**
      * Creates a new Font from the specifically formatted ImageData.
+     *
      * @param imageData The ImageData object to create the font from.
      * @param glyphs A string of the characters in the image in order from left to right.
      * @return font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newImageFont](https://love2d.org/wiki/love.graphics.newImageFont)
      */
-    export function newImageFont(imageData: ImageData, glyphs: string): Font;
+    function newImageFont(imageData: ImageData, glyphs: string): Font;
 
     /**
      * Creates a new Font with additional spacing to apply to each glyph in the Font.
+     *
      * @param filename The filepath to the image file.
      * @param glyphs A string of the characters in the image in order from left to right.
      * @param extraspacing Additional spacing (positive or negative) to apply to each glyph in the Font.
      * @return font, A Font object which can be used to draw text on screen.
      * @link [love.graphics.newImageFont](https://love2d.org/wiki/love.graphics.newImageFont)
+     * @since 0.10.0
      */
-    export function newImageFont(filename: string | ImageData, glyphs: string, extraspacing: number): Font;
+    function newImageFont(filename: string | ImageData, glyphs: string, extraspacing: number): Font;
 
     /**
      * Creates a new ParticleSystem using the specified image.
+     *
      * @param image The image to use.
      * @param buffer The max number of particles at the same time. (Default: 1000)
      * @return system, A new ParticleSystem.
      * @link [love.graphics.newParticleSystem](https://love2d.org/wiki/love.graphics.newParticleSystem)
      */
-    // export function newParticleSystem(image: Image, buffer?: number): ParticleSystem;
+    function newParticleSystem(image: Image, buffer?: number): ParticleSystem;
 
     /**
      * Creates a new ParticleSystem using the specified Texture.
+     *
      * @param texture The Image or Canvas to use.
      * @param buffer The max number of particles at the same time. (Default: 1000)
      * @return system, A new ParticleSystem.
      * @link [love.graphics.newParticleSystem](https://love2d.org/wiki/love.graphics.newParticleSystem)
+     * @since 0.9.1
      */
-    export function newParticleSystem(texture: Texture, buffer?: number): ParticleSystem;
+    function newParticleSystem(texture: Texture, buffer?: number): ParticleSystem;
 
     /**
      * Creates a new Shader object for hardware-accelerated vertex and pixel effects.
@@ -1255,8 +1305,9 @@ declare module "love.graphics" {
      * @param code The pixel shader or vertex shader code, or a filename pointing to a file with the code.
      * @return shader, A Shader object for use in drawing operations.
      * @link [love.graphics.newShader](https://love2d.org/wiki/love.graphics.newShader)
+     * @since 0.9.0
      */
-    export function newShader<T = undefined>(code: string): Shader<T>;
+    function newShader<T = undefined>(code: string): Shader<T>;
 
     /**
      * Creates a new Shader object for hardware-accelerated vertex and pixel effects.
@@ -1274,8 +1325,9 @@ declare module "love.graphics" {
      * @param vertexcode The vertex shader code, or a filename pointing to a file with the code.
      * @return shader, A Shader object for use in drawing operations.
      * @link [love.graphics.newShader](https://love2d.org/wiki/love.graphics.newShader)
+     * @since 0.9.0
      */
-    export function newShader<T = undefined>(pixelcode: string, vertexcode: string): Shader;
+    function newShader<T = undefined>(pixelcode: string, vertexcode: string): Shader<T>;
 
     /**
      * Creates a new drawable Text object.
@@ -1286,7 +1338,7 @@ declare module "love.graphics" {
      * @link [love.graphics.newText](https://love2d.org/wiki/love.graphics.newText)
      * @since 0.10.0
      */
-    export function newText(font: Font, textstring?: string): Text;
+    function newText(font: Font, textstring?: string): Text;
 
     /**
      * Creates a new Quad.
@@ -1305,7 +1357,7 @@ declare module "love.graphics" {
      * @return quad, The new Quad.
      * @link [love.graphics.newQuad](https://love2d.org/wiki/love.graphics.newQuad)
      */
-    export function newQuad(x: number, y: number, width: number, height: number, sw: number, sh: number): Quad;
+    function newQuad(x: number, y: number, width: number, height: number, sw: number, sh: number): Quad;
 
     /**
      * Creates a new SpriteBatch object.
@@ -1316,32 +1368,38 @@ declare module "love.graphics" {
      * @return spriteBatch, The new SpriteBatch.
      * @link [love.graphics.newSpriteBatch](https://love2d.org/wiki/love.graphics.newSpriteBatch)
      */
-    export function newSpriteBatch(texture: Texture, maxsprites?: number, usage?: SpriteBatchUsage): SpriteBatch;
+    function newSpriteBatch(texture: Texture, maxsprites?: number, usage?: SpriteBatchUsage): SpriteBatch;
 
     /**
      * Creates a new drawable Video from the specified video file. Currently only Ogg Theora video files are supported.
+     *
      * @param filename The file path to the Ogg Theora video file.
      * @return video, A new Video.
      * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
+     * @since 0.10.0
      */
-    export function newVideo(filename: string): Video;
+    function newVideo(filename: string): Video;
 
     /**
      * Creates a new drawable Video from the specified VideoStream. Currently only Ogg Theora video files are supported.
+     *
      * @param videostream A video stream object.
      * @return video, A new Video.
      * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
+     * @since 0.10.0
      */
-    export function newVideo(videostream: VideoStream): Video;
+    function newVideo(videostream: VideoStream): Video;
 
     /**
      * Creates a new drawable Video with the specified settings.
+     *
      * @param filename The file path to the Ogg Theora video file (or VideoStream).
      * @param settings Settings for the new video.
      * @return video, A new Video.
      * @link [love.graphics.newVideo](https://love2d.org/wiki/love.graphics.newVideo)
+     * @since 0.10.0
      */
-    export function newVideo(
+    function newVideo(
         filename: string | VideoStream,
         settings?: {
             /**
@@ -1357,12 +1415,14 @@ declare module "love.graphics" {
 
     /**
      * Creates a new volume (3D) Image.
+     *
      * @param layers A table containing filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array. A table of tables can also be given, where each sub-table represents a single mipmap level and contains all layers for that mipmap.
      * @param settings Optional table of settings to configure the volume image.
      * @return image, A volume Image object.
      * @link [love.graphics.newVolumeImage](https://love2d.org/wiki/love.graphics.newVolumeImage)
+     * @since 11.0
      */
-    export function newVolumeImage(layers: Array<ImageInformation>, settings?: ImageSettings): Image;
+    function newVolumeImage(layers: ImageInformation[], settings?: ImageSettings): Image;
 
     /**
      * Resets the current coordinate transformation.
@@ -1372,8 +1432,9 @@ declare module "love.graphics" {
      * love.graphics.translate. It returns the current transformation state to its
      * defaults.
      * @link [love.graphics.origin](https://love2d.org/wiki/love.graphics.origin)
+     * @since 0.9.0
      */
-    export function origin(): void;
+    function origin(): void;
 
     /**
      * Draws one or more points.
@@ -1382,14 +1443,16 @@ declare module "love.graphics" {
      * love.graphics.points([4, 4, 8, 8, 12, 12]);         // [xyxyxy...]
      * love.graphics.points([[4, 4], [8, 8, 0, 1, 1, 1]]); // [[xy],[xyrgba],...]
      * ```
-     * @param points The x and y positions of the points to draw.
      *
-     * RGBA values are optional.
+     * @param points The x and y positions of the points to draw. RGBA values are optional.
      * @link [love.graphics.points](https://love2d.org/wiki/love.graphics.points)
+     * @since 0.10.0
      */
-    export function points(...points: Array<number>): void;
-    export function points(points: Array<number>): void;
-    export function points(points: Array<[number, number] | [number, number, number, number, number, number]>): void;
+    function points(...points: number[]): void;
+    function points(points: number[]): void;
+    function points(
+        points: Array<[x: number, y: number] | [x: number, y: number, r: number, g: number, b: number, a: number]>
+    ): void;
 
     /**
      * Draw a polygon.
@@ -1401,12 +1464,14 @@ declare module "love.graphics" {
      * love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);     // "fill", xyxyxy...
      * love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
      * ```
+     *
      * @param mode How to draw the polygon.
      * @param xys x and y positions for the vertices of the polygon.
      * @link [love.graphics.polygon](https://love2d.org/wiki/love.graphics.polygon)
+     * @since 0.4.0
      */
-    export function polygon(mode: DrawMode, ...xys: Array<number>): void;
-    export function polygon(mode: DrawMode, xys: Array<number>): void;
+    function polygon(mode: DrawMode, ...xys: Array<number>): void;
+    function polygon(mode: DrawMode, xys: Array<number>): void;
 
     /**
      * Pops the current coordinate transformation from the transformation stack.
@@ -1414,9 +1479,10 @@ declare module "love.graphics" {
      * This function is always used to reverse a previous push operation. It returns
      * the current transformation state to what it was before the last preceding push.
      * For an example, see the description of love.graphics.push.
+     *
      * @link [love.graphics.pop](https://love2d.org/wiki/love.graphics.pop)
      */
-    export function pop(): void;
+    function pop(): void;
 
     /**
      * Displays the results of drawing operations on the screen.
@@ -1424,11 +1490,12 @@ declare module "love.graphics" {
      * This function is used when writing your own love.run function. It presents all
      * the results of your drawing operations on the screen. See the example in
      * love.run for a typical use of this function.
+     *
      * @link [love.graphics.present](https://love2d.org/wiki/love.graphics.present)
      */
-    export function present(): void;
+    function present(): void;
 
-    export type ColouredText = Array<string | [number, number, number, number]>;
+    type ColouredText = Array<string | [r: number, g: number, b: number, a: number]>;
 
     /**
      * Draws text on the screen.
@@ -1448,7 +1515,7 @@ declare module "love.graphics" {
      * @param ky Shear factor (y-axis).
      * @link [love.graphics.print](https://love2d.org/wiki/love.graphics.print)
      */
-    export function print(
+    function print(
         text: string | ColouredText,
         x?: number,
         y?: number,
@@ -1460,7 +1527,7 @@ declare module "love.graphics" {
         kx?: number,
         ky?: number
     ): void;
-    export function print(text: string | ColouredText, transform: Transform): void;
+    function print(text: string | ColouredText, transform: Transform): void;
 
     /**
      * Draws formatted text, with word wrap and alignment.
@@ -1468,9 +1535,10 @@ declare module "love.graphics" {
      * love.graphics.printf("Hello", 8, 8, 400);
      * love.graphics.printf([[1, 0, 0, 1], "Red"], 8, 8, 400);
      * ```
+     *
      * @link [love.graphics.printf](https://love2d.org/wiki/love.graphics.printf)
      */
-    export function printf(
+    function printf(
         text: string | ColouredText,
         x: number,
         y: number,
@@ -1484,7 +1552,7 @@ declare module "love.graphics" {
         kx?: number,
         ky?: number
     ): void;
-    export function printf(
+    function printf(
         text: string | ColouredText,
         font: Font,
         x: number,
@@ -1499,7 +1567,7 @@ declare module "love.graphics" {
         kx?: number,
         ky?: number
     ): void;
-    export function printf(
+    function printf(
         text: string | ColouredText,
         transform: Transform,
         x: number,
@@ -1514,7 +1582,7 @@ declare module "love.graphics" {
         kx?: number,
         ky?: number
     ): void;
-    export function printf(
+    function printf(
         text: string | ColouredText,
         font: Font,
         transform: Transform,
@@ -1544,7 +1612,7 @@ declare module "love.graphics" {
      * @param stack The type of stack to push (e.g. just transformation state, or all love.graphics state).
      * @link [love.graphics.push](https://love2d.org/wiki/love.graphics.push)
      */
-    export function push(stack?: StackType): void;
+    function push(stack?: StackType): void;
 
     /**
      * Draws a rectangle.
@@ -1555,8 +1623,9 @@ declare module "love.graphics" {
      * @param width Width of the rectangle.
      * @param height Height of the rectangle.
      * @link [love.graphics.rectangle](https://love2d.org/wiki/love.graphics.rectangle)
+     * @since 0.3.2
      */
-    export function rectangle(mode: DrawMode, x: number, y: number, width: number, height: number): void;
+    function rectangle(mode: DrawMode, x: number, y: number, width: number, height: number): void;
 
     /**
      * Draws a rectangle.
@@ -1570,8 +1639,9 @@ declare module "love.graphics" {
      * @param ry The y-axis radius of each round corner. Cannot be greater than half the rectangle's height.
      * @param segments The number of segments used for drawing the round corners. A default amount will be chosen if no number is given.
      * @link [love.graphics.rectangle](https://love2d.org/wiki/love.graphics.rectangle)
+     * @since 0.3.2
      */
-    export function rectangle(
+    function rectangle(
         mode: DrawMode,
         x: number,
         y: number,
@@ -1587,8 +1657,9 @@ declare module "love.graphics" {
      *
      * @param transform The Transform object to replace the current graphics coordinate transform with.
      * @link [love.graphics.replaceTransform](https://love2d.org/wiki/love.graphics.replaceTransform)
+     * @since 11.0
      */
-    export function replaceTransform(transform: Transform): void;
+    function replaceTransform(transform: Transform): void;
 
     /**
      * Resets the current graphics settings.
@@ -1597,9 +1668,10 @@ declare module "love.graphics" {
      * color black, resets any active Canvas or Shader, and removes any scissor
      * settings. It sets the BlendMode to alpha. It also sets both the point and line
      * drawing modes to smooth and their sizes to 1.0.
+     *
      * @link [love.graphics.reset](https://love2d.org/wiki/love.graphics.reset)
      */
-    export function reset(): void;
+    function reset(): void;
 
     /**
      * Rotates the coordinate system in two dimensions.
@@ -1611,7 +1683,7 @@ declare module "love.graphics" {
      * @param angle The amount to rotate the coordinate system in radians.
      * @link [love.graphics.rotate](https://love2d.org/wiki/love.graphics.rotate)
      */
-    export function rotate(angle: number): void;
+    function rotate(angle: number): void;
 
     /**
      * Scales the coordinate system in two dimensions.
@@ -1638,7 +1710,7 @@ declare module "love.graphics" {
      * @param sy The scaling in the direction of the y-axis. If omitted, it defaults to same as parameter sx.
      * @link [love.graphics.scale](https://love2d.org/wiki/love.graphics.scale)
      */
-    export function scale(sx: number, sy?: number): void;
+    function scale(sx: number, sy?: number): void;
 
     /**
      * Sets the background color.
@@ -1649,7 +1721,7 @@ declare module "love.graphics" {
      * @param a The alpha component.
      * @link [love.graphics.setBackgroundColor](https://love2d.org/wiki/love.graphics.setBackgroundColor)
      */
-    export function setBackgroundColor(r: number, g: number, b: number, a?: number): void;
+    function setBackgroundColor(r: number, g: number, b: number, a?: number): void;
 
     /**
      * Sets the background color.
@@ -1657,15 +1729,16 @@ declare module "love.graphics" {
      * @param rgba A numerical indexed table with the red, green and blue values as numbers. Alpha is 255 if it is not in the table
      * @link [love.graphics.setBackgroundColor](https://love2d.org/wiki/love.graphics.setBackgroundColor)
      */
-    export function setBackgroundColor(rgba: [number, number, number, number?]): void;
+    function setBackgroundColor(rgba: [r: number, g: number, b: number, a?: number]): void;
 
     /**
      * Sets the blending mode.
      *
      * @param mode The blend mode to use.
      * @link [love.graphics.setBlendMode](https://love2d.org/wiki/love.graphics.setBlendMode)
+     * @since 0.2.0
      */
-    export function setBlendMode(mode: BlendMode): void;
+    function setBlendMode(mode: BlendMode): void;
 
     /**
      * Sets the blending mode.
@@ -1673,17 +1746,20 @@ declare module "love.graphics" {
      * @param mode The blend mode to use.
      * @param alphamode What to do with the alpha of drawn objects when blending.
      * @link [love.graphics.setBlendMode](https://love2d.org/wiki/love.graphics.setBlendMode)
+     * @since 0.2.0
      */
-    export function setBlendMode(mode: BlendMode, alphamode?: BlendAlphaMode): void;
+    function setBlendMode(mode: BlendMode, alphamode?: BlendAlphaMode): void;
 
     /**
      * Captures drawing operations to a [Canvas](https://love2d.org/wiki/Canvas).
+     *
      * @link [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
+     * @since 0.8.0
      */
-    export function setCanvas(): void;
-    export function setCanvas(canvas: Canvas, mipmap?: number): void;
-    export function setCanvas(...canvases: Array<Canvas>): void;
-    export function setCanvas(canvas: Canvas, slice?: number, mipmap?: number): void;
+    function setCanvas(): void;
+    function setCanvas(canvas: Canvas, mipmap?: number): void;
+    function setCanvas(...canvases: Array<Canvas>): void;
+    function setCanvas(canvas: Canvas, slice?: number, mipmap?: number): void;
 
     /**
      * Sets the color used for drawing.
@@ -1694,7 +1770,7 @@ declare module "love.graphics" {
      * @param alpha The amount of alpha. The alpha value will be applied to all subsequent draw operations, even the drawing of an image.
      * @link [love.graphics.setColor](https://love2d.org/wiki/love.graphics.setColor)
      */
-    export function setColor(red: number, green: number, blue: number, alpha?: number): void;
+    function setColor(red: number, green: number, blue: number, alpha?: number): void;
 
     /**
      * Sets the color used for drawing.
@@ -1702,7 +1778,7 @@ declare module "love.graphics" {
      * @param rgba A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 255 if it is left out.
      * @link [love.graphics.setColor](https://love2d.org/wiki/love.graphics.setColor)
      */
-    export function setColor(rgba: [number, number, number, number?]): void;
+    function setColor(rgba: [r: number, g: number, b: number, a?: number]): void;
 
     /**
      * Sets the color mask. Enables or disables specific color components when
@@ -1716,8 +1792,9 @@ declare module "love.graphics" {
      * @param blue Render blue component.
      * @param alpha Render alpha component.
      * @link [love.graphics.setColorMask](https://love2d.org/wiki/love.graphics.setColorMask)
+     * @since 0.9.0
      */
-    export function setColorMask(red: boolean, green: boolean, blue: boolean, alpha: boolean): void;
+    function setColorMask(red: boolean, green: boolean, blue: boolean, alpha: boolean): void;
 
     /**
      * Sets the color mask. Enables or disables specific color components when
@@ -1726,8 +1803,9 @@ declare module "love.graphics" {
      *
      * Enables all color components when called without arguments.
      * @link [love.graphics.setColorMask](https://love2d.org/wiki/love.graphics.setColorMask)
+     * @since 0.9.0
      */
-    export function setColorMask(): void;
+    function setColorMask(): void;
 
     /**
      * Sets the default scaling filters used with Images, Canvases, and Fonts.
@@ -1738,8 +1816,9 @@ declare module "love.graphics" {
      * @param mag Filter mode used when scaling the image up.
      * @param anisotropy Maximum amount of Anisotropic Filtering used.
      * @link [love.graphics.setDefaultFilter](https://love2d.org/wiki/love.graphics.setDefaultFilter)
+     * @since 0.9.0
      */
-    export function setDefaultFilter(min: FilterMode, mag?: FilterMode, anisotropy?: number): void;
+    function setDefaultFilter(min: FilterMode, mag?: FilterMode, anisotropy?: number): void;
 
     /**
      * Configures depth testing and writing to the depth buffer.
@@ -1751,8 +1830,9 @@ declare module "love.graphics" {
      * @param comparemode Depth comparison mode used for depth testing.
      * @param write Whether to write update / write values to the depth buffer when rendering.
      * @link [love.graphics.setDepthMode](https://love2d.org/wiki/love.graphics.setDepthMode)
+     * @since 11.0
      */
-    export function setDepthMode(comparemode: CompareMode, write: boolean): void;
+    function setDepthMode(comparemode: CompareMode, write: boolean): void;
 
     /**
      * Set an already-loaded Font as the current font or create and load a new one
@@ -1764,7 +1844,7 @@ declare module "love.graphics" {
      * @param font The Font object to use.
      * @link [love.graphics.setFont](https://love2d.org/wiki/love.graphics.setFont)
      */
-    export function setFont(font: Font): void;
+    function setFont(font: Font): void;
 
     /**
      * Sets whether triangles with clockwise- or counterclockwise-ordered vertices are
@@ -1776,8 +1856,9 @@ declare module "love.graphics" {
      *
      * @param winding The winding mode to use. The default winding is counterclockwise ("ccw").
      * @link [love.graphics.setFrontFaceWinding](https://love2d.org/wiki/love.graphics.setFrontFaceWinding)
+     * @since 11.0
      */
-    export function setFrontFaceWinding(winding: VertexWinding): void;
+    function setFrontFaceWinding(winding: VertexWinding): void;
 
     /**
      * Sets the line join style.
@@ -1785,7 +1866,7 @@ declare module "love.graphics" {
      * @param join The LineJoin to use.
      * @link [love.graphics.setLineJoin](https://love2d.org/wiki/love.graphics.setLineJoin)
      */
-    export function setLineJoin(join: LineJoin): void;
+    function setLineJoin(join: LineJoin): void;
 
     /**
      * Sets the line style.
@@ -1793,15 +1874,16 @@ declare module "love.graphics" {
      * @param style The LineStyle to use.
      * @link [love.graphics.setLineJoin](https://love2d.org/wiki/love.graphics.setLineJoin)
      */
-    export function setLineStyle(style: LineStyle): void;
+    function setLineStyle(style: LineStyle): void;
 
     /**
      * Sets the line width.
      *
      * @param width The width of the line.
      * @link [love.graphics.setLineWidth](https://love2d.org/wiki/love.graphics.setLineWidth)
+     * @since 0.3.2
      */
-    export function setLineWidth(width: number): void;
+    function setLineWidth(width: number): void;
 
     /**
      * Sets whether back-facing triangles in a Mesh are culled.
@@ -1812,16 +1894,18 @@ declare module "love.graphics" {
      *
      * @param mode The Mesh face culling mode to use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).
      * @link [love.graphics.setMeshCullMode](https://love2d.org/wiki/love.graphics.setMeshCullMode)
+     * @since 11.0
      */
-    export function setMeshCullMode(mode: CullMode): void;
+    function setMeshCullMode(mode: CullMode): void;
 
     /**
      * Creates and sets a new font.
      * @param size The size of the font. (Default: 12)
      * @return font, The new font.
      * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+     * @since 0.8.0
      */
-    export function setNewFont(size?: number): Font;
+    function setNewFont(size?: number): Font;
 
     /**
      * Creates and sets a new font.
@@ -1829,8 +1913,9 @@ declare module "love.graphics" {
      * @param size The size of the font. (Default: 12)
      * @return font, The new font.
      * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+     * @since 0.8.0
      */
-    export function setNewFont(filename: string, size?: number): Font;
+    function setNewFont(filename: string, size?: number): Font;
 
     /**
      * Creates and sets a new font.
@@ -1838,8 +1923,9 @@ declare module "love.graphics" {
      * @param size The size of the font. (Default: 12)
      * @return font, The new font.
      * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+     * @since 0.8.0
      */
-    export function setNewFont(file: File, size?: number): Font;
+    function setNewFont(file: File, size?: number): Font;
 
     /**
      * Creates and sets a new font.
@@ -1847,16 +1933,18 @@ declare module "love.graphics" {
      * @param size The size of the font. (Default: 12)
      * @return font, The new font.
      * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+     * @since 0.8.0
      */
-    export function setNewFont(data: Data, size?: number): Font;
+    function setNewFont(data: Data, size?: number): Font;
 
     /**
      * Creates and sets a new font.
      * @param data A Data with the font.
      * @return font, The new font.
      * @link [love.graphics.setNewFont](https://love2d.org/wiki/love.graphics.setNewFont)
+     * @since 0.8.0
      */
-    export function setNewFont(rasterizer: Rasterizer): Font;
+    function setNewFont(rasterizer: Rasterizer): Font;
 
     /**
      * Sets or resets a Shader as the current pixel effect or vertex shaders. All
@@ -1865,8 +1953,9 @@ declare module "love.graphics" {
      *
      * Disables the shaders when called without arguments.
      * @link [love.graphics.setShader](https://love2d.org/wiki/love.graphics.setShader)
+     * @since 0.9.0
      */
-    export function setShader(): void;
+    function setShader(): void;
 
     /**
      * Sets or resets a Shader as the current pixel effect or vertex shaders. All
@@ -1877,8 +1966,9 @@ declare module "love.graphics" {
      *
      * @param shader The new shader.
      * @link [love.graphics.setShader](https://love2d.org/wiki/love.graphics.setShader)
+     * @since 0.9.0
      */
-    export function setShader(shader: Shader): void;
+    function setShader(shader: Shader): void;
 
     /**
      * Sets the point size.
@@ -1886,7 +1976,7 @@ declare module "love.graphics" {
      * @param size The new point size.
      * @link [love.graphics.setPointSize](https://love2d.org/wiki/love.graphics.setPointSize)
      */
-    export function setPointSize(size: number): void;
+    function setPointSize(size: number): void;
 
     /**
      * Sets or disables scissor.
@@ -1899,17 +1989,20 @@ declare module "love.graphics" {
      * @param width The width of clipping rectangle.
      * @param height The height of clipping rectangle.
      * @link [love.graphics.setScissor](https://love2d.org/wiki/love.graphics.setScissor)
+     * @since 0.4.0
      */
-    export function setScissor(x: number, y: number, width: number, height: number): void;
+    function setScissor(x: number, y: number, width: number, height: number): void;
 
     /**
      * Sets or disables scissor.
      *
      * The scissor limits the drawing area to a specified rectangle. This affects all
      * graphics calls, including love.graphics.clear.
+     *
      * @link [love.graphics.setScissor](https://love2d.org/wiki/love.graphics.setScissor)
+     * @since 0.4.0
      */
-    export function setScissor(): void;
+    function setScissor(): void;
 
     /**
      * Configures or disables stencil testing.
@@ -1925,8 +2018,9 @@ declare module "love.graphics" {
      * @param comparemode The type of comparison to make for each pixel.
      * @param comparevalue The value to use when comparing with the stencil value of each pixel. Must be between 0 and 255.
      * @link [love.graphics.setStencilTest](https://love2d.org/wiki/love.graphics.setStencilTest)
+     * @since 0.10.0
      */
-    export function setStencilTest(comparemode: CompareMode, comparevalue: number): void;
+    function setStencilTest(comparemode: CompareMode, comparevalue: number): void;
 
     /**
      * Configures or disables stencil testing.
@@ -1938,9 +2032,11 @@ declare module "love.graphics" {
      * love.graphics.stencil.
      *
      * Each Canvas has its own per-pixel stencil values.
+     *
      * @link [love.graphics.setStencilTest](https://love2d.org/wiki/love.graphics.setStencilTest)
+     * @since 0.10.0
      */
-    export function setStencilTest(): void;
+    function setStencilTest(): void;
 
     /**
      * Sets whether wireframe lines will be used when drawing.
@@ -1952,8 +2048,9 @@ declare module "love.graphics" {
      *
      * @param enable True to enable wireframe mode when drawing, false to disable it.
      * @link [love.graphics.setWireframe](https://love2d.org/wiki/love.graphics.setWireframe)
+     * @since 0.9.1
      */
-    export function setWireframe(enable: boolean): void;
+    function setWireframe(enable: boolean): void;
 
     /**
      * Shears the coordinate system.
@@ -1961,8 +2058,9 @@ declare module "love.graphics" {
      * @param kx The shear factor on the x-axis.
      * @param ky The shear factor on the y-axis.
      * @link [love.graphics.shear](https://love2d.org/wiki/love.graphics.shear)
+     * @since 0.8.0
      */
-    export function shear(kx: number, ky: number): void;
+    function shear(kx: number, ky: number): void;
 
     /**
      * Draws geometry as a stencil.
@@ -1981,8 +2079,9 @@ declare module "love.graphics" {
      * @param value The new stencil value to use for pixels if the "replace" stencil action is used. Has no effect with other stencil actions. Must be between 0 and 255.
      * @param keepvalues True to preserve old stencil values of pixels, false to re-set every pixel's stencil value to 0 before executing the stencil function. love.graphics.clear will also re-set all stencil values.
      * @link [love.graphics.stencil](https://love2d.org/wiki/love.graphics.stencil)
+     * @since 0.10.0
      */
-    export function stencil(
+    function stencil(
         stencilfunction: (this: void) => void,
         action?: StencilAction,
         value?: number,
@@ -1999,11 +2098,10 @@ declare module "love.graphics" {
      * @param globalX The x component of the position in global coordinates.
      * @param globalY The y component of the position in global coordinates.
      * @return screenX, The x component of the position with graphics transformations applied.
-     * @return sreenY, The y component of the position with graphics transformations applied.
-     * @tupleReturn
+     * @return screenY, The y component of the position with graphics transformations applied.
      * @link [love.graphics.transformPoint](https://love2d.org/wiki/love.graphics.transformPoint)
      */
-    export function transformPoint(globalX: number, globalY: number): [number, number];
+    function transformPoint(globalX: number, globalY: number): LuaMultiReturn<[screenX: number, screenY: number]>;
 
     /**
      * Translates the coordinate system in two dimensions.
@@ -2026,14 +2124,15 @@ declare module "love.graphics" {
      * @param dy The translation relative to the y-axis.
      * @link [love.graphics.translate](https://love2d.org/wiki/love.graphics.translate)
      */
-    export function translate(dx: number, dy: number): void;
+    function translate(dx: number, dy: number): void;
 
     /**
      * Gets the DPI scale factor of the window.
      * @return scale, The pixel scale factor associated with the window.
      * @link [love.graphics.getDPIScale](https://love2d.org/wiki/love.graphics.getDPIScale)
+     * @since 11.0
      */
-    export function getDPIScale(): number;
+    function getDPIScale(): number;
 
     /**
      * Validates shader code. Check if specificed shader code does not contain any
@@ -2042,12 +2141,14 @@ declare module "love.graphics" {
      * @param gles Validate code as GLSL ES shader.
      * @param code The pixel shader or vertex shader code, or a filename pointing to a file with the code.
      * @return status, true if specified shader code doesn't contain any errors. false otherwise.
-     * @return message, Reason why shader code validation failed (or _nil/undefined_ if validation succeded).
-     * @tupleReturn
+     * @return errormsg, Reason why shader code validation failed (or _nil/undefined_ if validation succeded).
      * @link [love.graphics.validateShader](https://love2d.org/wiki/love.graphics.validateShader)
      * @since 11.0
      */
-    export function validateShader(gles: boolean, code: string): [true, undefined] | [false, string];
+    function validateShader(
+        gles: boolean,
+        code: string
+    ): LuaMultiReturn<[status: true] | [status: false, errormsg: string]>;
 
     /**
      * Validates shader code. Check if specificed shader code does not contain any
@@ -2057,14 +2158,13 @@ declare module "love.graphics" {
      * @param pixelcode The pixel shader code, or a filename pointing to a file with the code.
      * @param vertexcode The vertex shader code, or a filename pointing to a file with the code.
      * @return status, true if specified shader code doesn't contain any errors. false otherwise.
-     * @return message, Reason why shader code validation failed (or _nil/undefined_ if validation succeded).
-     * @tupleReturn
+     * @return errormsg, Reason why shader code validation failed (or _nil/undefined_ if validation succeded).
      * @link [love.graphics.validateShader](https://love2d.org/wiki/love.graphics.validateShader)
      * @since 11.0
      */
-    export function validateShader(
+    function validateShader(
         gles: boolean,
         pixelcode: string,
         vertexcode: string
-    ): [true, undefined] | [false, string];
+    ): LuaMultiReturn<[status: true] | [status: false, errormsg: string]>;
 }

@@ -16,8 +16,8 @@ declare module "love.sound" {
      * @return decoder, A new Decoder object.
      * @link [love.sound.newDecoder](https://love2d.org/wiki/love.sound.newDecoder)
      */
-    export function newDecoder(file: File, buffer?: number): Decoder;
-    export function newDecoder(filename: string, buffer?: number): Decoder;
+    function newDecoder(file: File, buffer?: number): Decoder;
+    function newDecoder(filename: string, buffer?: number): Decoder;
 
     /**
      * Creates new SoundData from a filepath, File, or Decoder.
@@ -27,9 +27,9 @@ declare module "love.sound" {
      * @return soundData, A new SoundData object.
      * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
      */
-    export function newSoundData(filename: string): SoundData;
-    export function newSoundData(file: File): SoundData;
-    export function newSoundData(decoder: Decoder): SoundData;
+    function newSoundData(filename: string): SoundData;
+    function newSoundData(file: File): SoundData;
+    function newSoundData(decoder: Decoder): SoundData;
 
     /**
      * Creates SoundData with a custom sample rate, channel and bit depth.
@@ -41,5 +41,5 @@ declare module "love.sound" {
      * @return soundData, A new SoundData object.
      * @link [love.sound.newSoundData](https://love2d.org/wiki/love.sound.newSoundData)
      */
-    export function newSoundData(samples: number, rate?: number, bits?: number, channels?: number): SoundData;
+    function newSoundData(samples: number, rate?: number, bits?: number, channels?: number): SoundData;
 }

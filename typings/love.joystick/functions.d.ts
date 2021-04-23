@@ -12,7 +12,7 @@ declare module "love.joystick" {
      * @return joystickcount, The number of connected joysticks.
      * @link [love.joystick.getJoystickCount](https://love2d.org/wiki/love.joystick.getJoystickCount)
      */
-    export function getJoystickCount(): number;
+    function getJoystickCount(): number;
 
     /**
      * Gets a list of connected Joysticks.
@@ -20,7 +20,7 @@ declare module "love.joystick" {
      * @return joysticks, The list of currently connected Joysticks.
      * @link [love.joystick.getJoysticks](https://love2d.org/wiki/love.joystick.getJoysticks)
      */
-    export function getJoysticks(): Array<Joystick>;
+    function getJoysticks(): Array<Joystick>;
 
     /**
      * Gets the full gamepad mapping string of the Joysticks which have the given GUID, or nil if the GUID isn't recognized as a gamepad.
@@ -30,7 +30,7 @@ declare module "love.joystick" {
      * @link [love.joystick.getGamepadMappingString](https://love2d.org/wiki/love.joystick.getGamepadMappingString)
      * @since 11.3
      */
-    export function getGamepadMappingString(): string | undefined;
+    function getGamepadMappingString(): string | undefined;
 
     /**
      * Loads a gamepad mappings string from a file.
@@ -38,7 +38,7 @@ declare module "love.joystick" {
      * @param filename The filename to load the mappings string from.
      * @link [love.joystick.loadGamepadMappings](https://love2d.org/wiki/love.joystick.loadGamepadMappings)
      */
-    export function loadGamepadMappings(filename: string): void;
+    function loadGamepadMappings(filename: string): void;
 
     /**
      * Loads a gamepad mappings string directly.
@@ -46,7 +46,7 @@ declare module "love.joystick" {
      * @param mappings The mappings string to load.
      * @link [love.joystick.loadGamepadMappings](https://love2d.org/wiki/love.joystick.loadGamepadMappings)
      */
-    export function loadGamepadMappings(mappings: string): void;
+    function loadGamepadMappings(mappings: string): void;
 
     /**
      * Saves the gamepad mappings of all relevant joysticks to a file.
@@ -55,7 +55,7 @@ declare module "love.joystick" {
      * @return mappings, The mappings string that was written to the file.
      * @link [love.joystick.saveGamepadMappings](https://love2d.org/wiki/love.joystick.saveGamepadMappings)
      */
-    export function saveGamepadMappings(filename: string): string;
+    function saveGamepadMappings(filename: string): string;
 
     /**
      * Returns the mappings string without writing to a file.
@@ -63,7 +63,7 @@ declare module "love.joystick" {
      * @return mappings, The mappings string.
      * @link [love.joystick.saveGamepadMappings](https://love2d.org/wiki/love.joystick.saveGamepadMappings)
      */
-    export function saveGamepadMappings(): string;
+    function saveGamepadMappings(): string;
 
     /**
      * Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a certain type.
@@ -76,7 +76,7 @@ declare module "love.joystick" {
      * @return success, Whether the virtual gamepad button was successfully bound.
      * @link [love.joystick.setGamepadMapping](https://love2d.org/wiki/love.joystick.setGamepadMapping)
      */
-    export function setGamepadMapping(
+    function setGamepadMapping(
         guid: string,
         button: GamepadButton,
         inputtype: JoystickInputType,
@@ -95,7 +95,7 @@ declare module "love.joystick" {
      * @return success, Whether the virtual gamepad button was successfully bound.
      * @link [love.joystick.setGamepadMapping](https://love2d.org/wiki/love.joystick.setGamepadMapping)
      */
-    export function setGamepadMapping(
+    function setGamepadMapping(
         guid: string,
         axis: GamepadAxis,
         inputtype: JoystickInputType,

@@ -6,7 +6,7 @@ declare module "love.physics" {
      *
      * @link [Contact](https://love2d.org/wiki/Contact)
      */
-    export interface Contact extends Type<"Contact"> {
+    interface Contact extends Type<"Contact"> {
         /**
          * Gets the child indices of the shapes of the two colliding fixtures.
          * For ChainShapes, an index of 1 is the first edge in the chain.
@@ -15,20 +15,18 @@ declare module "love.physics" {
          *
          * @return indexA, The child index of the first fixture's shape.
          * @return indexB, The child index of the second fixture's shape.
-         * @tupleReturn
          * @link [Contact:getChildren](https://love2d.org/wiki/Contact:getChildren)
          */
-        getChildren(): [number, number];
+        getChildren(): LuaMultiReturn<[indexA: number, indexB: number]>;
 
         /**
          * Gets the two Fixtures that hold the shapes that are in contact.
          *
          * @return fixtureA, The first Fixture.
          * @return fixtureB, The second Fixture.
-         * @tupleReturn
          * @link [Contact:getFixtures](https://love2d.org/wiki/Contact:getFixtures)
          */
-        getFixtures(): [Fixture, Fixture];
+        getFixtures(): LuaMultiReturn<[fixtureA: Fixture, fixtureB: Fixture]>;
 
         /**
          * Get the friction between two shapes that are in contact.
@@ -41,24 +39,22 @@ declare module "love.physics" {
         /**
          * Get the normal vector between two shapes that are in contact.
          *
-         * @return nx: The x component of the normal vector.
-         * @return ny: The y component of the normal vector.
-         * @tupleReturn
+         * @return nx, The x component of the normal vector.
+         * @return ny, The y component of the normal vector.
          * @link [Contact:getNormal](https://love2d.org/wiki/Contact:getNormal)
          */
-        getNormal(): [number, number];
+        getNormal(): LuaMultiReturn<[nx: number, ny: number]>;
 
         /**
          * Returns the contact points of the two colliding fixtures. There can be one or two points.
          *
-         * @return x1: The x coordinate of the first contact point.
-         * @return y1: The y coordinate of the first contact point.
-         * @return x2: The x coordinate of the second contact point.
-         * @return y2: The y coordinate of the second contact point.
-         * @tupleReturn
+         * @return x1, The x coordinate of the first contact point.
+         * @return y1, The y coordinate of the first contact point.
+         * @return x2, The x coordinate of the second contact point.
+         * @return y2, The y coordinate of the second contact point.
          * @link [Contact:getPositions](https://love2d.org/wiki/Contact:getPositions)
          */
-        getPositions(): [number, number, number?, number?];
+        getPositions(): LuaMultiReturn<[...p1: [x1: number, y1: number], ...p2: [x2?: number, y2?: number]]>;
 
         /**
          * Get the restitution between two shapes that are in contact.

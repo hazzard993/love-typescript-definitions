@@ -1,5 +1,5 @@
 declare module "love.graphics" {
-    export type ImageSettings = {
+    type ImageSettings = {
         /**
          * True to make the image use mipmaps, false to disable them. Mipmaps will be automatically generated if the image isn't a compressed texture format.
          * @default false

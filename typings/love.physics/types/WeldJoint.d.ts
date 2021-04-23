@@ -3,7 +3,7 @@ declare module "love.physics" {
      * A WeldJoint essentially glues two bodies together.
      * @link [WeldJoint](https://love2d.org/wiki/WeldJoint)
      */
-    export interface WeldJoint extends Joint<"WeldJoint"> {
+    interface WeldJoint extends Joint<"WeldJoint"> {
         /**
          * Returns the damping ratio of the joint.
          *

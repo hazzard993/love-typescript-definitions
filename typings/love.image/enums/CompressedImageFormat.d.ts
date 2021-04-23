@@ -9,7 +9,7 @@ declare module "love.image" {
      * pixels in its fast-access cache when drawing it.
      * @link [CompressedImageFormat](https://love2d.org/wiki/CompressedImageFormat)
      */
-    export type CompressedImageFormat =
+    type CompressedImageFormat =
         | "DXT1"
         | "DXT3"
         | "DXT5"

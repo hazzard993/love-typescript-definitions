@@ -6,7 +6,7 @@ declare module "love.sound" {
      *
      * @link [Decoder](https://love2d.org/wiki/Decoder)
      */
-    export interface Decoder extends Type<"Decoder"> {
+    interface Decoder extends Type<"Decoder"> {
         /**
          * Creates a new copy of current decoder.
          *

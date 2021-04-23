@@ -10,5 +10,5 @@ declare module "love.audio" {
      * @link [TimeUnit](https://love2d.org/wiki/TimeUnit)
      * @since 0.8.0
      */
-    export type TimeUnit = "seconds" | "samples";
+    type TimeUnit = "seconds" | "samples";
 }

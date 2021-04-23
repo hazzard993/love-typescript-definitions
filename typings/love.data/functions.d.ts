@@ -18,7 +18,7 @@ declare module "love.data" {
      * @link [love.data.compress](https://love2d.org/wiki/love.data.compress)
      * @since 11.0
      */
-    export function compress<T extends ContainerType>(
+    function compress<T extends ContainerType>(
         container: T,
         format: CompressedDataFormat,
         rawstring: string,
@@ -36,7 +36,7 @@ declare module "love.data" {
      * @link [love.data.compress](https://love2d.org/wiki/love.data.compress)
      * @since 11.0
      */
-    export function compress<T extends ContainerType>(
+    function compress<T extends ContainerType>(
         container: T,
         format: CompressedDataFormat,
         data: Data,
@@ -53,12 +53,12 @@ declare module "love.data" {
      * @link [love.data.decode](https://love2d.org/wiki/love.data.decode)
      * @since 11.0
      */
-    export function decode<T extends ContainerType>(
+    function decode<T extends ContainerType>(
         container: T,
         format: EncodeFormat,
         source: string
     ): T extends "string" ? string : ByteData;
-    export function decode<T extends ContainerType>(
+    function decode<T extends ContainerType>(
         container: T,
         format: EncodeFormat,
         source: Data
@@ -72,16 +72,16 @@ declare module "love.data" {
      * @link [love.data.decompress](https://love2d.org/wiki/love.data.decompress)
      * @since 11.0
      */
-    export function decompress<T extends ContainerType>(
+    function decompress<T extends ContainerType>(
         container: T,
         compressedData: CompressedData
     ): T extends "string" ? string : Data;
-    export function decompress<T extends ContainerType>(
+    function decompress<T extends ContainerType>(
         container: T,
         format: CompressedDataFormat,
         compressedData: CompressedData
     ): T extends "string" ? string : Data;
-    export function decompress<T extends ContainerType>(
+    function decompress<T extends ContainerType>(
         container: T,
         format: CompressedDataFormat,
         data: Data
@@ -98,7 +98,7 @@ declare module "love.data" {
      * @link [love.data.encode](https://love2d.org/wiki/love.data.encode)
      * @since 11.0
      */
-    export function encode<T extends ContainerType>(
+    function encode<T extends ContainerType>(
         container: T,
         format: EncodeFormat,
         sourceString: string,
@@ -113,7 +113,7 @@ declare module "love.data" {
      * @link [love.data.getPackedSize](https://love2d.org/wiki/love.data.getPackedSize)
      * @since 11.0
      */
-    export function getPackedSize(format: string): number;
+    function getPackedSize(format: string): number;
 
     /**
      * Compute the message digest of a string using a specified hash algorithm.
@@ -124,7 +124,7 @@ declare module "love.data" {
      * @link [love.data.hash](https://love2d.org/wiki/love.data.hash)
      * @since 11.0
      */
-    export function hash(hashFunction: HashFunction, string: string | Data): string;
+    function hash(hashFunction: HashFunction, string: string | Data): string;
 
     /**
      * Creates a new ByteData by copying the contents of the specified string.
@@ -134,7 +134,7 @@ declare module "love.data" {
      * @link [love.data.newByteData](https://love2d.org/wiki/love.data.newByteData)
      * @since 11.0
      */
-    export function newByteData(datastring: string): ByteData;
+    function newByteData(datastring: string): ByteData;
 
     /**
      * Creates a new ByteData by copying from an existing Data object.
@@ -146,7 +146,7 @@ declare module "love.data" {
      * @link [love.data.newByteData](https://love2d.org/wiki/love.data.newByteData)
      * @since 11.0
      */
-    export function newByteData(data: Data, offset?: number, size?: number): ByteData;
+    function newByteData(data: Data, offset?: number, size?: number): ByteData;
 
     /**
      * Creates a new empty ByteData with the specific size.
@@ -156,7 +156,7 @@ declare module "love.data" {
      * @link [love.data.newByteData](https://love2d.org/wiki/love.data.newByteData)
      * @since 11.0
      */
-    export function newByteData(size: number): ByteData;
+    function newByteData(size: number): ByteData;
 
     /**
      * Creates a new Data referencing a subsection of an existing Data object.
@@ -169,26 +169,26 @@ declare module "love.data" {
      * @link [love.data.newDataView](https://love2d.org/wiki/love.data.newDataView)
      * @since 11.0
      */
-    export function newDataView(data: Data, offset: number, size: number): Data;
+    function newDataView(data: Data, offset: number, size: number): Data;
 
-    export type Packable = string | number | boolean;
+    type Packable = string | number | boolean;
 
-    export type PackedMetatable<F extends string = string, D extends Array<Packable> = Array<Packable>> = {
+    type PackedMetatable<F extends string = string, D extends Array<Packable> = Array<Packable>> = {
         format: F;
         values: D;
     };
 
-    export interface PackedDataString<M extends PackedMetatable> extends String {
+    interface PackedDataString<M extends PackedMetatable> extends String {
         __metatable?: M;
     }
 
-    export interface PackedDataObject<M extends PackedMetatable> extends Data {
+    interface PackedDataObject<M extends PackedMetatable> extends Data {
         __metatable?: M;
     }
 
-    export type PackedData<M extends PackedMetatable = PackedMetatable> = PackedDataString<M> | PackedDataObject<M>;
+    type PackedData<M extends PackedMetatable = PackedMetatable> = PackedDataString<M> | PackedDataObject<M>;
 
-    export type PackedDataMetatable<Type> = Type extends PackedData<infer M> ? M : never;
+    type PackedDataMetatable<Type> = Type extends PackedData<infer M> ? M : never;
 
     /**
      * Packs (serializes) simple Lua values.
@@ -203,7 +203,7 @@ declare module "love.data" {
      * @link [Packing and Unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking)
      * @since 11.0
      */
-    export function pack<T extends ContainerType, F extends string, D extends Packable[]>(
+    function pack<T extends ContainerType, F extends string, D extends Packable[]>(
         container: T,
         format: F,
         ...values: D
@@ -219,12 +219,11 @@ declare module "love.data" {
      * @return index, The index of the first unread byte in the data string.
      * @link [love.data.unpack](https://love2d.org/wiki/love.data.unpack)
      * @link [Packing and Unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking)
-     * @tupleReturn
      * @since 11.0
      */
-    export function unpack<P extends PackedData>(
+    function unpack<P extends PackedData>(
         format: PackedDataMetatable<P>["format"],
         data: P,
         pos?: number
-    ): PackedDataMetatable<P>["values"];
+    ): LuaMultiReturn<PackedDataMetatable<P>["values"]>;
 }

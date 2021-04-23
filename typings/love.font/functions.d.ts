@@ -19,7 +19,7 @@ declare module "love.font" {
      * @link [love.font.newBMFontRasterizer](https://love2d.org/wiki/love.font.newBMFontRasterizer)
      * @since 0.7.0
      */
-    export function newBMFontRasterizer(imageData: ImageData, glyphs: string, dpiscale?: number): Rasterizer;
+    function newBMFontRasterizer(imageData: ImageData, glyphs: string, dpiscale?: number): Rasterizer;
 
     /**
      * Creates a new BMFont Rasterizer.
@@ -30,7 +30,7 @@ declare module "love.font" {
      * @link [love.font.newBMFontRasterizer](https://love2d.org/wiki/love.font.newBMFontRasterizer)
      * @since 0.7.0
      */
-    export function newBMFontRasterizer(fileName: string, glyphs: string, dpiscale?: number): Rasterizer;
+    function newBMFontRasterizer(fileName: string, glyphs: string, dpiscale?: number): Rasterizer;
 
     /**
      * Creates a new GlyphData.
@@ -41,7 +41,7 @@ declare module "love.font" {
      * @link [love.font.newGlyphData](https://love2d.org/wiki/love.font.newGlyphData)
      * @since 0.7.0
      */
-    export function newGlyphData(rasterizer: Rasterizer, glyph: number): GlyphData;
+    function newGlyphData(rasterizer: Rasterizer, glyph: number): GlyphData;
 
     /**
      * Creates a new Image Rasterizer.
@@ -53,7 +53,7 @@ declare module "love.font" {
      * @link [love.font.newImageRasterizer](https://love2d.org/wiki/love.font.newImageRasterizer)
      * @since 0.7.0
      */
-    export function newImageRasterizer(
+    function newImageRasterizer(
         imageData: ImageData,
         glyphs: string,
         extraSpacing?: number,
@@ -68,7 +68,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(filename: string): Rasterizer;
+    function newRasterizer(filename: string): Rasterizer;
 
     /**
      * Creates a new Rasterizer.
@@ -78,7 +78,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(data: FileData): Rasterizer;
+    function newRasterizer(data: FileData): Rasterizer;
 
     /**
      * Create a TrueTypeRasterizer with the default font.
@@ -89,7 +89,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(size?: number, hinting?: HintingMode, dpiscale?: number): Rasterizer;
+    function newRasterizer(size?: number, hinting?: HintingMode, dpiscale?: number): Rasterizer;
 
     /**
      * Create a TrueTypeRasterizer with custom font.
@@ -101,12 +101,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(
-        fileName: string,
-        size?: number,
-        hinting?: HintingMode,
-        dpiscale?: number
-    ): Rasterizer;
+    function newRasterizer(fileName: string, size?: number, hinting?: HintingMode, dpiscale?: number): Rasterizer;
 
     /**
      * Create a TrueTypeRasterizer with custom font.
@@ -118,12 +113,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(
-        fileData: FileData,
-        size?: number,
-        hinting?: HintingMode,
-        dpiscale?: number
-    ): Rasterizer;
+    function newRasterizer(fileData: FileData, size?: number, hinting?: HintingMode, dpiscale?: number): Rasterizer;
 
     /**
      * Creates a new BMFont Rasterizer.
@@ -134,7 +124,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(imageData: ImageData, glyphs: string, dpiscale?: number): Rasterizer;
+    function newRasterizer(imageData: ImageData, glyphs: string, dpiscale?: number): Rasterizer;
 
     /**
      * Creates a new BMFont Rasterizer.
@@ -145,7 +135,7 @@ declare module "love.font" {
      * @link [love.font.newRasterizer](https://love2d.org/wiki/love.font.newRasterizer)
      * @since 0.7.0
      */
-    export function newRasterizer(fileName: string, glyphs: string, dpiscale?: number): Rasterizer;
+    function newRasterizer(fileName: string, glyphs: string, dpiscale?: number): Rasterizer;
 
     /**
      * Create a TrueTypeRasterizer with the default font.
@@ -156,7 +146,7 @@ declare module "love.font" {
      * @link [love.font.newTrueTypeRasterizer](https://love2d.org/wiki/love.font.newTrueTypeRasterizer)
      * @since 0.7.0
      */
-    export function newTrueTypeRasterizer(size?: number, hinting?: HintingMode, dpiscale?: number): Rasterizer;
+    function newTrueTypeRasterizer(size?: number, hinting?: HintingMode, dpiscale?: number): Rasterizer;
 
     /**
      * Create a TrueTypeRasterizer with custom font.
@@ -168,7 +158,7 @@ declare module "love.font" {
      * @link [love.font.newTrueTypeRasterizer](https://love2d.org/wiki/love.font.newTrueTypeRasterizer)
      * @since 0.7.0
      */
-    export function newTrueTypeRasterizer(
+    function newTrueTypeRasterizer(
         fileName: string,
         size?: number,
         hinting?: HintingMode,
@@ -185,7 +175,7 @@ declare module "love.font" {
      * @link [love.font.newTrueTypeRasterizer](https://love2d.org/wiki/love.font.newTrueTypeRasterizer)
      * @since 0.7.0
      */
-    export function newTrueTypeRasterizer(
+    function newTrueTypeRasterizer(
         fileData: FileData,
         size?: number,
         hinting?: HintingMode,

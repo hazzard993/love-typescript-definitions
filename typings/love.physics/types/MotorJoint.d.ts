@@ -3,7 +3,7 @@ declare module "love.physics" {
      * Controls the relative motion between two Bodies.
      * @link [MotorJoint](https://love2d.org/wiki/MotorJoint)
      */
-    export interface MotorJoint extends Joint<"MotorJoint"> {
+    interface MotorJoint extends Joint<"MotorJoint"> {
         /**
          * Gets the target angular offset between the two Bodies the Joint is attached to.
          *
@@ -17,10 +17,9 @@ declare module "love.physics" {
          *
          * @return x, The x component of the target linear offset, relative to the first Body.
          * @return y, The y component of the target linear offset, relative to the first Body.
-         * @tupleReturn
          * @link [MotorJoint:getLinearOffset](https://love2d.org/wiki/MotorJoint:getLinearOffset)
          */
-        getLinearOffset(): [number, number];
+        getLinearOffset(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Sets the target angular offset between the two Bodies the Joint is attached to.

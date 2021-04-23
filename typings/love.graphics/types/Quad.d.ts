@@ -5,16 +5,15 @@ declare module "love.graphics" {
      * A quadrilateral (a polygon with four sides and four corners) with texture coordinate information.
      * @link [Quad](https://love2d.org/wiki/Quad)
      */
-    export interface Quad extends Type<"Quad"> {
+    interface Quad extends Type<"Quad"> {
         /**
          * Gets reference texture dimensions initially specified in love.graphics.newQuad.
          *
          * @return sw, The Texture width used by the Quad.
          * @return sh, The Texture height used by the Quad.
-         * @tupleReturn
          * @link [Quad:getTextureDimensions](https://love2d.org/wiki/Quad:getTextureDimensions)
          */
-        getTextureDimensions(): [number, number];
+        getTextureDimensions(): LuaMultiReturn<[sw: number, sh: number]>;
 
         /**
          * Gets the current viewport of this Quad.
@@ -23,10 +22,9 @@ declare module "love.graphics" {
          * @return y, The top-left corner along the y-axis.
          * @return w, The width of the viewport.
          * @return h, The height of the viewport.
-         * @tupleReturn
          * @link [Quad:getViewport](https://love2d.org/wiki/Quad:getViewport)
          */
-        getViewport(): [number, number, number, number];
+        getViewport(): LuaMultiReturn<[x: number, y: number, w: number, h: number]>;
 
         /**
          * Sets the texture coordinates according to a viewport.

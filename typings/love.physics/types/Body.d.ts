@@ -6,7 +6,7 @@ declare module "love.physics" {
      *
      * @link [Body](https://love2d.org/wiki/Body)
      */
-    export interface Body extends Type<"Body"> {
+    interface Body extends Type<"Body"> {
         /**
          * Applies an angular impulse to a body. This makes a single, instantaneous
          * addition to the body momentum.
@@ -297,10 +297,9 @@ declare module "love.physics" {
          *
          * @return x, The x component of the velocity vector.
          * @return y, The y component of the velocity vector.
-         * @tupleReturn
          * @link [Body:getLinearVelocity](https://love2d.org/wiki/Body:getLinearVelocity)
          */
-        getLinearVelocity(): [number, number];
+        getLinearVelocity(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Get the linear velocity of a point on the body.
@@ -315,10 +314,9 @@ declare module "love.physics" {
          * @param y The y position to measure velocity.
          * @return vx, The x component of velocity at point (x,y).
          * @return vy, The y component of velocity at point (x,y).
-         * @tupleReturn
          * @link [Body:getLinearVelocityFromLocalPoint](https://love2d.org/wiki/Body:getLinearVelocityFromLocalPoint)
          */
-        getLinearVelocityFromLocalPoint(x: number, y: number): [number, number];
+        getLinearVelocityFromLocalPoint(x: number, y: number): LuaMultiReturn<[vx: number, vy: number]>;
 
         /**
          * Get the linear velocity of a point on the body.
@@ -333,10 +331,9 @@ declare module "love.physics" {
          * @param y The y position to measure velocity.
          * @return vx, The x component of velocity at point (x,y).
          * @return vy, The y component of velocity at point (x,y).
-         * @tupleReturn
          * @link [Body:getLinearVelocityFromWorldPoint](https://love2d.org/wiki/Body:getLinearVelocityFromWorldPoint)
          */
-        getLinearVelocityFromWorldPoint(x: number, y: number): [number, number];
+        getLinearVelocityFromWorldPoint(x: number, y: number): LuaMultiReturn<[vx: number, vy: number]>;
 
         /**
          * Get the center of mass position in local coordinates.
@@ -345,10 +342,9 @@ declare module "love.physics" {
          *
          * @return x, The x coordinate of the center of mass.
          * @return y, The y coordinate of the center of mass.
-         * @tupleReturn
          * @link [Body:getLocalCenter](https://love2d.org/wiki/Body:getLocalCenter)
          */
-        getLocalCenter(): [number, number];
+        getLocalCenter(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Transform a point from world coordinates to local coordinates.
@@ -357,10 +353,9 @@ declare module "love.physics" {
          * @param worldY The y position in world coordinates.
          * @return localX, The x position in local coordinates.
          * @return localY, The y position in local coordinates.
-         * @tupleReturn
          * @link [Body:getLocalPoint](https://love2d.org/wiki/Body:getLocalPoint)
          */
-        getLocalPoint(worldX: number, worldY: number): [number, number];
+        getLocalPoint(worldX: number, worldY: number): LuaMultiReturn<[localX: number, localY: number]>;
 
         /**
          * Transform a vector from world coordinates to local coordinates.
@@ -369,10 +364,9 @@ declare module "love.physics" {
          * @param worldY The vector y component in world coordinates.
          * @return localX, The vector x component in local coordinates.
          * @return localY, The vector y component in local coordinates.
-         * @tupleReturn
          * @link [Body:getLocalVector](https://love2d.org/wiki/Body:getLocalVector)
          */
-        getLocalVector(worldX: number, worldY: number): [number, number];
+        getLocalVector(worldX: number, worldY: number): LuaMultiReturn<[localX: number, localY: number]>;
 
         /**
          * Get the mass of the body.
@@ -389,10 +383,9 @@ declare module "love.physics" {
          * @return y, The y position of the center of mass.
          * @return mass, The mass of the body.
          * @return inertia, The rotational inertia.
-         * @tupleReturn
          * @link [Body:getMassData](https://love2d.org/wiki/Body:getMassData)
          */
-        getMassData(): [number, number, number, number];
+        getMassData(): LuaMultiReturn<[x: number, y: number, mass: number, inertia: number]>;
 
         /**
          * Get the position of the body.
@@ -401,10 +394,9 @@ declare module "love.physics" {
          *
          * @return x, The x position.
          * @return y, The y position.
-         * @tupleReturn
          * @link [Body:getPosition](https://love2d.org/wiki/Body:getPosition)
          */
-        getPosition(): [number, number];
+        getPosition(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Returns the type of the body.
@@ -437,10 +429,9 @@ declare module "love.physics" {
          *
          * @return x, The x coordinate of the center of mass.
          * @return y, The y coordinate of the center of mass.
-         * @tupleReturn
          * @link [Body:getWorldCenter](https://love2d.org/wiki/Body:getWorldCenter)
          */
-        getWorldCenter(): [number, number];
+        getWorldCenter(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Transform a point from local coordinates to world coordinates.
@@ -449,20 +440,18 @@ declare module "love.physics" {
          * @param localY The y position in local coordinates.
          * @return worldX, The x position in world coordinates.
          * @return worldY, The y position in world coordinates.
-         * @tupleReturn
          * @link [Body:getWorldPoint](https://love2d.org/wiki/Body:getWorldPoint)
          */
-        getWorldPoint(localX: number, localY: number): [number, number];
+        getWorldPoint(localX: number, localY: number): LuaMultiReturn<[worldX: number, worldY: number]>;
 
         /**
          * Transforms multiple points from local coordinates to world coordinates.
          *
          * @param xys The x followed by the y position of each point.
          * @return xys, The transformed points.
-         * @tupleReturn
          * @link [Body:getWorldPoints](https://love2d.org/wiki/Body:getWorldPoints)
          */
-        getWorldPoints(...xys: number[]): number[];
+        getWorldPoints(...xys: number[]): LuaMultiReturn<number[]>;
 
         /**
          * Transform a vector from local coordinates to world coordinates.
@@ -471,10 +460,9 @@ declare module "love.physics" {
          * @param localY The vector y component in local coordinates.
          * @return worldX, The vector x component in world coordinates.
          * @return worldY, The vector y component in world coordinates.
-         * @tupleReturn
          * @link [Body:getWorldVector](https://love2d.org/wiki/Body:getWorldVector)
          */
-        getWorldVector(localX: number, localY: number): [number, number];
+        getWorldVector(localX: number, localY: number): LuaMultiReturn<[worldX: number, worldY: number]>;
 
         /**
          * Get the x position of the body in world coordinates.

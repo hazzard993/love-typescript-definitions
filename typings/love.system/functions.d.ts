@@ -12,7 +12,7 @@ declare module "love.system" {
      * @return text, The text currently held in the system's clipboard.
      * @link [love.system.getClipboardText](https://love2d.org/wiki/love.system.getClipboardText)
      */
-    export function getClipboardText(): string;
+    function getClipboardText(): string;
 
     /**
      * Gets the current operating system. In general, LÖVE abstracts away the need to
@@ -22,7 +22,7 @@ declare module "love.system" {
      * @return osString, The current operating system. "OS X", "Windows", "Linux", "Android" or "iOS".
      * @link [love.system.getOS](https://love2d.org/wiki/love.system.getOS)
      */
-    export function getOS(): "OS X" | "iOS" | "UWP" | "Windows" | "Android" | "Linux" | "Unknown";
+    function getOS(): "OS X" | "iOS" | "UWP" | "Windows" | "Android" | "Linux" | "Unknown";
 
     /**
      * Gets information about the system's power supply.
@@ -30,10 +30,9 @@ declare module "love.system" {
      * @return state, The basic state of the power supply.
      * @return percent, Percentage of battery life left, between 0 and 100. _nil/undefined_ if the value can't be determined or there's no battery.
      * @return seconds, Seconds of battery life left. _nil/undefined_ if the value can't be determined or there's no battery.
-     * @tupleReturn
      * @link [love.system.getPowerInfo](https://love2d.org/wiki/love.system.getPowerInfo)
      */
-    export function getPowerInfo(): [PowerState, number | undefined, number | undefined];
+    function getPowerInfo(): LuaMultiReturn<[state: PowerState, percent?: number, seconds?: number]>;
 
     /**
      * Gets the amount of logical processor in the system.
@@ -41,14 +40,14 @@ declare module "love.system" {
      * @return processorCount, Amount of logical processors.
      * @link [love.system.getProcessorCount](https://love2d.org/wiki/love.system.getProcessorCount)
      */
-    export function getProcessorCount(): number;
+    function getProcessorCount(): number;
 
     /**
      * Gets whether another application on the system is playing music in the background.
      * @return backgroundmusic, True if the user is playing music in the background via another app, false otherwise.
      * @link [love.system.hasBackgroundMusic](https://love2d.org/wiki/love.system.hasBackgroundMusic)
      */
-    export function hasBackgroundMusic(): boolean;
+    function hasBackgroundMusic(): boolean;
 
     /**
      * Opens a URL with the user's web or file browser.
@@ -59,7 +58,7 @@ declare module "love.system" {
      * @return success, Whether the URL was opened successfully.
      @link [love.system.openURL](https://love2d.org/wiki/love.system.openURL)
         */
-    export function openURL(url: string): boolean;
+    function openURL(url: string): boolean;
 
     /**
      * Puts text in the clipboard.
@@ -67,7 +66,7 @@ declare module "love.system" {
      * @param text The new text to hold in the system's clipboard.
      * @link [love.system.setClipboardText](https://love2d.org/wiki/love.system.setClipboardText)
      */
-    export function setClipboardText(text: string): void;
+    function setClipboardText(text: string): void;
 
     /**
      * Causes the device to vibrate, if possible. Currently this will only work on
@@ -76,5 +75,5 @@ declare module "love.system" {
      * @param seconds The duration to vibrate for. If called on an iOS device, it will always vibrate for 0.5 seconds due to limitations in the iOS system APIs.
      * @link [love.system.vibrate](https://love2d.org/wiki/love.system.vibrate)
      */
-    export function vibrate(seconds?: number): void;
+    function vibrate(seconds?: number): void;
 }

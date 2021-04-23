@@ -5,7 +5,7 @@ declare module "love.graphics" {
      * Drawable image type.
      * @link [Image](https://love2d.org/wiki/Image)
      */
-    export interface Image extends Texture<"Image"> {
+    interface Image extends Texture<"Image"> {
         /**
          * Gets the flags used when the image was created.
          *
@@ -20,7 +20,7 @@ declare module "love.graphics" {
             /**
              * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
              */
-            mipmaps?: boolean | Array<string>;
+            mipmaps?: boolean | string[];
         };
 
         /**

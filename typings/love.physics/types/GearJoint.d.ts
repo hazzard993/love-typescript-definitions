@@ -3,15 +3,14 @@ declare module "love.physics" {
      * Keeps bodies together in such a way that they act like gears.
      * @link [GearJoint](https://love2d.org/wiki/GearJoint)
      */
-    export interface GearJoint extends Joint<"GearJoint"> {
+    interface GearJoint extends Joint<"GearJoint"> {
         /**
          * Get the Joints connected by this GearJoint.
          *
          * @return joints, The connected joints.
-         * @tupleReturn
          * @link [GearJoint:getJoints](https://love2d.org/wiki/GearJoint:getJoints)
          */
-        getJoints(): Array<Joint>;
+        getJoints(): LuaMultiReturn<Joint[]>;
 
         /**
          * Get the ratio of a gear joint.

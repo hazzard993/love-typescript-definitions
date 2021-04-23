@@ -6,5 +6,5 @@ declare module "love.graphics" {
      * using it to sample from texture coordinates outside of the range of [0, 1].
      * @link [WrapMode](https://love2d.org/wiki/WrapMode)
      */
-    export type WrapMode = "clamp" | "repeat" | "mirroredrepeat" | "clampzero";
+    type WrapMode = "clamp" | "repeat" | "mirroredrepeat" | "clampzero";
 }

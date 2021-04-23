@@ -12,13 +12,14 @@ declare module "love.event" {
      * @link [love.event.clear](https://love2d.org/wiki/love.event.clear)
      * @since 0.7.2
      */
-    export function clear(): void;
+    function clear(): void;
 
     /**
+     * TODO: Replace this in later release
      * @luaIterator
      * @tupleReturn
      */
-    export type PollResult = any[];
+    type PollResult = any[];
 
     /**
      * Returns an iterator for messages in the event queue.
@@ -27,14 +28,14 @@ declare module "love.event" {
      * @link [love.event.poll](https://love2d.org/wiki/love.event.poll)
      * @since 0.6.0
      */
-    export function poll(): PollResult;
+    function poll(): PollResult;
 
     /**
      * Pump events into the event queue.
      * @link [love.event.pump](https://love2d.org/wiki/love.event.pump)
      * @since 0.6.0
      */
-    export function pump(): void;
+    function pump(): void;
 
     /**
      * Adds an event to the event queue.
@@ -42,10 +43,7 @@ declare module "love.event" {
      * @link [love.event.push](https://love2d.org/wiki/love.event.push)
      * @since 0.6.0
      */
-    export function push<E extends Event>(
-        e: E,
-        ...args: Parameters<Required<import("../love/handlers").Handlers>[E]>
-    ): void;
+    function push<E extends Event>(e: E, ...args: Parameters<Required<import("../love/handlers").Handlers>[E]>): void;
 
     /**
      * Adds the quit event to the queue.
@@ -53,7 +51,7 @@ declare module "love.event" {
      * @link [love.event.quit](https://love2d.org/wiki/love.event.quit)
      * @since 0.8.0
      */
-    export function quit(exitstatus?: number): void;
+    function quit(exitstatus?: number): void;
 
     /**
      * Adds the quit event to the queue.
@@ -63,15 +61,14 @@ declare module "love.event" {
      * @link [love.event.quit](https://love2d.org/wiki/love.event.quit)
      * @since 0.8.0
      */
-    export function quit(restartstr: "restart"): void;
+    function quit(restartstr: "restart"): void;
 
     /**
      * Like [love.event.poll](https://love2d.org/wiki/love.event.poll) but blocks until there is an event in the queue.
      * @return e, The type of event.
      * @return args, The arguments given to the event.
-     * @tupleReturn
      * @link [love.event.wait](https://love2d.org/wiki/love.event.wait)
      * @since 0.6.0
      */
-    export function wait(): [string, ...Array<any>];
+    function wait(): LuaMultiReturn<[evt: string, ...args: Array<any>]>;
 }

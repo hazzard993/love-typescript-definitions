@@ -4,7 +4,7 @@ declare module "love.audio" {
      * @link [Source:setFilter](https://love2d.org/wiki/Source:setFilter)
      * @link [Source:getFilter](https://love2d.org/wiki/Source:getFilter)
      */
-    export type FilterSettings = {
+    type FilterSettings = {
         /**
          * The type of filter to use.
          */

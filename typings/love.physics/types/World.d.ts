@@ -5,7 +5,7 @@ declare module "love.physics" {
      * A world is an object that contains all bodies and joints.
      * @link [World](https://love2d.org/wiki/World)
      */
-    export interface World extends Type<"World"> {
+    interface World extends Type<"World"> {
         /**
          * Destroys the world, taking all bodies, joints, fixtures and their shapes with
          * it.
@@ -39,15 +39,16 @@ declare module "love.physics" {
          * @return endContact, Gets called when two fixtures cease to overlap.
          * @return preSolve, Gets called before a collision gets resolved.
          * @return postSolve, Gets called after the collision has been resolved.
-         * @tupleReturn
          * @link [World:getCallbacks](https://love2d.org/wiki/World:getCallbacks)
          */
-        getCallbacks(): [
-            (this: void, ...args: Array<any>) => any,
-            (this: void, ...args: Array<any>) => any,
-            (this: void, ...args: Array<any>) => any,
-            (this: void, ...args: Array<any>) => any
-        ];
+        getCallbacks(): LuaMultiReturn<
+            [
+                (this: void, ...args: any[]) => any,
+                (this: void, ...args: any[]) => any,
+                (this: void, ...args: any[]) => any,
+                (this: void, ...args: any[]) => any
+            ]
+        >;
 
         /**
          * Returns the number of contacts in the world.
@@ -78,10 +79,9 @@ declare module "love.physics" {
          *
          * @return x, The x component of gravity.
          * @return y, The y component of gravity.
-         * @tupleReturn
          * @link [World:getGravity](https://love2d.org/wiki/World:getGravity)
          */
-        getGravity(): [number, number];
+        getGravity(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Get the number of joints in the world.

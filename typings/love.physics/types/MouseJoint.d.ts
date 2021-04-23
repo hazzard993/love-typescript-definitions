@@ -3,7 +3,7 @@ declare module "love.physics" {
      * For controlling objects with the mouse.
      * @link [MouseJoint](https://love2d.org/wiki/MouseJoint)
      */
-    export interface MouseJoint extends Joint<"MouseJoint"> {
+    interface MouseJoint extends Joint<"MouseJoint"> {
         /**
          * Returns the damping ratio.
          *
@@ -33,10 +33,9 @@ declare module "love.physics" {
          *
          * @return x, The x component of the target.
          * @return y, The x component of the target.
-         * @tupleReturn
          * @link [MouseJoint:getTarget](https://love2d.org/wiki/MouseJoint:getTarget)
          */
-        getTarget(): [number, number];
+        getTarget(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Sets a new damping ratio.

@@ -14,7 +14,7 @@ declare module "love.window" {
      * Closes the window. It can be reopened with love.window.setMode.
      * @link [love.window.close](https://love2d.org/wiki/love.window.close)
      */
-    export function close(): void;
+    function close(): void;
 
     /**
      * Converts a number from pixels to density-independent units.
@@ -38,7 +38,7 @@ declare module "love.window" {
      * @return value, The converted number, in density-independent units.
      * @link [love.window.fromPixels](https://love2d.org/wiki/love.window.fromPixels)
      */
-    export function fromPixels(pixelvalue: number): number;
+    function fromPixels(pixelvalue: number): number;
 
     /**
      * Converts a number from pixels to density-independent units.
@@ -62,10 +62,9 @@ declare module "love.window" {
      * @param py The y-axis value of a coordinate in pixels.
      * @return x, The converted x-axis value of the coordinate, in density-independent units.
      * @return y, The converted y-axis value of the coordinate, in density-independent units.
-     * @tupleReturn
      * @link [love.window.fromPixels](https://love2d.org/wiki/love.window.fromPixels)
      */
-    export function fromPixels(px: number, py: number): [number, number];
+    function fromPixels(px: number, py: number): LuaMultiReturn<[x: number, y: number]>;
 
     /**
      * Gets the name of a display.
@@ -74,7 +73,7 @@ declare module "love.window" {
      * @return name, The name of the specified display.
      * @link [love.window.getDisplayName](https://love2d.org/wiki/love.window.getDisplayName)
      */
-    export function getDisplayName(displayindex: number): string;
+    function getDisplayName(displayindex: number): string;
 
     /**
      * Gets current device display orientation.
@@ -83,7 +82,7 @@ declare module "love.window" {
      * @link [love.window.getDisplayOrientation](https://love2d.org/wiki/love.window.getDisplayOrientation)
      * @since 11.3
      */
-    export function getDisplayOrientation(index?: number): DisplayOrientation;
+    function getDisplayOrientation(index?: number): DisplayOrientation;
 
     /**
      * Gets the DPI scale factor associated with the window.
@@ -104,34 +103,32 @@ declare module "love.window" {
      * @return scale, The pixel scale factor associated with the window.
      * @link [love.window.getDPIScale](https://love2d.org/wiki/love.window.getDPIScale)
      */
-    export function getDPIScale(): number;
+    function getDPIScale(): number;
 
     /**
      * Gets the width and height of the desktop.
      * @param display The index of the display, if multiple monitors are available. (Default 1)
      * @return width, The width of the desktop.
      * @return height, The height of the desktop.
-     * @tupleReturn
      * @link [love.window.getDesktopDimensions](https://love2d.org/wiki/love.window.getDesktopDimensions)
      */
-    export function getDesktopDimensions(display?: number): [number, number];
+    function getDesktopDimensions(display?: number): LuaMultiReturn<[width: number, height: number]>;
 
     /**
      * Gets the number of connected monitors.
      * @return count, The number of currently connected displays.
      * @link [love.window.getDisplayCount](https://love2d.org/wiki/love.window.getDisplayCount)
      */
-    export function getDisplayCount(): number;
+    function getDisplayCount(): number;
 
     /**
      * Gets whether the window is fullscreen.
      *
      * @return fullscreen, True if the window is fullscreen, false otherwise.
      * @return fstype, The type of fullscreen mode used.
-     * @tupleReturn
      * @link [love.window.getFullscreen](https://love2d.org/wiki/love.window.getFullscreen)
      */
-    export function getFullscreen(): [boolean, FullscreenType];
+    function getFullscreen(): LuaMultiReturn<[fullscreen: boolean, fstype: FullscreenType]>;
 
     /**
      * Gets a list of supported fullscreen modes.
@@ -140,7 +137,7 @@ declare module "love.window" {
      * @return modes, A table of width/height pairs. (Note that this may not be in order.)
      * @link [love.window.getFullscreenModes](https://love2d.org/wiki/love.window.getFullscreenModes)
      */
-    export function getFullscreenModes(display?: number): Array<{ width: number; height: number }>;
+    function getFullscreenModes(display?: number): Array<{ width: number; height: number }>;
 
     /**
      * Gets the window icon.
@@ -148,7 +145,7 @@ declare module "love.window" {
      * @return imagedata, The window icon imagedata, or _nil/undefined_ of no icon has been set with love.window.setIcon.
      * @link [love.window.getIcon](https://love2d.org/wiki/love.window.getIcon)
      */
-    export function getIcon(): ImageData | undefined;
+    function getIcon(): ImageData | undefined;
 
     /**
      * Returns the current display mode.
@@ -156,10 +153,9 @@ declare module "love.window" {
      * @return width, Window width.
      * @return height, Window height.
      * @return flags, Table containing the window properties.
-     * @tupleReturn
      * @link [love.window.getMode](https://love2d.org/wiki/love.window.getMode)
      */
-    export function getMode(): [number, number, DisplayFlags];
+    function getMode(): LuaMultiReturn<[width: number, height: number, flags: DisplayFlags]>;
 
     /**
      * Gets the position of the window on the screen.
@@ -170,19 +166,17 @@ declare module "love.window" {
      * @return x, The x-coordinate of the window's position.
      * @return y, The y-coordinate of the window's position.
      * @return display, The index of the display that the window is in.
-     * @tupleReturn
      * @link [love.window.getPosition](https://love2d.org/wiki/love.window.getPosition)
      */
-    export function getPosition(): [number, number, number];
+    function getPosition(): LuaMultiReturn<[x: number, y: number, display: number]>;
 
     /**
      * Gets area inside the window which is known to be unobstructed by a system title bar, the iPhone X notch, etc. Useful for making sure UI elements can be seen by the user.
      * @returns The x, y, width and height of the safe area.
-     * @tupleReturn
      * @link [love.window.getSafeArea](https://love2d.org/wiki/love.window.getSafeArea)
      * @since 11.3
      */
-    export function getSafeArea(): [number, number, number, number];
+    function getSafeArea(): LuaMultiReturn<[x: number, y: number, width: number, height: number]>;
 
     /**
      * Gets the window title.
@@ -190,7 +184,7 @@ declare module "love.window" {
      * @return title, The current window title.
      * @link [love.window.getTitle](https://love2d.org/wiki/love.window.getTitle)
      */
-    export function getTitle(): string;
+    function getTitle(): string;
 
     /**
      * Gets current vertical synchronization (vsync).
@@ -198,7 +192,7 @@ declare module "love.window" {
      * @link [love.window.getVSync](https://love2d.org/wiki/love.window.getVSync)
      * @since 11.3
      */
-    export function getVSync(): 1 | 0 | -1;
+    function getVSync(): 1 | 0 | -1;
 
     /**
      * Checks if the game window has keyboard focus.
@@ -206,7 +200,7 @@ declare module "love.window" {
      * @return focus, True if the window has the focus or false if not.
      * @link [love.window.hasFocus](https://love2d.org/wiki/love.window.hasFocus)
      */
-    export function hasFocus(): boolean;
+    function hasFocus(): boolean;
 
     /**
      * Checks if the game window has mouse focus.
@@ -214,7 +208,7 @@ declare module "love.window" {
      * @return focus, True if the window has mouse focus or false if not.
      * @link [love.window.hasMouseFocus](https://love2d.org/wiki/love.window.hasMouseFocus)
      */
-    export function hasMouseFocus(): boolean;
+    function hasMouseFocus(): boolean;
 
     /**
      * Gets whether the display is allowed to sleep while the program is running.
@@ -226,7 +220,7 @@ declare module "love.window" {
      * @return enabled, True if system display sleep is enabled / allowed, false otherwise.
      * @link [love.window.isDisplaySleepEnabled](https://love2d.org/wiki/love.window.isDisplaySleepEnabled)
      */
-    export function isDisplaySleepEnabled(): boolean;
+    function isDisplaySleepEnabled(): boolean;
 
     /**
      * Gets whether the Window is currently maximized.
@@ -238,7 +232,7 @@ declare module "love.window" {
      * @return maximized, True if the window is currently maximized in windowed mode, false otherwise.
      * @link [love.window.isMaximized](https://love2d.org/wiki/love.window.isMaximized)
      */
-    export function isMaximized(): boolean;
+    function isMaximized(): boolean;
 
     /**
      * Gets whether the Window is currently minimized.
@@ -246,7 +240,7 @@ declare module "love.window" {
      * @return maximized, True if the window is currently minimized, false otherwise.
      * @link [love.window.isMinimized](https://love2d.org/wiki/love.window.isMinimized)
      */
-    export function isMinimized(): boolean;
+    function isMinimized(): boolean;
 
     /**
      * Checks if the window is open.
@@ -254,7 +248,7 @@ declare module "love.window" {
      * @return open, True if the window is open, false otherwise.
      * @link [love.window.isOpen](https://love2d.org/wiki/love.window.isOpen)
      */
-    export function isOpen(): boolean;
+    function isOpen(): boolean;
 
     /**
      * Checks if the game window is visible.
@@ -265,7 +259,7 @@ declare module "love.window" {
      * @return visible, True if the window is visible or false if not.
      * @link [love.window.isVisible](https://love2d.org/wiki/love.window.isVisible)
      */
-    export function isVisible(): boolean;
+    function isVisible(): boolean;
 
     /**
      * Makes the window as large as possible.
@@ -275,21 +269,21 @@ declare module "love.window" {
      *
      * @link [love.window.maximize](https://love2d.org/wiki/love.window.maximize)
      */
-    export function maximize(): void;
+    function maximize(): void;
 
     /**
      * Minimizes the window to the system's task bar / dock.
      *
      * @link [love.window.minimize](https://love2d.org/wiki/love.window.minimize)
      */
-    export function minimize(): void;
+    function minimize(): void;
 
     /**
      * Restores the size and position of the window if it was minimized or maximized.
      *
      * @link [love.window.restore](https://love2d.org/wiki/love.window.restore)
      */
-    export function restore(): void;
+    function restore(): void;
 
     /**
      * Causes the window to request the attention of the user if it is not in the
@@ -300,7 +294,7 @@ declare module "love.window" {
      * @param continuous Whether to continuously request attention until the window becomes active, or to do it only once.
      * @link [love.window.requestAttention](https://love2d.org/wiki/love.window.requestAttention)
      */
-    export function requestAttention(continuous?: boolean): void;
+    function requestAttention(continuous?: boolean): void;
 
     /**
      * Sets whether the display is allowed to sleep while the program is running.
@@ -312,7 +306,7 @@ declare module "love.window" {
      * @param enable True to enable system display sleep, false to disable it.
      * @link [love.window.setDisplaySleepEnabled](https://love2d.org/wiki/love.window.setDisplaySleepEnabled)
      */
-    export function setDisplaySleepEnabled(enable: boolean): void;
+    function setDisplaySleepEnabled(enable: boolean): void;
 
     /**
      * Enters or exits fullscreen. The display to use when entering fullscreen is
@@ -329,7 +323,7 @@ declare module "love.window" {
      * @return success, True if successful, false otherwise.
      * @link [love.window.setFullscreen](https://love2d.org/wiki/love.window.setFullscreen)
      */
-    export function setFullscreen(fullscreen: boolean): boolean;
+    function setFullscreen(fullscreen: boolean): boolean;
 
     /**
      * Enters or exits fullscreen. The display to use when entering fullscreen is
@@ -347,7 +341,7 @@ declare module "love.window" {
      * @return success, True if successful, false otherwise.
      * @link [love.window.setFullscreen](https://love2d.org/wiki/love.window.setFullscreen)
      */
-    export function setFullscreen(fullscreen: boolean, fstype: FullscreenType): boolean;
+    function setFullscreen(fullscreen: boolean, fstype: FullscreenType): boolean;
 
     /**
      * Sets the window icon until the game is quit. Not all operating systems support
@@ -357,7 +351,7 @@ declare module "love.window" {
      * @return success, Whether the icon has been set successfully.
      * @link [love.window.setIcon](https://love2d.org/wiki/love.window.setIcon)
      */
-    export function setIcon(imagedata: ImageData): boolean;
+    function setIcon(imagedata: ImageData): boolean;
 
     /**
      * Sets the display mode and properties of the window.
@@ -375,7 +369,7 @@ declare module "love.window" {
      * @return success, True if successful, false otherwise.
      * @link [love.window.setMode](https://love2d.org/wiki/love.window.setMode)
      */
-    export function setMode(width: number, height: number, flags: DisplayFlags): boolean;
+    function setMode(width: number, height: number, flags: DisplayFlags): boolean;
 
     /**
      * Sets the position of the window on the screen.
@@ -387,7 +381,7 @@ declare module "love.window" {
      * @param display The index of the display that the new window position is relative to.
      * @link [love.window.setPosition](https://love2d.org/wiki/love.window.setPosition)
      */
-    export function setPosition(x: number, y: number, display: number): void;
+    function setPosition(x: number, y: number, display: number): void;
 
     /**
      * Sets the window title.
@@ -395,7 +389,7 @@ declare module "love.window" {
      * @param title The new window title.
      * @link [love.window.setTitle](https://love2d.org/wiki/love.window.setTitle)
      */
-    export function setTitle(title: string): void;
+    function setTitle(title: string): void;
 
     /**
      * Sets vertical synchronization mode.
@@ -403,7 +397,7 @@ declare module "love.window" {
      * @link [love.window.setVSync](https://love2d.org/wiki/love.window.setVSync)
      * @since 11.3
      */
-    export function setVSync(vsync: 1 | 0 | -1): void;
+    function setVSync(vsync: 1 | 0 | -1): void;
 
     /**
      * Displays a message box dialog above the love window. The message box contains a
@@ -416,12 +410,7 @@ declare module "love.window" {
      * @return success, Whether the message box was successfully displayed.
      * @link [love.window.showMessageBox](https://love2d.org/wiki/love.window.showMessageBox)
      */
-    export function showMessageBox(
-        title: string,
-        message: string,
-        type?: MessageBoxType,
-        attachtowindow?: boolean
-    ): boolean;
+    function showMessageBox(title: string, message: string, type?: MessageBoxType, attachtowindow?: boolean): boolean;
 
     /**
      * Displays a message box dialog above the love window. The message box contains a
@@ -435,7 +424,7 @@ declare module "love.window" {
      * @return pressedbutton, The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.
      * @link [love.window.showMessageBox](https://love2d.org/wiki/love.window.showMessageBox)
      */
-    export function showMessageBox(
+    function showMessageBox(
         title: string,
         message: string,
         buttonlist: {
@@ -469,7 +458,7 @@ declare module "love.window" {
      * @return pixelvalue, The converted number, in pixels.
      * @link [love.window.toPixels](https://love2d.org/wiki/love.window.toPixels)
      */
-    export function toPixels(value: number): number;
+    function toPixels(value: number): number;
 
     /**
      * Converts a number from density-independent units to pixels.
@@ -493,10 +482,9 @@ declare module "love.window" {
      * @param y The y-axis value of a coordinate in density-independent units to convert to pixels.
      * @return px, The converted x-axis value of the coordinate, in pixels.
      * @return py, The converted y-axis value of the coordinate, in pixels.
-     * @tupleReturn
      * @link [love.window.toPixels](https://love2d.org/wiki/love.window.toPixels)
      */
-    export function toPixels(x: number, y: number): [number, number];
+    function toPixels(x: number, y: number): LuaMultiReturn<[px: number, py: number]>;
 
     /**
      * Sets the display mode and properties of the window, without modifying
@@ -515,5 +503,5 @@ declare module "love.window" {
      * @return success, True if successful, false otherwise.
      * @link [love.window.close](https://love2d.org/wiki/love.window.close)
      */
-    export function updateMode(width: number, height: number, settings: DisplayFlags): boolean;
+    function updateMode(width: number, height: number, settings: DisplayFlags): boolean;
 }

@@ -17,10 +17,12 @@ declare module "love.physics" {
      * @return y1, The y-coordinate of the first point.
      * @return x2, The x-coordinate of the second point.
      * @return y2, The y-coordinate of the second point.
-     * @tupleReturn
      * @link [love.physics.getDistance](https://love2d.org/wiki/love.physics.getDistance)
      */
-    export function getDistance(fixture1: Fixture, fixture2: Fixture): [number, number, number, number, number];
+    function getDistance(
+        fixture1: Fixture,
+        fixture2: Fixture
+    ): LuaMultiReturn<[distance: number, x1: number, y1: number, x2: number, y2: number]>;
 
     /**
      * Get the scale of the world.
@@ -35,7 +37,7 @@ declare module "love.physics" {
      * @return scale, The size of 1 meter in pixels.
      * @link [love.physics.getMeter](https://love2d.org/wiki/love.physics.getMeter)
      */
-    export function getMeter(): number;
+    function getMeter(): number;
 
     /**
      * Creates a new body.
@@ -55,7 +57,7 @@ declare module "love.physics" {
      * @return body, A new body.
      * @link [love.physics.newBody](https://love2d.org/wiki/love.physics.newBody)
      */
-    export function newBody(world: World, x?: number, y?: number, type?: BodyType): Body;
+    function newBody(world: World, x?: number, y?: number, type?: BodyType): Body;
 
     /**
      * Creates a new ChainShape.
@@ -65,7 +67,7 @@ declare module "love.physics" {
      * @return shape, The new shape.
      * @link [love.physics.newChainShape](https://love2d.org/wiki/love.physics.newChainShape)
      */
-    export function newChainShape(loop: boolean, ...xys: Array<number>): ChainShape;
+    function newChainShape(loop: boolean, ...xys: Array<number>): ChainShape;
 
     /**
      * Creates a new ChainShape.
@@ -75,7 +77,7 @@ declare module "love.physics" {
      * @return shape, The new shape.
      * @link [love.physics.newChainShape](https://love2d.org/wiki/love.physics.newChainShape)
      */
-    export function newChainShape(loop: boolean, points: Array<number>): ChainShape;
+    function newChainShape(loop: boolean, points: Array<number>): ChainShape;
 
     /**
      * Creates a new CircleShape.
@@ -84,7 +86,7 @@ declare module "love.physics" {
      * @return shape, The new shape.
      * @link [love.physics.newCircleShape](https://love2d.org/wiki/love.physics.newCircleShape)
      */
-    export function newCircleShape(radius: number): CircleShape;
+    function newCircleShape(radius: number): CircleShape;
 
     /**
      * Creates a new CircleShape.
@@ -95,7 +97,7 @@ declare module "love.physics" {
      * @return shape, The new shape.
      * @link [love.physics.newCircleShape](https://love2d.org/wiki/love.physics.newCircleShape)
      */
-    export function newCircleShape(x: number, y: number, radius: number): CircleShape;
+    function newCircleShape(x: number, y: number, radius: number): CircleShape;
 
     /**
      * Create a distance joint between two bodies.
@@ -116,7 +118,7 @@ declare module "love.physics" {
      * @return joint, The new distance joint.
      * @link [love.physics.newDistanceJoint](https://love2d.org/wiki/love.physics.newDistanceJoint)
      */
-    export function newDistanceJoint(
+    function newDistanceJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -136,7 +138,7 @@ declare module "love.physics" {
      * @return shape, The new shape.
      * @link [love.physics.newEdgeShape](https://love2d.org/wiki/love.physics.newEdgeShape)
      */
-    export function newEdgeShape(x1: number, y1: number, x2: number, y2: number): EdgeShape;
+    function newEdgeShape(x1: number, y1: number, x2: number, y2: number): EdgeShape;
 
     /**
      * Creates and attaches a Fixture to a body.
@@ -147,7 +149,7 @@ declare module "love.physics" {
      * @return fixture, The new fixture.
      * @link [love.physics.newFixture](https://love2d.org/wiki/love.physics.newFixture)
      */
-    export function newFixture(body: Body, shape: Shape, density?: number): Fixture;
+    function newFixture(body: Body, shape: Shape, density?: number): Fixture;
 
     /**
      * Create a friction joint between two bodies. A FrictionJoint applies friction to
@@ -161,7 +163,7 @@ declare module "love.physics" {
      * @return joint, The new FrictionJoint.
      * @link [love.physics.newFrictionJoint](https://love2d.org/wiki/love.physics.newFrictionJoint)
      */
-    export function newFrictionJoint(
+    function newFrictionJoint(
         body1: Body,
         body2: Body,
         x: number,
@@ -190,7 +192,7 @@ declare module "love.physics" {
      * @return joint, The new gear joint.
      * @link [love.physics.newGearJoint](https://love2d.org/wiki/love.physics.newGearJoint)
      */
-    export function newGearJoint(joint1: Joint, joint2: Joint, ratio?: number, collideConnected?: boolean): GearJoint;
+    function newGearJoint(joint1: Joint, joint2: Joint, ratio?: number, collideConnected?: boolean): GearJoint;
 
     /**
      * Creates a joint between two bodies which controls the relative motion between
@@ -206,7 +208,7 @@ declare module "love.physics" {
      * @return joint, The new MotorJoint.
      * @link [love.physics.newMotorJoint](https://love2d.org/wiki/love.physics.newMotorJoint)
      */
-    export function newMotorJoint(body1: Body, body2: Body, correctionFactor?: number): MotorJoint;
+    function newMotorJoint(body1: Body, body2: Body, correctionFactor?: number): MotorJoint;
 
     /**
      * Creates a joint between two bodies which controls the relative motion between
@@ -223,12 +225,7 @@ declare module "love.physics" {
      * @return joint, The new MotorJoint.
      * @link [love.physics.newMotorJoint](https://love2d.org/wiki/love.physics.newMotorJoint)
      */
-    export function newMotorJoint(
-        body1: Body,
-        body2: Body,
-        correctionFactor?: number,
-        collideConnected?: boolean
-    ): MotorJoint;
+    function newMotorJoint(body1: Body, body2: Body, correctionFactor?: number, collideConnected?: boolean): MotorJoint;
 
     /**
      * Create a joint between a body and the mouse.
@@ -247,7 +244,7 @@ declare module "love.physics" {
      * @return joint, The new mouse joint.
      * @link [love.physics.newMouseJoint](https://love2d.org/wiki/love.physics.newMouseJoint)
      */
-    export function newMouseJoint(body: Body, x: number, y: number): MouseJoint;
+    function newMouseJoint(body: Body, x: number, y: number): MouseJoint;
 
     /**
      * Creates a new PolygonShape.
@@ -258,7 +255,7 @@ declare module "love.physics" {
      * @return shape, A new PolygonShape.
      * @link [love.physics.newPolygonShape](https://love2d.org/wiki/love.physics.newPolygonShape)
      */
-    export function newPolygonShape(...xys: Array<number>): PolygonShape;
+    function newPolygonShape(...xys: Array<number>): PolygonShape;
 
     /**
      * Creates a new PolygonShape.
@@ -269,7 +266,7 @@ declare module "love.physics" {
      * @return shape, A new PolygonShape.
      * @link [love.physics.newPolygonShape](https://love2d.org/wiki/love.physics.newPolygonShape)
      */
-    export function newPolygonShape(vertices: Array<number>): PolygonShape;
+    function newPolygonShape(vertices: Array<number>): PolygonShape;
 
     /**
      * Create a prismatic joints between two bodies.
@@ -289,7 +286,7 @@ declare module "love.physics" {
      * @return joint, The new prismatic joint.
      * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
      */
-    export function newPrismaticJoint(
+    function newPrismaticJoint(
         body1: Body,
         body2: Body,
         x: number,
@@ -319,7 +316,7 @@ declare module "love.physics" {
      * @return joint, The new prismatic joint.
      * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
      */
-    export function newPrismaticJoint(
+    function newPrismaticJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -352,7 +349,7 @@ declare module "love.physics" {
      * @return joint, The new prismatic joint.
      * @link [love.physics.newPrismaticJoint](https://love2d.org/wiki/love.physics.newPrismaticJoint)
      */
-    export function newPrismaticJoint(
+    function newPrismaticJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -393,7 +390,7 @@ declare module "love.physics" {
      * @return joint, The new pulley joint.
      * @link [love.physics.newPulleyJoint](https://love2d.org/wiki/love.physics.newPulleyJoint)
      */
-    export function newPulleyJoint(
+    function newPulleyJoint(
         body1: Body,
         body2: Body,
         gx1: number,
@@ -419,7 +416,7 @@ declare module "love.physics" {
      * @return shape, A new PolygonShape.
      * @link [love.physics.newRectangleShape](https://love2d.org/wiki/love.physics.newRectangleShape)
      */
-    export function newRectangleShape(width: number, height: number): PolygonShape;
+    function newRectangleShape(width: number, height: number): PolygonShape;
 
     /**
      * Shorthand for creating rectangular PolygonShapes.
@@ -435,13 +432,7 @@ declare module "love.physics" {
      * @return shape, A new PolygonShape.
      * @link [love.physics.newRectangleShape](https://love2d.org/wiki/love.physics.newRectangleShape)
      */
-    export function newRectangleShape(
-        x: number,
-        y: number,
-        width: number,
-        height: number,
-        angle?: number
-    ): PolygonShape;
+    function newRectangleShape(x: number, y: number, width: number, height: number, angle?: number): PolygonShape;
 
     /**
      * Creates a pivot joint between two bodies.
@@ -456,7 +447,7 @@ declare module "love.physics" {
      * @return joint, The new revolute joint.
      * @link [love.physics.newRevoluteJoint](https://love2d.org/wiki/love.physics.newRevoluteJoint)
      */
-    export function newRevoluteJoint(
+    function newRevoluteJoint(
         body1: Body,
         body2: Body,
         x: number,
@@ -480,7 +471,7 @@ declare module "love.physics" {
      * @return joint, The new revolute joint.
      * @link [love.physics.newRevoluteJoint](https://love2d.org/wiki/love.physics.newRevoluteJoint)
      */
-    export function newRevoluteJoint(
+    function newRevoluteJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -506,7 +497,7 @@ declare module "love.physics" {
      * @return joint, The new RopeJoint.
      * @link [love.physics.newRopeJoint](https://love2d.org/wiki/love.physics.newRopeJoint)
      */
-    export function newRopeJoint(
+    function newRopeJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -530,7 +521,7 @@ declare module "love.physics" {
      * @return joint, The new WeldJoint.
      * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
      */
-    export function newWeldJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): WeldJoint;
+    function newWeldJoint(body1: Body, body2: Body, x: number, y: number, collideConnected?: boolean): WeldJoint;
 
     /**
      * Creates a constraint joint between two bodies. A WeldJoint essentially glues
@@ -547,7 +538,7 @@ declare module "love.physics" {
      * @return joint, The new WeldJoint.
      * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
      */
-    export function newWeldJoint(
+    function newWeldJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -573,7 +564,7 @@ declare module "love.physics" {
      * @return joint, The new WeldJoint.
      * @link [love.physics.newWeldJoint](https://love2d.org/wiki/love.physics.newWeldJoint)
      */
-    export function newWeldJoint(
+    function newWeldJoint(
         body1: Body,
         body2: Body,
         x1: number,
@@ -597,7 +588,7 @@ declare module "love.physics" {
      * @return joint, The new WheelJoint.
      * @link [love.physics.newWheelJoint](https://love2d.org/wiki/love.physics.newWheelJoint)
      */
-    export function newWheelJoint(
+    function newWheelJoint(
         body1: Body,
         body2: Body,
         x: number,
@@ -616,7 +607,7 @@ declare module "love.physics" {
      * @return world, A brave new World.
      * @link [love.physics.newWorld](https://love2d.org/wiki/love.physics.newWorld)
      */
-    export function newWorld(xg?: number, yg?: number, sleep?: boolean): World;
+    function newWorld(xg?: number, yg?: number, sleep?: boolean): World;
 
     /**
      * Sets the pixels to meter scale factor.
@@ -636,5 +627,5 @@ declare module "love.physics" {
      * @param scale The scale factor as an integer.
      * @link [love.physics.setMeter](https://love2d.org/wiki/love.physics.setMeter)
      */
-    export function setMeter(scale: number): void;
+    function setMeter(scale: number): void;
 }

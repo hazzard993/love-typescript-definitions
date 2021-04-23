@@ -3,5 +3,5 @@ declare module "love.graphics" {
      * The styles in which lines are drawn.
      * @link [LineStyle](https://love2d.org/wiki/LineStyle)
      */
-    export type LineStyle = "rough" | "smooth";
+    type LineStyle = "rough" | "smooth";
 }

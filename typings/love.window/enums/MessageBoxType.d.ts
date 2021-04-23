@@ -4,5 +4,5 @@ declare module "love.window" {
      * looks.
      * @link [MessageBoxType](https://love2d.org/wiki/MessageBoxType)
      */
-    export type MessageBoxType = "info" | "warning" | "error";
+    type MessageBoxType = "info" | "warning" | "error";
 }

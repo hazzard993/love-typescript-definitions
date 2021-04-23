@@ -12,7 +12,7 @@ declare module "love.timer" {
      * @return delta, The average delta time over the last second.
      * @link [love.timer.getAverageDelta](https://love2d.org/wiki/love.timer.getAverageDelta)
      */
-    export function getAverageDelta(): number;
+    function getAverageDelta(): number;
 
     /**
      * Returns the time between the last two frames.
@@ -20,7 +20,7 @@ declare module "love.timer" {
      * @return dt, The time passed (in seconds).
      * @link [love.timer.getDelta](https://love2d.org/wiki/love.timer.getDelta)
      */
-    export function getDelta(): number;
+    function getDelta(): number;
 
     /**
      * Returns the current frames per second.
@@ -28,7 +28,7 @@ declare module "love.timer" {
      * @return fps, The current FPS.
      * @link [love.timer.getFPS](https://love2d.org/wiki/love.timer.getFPS)
      */
-    export function getFPS(): number;
+    function getFPS(): number;
 
     /**
      * Returns the value of a timer with an unspecified starting time. This function
@@ -38,7 +38,7 @@ declare module "love.timer" {
      * @return time, The time in seconds.
      * @link [love.timer.getTime](https://love2d.org/wiki/love.timer.getTime)
      */
-    export function getTime(): number;
+    function getTime(): number;
 
     /**
      * Sleeps the program for the specified amount of time.
@@ -46,7 +46,7 @@ declare module "love.timer" {
      * @param s Seconds to sleep for.
      * @link [love.timer.sleep](https://love2d.org/wiki/love.timer.sleep)
      */
-    export function sleep(s: number): void;
+    function sleep(s: number): void;
 
     /**
      * Measures the time between two frames. Calling this changes the return value of
@@ -55,5 +55,5 @@ declare module "love.timer" {
      * @return dt, The time passed (in seconds).
      * @link [love.timer.step](https://love2d.org/wiki/love.timer.step)
      */
-    export function step(): number;
+    function step(): number;
 }

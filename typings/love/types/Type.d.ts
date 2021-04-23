@@ -5,7 +5,7 @@ declare module "love" {
      * Use `typeOf` to determine what subtype that is.
      * @link [Object](https://love2d.org/wiki/Object)
      */
-    export interface Type<T extends keyof Types = keyof Types> {
+    interface Type<T extends keyof Types = keyof Types> {
         /** @ignore */
         " __opaque": never;
 

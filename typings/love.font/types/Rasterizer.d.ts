@@ -7,7 +7,7 @@ declare module "love.font" {
      * @link [Rasterizer](https://love2d.org/wiki/Rasterizer)
      * @since 0.7.0
      */
-    export interface Rasterizer extends Type<"Rasterizer"> {
+    interface Rasterizer extends Type<"Rasterizer"> {
         /**
          * Gets font advance.
          *

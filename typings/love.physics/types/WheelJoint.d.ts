@@ -3,16 +3,15 @@ declare module "love.physics" {
      * Restricts a point on the second body to a line on the first body.
      * @link [WheelJoint](https://love2d.org/wiki/WheelJoint)
      */
-    export interface WheelJoint extends Joint<"WheelJoint"> {
+    interface WheelJoint extends Joint<"WheelJoint"> {
         /**
          * Gets the world-space axis vector of the Wheel Joint.
          *
          * @return x, The x-axis coordinate of the world-space axis vector.
          * @return y, The y-axis coordinate of the world-space axis vector.
-         * @tupleReturn
          * @link [WheelJoint:getAxis](https://love2d.org/wiki/WheelJoint:getAxis)
          */
-        getAxis(): [number, number];
+        getAxis(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Returns the current joint translation speed.

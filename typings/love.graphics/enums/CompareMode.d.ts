@@ -51,5 +51,5 @@ declare module "love.graphics" {
      * @link [CompareMode](https://love2d.org/wiki/CompareMode)
      * @since 0.10.0
      */
-    export type CompareMode = "equal" | "notequal" | "less" | "lequal" | "gequal" | "greater" | "never" | "always";
+    type CompareMode = "equal" | "notequal" | "less" | "lequal" | "gequal" | "greater" | "never" | "always";
 }

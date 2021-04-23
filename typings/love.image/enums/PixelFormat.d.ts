@@ -2,7 +2,7 @@ declare module "love.image" {
     /**
      * @link [PixelFormat](https://love2d.org/wiki/PixelFormat)
      */
-    export type PixelFormat =
+    type PixelFormat =
         | "hdr"
         | "normal"
         | "r16"

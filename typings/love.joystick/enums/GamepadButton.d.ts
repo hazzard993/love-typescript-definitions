@@ -3,7 +3,7 @@ declare module "love.joystick" {
      * Virtual gamepad buttons.
      * @link [GamepadButton](https://love2d.org/wiki/GamepadButton)
      */
-    export type GamepadButton =
+    type GamepadButton =
         | "a"
         | "b"
         | "x"

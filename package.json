@@ -34,8 +34,8 @@
     "devDependencies": {
         "@types/node": "^13.1.4",
         "is-ci": "^2.0.0",
-        "prettier": "^1.18.2",
-        "typedoc": "^0.16.7",
-        "typescript-to-lua": "^0.31.0"
+        "prettier": "^2.2.1",
+        "typedoc": "^0.20.28",
+        "typescript-to-lua": "^0.38.1"
     }
 }
