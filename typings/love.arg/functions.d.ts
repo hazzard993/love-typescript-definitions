@@ -7,9 +7,9 @@ declare module "love" {
          * @param args The given arguments to look at.
          * @returns The lowest argument followed by its index within args.
          */
-        function getLow(args: string[]): LuaMultiReturn<[lowest: string, index: number]>;
-        function parseOption(): void;
-        function parseOptions(): void;
+        function getLow(this: void, args: string[]): LuaMultiReturn<[lowest: string, index: number]>;
+        function parseOption(this: void): void;
+        function parseOptions(this: void): void;
 
         /**
          * Returns the arguments that are passed to your game via love.load()
@@ -18,6 +18,6 @@ declare module "love" {
          * @param args The arguments to parse.
          * @returns The parsed arguments.
          */
-        function parseGameArguments(args: string[]): string[];
+        function parseGameArguments(this: void, args: string[]): string[];
     }
 }
