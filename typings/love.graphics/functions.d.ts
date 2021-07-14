@@ -623,7 +623,7 @@ declare module "love.graphics" {
      * @link [love.graphics.getDimensions](https://love2d.org/wiki/love.graphics.getDimensions)
      * @since 11.0
      */
-    function getDimensions(): LuaMultiReturn<[comparemode: number, write: number]>;
+    function getDimensions(): LuaMultiReturn<[width: number, height: number]>;
 
     /**
      * Gets the current Font object.
