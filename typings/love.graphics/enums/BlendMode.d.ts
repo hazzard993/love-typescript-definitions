@@ -4,5 +4,5 @@ declare module "love.graphics" {
      * Formulas for additional notes.
      * @link [BlendMode](https://love2d.org/wiki/BlendMode)
      */
-    export type BlendMode = "alpha" | "replace" | "screen" | "add" | "subtract" | "multiply" | "lighten" | "darken";
+    type BlendMode = "alpha" | "replace" | "screen" | "add" | "subtract" | "multiply" | "lighten" | "darken";
 }

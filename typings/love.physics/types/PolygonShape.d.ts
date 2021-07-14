@@ -3,7 +3,7 @@ declare module "love.physics" {
      * A PolygonShape is a convex polygon with up to 8 vertices.
      * @link [PolygonShape](https://love2d.org/wiki/PolygonShape)
      */
-    export interface PolygonShape extends Shape<"PolygonShape"> {
+    interface PolygonShape extends Shape<"PolygonShape"> {
         /**
          * Get the local coordinates of the polygon's vertices.
          *
@@ -19,10 +19,9 @@ declare module "love.physics" {
          * @return x2, The x component of the second vertex.
          * @return y2, The y component of the second vertex.
          * @return ..., Additional x and y values.
-         * @tupleReturn
          * @link [PolygonShape:getPoints](https://love2d.org/wiki/PolygonShape:getPoints)
          */
-        getPoints(): Array<number>;
+        getPoints(): LuaMultiReturn<number[]>;
 
         /**
          * Validates whether the PolygonShape is convex.

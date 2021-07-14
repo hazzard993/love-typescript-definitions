@@ -3,7 +3,7 @@ declare module "love.physics" {
      * Allow two Bodies to revolve around a shared point.
      * @link [RevoluteJoint](https://love2d.org/wiki/RevoluteJoint)
      */
-    export interface RevoluteJoint extends Joint<"RevoluteJoint"> {
+    interface RevoluteJoint extends Joint<"RevoluteJoint"> {
         /**
          * Checks whether the limits are enabled.
          *
@@ -49,10 +49,9 @@ declare module "love.physics" {
          *
          * @return lower, The lower limit, in radians.
          * @return upper, The upper limit, in radians.
-         * @tupleReturn
          * @link [RevoluteJoint:getLimits](https://love2d.org/wiki/RevoluteJoint:getLimits)
          */
-        getLimits(): [number, number];
+        getLimits(): LuaMultiReturn<[lower: number, upper: number]>;
 
         /**
          * Gets the lower limit.

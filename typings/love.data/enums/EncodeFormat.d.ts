@@ -4,5 +4,5 @@ declare module "love.data" {
      * @link [EncodeFormat](https://love2d.org/wiki/EncodeFormat)
      * @snice 11.0
      */
-    export type EncodeFormat = "base64" | "hex";
+    type EncodeFormat = "base64" | "hex";
 }

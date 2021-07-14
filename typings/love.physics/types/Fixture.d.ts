@@ -5,7 +5,7 @@ declare module "love.physics" {
      * Fixtures attach shapes to bodies.
      * @link [Fixture](https://love2d.org/wiki/Fixture)
      */
-    export interface Fixture extends Type<"Fixture"> {
+    interface Fixture extends Type<"Fixture"> {
         /**
          * Destroys the fixture
          *
@@ -31,19 +31,19 @@ declare module "love.physics" {
          * @return topLeftY, The y position of the top-left point.
          * @return bottomRightX, The x position of the bottom-right point.
          * @return bottomRightY, The y position of the bottom-right point.
-         * @tupleReturn
          * @link [Fixture:getBoundingBox](https://love2d.org/wiki/Fixture:getBoundingBox)
          */
-        getBoundingBox(index?: number): [number, number, number, number];
+        getBoundingBox(
+            index?: number
+        ): LuaMultiReturn<[topLeftX: number, topLeftY: number, bottomRightX: number, bottomRightY: number]>;
 
         /**
          * Returns the categories the fixture belongs to.
          *
          * @return categories, The categories this fixture belongs to.
-         * @tupleReturn
          * @link [Fixture:getCategory](https://love2d.org/wiki/Fixture:getCategory)
          */
-        getCategory(): Array<number>;
+        getCategory(): LuaMultiReturn<number[]>;
 
         /**
          * Returns the density of the fixture.
@@ -60,10 +60,9 @@ declare module "love.physics" {
          * @return categories, The categories as an integer from 0 to 65535.
          * @return mask, The mask as an integer from 0 to 65535.
          * @return group, The group as an integer from -32768 to 32767.
-         * @tupleReturn
          * @link [Fixture:getFilterData](https://love2d.org/wiki/Fixture:getFilterData)
          */
-        getFilterData(): [number, number, number];
+        getFilterData(): LuaMultiReturn<[categories: number, mask: number, group: number]>;
 
         /**
          * Returns the friction of the fixture.
@@ -89,10 +88,9 @@ declare module "love.physics" {
          * Returns the category mask of the fixture.
          *
          * @return categories, The categories the mask of this fixture belongs to.
-         * @tupleReturn
          * @link [Fixture:getMask](https://love2d.org/wiki/Fixture:getMask)
          */
-        getMask(): Array<number>;
+        getMask(): LuaMultiReturn<number[]>;
 
         /**
          * Returns the mass, its center and the rotational inertia.
@@ -101,10 +99,9 @@ declare module "love.physics" {
          * @return y, The y position of the center of mass.
          * @return mass, The mass of the fixture.
          * @return inertia, The rotational inertia.
-         * @tupleReturn
          * @link [Fixture:getMassData](https://love2d.org/wiki/Fixture:getMassData)
          */
-        getMassData(): [number, number, number, number];
+        getMassData(): LuaMultiReturn<[x: number, y: number, mass: number, inertia: number]>;
 
         /**
          * Returns the restitution of the fixture.
@@ -182,7 +179,6 @@ declare module "love.physics" {
          * @return x, The x position where the ray intersects with the shape.
          * @return y, The y position where the ray intersects with the shape.
          * @return fraction, The position on the input vector where the intersection happened as a number from 0 to 1.
-         * @tupleReturn
          * @link [Fixture:rayCast](https://love2d.org/wiki/Fixture:rayCast)
          */
         rayCast(
@@ -192,7 +188,7 @@ declare module "love.physics" {
             y2: number,
             maxFraction: number,
             childIndex?: number
-        ): [number, number, number] | [undefined, undefined, undefined];
+        ): LuaMultiReturn<[x: number, y: number, fraction: number] | []>;
 
         /**
          * Sets the categories the fixture belongs to. There can be up to 16 categories

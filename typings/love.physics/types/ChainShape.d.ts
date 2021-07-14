@@ -7,7 +7,7 @@ declare module "love.physics" {
      * The shape does not have volume and can only collide with PolygonShape and CircleShape.
      * @link [ChainShape](https://love2d.org/wiki/ChainShape)
      */
-    export interface ChainShape extends Shape<"ChainShape"> {
+    interface ChainShape extends Shape<"ChainShape"> {
         /**
          * Returns a child of the shape as an EdgeShape.
          *
@@ -36,10 +36,9 @@ declare module "love.physics" {
          * @param index The index of the point to return.
          * @return x, The x-coordinate of the point.
          * @return y, The y-coordinate of the point.
-         * @tupleReturn
          * @link [ChainShape:getPoint](https://love2d.org/wiki/ChainShape:getPoint)
          */
-        getPoint(index: number): [number, number];
+        getPoint(index: number): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Returns all points of the shape.
@@ -49,10 +48,9 @@ declare module "love.physics" {
          * @return x2, The x-coordinate of the second point.
          * @return y2, The y-coordinate of the second point.
          * @return ..., Additional x and y values.
-         * @tupleReturn
          * @link [ChainShape:getPoints](https://love2d.org/wiki/ChainShape:getPoints)
          */
-        getPoints(): Array<number>;
+        getPoints(): LuaMultiReturn<number[]>;
 
         /**
          * Gets the vertex that establishes a connection to the previous shape.
@@ -63,10 +61,9 @@ declare module "love.physics" {
          *
          * @return x, The x-component of the vertex, or _nil/undefined_ if ChainShape:setNextVertex hasn't been called.
          * @return y, The y-component of the vertex, or _nil/undefined_ if ChainShape:setNextVertex hasn't been called.
-         * @tupleReturn
          * @link [ChainShape:getPreviousVertex](https://love2d.org/wiki/ChainShape:getPreviousVertex)
          */
-        getPreviousVertex(): [number, number] | [undefined, undefined];
+        getPreviousVertex(): LuaMultiReturn<[x: number, y: number] | []>;
 
         /**
          * Returns the number of vertices the shape has.

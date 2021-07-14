@@ -6,5 +6,5 @@ declare module "love" {
      *
      * Implemented in [boot.lua](https://bitbucket.org/rude/love/src/default/src/scripts/boot.lua)
      */
-    export namespace arg {}
+    namespace arg {}
 }

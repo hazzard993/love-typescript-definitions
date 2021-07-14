@@ -9,5 +9,5 @@ declare module "love.graphics" {
      *
      * @link [VertexWinding](https://love2d.org/wiki/VertexWinding)
      */
-    export type VertexWinding = "cw" | "ccw";
+    type VertexWinding = "cw" | "ccw";
 }

@@ -3,7 +3,7 @@ declare module "love.physics" {
      * Keeps two bodies at the same distance.
      * @link [DistanceJoint](https://love2d.org/wiki/DistanceJoint)
      */
-    export interface DistanceJoint extends Joint<"DistanceJoint"> {
+    interface DistanceJoint extends Joint<"DistanceJoint"> {
         /**
          * Gets the damping ratio.
          *

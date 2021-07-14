@@ -20,7 +20,7 @@ declare module "love.video" {
      * @return videostream, A new VideoStream.
      * @link [love.video.newVideoStream](https://love2d.org/wiki/love.video.newVideoStream)
      */
-    export function newVideoStream(filename: string): VideoStream;
+    function newVideoStream(filename: string): VideoStream;
 
     /**
      * Creates a new VideoStream. Currently only Ogg Theora video files are supported.
@@ -30,5 +30,5 @@ declare module "love.video" {
      * @return videostream, A new VideoStream.
      * @link [love.video.newVideoStream](https://love2d.org/wiki/love.video.newVideoStream)
      */
-    export function newVideoStream(file: File): VideoStream;
+    function newVideoStream(file: File): VideoStream;
 }

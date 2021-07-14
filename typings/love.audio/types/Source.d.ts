@@ -10,7 +10,7 @@ declare module "love.audio" {
      * @see {@link newSource}
      * @link [Source](https://love2d.org/wiki/Source)
      */
-    export interface Source extends Type<"Source"> {
+    interface Source extends Type<"Source"> {
         /**
          * Clones the source. The new source is stopped.
          *
@@ -29,13 +29,14 @@ declare module "love.audio" {
         getAirAbsorption(): number;
 
         /**
+         * Gets the reference and maximum attenuation distances of the Source.
+         *
          * @returns The reference distance and maximum distance.
-         * @tupleReturn
          * @see {@link setAttenuationDistances}
          * @link [Source:getAttenuationDistances](https://love2d.org/wiki/Source:getAttenuationDistances)
          * @since 11.2
          */
-        getAttenuationDistances(): [number, number];
+        getAttenuationDistances(): LuaMultiReturn<[ref: number, max: number]>;
 
         /**
          * Gets the number of channels in the {@link Source}.
@@ -66,22 +67,20 @@ declare module "love.audio" {
          * Together with {@link setDirection}, the cone angles allow for the Source's volume to vary depending on its direction.
          *
          * @returns The inner and outer angle, and volume.
-         * @tupleReturn
          * @see {@link setCone}
          * @link [Source:getCone](https://love2d.org/wiki/Source:getCone)
          * @since 0.9.0
          */
-        getCone(): [number, number, number];
+        getCone(): LuaMultiReturn<[innerAngle: number, outerAngle: number, outerVolume: number]>;
 
         /**
          * Gets the direction of the {@link Source}.
          *
          * @returns The X, Y and Z parts of the direction vector.
-         * @tupleReturn
          * @link [Source:getDirection](https://love2d.org/wiki/Source:getDirection)
          * @since 0.7.0
          */
-        getDirection(): [number, number, number];
+        getDirection(): LuaMultiReturn<[x: number, y: number, z: number]>;
 
         /**
          * Gets the duration of the Source.
@@ -135,11 +134,10 @@ declare module "love.audio" {
 
         /**
          * @returns The X, Y and Z position of the Source.
-         * @tupleReturn
          * @link [Source:getPosition](https://love2d.org/wiki/Source:getPosition)
          * @since 0.7.0
          */
-        getPosition(): [number, number, number];
+        getPosition(): LuaMultiReturn<[x: number, y: number, z: number]>;
 
         /**
          * @returns The rolloff factor.
@@ -157,11 +155,10 @@ declare module "love.audio" {
 
         /**
          * @returns The X, Y and Z of the velocity vector.
-         * @tupleReturn
          * @link [Source:getVelocity](https://love2d.org/wiki/Source:getVelocity)
          * @since 0.7.0
          */
-        getVelocity(): [number, number, number];
+        getVelocity(): LuaMultiReturn<[x: number, y: number, z: number]>;
 
         /**
          * @returns The volume of the Source, where 1.0 is normal volume.
@@ -171,10 +168,10 @@ declare module "love.audio" {
 
         /**
          * @returns The minimum followed by the maximum volume.
-         * @tupleReturn
          * @link [Source:getVolumeLimits](https://love2d.org/wiki/Source:getVolumeLimits)
+         * @since 0.8.0
          */
-        getVolumeLimits(): [number, number];
+        getVolumeLimits(): LuaMultiReturn<[min: number, max: number]>;
 
         /**
          * Returns whether the Source will loop.

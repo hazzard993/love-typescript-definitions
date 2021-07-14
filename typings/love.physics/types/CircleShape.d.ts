@@ -3,16 +3,15 @@ declare module "love.physics" {
      * Circle extends Shape and adds a radius and a local position.
      * @link [CircleShape](https://love2d.org/wiki/CircleShape)
      */
-    export interface CircleShape extends Shape<"CircleShape"> {
+    interface CircleShape extends Shape<"CircleShape"> {
         /**
          * Gets the center point of the circle shape.
          *
          * @return x, The x-component of the center point of the circle.
          * @return y, The y-component of the center point of the circle.
-         * @tupleReturn
          * @link [CircleShape:getPoint](https://love2d.org/wiki/CircleShape:getPoint)
          */
-        getPoint(): [number, number];
+        getPoint(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Gets the radius of the circle shape.

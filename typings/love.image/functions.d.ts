@@ -15,7 +15,7 @@ declare module "love.image" {
      * @return compressed, Whether the file can be loaded as CompressedImageData or not.
      * @link [love.image.isCompressed](https://love2d.org/wiki/love.image.isCompressed)
      */
-    export function isCompressed(filename: string): boolean;
+    function isCompressed(filename: string): boolean;
 
     /**
      * Determines whether a file can be loaded as CompressedImageData.
@@ -24,7 +24,7 @@ declare module "love.image" {
      * @return compressed, Whether the FileData can be loaded as CompressedImageData or not.
      * @link [love.image.](https://love2d.org/wiki/love.image.)
      */
-    export function isCompressed(fileData: FileData): boolean;
+    function isCompressed(fileData: FileData): boolean;
 
     /**
      * Create a new CompressedImageData object from a compressed image file. LÖVE
@@ -35,7 +35,7 @@ declare module "love.image" {
      * @return compressedImageData, The new CompressedImageData object.
      * @link [love.image.newCompressedData](https://love2d.org/wiki/love.image.newCompressedData)
      */
-    export function newCompressedData(filename: string): CompressedImageData;
+    function newCompressedData(filename: string): CompressedImageData;
 
     /**
      * Create a new CompressedImageData object from a compressed image file. LÖVE
@@ -46,7 +46,7 @@ declare module "love.image" {
      * @return compressedImageData, The new CompressedImageData object.
      * @link [love.image.newCompressedData](https://love2d.org/wiki/love.image.newCompressedData)
      */
-    export function newCompressedData(fileData: FileData): CompressedImageData;
+    function newCompressedData(fileData: FileData): CompressedImageData;
 
     /**
      * Create a new ImageData object.
@@ -56,7 +56,7 @@ declare module "love.image" {
      * @return imageData, The new blank ImageData object. Each pixel's color values, (including the alpha values!) will be set to zero.
      * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
      */
-    export function newImageData(width: number, height: number): ImageData;
+    function newImageData(width: number, height: number): ImageData;
 
     /**
      * Create a new ImageData object.
@@ -67,7 +67,7 @@ declare module "love.image" {
      * @return imageData, The new ImageData object.
      * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
      */
-    export function newImageData(width: number, height: number, data: string): ImageData;
+    function newImageData(width: number, height: number, data: string): ImageData;
 
     /**
      * Create a new ImageData object.
@@ -76,7 +76,7 @@ declare module "love.image" {
      * @return imageData, The new ImageData object.
      * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
      */
-    export function newImageData(filename: string): ImageData;
+    function newImageData(filename: string): ImageData;
 
     /**
      * Create a new ImageData object.
@@ -85,5 +85,5 @@ declare module "love.image" {
      * @return imageData, The new ImageData object.
      * @link [love.image.newImageData](https://love2d.org/wiki/love.image.newImageData)
      */
-    export function newImageData(filedata: FileData): ImageData;
+    function newImageData(filedata: FileData): ImageData;
 }

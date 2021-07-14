@@ -5,17 +5,14 @@ declare module "love.joystick" {
      * Represents a physical joystick.
      * @link [Joystick](https://love2d.org/wiki/Joystick)
      */
-    export interface Joystick extends Type<"Joystick"> {
+    interface Joystick extends Type<"Joystick"> {
         /**
          * Gets the direction of each axis.
          *
-         * @return axisDir1, Direction of axis1.
-         * @return axisDir2, Direction of axis2.
-         * @return axisDirN, Direction of axisN.
-         * @tupleReturn
+         * @returns Directions of each axis.
          * @link [Joystick:getAxes](https://love2d.org/wiki/Joystick:getAxes)
          */
-        getAxes(): [number, number, number];
+        getAxes(): LuaMultiReturn<number[]>;
 
         /**
          * Gets the direction of an axis.
@@ -46,12 +43,12 @@ declare module "love.joystick" {
          * Gets the USB vendor ID, product ID, and product version numbers of joystick which consistent across operating systems.
          *
          * Can be used to show different icons, etc. for different gamepads.
-         * @tupleReturn
+         *
          * @link [Joystick:getDeviceInfo](https://love2d.org/wiki/Joystick:getDeviceInfo)
          * @returns The USB vendor ID, product ID and the version of the joystick.
          * @since 11.3
          */
-        getDeviceInfo(): [number, number, number];
+        getDeviceInfo(): LuaMultiReturn<[vendorID: number, productID: number, productVersion: number]>;
 
         /**
          * Gets a stable GUID unique to the type of the physical joystick which does not
@@ -87,15 +84,14 @@ declare module "love.joystick" {
          * Gets the button, axis or hat that a virtual gamepad input is bound to.
          *
          * @param axisOrButton The virtual gamepad axis or button to get the binding for.
-         * @return inputtype, The type of input the virtual gamepad axis is bound to.
-         * @return inputindex, The index of the Joystick's button, axis or hat that the virtual gamepad axis is bound to.
-         * @return hatdirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/undefined_ otherwise.
-         * @tupleReturn
+         * @return inputType, The type of input the virtual gamepad axis is bound to.
+         * @return inputIndex, The index of the Joystick's button, axis or hat that the virtual gamepad axis is bound to.
+         * @return hatDirection, The direction of the hat, if the virtual gamepad axis is bound to a hat. _nil/undefined_ otherwise.
          * @link [Joystick:getGamepadMapping](https://love2d.org/wiki/Joystick:getGamepadMapping)
          */
         getGamepadMapping(
             axisOrButton: GamepadAxis | GamepadButton
-        ): [JoystickInputType, number, JoystickHat | undefined];
+        ): LuaMultiReturn<[inputType: JoystickInputType, inputIndex: number, hatDirection?: JoystickHat]>;
 
         /**
          * Gets the direction of the Joystick's hat.
@@ -121,10 +117,9 @@ declare module "love.joystick" {
          *
          * @return id, The Joystick's unique identifier. Remains the same as long as the game is running.
          * @return instanceid, Unique instance identifier. Changes every time the Joystick is reconnected. _nil/undefined_ if the Joystick is not connected.
-         * @tupleReturn
          * @link [Joystick:getID](https://love2d.org/wiki/Joystick:getID)
          */
-        getID(): [number, number | undefined];
+        getID(): LuaMultiReturn<[id: number, instanceId?: number]>;
 
         /**
          * Gets the name of the joystick.
@@ -139,10 +134,10 @@ declare module "love.joystick" {
          *
          * @return left, Current strength of the left vibration motor on the Joystick.
          * @return right, Current strength of the right vibration motor on the Joystick.
-         * @tupleReturn
          * @link [Joystick:getVibration](https://love2d.org/wiki/Joystick:getVibration)
+         * @since 0.9.0
          */
-        getVibration(): [number, number];
+        getVibration(): LuaMultiReturn<[left: number, right: number]>;
 
         /**
          * Gets whether the Joystick is connected.

@@ -1,7 +1,7 @@
 declare module "love.physics" {
     import { Type } from "love";
 
-    export type JointTypes =
+    type JointTypes =
         | "DistanceJoint"
         | "FrictionJoint"
         | "GearJoint"
@@ -18,7 +18,7 @@ declare module "love.physics" {
      * Attach multiple bodies together to interact in unique ways.
      * @link [Joint](https://love2d.org/wiki/Joint)
      */
-    export interface Joint<T extends JointTypes = JointTypes> extends Type<T> {
+    interface Joint<T extends JointTypes = JointTypes> extends Type<T> {
         /**
          * Explicitly destroys the Joint. When you don't have time to wait for garbage
          * collection, this function may be used to free the object immediately, but note
@@ -36,20 +36,18 @@ declare module "love.physics" {
          * @return y1, The y component of the anchor on Body 1.
          * @return x2, The x component of the anchor on Body 2.
          * @return y2, The y component of the anchor on Body 2.
-         * @tupleReturn
          * @link [Joint:getAnchors](https://love2d.org/wiki/Joint:getAnchors)
          */
-        getAnchors(): [number, number, number, number];
+        getAnchors(): LuaMultiReturn<[x1: number, y2: number, x2: number, y2: number]>;
 
         /**
          * Gets the bodies that the Joint is attached to.
          *
          * @return bodyA, The first Body.
          * @return bodyB, The second Body.
-         * @tupleReturn
          * @link [Joint:getBodies](https://love2d.org/wiki/Joint:getBodies)
          */
-        getBodies(): [Body, Body];
+        getBodies(): LuaMultiReturn<[bodyA: Body, bodyB: Body]>;
 
         /**
          * Gets whether the connected Bodies collide.
@@ -64,10 +62,9 @@ declare module "love.physics" {
          *
          * @return x, The x component of the force.
          * @return y, The y component of the force.
-         * @tupleReturn
          * @link [Joint:getReactionForce](https://love2d.org/wiki/Joint:getReactionForce)
          */
-        getReactionForce(): [number, number];
+        getReactionForce(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Returns the reaction torque on the second body.

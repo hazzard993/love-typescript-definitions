@@ -10,5 +10,5 @@ declare module "love.audio" {
      *
      * @link [SourceType](https://love2d.org/wiki/SourceType)
      */
-    export type SourceType = "static" | "stream" | "queue";
+    type SourceType = "static" | "stream" | "queue";
 }

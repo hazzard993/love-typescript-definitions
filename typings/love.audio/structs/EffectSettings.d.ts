@@ -6,7 +6,7 @@ declare module "love.audio" {
      * @link [love.audio.setEffect](https://love2d.org/wiki/love.audio.setEffect)
      * @link [love.audio.getEffect](https://love2d.org/wiki/love.audio.getEffect)
      */
-    export type EffectSettings =
+    type EffectSettings =
         | ChorusEffectSettings
         | CompressorEffectSettings
         | DistortionEffectSettings
@@ -21,7 +21,7 @@ declare module "love.audio" {
      *
      * Used to make sounds sound "fuller" or "thicker".
      */
-    export type ChorusEffectSettings = {
+    type ChorusEffectSettings = {
         type: "chorus";
         waveform?: EffectWaveform;
         phase?: number;
@@ -34,7 +34,7 @@ declare module "love.audio" {
     /**
      * Decreases the dynamic range of the sound, making the loud and quiet parts closer in volume, producing a more uniform amplitude throughout time.
      */
-    export type CompressorEffectSettings = {
+    type CompressorEffectSettings = {
         type: "compressor";
         enable?: boolean;
     };
@@ -42,7 +42,7 @@ declare module "love.audio" {
     /**
      * Alters the sound by amplifying it until it clips, shearing off parts of the signal, leading to a compressed and distorted sound.
      */
-    export type DistortionEffectSettings = {
+    type DistortionEffectSettings = {
         type: "distortion";
         gain?: number;
         edge?: number;
@@ -56,7 +56,7 @@ declare module "love.audio" {
      *
      * Also known as delay; causes the sound to repeat at regular intervals at a decreasing volume.
      */
-    export type EchoEffectSettings = {
+    type EchoEffectSettings = {
         type: "echo";
         delay?: number;
         tapdelay?: number;
@@ -68,7 +68,7 @@ declare module "love.audio" {
     /**
      * Adjust the frequency components of the sound using a 4-band (low-shelf, two band-pass and a high-shelf) equalizer.
      */
-    export type EqualizerEffectSettings = {
+    type EqualizerEffectSettings = {
         type: "equalizer";
         lowgain?: number;
         lowcut?: number;
@@ -85,7 +85,7 @@ declare module "love.audio" {
     /**
      * Plays two copies of the sound; while varying the phase, or equivalently delaying one of them, by amounts on the order of milliseconds, resulting in phasing sounds.
      */
-    export type FlangerEffectSettings = {
+    type FlangerEffectSettings = {
         type: "flanger";
         phase?: number;
         rate?: number;
@@ -99,7 +99,7 @@ declare module "love.audio" {
      *
      * Used to simulate the reflection off of the surroundings.
      */
-    export type ReverbEffectSettings = {
+    type ReverbEffectSettings = {
         type: "reverb";
         gain?: number;
         highgain?: number;
@@ -119,7 +119,7 @@ declare module "love.audio" {
     /**
      * An implementation of amplitude modulation; multiplies the source signal with a simple waveform, to produce either volume changes, or inharmonic overtones.
      */
-    export type RingModulatorEffectSettings = {
+    type RingModulatorEffectSettings = {
         type: "ringmodulator";
         waveform?: EffectWaveform;
         frequency?: number;

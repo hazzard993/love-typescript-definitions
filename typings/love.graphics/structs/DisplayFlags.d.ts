@@ -4,7 +4,7 @@ declare module "love.graphics" {
     /**
      * @link [love.window.setMode](https://love2d.org/wiki/love.window.setMode)
      */
-    export type DisplayFlags = {
+    type DisplayFlags = {
         /**
          * Fullscreen (true), or windowed (false). (Default: false)
          */

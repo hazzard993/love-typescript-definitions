@@ -1,5 +1,5 @@
 declare module "love" {
-    export type Config = {
+    type Config = {
         /**
          * Save directory name.
          *

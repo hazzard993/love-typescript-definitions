@@ -9,5 +9,5 @@ declare module "love.graphics" {
      * vertex shader variable.
      * @link [VertexAttributeStep](https://love2d.org/wiki/VertexAttributeStep)
      */
-    export type VertexAttributeStep = "pervertex" | "perinstance";
+    type VertexAttributeStep = "pervertex" | "perinstance";
 }

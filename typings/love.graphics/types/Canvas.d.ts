@@ -3,13 +3,16 @@ declare module "love.graphics" {
 
     /**
      * A Canvas is used for off-screen rendering.
+     *
      * @link [Canvas](https://love2d.org/wiki/Canvas)
+     * @since 0.8.0
      */
-    export interface Canvas extends Texture<"Canvas"> {
+    interface Canvas extends Texture<"Canvas"> {
         /**
          * Generates mipmaps for the Canvas, based on the contents of the highest-resolution mipmap level.
          *
          * @link [Canvas:generateMipmaps](https://love2d.org/wiki/Canvas:generateMipmaps)
+         * @since 11.0
          */
         generateMipmaps(): void;
 
@@ -18,6 +21,7 @@ declare module "love.graphics" {
          *
          * @return samples, The number of multisample antialiasing samples used by the canvas when drawing to it.
          * @link [Canvas:getMSAA](https://love2d.org/wiki/Canvas:getMSAA)
+         * @since 0.9.2
          */
         getMSAA(): number;
 
@@ -25,6 +29,8 @@ declare module "love.graphics" {
          * Gets the MipmapMode this Canvas was created with.
          *
          * @return mode, The mipmap mode this Canvas was created with.
+         * @link [Canvas:getMipmapMode](https://love2d.org/wiki/Canvas:getMipmapMode)
+         * @since 11.0
          */
         getMipmapMode(): MipmapMode;
 
@@ -33,6 +39,7 @@ declare module "love.graphics" {
          *
          * @return data, The image data stored in the Canvas.
          * @link [Canvas:newImageData](https://love2d.org/wiki/Canvas:newImageData)
+         * @since 0.10.0
          */
         newImageData(): ImageData;
 
@@ -46,6 +53,7 @@ declare module "love.graphics" {
          * @param width The width in pixels of the area within the Canvas to capture.
          * @param height The height in pixels of the area within the Canvas to capture.
          * @return data, The new ImageData made from the Canvas' contents.
+         * @since 11.0
          */
         newImageData(
             slice: number,
@@ -61,6 +69,7 @@ declare module "love.graphics" {
          *
          * @param func A function performing drawing operations.
          * @link [Canvas:renderTo](https://love2d.org/wiki/Canvas:renderTo)
+         * @since 0.8.0
          */
         renderTo(func: (this: void) => void): void;
     }

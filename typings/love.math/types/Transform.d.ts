@@ -6,7 +6,7 @@ declare module "love.math" {
      * Object containing a coordinate system transformation.
      * @link [Transform](https://love2d.org/wiki/Transform)
      */
-    export interface Transform extends Type<"Transform"> {
+    interface Transform extends Type<"Transform"> {
         /**
          * Applies the given other Transform object to this one.
          *
@@ -32,10 +32,9 @@ declare module "love.math" {
          * @return e1_2, The second column of the first row of the matrix.
          * @return ..., Additional matrix elements.
          * @return e4_4, The fourth column of the fourth row of the matrix.
-         * @tupleReturn
          * @link [Transform:getMatrix](https://love2d.org/wiki/Transform:getMatrix)
          */
-        getMatrix(): Array<number>;
+        getMatrix(): LuaMultiReturn<number[]>;
 
         /**
          * Creates a new Transform containing the inverse of this Transform.
@@ -60,10 +59,9 @@ declare module "love.math" {
          * @param localY The y component of the position with the transform applied.
          * @return globalX, The x component of the position in global coordinates.
          * @return globalY, The y component of the position in global coordinates.
-         * @tupleReturn
          * @link [Transform:inverseTransformPoint](https://love2d.org/wiki/Transform:inverseTransformPoint)
          */
-        inverseTransformPoint(localX: number, localY: number): [number, number];
+        inverseTransformPoint(localX: number, localY: number): LuaMultiReturn<[globalX: number, globalY: number]>;
 
         /**
          * Checks whether the Transform is an affine transformation.
@@ -183,10 +181,9 @@ declare module "love.math" {
          * @param globalY The y component of the position in global coordinates.
          * @return localX, The x component of the position with the transform applied.
          * @return localY, The y component of the position with the transform applied.
-         * @tupleReturn
          * @link [Transform:transformPoint](https://love2d.org/wiki/Transform:transformPoint)
          */
-        transformPoint(globalX: number, globalY: number): [number, number];
+        transformPoint(globalX: number, globalY: number): LuaMultiReturn<[localX: number, localY: number]>;
 
         /**
          * Applies a translation to the Transform's coordinate system. This method does

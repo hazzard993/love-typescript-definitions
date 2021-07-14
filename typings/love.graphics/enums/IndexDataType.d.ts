@@ -4,5 +4,5 @@ declare module "love.graphics" {
      *
      * @link [IndexDataType](https://love2d.org/wiki/IndexDataType)
      */
-    export type IndexDataType = "uint16" | "uint32";
+    type IndexDataType = "uint16" | "uint32";
 }

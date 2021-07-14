@@ -5,7 +5,7 @@ declare module "love.thread" {
      * An object which can be used to send and receive data between different threads.
      * @link [Channel](https://love2d.org/wiki/Channel)
      */
-    export interface Channel<T = any> extends Type<"Channel"> {
+    interface Channel<T = any> extends Type<"Channel"> {
         /**
          * Clears all the messages in the Channel queue.
          *
@@ -78,7 +78,6 @@ declare module "love.thread" {
          * @param ... Additional arguments that the given function will receive when it is called.
          * @return ret1, The first return value of the given export function (if any.)
          * @return ..., Any other return values.
-         * @tupleReturn
          * @link [Channel:performAtomic](https://love2d.org/wiki/Channel:performAtomic)
          */
         performAtomic<T extends (this: void, ...args: any[]) => any[]>(func: T, ...args: Parameters<T>): ReturnType<T>;

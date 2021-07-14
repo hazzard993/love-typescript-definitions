@@ -3,7 +3,7 @@ declare module "love.physics" {
      * The RopeJoint enforces a maximum distance between two points on two bodies. It has no other effect.
      * @link [RopeJoint](https://love2d.org/wiki/RopeJoint)
      */
-    export interface RopeJoint extends Joint<"RopeJoint"> {
+    interface RopeJoint extends Joint<"RopeJoint"> {
         /**
          * Gets the maximum length of a RopeJoint.
          *

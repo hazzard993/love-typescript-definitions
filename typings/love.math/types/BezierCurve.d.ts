@@ -2,12 +2,12 @@ declare module "love.math" {
     import { Type } from "love";
 
     /**
-     * A BÃ©zier curve object that can evaluate and render BÃ©zier curves of arbitrary degree
+     * A Bezier curve object that can evaluate and render Bezier curves of arbitrary degree
      * @link [BezierCurve](https://love2d.org/wiki/BezierCurve)
      */
-    export interface BezierCurve extends Type<"BezierCurve"> {
+    interface BezierCurve extends Type<"BezierCurve"> {
         /**
-         * Evaluate BÃ©zier curve at parameter t. The parameter must be between 0 and 1
+         * Evaluate Bezier curve at parameter t. The parameter must be between 0 and 1
          * (inclusive).
          *
          * This function can be used to move objects along paths or tween parameters.
@@ -17,10 +17,9 @@ declare module "love.math" {
          * @param t Where to evaluate the curve.
          * @return x, x coordinate of the curve at parameter t.
          * @return y, y coordinate of the curve at parameter t.
-         * @tupleReturn
          * @link [BezierCurve:evaluate](https://love2d.org/wiki/BezierCurve:evaluate)
          */
-        evaluate(t: number): [number, number];
+        evaluate(t: number): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Get coordinates of the i-th control point. Indices start with 1.
@@ -28,13 +27,12 @@ declare module "love.math" {
          * @param i Index of the control point.
          * @return x, Position of the control point along the x axis.
          * @return y, Position of the control point along the y axis.
-         * @tupleReturn
          * @link [BezierCurve:getControlPoint](https://love2d.org/wiki/BezierCurve:getControlPoint)
          */
-        getControlPoint(i: number): [number, number];
+        getControlPoint(i: number): LuaMultiReturn<[x: number, y: number]>;
 
         /**
-         * Get the number of control points in the BÃ©zier curve.
+         * Get the number of control points in the Bezier curve.
          *
          * @return count, The number of control points.
          * @link [BezierCurve:getControlPointCount](https://love2d.org/wiki/BezierCurve:getControlPointCount)
@@ -42,16 +40,16 @@ declare module "love.math" {
         getControlPointCount(): number;
 
         /**
-         * Get degree of the BÃ©zier curve. The degree is equal to
+         * Get degree of the Bezier curve. The degree is equal to
          * number-of-control-points - 1.
          *
-         * @return degree, Degree of the BÃ©zier curve.
+         * @return degree, Degree of the Bezier curve.
          * @link [BezierCurve:getDegree](https://love2d.org/wiki/BezierCurve:getDegree)
          */
         getDegree(): number;
 
         /**
-         * Get the derivative of the BÃ©zier curve.
+         * Get the derivative of the Bezier curve.
          *
          * This function can be used to rotate sprites moving along a curve in the
          * direction of the movement and compute the direction perpendicular to the curve
@@ -96,7 +94,7 @@ declare module "love.math" {
         /**
          * Get a list of coordinates to be used with love.graphics.line.
          *
-         * This function samples the BÃ©zier curve using recursive subdivision. You can
+         * This function samples the Bezier curve using recursive subdivision. You can
          * control the recursion depth using the depth parameter.
          *
          * If you are just interested to know the position on the curve given a parameter,
@@ -112,7 +110,7 @@ declare module "love.math" {
          * Get a list of coordinates on a specific part of the curve, to be used with
          * love.graphics.line.
          *
-         * This function samples the BÃ©zier curve using recursive subdivision. You can
+         * This function samples the Bezier curve using recursive subdivision. You can
          * control the recursion depth using the depth parameter.
          *
          * If you are just need to know the position on the curve given a parameter, use
@@ -127,7 +125,7 @@ declare module "love.math" {
         renderSegment(startpoint: number, endpoint: number, depth?: number): Array<number>;
 
         /**
-         * Rotate the BÃ©zier curve by an angle.
+         * Rotate the Bezier curve by an angle.
          *
          * @param angle Rotation angle in radians.
          * @param ox X coordinate of the rotation center.
@@ -137,7 +135,7 @@ declare module "love.math" {
         rotate(angle: number, ox?: number, oy?: number): void;
 
         /**
-         * Scale the BÃ©zier curve by a factor.
+         * Scale the Bezier curve by a factor.
          *
          * @param s Scale factor.
          * @param ox X coordinate of the scaling center.
@@ -157,7 +155,7 @@ declare module "love.math" {
         setControlPoint(i: number, ox: number, oy: number): void;
 
         /**
-         * Move the BÃ©zier curve by an offset.
+         * Move the Bezier curve by an offset.
          *
          * @param dx Offset along the x axis.
          * @param dy Offset along the y axis.

@@ -3,7 +3,7 @@ declare module "love.physics" {
      * Restricts relative motion between Bodies to one shared axis.
      * @link [PrismaticJoint](https://love2d.org/wiki/PrismaticJoint)
      */
-    export interface PrismaticJoint extends Joint<"PrismaticJoint"> {
+    interface PrismaticJoint extends Joint<"PrismaticJoint"> {
         /**
          * Checks whether the limits are enabled.
          *
@@ -17,10 +17,9 @@ declare module "love.physics" {
          *
          * @return x, The x-axis coordinate of the world-space axis vector.
          * @return y, The y-axis coordinate of the world-space axis vector.
-         * @tupleReturn
          * @link [PrismaticJoint:getAxis](https://love2d.org/wiki/PrismaticJoint:getAxis)
          */
-        getAxis(): [number, number];
+        getAxis(): LuaMultiReturn<[x: number, y: number]>;
 
         /**
          * Get the current joint angle speed.
@@ -43,10 +42,9 @@ declare module "love.physics" {
          *
          * @return lower, The lower limit, usually in meters.
          * @return upper, The upper limit, usually in meters.
-         * @tupleReturn
          * @link [PrismaticJoint:getLimits](https://love2d.org/wiki/PrismaticJoint:getLimits)
          */
-        getLimits(): [number, number];
+        getLimits(): LuaMultiReturn<[lower: number, upper: number]>;
 
         /**
          * Gets the lower limit.

@@ -5,7 +5,7 @@ declare module "love.graphics" {
      * A 2D polygon mesh used for drawing arbitrary textured shapes.
      * @link [Mesh](https://love2d.org/wiki/Mesh)
      */
-    export interface Mesh extends Drawable<"Mesh"> {
+    interface Mesh extends Drawable<"Mesh"> {
         /**
          * Attaches a vertex attribute from a different Mesh onto this Mesh, for
          * use when drawing.
@@ -45,12 +45,15 @@ declare module "love.graphics" {
          * @param name The name of the attached vertex attribute to detach.
          * @return success, Whether the attribute was successfully detached.
          * @link [Mesh:detachAttribute](https://love2d.org/wiki/Mesh:detachAttribute)
+         * @since 11.0
          */
         detachAttribute(name: string): boolean;
 
         /**
          * Immediately sends all modified vertex data in the Mesh to the graphics card.
+         *
          * @link [Mesh:flush](https://love2d.org/wiki/Mesh:flush)
+         * @since 0.10.0
          */
         flush(): void;
 
@@ -59,6 +62,7 @@ declare module "love.graphics" {
          *
          * @return mode, The mode used when drawing the Mesh.
          * @link [Mesh:getDrawMode](https://love2d.org/wiki/Mesh:getDrawMode)
+         * @since 0.9.0
          */
         getDrawMode(): MeshDrawMode;
 
@@ -70,16 +74,17 @@ declare module "love.graphics" {
          *
          * @return min, The index of the first vertex used when drawing, or the index of the first value in the vertex map used if one is set for this Mesh.
          * @return max, The index of the last vertex used when drawing, or the index of the last value in the vertex map used if one is set for this Mesh.
-         * @tupleReturn
          * @link [Mesh:getDrawRange](https://love2d.org/wiki/Mesh:getDrawRange)
+         * @since 0.9.1
          */
-        getDrawRange(): [number | undefined, number | undefined];
+        getDrawRange(): LuaMultiReturn<[min: number, max: number] | []>;
 
         /**
          * Gets the texture (Image or Canvas) used when drawing the Mesh.
          *
          * @return texture, The Image or Canvas to texture the Mesh with when drawing, or _nil/undefined_ if none is set.
          * @link [Mesh:getTexture](https://love2d.org/wiki/Mesh:getTexture)
+         * @since 0.9.1
          */
         getTexture(): Texture | undefined;
 
@@ -89,26 +94,10 @@ declare module "love.graphics" {
          * @param index The index of the the vertex you want to retrieve the information for.
          * @return attributecomponent, The first component of the first vertex attribute in the specified vertex.
          * @return ..., Additional components of all vertex attributes in the specified vertex.
-         * @tupleReturn
          * @link [Mesh:getVertex](https://love2d.org/wiki/Mesh:getVertex)
+         * @since 0.9.0
          */
-        getVertex(index: number): Array<number>;
-
-        /**
-         * Gets the properties of a vertex in the Mesh.
-         *
-         * @param index The index of the the vertex you want to retrieve the information for.
-         * @return x, The position of the vertex on the x-axis.
-         * @return y, The position of the vertex on the y-axis.
-         * @return u, The horizontal component of the texture coordinate.
-         * @return v, The vertical component of the texture coordinate.
-         * @return r, The red component of the vertex's color.
-         * @return g, The green component of the vertex's color.
-         * @return b, The blue component of the vertex's color.
-         * @return a, The alpha component of the vertex's color.
-         * @link [Mesh:getVertex](https://love2d.org/wiki/Mesh:getVertex)
-         */
-        getVertex(index: number): Array<[number]>;
+        getVertex(index: number): LuaMultiReturn<number[]>;
 
         /**
          * Gets the properties of a specific attribute within a vertex in the Mesh.
@@ -121,14 +110,16 @@ declare module "love.graphics" {
          * @param attributeindex The index of the attribute within the vertex to be modified.
          * @return properties, The properties of the specified attribute.
          * @link [Mesh:getVertexAttribute](https://love2d.org/wiki/Mesh:getVertexAttribute)
+         * @since 0.10.0
          */
-        getVertexAttribute(vertexindex: number, attributeindex: number): Array<[number]>;
+        getVertexAttribute(vertexindex: number, attributeindex: number): LuaMultiReturn<number[]>;
 
         /**
          * Returns the total number of vertices in the Mesh.
          *
          * @return num, The total number of vertices in this Mesh.
          * @link [Mesh:getVertexCount](https://love2d.org/wiki/Mesh:getVertexCount)
+         * @since 0.9.0
          */
         getVertexCount(): number;
 
@@ -137,6 +128,7 @@ declare module "love.graphics" {
          *
          * @return format, The vertex format of the Mesh, which is a table containing tables for each vertex attribute the Mesh was created with, in the form of {attribute, ...}.
          * @link [Mesh:getVertexFormat](https://love2d.org/wiki/Mesh:getVertexFormat)
+         * @since 0.10.0
          */
         getVertexFormat(): Array<[string, string, ...Array<any>]>;
 
@@ -152,8 +144,9 @@ declare module "love.graphics" {
          *
          * @return map, A table containing a list of vertex indices used when drawing.
          * @link [Mesh:getVertexMap](https://love2d.org/wiki/Mesh:getVertexMap)
+         * @since 0.9.0
          */
-        getVertexMap(): Array<number> | undefined;
+        getVertexMap(): number[] | undefined;
 
         /**
          * Gets whether a specific vertex attribute in the Mesh is enabled. Vertex data
@@ -162,6 +155,7 @@ declare module "love.graphics" {
          * @param name The name of the vertex attribute to enable or disable.
          * @return enabled, Whether the vertex attribute is used when drawing this Mesh.
          * @link [Mesh:isAttributeEnabled](https://love2d.org/wiki/Mesh:isAttributeEnabled)
+         * @since 0.10.0
          */
         isAttributeEnabled(name: string): boolean;
 
@@ -172,6 +166,7 @@ declare module "love.graphics" {
          * @param name The name of the vertex attribute to enable or disable.
          * @param enable Whether the vertex attribute is used when drawing this Mesh.
          * @link [Mesh:setAttributeEnabled](https://love2d.org/wiki/Mesh:setAttributeEnabled)
+         * @since 0.10.0
          */
         setAttributeEnabled(name: string, enable: boolean): void;
 
@@ -180,6 +175,7 @@ declare module "love.graphics" {
          *
          * @param mode The mode to use when drawing the Mesh.
          * @link [Mesh:setDrawMode](https://love2d.org/wiki/Mesh:setDrawMode)
+         * @since 0.9.0
          */
         setDrawMode(mode: MeshDrawMode): void;
 
@@ -196,6 +192,7 @@ declare module "love.graphics" {
          * @param min The index of the first vertex to use when drawing, or the index of the first value in the vertex map to use if one is set for this Mesh.
          * @param max The index of the last vertex to use when drawing, or the index of the last value in the vertex map to use if one is set for this Mesh.
          * @link [Mesh:setDrawRange](https://love2d.org/wiki/Mesh:setDrawRange)
+         * @since 0.9.1
          */
         setDrawRange(min: number, max: number): void;
 
@@ -210,6 +207,7 @@ declare module "love.graphics" {
          * are called, vertices 1, 3, and 4 will be drawn.
          *
          * @link [Mesh:setDrawRange](https://love2d.org/wiki/Mesh:setDrawRange)
+         * @since 0.9.1
          */
         setDrawRange(): void;
 
@@ -220,6 +218,7 @@ declare module "love.graphics" {
          * white color by default.
          *
          * @link [Mesh:setTexture](https://love2d.org/wiki/Mesh:setTexture)
+         * @since 0.9.1
          */
         setTexture(): void;
 
@@ -231,6 +230,7 @@ declare module "love.graphics" {
          *
          * @param texture The Image or Canvas to texture the Mesh with when drawing.
          * @link [Mesh:setTexture](https://love2d.org/wiki/Mesh:setTexture)
+         * @since 0.9.1
          */
         setTexture(texture: Texture): void;
 
@@ -240,8 +240,9 @@ declare module "love.graphics" {
          * @param attributecomponent The first component of the first vertex attribute in the specified vertex.
          * @param ... Additional components of all vertex attributes in the specified vertex.
          * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
+         * @since 0.9.0
          */
-        setVertex(index: number, attributecomponent: number, ...vararg: Array<number>): void;
+        setVertex(index: number, attributecomponent: number, ...vararg: number[]): void;
 
         /**
          * Sets the properties of a vertex in the Mesh.
@@ -249,6 +250,7 @@ declare module "love.graphics" {
          * @param index The index of the the vertex you want to modify.
          * @param vertex A table with vertex information, in the form of {attributecomponent, ...}.
          * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
+         * @since 0.9.0
          */
         setVertex(index: number, vertex: Array<any>): void;
 
@@ -265,6 +267,7 @@ declare module "love.graphics" {
          * @param b The blue component of the vertex's color.
          * @param a The alpha component of the vertex's color.
          * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
+         * @since 0.9.0
          */
         setVertex(
             index: number,
@@ -284,6 +287,7 @@ declare module "love.graphics" {
          * @param index The index of the the vertex you want to modify.
          * @param vertex A table with vertex information.
          * @link [Mesh:setVertex](https://love2d.org/wiki/Mesh:setVertex)
+         * @since 0.9.0
          */
         setVertex(index: number, vertex: VertexInformation): void;
 
@@ -298,6 +302,7 @@ declare module "love.graphics" {
          * @param attributeindex The index of the attribute within the vertex to be modified.
          * @param values The value of the first component of the attribute and so on.
          * @link [Mesh:setVertexAttribute](https://love2d.org/wiki/Mesh:setVertexAttribute)
+         * @since 0.10.0
          */
         setVertexAttribute(vertexindex: number, attributeindex: number, ...values: Array<number>): void;
 
@@ -313,8 +318,9 @@ declare module "love.graphics" {
          *
          * @param map A table containing a list of vertex indices to use when drawing. Values must be in the range of [1, Mesh:getVertexCount()].
          * @link [Mesh:setVertexMap](https://love2d.org/wiki/Mesh:setVertexMap)
+         * @since 0.9.0
          */
-        setVertexMap(map: Array<number>): void;
+        setVertexMap(map: number[]): void;
 
         /**
          * Sets the vertex map for the Mesh. The vertex map describes the order in which
@@ -330,8 +336,9 @@ declare module "love.graphics" {
          * @param vi2 The index of the second vertex to use when drawing.
          * @param vi3 The index of the third vertex to use when drawing.
          * @link [Mesh:setVertexMap](https://love2d.org/wiki/Mesh:setVertexMap)
+         * @since 0.9.0
          */
-        setVertexMap(...vertexIndexes: Array<number>): void;
+        setVertexMap(...vertexIndexes: number[]): void;
 
         /**
          * Sets the vertex map for the Mesh.
@@ -349,8 +356,9 @@ declare module "love.graphics" {
          *
          * @param vertices The table filled with vertex information tables for each vertex, in the form of where each vertex is a table in the form of {attributecomponent, ...}.
          * @link [Mesh:setVertices](https://love2d.org/wiki/Mesh:setVertices)
+         * @since 0.9.0
          */
-        setVertices(vertices: Array<VertexInformation>, startvertex: number): void;
+        setVertices(vertices: VertexInformation[], startvertex: number): void;
 
         /**
          * Sets the vertex components of the Mesh by copying directly from the memory of a Data object.
@@ -358,6 +366,7 @@ declare module "love.graphics" {
          * @param data A Data object to copy from. The contents of the Data must match the layout of this Mesh's vertex format.
          * @param startvertex The index of the first vertex to replace. (Default: 1)
          * @link [Mesh:setVertices](https://love2d.org/wiki/Mesh:setVertices)
+         * @since 0.9.0
          */
         setVertices(data: Data, startvertex?: number): void;
     }

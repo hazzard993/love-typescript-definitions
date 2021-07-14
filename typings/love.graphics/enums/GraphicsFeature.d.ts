@@ -3,7 +3,7 @@ declare module "love.graphics" {
      * Graphics features that can be checked for with love.graphics.getSupported.
      * @link [GraphicsFeature](https://love2d.org/wiki/GraphicsFeature)
      */
-    export type GraphicsFeature =
+    type GraphicsFeature =
         | "clampzero"
         | "lighten"
         | "multicanvasformats"

@@ -4,5 +4,5 @@ declare module "love.graphics" {
      * Formulas for additional notes.
      * @link [BlendAlphaMode](https://love2d.org/wiki/BlendAlphaMode)
      */
-    export type BlendAlphaMode = "alphamultiply" | "premultiplied";
+    type BlendAlphaMode = "alphamultiply" | "premultiplied";
 }

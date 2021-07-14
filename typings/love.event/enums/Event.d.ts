@@ -4,5 +4,5 @@ declare module "love.event" {
      * @link [Event](https://love2d.org/wiki/Event)
      * @since 0.6.0
      */
-    export type Event = keyof import("../../love/handlers").Handlers;
+    type Event = keyof import("../../love/handlers").Handlers;
 }

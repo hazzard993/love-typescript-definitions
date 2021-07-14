@@ -13,11 +13,5 @@ declare module "love.graphics" {
      *
      * @link [AreaSpreadDistribution](https://love2d.org/wiki/AreaSpreadDistribution)
      */
-    export type AreaSpreadDistribution =
-        | "uniform"
-        | "normal"
-        | "ellipse"
-        | "borderellipse"
-        | "borderrectangle"
-        | "none";
+    type AreaSpreadDistribution = "uniform" | "normal" | "ellipse" | "borderellipse" | "borderrectangle" | "none";
 }

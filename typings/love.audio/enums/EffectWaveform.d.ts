@@ -12,5 +12,5 @@ declare module "love.audio" {
      * @link [EffectWaveform](https://love2d.org/wiki/EffectWaveform)
      * @since 11.0
      */
-    export type EffectWaveform = "sawtooth" | "sine" | "square" | "triangle";
+    type EffectWaveform = "sawtooth" | "sine" | "square" | "triangle";
 }

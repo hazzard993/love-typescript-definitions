@@ -1,13 +1,13 @@
 declare module "love.physics" {
     import { Type } from "love";
 
-    export type ShapeTypes = "ChainShape" | "CircleShape" | "EdgeShape" | "PolygonShape";
+    type ShapeTypes = "ChainShape" | "CircleShape" | "EdgeShape" | "PolygonShape";
 
     /**
      * Shapes are solid 2d geometrical objects which handle the mass and collision of a Body in love.physics.
      * @link [Shape](https://love2d.org/wiki/Shape)
      */
-    export interface Shape<T extends ShapeTypes = ShapeTypes> extends Type<T> {
+    interface Shape<T extends ShapeTypes = ShapeTypes> extends Type<T> {
         /**
          * Returns the points of the bounding box for the transformed shape.
          *
@@ -19,10 +19,14 @@ declare module "love.physics" {
          * @return topLeftY, The y position of the top-left point.
          * @return bottomRightX, The x position of the bottom-right point.
          * @return bottomRightY, The y position of the bottom-right point.
-         * @tupleReturn
          * @link [Shape:computeAABB](https://love2d.org/wiki/Shape:computeAABB)
          */
-        computeAABB(tx: number, ty: number, tr: number, childIndex?: number): [number, number, number, number];
+        computeAABB(
+            tx: number,
+            ty: number,
+            tr: number,
+            childIndex?: number
+        ): LuaMultiReturn<[topLeftX: number, topLeftY: number, bottomRightX: number, bottomRightY: number]>;
 
         /**
          * Computes the mass properties for the shape with the specified density.
@@ -32,10 +36,9 @@ declare module "love.physics" {
          * @return y, The y postition of the center of mass.
          * @return mass, The mass of the shape.
          * @return inertia, The rotational inertia.
-         * @tupleReturn
          * @link [Shape:computeMass](https://love2d.org/wiki/Shape:computeMass)
          */
-        computeMass(density: number): [number, number, number, number];
+        computeMass(density: number): LuaMultiReturn<[x: number, y: number, mass: number, inertia: number]>;
 
         /**
          * Returns the number of children the shape has.
@@ -94,7 +97,6 @@ declare module "love.physics" {
          * @return xn, The x component of the normal vector of the edge where the ray hit the shape.
          * @return yn, The y component of the normal vector of the edge where the ray hit the shape.
          * @return fraction, The position on the input line where the intersection happened as a factor of the line length.
-         * @tupleReturn
          * @link [Shape:rayCast](https://love2d.org/wiki/Shape:rayCast)
          */
         rayCast(
@@ -107,7 +109,7 @@ declare module "love.physics" {
             ty: number,
             tr: number,
             childIndex?: number
-        ): [number, number, number] | [undefined, undefined, undefined];
+        ): LuaMultiReturn<[xn: number, yn: number, fraction: number] | []>;
 
         /**
          * Checks whether a point lies inside the shape. This is particularly useful for

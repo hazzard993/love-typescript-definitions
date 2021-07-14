@@ -7,7 +7,7 @@ declare module "love.font" {
      *
      * @link [GlyphData](https://love2d.org/wiki/GlyphData)
      */
-    export interface GlyphData extends Data<"GlyphData"> {
+    interface GlyphData extends Data<"GlyphData"> {
         /**
          * Gets glyph advance.
          *
@@ -20,31 +20,28 @@ declare module "love.font" {
          * Gets glyph bearing.
          *
          * @returns The glyph bearing X and Y respectively.
-         * @tupleReturn
          * @link [GlyphData:getBearing](https://love2d.org/wiki/GlyphData:getBearing)
          * @since 0.7.0
          */
-        getBearing(): [number, number];
+        getBearing(): LuaMultiReturn<[bx: number, by: number]>;
 
         /**
          * Gets glyph bounding box.
          *
          * @returns The X, Y, width and height of the glyph bounding box respectively.
-         * @tupleReturn
          * @link [GlyphData:getBoundingBox](https://love2d.org/wiki/GlyphData:getBoundingBox)
          * @since 0.7.0
          */
-        getBoundingBox(): [number, number, number, number];
+        getBoundingBox(): LuaMultiReturn<[x: number, y: number, width: number, height: number]>;
 
         /**
          * Gets glyph dimensions.
          *
          * @returns The width and height of the glyph respectively.
-         * @tupleReturn
          * @link [GlyphData:getDimensions](https://love2d.org/wiki/GlyphData:getDimensions)
          * @since 0.7.0
          */
-        getDimensions(): [number, number];
+        getDimensions(): LuaMultiReturn<[width: number, height: number]>;
 
         /**
          * Gets glyph pixel format.

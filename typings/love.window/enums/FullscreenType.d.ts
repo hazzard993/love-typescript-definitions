@@ -12,5 +12,5 @@ declare module "love.window" {
      * "desktop" fullscreen mode generally avoids these issues.
      * @link [FullscreenType](https://love2d.org/wiki/FullscreenType)
      */
-    export type FullscreenType = "desktop" | "exclusive";
+    type FullscreenType = "desktop" | "exclusive";
 }

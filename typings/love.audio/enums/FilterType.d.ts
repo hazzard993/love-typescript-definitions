@@ -11,5 +11,5 @@ declare module "love.audio" {
      * @link [FilterType](https://love2d.org/wiki/FilterType)
      * @since 11.0
      */
-    export type FilterType = "lowpass" | "highpass" | "bandpass";
+    type FilterType = "lowpass" | "highpass" | "bandpass";
 }

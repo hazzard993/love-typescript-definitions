@@ -1,7 +1,7 @@
 declare module "love.data" {
     import { Type, Types, LightUserData } from "love";
 
-    export type DataTypes =
+    type DataTypes =
         | "Data"
         | "ByteData"
         | "FileData"
@@ -15,7 +15,7 @@ declare module "love.data" {
      * The superclass of all data.
      * @link [Data](https://love2d.org/wiki/Data)
      */
-    export interface Data<T extends DataTypes = "Data"> extends Type<T> {
+    interface Data<T extends DataTypes = "Data"> extends Type<T> {
         /**
          * Creates a new copy of the Data object.
          * @return clone, The new copy.

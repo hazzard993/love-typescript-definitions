@@ -3,7 +3,7 @@ declare module "love.image" {
      * Canvas formats.
      * @link [CanvasFormat](https://love2d.org/wiki/CanvasFormat)
      */
-    export type CanvasFormat =
+    type CanvasFormat =
         | "hdr"
         | "normal"
         | "r16"

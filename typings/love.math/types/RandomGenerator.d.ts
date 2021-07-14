@@ -5,7 +5,7 @@ declare module "love.math" {
      * A random number generation object which has its own random state.
      * @link [RandomGenerator](https://love2d.org/wiki/RandomGenerator)
      */
-    export interface RandomGenerator extends Type<"RandomGenerator"> {
+    interface RandomGenerator extends Type<"RandomGenerator"> {
         /**
          * Gets the state of the random number generator.
          *
@@ -14,10 +14,9 @@ declare module "love.math" {
          *
          * @return low, Integer number representing the lower 32 bits of the random number generator's 64 bit state value.
          * @return high, Integer number representing the higher 32 bits of the random number generator's 64 bit state value.
-         * @tupleReturn
          * @link [RandomGenerator:getSeed](https://love2d.org/wiki/RandomGenerator:getSeed)
          */
-        getSeed(): [number, number];
+        getSeed(): LuaMultiReturn<[low: number, high: number]>;
 
         /**
          * Gets the current state of the random number generator. This returns an opaque

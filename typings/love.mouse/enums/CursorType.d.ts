@@ -3,7 +3,7 @@ declare module "love.mouse" {
      * Types of hardware cursors.
      * @link [CursorType](https://love2d.org/wiki/CursorType)
      */
-    export type CursorType =
+    type CursorType =
         | "image"
         | "arrow"
         | "ibeam"

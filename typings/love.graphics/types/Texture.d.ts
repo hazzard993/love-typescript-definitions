@@ -1,7 +1,7 @@
 declare module "love.graphics" {
     import { PixelFormat } from "love.image";
 
-    export type TextureTypes = "Canvas" | "Image";
+    type TextureTypes = "Canvas" | "Image";
 
     /**
      * Superclass for drawable objects which represent a texture.
@@ -11,11 +11,13 @@ declare module "love.graphics" {
      * This is an abstract type that can't be created directly.
      * @link [Texture](https://love2d.org/wiki/Texture)
      */
-    export interface Texture<T extends TextureTypes = TextureTypes> extends Drawable<T> {
+    interface Texture<T extends TextureTypes = TextureTypes> extends Drawable<T> {
         /**
          * Gets the DPI scale factor of the Texture.
+         *
          * @return dpiscale, The DPI scale factor of the Texture.
          * @link [Texture:getDPIScale](https://love2d.org/wiki/Texture:getDPIScale)
+         * @since 11.0
          */
         getDPIScale(): number;
 
@@ -25,39 +27,45 @@ declare module "love.graphics" {
          *
          * @return depth, The depth of the volume Texture.
          * @link [Texture:getDepth](https://love2d.org/wiki/Texture:getDepth)
+         * @since 11.0
          */
         getDepth(): number;
 
         /**
          * Gets the comparison mode used when sampling from a depth texture in a shader.
+         *
          * @return compare, The comparison mode used when sampling from this texture in a shader, or _nil/undefined_ if setDepthSampleMode has not been called on this Texture.
          * @link [Texture:getDepthSampleMode](https://love2d.org/wiki/Texture:getDepthSampleMode)
+         * @since 11.0
          */
         getDepthSampleMode(): CompareMode | undefined;
 
         /**
          * Gets the width and height of the Texture.
+         *
          * @return width, The width of the Texture, in pixels.
          * @return height, The height of the Texture, in pixels.
-         * @tupleReturn
          * @link [Texture:getDimensions](https://love2d.org/wiki/Texture:getDimensions)
+         * @since 0.9.0
          */
-        getDimensions(): [number, number];
+        getDimensions(): LuaMultiReturn<[width: number, height: number]>;
 
         /**
          * Gets the filter mode of the Texture.
+         *
          * @return min, Filter mode to use when minifying the texture (rendering it at a smaller size on-screen than its size in pixels).
          * @return mag, Filter mode to use when magnifying the texture (rendering it at a smaller size on-screen than its size in pixels).
-         * @tupleReturn
+         * @return anisotropy, Maximum amount of anisotropic filtering used.
          * @link [Texture:getFilter](https://love2d.org/wiki/Texture:getFilter)
          */
-        getFilter(): [FilterMode, FilterMode];
+        getFilter(): LuaMultiReturn<[min: FilterMode, mag: FilterMode, anisotropy: number]>;
 
         /**
          * Gets the PixelFormat of the Texture.
          *
          * @return format, The pixel format the Texture was created with.
          * @link [Texture:getFormat](https://love2d.org/wiki/Texture:getFormat)
+         * @since 11.0
          */
         getFormat(): PixelFormat;
 
@@ -74,6 +82,7 @@ declare module "love.graphics" {
          *
          * @return layers, The number of layers in the Array Texture.
          * @link [Texture:getLayerCount](https://love2d.org/wiki/Texture:getLayerCount)
+         * @since 11.0
          */
         getLayerCount(): number;
 
@@ -83,38 +92,45 @@ declare module "love.graphics" {
          *
          * @return mipmaps, The number of mipmaps in the Texture.
          * @link [Texture:getMipmapCount](https://love2d.org/wiki/Texture:getMipmapCount)
+         * @since 11.0
          */
         getMipmapCount(): number;
 
         /**
          * Gets the mipmap filter mode for a Texture. Prior to 11.0 this method only worked on Images.
+         *
          * @return desc, description
          * @return sharpness, Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.
-         * @tupleReturn
          * @link [Texture:getMipmapFilter](https://love2d.org/wiki/Texture:getMipmapFilter)
+         * @since 0.9.0
          */
-        getMipmapFilter(): [FilterMode, number];
+        getMipmapFilter(): LuaMultiReturn<[mode: FilterMode, sharpness: number]>;
 
         /**
          * Gets the width and height in pixels of the Texture.
+         *
          * @return pixelwidth, The width of the Texture, in pixels.
          * @return pixelheight, The height of the Texture, in pixels.
-         * @tupleReturn
          * @link [Texture:getPixelDimensions](https://love2d.org/wiki/Texture:getPixelDimensions)
+         * @since 11.0
          */
-        getPixelDimensions(): [number, number];
+        getPixelDimensions(): LuaMultiReturn<[pixelwidth: number, pixelheight: number]>;
 
         /**
          * Gets the height in pixels of the Texture.
+         *
          * @return pixelheight, The height of the Texture, in pixels.
          * @link [Texture:getPixelHeight](https://love2d.org/wiki/Texture:getPixelHeight)
+         * @since 11.0
          */
         getPixelHeight(): number;
 
         /**
          * Gets the width in pixels of the Texture.
+         *
          * @return pixelwidth, The width of the Texture, in pixels.
          * @link [Texture:getPixelWidth](https://love2d.org/wiki/Texture:getPixelWidth)
+         * @since 11.0
          */
         getPixelWidth(): number;
 
@@ -123,6 +139,7 @@ declare module "love.graphics" {
          *
          * @return texturetype, The type of the Texture.
          * @link [Texture:getTextureType](https://love2d.org/wiki/Texture:getTextureType)
+         * @since 11.0
          */
         getTextureType(): TextureType;
 
@@ -136,12 +153,13 @@ declare module "love.graphics" {
 
         /**
          * Gets the wrapping properties of a Texture.
-         * @return horiz, Horizontal wrapping mode of the texture.
-         * @return vert, Vertical wrapping mode of the texture.
-         * @tupleReturn
+         *
+         * @returns horiz, Horizontal wrapping mode of the texture.
+         * @returns vert, Vertical wrapping mode of the texture.
+         * @returns depth, Wrapping mode for the z-axis of a Volume texture.
          * @link [Texture:getWrap](https://love2d.org/wiki/Texture:getWrap)
          */
-        getWrap(): [WrapMode, WrapMode];
+        getWrap(): LuaMultiReturn<[horiz: WrapMode, vert: WrapMode, depth: WrapMode]>;
 
         /**
          * Gets whether the Texture can be drawn and sent to a Shader.
@@ -154,13 +172,16 @@ declare module "love.graphics" {
          *
          * @return readable, Whether the Texture is readable.
          * @link [Texture:isReadable](https://love2d.org/wiki/Texture:isReadable)
+         * @since 11.0
          */
         isReadable(): boolean;
 
         /**
          * Sets the comparison mode used when sampling from a depth texture in a shader.
+         *
          * @param compare The comparison mode used when sampling from this texture in a shader.
          * @link [Texture:setDepthSampleMode](https://love2d.org/wiki/Texture:setDepthSampleMode)
+         * @since 11.0
          */
         setDepthSampleMode(compare: CompareMode): void;
 
@@ -168,16 +189,18 @@ declare module "love.graphics" {
          * Sets the filter mode of the Texture.
          * @param min Filter mode to use when minifying the texture (rendering it at a smaller size on-screen than its size in pixels).
          * @param mag Filter mode to use when magnifying the texture (rendering it at a larger size on-screen than its size in pixels).
+         * @param anisotropy Maximum amount of anisotropic filtering to use.
          * @link [Texture:setFilter](https://love2d.org/wiki/Texture:setFilter)
          */
-        setFilter(min: FilterMode, mag: FilterMode): void;
+        setFilter(min: FilterMode, mag: FilterMode, anisotropy?: number): void;
 
         /**
-         * Sets the mipmap filter mode for a Texture
+         * Sets the mipmap filter mode for a Texture.
+         *
          * @param filtermode The filter mode to use in between mipmap levels. "nearest" will often give better performance.
          * @param sharpness A positive sharpness value makes the texture use a more detailed mipmap level when drawing, at the expense of performance. A negative value does the reverse. (Default 0)
-         * @return desc, description
          * @link [Texture:setMipmapFilter](https://love2d.org/wiki/Texture:setMipmapFilter)
+         * @since 0.9.0
          */
         setMipmapFilter(filtermode: FilterMode, sharpness?: number): void;
 
@@ -185,15 +208,18 @@ declare module "love.graphics" {
          * Disables mipmap filtering.
          *
          * @link [Texture:setMipmapFilter](https://love2d.org/wiki/Texture:setMipmapFilter)
+         * @since 0.9.0
          */
         setMipmapFilter(): void;
 
         /**
          * Sets the wrapping properties of a Texture.
+         *
          * @param horiz Horizontal wrapping mode of the texture.
          * @param vert Vertical wrapping mode of the texture.
+         * @param depth Wrapping mode for the z-axis of a Volume texture.
          * @link [Texture:setWrap](https://love2d.org/wiki/Texture:setWrap)
          */
-        setWrap(horiz: WrapMode, vert: WrapMode): void;
+        setWrap(horiz: WrapMode, vert: WrapMode, depth?: WrapMode): void;
     }
 }

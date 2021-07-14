@@ -5,7 +5,7 @@ declare module "love.thread" {
      * A Thread is a chunk of code that can run in parallel with other threads. Data can be sent between different threads with Channel objects.
      * @link [Thread](https://love2d.org/wiki/Thread)
      */
-    export interface Thread extends Type<"Thread"> {
+    interface Thread extends Type<"Thread"> {
         /**
          * Retrieves the error string from the thread if it produced an error.
          *
