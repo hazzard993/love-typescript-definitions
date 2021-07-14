@@ -17,7 +17,7 @@
         "url": "https://github.com/hazzard993/love-typescript-definitions/issues"
     },
     "scripts": {
-        "build:doc": "typedoc --includeDeclarations --excludeExternals --out docs --mode file --media media --exclude node_modules/** typings",
+        "build:doc": "typedoc --excludeExternals --out docs --media media --exclude node_modules/** --tsconfig spec/tsconfig.json typings",
         "test": "yarn test:tstl",
         "test:tstl": "tstl -p spec/tsconfig.json",
         "test:scripts": "node scripts/tuple-check.js",

@@ -17,10 +17,12 @@ Built for use with [TypeScriptToLua](https://github.com/TypeScriptToLua/TypeScri
 Or run the following in a terminal to try it out:
 
 ```sh
-# Requires TypeScriptToLua (tstl) to be installed
-git clone https://github.com/hazzard993/love-typescript-definitions.git ./node_modules/@types/love-typescript-definitions
+# Requires NPX, Yarn, and Love2D to be available via cli
+yarn init -y
+yarn add -D typescript-to-lua love-typescript-definitions
+echo '{ "compilerOptions": { "lib": ["ESNext"], "types": ["love-typescript-definitions", "typescript-to-lua/language-extensions"] }}' > tsconfig.json
 echo "love.draw = () => { love.graphics.print('Hello World') };" > main.ts
-tstl main.ts
+npx tstl -p tsconfig.json
 love .
 ```
 
