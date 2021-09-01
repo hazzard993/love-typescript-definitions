@@ -50,3 +50,6 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 - [TypeScriptGame](https://github.com/yancouto/simple-stuff/tree/master/TypeScriptGame), an example game made with these declarations by [@yancouto](https://github.com/yancouto)
 - [tstl-lurker](https://github.com/hazzard993/tstl-lurker) declarations for [lurker](https://github.com/rxi/lurker). Allows code TypeScript code to be hotswapped with a running Lua game.
 - [UTF-8](https://github.com/hazzard993/tstl-utf8) the utf8 module included with LÖVE 2D.
+- [tstl-anim8](https://github.com/maxiy01/tstl-anim8) declarations for anim8, a small animation library for LÖVE.
+- [tstl-flux](https://github.com/maxiy01/tstl-flux) declarations for flux, a fast, lightweight tweening library for Lua. 
+- [tstl-roomy](https://github.com/maxiy01/tstl-roomy) declarations for roomy, a small screen-management lua module.
