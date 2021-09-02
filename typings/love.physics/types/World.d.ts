@@ -92,6 +92,14 @@ declare module "love.physics" {
         getJointCount(): number;
 
         /**
+         * Returns a table with all joints
+         * 
+         * @return An array with all joints
+         * @link [World.getJoints](https://love2d.org/wiki/World:getJoints)
+         */
+        getJoints(): Joint[];
+
+        /**
          * Gets whether the World is destroyed. Destroyed worlds cannot be used.
          *
          * @return destroyed, Whether the World is destroyed.
