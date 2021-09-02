@@ -68,13 +68,15 @@ declare module "love.graphics" {
          * @link [ParticleSystem:getEmissionArea](https://love2d.org/wiki/ParticleSystem:getEmissionArea)
          * @since 11.0
          */
-        getEmissionArea(): [
-            distribution: AreaSpreadDistribution,
-            dx: number,
-            dy: number,
-            angle: number,
-            directionRelativeToCenter: boolean
-        ];
+        getEmissionArea(): LuaMultiReturn<
+            [
+                distribution: AreaSpreadDistribution,
+                dx: number,
+                dy: number,
+                angle: number,
+                directionRelativeToCenter: boolean
+            ]
+        >;
 
         /**
          * Gets the amount of particles emitted per second.

@@ -11,7 +11,7 @@ declare module "love" {
      * @link [love.getVersion][https://love2d.org/wiki/love.getVersion]
      * @link [Version Warnings][https://love2d.org/wiki/Config_Files#version]
      */
-    function getVersion(): [major: number, minor: number, revision: number, codename: string];
+    function getVersion(): LuaMultiReturn<[major: number, minor: number, revision: number, codename: string]>;
 
     /**
      * Sets whether LÖVE displays warnings when using deprecated functionality.

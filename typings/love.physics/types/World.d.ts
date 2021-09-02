@@ -93,7 +93,7 @@ declare module "love.physics" {
 
         /**
          * Returns a table with all joints
-         * 
+         *
          * @return An array with all joints
          * @link [World.getJoints](https://love2d.org/wiki/World:getJoints)
          */
