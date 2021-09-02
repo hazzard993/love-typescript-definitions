@@ -1,7 +1,0 @@
-{
-    "compilerOptions": {
-        "lib": ["esnext"],
-        "types": ["../typings/index"]
-    },
-    "include": ["*.ts"]
-}
