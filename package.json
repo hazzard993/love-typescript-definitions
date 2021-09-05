@@ -35,7 +35,7 @@
         "@types/node": "^13.1.4",
         "is-ci": "^2.0.0",
         "prettier": "^2.2.1",
-        "typedoc": "^0.20.28",
+        "typedoc": "^0.21.9",
         "typescript-to-lua": "^0.38.1"
     }
 }
