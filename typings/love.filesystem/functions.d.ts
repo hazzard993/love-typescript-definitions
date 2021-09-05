@@ -7,7 +7,6 @@
  */
 declare module "love.filesystem" {
     import { Data } from "love.data";
-    import { LuaIterator } from "love";
 
     /**
      * Appends data to a file.
@@ -234,7 +233,7 @@ declare module "love.filesystem" {
      * @returns An iterator that goes over each line of content in the file.
      * @link [love.filesystem.lines](https://love2d.org/wiki/love.filesystem.lines)
      */
-    function lines(filepath: string): LuaIterator<string>;
+    function lines(filepath: string): LuaIterable<string>;
 
     /**
      * Loads a Lua file (but does not run it).

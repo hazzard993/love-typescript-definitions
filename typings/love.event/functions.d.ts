@@ -15,20 +15,13 @@ declare module "love.event" {
     function clear(): void;
 
     /**
-     * TODO: Replace this in later release
-     * @luaIterator
-     * @tupleReturn
-     */
-    type PollResult = any[];
-
-    /**
      * Returns an iterator for messages in the event queue.
      *
      * @return i, Iterator function usable in a for loop.
      * @link [love.event.poll](https://love2d.org/wiki/love.event.poll)
      * @since 0.6.0
      */
-    function poll(): PollResult;
+    function poll(): LuaIterable<LuaMultiReturn<any[]>>;
 
     /**
      * Pump events into the event queue.

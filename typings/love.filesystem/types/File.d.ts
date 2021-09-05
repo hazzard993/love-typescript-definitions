@@ -1,5 +1,5 @@
 declare module "love.filesystem" {
-    import { Type, LuaIterator } from "love";
+    import { Type } from "love";
     import { ContainerType } from "love.data";
 
     /**
@@ -95,7 +95,7 @@ declare module "love.filesystem" {
          * @return iterator, The iterator (can be used in for loops)
          * @link [(File):lines](https://love2d.org/wiki/(File):lines)
          */
-        lines(): LuaIterator<string>;
+        lines(): LuaIterable<string>;
 
         /**
          * Open the file for write, read or append.
