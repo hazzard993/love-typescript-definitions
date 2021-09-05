@@ -61,7 +61,6 @@ declare module "love.physics" {
          * Gets the reaction force on Body 2 at the joint anchor.
          *
          * @param invdt How long the force applies. Usually the inverse time step or 1/dt.
-         * 
          * @return x, The x component of the force.
          * @return y, The y component of the force.
          * @link [Joint:getReactionForce](https://love2d.org/wiki/Joint:getReactionForce)
