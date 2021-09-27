@@ -53,3 +53,5 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 - [tstl-anim8](https://github.com/maxiy01/tstl-anim8) declarations for anim8, a small animation library for LÖVE.
 - [tstl-flux](https://github.com/maxiy01/tstl-flux) declarations for flux, a fast, lightweight tweening library for Lua.
 - [tstl-roomy](https://github.com/maxiy01/tstl-roomy) declarations for roomy, a small screen-management lua module.
+- [bump-types](https://github.com/Nyaacinth/bump-types) declarations for bump.lua, a collision detection library for Lua.
+- [lovebird-types](https://github.com/Nyaacinth/lovebird-types) declarations for lovebird, a browser-based debug console for the LÖVE framework.
