@@ -55,3 +55,5 @@ See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) f
 - [tstl-roomy](https://github.com/maxiy01/tstl-roomy) declarations for roomy, a small screen-management lua module.
 - [bump-types](https://github.com/Nyaacinth/bump-types) declarations for bump.lua, a collision detection library for Lua.
 - [lovebird-types](https://github.com/Nyaacinth/lovebird-types) declarations for lovebird, a browser-based debug console for the LÖVE framework.
+- [bitser-types](https://github.com/Nyaacinth/bitser-types) declarations for bitser, a library helps (de)serialization of Lua values with LuaJIT
+- [cartographer-types](https://github.com/Nyaacinth/cartographer-types) declarations for cartographer, a small library for loading, reading, and drawing Tiled maps in LÖVE
