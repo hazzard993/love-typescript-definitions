@@ -21,7 +21,7 @@
  * @link [love.graphics](https://love2d.org/wiki/love.graphics)
  */
 declare module "love.graphics" {
-    import { Transform } from "love.math";
+    import { RGBA, Transform } from "love.math";
     import { Channel } from "love.thread";
     import { CanvasFormat, ImageData, PixelFormat, CompressedImageData } from "love.image";
     import { HintingMode, Rasterizer } from "love.font";
@@ -1495,7 +1495,10 @@ declare module "love.graphics" {
      */
     function present(): void;
 
-    type ColouredText = Array<string | [r: number, g: number, b: number, a: number]>;
+    /**
+     * A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.
+     */
+    type ColouredText = Array<string | RGBA>;
 
     /**
      * Draws text on the screen.
@@ -1729,7 +1732,7 @@ declare module "love.graphics" {
      * @param rgba A numerical indexed table with the red, green and blue values as numbers. Alpha is 255 if it is not in the table
      * @link [love.graphics.setBackgroundColor](https://love2d.org/wiki/love.graphics.setBackgroundColor)
      */
-    function setBackgroundColor(rgba: [r: number, g: number, b: number, a?: number]): void;
+    function setBackgroundColor(rgba: RGBA): void;
 
     /**
      * Sets the blending mode.
@@ -1778,7 +1781,7 @@ declare module "love.graphics" {
      * @param rgba A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 255 if it is left out.
      * @link [love.graphics.setColor](https://love2d.org/wiki/love.graphics.setColor)
      */
-    function setColor(rgba: [r: number, g: number, b: number, a?: number]): void;
+    function setColor(rgba: RGBA): void;
 
     /**
      * Sets the color mask. Enables or disables specific color components when

@@ -54,7 +54,7 @@ declare module "love.graphics" {
          * @since 0.10.0
          */
         add(
-            coloredtext: Array<[r: number, g: number, b: number, a?: number] | string>,
+            coloredtext: ColouredText,
             x?: number,
             y?: number,
             angle?: number,
@@ -122,7 +122,7 @@ declare module "love.graphics" {
          * @since 0.10.0
          */
         addf(
-            coloredtext: Array<[r: number, g: number, b: number, a?: number] | string>,
+            coloredtext: ColouredText,
             wraplimit: number,
             align: AlignMode,
             x: number,
@@ -228,7 +228,7 @@ declare module "love.graphics" {
          * @link [Text:set](https://love2d.org/wiki/Text:set)
          * @since 0.10.0
          */
-        set(coloredtext: Array<[r: number, g: number, b: number, a?: number] | string>): void;
+        set(coloredtext: ColouredText): void;
 
         /**
          * Replaces the contents of the Text object with a new unformatted string.
