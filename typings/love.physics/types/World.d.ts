@@ -43,10 +43,10 @@ declare module "love.physics" {
          */
         getCallbacks(): LuaMultiReturn<
             [
-                (this: void, ...args: any[]) => any,
-                (this: void, ...args: any[]) => any,
-                (this: void, ...args: any[]) => any,
-                (this: void, ...args: any[]) => any
+                (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
+                (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
+                (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
+                (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact, normalimpulse: number, tangentimpulse: number) => void
             ]
         >;
 
@@ -178,10 +178,10 @@ declare module "love.physics" {
          * @link [World:setCallbacks](https://love2d.org/wiki/World:setCallbacks)
          */
         setCallbacks(
-            beginContact?: (this: void, ...args: Array<any>) => any,
-            endContact?: (this: void, ...args: Array<any>) => any,
-            preSolve?: (this: void, ...args: Array<any>) => any,
-            postSolve?: (this: void, ...args: Array<any>) => any
+            beginContact?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
+            endContact?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
+            preSolve?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
+            postSolve?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact, normalimpulse: number, tangentimpulse: number) => void
         ): void;
 
         /**
