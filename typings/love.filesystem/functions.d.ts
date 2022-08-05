@@ -311,21 +311,31 @@ declare module "love.filesystem" {
      *
      * @param contents The contents of the file.
      * @param name The name of the file.
-     * @returns Your new FileData.
+     * @returns The new {@link FileData}.
      * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
      */
     function newFileData(contents: string, name: string): FileData;
 
     /**
+     * Creates a new {@link FileData} object from a {@link Data} object in memory.
+     *
+     * @param originalData The contents of the file.
+     * @returns The new {@link FileData}.
+     * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
+     * @since 11.4
+     */
+    function newFileData(originalData: Data): FileData;
+
+    /**
      * Creates a new {@link FileData} from a file on the storage device.
      *
      * @param filepath Path to the file.
-     * @return data, The new FileData, or _nil/undefined_ if an error occurred.
-     * @return errormsg, The error string, if an error occurred.
+     * @return data, The new {@link FileData}, or _nil/undefined_ if an error occurred.
+     * @return err, The error string, if an error occurred.
      * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
      * @since 0.9.0
      */
-    function newFileData(filepath: string): LuaMultiReturn<[data: FileData] | [data: undefined, errormsg: string]>;
+    function newFileData(filepath: string): LuaMultiReturn<[data: FileData] | [data: undefined, err: string]>;
 
     /**
      * Read the contents of a file.

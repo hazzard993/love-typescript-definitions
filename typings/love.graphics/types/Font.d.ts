@@ -68,6 +68,28 @@ declare module "love.graphics" {
         getHeight(): number;
 
         /**
+         * Gets the kerning between two characters in the Font.
+         *
+         * @param leftChar The left character.
+         * @param rightChar The right character.
+         * @returns The kerning amount to add to the spacing between the two characters. May be negative.
+         * @link [Font:getKerning](https://love2d.org/wiki/Font:getKerning)
+         * @since 11.4
+         */
+        getKerning(leftChar: string, rightChar: string): number;
+
+        /**
+         * Gets the kerning between two characters in the Font.
+         *
+         * @param leftGlyph The unicode number for the left glyph.
+         * @param rightGlyph The unicode number for the right glyph.
+         * @returns The kerning amount to add to the spacing between the two glyphs. May be negative.
+         * @link [Font:getKerning](https://love2d.org/wiki/Font:getKerning)
+         * @since 11.4
+         */
+        getKerning(leftGlyph: string, rightGlyph: string): number;
+
+        /**
          * Gets the line height. This will be the value previously set by
          * Font:setLineHeight, or 1.0 by default.
          *

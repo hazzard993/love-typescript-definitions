@@ -46,7 +46,14 @@ declare module "love.physics" {
                 beginContact: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
                 endContact: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
                 preSolve: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
-                postSolve: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact, normalimpulse: number, tangentimpulse: number) => void
+                postSolve: (
+                    this: void,
+                    fixture1: Fixture,
+                    fixture2: Fixture,
+                    contact: Contact,
+                    normalimpulse: number,
+                    tangentimpulse: number
+                ) => void
             ]
         >;
 
@@ -181,7 +188,14 @@ declare module "love.physics" {
             beginContact?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
             endContact?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
             preSolve?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact) => void,
-            postSolve?: (this: void, fixture1: Fixture, fixture2: Fixture, contact: Contact, normalimpulse: number, tangentimpulse: number) => void
+            postSolve?: (
+                this: void,
+                fixture1: Fixture,
+                fixture2: Fixture,
+                contact: Contact,
+                normalimpulse: number,
+                tangentimpulse: number
+            ) => void
         ): void;
 
         /**

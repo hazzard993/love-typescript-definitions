@@ -358,6 +358,16 @@ declare module "love.physics" {
         getLocalPoint(worldX: number, worldY: number): LuaMultiReturn<[localX: number, localY: number]>;
 
         /**
+         * Transform local points from world coordinates to local coordinates.
+         *
+         * @param xys All x and y world coordinates to convert.
+         * @returns All the points converted to local coordinates.
+         * @link [Body:getLocalPoints](https://love2d.org/wiki/Body:getLocalPoints)
+         * @since 11.4
+         */
+        getLocalPoints(...xys: number[]): number[];
+
+        /**
          * Transform a vector from world coordinates to local coordinates.
          *
          * @param worldX The vector x component in world coordinates.
