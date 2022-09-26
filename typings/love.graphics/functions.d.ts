@@ -1307,7 +1307,7 @@ declare module "love.graphics" {
      * @link [love.graphics.newShader](https://love2d.org/wiki/love.graphics.newShader)
      * @since 0.9.0
      */
-    function newShader<T extends {[key:string]:any} = {}>(code: string): Shader<T>;
+    function newShader<T extends {[key:string]:any} = { [key: string]: any }>(code: string): Shader<T>;
 
     /**
      * Creates a new Shader object for hardware-accelerated vertex and pixel effects.
