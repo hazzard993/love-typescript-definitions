@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 11.4.0
+
+These types have been complete without major rewrites for a while. A new versioning scheme will now be implemented similar to TypeScript type packages.
+
+The `love-typescript-definitions@11.4.x` will line up with LOVE 2D 11.4 with the `x` being used to increment through patches for bugfixes for that version.
+
+Also removed the docs to simplify and reduce the size of the package. Users can still use [typedoc](https://typedoc.org/) in their project to get types from this project as well as their own.
+
 ## Version 0.21.0
 
 - **BREAKING**: Removed types that are defined globally. This is to prevent name clashing when mixing libraries
