@@ -1,16 +1,16 @@
 declare module "love.mouse" {
-    import { Type } from "love";
+  import { Type } from "love";
 
+  /**
+   * @link [Cursor](https://love2d.org/wiki/Cursor)
+   */
+  interface Cursor extends Type<"Cursor"> {
     /**
-     * @link [Cursor](https://love2d.org/wiki/Cursor)
+     * Gets the type of the Cursor.
+     *
+     * @return cursortype, The type of the Cursor.
+     * @link [Cursor:getType](https://love2d.org/wiki/Cursor:getType)
      */
-    interface Cursor extends Type<"Cursor"> {
-        /**
-         * Gets the type of the Cursor.
-         *
-         * @return cursortype, The type of the Cursor.
-         * @link [Cursor:getType](https://love2d.org/wiki/Cursor:getType)
-         */
-        getType(): CursorType;
-    }
+    getType(): CursorType;
+  }
 }
