@@ -32,8 +32,6 @@ Available on NPM.
 npm install love-typescript-definitions
 ```
 
-See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project and [CHANGELOG.md](CHANGELOG.md) for recent changes.
-
 ## Other Definitions / Tools to Help
 
 - [lua-types](https://github.com/ark120202/lua-types) declarations for the various Lua environments. Allows LuaJIT specific functions to be used.
