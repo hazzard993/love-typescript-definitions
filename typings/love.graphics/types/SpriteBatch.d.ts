@@ -32,7 +32,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -61,7 +61,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -89,7 +89,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -119,7 +119,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -240,7 +240,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): void;
 
     /**
@@ -271,7 +271,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): void;
 
     /**
@@ -344,7 +344,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): void;
 
     /**
@@ -375,7 +375,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): void;
 
     /**
@@ -388,7 +388,7 @@ declare module "love.graphics" {
     setLayer(
       spriteindex: number,
       layerindex: number,
-      transform: Transform
+      transform: Transform,
     ): void;
 
     /**
@@ -403,7 +403,7 @@ declare module "love.graphics" {
       spriteindex: number,
       layerindex: number,
       quad: Quad,
-      transform: Transform
+      transform: Transform,
     ): void;
 
     /**

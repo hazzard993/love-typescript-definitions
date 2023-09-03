@@ -107,7 +107,7 @@ declare module "love.audio" {
      */
     getEffect(
       name: string,
-      filtersettings?: object
+      filtersettings?: object,
     ): { volume: number; highgain: number; lowgain: number } | undefined;
 
     /**

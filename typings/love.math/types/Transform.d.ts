@@ -63,7 +63,7 @@ declare module "love.math" {
      */
     inverseTransformPoint(
       localX: number,
-      localY: number
+      localY: number,
     ): LuaMultiReturn<[globalX: number, globalY: number]>;
 
     /**
@@ -160,7 +160,7 @@ declare module "love.math" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): Transform;
 
     /**
@@ -188,7 +188,7 @@ declare module "love.math" {
      */
     transformPoint(
       globalX: number,
-      globalY: number
+      globalY: number,
     ): LuaMultiReturn<[localX: number, localY: number]>;
 
     /**

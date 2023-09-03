@@ -39,7 +39,7 @@ declare module "love" {
   function isVersionCompatible(
     major: number,
     minor: number,
-    revision: number
+    revision: number,
   ): boolean;
 
   /**

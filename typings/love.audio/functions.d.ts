@@ -148,7 +148,7 @@ declare module "love.audio" {
     samplerate: number,
     bitdepth: 8 | 16,
     channels: 1 | 2,
-    buffercount?: number
+    buffercount?: number,
   ): Source;
 
   /**
@@ -161,7 +161,7 @@ declare module "love.audio" {
    */
   function newSource(
     source: string | File | Decoder | FileData,
-    type: SourceType
+    type: SourceType,
   ): Source;
   function newSource(data: SoundData): Source;
 
@@ -266,7 +266,7 @@ declare module "love.audio" {
     fz: number,
     ux: number,
     uy: number,
-    uz: number
+    uz: number,
   ): void;
 
   /**

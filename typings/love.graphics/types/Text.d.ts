@@ -33,7 +33,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -63,7 +63,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -98,7 +98,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -133,7 +133,7 @@ declare module "love.graphics" {
       ox?: number,
       oy?: number,
       kx?: number,
-      ky?: number
+      ky?: number,
     ): number;
 
     /**
@@ -164,7 +164,7 @@ declare module "love.graphics" {
      * @since 0.10.1
      */
     getDimensions(
-      index: number
+      index: number,
     ): LuaMultiReturn<[width: number, height: number]>;
 
     /**
@@ -263,7 +263,7 @@ declare module "love.graphics" {
     setf(
       coloredtext: Array<[number, number, number, number] | string>,
       wraplimit: number,
-      align: AlignMode
+      align: AlignMode,
     ): void;
 
     /**

@@ -134,7 +134,7 @@ declare module "love.filesystem" {
      */
     read<T extends ContainerType>(
       container: T,
-      bytes?: number
+      bytes?: number,
     ): LuaMultiReturn<
       [contents: T extends "string" ? string : FileData, size: number]
     >;
@@ -162,7 +162,7 @@ declare module "love.filesystem" {
      */
     setBuffer(
       mode: BufferMode,
-      size?: number
+      size?: number,
     ):
       | LuaMultiReturn<[success: true]>
       | LuaMultiReturn<[success: false, errormsg: string]>;

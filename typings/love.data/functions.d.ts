@@ -22,7 +22,7 @@ declare module "love.data" {
     container: T,
     format: CompressedDataFormat,
     rawstring: string,
-    level?: number
+    level?: number,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -40,7 +40,7 @@ declare module "love.data" {
     container: T,
     format: CompressedDataFormat,
     data: Data,
-    level?: number
+    level?: number,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -56,12 +56,12 @@ declare module "love.data" {
   function decode<T extends ContainerType>(
     container: T,
     format: EncodeFormat,
-    source: string
+    source: string,
   ): T extends "string" ? string : ByteData;
   function decode<T extends ContainerType>(
     container: T,
     format: EncodeFormat,
-    source: Data
+    source: Data,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -74,17 +74,17 @@ declare module "love.data" {
    */
   function decompress<T extends ContainerType>(
     container: T,
-    compressedData: CompressedData
+    compressedData: CompressedData,
   ): T extends "string" ? string : Data;
   function decompress<T extends ContainerType>(
     container: T,
     format: CompressedDataFormat,
-    compressedData: CompressedData
+    compressedData: CompressedData,
   ): T extends "string" ? string : Data;
   function decompress<T extends ContainerType>(
     container: T,
     format: CompressedDataFormat,
-    data: Data
+    data: Data,
   ): T extends "string" ? string : Data;
 
   /**
@@ -102,7 +102,7 @@ declare module "love.data" {
     container: T,
     format: EncodeFormat,
     sourceString: string,
-    linelength?: number
+    linelength?: number,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -175,7 +175,7 @@ declare module "love.data" {
 
   type PackedMetatable<
     F extends string = string,
-    D extends Array<Packable> = Array<Packable>
+    D extends Array<Packable> = Array<Packable>,
   > = {
     format: F;
     values: D;
@@ -211,7 +211,7 @@ declare module "love.data" {
   function pack<
     T extends ContainerType,
     F extends string,
-    D extends Packable[]
+    D extends Packable[],
   >(
     container: T,
     format: F,
@@ -235,6 +235,6 @@ declare module "love.data" {
   function unpack<P extends PackedData>(
     format: PackedDataMetatable<P>["format"],
     data: P,
-    pos?: number
+    pos?: number,
   ): LuaMultiReturn<PackedDataMetatable<P>["values"]>;
 }

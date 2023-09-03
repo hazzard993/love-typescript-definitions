@@ -74,7 +74,7 @@ declare module "love.graphics" {
         dx: number,
         dy: number,
         angle: number,
-        directionRelativeToCenter: boolean
+        directionRelativeToCenter: boolean,
       ]
     >;
 
@@ -386,7 +386,7 @@ declare module "love.graphics" {
       dx: number,
       dy: number,
       angle?: number,
-      directionRelativeToCenter?: boolean
+      directionRelativeToCenter?: boolean,
     ): void;
 
     /**
@@ -434,7 +434,7 @@ declare module "love.graphics" {
       xmin: number,
       ymin: number,
       xmax?: number,
-      ymax?: number
+      ymax?: number,
     ): void;
 
     /**

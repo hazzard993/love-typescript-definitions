@@ -134,7 +134,7 @@ declare module "love.mouse" {
   function newCursor(
     imageData: ImageData,
     hotx?: number,
-    hoty?: number
+    hoty?: number,
   ): Cursor;
 
   /**

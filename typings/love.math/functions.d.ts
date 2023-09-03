@@ -186,7 +186,7 @@ declare module "love.math" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): Transform;
 
   /**

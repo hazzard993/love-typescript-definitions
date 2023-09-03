@@ -9,6 +9,6 @@ declare module "love.graphics" {
   type VertexAttribute<T extends MeshVertexDataType> = [
     string,
     T,
-    1 | 2 | 3 | 4
+    1 | 2 | 3 | 4,
   ];
 }

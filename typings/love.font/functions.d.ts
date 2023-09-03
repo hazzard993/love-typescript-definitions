@@ -22,7 +22,7 @@ declare module "love.font" {
   function newBMFontRasterizer(
     imageData: ImageData,
     glyphs: string,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -37,7 +37,7 @@ declare module "love.font" {
   function newBMFontRasterizer(
     fileName: string,
     glyphs: string,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -65,7 +65,7 @@ declare module "love.font" {
     imageData: ImageData,
     glyphs: string,
     extraSpacing?: number,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -100,7 +100,7 @@ declare module "love.font" {
   function newRasterizer(
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -117,7 +117,7 @@ declare module "love.font" {
     fileName: string,
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -134,7 +134,7 @@ declare module "love.font" {
     fileData: FileData,
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -149,7 +149,7 @@ declare module "love.font" {
   function newRasterizer(
     imageData: ImageData,
     glyphs: string,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -164,7 +164,7 @@ declare module "love.font" {
   function newRasterizer(
     fileName: string,
     glyphs: string,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -179,7 +179,7 @@ declare module "love.font" {
   function newTrueTypeRasterizer(
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -196,7 +196,7 @@ declare module "love.font" {
     fileName: string,
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 
   /**
@@ -213,6 +213,6 @@ declare module "love.font" {
     fileData: FileData,
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Rasterizer;
 }

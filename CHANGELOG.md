@@ -169,7 +169,7 @@ function unpack(
   packedData: love.data.PackedData<{
     format: "n1";
     values: [1, 2, 3, 4];
-  }>
+  }>,
 ) {
   love.data.unpack("n1", packedData);
 }

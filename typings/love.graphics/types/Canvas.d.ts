@@ -61,7 +61,7 @@ declare module "love.graphics" {
       x: number,
       y: number,
       width: number,
-      height: number
+      height: number,
     ): ImageData;
 
     /**

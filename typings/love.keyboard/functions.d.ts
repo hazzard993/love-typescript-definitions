@@ -109,6 +109,6 @@ declare module "love.keyboard" {
     x: number,
     y: number,
     w: number,
-    h: number
+    h: number,
   ): void;
 }

@@ -13,7 +13,6 @@
   "bugs": "https://github.com/hazzard993/love-typescript-definitions/issues",
   "repository": "https://github.com/hazzard993/love-typescript-definitions.git",
   "scripts": {
-    "build:doc": "typedoc --excludeExternals --out docs --media media --exclude node_modules/** --tsconfig spec/tsconfig.json typings",
     "test": "yarn test:tstl",
     "test:tstl": "tstl -p spec/tsconfig.json",
     "test:scripts": "node scripts/tuple-check.js",
@@ -22,12 +21,10 @@
     "clean": "rm spec/*.lua"
   },
   "devDependencies": {
-    "prettier": "^2.2.1",
-    "typedoc": "^0.21.9",
+    "prettier": "^3.0.3",
     "typescript-to-lua": "^0.38.1"
   },
   "files": [
-    "docs/**",
     "**/**.d.ts"
   ],
   "types": "index.d.ts"

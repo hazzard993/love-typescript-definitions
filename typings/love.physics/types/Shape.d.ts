@@ -25,13 +25,13 @@ declare module "love.physics" {
       tx: number,
       ty: number,
       tr: number,
-      childIndex?: number
+      childIndex?: number,
     ): LuaMultiReturn<
       [
         topLeftX: number,
         topLeftY: number,
         bottomRightX: number,
-        bottomRightY: number
+        bottomRightY: number,
       ]
     >;
 
@@ -46,7 +46,7 @@ declare module "love.physics" {
      * @link [Shape:computeMass](https://love2d.org/wiki/Shape:computeMass)
      */
     computeMass(
-      density: number
+      density: number,
     ): LuaMultiReturn<[x: number, y: number, mass: number, inertia: number]>;
 
     /**
@@ -117,7 +117,7 @@ declare module "love.physics" {
       tx: number,
       ty: number,
       tr: number,
-      childIndex?: number
+      childIndex?: number,
     ): LuaMultiReturn<[xn: number, yn: number, fraction: number] | []>;
 
     /**

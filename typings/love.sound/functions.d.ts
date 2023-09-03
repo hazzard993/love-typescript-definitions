@@ -45,6 +45,6 @@ declare module "love.sound" {
     samples: number,
     rate?: number,
     bits?: number,
-    channels?: number
+    channels?: number,
   ): SoundData;
 }

@@ -318,7 +318,7 @@ declare module "love.physics" {
      */
     getLinearVelocityFromLocalPoint(
       x: number,
-      y: number
+      y: number,
     ): LuaMultiReturn<[vx: number, vy: number]>;
 
     /**
@@ -338,7 +338,7 @@ declare module "love.physics" {
      */
     getLinearVelocityFromWorldPoint(
       x: number,
-      y: number
+      y: number,
     ): LuaMultiReturn<[vx: number, vy: number]>;
 
     /**
@@ -363,7 +363,7 @@ declare module "love.physics" {
      */
     getLocalPoint(
       worldX: number,
-      worldY: number
+      worldY: number,
     ): LuaMultiReturn<[localX: number, localY: number]>;
 
     /**
@@ -387,7 +387,7 @@ declare module "love.physics" {
      */
     getLocalVector(
       worldX: number,
-      worldY: number
+      worldY: number,
     ): LuaMultiReturn<[localX: number, localY: number]>;
 
     /**
@@ -468,7 +468,7 @@ declare module "love.physics" {
      */
     getWorldPoint(
       localX: number,
-      localY: number
+      localY: number,
     ): LuaMultiReturn<[worldX: number, worldY: number]>;
 
     /**
@@ -491,7 +491,7 @@ declare module "love.physics" {
      */
     getWorldVector(
       localX: number,
-      localY: number
+      localY: number,
     ): LuaMultiReturn<[worldX: number, worldY: number]>;
 
     /**

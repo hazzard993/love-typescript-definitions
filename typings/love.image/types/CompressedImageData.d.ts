@@ -25,7 +25,7 @@ declare module "love.image" {
      * @since 0.9.0
      */
     getDimensions(
-      level: number
+      level: number,
     ): LuaMultiReturn<[width: number, height: number]>;
 
     /**

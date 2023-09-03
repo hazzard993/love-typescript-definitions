@@ -32,8 +32,6 @@ Available on NPM.
 npm install love-typescript-definitions
 ```
 
-This version comes with documentation (`node_modules/love-typescript-definitions/docs/index.html`).
-
 See the [wiki](https://github.com/hazzard993/love-typescript-definitions/wiki) for information on getting started building a project and [CHANGELOG.md](CHANGELOG.md) for recent changes.
 
 ## Other Definitions / Tools to Help

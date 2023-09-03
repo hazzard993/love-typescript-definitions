@@ -125,7 +125,7 @@ declare module "love.math" {
     renderSegment(
       startpoint: number,
       endpoint: number,
-      depth?: number
+      depth?: number,
     ): Array<number>;
 
     /**

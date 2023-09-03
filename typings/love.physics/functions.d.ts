@@ -21,7 +21,7 @@ declare module "love.physics" {
    */
   function getDistance(
     fixture1: Fixture,
-    fixture2: Fixture
+    fixture2: Fixture,
   ): LuaMultiReturn<
     [distance: number, x1: number, y1: number, x2: number, y2: number]
   >;
@@ -127,7 +127,7 @@ declare module "love.physics" {
     y1: number,
     x2: number,
     y2: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): DistanceJoint;
 
   /**
@@ -144,7 +144,7 @@ declare module "love.physics" {
     x1: number,
     y1: number,
     x2: number,
-    y2: number
+    y2: number,
   ): EdgeShape;
 
   /**
@@ -175,7 +175,7 @@ declare module "love.physics" {
     body2: Body,
     x: number,
     y: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): FrictionJoint;
 
   /**
@@ -203,7 +203,7 @@ declare module "love.physics" {
     joint1: Joint,
     joint2: Joint,
     ratio?: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): GearJoint;
 
   /**
@@ -223,7 +223,7 @@ declare module "love.physics" {
   function newMotorJoint(
     body1: Body,
     body2: Body,
-    correctionFactor?: number
+    correctionFactor?: number,
   ): MotorJoint;
 
   /**
@@ -245,7 +245,7 @@ declare module "love.physics" {
     body1: Body,
     body2: Body,
     correctionFactor?: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): MotorJoint;
 
   /**
@@ -314,7 +314,7 @@ declare module "love.physics" {
     y: number,
     ax: number,
     ay: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): PrismaticJoint;
 
   /**
@@ -346,7 +346,7 @@ declare module "love.physics" {
     y2: number,
     ax: number,
     ay: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): PrismaticJoint;
 
   /**
@@ -380,7 +380,7 @@ declare module "love.physics" {
     ax: number,
     ay: number,
     collideConnected?: boolean,
-    referenceAngle?: number
+    referenceAngle?: number,
   ): PrismaticJoint;
 
   /**
@@ -423,7 +423,7 @@ declare module "love.physics" {
     x2: number,
     y2: number,
     ratio?: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): PulleyJoint;
 
   /**
@@ -458,7 +458,7 @@ declare module "love.physics" {
     y: number,
     width: number,
     height: number,
-    angle?: number
+    angle?: number,
   ): PolygonShape;
 
   /**
@@ -479,7 +479,7 @@ declare module "love.physics" {
     body2: Body,
     x: number,
     y: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): RevoluteJoint;
 
   /**
@@ -506,7 +506,7 @@ declare module "love.physics" {
     x2: number,
     y2: number,
     collideConnected?: boolean,
-    referenceAngle?: number
+    referenceAngle?: number,
   ): RevoluteJoint;
 
   /**
@@ -532,7 +532,7 @@ declare module "love.physics" {
     x2: number,
     y2: number,
     maxLength: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): RopeJoint;
 
   /**
@@ -553,7 +553,7 @@ declare module "love.physics" {
     body2: Body,
     x: number,
     y: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): WeldJoint;
 
   /**
@@ -578,7 +578,7 @@ declare module "love.physics" {
     y1: number,
     x2: number,
     y2: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): WeldJoint;
 
   /**
@@ -605,7 +605,7 @@ declare module "love.physics" {
     x2: number,
     y2: number,
     collideConnected?: boolean,
-    referenceAngle?: number
+    referenceAngle?: number,
   ): WeldJoint;
 
   /**
@@ -628,7 +628,7 @@ declare module "love.physics" {
     y: number,
     ax: number,
     ay: number,
-    collideConnected?: boolean
+    collideConnected?: boolean,
   ): WheelJoint;
 
   /**

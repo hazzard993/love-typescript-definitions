@@ -41,7 +41,7 @@ declare module "love.graphics" {
       name: string,
       mesh: Mesh,
       step: VertexAttributeStep,
-      attachname?: string
+      attachname?: string,
     ): void;
 
     /**
@@ -119,7 +119,7 @@ declare module "love.graphics" {
      */
     getVertexAttribute(
       vertexindex: number,
-      attributeindex: number
+      attributeindex: number,
     ): LuaMultiReturn<number[]>;
 
     /**
@@ -290,7 +290,7 @@ declare module "love.graphics" {
       r?: number,
       g?: number,
       b?: number,
-      a?: number
+      a?: number,
     ): void;
 
     /**

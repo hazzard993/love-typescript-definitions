@@ -92,12 +92,12 @@ declare module "love.joystick" {
      * @link [Joystick:getGamepadMapping](https://love2d.org/wiki/Joystick:getGamepadMapping)
      */
     getGamepadMapping(
-      axisOrButton: GamepadAxis | GamepadButton
+      axisOrButton: GamepadAxis | GamepadButton,
     ): LuaMultiReturn<
       [
         inputType: JoystickInputType,
         inputIndex: number,
-        hatDirection?: JoystickHat
+        hatDirection?: JoystickHat,
       ]
     >;
 

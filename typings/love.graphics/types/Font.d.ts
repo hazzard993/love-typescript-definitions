@@ -123,7 +123,7 @@ declare module "love.graphics" {
      */
     getWrap(
       text: string,
-      wraplimit: number
+      wraplimit: number,
     ): LuaMultiReturn<[width: number, wrappedtext: string[]]>;
 
     /**

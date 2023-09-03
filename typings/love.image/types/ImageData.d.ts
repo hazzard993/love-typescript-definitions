@@ -59,7 +59,7 @@ declare module "love.image" {
      */
     getPixel(
       x: number,
-      y: number
+      y: number,
     ): LuaMultiReturn<[r: number, g: number, b: number, a: number]>;
 
     /**
@@ -106,7 +106,7 @@ declare module "love.image" {
       sx: number,
       sy: number,
       sw: number,
-      sh: number
+      sh: number,
     ): void;
 
     /**
@@ -128,7 +128,7 @@ declare module "love.image" {
       r: number,
       g: number,
       b: number,
-      a: number
+      a: number,
     ): void;
   }
 }

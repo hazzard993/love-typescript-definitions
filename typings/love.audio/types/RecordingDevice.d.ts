@@ -87,7 +87,7 @@ declare module "love.audio" {
       samplecount: number,
       samplerate?: number,
       bitdepth?: number,
-      channels?: number
+      channels?: number,
     ): boolean;
 
     /**

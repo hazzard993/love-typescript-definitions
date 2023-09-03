@@ -47,19 +47,19 @@ declare module "love.physics" {
           this: void,
           fixture1: Fixture,
           fixture2: Fixture,
-          contact: Contact
+          contact: Contact,
         ) => void,
         endContact: (
           this: void,
           fixture1: Fixture,
           fixture2: Fixture,
-          contact: Contact
+          contact: Contact,
         ) => void,
         preSolve: (
           this: void,
           fixture1: Fixture,
           fixture2: Fixture,
-          contact: Contact
+          contact: Contact,
         ) => void,
         postSolve: (
           this: void,
@@ -67,8 +67,8 @@ declare module "love.physics" {
           fixture2: Fixture,
           contact: Contact,
           normalimpulse: number,
-          tangentimpulse: number
-        ) => void
+          tangentimpulse: number,
+        ) => void,
       ]
     >;
 
@@ -162,7 +162,7 @@ declare module "love.physics" {
       topLeftY: number,
       bottomRightX: number,
       bottomRightY: number,
-      callback: Function
+      callback: Function,
     ): void;
 
     /**
@@ -187,8 +187,8 @@ declare module "love.physics" {
         y: number,
         xn: number,
         yn: number,
-        frac: number
-      ) => number
+        frac: number,
+      ) => number,
     ): void;
 
     /**
@@ -212,19 +212,19 @@ declare module "love.physics" {
         this: void,
         fixture1: Fixture,
         fixture2: Fixture,
-        contact: Contact
+        contact: Contact,
       ) => void,
       endContact?: (
         this: void,
         fixture1: Fixture,
         fixture2: Fixture,
-        contact: Contact
+        contact: Contact,
       ) => void,
       preSolve?: (
         this: void,
         fixture1: Fixture,
         fixture2: Fixture,
-        contact: Contact
+        contact: Contact,
       ) => void,
       postSolve?: (
         this: void,
@@ -232,8 +232,8 @@ declare module "love.physics" {
         fixture2: Fixture,
         contact: Contact,
         normalimpulse: number,
-        tangentimpulse: number
-      ) => void
+        tangentimpulse: number,
+      ) => void,
     ): void;
 
     /**
@@ -248,7 +248,7 @@ declare module "love.physics" {
      * @link [World:setContactFilter](https://love2d.org/wiki/World:setContactFilter)
      */
     setContactFilter(
-      filter: (this: void, fixtureA: Fixture, fixtureB: Fixture) => boolean
+      filter: (this: void, fixtureA: Fixture, fixtureB: Fixture) => boolean,
     ): void;
 
     /**
@@ -293,7 +293,7 @@ declare module "love.physics" {
     update(
       dt: number,
       velocityiterations?: number,
-      positioniterations?: number
+      positioniterations?: number,
     ): void;
   }
 }

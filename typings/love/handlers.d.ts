@@ -64,7 +64,7 @@ interface Handlers extends CustomHandlers {
    */
   displayrotated?: (
     displayIndex: number,
-    newOrientation: DisplayOrientation
+    newOrientation: DisplayOrientation,
   ) => void;
 
   /**
@@ -191,7 +191,7 @@ interface Handlers extends CustomHandlers {
   joystickhat?: (
     joystick: Joystick,
     hat: number,
-    direction: JoystickHat
+    direction: JoystickHat,
   ) => void;
 
   /**
@@ -231,7 +231,7 @@ interface Handlers extends CustomHandlers {
   keypressed?: (
     key: KeyConstant,
     scancode: Scancode,
-    isrepeat: boolean
+    isrepeat: boolean,
   ) => void;
 
   /**
@@ -291,7 +291,7 @@ interface Handlers extends CustomHandlers {
     y: number,
     dx: number,
     dy: number,
-    istouch: boolean
+    istouch: boolean,
   ) => void;
 
   /**
@@ -309,7 +309,7 @@ interface Handlers extends CustomHandlers {
     y: number,
     button: number,
     isTouch: boolean,
-    presses: number
+    presses: number,
   ) => void;
 
   /**
@@ -327,7 +327,7 @@ interface Handlers extends CustomHandlers {
     y: number,
     button: number,
     isTouch: boolean,
-    presses: number
+    presses: number,
   ) => void;
 
   /**
@@ -410,7 +410,7 @@ interface Handlers extends CustomHandlers {
     y: number,
     dx: number,
     dy: number,
-    pressure: number
+    pressure: number,
   ) => void;
 
   /**
@@ -430,7 +430,7 @@ interface Handlers extends CustomHandlers {
     y: number,
     dx: number,
     dy: number,
-    pressure: number
+    pressure: number,
   ) => void;
 
   /**
@@ -450,7 +450,7 @@ interface Handlers extends CustomHandlers {
     y: number,
     dx: number,
     dy: number,
-    pressure: number
+    pressure: number,
   ) => void;
 
   /**

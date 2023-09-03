@@ -81,7 +81,7 @@ declare module "love.joystick" {
     button: GamepadButton,
     inputtype: JoystickInputType,
     inputindex: number,
-    hatdirection?: JoystickHat
+    hatdirection?: JoystickHat,
   ): boolean;
 
   /**
@@ -100,6 +100,6 @@ declare module "love.joystick" {
     axis: GamepadAxis,
     inputtype: JoystickInputType,
     inputindex: number,
-    hatdirection?: JoystickHat
+    hatdirection?: JoystickHat,
   ): boolean;
 }

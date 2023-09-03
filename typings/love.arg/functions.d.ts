@@ -9,7 +9,7 @@ declare module "love" {
      */
     function getLow(
       this: void,
-      args: string[]
+      args: string[],
     ): LuaMultiReturn<[lowest: string, index: number]>;
     function parseOption(this: void): void;
     function parseOptions(this: void): void;

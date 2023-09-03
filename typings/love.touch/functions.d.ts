@@ -17,7 +17,7 @@ declare module "love.touch" {
    * @link [love.touch.getPosition](https://love2d.org/wiki/love.touch.getPosition)
    */
   function getPosition(
-    id: LightUserData<"Touch">
+    id: LightUserData<"Touch">,
   ): LuaMultiReturn<[x: number, y: number]>;
 
   /**

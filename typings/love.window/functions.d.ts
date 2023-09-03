@@ -66,7 +66,7 @@ declare module "love.window" {
    */
   function fromPixels(
     px: number,
-    py: number
+    py: number,
   ): LuaMultiReturn<[x: number, y: number]>;
 
   /**
@@ -116,7 +116,7 @@ declare module "love.window" {
    * @link [love.window.getDesktopDimensions](https://love2d.org/wiki/love.window.getDesktopDimensions)
    */
   function getDesktopDimensions(
-    display?: number
+    display?: number,
   ): LuaMultiReturn<[width: number, height: number]>;
 
   /**
@@ -145,7 +145,7 @@ declare module "love.window" {
    * @link [love.window.getFullscreenModes](https://love2d.org/wiki/love.window.getFullscreenModes)
    */
   function getFullscreenModes(
-    display?: number
+    display?: number,
   ): Array<{ width: number; height: number }>;
 
   /**
@@ -429,7 +429,7 @@ declare module "love.window" {
     title: string,
     message: string,
     type?: MessageBoxType,
-    attachtowindow?: boolean
+    attachtowindow?: boolean,
   ): boolean;
 
   /**
@@ -453,7 +453,7 @@ declare module "love.window" {
       escapebutton?: number;
     },
     type?: MessageBoxType,
-    attachtowindow?: boolean
+    attachtowindow?: boolean,
   ): number;
 
   /**
@@ -506,7 +506,7 @@ declare module "love.window" {
    */
   function toPixels(
     x: number,
-    y: number
+    y: number,
   ): LuaMultiReturn<[px: number, py: number]>;
 
   /**
@@ -529,6 +529,6 @@ declare module "love.window" {
   function updateMode(
     width: number,
     height: number,
-    settings: DisplayFlags
+    settings: DisplayFlags,
   ): boolean;
 }

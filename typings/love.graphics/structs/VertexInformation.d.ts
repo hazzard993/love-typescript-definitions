@@ -19,6 +19,6 @@ declare module "love.graphics" {
     r?: number,
     g?: number,
     b?: number,
-    a?: number
+    a?: number,
   ];
 }

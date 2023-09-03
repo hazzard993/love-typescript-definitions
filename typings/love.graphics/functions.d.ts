@@ -55,7 +55,7 @@ declare module "love.graphics" {
     radius: number,
     angle1: number,
     angle2: number,
-    segments?: number
+    segments?: number,
   ): void;
 
   /**
@@ -81,7 +81,7 @@ declare module "love.graphics" {
     radius: number,
     angle1: number,
     angle2: number,
-    segments?: number
+    segments?: number,
   ): void;
 
   /**
@@ -121,7 +121,7 @@ declare module "love.graphics" {
    * @link [love.graphics.captureScreenshot](https://love2d.org/wiki/love.graphics.captureScreenshot)
    */
   function captureScreenshot(
-    callback: (this: void, screenshot: ImageData) => void
+    callback: (this: void, screenshot: ImageData) => void,
   ): void;
 
   /**
@@ -168,7 +168,7 @@ declare module "love.graphics" {
        * @default 1
        */
       dpiscale?: number;
-    }
+    },
   ): Image;
 
   /**
@@ -197,7 +197,7 @@ declare module "love.graphics" {
     x: number,
     y: number,
     radius: number,
-    segments: number
+    segments: number,
   ): void;
 
   /**
@@ -222,7 +222,7 @@ declare module "love.graphics" {
     b: number,
     a?: number,
     clearstencil?: boolean,
-    cleardepth?: boolean
+    cleardepth?: boolean,
   ): void;
 
   /**
@@ -248,7 +248,7 @@ declare module "love.graphics" {
   function clear(
     clearcolor: boolean,
     clearstencil: boolean | number,
-    cleardepth: boolean | number
+    cleardepth: boolean | number,
   ): void;
 
   /**
@@ -285,7 +285,7 @@ declare module "love.graphics" {
    */
   function discard(
     discardcolors: Array<boolean>,
-    discardstencil?: boolean
+    discardstencil?: boolean,
   ): void;
 
   /**
@@ -312,7 +312,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
 
   /**
@@ -341,7 +341,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
 
   /**
@@ -397,7 +397,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
 
   /**
@@ -420,7 +420,7 @@ declare module "love.graphics" {
   function drawInstanced(
     mesh: Mesh,
     instancecount: number,
-    transform: Transform
+    transform: Transform,
   ): void;
 
   /**
@@ -450,7 +450,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
 
   /**
@@ -482,7 +482,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
 
   /**
@@ -496,7 +496,7 @@ declare module "love.graphics" {
   function drawLayer(
     texture: Texture,
     layerindex: number,
-    transform: Transform
+    transform: Transform,
   ): void;
 
   /**
@@ -512,7 +512,7 @@ declare module "love.graphics" {
     texture: Texture,
     layerindex: number,
     quad: Quad,
-    transform: Transform
+    transform: Transform,
   ): void;
 
   /**
@@ -530,7 +530,7 @@ declare module "love.graphics" {
     x: number,
     y: number,
     radiusx: number,
-    radiusy: number
+    radiusy: number,
   ): void;
 
   /**
@@ -550,7 +550,7 @@ declare module "love.graphics" {
     y: number,
     radiusx: number,
     radiusy: number,
-    segments: number
+    segments: number,
   ): void;
 
   /**
@@ -965,7 +965,7 @@ declare module "love.graphics" {
     x: number,
     y: number,
     width: number,
-    height: number
+    height: number,
   ): void;
 
   /**
@@ -1009,7 +1009,7 @@ declare module "love.graphics" {
    */
   function inverseTransformPoint(
     screenX: number,
-    screenY: number
+    screenY: number,
   ): LuaMultiReturn<[globalX: number, globalY: number]>;
 
   /**
@@ -1094,7 +1094,7 @@ declare module "love.graphics" {
   function newCanvas(
     width: number,
     height: number,
-    settings: CanvasSettings
+    settings: CanvasSettings,
   ): Canvas;
 
   /**
@@ -1112,7 +1112,7 @@ declare module "love.graphics" {
     width: number,
     height: number,
     layers: number,
-    settings?: CanvasSettings
+    settings?: CanvasSettings,
   ): Canvas;
 
   /**
@@ -1126,7 +1126,7 @@ declare module "love.graphics" {
    */
   function newCubeImage(
     filename: ImageInformation,
-    settings?: ImageSettings
+    settings?: ImageSettings,
   ): Image;
 
   /**
@@ -1144,9 +1144,9 @@ declare module "love.graphics" {
       faceC: ImageInformation,
       faceD: ImageInformation,
       faceE: ImageInformation,
-      faceF: ImageInformation
+      faceF: ImageInformation,
     ],
-    settings?: ImageSettings
+    settings?: ImageSettings,
   ): Image;
 
   /**
@@ -1173,7 +1173,7 @@ declare module "love.graphics" {
     filename: string,
     size: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Font;
 
   /**
@@ -1199,7 +1199,7 @@ declare module "love.graphics" {
   function newFont(
     size?: number,
     hinting?: HintingMode,
-    dpiscale?: number
+    dpiscale?: number,
   ): Font;
 
   /**
@@ -1233,10 +1233,10 @@ declare module "love.graphics" {
       faceC: ImageInformation,
       faceD: ImageInformation,
       faceE: ImageInformation,
-      faceF: ImageInformation
+      faceF: ImageInformation,
     ],
     mode?: MeshDrawMode,
-    usage?: SpriteBatchUsage
+    usage?: SpriteBatchUsage,
   ): Mesh;
 
   /**
@@ -1252,7 +1252,7 @@ declare module "love.graphics" {
   function newMesh(
     vertexcount: number,
     mode?: MeshDrawMode,
-    usage?: SpriteBatchUsage
+    usage?: SpriteBatchUsage,
   ): Mesh;
 
   /**
@@ -1270,7 +1270,7 @@ declare module "love.graphics" {
     vertexformat: Array<VertexAttribute<T>>,
     vertices: Array<Array<any>>,
     mode?: MeshDrawMode,
-    usage?: SpriteBatchUsage
+    usage?: SpriteBatchUsage,
   ): Mesh;
 
   /**
@@ -1288,7 +1288,7 @@ declare module "love.graphics" {
     vertexformat: Array<VertexAttribute<T>>,
     vertexcount: number,
     mode?: MeshDrawMode,
-    usage?: SpriteBatchUsage
+    usage?: SpriteBatchUsage,
   ): Mesh;
 
   /**
@@ -1337,7 +1337,7 @@ declare module "love.graphics" {
        * If true, mipmaps for the image will be automatically generated (or taken from the images's file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image's mipmap levels. (Default: false)
        */
       mipmaps?: boolean | Array<string>;
-    }
+    },
   ): Image;
 
   /**
@@ -1373,7 +1373,7 @@ declare module "love.graphics" {
   function newImageFont(
     filename: string | ImageData,
     glyphs: string,
-    extraspacing: number
+    extraspacing: number,
   ): Font;
 
   /**
@@ -1415,7 +1415,7 @@ declare module "love.graphics" {
    * @since 0.9.0
    */
   function newShader<T extends { [key: string]: any } = { [key: string]: any }>(
-    code: string
+    code: string,
   ): Shader<T>;
 
   /**
@@ -1438,7 +1438,7 @@ declare module "love.graphics" {
    */
   function newShader<T extends { [key: string]: any } = { [key: string]: any }>(
     pixelcode: string,
-    vertexcode: string
+    vertexcode: string,
   ): Shader<T>;
 
   /**
@@ -1475,7 +1475,7 @@ declare module "love.graphics" {
     width: number,
     height: number,
     sw: number,
-    sh: number
+    sh: number,
   ): Quad;
 
   /**
@@ -1490,7 +1490,7 @@ declare module "love.graphics" {
   function newSpriteBatch(
     texture: Texture,
     maxsprites?: number,
-    usage?: SpriteBatchUsage
+    usage?: SpriteBatchUsage,
   ): SpriteBatch;
 
   /**
@@ -1533,7 +1533,7 @@ declare module "love.graphics" {
        * The DPI scale factor of the video. (Default: `love.graphics.getDPIScale()`)
        */
       dpiscale?: number;
-    }
+    },
   ): Video;
 
   /**
@@ -1547,7 +1547,7 @@ declare module "love.graphics" {
    */
   function newVolumeImage(
     layers: ImageInformation[],
-    settings?: ImageSettings
+    settings?: ImageSettings,
   ): Image;
 
   /**
@@ -1580,7 +1580,7 @@ declare module "love.graphics" {
     points: Array<
       | [x: number, y: number]
       | [x: number, y: number, r: number, g: number, b: number, a: number]
-    >
+    >,
   ): void;
 
   /**
@@ -1657,7 +1657,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
   function print(text: string | ColouredText, transform: Transform): void;
 
@@ -1682,7 +1682,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
   function printf(
     text: string | ColouredText,
@@ -1697,7 +1697,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
   function printf(
     text: string | ColouredText,
@@ -1712,7 +1712,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
   function printf(
     text: string | ColouredText,
@@ -1728,7 +1728,7 @@ declare module "love.graphics" {
     ox?: number,
     oy?: number,
     kx?: number,
-    ky?: number
+    ky?: number,
   ): void;
 
   /**
@@ -1762,7 +1762,7 @@ declare module "love.graphics" {
     x: number,
     y: number,
     width: number,
-    height: number
+    height: number,
   ): void;
 
   /**
@@ -1787,7 +1787,7 @@ declare module "love.graphics" {
     height: number,
     rx: number,
     ry?: number,
-    segments?: number
+    segments?: number,
   ): void;
 
   /**
@@ -1863,7 +1863,7 @@ declare module "love.graphics" {
     r: number,
     g: number,
     b: number,
-    a?: number
+    a?: number,
   ): void;
 
   /**
@@ -1917,7 +1917,7 @@ declare module "love.graphics" {
     red: number,
     green: number,
     blue: number,
-    alpha?: number
+    alpha?: number,
   ): void;
 
   /**
@@ -1946,7 +1946,7 @@ declare module "love.graphics" {
     red: boolean,
     green: boolean,
     blue: boolean,
-    alpha: boolean
+    alpha: boolean,
   ): void;
 
   /**
@@ -1974,7 +1974,7 @@ declare module "love.graphics" {
   function setDefaultFilter(
     min: FilterMode,
     mag?: FilterMode,
-    anisotropy?: number
+    anisotropy?: number,
   ): void;
 
   /**
@@ -2152,7 +2152,7 @@ declare module "love.graphics" {
     x: number,
     y: number,
     width: number,
-    height: number
+    height: number,
   ): void;
 
   /**
@@ -2247,7 +2247,7 @@ declare module "love.graphics" {
     stencilfunction: (this: void) => void,
     action?: StencilAction,
     value?: number,
-    keepvalues?: boolean
+    keepvalues?: boolean,
   ): void;
 
   /**
@@ -2265,7 +2265,7 @@ declare module "love.graphics" {
    */
   function transformPoint(
     globalX: number,
-    globalY: number
+    globalY: number,
   ): LuaMultiReturn<[screenX: number, screenY: number]>;
 
   /**
@@ -2312,7 +2312,7 @@ declare module "love.graphics" {
    */
   function validateShader(
     gles: boolean,
-    code: string
+    code: string,
   ): LuaMultiReturn<[status: true] | [status: false, errormsg: string]>;
 
   /**
@@ -2330,6 +2330,6 @@ declare module "love.graphics" {
   function validateShader(
     gles: boolean,
     pixelcode: string,
-    vertexcode: string
+    vertexcode: string,
   ): LuaMultiReturn<[status: true] | [status: false, errormsg: string]>;
 }

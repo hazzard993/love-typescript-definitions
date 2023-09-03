@@ -34,13 +34,13 @@ declare module "love.physics" {
      * @link [Fixture:getBoundingBox](https://love2d.org/wiki/Fixture:getBoundingBox)
      */
     getBoundingBox(
-      index?: number
+      index?: number,
     ): LuaMultiReturn<
       [
         topLeftX: number,
         topLeftY: number,
         bottomRightX: number,
-        bottomRightY: number
+        bottomRightY: number,
       ]
     >;
 
@@ -198,7 +198,7 @@ declare module "love.physics" {
       x2: number,
       y2: number,
       maxFraction: number,
-      childIndex?: number
+      childIndex?: number,
     ): LuaMultiReturn<[x: number, y: number, fraction: number] | []>;
 
     /**
