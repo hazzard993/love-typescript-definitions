@@ -17,8 +17,8 @@ Or run the following in a terminal to try it out:
 ```sh
 # Requires NPX and Love2D to be available via cli
 npm init -y
-npm install -D typescript-to-lua love-typescript-definitions
-echo '{ "compilerOptions": { "lib": ["ESNext"], "types": ["love-typescript-definitions", "typescript-to-lua/language-extensions"] }}' > tsconfig.json
+npm install -D typescript-to-lua typescript love-typescript-definitions
+echo '{ "compilerOptions": { "target": "ESNext", "lib": ["ESNext"], "moduleResolution": "Node", "types": ["love-typescript-definitions", "@typescript-to-lua/language-extensions"] }, "tstl": { "luaTarget": "JIT" } }' > tsconfig.json
 echo "love.draw = () => { love.graphics.print('Hello World') };" > main.ts
 npx tstl -p tsconfig.json
 love .
