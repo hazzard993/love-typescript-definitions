@@ -1586,9 +1586,13 @@ declare module "love.graphics" {
   /**
    * Draw a polygon.
    *
-   * Following the mode argument, this function can accept multiple numeric arguments or a single table of numeric arguments. In either case the arguments are interpreted as alternating x and y coordinates of the polygon's vertices.
+   * Following the mode argument, this function can accept multiple numeric
+   * arguments or a single table of numeric arguments. In either case the
+   * arguments are interpreted as alternating x and y coordinates of the
+   * polygon's vertices.
    *
-   * When in fill mode, the polygon must be convex and simple or rendering artifacts may occur.
+   * When in fill mode, the polygon must be convex and simple or rendering
+   * artifacts may occur.
    * ```ts
    * love.graphics.polygon("fill", 0, 0, 16, 16, 0, 16);     // "fill", xyxyxy...
    * love.graphics.polygon("line", [0, 0, 16, 16, 0, 16]);   // "line", [xyxyxy...]
@@ -1605,9 +1609,9 @@ declare module "love.graphics" {
   /**
    * Pops the current coordinate transformation from the transformation stack.
    *
-   * This function is always used to reverse a previous push operation. It returns
-   * the current transformation state to what it was before the last preceding push.
-   * For an example, see the description of love.graphics.push.
+   * This function is always used to reverse a previous push operation. It
+   * returns the current transformation state to what it was before the last
+   * preceding push. For an example, see the description of love.graphics.push.
    *
    * @link [love.graphics.pop](https://love2d.org/wiki/love.graphics.pop)
    */
@@ -1616,16 +1620,17 @@ declare module "love.graphics" {
   /**
    * Displays the results of drawing operations on the screen.
    *
-   * This function is used when writing your own love.run function. It presents all
-   * the results of your drawing operations on the screen. See the example in
-   * love.run for a typical use of this function.
+   * This function is used when writing your own love.run function. It presents
+   * all the results of your drawing operations on the screen. See the example
+   * in love.run for a typical use of this function.
    *
    * @link [love.graphics.present](https://love2d.org/wiki/love.graphics.present)
    */
   function present(): void;
 
   /**
-   * A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.
+   * A table containing colors and strings to add to the object, in the form of
+   * `{color1, string1, color2, string2, ...}`.
    */
   type ColouredText = Array<string | RGBA>;
 
@@ -1732,16 +1737,17 @@ declare module "love.graphics" {
   ): void;
 
   /**
-   * Copies and pushes the current coordinate transformation to the transformation
-   * stack.
+   * Copies and pushes the current coordinate transformation to the
+   * transformation stack.
    *
    * This function is always used to prepare for a corresponding pop operation
    * later. It stores the current coordinate transformation state into the
-   * transformation stack and keeps it active. Later changes to the transformation
-   * can be undone by using the pop operation, which returns the coordinate
-   * transform to the state it was in before calling push.
+   * transformation stack and keeps it active. Later changes to the
+   * transformation can be undone by using the pop operation, which returns the
+   * coordinate transform to the state it was in before calling push.
    *
-   * @param stack The type of stack to push (e.g. just transformation state, or all love.graphics state).
+   * @param stack The type of stack to push (e.g. just transformation state, or
+   * all love.graphics state).
    * @link [love.graphics.push](https://love2d.org/wiki/love.graphics.push)
    */
   function push(stack?: StackType): void;
@@ -1773,9 +1779,12 @@ declare module "love.graphics" {
    * @param y The position of top-left corner along the y-axis.
    * @param width Width of the rectangle.
    * @param height Height of the rectangle.
-   * @param rx The x-axis radius of each round corner. Cannot be greater than half the rectangle's width.
-   * @param ry The y-axis radius of each round corner. Cannot be greater than half the rectangle's height.
-   * @param segments The number of segments used for drawing the round corners. A default amount will be chosen if no number is given.
+   * @param rx The x-axis radius of each round corner. Cannot be greater than
+   * half the rectangle's width.
+   * @param ry The y-axis radius of each round corner. Cannot be greater than
+   * half the rectangle's height.
+   * @param segments The number of segments used for drawing the round corners.
+   * A default amount will be chosen if no number is given.
    * @link [love.graphics.rectangle](https://love2d.org/wiki/love.graphics.rectangle)
    * @since 0.3.2
    */
@@ -1791,9 +1800,11 @@ declare module "love.graphics" {
   ): void;
 
   /**
-   * Replaces the current coordinate transformation with the given Transform object.
+   * Replaces the current coordinate transformation with the given Transform
+   * object.
    *
-   * @param transform The Transform object to replace the current graphics coordinate transform with.
+   * @param transform The Transform object to replace the current graphics
+   * coordinate transform with.
    * @link [love.graphics.replaceTransform](https://love2d.org/wiki/love.graphics.replaceTransform)
    * @since 11.0
    */
@@ -1804,8 +1815,8 @@ declare module "love.graphics" {
    *
    * Calling reset makes the current drawing color white, the current background
    * color black, resets any active Canvas or Shader, and removes any scissor
-   * settings. It sets the BlendMode to alpha. It also sets both the point and line
-   * drawing modes to smooth and their sizes to 1.0.
+   * settings. It sets the BlendMode to alpha. It also sets both the point and
+   * line drawing modes to smooth and their sizes to 1.0.
    *
    * @link [love.graphics.reset](https://love2d.org/wiki/love.graphics.reset)
    */
@@ -1815,8 +1826,8 @@ declare module "love.graphics" {
    * Rotates the coordinate system in two dimensions.
    *
    * Calling this function affects all future drawing operations by rotating the
-   * coordinate system around the origin by the given amount of radians. This change
-   * lasts until love.draw exits.
+   * coordinate system around the origin by the given amount of radians. This
+   * change lasts until love.draw exits.
    *
    * @param angle The amount to rotate the coordinate system in radians.
    * @link [love.graphics.rotate](https://love2d.org/wiki/love.graphics.rotate)
@@ -1826,21 +1837,21 @@ declare module "love.graphics" {
   /**
    * Scales the coordinate system in two dimensions.
    *
-   * By default the coordinate system in LÖVE corresponds to the display pixels in
-   * horizontal and vertical directions one-to-one, and the x-axis increases towards
-   * the right while the y-axis increases downwards. Scaling the coordinate system
-   * changes this relation.
+   * By default the coordinate system in LÖVE corresponds to the display pixels
+   * in horizontal and vertical directions one-to-one, and the x-axis increases
+   * towards the right while the y-axis increases downwards. Scaling the
+   * coordinate system changes this relation.
    *
    * After scaling by sx and sy, all coordinates are treated as if they were
    * multiplied by sx and sy. Every result of a drawing operation is also
    * correspondingly scaled, so scaling by (2, 2) for example would mean making
-   * everything twice as large in both x- and y-directions. Scaling by a negative
-   * value flips the coordinate system in the corresponding direction, which also
-   * means everything will be drawn flipped or upside down, or both. Scaling by zero
-   * is not a useful operation.
+   * everything twice as large in both x- and y-directions. Scaling by a
+   * negative value flips the coordinate system in the corresponding direction,
+   * which also means everything will be drawn flipped or upside down, or both.
+   * Scaling by zero is not a useful operation.
    *
-   * Scale and translate are not commutative operations, therefore, calling them in
-   * different orders will change the outcome.
+   * Scale and translate are not commutative operations, therefore, calling them
+   * in different orders will change the outcome.
    *
    * Scaling lasts until love.draw exits.
    *
@@ -1869,7 +1880,8 @@ declare module "love.graphics" {
   /**
    * Sets the background color.
    *
-   * @param rgba A numerical indexed table with the red, green and blue values as numbers. Alpha is 255 if it is not in the table
+   * @param rgba A numerical indexed table with the red, green and blue values
+   * as numbers. Alpha is 255 if it is not in the table
    * @link [love.graphics.setBackgroundColor](https://love2d.org/wiki/love.graphics.setBackgroundColor)
    */
   function setBackgroundColor(rgba: RGBA): void;
@@ -1894,15 +1906,161 @@ declare module "love.graphics" {
   function setBlendMode(mode: BlendMode, alphamode?: BlendAlphaMode): void;
 
   /**
-   * Captures drawing operations to a [Canvas](https://love2d.org/wiki/Canvas).
+   * Sets the render target to a specified {@link Canvas}.
    *
+   * @param canvas The new target.
+   * @param mipmap The mipmap level to render to, for {@link Canvas Canvases}
+   * with mipmaps. (Default 1)
    * @link [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
    * @since 0.8.0
    */
-  function setCanvas(): void;
   function setCanvas(canvas: Canvas, mipmap?: number): void;
+
+  /**
+   * Resets the render target to the screen, i.e. re-enables drawing to the screen.
+   */
+  function setCanvas(): void;
+
+  /**
+   * Sets the render target to multiple simultaneous {@link Canvas 2D Canvases}.
+   *
+   * All drawing operations until the next _love.graphics.setCanvas_ call will
+   * be redirected to the specified canvases and not shown on the screen.
+   *
+   * @param canvases The render targets from first to last.
+   * @link [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
+   * @since 0.9.0
+   */
   function setCanvas(...canvases: Array<Canvas>): void;
+
+  /**
+   * Sets the render target to the specified {@link TextureType layer/slice} and
+   * mipmap level of the given non-2D {@link Canvas}. All drawing operations
+   * until the next _love.graphics.setCanvas_ call will be redirected to the
+   * {@link Canvas} and not shown on the screen.
+   *
+   * @param canvas The new render target.
+   * @param slice For cubemaps this is the cube face index to render to (between
+   * 1 and 6). For Array textures this is the array layer. For volume textures
+   * this is the depth slice. 2D canvases should use a value of 1.
+   * @param mipmap The mipmap level to render to, for Canvases with mipmaps.
+   * @link [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
+   * @since 11.0
+   */
   function setCanvas(canvas: Canvas, slice?: number, mipmap?: number): void;
+
+  /**
+   * A combination of an array and an object with properties.
+   *
+   * IMPORTANT NOTE: Must be indexed at 1.
+   *
+   * ```ts
+   * const target: RenderTargetSetupObject = {
+   *    mipmap: 1,  // optional
+   *    layer: 1,   // optional
+   *    face: 1,    // optional
+   * };
+   *
+   * target[1] = targetCanvas;
+   * ```
+   */
+  type RenderTargetSetupObject = {
+    [key: number]: Canvas;
+
+    /**
+     * The mipmap level to render to, for Canvases with mipmaps.
+     */
+    mipmap?: number;
+
+    /**
+     * Only used for Volume and Array-type Canvases. For Array textures this is
+     * the array layer to render to. For volume textures this is the depth
+     * slice.
+     */
+    layer?: number;
+
+    /**
+     * Only used for Cubemap-type Canvases. The cube face index to render to
+     * (between 1 and 6)
+     */
+    face?: number;
+  };
+
+  type RenderTargetSetup = RenderTargetSetupObject | Canvas;
+
+  /**
+   * A combination of an array and an object with properties.
+   *
+   * IMPORTANT NOTE: Must be indexed at 1.
+   *
+   * ```ts
+   * const allowStencil: CanvasSetup = { stencil: true };
+   * allowStencil[1] = canvas;
+   *
+   * love.graphics.setCanvas(allowStencil);
+   * ```
+   */
+  type CanvasSetup = {
+    [key: number]: RenderTargetSetup;
+
+    /**
+     * Whether an internally managed stencil buffer should be used, if the
+     * `depthstencil` field isn't set.
+     */
+    stencil?: boolean;
+
+    /**
+     * Whether an internally managed depth buffer should be used, if the
+     * `depthstencil` field isn't set.
+     */
+    depth?: boolean;
+
+    /**
+     * An optional custom depth/stencil formatted Canvas to use for the depth
+     * and/or stencil buffer.
+     */
+    depthstencil?: RenderTargetSetup;
+  };
+
+  /**
+   * Sets the active render target(s) and active stencil and depth buffers based
+   * on the specified setup information. All drawing operations until the next
+   * love.graphics.setCanvas call will be redirected to the specified Canvases
+   * and not shown on the screen.
+   *
+   * IMPORTANT NOTE: These setup objects must be indexed at 1.
+   *
+   * ```ts
+   * // Allow love.graphics.stencil calls when drawing to the given Canvas.
+   * const allowStencil: CanvasSetup = { stencil: true };
+   * allowStencil[1] = canvas;
+   *
+   * love.graphics.setCanvas(allowStencil);
+   *
+   * // Use multiple simultaneous render targets when drawing to several
+   * // canvases of the Array Texture type, and use a custom depth
+   * // buffer as well.
+   * const canvas1Target: RenderTargetSetupObject = { layer: 3 };
+   * canvas1Target[1] = canvas1;
+   *
+   * const canvas2Target: RenderTargetSetupObject = { layer: 1 };
+   * canvas2Target[1] = canvas2;
+   *
+   * const multipleArrayTextureTargets: CanvasSetup = { depthstencil: depthcanvas };
+   * multipleArrayTextureTargets[1] = canvas1Target;
+   * multipleArrayTextureTargets[2] = canvas2Target;
+   *
+   * love.graphics.setCanvas(multipleArrayTextureTargets);
+   * ```
+   *
+   * @param setup A table specifying the active Canvas(es), their mipmap levels
+   * and active layers if applicable, and whether to use a stencil and/or depth
+   * buffer.
+   * @link
+   * [love.graphics.setCanvas](https://love2d.org/wiki/love.graphics.setCanvas)
+   * @since 11.0
+   */
+  function setCanvas(setup: CanvasSetup): void;
 
   /**
    * Sets the color used for drawing.
@@ -1910,7 +2068,8 @@ declare module "love.graphics" {
    * @param red The amount of red.
    * @param green The amount of green.
    * @param blue The amount of blue.
-   * @param alpha The amount of alpha. The alpha value will be applied to all subsequent draw operations, even the drawing of an image.
+   * @param alpha The amount of alpha. The alpha value will be applied to all
+   * subsequent draw operations, even the drawing of an image.
    * @link [love.graphics.setColor](https://love2d.org/wiki/love.graphics.setColor)
    */
   function setColor(
@@ -1923,7 +2082,9 @@ declare module "love.graphics" {
   /**
    * Sets the color used for drawing.
    *
-   * @param rgba A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 255 if it is left out.
+   * @param rgba A numerical indexed table with the red, green, blue and alpha
+   * values as numbers. The alpha is optional and defaults to 255 if it is left
+   * out.
    * @link [love.graphics.setColor](https://love2d.org/wiki/love.graphics.setColor)
    */
   function setColor(rgba: RGBA): void;
