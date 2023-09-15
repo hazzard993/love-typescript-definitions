@@ -1,5 +1,37 @@
 # Changelog
 
+## Version 11.4.1
+
+Added variant to `love.graphics.setCanvas` using a `CanvasSetup` object.
+
+```ts
+love.graphics.setCanvas(setup);
+```
+
+This `CanvasSetup` object can be tricky to write using TypeScript. It can be thought of like an array and an object with properties. See below for an example use case.
+
+```ts
+const allowStencil: CanvasSetup = { stencil: true };
+allowStencil[1] = canvas;
+
+love.graphics.setCanvas(allowStencil);
+```
+
+> Note that this object has to be indexed at `1`.
+
+This can also be written as below:
+
+```ts
+love.graphics.setCanvas({
+  [1]: canvas,
+  stencil: true,
+});
+```
+
+The latter approach may be harder to troubleshoot when encountering type errors.
+
+Also added missing `name` parameter to `love.filesystem.newFileData`.
+
 ## Version 11.4.0
 
 These types have been complete without major rewrites for a while. A new versioning scheme will now be implemented similar to TypeScript type packages.
@@ -177,7 +209,7 @@ function unpack(
   packedData: love.data.PackedData<{
     format: "n1";
     values: [1, 2, 3, 4];
-  }>,
+  }>
 ) {
   love.data.unpack("n1", packedData);
 }
