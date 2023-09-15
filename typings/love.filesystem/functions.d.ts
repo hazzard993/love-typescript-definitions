@@ -344,11 +344,12 @@ declare module "love.filesystem" {
    * Creates a new {@link FileData} object from a {@link Data} object in memory.
    *
    * @param originalData The contents of the file.
+   * @param name The name of the file.
    * @returns The new {@link FileData}.
    * @link [love.filesystem.newFileData](https://love2d.org/wiki/love.filesystem.newFileData)
    * @since 11.4
    */
-  function newFileData(originalData: Data): FileData;
+  function newFileData(originalData: Data, name: string): FileData;
 
   /**
    * Creates a new {@link FileData} from a file on the storage device.
