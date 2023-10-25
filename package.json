@@ -1,6 +1,6 @@
 {
   "name": "love-typescript-definitions",
-  "version": "11.4.1",
+  "version": "11.4.2",
   "description": "Write LÖVE 2D projects with TypeScript",
   "license": "MIT",
   "keywords": [
