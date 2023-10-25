@@ -197,20 +197,20 @@ interface Handlers extends CustomHandlers {
   /**
    * Called when a joystick button is pressed.
    *
-   * @param joystick The joystick number.
+   * @param joystick The joystick object.
    * @param button The button number.
    * @link [love.joystickpressed](https://love2d.org/wiki/love.joystickpressed)
    */
-  joystickpressed?: (joystick: number, button: number) => void;
+  joystickpressed?: (joystick: Joystick, button: number) => void;
 
   /**
    * Called when a joystick button is released.
    *
-   * @param joystick The joystick number.
+   * @param joystick The joystick object.
    * @param button The button number.
    * @link [love.joystickreleased](https://love2d.org/wiki/love.joystickreleased)
    */
-  joystickreleased?: (joystick: number, button: number) => void;
+  joystickreleased?: (joystick: Joystick, button: number) => void;
 
   /**
    * Called when a Joystick is disconnected.
