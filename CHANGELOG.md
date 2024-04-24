@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 11.4.3
+
+Added missing variant `love.graphics.newQuad(x, y, width, height, texture)` (#75).
+
+## Version 11.4.2
+
+Fixed an issue with `love.joystickpressed` and `love.joystickreleased`. Now using an `object` instead of a `number`.
+
 ## Version 11.4.1
 
 Added variant to `love.graphics.setCanvas` using a `CanvasSetup` object.
