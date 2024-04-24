@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "prettier": "^3.0.3",
-    "typescript-to-lua": "^0.38.1"
+    "typescript-to-lua": "^1.25.1"
   },
   "files": [
     "**/**.d.ts"

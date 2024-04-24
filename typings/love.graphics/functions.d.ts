@@ -1499,8 +1499,8 @@ declare module "love.graphics" {
     y: number,
     width: number,
     height: number,
-    texture: Texture
-  ): Quad
+    texture: Texture,
+  ): Quad;
 
   /**
    * Creates a new SpriteBatch object.
