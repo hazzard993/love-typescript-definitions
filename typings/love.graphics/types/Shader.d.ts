@@ -5,7 +5,6 @@ declare module "love.graphics" {
    * A Shader is used for advanced hardware-accelerated pixel or vertex manipulation.
    * @typeparam U An object that contains all uniform variables within this shader associated with a value that can be provided to it.
    * @link [Shader](https://love2d.org/wiki/Shader)
-   * @link [Type Safe Shaders](https://github.com/hazzard993/love-typescript-definitions/wiki/Type-Safe-Shaders)
    */
   interface Shader<U extends { [key: string]: any } | undefined = undefined>
     extends Type<"Shader"> {

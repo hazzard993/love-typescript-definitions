@@ -210,14 +210,14 @@ If you want to use LÖVE in this modular way, configure your _types_ in your _ts
 
 ## Packing and Unpacking
 
-- Enhanced _love.data.pack_ and _love.data.unpack_ keep track of the formatting and values to create the packed value for type safety. See [packing and unpacking](https://github.com/hazzard993/love-typescript-definitions/wiki/Packing-and-Unpacking).
+- Enhanced _love.data.pack_ and _love.data.unpack_ keep track of the formatting and values to create the packed value for type safety.
 
 ```ts
 function unpack(
   packedData: love.data.PackedData<{
     format: "n1";
     values: [1, 2, 3, 4];
-  }>,
+  }>
 ) {
   love.data.unpack("n1", packedData);
 }
