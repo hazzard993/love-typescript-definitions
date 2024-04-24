@@ -1479,6 +1479,30 @@ declare module "love.graphics" {
   ): Quad;
 
   /**
+   * Creates a new Quad.
+   *
+   * The purpose of a Quad is to describe the result of the following transformation
+   * on any drawable object. The object is first scaled to dimensions of Texture. The
+   * Quad then describes the rectangular area of dimensions width * height whose
+   * upper left corner is at position (x, y) inside the scaled object.
+   *
+   * @param x The top-left position along the x-axis.
+   * @param y The top-left position along the y-axis.
+   * @param width The width of the Quad.
+   * @param height The height of the Quad.
+   * @param texture The texture to scale to.
+   * @return quad, The new Quad.
+   * @link [love.graphics.newQuad](https://love2d.org/wiki/love.graphics.newQuad)
+   */
+  function newQuad(
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    texture: Texture
+  ): Quad
+
+  /**
    * Creates a new SpriteBatch object.
    *
    * @param texture The Image or Canvas to use for the sprites.
