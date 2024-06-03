@@ -1,5 +1,6 @@
 declare module "love" {
   type Version =
+    | "11.5"
     | "11.4"
     | "11.3"
     | "11.2"
