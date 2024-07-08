@@ -22,7 +22,7 @@ declare module "love.data" {
     container: T,
     format: CompressedDataFormat,
     rawstring: string,
-    level?: number
+    level?: number,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -40,7 +40,7 @@ declare module "love.data" {
     container: T,
     format: CompressedDataFormat,
     data: Data,
-    level?: number
+    level?: number,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -56,12 +56,12 @@ declare module "love.data" {
   function decode<T extends ContainerType>(
     container: T,
     format: EncodeFormat,
-    source: string
+    source: string,
   ): T extends "string" ? string : ByteData;
   function decode<T extends ContainerType>(
     container: T,
     format: EncodeFormat,
-    source: Data
+    source: Data,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -74,17 +74,17 @@ declare module "love.data" {
    */
   function decompress<T extends ContainerType>(
     container: T,
-    compressedData: CompressedData
+    compressedData: CompressedData,
   ): T extends "string" ? string : Data;
   function decompress<T extends ContainerType>(
     container: T,
     format: CompressedDataFormat,
-    compressedData: CompressedData
+    compressedData: CompressedData,
   ): T extends "string" ? string : Data;
   function decompress<T extends ContainerType>(
     container: T,
     format: CompressedDataFormat,
-    data: Data
+    data: Data,
   ): T extends "string" ? string : Data;
 
   /**
@@ -102,7 +102,7 @@ declare module "love.data" {
     container: T,
     format: EncodeFormat,
     sourceString: string,
-    linelength?: number
+    linelength?: number,
   ): T extends "string" ? string : ByteData;
 
   /**
@@ -124,7 +124,18 @@ declare module "love.data" {
    * @link [love.data.hash](https://love2d.org/wiki/love.data.hash)
    * @since 11.0
    */
-  function hash(hashFunction: HashFunction, string: string | Data): string;
+  function hash(hashFunction: HashFunction, string: string): string;
+
+  /**
+   * Compute the message digest of a string using a specified hash algorithm.
+   *
+   * @param hashFunction Hash algorithm to use.
+   * @param string String/Data to hash.
+   * @return rawdigest, Raw message digest string.
+   * @link [love.data.hash](https://love2d.org/wiki/love.data.hash)
+   * @since 11.0
+   */
+  function hash(hashFunction: HashFunction, data: Data): string;
 
   /**
    * Creates a new ByteData by copying the contents of the specified string.
@@ -233,6 +244,6 @@ declare module "love.data" {
   function unpack<P extends PackedData>(
     format: PackedDataMetatable<P>["format"],
     data: P,
-    pos?: number
+    pos?: number,
   ): LuaMultiReturn<PackedDataMetatable<P>["values"]>;
 }

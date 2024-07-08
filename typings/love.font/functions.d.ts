@@ -17,7 +17,7 @@ declare module "love.font" {
    * @param dpiscale DPI scale.
    * @return rasterizer, The rasterizer.
    * @link [love.font.newBMFontRasterizer](https://love2d.org/wiki/love.font.newBMFontRasterizer)
-   * @since 0.7.0
+   * @since 0.10.0
    */
   function newBMFontRasterizer(
     imageData: ImageData,
@@ -31,8 +31,9 @@ declare module "love.font" {
    * @param fileName The path to file containing the drawable pictures of font glyphs.
    * @param glyphs The sequence of glyphs in the ImageData.
    * @param dpiscale DPI scale.
+   * @return rasterizer, The rasterizer.
    * @link [love.font.newBMFontRasterizer](https://love2d.org/wiki/love.font.newBMFontRasterizer)
-   * @since 0.7.0
+   * @since 0.10.0
    */
   function newBMFontRasterizer(
     fileName: string,
