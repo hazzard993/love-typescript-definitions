@@ -384,7 +384,11 @@ declare module "love.window" {
    * @return success, True if successful, false otherwise.
    * @link [love.window.setMode](https://love2d.org/wiki/love.window.setMode)
    */
-  function setMode(width: number, height: number, flags?: DisplayFlags): boolean;
+  function setMode(
+    width: number,
+    height: number,
+    flags?: DisplayFlags,
+  ): boolean;
 
   /**
    * Sets the position of the window on the screen.

@@ -22,7 +22,7 @@ declare module "love.filesystem" {
   function append(
     name: string,
     string: string,
-    bytes?: number
+    bytes?: number,
   ): LuaMultiReturn<[success: true] | [success: false, errormsg: string]>;
 
   /**
@@ -39,7 +39,7 @@ declare module "love.filesystem" {
   function append(
     name: string,
     data: Data,
-    bytes: number
+    bytes: number,
   ): LuaMultiReturn<[success: true] | [success: false, errormsg: string]>;
 
   /**
@@ -129,7 +129,7 @@ declare module "love.filesystem" {
    */
   function getInfo<T extends FileType>(
     path: string,
-    filetype?: T
+    filetype?: T,
   ): FileInfo<T> | undefined;
 
   /**
@@ -159,7 +159,7 @@ declare module "love.filesystem" {
   function getInfo<T extends FileType>(
     path: string,
     filetype: T,
-    info: object
+    info: object,
   ): FileInfo<T> | undefined;
 
   /**
@@ -267,7 +267,7 @@ declare module "love.filesystem" {
    * @since 0.5.0
    */
   function load(
-    name: string
+    name: string,
   ): LuaMultiReturn<
     [chunk: (this: void) => any] | [chunk: undefined, errormsg: string]
   >;
@@ -285,7 +285,7 @@ declare module "love.filesystem" {
   function mount(
     archive: string,
     mountpoint: string,
-    appendToPath?: boolean
+    appendToPath?: boolean,
   ): boolean;
 
   /**
@@ -301,7 +301,7 @@ declare module "love.filesystem" {
   function mount(
     filedata: FileData,
     mountpoint: string,
-    appendToPath?: boolean
+    appendToPath?: boolean,
   ): boolean;
 
   /**
@@ -319,7 +319,7 @@ declare module "love.filesystem" {
     data: Data,
     archivename: string,
     mountpoint: string,
-    appendToPath?: boolean
+    appendToPath?: boolean,
   ): boolean;
 
   /**
@@ -342,7 +342,7 @@ declare module "love.filesystem" {
    */
   function newFile(
     filename: string,
-    mode: FileMode
+    mode: FileMode,
   ): LuaMultiReturn<[file: File] | [file: undefined, errormsg: string]>;
 
   /**
@@ -376,7 +376,7 @@ declare module "love.filesystem" {
    * @since 0.9.0
    */
   function newFileData(
-    filepath: string
+    filepath: string,
   ): LuaMultiReturn<[data: FileData] | [data: undefined, err: string]>;
 
   /**
@@ -390,7 +390,7 @@ declare module "love.filesystem" {
    */
   function read(
     name: string,
-    size?: number
+    size?: number,
   ): LuaMultiReturn<
     [contents: string, size: number] | [contents: undefined, errormsg: string]
   >;
@@ -407,14 +407,14 @@ declare module "love.filesystem" {
   function read(
     container: "string",
     name: string,
-    size?: number
+    size?: number,
   ): LuaMultiReturn<
     [contents: string, size: number] | [contents: undefined, errormsg: string]
   >;
   function read(
     container: "data",
     name: string,
-    size?: number
+    size?: number,
   ): LuaMultiReturn<
     [contents: FileData, size: number] | [contents: undefined, errormsg: string]
   >;
@@ -503,11 +503,11 @@ declare module "love.filesystem" {
   function write(
     filepath: string,
     data: string,
-    size?: number
+    size?: number,
   ): LuaMultiReturn<[success: true] | [success: false, message: string]>;
   function write(
     filepath: string,
     data: Data,
-    size?: number
+    size?: number,
   ): LuaMultiReturn<[success: true] | [success: false, message: string]>;
 }
