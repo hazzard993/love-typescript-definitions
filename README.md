@@ -3,7 +3,7 @@
     <h1>
         LÖVE 2D TypeScript Definitions
         <p></p>
-        <a href="http://love2d.org/"><img alt="LÖVE 2D" src="https://img.shields.io/badge/L%C3%96VE-11.4-EA316E.svg?style=for-the-badge" /></a>
+        <a href="http://love2d.org/"><img alt="LÖVE 2D" src="https://img.shields.io/badge/L%C3%96VE-11.5-EA316E.svg?style=for-the-badge" /></a>
         <a href="https://www.npmjs.com/package/love-typescript-definitions"><img alt="npm" src="https://img.shields.io/npm/v/love-typescript-definitions.svg?style=for-the-badge" /></a>
     </h1>
 </div>
