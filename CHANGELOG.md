@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 11.5.0
+
+Added missing optional parameter from `love.physics.setMode` (#76).
+
 ## Version 11.4.3
 
 Added missing variant `love.graphics.newQuad(x, y, width, height, texture)` (#75).
