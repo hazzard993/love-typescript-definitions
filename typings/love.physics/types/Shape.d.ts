@@ -126,11 +126,20 @@ declare module "love.physics" {
      * the mouse position with this function, we can find which shapes the mouse
      * touches.
      *
+     * @param tx Translates the shape along the x-axis.
+     * @param ty Translates the shape along the y-axis.
+     * @param tr Rotates the shape.
      * @param x The x component of the point.
      * @param y The y component of the point.
      * @return hit, True if inside, false if outside
      * @link [Shape:testPoint](https://love2d.org/wiki/Shape:testPoint)
      */
-    testPoint(x: number, y: number): boolean;
+    testPoint(
+      tx: number,
+      ty: number,
+      tr: number,
+      x: number,
+      y: number,
+    ): boolean;
   }
 }
