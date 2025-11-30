@@ -6,8 +6,9 @@ declare module "love.graphics" {
    * @typeparam U An object that contains all uniform variables within this shader associated with a value that can be provided to it.
    * @link [Shader](https://love2d.org/wiki/Shader)
    */
-  interface Shader<U extends { [key: string]: any } | undefined = undefined>
-    extends Type<"Shader"> {
+  interface Shader<
+    U extends { [key: string]: any } | undefined = undefined,
+  > extends Type<"Shader"> {
     /**
      * Returns any warning and error messages from compiling the shader code. This can
      * be used for debugging your shaders if there's anything the graphics hardware
