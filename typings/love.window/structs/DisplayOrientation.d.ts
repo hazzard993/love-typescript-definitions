@@ -5,6 +5,7 @@ declare module "love.window" {
   type DisplayOrientation =
     | "unknown"
     | "landscape"
+    | "landscapeflipped"
     | "portrait"
     | "portaitflipped";
 }
