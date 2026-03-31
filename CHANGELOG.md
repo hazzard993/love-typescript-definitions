@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 11.5.3
+
+Added `landscapeflipped` in `DisplayOrientation` (#80).
+
 ## Version 11.5.0
 
 Added missing optional parameter from `love.physics.setMode` (#76).
